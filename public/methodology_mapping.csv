@@ -1,0 +1,445 @@
+Methodology Code,Registry,Methodology Name,Project Type Category
+,ACR,Improved Forest Management (IFM) on Non-Federal U.S. Forestlands,Forest management
+,ACR,ARB Compliance Offset Protocol: Destruction of U.S. Ozone Depleting Substances Banks,Industrial efficiency
+,ACR,ECY Compliance Offset Protocol: Ozone Depleting Substances Projects,Industrial efficiency
+,ACR,Destruction of Ozone Depleting Substances (ODS) from International Sources,Industrial efficiency
+,ACR,Destruction of Ozone Depleting Substances (ODS) and High-Global Warming Potential (GWP) Foam,Industrial efficiency
+,ACR,"Certified Reclaimed HFC Refrigerants, Propellants, and Fire Suppressants",Industrial efficiency
+,ACR,Advanced Refrigeration Systems,Industrial efficiency
+,ACR,Transition to Advanced Formulation Blowing Agents in Foam Manufacturing and Use,Industrial efficiency
+,ACR,ARB Compliance Offset Protocol: Mine Methane Capture Projects,Fossil gas leaks
+,ACR,Emission reductions through industrial gas substitution,Industrial efficiency
+,ACR,ARB Compliance Offset Protocol: Capturing and Destroying Methane from Manure Management Systems,Agriculture
+,ACR,Plugging Orphan Oil and Gas Wells in the U.S. and Canada,Oil Field Gas Recovery
+,ACR,Improved Forest Management (IFM) on Canadian Forestlands,Forest management
+,ACR,ARB Compliance Offset Protocol: U.S. Forest Projects,Forest management
+,ACR,Landfill Gas Destruction and Beneficial Use Projects,Landfill gas
+,ACR,AR-ACM0001 Afforestation and Reforestation of Degraded Land,Afforestation/Reforestation
+,ACR,"Monitoring, Reporting and Verification Protocol for Landfill Gas Combustion",Landfill gas
+,ACR,Fuel switching from coal and/or petroleum fuels to natural gas in existing Power Plant for electricity generation,Bioenergy
+,ACR,Capturing and Destroying Methane from Coal and Trona Mines in North America,Fossil gas leaks
+,ACR,AMS-III.Y: Methane avoidance through separation of solids from wastewater or manure treatment systems,Wastewater treatment
+,ACR,ECY Compliance Offset Protocol: U.S. Forest Projects,Forest management
+,ACR,Conversion of High-Bleed Pneumatic Controllers in Oil and Natural Gas Systems,Oil Field Gas Recovery
+,ACR,N2O Emission Reductions through Reduced Use of Fertilizer on Agricultural Crops,Agriculture
+,ACR,Climate Action Reserve U.S. Ozone Depleting Substances Project Protocol,Industrial efficiency
+,ACR,Climate Action Reserve Forest Project Protocol,Forest management
+,ACR,Emission Reductions in Rice Management Systems,Rice cultivation
+,ACR,Active Conservation and Sustainable Management on U.S. Forestlands,Forest management
+,ACR,Afforestation and Reforestation of Degraded Lands,Afforestation/Reforestation
+,ACR,AMS-III.BC.: Emissions Reductions through Improved Efficiency of Vehicle Fleet,Electric vehicles
+,ACR,Anaerobic Digestion,Waste to energy
+,ACR,"Monitoring, Reporting and Verification Protocol for Cogeneration",Heat recovery
+,ACR,Improved Forest Management (IFM) on Small Non-Industrial Private Forestlands,Forest management
+,ACR,AMS-I.C.: Thermal energy production with or without electricity,Mixed renewables
+,ACR,Emission Reductions from Enhanced Oil Recovery,Oil Field Gas Recovery
+,ACR,ACM0002: Consolidated baseline methodology for grid-connected electricity generation from renewable sources,Mixed renewables
+,ACR,Nitrous Oxide Abatement Protocol,Nitric acid
+,ACR,Restoration of Pocosin Wetlands,Reforestation and ecosystem restoration
+,ACR,Avoided Conversion of Grasslands and Shrublands to Crop Production,Rewilding
+,ACR,Reduction in Emissions from the Recycling of Transformer Oil,Industrial efficiency
+,ACR,AM0065: Replacement of SF6 with Alternate Cover Gas in the Magnesium Industry,Industrial efficiency
+,ACR,Restoration of California Deltaic and Coastal Wetlands,Reforestation and ecosystem restoration
+,ACR,Emissions Reductions through Anti-Idling Technologies,Electric vehicles
+,ACR,Electricity generation by the user,Mixed renewables
+,ACR,Offset Project Methodology for Landfill Methane Collection and Combustion,Waste to energy
+,ACR,Truck Stop Electrification,Electric vehicles
+,ACR,Emission reductions through wastewater treatment,Wastewater treatment
+,CAR,Reforestation - ARB Compliance,Afforestation/Reforestation
+,CAR,Avoided Grassland Conversion,Rewilding
+,CAR,Ozone Depleting Substances - U.S. - ARB Compliance,Industrial efficiency
+,CAR,Ozone Depleting Substances - U.S. - WA ECO Compliance,Industrial efficiency
+,CAR,Livestock - ARB Compliance,Agriculture
+,CAR,Livestock Gas Capture/Combustion,Agriculture
+,CAR,Mine Methane Capture - ARB Compliance,Fossil gas leaks
+,CAR,Soil Enrichment,Agriculture
+,CAR,Improved Forest Management - ARB Compliance,Forest management
+,CAR,Landfill Gas Capture/Combustion,Landfill gas
+,CAR,Improved Forest Management,Forest management
+,CAR,Forestry - MX,Forest management
+,CAR,Avoided Conversion,Rewilding
+,CAR,Canada Grassland,Agriculture
+,CAR,Improved Forest Management - WA ECO Compliance,Forest management
+,CAR,Biochar,Biochar
+,CAR,Low Carbon Cement,Industrial efficiency
+,CAR,Conservation-Based Forest Management,Forest management
+,CAR,Livestock - MX,Agriculture
+,CAR,Organic Waste Composting,Composting
+,CAR,Landfill - MX,Landfill gas
+,CAR,Nitric Acid N2O- Tertiary Catalyst,Nitric acid
+,CAR,Ozone Depleting Substances - Article 5 Imports,Industrial efficiency
+,CAR,Ozone Depleting Substances - U.S.,Industrial efficiency
+,CAR,Organic Waste Digestion,Waste to energy
+,CAR,Nitric Acid N2O- Secondary Catalyst,Nitric acid
+,CAR,Coal Mine Methane - Drainage,Fossil gas leaks
+,CAR,Avoided Conversion - ARB Compliance,Rewilding
+,CAR,Nitrogen Management,Agriculture
+,CAR,Adipic Acid,Industrial efficiency
+,CAR,Reforestation,Afforestation/Reforestation
+,CAR,Coal Mine Methane - VAM,Fossil gas leaks
+,ART,ART - The REDD+ Environmental Excellence Standard (TREES),Forest management
+,ART,FCPF - Carbon Fund Methodological Framework,Forest management
+,Gold,GS Methodology for emission reductions from safe drinking water supply,Water purification
+,Gold,GS Retrofit Energy Efficiency Measures in Shipping v2,Efficient appliances
+,Gold,Methodology for Metered & Measured Energy Cooking Devices,Cleaner cooking
+,Gold,Soil Organic Carbon Framework Methodology,Agriculture
+,Gold,Afforestation/Reforestation GHG Emissions Reduction & Sequestration Methodology,Afforestation/Reforestation
+,Gold,ACM0002 Grid-connected electricity generation from renewable sources,Mixed renewables
+,Gold,AMS-I.F. Renewable electricity generation for captive use and mini-grid,Bioenergy
+,Gold,Methane Emission Reduction By Adjusted Water Management Practice In Rice Cultivation,Rice cultivation
+,Gold,AMS-III.F. Avoidance of methane emissions through controlled biological treatment of biomass,Efficient appliances
+,Gold,AMS-II.E. Energy efficiency and fuel switching measures for buildings,Efficient appliances
+,Gold,Other,Industrial efficiency
+,Gold,GS Water Access and WASH Methodology v1.,Water purification
+,Gold,AMS-III.AQ. Introduction of Bio-CNG in transportation applications,Public transit
+,Gold,AMS-I.B. Mechanical energy for the user with or without electrical energy,Mixed renewables
+,Gold,AM0072 Fossil Fuel Displacement by Geothermal Resources for Space Heating,Geothermal
+,Gold,Not provided,Industrial efficiency
+,Gold,ACM0006 Electricity and heat generation from biomass residues,Bioenergy
+,Gold,AMS-I.E. Switch from Non-Renewable Biomass for Thermal Applications by the User,Bioenergy
+,Gold,"The Gold Standard Simplified Methodology for Clean and Efficient Cookstoves, Version 3.0",Cleaner cooking
+,Gold,GS TPDDTEC V4.0: REDUCED EMISSIONS FROM COOKING AND HEATING ‚Äì TECHNOLOGIES AND PRACTICES TO DISPLACE DECENTRALIZED THERMAL ENERGY CONSUMPTION,Industrial efficiency
+,Gold,GS TPDDTEC v3.1,Cleaner cooking
+,Gold,ACM0001 Flaring or use of landfill gas,Landfill gas
+,Gold,Methodology for animal waste management and biogas application,Waste to energy
+,Gold,ACM0014 Treatment of wastewater,Wastewater treatment
+,Gold,AMS-III.D. Methane recovery in animal manure management systems,Agriculture
+,Gold,AMS-III.C. Emission reductions by electric and hybrid vehicles,Electric vehicles
+,Gold,AMS-III.BM: Lightweight two and three wheeled personal transportation version 1.0,Efficient appliances
+,Gold,AMS-III.BA Recovery and recycling of materials from E-waste,Waste management
+,Gold,AMS-I.L. Electrification of rural communities using renewable energy,Mixed renewables
+,Gold,Methodology For Reducing Methane Emissions From Enteric Fermentation In Beef Cattle Through Application Of Feed Supplements,Agriculture
+,Gold,AMS-I.D. Grid connected renewable electricity generation,Mixed renewables
+,Gold,GS MS Simplified Methodology for Efficient Cookstoves v1.,Cleaner cooking
+,Gold,GS MS Simplified Methodology for Efficient Cookstoves v1.1,Cleaner cooking
+,Gold,AMS-I.C. Thermal energy production with or without electricity,Mixed renewables
+,Gold,ACM0026 Fossil fuel based cogeneration for identified recipient facility(ies),Heat recovery
+,Gold,ACM0022 Alternative waste treatment processes,Landfill gas
+,Gold,"AMS-III.Z. Fuel Switch = 159, process improvement and energy efficiency in brick manufacture",Efficient appliances
+,Gold,ACM0012 Waste energy recovery,Waste to energy
+,Gold,AMS-III.AV. Low greenhouse gas emitting water purification systems,Water purification
+,Gold,AMS-III.AJ. Recovery and recycling of materials from solid wastes,Waste management
+,Gold,AMS-I.A. Electricity generation by the user,Solar
+,Gold,AMS-II.C. Demand-side energy efficiency activities for specific technologies,Efficient appliances
+,Gold,AMS-III.H. Methane recovery in wastewater treatment,Wastewater treatment
+,Gold,AMS-II.G. Energy Efficiency Measures in Thermal Applications of Non-Renewable Biomass,Efficient appliances
+,Gold,GS Methodology for Improved Cook stoves and Kitchen Regimes v1.,Cleaner cooking
+,Gold,AM0073 GHG emission reductions through multi-site manure collection and treatment in a central plant,Agriculture
+,Gold,AMS-III.AS. Switch from fossil fuel to biomass in existing manufacturing facilities for non-energy applications,Bioenergy
+,Gold,ACM0010 GHG emission reductions from manure management systems,Agriculture
+,Gold,GS Retrofit Energy Efficiency Measures in Shipping v1.,Efficient appliances
+,Gold,AMS-III.S. Introduction of low-emission vehicles/technologies to commercial vehicle fleets,Electric vehicles
+,Gold,AMS-III.AR. Substituting fossil fuel based lighting with LED lighting systems,Efficient appliances
+,Gold,GS Baseline and Monitoring Methodology Biodigester v1.,Waste to energy
+,Gold,AMS-III.BL. Integrated methodology for electrification of communities v2,Mixed renewables
+,Gold,AMS-II.L Demand-side activities for efficient outdoor and street lighting technologies,Efficient appliances
+,Gold,AMS-I.I. Biogas/biomass thermal applications for households/small users,Waste to energy
+,Gold,AMS-III.G. Landfill methane recovery,Waste to energy
+,Gold,GS TPDDTEC v 3.,Cleaner cooking
+,Gold,GS Methodology for Improved Cook stoves and Kitchen Regimes v2.,Cleaner cooking
+,Gold,AMS-I.K. Solar cookers for households,Solar
+,Gold,GS TPDDTEC v 1.,Cleaner cooking
+,Gold,GS Revised Methodology for Manure Management Systems and MSW v1.,Agriculture
+,Gold,AMS-III.AO. Methane recovery through controlled anaerobic digestion,Waste to energy
+,Gold,GS TPDDTEC v 2.,Cleaner cooking
+,Gold,AMS-III.BL.¬†Integrated methodology for electrification of communities v2,Industrial efficiency
+,Gold,GS MS Microscale Electrification and Energization v1.,Mixed renewables
+,Gold,AMS-III.BG Emission reduction through sustainable charcoal production and consumption,Cleaner cooking
+,Gold,AMS-III.I. Avoidance of methane production in wastewater treatment through replacement of anaerobic systems by aerobic systems,Wastewater treatment
+,Gold,"AM0019 Renewable energy project activities replacing part of the electricity production of one single fossil-fuel-fired power plant that stands alone or supplies electricity to a grid = 21, excluding biomass projects",Bioenergy
+,Gold,GS Alternative Ignition Coal Fires v1.,Industrial efficiency
+,Gold,ACM0018 Electricity generation from biomass residues in power-only plants,Bioenergy
+,Gold,"AMS-III.Z. Fuel Switch, process improvement and energy efficiency in brick manufacture",Efficient appliances
+,Gold,GS SS Ecologically Sound Fuel Switch to Biomass v1.,Bioenergy
+,Gold,GS Advanced Hull Coatings v2.,Industrial efficiency
+,Gold,AM0058 Introduction of a district heating system,Heat recovery
+,Gold,AM0036 Fuel switch from fossil fuels to biomass residues in heat generation equipment,Bioenergy
+,Gold,AMS-III.Q. Waste Energy Recovery (gas/heat/pressure) Projects,Waste to energy
+,Gold,GS Biodiesel from Waste Oil or Fat v1.,Bioenergy
+,Gold,AM0048 New cogeneration facilities supplying electricity and/or steam to multiple customers and displacing grid/off-grid steam and electricity generation with more carbon-intensive fuels,Heat recovery
+,Gold,AMS-II.J. Demand-side activities for efficient lighting technologies,Efficient appliances
+,Gold,AMS-I.J. Solar water heating systems (SWH),Solar
+,Gold,AMS-II.M Demand-side energy efficiency activities for installation of low-flow hot water savings devices,Efficient appliances
+VMR0014,Verra,VMR0014; VM0038,Forest management
+VM0047,Verra,VM0047,Forest management
+ACM0022,Verra,ACM0022,Landfill gas
+AMS-I.C.,Verra,AMS-I.C.; AMS-III.D.,Mixed renewables
+VM0042,Verra,VM0042,Forest management
+VM0033,Verra,VM0033,Reforestation and ecosystem restoration
+VM0044,Verra,VM0044,Agriculture
+AMS-III.D.,Verra,AMS-III.D.; AMS-III.E.; AMS-III.F.,Agriculture
+AMS-I.F.,Verra,AMS-I.F.,Bioenergy
+VM0051,Verra,VM0051,Biochar
+AMS-I.F.,Verra,AMS-I.F.; VMR0014; VM0038,Bioenergy
+VM0010,Verra,VM0010,Forest management
+AMS-I.E.,Verra,AMS-I.E.; AMS-III.AV.,Bioenergy
+VM0048,Verra,VM0048,Reforestation and ecosystem restoration
+VM0007,Verra,VM0007; VM0048,Forest management
+AMS-III.AR,Verra,AMS-III.AR,Fossil gas leaks
+VMR0014,Verra,VMR0014,Forest management
+AMS-III.F.,Verra,AMS-III.F.,Agriculture
+VM0041,Verra,VM0041,Forest management
+VM0007,Verra,VM0007; VM0047,Forest management
+ACM0001,Verra,ACM0001,Landfill gas
+VM0043,Verra,VM0043,Agriculture
+AMS-III.AO.,Verra,AMS-III.AO.; AMS-III.AQ,Waste management
+VM0038,Verra,VM0038,Forest management
+VM0032,Verra,VM0032,Fossil gas leaks
+VMR0007,Verra,VMR0007; VMR0008,Forest management
+VM0007,Verra,VM0007,Forest management
+VM0050,Verra,VM0050,Fossil gas leaks
+AMS-I.C.,Verra,AMS-I.C.; AMS-III.D.; AMS-III.AO.,Mixed renewables
+VM0032,Verra,VM0032; VM0042,Fossil gas leaks
+AMS-III.D.,Verra,AMS-III.D.; AMS-III.AO.; AMS-III.AQ,Agriculture
+ACM0008,Verra,ACM0008,Hydropower
+VM0007,Verra,VM0007; VM0042,Forest management
+VM0016,Verra,VM0016,Agriculture
+AMS-III.BM,Verra,AMS-III.BM,Bioenergy
+VM0012,Verra,VM0012,Waste management
+VM0034,Verra,VM0034,Reforestation and ecosystem restoration
+VM0049,Verra,VM0049,Agriculture
+AMS-III.H.,Verra,AMS-III.H.,Landfill gas
+AMS-III.E.,Verra,AMS-III.E.,Agriculture
+VMR0007,Verra,VMR0007,Forest management
+ACM0002,Verra,ACM0002,Mixed renewables
+VM0035,Verra,VM0035,Agriculture
+AM0023,Verra,AM0023,Energy storage
+AMS-III.C.,Verra,AMS-III.C.,Waste to energy
+VM0003,Verra,VM0003,Afforestation/Reforestation
+AMS-I.F.,Verra,AMS-I.F.; AMS-III.C.; VM0038,Bioenergy
+AMS-III.D.,Verra,AMS-III.D.,Agriculture
+AMS-I.D.,Verra,AMS-I.D.; AMS-III.H.,Mixed renewables
+AMS-III.D.,Verra,AMS-III.D.; AMS-III.F.; VMR0007,Agriculture
+ACM0006,Verra,ACM0006; AMS-III.E.,Bioenergy
+VMR0004,Verra,VMR0004; VM0038; Methodology Under Development,Forest management
+ACM0017,Verra,ACM0017,Forest management
+AMS-III.AK,Verra,AMS-III.AK,Cleaner cooking
+AMS-III.AO.,Verra,AMS-III.AO.,Waste management
+ACM0016,Verra,ACM0016,Mixed renewables
+VM0008,Verra,VM0008,Industrial efficiency
+VM0045,Verra,VM0045,Reforestation and ecosystem restoration
+VM0007,Verra,VM0007; VM0011,Forest management
+AMS-I.D.,Verra,AMS-I.D.; AMS-II.C.,Mixed renewables
+VM0036,Verra,VM0036,Fossil gas leaks
+ACM0010,Verra,ACM0010,Industrial efficiency
+VM0015,Verra,VM0015,Forest management
+AMS-I.F.,Verra,AMS-I.F.; AMS-III.C.,Bioenergy
+VM0007,Verra,VM0007; VM0033,Forest management
+AMS-I.D.,Verra,AMS-I.D.,Mixed renewables
+VMR0008,Verra,VMR0008,Forest management
+AMS-III.AV.,Verra,AMS-III.AV.,Bioenergy
+AMS-II.C.,Verra,AMS-II.C.,Efficient appliances
+AMS-I.C.,Verra,AMS-I.C.,Mixed renewables
+AMS-I.L.,Verra,AMS-I.L.,Solar
+AM0080,Verra,AM0080,Solar
+AMS-III.D.,Verra,AMS-III.D.; AMS-III.F.,Agriculture
+AMS-I.F.,Verra,AMS-I.F.; AMS-III.D.,Bioenergy
+AMS-I.D.,Verra,AMS-I.D.; AMS-III.G.,Mixed renewables
+AMS-III.D.,Verra,AMS-III.D.; AMS-III.H.; AMS-III.AO.,Agriculture
+VM0047,Verra,VM0047; VM0048,Forest management
+VM0046,Verra,VM0046,Reforestation and ecosystem restoration
+VM0042,Verra,VM0042; VM0047,Forest management
+VM0033,Verra,VM0033; VM0042,Reforestation and ecosystem restoration
+VM0033,Verra,VM0033; VM0047,Reforestation and ecosystem restoration
+AMS-III.I.,Verra,AMS-III.I.,Industrial efficiency
+VMR0006,Verra,VMR0006,Mixed renewables
+VM0026,Verra,VM0026,Afforestation/Reforestation
+AMS-III.Q,Verra,AMS-III.Q,Agriculture
+AMS-I.E.,Verra,AMS-I.E.; VMR0006; AMS-III.AV.,Bioenergy
+AMS-I.E.,Verra,AMS-I.E.; AMS-III.D.,Bioenergy
+AMS-I.D.,Verra,AMS-I.D.; AMS-I.F.,Mixed renewables
+AMS-III.Z,Verra,AMS-III.Z,Efficient appliances
+VMR0009,Verra,VMR0009,Fossil gas leaks
+AMS-I.C.,Verra,AMS-I.C.; AMS-III.D.; AMS-III.H.; AMS-III.AO.,Mixed renewables
+AMS-III.Y,Verra,AMS-III.Y,Agriculture
+AMS-II.G.,Verra,AMS-II.G.,Efficient appliances
+AMS-I.C.,Verra,AMS-I.C.; AMS-III.H.,Mixed renewables
+ACM0012,Verra,ACM0012; AMS-III.Q,Waste to energy
+AMS-I.F.,Verra,AMS-I.F.; AM0123,Bioenergy
+VM0042,Verra,VM0042; VM0048,Forest management
+AMS-I.E.,Verra,AMS-I.E.,Bioenergy
+VM0009,Verra,VM0009,Agriculture
+ACM0003,Verra,ACM0003,Waste to energy
+AMS-I.F.,Verra,AMS-I.F.; AMS-III.H.,Bioenergy
+AM0123,Verra,AM0123,Bioenergy
+AMS-I.C.,Verra,AMS-I.C.; AMS-III.AO.,Mixed renewables
+AM0047,Verra,AM0047,Landfill gas
+AM0065,Verra,AM0065,Industrial efficiency
+AR-ACM0003,Verra,AR-ACM0003,Afforestation/Reforestation
+Methodology Under Development,Verra,Methodology Under Development,Industrial efficiency
+VM0007,Verra,VM0007; VM0015,Forest management
+AM0090,Verra,AM0090,Hydropower
+AMS-I.B.,Verra,AMS-I.B.,Solar
+AR-AMS0007,Verra,AR-AMS0007,Afforestation/Reforestation
+AMS-I.C.,Verra,AMS-I.C.; AMS-I.F.; AMS-III.H.,Mixed renewables
+VM0041,Verra,VM0041; VM0042,Forest management
+AMS-II.G.,Verra,AMS-II.G.; VMR0006,Efficient appliances
+AMS-II.E.,Verra,AMS-II.E.,Efficient appliances
+ACM0021,Verra,ACM0021,Grid efficiency
+AMS-I.D.,Verra,AMS-I.D.; AMS-III.F.; AMS-III.Y,Mixed renewables
+AMS-III.AJ.,Verra,AMS-III.AJ.,Agriculture
+AR-AM0003,Verra,AR-AM0003,Afforestation/Reforestation
+AMS-II.S.,Verra,AMS-II.S.,Efficient appliances
+AM0057,Verra,AM0057; Methodology Under Development,Bioenergy
+AM0073,Verra,AM0073,Fossil gas leaks
+AMS-III.H.,Verra,AMS-III.H.; AMS-III.AQ,Landfill gas
+AMS-III.S.,Verra,AMS-III.S.,Agriculture
+AMS-I.D.,Verra,AMS-I.D.; AMS-III.E.,Mixed renewables
+AMS-I.F.,Verra,AMS-I.F.; AMS-III.E.; VM0044,Bioenergy
+Climate Action Reserve Landfill Project Protocol,Verra,Climate Action Reserve Landfill Project Protocol,Waste to energy
+ACM0014,Verra,ACM0014,Industrial efficiency
+AMS-III.L.,Verra,AMS-III.L.,Wastewater treatment
+AMS-I.D.,Verra,AMS-I.D.; AMS-III.D.,Mixed renewables
+VM0039,Verra,VM0039,Bioenergy
+AM0110,Verra,AM0110,Industrial efficiency
+AR-ACM0003,Verra,AR-ACM0003; VM0042,Afforestation/Reforestation
+AM0009,Verra,AM0009,Waste to energy
+AMS-III.D.,Verra,AMS-III.D.; AMS-III.AO.,Agriculture
+AM0072,Verra,AM0072,Hydropower
+AMS-I.D.,Verra,AMS-I.D.; AMS-I.F.; AMS-III.H.,Mixed renewables
+AMS-I.C.,Verra,AMS-I.C.; AMS-III.D.; AMS-III.H.,Mixed renewables
+AMS-I.A.,Verra,AMS-I.A.,Solar
+VM0026,Verra,VM0026; AR-ACM0003; VM0042,Afforestation/Reforestation
+AMS-I.E.,Verra,AMS-I.E.; AMS-III.R.,Bioenergy
+AMS-I.C.,Verra,AMS-I.C.; AMS-III.AO.; VM0042,Mixed renewables
+VM0017,Verra,VM0017,Forest management
+VM0015,Verra,VM0015; VM0017,Forest management
+AM0073,Verra,AM0073; AMS-III.AQ,Fossil gas leaks
+ACM0001,Verra,ACM0001; ACM0022,Landfill gas
+AMS-II.L.,Verra,AMS-II.L.,Efficient appliances
+AMS-I.C.,Verra,AMS-I.C.; AMS-III.G.,Mixed renewables
+VMR0006,Verra,VMR0006; VM0050,Mixed renewables
+AMS-III.AU,Verra,AMS-III.AU,Mixed renewables
+AMS-III.BA,Verra,AMS-III.BA,Biochar
+AMS-III.J.,Verra,AMS-III.J.,Cleaner cooking
+VMR0006,Verra,VMR0006; AMS-III.BG,Mixed renewables
+VM0024,Verra,VM0024; VM0021,Agriculture
+VM0018,Verra,VM0018; ACM0022,Forest management
+VM0006,Verra,VM0006,Afforestation/Reforestation
+AMS-III.G.,Verra,AMS-III.G.,Landfill gas
+VM0040,Verra,VM0040,Cleaner cooking
+AMS-III.AU,Verra,AMS-III.AU; VM0042,Mixed renewables
+AR-AM0014,Verra,AR-AM0014,Afforestation/Reforestation
+VM0015,Verra,VM0015; VM0037,Forest management
+VM0005,Verra,VM0005,Forest management
+AMS-I.D.,Verra,AMS-I.D.; AMS-II.E.,Mixed renewables
+AR-AMS0007,Verra,AR-AMS0007; VM0006,Afforestation/Reforestation
+VM0022,Verra,VM0022,Reforestation and ecosystem restoration
+AR-AM0010,Verra,AR-AM0010,Afforestation/Reforestation
+AMS-III.F.,Verra,AMS-III.F.; VM0042,Agriculture
+AMS-II.F.,Verra,AMS-II.F.,Efficient appliances
+AMS-III.C.,Verra,AMS-III.C.; VM0038,Waste to energy
+AMS-III.AF.,Verra,AMS-III.AF.,Agriculture
+VM0037,Verra,VM0037,Forest management
+AMS-I.D.,Verra,AMS-I.D.; AMS-III.Y,Mixed renewables
+AMS-III.D.,Verra,AMS-III.D.; ACM0022,Agriculture
+AMS-I.F.,Verra,AMS-I.F.; AMS-III.D.; AMS-III.AO.; VM0042,Bioenergy
+VMR0006,Verra,VMR0006; AMS-III.AV.,Mixed renewables
+VM0005,Verra,VM0005; VM0007; VM0017,Forest management
+AMS-III.E.,Verra,AMS-III.E.; AMS-III.F.,Agriculture
+VM0021,Verra,VM0021,Reforestation and ecosystem restoration
+VM0018,Verra,VM0018,Forest management
+AMS-I.D.,Verra,AMS-I.D.; AMS-III.G.; AMS-III.AO.,Mixed renewables
+ACM0006,Verra,ACM0006,Bioenergy
+VM0003,Verra,VM0003; AR-ACM0003,Afforestation/Reforestation
+VM0025,Verra,VM0025,Reforestation and ecosystem restoration
+AMS-II.G.,Verra,AMS-II.G.; VMR0006; AMS-III.AR,Efficient appliances
+AMS-II.G.,Verra,AMS-II.G.; AMS-III.AR,Efficient appliances
+AMS-III.F.,Verra,AMS-III.F.; AMS-III.AO.,Agriculture
+AMS-III.F.,Verra,AMS-III.F.; VM0021,Agriculture
+AR-AMS0007,Verra,AR-AMS0007; AR-ACM0003,Afforestation/Reforestation
+AMS-III.AO.,Verra,AMS-III.AO.; ACM0022,Waste management
+AMS-I.D.,Verra,AMS-I.D.; AMS-I.F.; AMS-III.D.,Mixed renewables
+AMS-I.J,Verra,AMS-I.J,Solar
+AMS-III.Y,Verra,AMS-III.Y; VMR0003,Agriculture
+AR-AMS0003,Verra,AR-AMS0003; AR-AMS0007; AR-ACM0003; AR-AM0014,Afforestation/Reforestation
+AMS-I.C.,Verra,AMS-I.C.; AMS-I.D.; AMS-III.H.,Mixed renewables
+AMS-II.D.,Verra,AMS-II.D.,Efficient appliances
+AM0010,Verra,AM0010,Hydropower
+AMS-III.B.,Verra,AMS-III.B.,Landfill gas
+AMS-I.J,Verra,AMS-I.J; AMS-I.L.,Solar
+AMS-I.F.,Verra,AMS-I.F.; AMS-II.E.,Bioenergy
+ACM0012,Verra,ACM0012,Waste to energy
+AR-ACM0001,Verra,AR-ACM0001,Afforestation/Reforestation
+AM0014,Verra,AM0014; VM0007; AR-ACM0003,Afforestation/Reforestation
+AM0028,Verra,AM0028,Mixed renewables
+AM0034,Verra,AM0034,Mixed renewables
+AMS-II.C.,Verra,AMS-II.C.; AMS-II.G.,Efficient appliances
+AM0025,Verra,AM0025,Solar
+ACM0009,Verra,ACM0009,Fossil gas leaks
+ACM0002,Verra,ACM0002; AMS-I.D.,Mixed renewables
+ACM0002,Verra,ACM0002; ACM0006,Mixed renewables
+ACM0002,Verra,ACM0002; AMS-I.D.; AMS-II.D.,Mixed renewables
+AMS-I.C.,Verra,AMS-I.C.; AMS-III.B.,Mixed renewables
+ACM0001,Verra,ACM0001; AMS-I.D.,Landfill gas
+ACM0002,Verra,ACM0002; ACM0012,Mixed renewables
+AM0029,Verra,AM0029,Hydropower
+AM0046,Verra,AM0046,Wastewater treatment
+ACM0013,Verra,ACM0013,Industrial efficiency
+AMS-II.J.,Verra,AMS-II.J.,Efficient appliances
+ACM0001,Verra,ACM0001; ACM0002,Landfill gas
+ACM0005,Verra,ACM0005,Wastewater treatment
+AM0036,Verra,AM0036,Industrial efficiency
+AM0070,Verra,AM0070,Wind
+AMS-III.BC.,Verra,AMS-III.BC.,Electric vehicles
+ACM0018,Verra,ACM0018,Industrial efficiency
+ACM0007,Verra,ACM0007,Mixed renewables
+AMS-I.C.,Verra,AMS-I.C.; AMS-III.D.; AMS-III.R.,Mixed renewables
+ACM0002,Verra,ACM0002; AM0029,Mixed renewables
+VCS v1 Project Specific,Verra,VCS v1 Project Specific,Industrial efficiency
+ACM0001,Verra,ACM0001; AMS-III.B.,Landfill gas
+AMS-I.C.,Verra,AMS-I.C.; AMS-III.R.,Mixed renewables
+ACM0022,Verra,ACM0022; Methodology Under Development,Landfill gas
+AM0024,Verra,AM0024,Wind
+AM0001,Verra,AM0001,Industrial efficiency
+AMS-II.B.,Verra,AMS-II.B.,Efficient appliances
+ACM0002,Verra,ACM0002; ACM0022,Mixed renewables
+AM0026,Verra,AM0026,Hydropower
+AMS-I.D.,Verra,AMS-I.D.; AMS-III.D.; AMS-III.H.,Mixed renewables
+AM0016,Verra,AM0016,Industrial efficiency
+AM0028,Verra,AM0028; AM0034; ACM0019,Mixed renewables
+AM0034,Verra,AM0034; ACM0019,Mixed renewables
+VM0011,Verra,VM0011,Forest management
+AMS-I.C.,Verra,AMS-I.C.; AMS-III.E.,Mixed renewables
+AR-AMS0004,Verra,AR-AMS0004,Afforestation/Reforestation
+AR-AMS0005,Verra,AR-AMS0005,Afforestation/Reforestation
+VM0005,Verra,VM0005; AR-ACM0003,Forest management
+AR-AMS0003,Verra,AR-AMS0003,Afforestation/Reforestation
+AM0030,Verra,AM0030,Fossil gas leaks
+ACM0011,Verra,ACM0011,Landfill gas
+ACM0017,Verra,ACM0017; VM0017,Forest management
+AM0059,Verra,AM0059,Waste to energy
+VMR0001,Verra,VMR0001,Forest management
+AMS-III.M.,Verra,AMS-III.M.,Wastewater treatment
+AR-AMS0002,Verra,AR-AMS0002,Afforestation/Reforestation
+AMS-II.H.,Verra,AMS-II.H.,Efficient appliances
+AR-ACM0002,Verra,AR-ACM0002,Afforestation/Reforestation
+AM0064,Verra,AM0064,Bioenergy
+AMS-III.R.,Verra,AMS-III.R.,Fossil gas leaks
+AR-AMS0001,Verra,AR-AMS0001,Afforestation/Reforestation
+AR-AMS0006,Verra,AR-AMS0006,Afforestation/Reforestation
+VM0007,Verra,VM0007; VM0010,Forest management
+AR-AM0005,Verra,AR-AM0005; AR-ACM0003,Afforestation/Reforestation
+ACM0012,Verra,ACM0012; AMS-I.C.,Waste to energy
+AR-AM0005,Verra,AR-AM0005,Afforestation/Reforestation
+VM0007,Verra,VM0007; AR-ACM0003,Forest management
+VM0019,Verra,VM0019,Reforestation and ecosystem restoration
+AM0031,Verra,AM0031,Grid efficiency
+AM0028,Verra,AM0028; AM0034,Mixed renewables
+AM0014,Verra,AM0014,Afforestation/Reforestation
+VM0023,Verra,VM0023,Forest management
+ACM0002,Verra,ACM0002; AMS-I.D.; AMS-I.F.,Mixed renewables
+AR-AM0007,Verra,AR-AM0007,Afforestation/Reforestation
+AMS-III.AS.,Verra,AMS-III.AS.,Agriculture
+VM0013,Verra,VM0013,Landfill gas
+AMS-I.J,Verra,AMS-I.J; AMS-I.F.; AMS-III.AR,Solar
+VMR0002,Verra,VMR0002,Fossil gas leaks
+VM0004,Verra,VM0004,Agriculture
+ACM0008,Verra,ACM0008; VMR0002,Hydropower
+VM0005,Verra,VM0005; VM0015; Methodology Under Development,Forest management
+VM0001,Verra,VM0001,Waste to energy
+AMS-III.BB.,Verra,AMS-III.BB.,Biochar
+VM0025,Verra,VM0025; VMD0038,Reforestation and ecosystem restoration
+VM0014,Verra,VM0014,Reforestation and ecosystem restoration
+AMS-I.C.,Verra,AMS-I.C.; AMS-I.D.,Mixed renewables
+AR-AM0002,Verra,AR-AM0002,Afforestation/Reforestation

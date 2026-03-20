@@ -1,0 +1,942 @@
+Registry,Project Type Category,Vintage Year,Total Credits Issued
+ACR,Afforestation/Reforestation,2009.0,1119
+ACR,Afforestation/Reforestation,2010.0,42898
+ACR,Afforestation/Reforestation,2011.0,3706128
+ACR,Afforestation/Reforestation,2012.0,369621
+ACR,Afforestation/Reforestation,2013.0,477297
+ACR,Afforestation/Reforestation,2014.0,182626
+ACR,Afforestation/Reforestation,2015.0,1054928
+ACR,Afforestation/Reforestation,2016.0,165976
+ACR,Afforestation/Reforestation,2017.0,1107890
+ACR,Afforestation/Reforestation,2018.0,308550
+ACR,Afforestation/Reforestation,2019.0,1364185
+ACR,Afforestation/Reforestation,2020.0,1179164
+ACR,Afforestation/Reforestation,2021.0,804970
+ACR,Afforestation/Reforestation,2022.0,716959
+ACR,Agriculture,2011.0,2
+ACR,Agriculture,2013.0,19183
+ACR,Agriculture,2014.0,24558
+ACR,Agriculture,2015.0,237423
+ACR,Agriculture,2016.0,270942
+ACR,Agriculture,2017.0,314532
+ACR,Agriculture,2018.0,288967
+ACR,Agriculture,2019.0,298295
+ACR,Agriculture,2020.0,190533
+ACR,Agriculture,2021.0,99693
+ACR,Agriculture,2022.0,44778
+ACR,Agriculture,2023.0,40128
+ACR,Agriculture,2024.0,23141
+ACR,Bioenergy,2005.0,316
+ACR,Bioenergy,2006.0,352
+ACR,Bioenergy,2007.0,342
+ACR,Bioenergy,2008.0,128
+ACR,Electric vehicles,2003.0,3832
+ACR,Electric vehicles,2004.0,5689
+ACR,Electric vehicles,2005.0,13528
+ACR,Electric vehicles,2006.0,52424
+ACR,Electric vehicles,2007.0,138386
+ACR,Electric vehicles,2008.0,163974
+ACR,Electric vehicles,2009.0,112296
+ACR,Electric vehicles,2010.0,63490
+ACR,Electric vehicles,2011.0,80065
+ACR,Electric vehicles,2012.0,91789
+ACR,Electric vehicles,2013.0,104540
+ACR,Electric vehicles,2014.0,104696
+ACR,Electric vehicles,2015.0,6945
+ACR,Electric vehicles,2016.0,5597
+ACR,Electric vehicles,2017.0,3528
+ACR,Electric vehicles,2018.0,2565
+ACR,Electric vehicles,2019.0,1857
+ACR,Forest management,2011.0,16032
+ACR,Forest management,2012.0,4472885
+ACR,Forest management,2013.0,1190083
+ACR,Forest management,2014.0,2419251
+ACR,Forest management,2015.0,16294597
+ACR,Forest management,2016.0,31791840
+ACR,Forest management,2017.0,28178218
+ACR,Forest management,2018.0,14841681
+ACR,Forest management,2019.0,19376347
+ACR,Forest management,2020.0,13251185
+ACR,Forest management,2021.0,14907749
+ACR,Forest management,2022.0,16353828
+ACR,Forest management,2023.0,17143796
+ACR,Forest management,2024.0,13443770
+ACR,Forest management,2025.0,685284
+ACR,Fossil gas leaks,2014.0,280667
+ACR,Fossil gas leaks,2015.0,490301
+ACR,Fossil gas leaks,2016.0,504479
+ACR,Fossil gas leaks,2017.0,664696
+ACR,Fossil gas leaks,2018.0,677134
+ACR,Fossil gas leaks,2019.0,661055
+ACR,Fossil gas leaks,2020.0,637905
+ACR,Fossil gas leaks,2021.0,1317563
+ACR,Fossil gas leaks,2022.0,2005210
+ACR,Fossil gas leaks,2023.0,3122394
+ACR,Fossil gas leaks,2024.0,3721981
+ACR,Fossil gas leaks,2025.0,1303517
+ACR,Heat recovery,2003.0,135250
+ACR,Heat recovery,2004.0,164750
+ACR,Heat recovery,2005.0,139035
+ACR,Industrial efficiency,2003.0,1898382
+ACR,Industrial efficiency,2004.0,3004613
+ACR,Industrial efficiency,2005.0,3081011
+ACR,Industrial efficiency,2008.0,319
+ACR,Industrial efficiency,2009.0,61523
+ACR,Industrial efficiency,2010.0,97226
+ACR,Industrial efficiency,2011.0,94841
+ACR,Industrial efficiency,2012.0,414463
+ACR,Industrial efficiency,2013.0,955174
+ACR,Industrial efficiency,2014.0,1039469
+ACR,Industrial efficiency,2015.0,1222853
+ACR,Industrial efficiency,2016.0,2059974
+ACR,Industrial efficiency,2017.0,2084927
+ACR,Industrial efficiency,2018.0,2554864
+ACR,Industrial efficiency,2019.0,12056982
+ACR,Industrial efficiency,2020.0,16360943
+ACR,Industrial efficiency,2021.0,13611270
+ACR,Industrial efficiency,2022.0,13441893
+ACR,Industrial efficiency,2023.0,17416015
+ACR,Industrial efficiency,2024.0,9351552
+ACR,Industrial efficiency,2025.0,3380744
+ACR,Landfill gas,1998.0,48826
+ACR,Landfill gas,1999.0,74895
+ACR,Landfill gas,2000.0,114507
+ACR,Landfill gas,2001.0,114478
+ACR,Landfill gas,2002.0,110796
+ACR,Landfill gas,2003.0,309610
+ACR,Landfill gas,2004.0,320249
+ACR,Landfill gas,2005.0,358764
+ACR,Landfill gas,2006.0,969426
+ACR,Landfill gas,2007.0,727364
+ACR,Landfill gas,2008.0,244983
+ACR,Landfill gas,2009.0,108593
+ACR,Landfill gas,2010.0,128923
+ACR,Landfill gas,2011.0,40121
+ACR,Landfill gas,2018.0,36604
+ACR,Landfill gas,2019.0,50086
+ACR,Landfill gas,2020.0,62370
+ACR,Landfill gas,2021.0,133689
+ACR,Landfill gas,2022.0,188689
+ACR,Landfill gas,2023.0,291359
+ACR,Landfill gas,2024.0,254243
+ACR,Mixed renewables,2004.0,5
+ACR,Mixed renewables,2005.0,491
+ACR,Mixed renewables,2006.0,1638
+ACR,Mixed renewables,2007.0,1948
+ACR,Mixed renewables,2009.0,24245
+ACR,Mixed renewables,2010.0,132737
+ACR,Mixed renewables,2011.0,91970
+ACR,Mixed renewables,2012.0,102825
+ACR,Mixed renewables,2013.0,434180
+ACR,Mixed renewables,2014.0,141643
+ACR,Mixed renewables,2015.0,155810
+ACR,Mixed renewables,2016.0,258088
+ACR,Mixed renewables,2017.0,133306
+ACR,Mixed renewables,2018.0,195071
+ACR,Mixed renewables,2019.0,189339
+ACR,Mixed renewables,2020.0,84960
+ACR,Mixed renewables,2021.0,61672
+ACR,Nitric acid,2001.0,125000
+ACR,Oil Field Gas Recovery,2000.0,991518
+ACR,Oil Field Gas Recovery,2001.0,718342
+ACR,Oil Field Gas Recovery,2002.0,736816
+ACR,Oil Field Gas Recovery,2003.0,1322814
+ACR,Oil Field Gas Recovery,2004.0,2739431
+ACR,Oil Field Gas Recovery,2005.0,4129065
+ACR,Oil Field Gas Recovery,2006.0,3281336
+ACR,Oil Field Gas Recovery,2007.0,4372382
+ACR,Oil Field Gas Recovery,2008.0,3528103
+ACR,Oil Field Gas Recovery,2009.0,109153
+ACR,Oil Field Gas Recovery,2010.0,116108
+ACR,Oil Field Gas Recovery,2011.0,105596
+ACR,Oil Field Gas Recovery,2012.0,92762
+ACR,Oil Field Gas Recovery,2013.0,84182
+ACR,Oil Field Gas Recovery,2023.0,2059142
+ACR,Oil Field Gas Recovery,2024.0,2396824
+ACR,Oil Field Gas Recovery,2025.0,442217
+ACR,Reforestation and ecosystem restoration,2011.0,170
+ACR,Reforestation and ecosystem restoration,2012.0,683
+ACR,Reforestation and ecosystem restoration,2014.0,5316
+ACR,Reforestation and ecosystem restoration,2015.0,13713
+ACR,Reforestation and ecosystem restoration,2016.0,12171
+ACR,Reforestation and ecosystem restoration,2017.0,11233
+ACR,Reforestation and ecosystem restoration,2018.0,16266
+ACR,Rewilding,2010.0,13891
+ACR,Rewilding,2011.0,15370
+ACR,Rewilding,2012.0,20618
+ACR,Rewilding,2013.0,14795
+ACR,Rewilding,2014.0,17243
+ACR,Rewilding,2015.0,17587
+ACR,Rewilding,2016.0,17782
+ACR,Rewilding,2017.0,16809
+ACR,Rewilding,2018.0,16244
+ACR,Rewilding,2019.0,15858
+ACR,Rice cultivation,2012.0,7
+ACR,Rice cultivation,2013.0,226
+ACR,Rice cultivation,2014.0,170
+ACR,Rice cultivation,2015.0,194
+ACR,Waste to energy,2003.0,8072
+ACR,Waste to energy,2004.0,5848
+ACR,Waste to energy,2005.0,4409
+ACR,Waste to energy,2006.0,3632
+ACR,Waste to energy,2007.0,7998
+ACR,Waste to energy,2008.0,13210
+ACR,Waste to energy,2009.0,1033
+ACR,Waste to energy,2010.0,170626
+ACR,Waste to energy,2011.0,409787
+ACR,Waste to energy,2012.0,502389
+ACR,Waste to energy,2013.0,639196
+ACR,Waste to energy,2014.0,278098
+ACR,Waste to energy,2015.0,470530
+ACR,Wastewater treatment,2008.0,100000
+ACR,Wastewater treatment,2019.0,11295
+ARB,Agriculture,2007.0,16834
+ARB,Agriculture,2008.0,7
+ARB,Agriculture,2009.0,19750
+ARB,Agriculture,2010.0,126499
+ARB,Agriculture,2011.0,279239
+ARB,Agriculture,2012.0,348882
+ARB,Agriculture,2013.0,550902
+ARB,Agriculture,2014.0,792806
+ARB,Agriculture,2015.0,959364
+ARB,Agriculture,2016.0,1166696
+ARB,Agriculture,2017.0,1158511
+ARB,Agriculture,2018.0,1025466
+ARB,Agriculture,2019.0,1001108
+ARB,Agriculture,2020.0,770208
+ARB,Agriculture,2021.0,520078
+ARB,Agriculture,2022.0,430742
+ARB,Agriculture,2023.0,361786
+ARB,Agriculture,2024.0,136952
+ARB,Forest management,2004.0,9602
+ARB,Forest management,2005.0,188025
+ARB,Forest management,2006.0,296706
+ARB,Forest management,2007.0,2976009
+ARB,Forest management,2008.0,1241585
+ARB,Forest management,2009.0,940220
+ARB,Forest management,2010.0,1526633
+ARB,Forest management,2011.0,2650606
+ARB,Forest management,2012.0,1753177
+ARB,Forest management,2013.0,5400641
+ARB,Forest management,2014.0,11084831
+ARB,Forest management,2015.0,15713220
+ARB,Forest management,2016.0,48639658
+ARB,Forest management,2017.0,35754491
+ARB,Forest management,2018.0,26256701
+ARB,Forest management,2019.0,29793198
+ARB,Forest management,2020.0,11974666
+ARB,Forest management,2021.0,12085469
+ARB,Forest management,2022.0,6572556
+ARB,Forest management,2023.0,7102605
+ARB,Forest management,2024.0,7225851
+ARB,Forest management,2025.0,24582
+ARB,Fossil gas leaks,2006.0,90135
+ARB,Fossil gas leaks,2007.0,29266
+ARB,Fossil gas leaks,2008.0,68452
+ARB,Fossil gas leaks,2009.0,884871
+ARB,Fossil gas leaks,2010.0,120324
+ARB,Fossil gas leaks,2011.0,221106
+ARB,Fossil gas leaks,2012.0,227218
+ARB,Fossil gas leaks,2013.0,472326
+ARB,Fossil gas leaks,2014.0,1046653
+ARB,Fossil gas leaks,2015.0,413493
+ARB,Fossil gas leaks,2016.0,1073406
+ARB,Fossil gas leaks,2017.0,1026208
+ARB,Fossil gas leaks,2018.0,976242
+ARB,Fossil gas leaks,2019.0,776506
+ARB,Fossil gas leaks,2020.0,996501
+ARB,Fossil gas leaks,2021.0,1740132
+ARB,Fossil gas leaks,2022.0,2264800
+ARB,Fossil gas leaks,2023.0,3449267
+ARB,Fossil gas leaks,2024.0,4279389
+ARB,Fossil gas leaks,2025.0,2595031
+ARB,Industrial efficiency,2010.0,916844
+ARB,Industrial efficiency,2011.0,2173459
+ARB,Industrial efficiency,2012.0,2736536
+ARB,Industrial efficiency,2013.0,1990597
+ARB,Industrial efficiency,2014.0,1829677
+ARB,Industrial efficiency,2015.0,1814707
+ARB,Industrial efficiency,2016.0,2489208
+ARB,Industrial efficiency,2017.0,2627943
+ARB,Industrial efficiency,2018.0,2767227
+ARB,Industrial efficiency,2019.0,2622819
+ARB,Industrial efficiency,2020.0,1547792
+ARB,Industrial efficiency,2021.0,1277761
+ARB,Industrial efficiency,2022.0,681895
+ARB,Industrial efficiency,2023.0,450209
+ARB,Industrial efficiency,2024.0,853863
+ARB,Industrial efficiency,2025.0,97359
+Gold Standard,Afforestation/Reforestation,2008.0,10
+Gold Standard,Afforestation/Reforestation,2009.0,250
+Gold Standard,Afforestation/Reforestation,2010.0,652
+Gold Standard,Afforestation/Reforestation,2011.0,26504
+Gold Standard,Afforestation/Reforestation,2012.0,41837
+Gold Standard,Afforestation/Reforestation,2013.0,50684
+Gold Standard,Afforestation/Reforestation,2014.0,57911
+Gold Standard,Afforestation/Reforestation,2015.0,57469
+Gold Standard,Afforestation/Reforestation,2016.0,60530
+Gold Standard,Afforestation/Reforestation,2017.0,33761
+Gold Standard,Afforestation/Reforestation,2018.0,32265
+Gold Standard,Afforestation/Reforestation,2019.0,38833
+Gold Standard,Afforestation/Reforestation,2020.0,36103
+Gold Standard,Afforestation/Reforestation,2021.0,30826
+Gold Standard,Afforestation/Reforestation,2022.0,24200
+Gold Standard,Afforestation/Reforestation,2023.0,18217
+Gold Standard,Afforestation/Reforestation,2024.0,20668
+Gold Standard,Afforestation/Reforestation,2025.0,11585
+Gold Standard,Afforestation/Reforestation,2026.0,32218
+Gold Standard,Afforestation/Reforestation,2027.0,73564
+Gold Standard,Afforestation/Reforestation,2028.0,72256
+Gold Standard,Afforestation/Reforestation,2029.0,70686
+Gold Standard,Afforestation/Reforestation,2030.0,802
+Gold Standard,Afforestation/Reforestation,2031.0,512
+Gold Standard,Afforestation/Reforestation,2032.0,473
+Gold Standard,Afforestation/Reforestation,2033.0,425
+Gold Standard,Afforestation/Reforestation,2034.0,451
+Gold Standard,Afforestation/Reforestation,2035.0,474
+Gold Standard,Afforestation/Reforestation,2036.0,507
+Gold Standard,Afforestation/Reforestation,2037.0,2090
+Gold Standard,Afforestation/Reforestation,2038.0,2052
+Gold Standard,Afforestation/Reforestation,2039.0,3446
+Gold Standard,Afforestation/Reforestation,2040.0,3356
+Gold Standard,Afforestation/Reforestation,2041.0,3216
+Gold Standard,Afforestation/Reforestation,2042.0,264
+Gold Standard,Afforestation/Reforestation,2043.0,1938
+Gold Standard,Afforestation/Reforestation,2044.0,1526
+Gold Standard,Afforestation/Reforestation,2045.0,2897
+Gold Standard,Afforestation/Reforestation,2046.0,2903
+Gold Standard,Afforestation/Reforestation,2047.0,2909
+Gold Standard,Afforestation/Reforestation,2048.0,2915
+Gold Standard,Afforestation/Reforestation,2049.0,2920
+Gold Standard,Afforestation/Reforestation,2050.0,169
+Gold Standard,Agriculture,2012.0,3588
+Gold Standard,Agriculture,2013.0,11089
+Gold Standard,Agriculture,2014.0,13772
+Gold Standard,Agriculture,2015.0,20768
+Gold Standard,Agriculture,2017.0,64379
+Gold Standard,Agriculture,2018.0,77448
+Gold Standard,Agriculture,2019.0,24143
+Gold Standard,Agriculture,2020.0,419169
+Gold Standard,Agriculture,2021.0,3364712
+Gold Standard,Agriculture,2022.0,2901932
+Gold Standard,Agriculture,2023.0,631494
+Gold Standard,Bioenergy,2006.0,229473
+Gold Standard,Bioenergy,2007.0,253341
+Gold Standard,Bioenergy,2008.0,11852
+Gold Standard,Bioenergy,2009.0,12268
+Gold Standard,Bioenergy,2010.0,10959
+Gold Standard,Bioenergy,2011.0,23026
+Gold Standard,Bioenergy,2012.0,245415
+Gold Standard,Bioenergy,2013.0,266833
+Gold Standard,Bioenergy,2014.0,495089
+Gold Standard,Bioenergy,2015.0,562457
+Gold Standard,Bioenergy,2016.0,550319
+Gold Standard,Bioenergy,2017.0,749748
+Gold Standard,Bioenergy,2018.0,1012907
+Gold Standard,Bioenergy,2019.0,1360277
+Gold Standard,Bioenergy,2020.0,1401938
+Gold Standard,Bioenergy,2021.0,2094490
+Gold Standard,Bioenergy,2022.0,3819216
+Gold Standard,Bioenergy,2023.0,5210595
+Gold Standard,Bioenergy,2024.0,6346024
+Gold Standard,Bioenergy,2025.0,1143606
+Gold Standard,Cleaner cooking,2007.0,5821
+Gold Standard,Cleaner cooking,2008.0,33122
+Gold Standard,Cleaner cooking,2009.0,124360
+Gold Standard,Cleaner cooking,2010.0,506215
+Gold Standard,Cleaner cooking,2011.0,2842205
+Gold Standard,Cleaner cooking,2012.0,3822328
+Gold Standard,Cleaner cooking,2013.0,4054638
+Gold Standard,Cleaner cooking,2014.0,3967794
+Gold Standard,Cleaner cooking,2015.0,4143327
+Gold Standard,Cleaner cooking,2016.0,3976759
+Gold Standard,Cleaner cooking,2017.0,4019210
+Gold Standard,Cleaner cooking,2018.0,4141281
+Gold Standard,Cleaner cooking,2019.0,4747618
+Gold Standard,Cleaner cooking,2020.0,4952658
+Gold Standard,Cleaner cooking,2021.0,6526276
+Gold Standard,Cleaner cooking,2022.0,8923062
+Gold Standard,Cleaner cooking,2023.0,7911540
+Gold Standard,Cleaner cooking,2024.0,3783872
+Gold Standard,Cleaner cooking,2025.0,29880
+Gold Standard,Efficient appliances,2009.0,376
+Gold Standard,Efficient appliances,2010.0,67980
+Gold Standard,Efficient appliances,2011.0,177386
+Gold Standard,Efficient appliances,2012.0,168269
+Gold Standard,Efficient appliances,2013.0,158171
+Gold Standard,Efficient appliances,2014.0,210594
+Gold Standard,Efficient appliances,2015.0,363614
+Gold Standard,Efficient appliances,2016.0,477147
+Gold Standard,Efficient appliances,2017.0,834697
+Gold Standard,Efficient appliances,2018.0,1266083
+Gold Standard,Efficient appliances,2019.0,1499691
+Gold Standard,Efficient appliances,2020.0,1544347
+Gold Standard,Efficient appliances,2021.0,5448641
+Gold Standard,Efficient appliances,2022.0,6333899
+Gold Standard,Efficient appliances,2023.0,3297315
+Gold Standard,Efficient appliances,2024.0,1907804
+Gold Standard,Electric vehicles,2016.0,45967
+Gold Standard,Electric vehicles,2017.0,46838
+Gold Standard,Geothermal,2020.0,170459
+Gold Standard,Geothermal,2021.0,918338
+Gold Standard,Geothermal,2022.0,926726
+Gold Standard,Geothermal,2023.0,915434
+Gold Standard,Geothermal,2024.0,551154
+Gold Standard,Heat recovery,2014.0,59334
+Gold Standard,Industrial efficiency,2007.0,32009
+Gold Standard,Industrial efficiency,2008.0,54093
+Gold Standard,Industrial efficiency,2009.0,189614
+Gold Standard,Industrial efficiency,2010.0,383242
+Gold Standard,Industrial efficiency,2011.0,554738
+Gold Standard,Industrial efficiency,2012.0,558947
+Gold Standard,Industrial efficiency,2013.0,771892
+Gold Standard,Industrial efficiency,2014.0,877625
+Gold Standard,Industrial efficiency,2015.0,1069854
+Gold Standard,Industrial efficiency,2016.0,986512
+Gold Standard,Industrial efficiency,2017.0,1319504
+Gold Standard,Industrial efficiency,2018.0,1226166
+Gold Standard,Industrial efficiency,2019.0,1202756
+Gold Standard,Industrial efficiency,2020.0,1473517
+Gold Standard,Industrial efficiency,2021.0,1439458
+Gold Standard,Industrial efficiency,2022.0,1214895
+Gold Standard,Industrial efficiency,2023.0,1190367
+Gold Standard,Industrial efficiency,2024.0,979628
+Gold Standard,Industrial efficiency,2025.0,59238
+Gold Standard,Industrial efficiency,2026.0,2418
+Gold Standard,Industrial efficiency,2027.0,2418
+Gold Standard,Industrial efficiency,2028.0,2418
+Gold Standard,Industrial efficiency,2029.0,2418
+Gold Standard,Industrial efficiency,2030.0,2418
+Gold Standard,Industrial efficiency,2031.0,2418
+Gold Standard,Industrial efficiency,2032.0,2418
+Gold Standard,Industrial efficiency,2033.0,1752
+Gold Standard,Industrial efficiency,2034.0,1692
+Gold Standard,Industrial efficiency,2035.0,1692
+Gold Standard,Industrial efficiency,2036.0,1695
+Gold Standard,Industrial efficiency,2037.0,1692
+Gold Standard,Industrial efficiency,2038.0,1695
+Gold Standard,Industrial efficiency,2039.0,1692
+Gold Standard,Industrial efficiency,2040.0,1684
+Gold Standard,Industrial efficiency,2041.0,1687
+Gold Standard,Industrial efficiency,2042.0,1684
+Gold Standard,Industrial efficiency,2043.0,1470
+Gold Standard,Industrial efficiency,2044.0,1470
+Gold Standard,Industrial efficiency,2045.0,1451
+Gold Standard,Industrial efficiency,2046.0,1451
+Gold Standard,Industrial efficiency,2047.0,1451
+Gold Standard,Industrial efficiency,2048.0,1451
+Gold Standard,Industrial efficiency,2049.0,1451
+Gold Standard,Industrial efficiency,2050.0,1451
+Gold Standard,Industrial efficiency,2051.0,1451
+Gold Standard,Industrial efficiency,2052.0,1451
+Gold Standard,Industrial efficiency,2053.0,1451
+Gold Standard,Industrial efficiency,2054.0,1451
+Gold Standard,Industrial efficiency,2055.0,1451
+Gold Standard,Industrial efficiency,2056.0,1451
+Gold Standard,Industrial efficiency,2057.0,1443
+Gold Standard,Industrial efficiency,2058.0,1253
+Gold Standard,Industrial efficiency,2059.0,1165
+Gold Standard,Industrial efficiency,2060.0,2966
+Gold Standard,Landfill gas,2007.0,206996
+Gold Standard,Landfill gas,2008.0,489334
+Gold Standard,Landfill gas,2009.0,573147
+Gold Standard,Landfill gas,2010.0,854339
+Gold Standard,Landfill gas,2011.0,1266389
+Gold Standard,Landfill gas,2012.0,2506106
+Gold Standard,Landfill gas,2013.0,4093222
+Gold Standard,Landfill gas,2014.0,3457581
+Gold Standard,Landfill gas,2015.0,2278055
+Gold Standard,Landfill gas,2016.0,2487208
+Gold Standard,Landfill gas,2017.0,438907
+Gold Standard,Landfill gas,2018.0,372156
+Gold Standard,Landfill gas,2019.0,733690
+Gold Standard,Landfill gas,2020.0,1510928
+Gold Standard,Landfill gas,2021.0,1507074
+Gold Standard,Landfill gas,2022.0,1352957
+Gold Standard,Landfill gas,2023.0,869344
+Gold Standard,Landfill gas,2024.0,223658
+Gold Standard,Mixed renewables,2001.0,8560
+Gold Standard,Mixed renewables,2002.0,16362
+Gold Standard,Mixed renewables,2003.0,17606
+Gold Standard,Mixed renewables,2006.0,30517
+Gold Standard,Mixed renewables,2007.0,287339
+Gold Standard,Mixed renewables,2008.0,1468587
+Gold Standard,Mixed renewables,2009.0,1840754
+Gold Standard,Mixed renewables,2010.0,2173794
+Gold Standard,Mixed renewables,2011.0,3050523
+Gold Standard,Mixed renewables,2012.0,3656633
+Gold Standard,Mixed renewables,2013.0,4766228
+Gold Standard,Mixed renewables,2014.0,5952299
+Gold Standard,Mixed renewables,2015.0,6966187
+Gold Standard,Mixed renewables,2016.0,7932182
+Gold Standard,Mixed renewables,2017.0,8727364
+Gold Standard,Mixed renewables,2018.0,11009455
+Gold Standard,Mixed renewables,2019.0,14723476
+Gold Standard,Mixed renewables,2020.0,17489248
+Gold Standard,Mixed renewables,2021.0,16468413
+Gold Standard,Mixed renewables,2022.0,19213747
+Gold Standard,Mixed renewables,2023.0,12574938
+Gold Standard,Mixed renewables,2024.0,4074080
+Gold Standard,Mixed renewables,2025.0,690626
+Gold Standard,No Methodology Provided,1996.0,764
+Gold Standard,No Methodology Provided,1997.0,1605
+Gold Standard,No Methodology Provided,1998.0,1898
+Gold Standard,No Methodology Provided,1999.0,2988
+Gold Standard,No Methodology Provided,2000.0,3864
+Gold Standard,No Methodology Provided,2001.0,4468
+Gold Standard,No Methodology Provided,2002.0,5107
+Gold Standard,No Methodology Provided,2003.0,6523
+Gold Standard,No Methodology Provided,2004.0,63634
+Gold Standard,No Methodology Provided,2005.0,194873
+Gold Standard,No Methodology Provided,2006.0,195597
+Gold Standard,No Methodology Provided,2007.0,226586
+Gold Standard,No Methodology Provided,2008.0,159986
+Gold Standard,No Methodology Provided,2009.0,453513
+Gold Standard,No Methodology Provided,2010.0,1141908
+Gold Standard,No Methodology Provided,2011.0,1991704
+Gold Standard,No Methodology Provided,2012.0,2455107
+Gold Standard,No Methodology Provided,2013.0,2632122
+Gold Standard,No Methodology Provided,2014.0,3083836
+Gold Standard,No Methodology Provided,2015.0,4131317
+Gold Standard,No Methodology Provided,2016.0,4851363
+Gold Standard,No Methodology Provided,2017.0,5253975
+Gold Standard,No Methodology Provided,2018.0,5819304
+Gold Standard,No Methodology Provided,2019.0,7918293
+Gold Standard,No Methodology Provided,2020.0,11743987
+Gold Standard,No Methodology Provided,2021.0,21873897
+Gold Standard,No Methodology Provided,2022.0,25651781
+Gold Standard,No Methodology Provided,2023.0,25579030
+Gold Standard,No Methodology Provided,2024.0,13507939
+Gold Standard,No Methodology Provided,2025.0,1205147
+Gold Standard,No Methodology Provided,2026.0,203731
+Gold Standard,No Methodology Provided,2027.0,202320
+Gold Standard,No Methodology Provided,2028.0,176931
+Gold Standard,No Methodology Provided,2029.0,113086
+Gold Standard,No Methodology Provided,2030.0,78036
+Gold Standard,No Methodology Provided,2031.0,77504
+Gold Standard,No Methodology Provided,2032.0,78164
+Gold Standard,No Methodology Provided,2033.0,76401
+Gold Standard,No Methodology Provided,2034.0,72693
+Gold Standard,No Methodology Provided,2035.0,67930
+Gold Standard,No Methodology Provided,2036.0,46156
+Gold Standard,No Methodology Provided,2037.0,38740
+Gold Standard,No Methodology Provided,2038.0,20408
+Gold Standard,No Methodology Provided,2039.0,19893
+Gold Standard,No Methodology Provided,2040.0,16918
+Gold Standard,No Methodology Provided,2041.0,14830
+Gold Standard,No Methodology Provided,2042.0,12182
+Gold Standard,No Methodology Provided,2043.0,9722
+Gold Standard,No Methodology Provided,2044.0,8250
+Gold Standard,No Methodology Provided,2045.0,6778
+Gold Standard,No Methodology Provided,2046.0,4988
+Gold Standard,No Methodology Provided,2047.0,4634
+Gold Standard,No Methodology Provided,2048.0,3408
+Gold Standard,No Methodology Provided,2049.0,4312
+Gold Standard,No Methodology Provided,2050.0,2509
+Gold Standard,No Methodology Provided,2051.0,3010
+Gold Standard,No Methodology Provided,2052.0,2476
+Gold Standard,No Methodology Provided,2053.0,2426
+Gold Standard,No Methodology Provided,2054.0,2361
+Gold Standard,No Methodology Provided,2055.0,2178
+Gold Standard,No Methodology Provided,2056.0,2044
+Gold Standard,No Methodology Provided,2057.0,1916
+Gold Standard,No Methodology Provided,2058.0,1754
+Gold Standard,No Methodology Provided,2059.0,1674
+Gold Standard,No Methodology Provided,2060.0,664
+Gold Standard,No Methodology Provided,2061.0,678
+Gold Standard,Solar,2010.0,1493
+Gold Standard,Solar,2011.0,7823
+Gold Standard,Solar,2012.0,12605
+Gold Standard,Solar,2013.0,15903
+Gold Standard,Solar,2014.0,16460
+Gold Standard,Solar,2015.0,5835
+Gold Standard,Solar,2016.0,7109
+Gold Standard,Solar,2017.0,9950
+Gold Standard,Solar,2018.0,11782
+Gold Standard,Solar,2019.0,13458
+Gold Standard,Solar,2020.0,170714
+Gold Standard,Solar,2021.0,1736927
+Gold Standard,Solar,2022.0,1000231
+Gold Standard,Solar,2023.0,68975
+Gold Standard,Solar,2024.0,2762
+Gold Standard,Waste management,2019.0,281
+Gold Standard,Waste management,2020.0,447
+Gold Standard,Waste management,2021.0,208
+Gold Standard,Waste management,2022.0,44557
+Gold Standard,Waste management,2023.0,57168
+Gold Standard,Waste management,2024.0,7435
+Gold Standard,Waste to energy,2008.0,78680
+Gold Standard,Waste to energy,2009.0,277992
+Gold Standard,Waste to energy,2010.0,352046
+Gold Standard,Waste to energy,2011.0,314681
+Gold Standard,Waste to energy,2012.0,417064
+Gold Standard,Waste to energy,2013.0,400218
+Gold Standard,Waste to energy,2014.0,422090
+Gold Standard,Waste to energy,2015.0,333242
+Gold Standard,Waste to energy,2016.0,376218
+Gold Standard,Waste to energy,2017.0,623340
+Gold Standard,Waste to energy,2018.0,685098
+Gold Standard,Waste to energy,2019.0,747594
+Gold Standard,Waste to energy,2020.0,181823
+Gold Standard,Waste to energy,2021.0,142305
+Gold Standard,Waste to energy,2022.0,177969
+Gold Standard,Waste to energy,2023.0,79104
+Gold Standard,Waste to energy,2024.0,21251
+Gold Standard,Wastewater treatment,2009.0,15272
+Gold Standard,Wastewater treatment,2010.0,30247
+Gold Standard,Wastewater treatment,2011.0,27698
+Gold Standard,Wastewater treatment,2014.0,1892
+Gold Standard,Wastewater treatment,2016.0,83770
+Gold Standard,Wastewater treatment,2017.0,48306
+Gold Standard,Wastewater treatment,2018.0,62980
+Gold Standard,Wastewater treatment,2019.0,78200
+Gold Standard,Wastewater treatment,2020.0,56069
+Gold Standard,Wastewater treatment,2021.0,33352
+Gold Standard,Water purification,2014.0,25516
+Gold Standard,Water purification,2015.0,15981
+Gold Standard,Water purification,2016.0,30751
+Gold Standard,Water purification,2017.0,118372
+Gold Standard,Water purification,2018.0,145147
+Gold Standard,Water purification,2019.0,154312
+Gold Standard,Water purification,2020.0,422803
+Gold Standard,Water purification,2021.0,585277
+Gold Standard,Water purification,2022.0,977915
+Gold Standard,Water purification,2023.0,1567110
+Gold Standard,Water purification,2024.0,563713
+Gold Standard,Water purification,2025.0,7458
+Verra,Afforestation/Reforestation,1999.0,118878
+Verra,Afforestation/Reforestation,2001.0,1223324
+Verra,Afforestation/Reforestation,2002.0,155144
+Verra,Afforestation/Reforestation,2003.0,601059
+Verra,Afforestation/Reforestation,2004.0,463340
+Verra,Afforestation/Reforestation,2005.0,63917
+Verra,Afforestation/Reforestation,2006.0,125658
+Verra,Afforestation/Reforestation,2007.0,409276
+Verra,Afforestation/Reforestation,2008.0,345089
+Verra,Afforestation/Reforestation,2009.0,2641961
+Verra,Afforestation/Reforestation,2010.0,1316959
+Verra,Afforestation/Reforestation,2011.0,3553123
+Verra,Afforestation/Reforestation,2012.0,5188254
+Verra,Afforestation/Reforestation,2013.0,4851072
+Verra,Afforestation/Reforestation,2014.0,6915702
+Verra,Afforestation/Reforestation,2015.0,4706419
+Verra,Afforestation/Reforestation,2016.0,4502643
+Verra,Afforestation/Reforestation,2017.0,7710877
+Verra,Afforestation/Reforestation,2018.0,8854424
+Verra,Afforestation/Reforestation,2019.0,9496698
+Verra,Afforestation/Reforestation,2020.0,9118198
+Verra,Afforestation/Reforestation,2021.0,4780152
+Verra,Afforestation/Reforestation,2022.0,1278809
+Verra,Afforestation/Reforestation,2023.0,442269
+Verra,Afforestation/Reforestation,2024.0,151008
+Verra,Agriculture,2000.0,2000
+Verra,Agriculture,2001.0,59034
+Verra,Agriculture,2002.0,1042930
+Verra,Agriculture,2003.0,696896
+Verra,Agriculture,2004.0,396393
+Verra,Agriculture,2005.0,692797
+Verra,Agriculture,2006.0,883647
+Verra,Agriculture,2007.0,830237
+Verra,Agriculture,2008.0,385633
+Verra,Agriculture,2009.0,1447160
+Verra,Agriculture,2010.0,3883487
+Verra,Agriculture,2011.0,8198454
+Verra,Agriculture,2012.0,10506211
+Verra,Agriculture,2013.0,12206745
+Verra,Agriculture,2014.0,11078715
+Verra,Agriculture,2015.0,17165069
+Verra,Agriculture,2016.0,17177920
+Verra,Agriculture,2017.0,21507191
+Verra,Agriculture,2018.0,20335542
+Verra,Agriculture,2019.0,15646126
+Verra,Agriculture,2020.0,12741567
+Verra,Agriculture,2021.0,11341904
+Verra,Agriculture,2022.0,6991665
+Verra,Agriculture,2023.0,3215908
+Verra,Agriculture,2024.0,531889
+Verra,Biochar,2021.0,14070
+Verra,Biochar,2022.0,606
+Verra,Bioenergy,2001.0,115
+Verra,Bioenergy,2002.0,26635
+Verra,Bioenergy,2003.0,91584
+Verra,Bioenergy,2004.0,22885
+Verra,Bioenergy,2005.0,47012
+Verra,Bioenergy,2006.0,322868
+Verra,Bioenergy,2007.0,813820
+Verra,Bioenergy,2008.0,1012932
+Verra,Bioenergy,2009.0,1353891
+Verra,Bioenergy,2010.0,1100055
+Verra,Bioenergy,2011.0,923063
+Verra,Bioenergy,2012.0,763536
+Verra,Bioenergy,2013.0,917881
+Verra,Bioenergy,2014.0,1089860
+Verra,Bioenergy,2015.0,1175132
+Verra,Bioenergy,2016.0,1242224
+Verra,Bioenergy,2017.0,859166
+Verra,Bioenergy,2018.0,527881
+Verra,Bioenergy,2019.0,499687
+Verra,Bioenergy,2020.0,656379
+Verra,Bioenergy,2021.0,1182745
+Verra,Bioenergy,2022.0,1086749
+Verra,Bioenergy,2023.0,2376305
+Verra,Bioenergy,2024.0,2594760
+Verra,Bioenergy,2025.0,290943
+Verra,Cleaner cooking,2020.0,116
+Verra,Cleaner cooking,2021.0,4072
+Verra,Cleaner cooking,2022.0,2933
+Verra,Efficient appliances,2003.0,13333
+Verra,Efficient appliances,2004.0,29221
+Verra,Efficient appliances,2005.0,85019
+Verra,Efficient appliances,2006.0,28218
+Verra,Efficient appliances,2007.0,146858
+Verra,Efficient appliances,2008.0,160692
+Verra,Efficient appliances,2009.0,323539
+Verra,Efficient appliances,2010.0,778466
+Verra,Efficient appliances,2011.0,467757
+Verra,Efficient appliances,2012.0,819474
+Verra,Efficient appliances,2013.0,640304
+Verra,Efficient appliances,2014.0,676696
+Verra,Efficient appliances,2015.0,1141704
+Verra,Efficient appliances,2016.0,537962
+Verra,Efficient appliances,2017.0,483304
+Verra,Efficient appliances,2018.0,339490
+Verra,Efficient appliances,2019.0,587870
+Verra,Efficient appliances,2020.0,1028900
+Verra,Efficient appliances,2021.0,3177016
+Verra,Efficient appliances,2022.0,4586356
+Verra,Efficient appliances,2023.0,2343293
+Verra,Efficient appliances,2024.0,650739
+Verra,Energy storage,2006.0,35582
+Verra,Energy storage,2017.0,1483554
+Verra,Energy storage,2018.0,2998783
+Verra,Energy storage,2019.0,4502169
+Verra,Energy storage,2020.0,2197523
+Verra,Energy storage,2021.0,8009231
+Verra,Energy storage,2022.0,8295224
+Verra,Energy storage,2023.0,940769
+Verra,Energy storage,2024.0,2324746
+Verra,Forest management,2002.0,881529
+Verra,Forest management,2003.0,514614
+Verra,Forest management,2004.0,211840
+Verra,Forest management,2005.0,581322
+Verra,Forest management,2006.0,450748
+Verra,Forest management,2007.0,4155991
+Verra,Forest management,2008.0,8747357
+Verra,Forest management,2009.0,8609628
+Verra,Forest management,2010.0,19826010
+Verra,Forest management,2011.0,3322185
+Verra,Forest management,2012.0,12648057
+Verra,Forest management,2013.0,22576800
+Verra,Forest management,2014.0,26757942
+Verra,Forest management,2015.0,25831926
+Verra,Forest management,2016.0,32945498
+Verra,Forest management,2017.0,29770872
+Verra,Forest management,2018.0,26353415
+Verra,Forest management,2019.0,31586215
+Verra,Forest management,2020.0,25775962
+Verra,Forest management,2021.0,10633410
+Verra,Forest management,2022.0,8029436
+Verra,Forest management,2023.0,3489552
+Verra,Forest management,2024.0,623106
+Verra,Fossil gas leaks,2006.0,52460
+Verra,Fossil gas leaks,2007.0,88206
+Verra,Fossil gas leaks,2008.0,55056
+Verra,Fossil gas leaks,2009.0,47965
+Verra,Fossil gas leaks,2010.0,181629
+Verra,Fossil gas leaks,2011.0,150076
+Verra,Fossil gas leaks,2012.0,120541
+Verra,Fossil gas leaks,2013.0,3378004
+Verra,Fossil gas leaks,2014.0,158380
+Verra,Fossil gas leaks,2017.0,2982814
+Verra,Fossil gas leaks,2019.0,30184
+Verra,Fossil gas leaks,2020.0,190557
+Verra,Fossil gas leaks,2021.0,295659
+Verra,Fossil gas leaks,2022.0,1010307
+Verra,Fossil gas leaks,2023.0,778822
+Verra,Fossil gas leaks,2024.0,479145
+Verra,Fossil gas leaks,2025.0,72403
+Verra,Hydropower,2001.0,17681
+Verra,Hydropower,2002.0,1330251
+Verra,Hydropower,2003.0,580981
+Verra,Hydropower,2004.0,115559
+Verra,Hydropower,2005.0,194494
+Verra,Hydropower,2006.0,921540
+Verra,Hydropower,2007.0,2136654
+Verra,Hydropower,2008.0,2403786
+Verra,Hydropower,2009.0,2540713
+Verra,Hydropower,2010.0,2915051
+Verra,Hydropower,2011.0,4151093
+Verra,Hydropower,2012.0,2801480
+Verra,Hydropower,2013.0,523550
+Verra,Hydropower,2014.0,648129
+Verra,Hydropower,2015.0,769023
+Verra,Hydropower,2016.0,1112944
+Verra,Hydropower,2017.0,844703
+Verra,Hydropower,2018.0,1509532
+Verra,Hydropower,2019.0,1595503
+Verra,Hydropower,2020.0,1938651
+Verra,Hydropower,2021.0,2387460
+Verra,Hydropower,2022.0,1154904
+Verra,Hydropower,2023.0,486420
+Verra,Hydropower,2024.0,8127
+Verra,Industrial efficiency,2004.0,112305
+Verra,Industrial efficiency,2006.0,297618
+Verra,Industrial efficiency,2007.0,1071190
+Verra,Industrial efficiency,2008.0,4379734
+Verra,Industrial efficiency,2009.0,731884
+Verra,Industrial efficiency,2010.0,696496
+Verra,Industrial efficiency,2011.0,700635
+Verra,Industrial efficiency,2012.0,802773
+Verra,Industrial efficiency,2013.0,395019
+Verra,Industrial efficiency,2014.0,440335
+Verra,Industrial efficiency,2015.0,392732
+Verra,Industrial efficiency,2016.0,534626
+Verra,Industrial efficiency,2017.0,251744
+Verra,Industrial efficiency,2018.0,318958
+Verra,Industrial efficiency,2019.0,475713
+Verra,Industrial efficiency,2020.0,1740631
+Verra,Industrial efficiency,2021.0,2766054
+Verra,Industrial efficiency,2022.0,1534483
+Verra,Industrial efficiency,2023.0,415293
+Verra,Industrial efficiency,2024.0,51033
+Verra,Landfill gas,2001.0,1084101
+Verra,Landfill gas,2005.0,3240
+Verra,Landfill gas,2006.0,235360
+Verra,Landfill gas,2007.0,590114
+Verra,Landfill gas,2008.0,434657
+Verra,Landfill gas,2009.0,883458
+Verra,Landfill gas,2010.0,1128806
+Verra,Landfill gas,2011.0,1148178
+Verra,Landfill gas,2012.0,999584
+Verra,Landfill gas,2013.0,551878
+Verra,Landfill gas,2014.0,674490
+Verra,Landfill gas,2015.0,637699
+Verra,Landfill gas,2016.0,791132
+Verra,Landfill gas,2017.0,2181412
+Verra,Landfill gas,2018.0,611995
+Verra,Landfill gas,2019.0,1613962
+Verra,Landfill gas,2020.0,3220746
+Verra,Landfill gas,2021.0,4862565
+Verra,Landfill gas,2022.0,4397717
+Verra,Landfill gas,2023.0,1989041
+Verra,Landfill gas,2024.0,621791
+Verra,Landfill gas,2025.0,1502
+Verra,Mixed renewables,2001.0,126608
+Verra,Mixed renewables,2002.0,151106
+Verra,Mixed renewables,2003.0,77477
+Verra,Mixed renewables,2004.0,449498
+Verra,Mixed renewables,2005.0,579758
+Verra,Mixed renewables,2006.0,6542648
+Verra,Mixed renewables,2007.0,14865833
+Verra,Mixed renewables,2008.0,19906758
+Verra,Mixed renewables,2009.0,20066188
+Verra,Mixed renewables,2010.0,23906845
+Verra,Mixed renewables,2011.0,22135657
+Verra,Mixed renewables,2012.0,25003590
+Verra,Mixed renewables,2013.0,23743174
+Verra,Mixed renewables,2014.0,28137339
+Verra,Mixed renewables,2015.0,29458654
+Verra,Mixed renewables,2016.0,32586801
+Verra,Mixed renewables,2017.0,41354011
+Verra,Mixed renewables,2018.0,51717070
+Verra,Mixed renewables,2019.0,57873297
+Verra,Mixed renewables,2020.0,51960502
+Verra,Mixed renewables,2021.0,47601280
+Verra,Mixed renewables,2022.0,46171249
+Verra,Mixed renewables,2023.0,32109989
+Verra,Mixed renewables,2024.0,16402305
+Verra,Mixed renewables,2025.0,1037748
+Verra,Reforestation and ecosystem restoration,2009.0,26925
+Verra,Reforestation and ecosystem restoration,2010.0,29179
+Verra,Reforestation and ecosystem restoration,2011.0,126249
+Verra,Reforestation and ecosystem restoration,2012.0,138900
+Verra,Reforestation and ecosystem restoration,2013.0,145136
+Verra,Reforestation and ecosystem restoration,2014.0,147461
+Verra,Reforestation and ecosystem restoration,2015.0,144319
+Verra,Reforestation and ecosystem restoration,2016.0,169161
+Verra,Reforestation and ecosystem restoration,2017.0,295190
+Verra,Reforestation and ecosystem restoration,2018.0,443085
+Verra,Reforestation and ecosystem restoration,2019.0,383610
+Verra,Reforestation and ecosystem restoration,2020.0,964225
+Verra,Reforestation and ecosystem restoration,2021.0,1798097
+Verra,Reforestation and ecosystem restoration,2022.0,1260523
+Verra,Reforestation and ecosystem restoration,2023.0,206902
+Verra,Solar,2005.0,8208
+Verra,Solar,2006.0,186698
+Verra,Solar,2007.0,45062
+Verra,Solar,2008.0,90265
+Verra,Solar,2009.0,44642
+Verra,Solar,2010.0,99302
+Verra,Solar,2012.0,84825
+Verra,Solar,2013.0,79750
+Verra,Solar,2014.0,56903
+Verra,Solar,2015.0,186857
+Verra,Solar,2016.0,311085
+Verra,Solar,2017.0,339631
+Verra,Solar,2018.0,313929
+Verra,Solar,2019.0,47882
+Verra,Solar,2020.0,141604
+Verra,Solar,2021.0,344585
+Verra,Solar,2022.0,363738
+Verra,Solar,2023.0,170356
+Verra,Solar,2024.0,83767
+Verra,Unmatched,2000.0,10167
+Verra,Unmatched,2001.0,87803
+Verra,Unmatched,2002.0,246121
+Verra,Unmatched,2003.0,581736
+Verra,Unmatched,2004.0,108003
+Verra,Unmatched,2005.0,137549
+Verra,Unmatched,2006.0,689505
+Verra,Unmatched,2007.0,1038059
+Verra,Waste management,2008.0,323595
+Verra,Waste management,2009.0,339719
+Verra,Waste management,2010.0,435876
+Verra,Waste management,2011.0,435545
+Verra,Waste management,2012.0,437444
+Verra,Waste management,2013.0,388641
+Verra,Waste management,2014.0,421653
+Verra,Waste management,2015.0,417420
+Verra,Waste management,2016.0,484969
+Verra,Waste management,2017.0,282641
+Verra,Waste management,2018.0,514993
+Verra,Waste management,2019.0,609799
+Verra,Waste management,2020.0,689756
+Verra,Waste management,2021.0,596467
+Verra,Waste management,2022.0,87267
+Verra,Waste to energy,2004.0,53775
+Verra,Waste to energy,2005.0,70936
+Verra,Waste to energy,2006.0,806947
+Verra,Waste to energy,2007.0,1217176
+Verra,Waste to energy,2008.0,1013039
+Verra,Waste to energy,2009.0,795836
+Verra,Waste to energy,2010.0,1127551
+Verra,Waste to energy,2011.0,2234262
+Verra,Waste to energy,2012.0,2551685
+Verra,Waste to energy,2013.0,2633871
+Verra,Waste to energy,2014.0,3505346
+Verra,Waste to energy,2015.0,3356326
+Verra,Waste to energy,2016.0,3198345
+Verra,Waste to energy,2017.0,3210004
+Verra,Waste to energy,2018.0,2125550
+Verra,Waste to energy,2019.0,238467
+Verra,Waste to energy,2020.0,694147
+Verra,Waste to energy,2021.0,266143
+Verra,Waste to energy,2022.0,368537
+Verra,Waste to energy,2023.0,164462
+Verra,Waste to energy,2024.0,51238
+Verra,Wastewater treatment,2006.0,29391
+Verra,Wastewater treatment,2007.0,35514
+Verra,Wastewater treatment,2008.0,39031
+Verra,Wastewater treatment,2010.0,7442
+Verra,Wastewater treatment,2011.0,22357
+Verra,Wastewater treatment,2012.0,22091
+Verra,Wastewater treatment,2013.0,18784
+Verra,Wastewater treatment,2014.0,21448
+Verra,Wastewater treatment,2015.0,20002
+Verra,Wastewater treatment,2016.0,5291
+Verra,Wind,2013.0,1601
+Verra,Wind,2014.0,19299
+Verra,Wind,2015.0,37852
+Verra,Wind,2016.0,61411
+Verra,Wind,2017.0,81648
+Verra,Wind,2018.0,103596
