@@ -175,16 +175,22 @@ const ProjectActivity = ({ data }) => {
             )}
 
             <div className="detail-section-title">Top Countries</div>
-            {activityCountries.map(c => (
-              <div key={c.name} className="country-row">
-                <div className="country-flag">🌐</div>
-                <div className="country-name">{c.name}</div>
-                <div className="country-bar-bg">
-                  <div className="country-bar-fill" style={{ width: `${activityCountries[0]?.credits > 0 ? (c.credits / activityCountries[0].credits) * 100 : 0}%` }} />
+            {activityCountries.map(c => {
+              const barPct = activityCountries[0]?.credits > 0 ? (c.credits / activityCountries[0].credits) * 100 : 0;
+              const sharePct = selectedData.credits > 0 ? ((c.credits / selectedData.credits) * 100).toFixed(1) : '0.0';
+              return (
+                <div key={c.name} className="country-row" style={{ gridTemplateColumns: '120px 1fr auto' }}>
+                  <div className="country-name">{c.name}</div>
+                  <div className="country-bar-bg">
+                    <div className="country-bar-fill" style={{ width: `${barPct}%` }} />
+                  </div>
+                  <div className="country-credits">
+                    {formatCredits(c.credits)}
+                    <span style={{ fontSize: '10px', color: 'var(--text-muted)', marginLeft: 5 }}>{sharePct}%</span>
+                  </div>
                 </div>
-                <div className="country-credits">{formatCredits(c.credits)}</div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>
