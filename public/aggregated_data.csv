@@ -13,19 +13,19 @@ ACR,Afforestation/Reforestation,2019.0,1364185
 ACR,Afforestation/Reforestation,2020.0,1179164
 ACR,Afforestation/Reforestation,2021.0,804970
 ACR,Afforestation/Reforestation,2022.0,716959
-ACR,Agriculture,2011.0,2
-ACR,Agriculture,2013.0,19183
-ACR,Agriculture,2014.0,24558
-ACR,Agriculture,2015.0,237423
-ACR,Agriculture,2016.0,270942
-ACR,Agriculture,2017.0,314532
-ACR,Agriculture,2018.0,288967
-ACR,Agriculture,2019.0,298295
-ACR,Agriculture,2020.0,190533
-ACR,Agriculture,2021.0,99693
-ACR,Agriculture,2022.0,44778
-ACR,Agriculture,2023.0,40128
-ACR,Agriculture,2024.0,23141
+ACR,Soil & Livestock,2011.0,2
+ACR,Soil & Livestock,2013.0,19183
+ACR,Soil & Livestock,2014.0,24558
+ACR,Soil & Livestock,2015.0,237423
+ACR,Soil & Livestock,2016.0,270942
+ACR,Soil & Livestock,2017.0,314532
+ACR,Soil & Livestock,2018.0,288967
+ACR,Soil & Livestock,2019.0,298295
+ACR,Soil & Livestock,2020.0,190533
+ACR,Soil & Livestock,2021.0,99693
+ACR,Soil & Livestock,2022.0,44778
+ACR,Soil & Livestock,2023.0,40128
+ACR,Soil & Livestock,2024.0,23141
 ACR,Bioenergy,2005.0,316
 ACR,Bioenergy,2006.0,352
 ACR,Bioenergy,2007.0,342
@@ -190,24 +190,24 @@ ACR,Waste to energy,2014.0,278098
 ACR,Waste to energy,2015.0,470530
 ACR,Wastewater treatment,2008.0,100000
 ACR,Wastewater treatment,2019.0,11295
-ARB,Agriculture,2007.0,16834
-ARB,Agriculture,2008.0,7
-ARB,Agriculture,2009.0,19750
-ARB,Agriculture,2010.0,126499
-ARB,Agriculture,2011.0,279239
-ARB,Agriculture,2012.0,348882
-ARB,Agriculture,2013.0,550902
-ARB,Agriculture,2014.0,792806
-ARB,Agriculture,2015.0,959364
-ARB,Agriculture,2016.0,1166696
-ARB,Agriculture,2017.0,1158511
-ARB,Agriculture,2018.0,1025466
-ARB,Agriculture,2019.0,1001108
-ARB,Agriculture,2020.0,770208
-ARB,Agriculture,2021.0,520078
-ARB,Agriculture,2022.0,430742
-ARB,Agriculture,2023.0,361786
-ARB,Agriculture,2024.0,136952
+ARB,Soil & Livestock,2007.0,16834
+ARB,Soil & Livestock,2008.0,7
+ARB,Soil & Livestock,2009.0,19750
+ARB,Soil & Livestock,2010.0,126499
+ARB,Soil & Livestock,2011.0,279239
+ARB,Soil & Livestock,2012.0,348882
+ARB,Soil & Livestock,2013.0,550902
+ARB,Soil & Livestock,2014.0,792806
+ARB,Soil & Livestock,2015.0,959364
+ARB,Soil & Livestock,2016.0,1166696
+ARB,Soil & Livestock,2017.0,1158511
+ARB,Soil & Livestock,2018.0,1025466
+ARB,Soil & Livestock,2019.0,1001108
+ARB,Soil & Livestock,2020.0,770208
+ARB,Soil & Livestock,2021.0,520078
+ARB,Soil & Livestock,2022.0,430742
+ARB,Soil & Livestock,2023.0,361786
+ARB,Soil & Livestock,2024.0,136952
 ARB,Forest management,2004.0,9602
 ARB,Forest management,2005.0,188025
 ARB,Forest management,2006.0,296706
@@ -309,17 +309,17 @@ Gold Standard,Afforestation/Reforestation,2047.0,2909
 Gold Standard,Afforestation/Reforestation,2048.0,2915
 Gold Standard,Afforestation/Reforestation,2049.0,2920
 Gold Standard,Afforestation/Reforestation,2050.0,169
-Gold Standard,Agriculture,2012.0,3588
-Gold Standard,Agriculture,2013.0,11089
-Gold Standard,Agriculture,2014.0,13772
-Gold Standard,Agriculture,2015.0,20768
-Gold Standard,Agriculture,2017.0,64379
-Gold Standard,Agriculture,2018.0,77448
-Gold Standard,Agriculture,2019.0,24143
-Gold Standard,Agriculture,2020.0,419169
-Gold Standard,Agriculture,2021.0,3364712
-Gold Standard,Agriculture,2022.0,2901932
-Gold Standard,Agriculture,2023.0,631494
+Gold Standard,Soil & Livestock,2012.0,3588
+Gold Standard,Soil & Livestock,2013.0,11089
+Gold Standard,Soil & Livestock,2014.0,13772
+Gold Standard,Soil & Livestock,2015.0,20768
+Gold Standard,Soil & Livestock,2017.0,64379
+Gold Standard,Soil & Livestock,2018.0,77448
+Gold Standard,Soil & Livestock,2019.0,24143
+Gold Standard,Soil & Livestock,2020.0,419169
+Gold Standard,Soil & Livestock,2021.0,3364712
+Gold Standard,Soil & Livestock,2022.0,2901932
+Gold Standard,Soil & Livestock,2023.0,631494
 Gold Standard,Bioenergy,2006.0,229473
 Gold Standard,Bioenergy,2007.0,253341
 Gold Standard,Bioenergy,2008.0,11852
@@ -478,72 +478,6 @@ Gold Standard,Mixed renewables,2022.0,19213747
 Gold Standard,Mixed renewables,2023.0,12574938
 Gold Standard,Mixed renewables,2024.0,4074080
 Gold Standard,Mixed renewables,2025.0,690626
-Gold Standard,No Methodology Provided,1996.0,764
-Gold Standard,No Methodology Provided,1997.0,1605
-Gold Standard,No Methodology Provided,1998.0,1898
-Gold Standard,No Methodology Provided,1999.0,2988
-Gold Standard,No Methodology Provided,2000.0,3864
-Gold Standard,No Methodology Provided,2001.0,4468
-Gold Standard,No Methodology Provided,2002.0,5107
-Gold Standard,No Methodology Provided,2003.0,6523
-Gold Standard,No Methodology Provided,2004.0,63634
-Gold Standard,No Methodology Provided,2005.0,194873
-Gold Standard,No Methodology Provided,2006.0,195597
-Gold Standard,No Methodology Provided,2007.0,226586
-Gold Standard,No Methodology Provided,2008.0,159986
-Gold Standard,No Methodology Provided,2009.0,453513
-Gold Standard,No Methodology Provided,2010.0,1141908
-Gold Standard,No Methodology Provided,2011.0,1991704
-Gold Standard,No Methodology Provided,2012.0,2455107
-Gold Standard,No Methodology Provided,2013.0,2632122
-Gold Standard,No Methodology Provided,2014.0,3083836
-Gold Standard,No Methodology Provided,2015.0,4131317
-Gold Standard,No Methodology Provided,2016.0,4851363
-Gold Standard,No Methodology Provided,2017.0,5253975
-Gold Standard,No Methodology Provided,2018.0,5819304
-Gold Standard,No Methodology Provided,2019.0,7918293
-Gold Standard,No Methodology Provided,2020.0,11743987
-Gold Standard,No Methodology Provided,2021.0,21873897
-Gold Standard,No Methodology Provided,2022.0,25651781
-Gold Standard,No Methodology Provided,2023.0,25579030
-Gold Standard,No Methodology Provided,2024.0,13507939
-Gold Standard,No Methodology Provided,2025.0,1205147
-Gold Standard,No Methodology Provided,2026.0,203731
-Gold Standard,No Methodology Provided,2027.0,202320
-Gold Standard,No Methodology Provided,2028.0,176931
-Gold Standard,No Methodology Provided,2029.0,113086
-Gold Standard,No Methodology Provided,2030.0,78036
-Gold Standard,No Methodology Provided,2031.0,77504
-Gold Standard,No Methodology Provided,2032.0,78164
-Gold Standard,No Methodology Provided,2033.0,76401
-Gold Standard,No Methodology Provided,2034.0,72693
-Gold Standard,No Methodology Provided,2035.0,67930
-Gold Standard,No Methodology Provided,2036.0,46156
-Gold Standard,No Methodology Provided,2037.0,38740
-Gold Standard,No Methodology Provided,2038.0,20408
-Gold Standard,No Methodology Provided,2039.0,19893
-Gold Standard,No Methodology Provided,2040.0,16918
-Gold Standard,No Methodology Provided,2041.0,14830
-Gold Standard,No Methodology Provided,2042.0,12182
-Gold Standard,No Methodology Provided,2043.0,9722
-Gold Standard,No Methodology Provided,2044.0,8250
-Gold Standard,No Methodology Provided,2045.0,6778
-Gold Standard,No Methodology Provided,2046.0,4988
-Gold Standard,No Methodology Provided,2047.0,4634
-Gold Standard,No Methodology Provided,2048.0,3408
-Gold Standard,No Methodology Provided,2049.0,4312
-Gold Standard,No Methodology Provided,2050.0,2509
-Gold Standard,No Methodology Provided,2051.0,3010
-Gold Standard,No Methodology Provided,2052.0,2476
-Gold Standard,No Methodology Provided,2053.0,2426
-Gold Standard,No Methodology Provided,2054.0,2361
-Gold Standard,No Methodology Provided,2055.0,2178
-Gold Standard,No Methodology Provided,2056.0,2044
-Gold Standard,No Methodology Provided,2057.0,1916
-Gold Standard,No Methodology Provided,2058.0,1754
-Gold Standard,No Methodology Provided,2059.0,1674
-Gold Standard,No Methodology Provided,2060.0,664
-Gold Standard,No Methodology Provided,2061.0,678
 Gold Standard,Solar,2010.0,1493
 Gold Standard,Solar,2011.0,7823
 Gold Standard,Solar,2012.0,12605
@@ -629,31 +563,31 @@ Verra,Afforestation/Reforestation,2021.0,4780152
 Verra,Afforestation/Reforestation,2022.0,1278809
 Verra,Afforestation/Reforestation,2023.0,442269
 Verra,Afforestation/Reforestation,2024.0,151008
-Verra,Agriculture,2000.0,2000
-Verra,Agriculture,2001.0,59034
-Verra,Agriculture,2002.0,1042930
-Verra,Agriculture,2003.0,696896
-Verra,Agriculture,2004.0,396393
-Verra,Agriculture,2005.0,692797
-Verra,Agriculture,2006.0,883647
-Verra,Agriculture,2007.0,830237
-Verra,Agriculture,2008.0,385633
-Verra,Agriculture,2009.0,1447160
-Verra,Agriculture,2010.0,3883487
-Verra,Agriculture,2011.0,8198454
-Verra,Agriculture,2012.0,10506211
-Verra,Agriculture,2013.0,12206745
-Verra,Agriculture,2014.0,11078715
-Verra,Agriculture,2015.0,17165069
-Verra,Agriculture,2016.0,17177920
-Verra,Agriculture,2017.0,21507191
-Verra,Agriculture,2018.0,20335542
-Verra,Agriculture,2019.0,15646126
-Verra,Agriculture,2020.0,12741567
-Verra,Agriculture,2021.0,11341904
-Verra,Agriculture,2022.0,6991665
-Verra,Agriculture,2023.0,3215908
-Verra,Agriculture,2024.0,531889
+Verra,Soil & Livestock,2000.0,2000
+Verra,Soil & Livestock,2001.0,59034
+Verra,Soil & Livestock,2002.0,1042930
+Verra,Soil & Livestock,2003.0,696896
+Verra,Soil & Livestock,2004.0,396393
+Verra,Soil & Livestock,2005.0,692797
+Verra,Soil & Livestock,2006.0,883647
+Verra,Soil & Livestock,2007.0,830237
+Verra,Soil & Livestock,2008.0,385633
+Verra,Soil & Livestock,2009.0,1447160
+Verra,Soil & Livestock,2010.0,3883487
+Verra,Soil & Livestock,2011.0,8198454
+Verra,Soil & Livestock,2012.0,10506211
+Verra,Soil & Livestock,2013.0,12206745
+Verra,Soil & Livestock,2014.0,11078715
+Verra,Soil & Livestock,2015.0,17165069
+Verra,Soil & Livestock,2016.0,17177920
+Verra,Soil & Livestock,2017.0,21507191
+Verra,Soil & Livestock,2018.0,20335542
+Verra,Soil & Livestock,2019.0,15646126
+Verra,Soil & Livestock,2020.0,12741567
+Verra,Soil & Livestock,2021.0,11341904
+Verra,Soil & Livestock,2022.0,6991665
+Verra,Soil & Livestock,2023.0,3215908
+Verra,Soil & Livestock,2024.0,531889
 Verra,Biochar,2021.0,14070
 Verra,Biochar,2022.0,606
 Verra,Bioenergy,2001.0,115
@@ -681,9 +615,6 @@ Verra,Bioenergy,2022.0,1086749
 Verra,Bioenergy,2023.0,2376305
 Verra,Bioenergy,2024.0,2594760
 Verra,Bioenergy,2025.0,290943
-Verra,Cleaner cooking,2020.0,116
-Verra,Cleaner cooking,2021.0,4072
-Verra,Cleaner cooking,2022.0,2933
 Verra,Efficient appliances,2003.0,13333
 Verra,Efficient appliances,2004.0,29221
 Verra,Efficient appliances,2005.0,85019
@@ -838,10 +769,10 @@ Verra,Mixed renewables,2014.0,28137339
 Verra,Mixed renewables,2015.0,29458654
 Verra,Mixed renewables,2016.0,32586801
 Verra,Mixed renewables,2017.0,41354011
-Verra,Mixed renewables,2018.0,51717070
-Verra,Mixed renewables,2019.0,57873297
-Verra,Mixed renewables,2020.0,51960502
-Verra,Mixed renewables,2021.0,47601280
+Verra,Mixed renewables,2018.0,50457070
+Verra,Mixed renewables,2019.0,56673297
+Verra,Mixed renewables,2020.0,50640502
+Verra,Mixed renewables,2021.0,46821280
 Verra,Mixed renewables,2022.0,46171249
 Verra,Mixed renewables,2023.0,32109989
 Verra,Mixed renewables,2024.0,16402305
@@ -940,3 +871,178 @@ Verra,Wind,2015.0,37852
 Verra,Wind,2016.0,61411
 Verra,Wind,2017.0,81648
 Verra,Wind,2018.0,103596
+Verra,Rice cultivation,2018.0,1260000
+Verra,Rice cultivation,2019.0,1200000
+Verra,Rice cultivation,2020.0,1320000
+Verra,Rice cultivation,2021.0,780000
+Verra,Public transit,2020.0,116
+Verra,Public transit,2021.0,4072
+Verra,Public transit,2022.0,2933
+Gold Standard,Afforestation/Reforestation,1996.0,764
+Gold Standard,Afforestation/Reforestation,1997.0,1605
+Gold Standard,Afforestation/Reforestation,1998.0,1898
+Gold Standard,Afforestation/Reforestation,1999.0,2988
+Gold Standard,Afforestation/Reforestation,2000.0,3864
+Gold Standard,Afforestation/Reforestation,2001.0,4468
+Gold Standard,Afforestation/Reforestation,2002.0,5107
+Gold Standard,Afforestation/Reforestation,2003.0,6523
+Gold Standard,Afforestation/Reforestation,2004.0,7235
+Gold Standard,Afforestation/Reforestation,2005.0,11210
+Gold Standard,Afforestation/Reforestation,2006.0,21222
+Gold Standard,Afforestation/Reforestation,2007.0,20149
+Gold Standard,Afforestation/Reforestation,2008.0,47273
+Gold Standard,Afforestation/Reforestation,2009.0,116798
+Gold Standard,Afforestation/Reforestation,2010.0,198752
+Gold Standard,Afforestation/Reforestation,2011.0,315777
+Gold Standard,Afforestation/Reforestation,2012.0,474365
+Gold Standard,Afforestation/Reforestation,2013.0,516115
+Gold Standard,Afforestation/Reforestation,2014.0,643112
+Gold Standard,Afforestation/Reforestation,2015.0,657256
+Gold Standard,Afforestation/Reforestation,2016.0,733941
+Gold Standard,Afforestation/Reforestation,2017.0,786081
+Gold Standard,Afforestation/Reforestation,2018.0,959145
+Gold Standard,Afforestation/Reforestation,2019.0,1180545
+Gold Standard,Afforestation/Reforestation,2020.0,1221656
+Gold Standard,Afforestation/Reforestation,2021.0,1090691
+Gold Standard,Afforestation/Reforestation,2022.0,764185
+Gold Standard,Afforestation/Reforestation,2023.0,480490
+Gold Standard,Afforestation/Reforestation,2024.0,301242
+Gold Standard,Afforestation/Reforestation,2025.0,172319
+Gold Standard,Afforestation/Reforestation,2026.0,203731
+Gold Standard,Afforestation/Reforestation,2027.0,202320
+Gold Standard,Afforestation/Reforestation,2028.0,176931
+Gold Standard,Afforestation/Reforestation,2029.0,113086
+Gold Standard,Afforestation/Reforestation,2030.0,78036
+Gold Standard,Afforestation/Reforestation,2031.0,77504
+Gold Standard,Afforestation/Reforestation,2032.0,78164
+Gold Standard,Afforestation/Reforestation,2033.0,76401
+Gold Standard,Afforestation/Reforestation,2034.0,72693
+Gold Standard,Afforestation/Reforestation,2035.0,67930
+Gold Standard,Afforestation/Reforestation,2036.0,46156
+Gold Standard,Afforestation/Reforestation,2037.0,38740
+Gold Standard,Afforestation/Reforestation,2038.0,20408
+Gold Standard,Afforestation/Reforestation,2039.0,19893
+Gold Standard,Afforestation/Reforestation,2040.0,16918
+Gold Standard,Afforestation/Reforestation,2041.0,14830
+Gold Standard,Afforestation/Reforestation,2042.0,12182
+Gold Standard,Afforestation/Reforestation,2043.0,9722
+Gold Standard,Afforestation/Reforestation,2044.0,8250
+Gold Standard,Afforestation/Reforestation,2045.0,6778
+Gold Standard,Afforestation/Reforestation,2046.0,4988
+Gold Standard,Afforestation/Reforestation,2047.0,4634
+Gold Standard,Afforestation/Reforestation,2048.0,3408
+Gold Standard,Afforestation/Reforestation,2049.0,4312
+Gold Standard,Afforestation/Reforestation,2050.0,2509
+Gold Standard,Afforestation/Reforestation,2051.0,3010
+Gold Standard,Afforestation/Reforestation,2052.0,2476
+Gold Standard,Afforestation/Reforestation,2053.0,2426
+Gold Standard,Afforestation/Reforestation,2054.0,2361
+Gold Standard,Afforestation/Reforestation,2055.0,2178
+Gold Standard,Afforestation/Reforestation,2056.0,2044
+Gold Standard,Afforestation/Reforestation,2057.0,1916
+Gold Standard,Afforestation/Reforestation,2058.0,1754
+Gold Standard,Afforestation/Reforestation,2059.0,1674
+Gold Standard,Afforestation/Reforestation,2060.0,664
+Gold Standard,Afforestation/Reforestation,2061.0,678
+Gold Standard,Bioenergy,2009.0,8464
+Gold Standard,Bioenergy,2010.0,35077
+Gold Standard,Bioenergy,2011.0,62258
+Gold Standard,Bioenergy,2012.0,150346
+Gold Standard,Bioenergy,2013.0,255369
+Gold Standard,Bioenergy,2014.0,543533
+Gold Standard,Bioenergy,2015.0,869414
+Gold Standard,Bioenergy,2016.0,851601
+Gold Standard,Bioenergy,2017.0,1066489
+Gold Standard,Bioenergy,2018.0,904866
+Gold Standard,Bioenergy,2019.0,844784
+Gold Standard,Bioenergy,2020.0,1171294
+Gold Standard,Bioenergy,2021.0,2562341
+Gold Standard,Bioenergy,2022.0,2280333
+Gold Standard,Bioenergy,2023.0,2207695
+Gold Standard,Bioenergy,2024.0,516808
+Gold Standard,Bioenergy,2025.0,8818
+Gold Standard,Efficient appliances,2007.0,15090
+Gold Standard,Efficient appliances,2008.0,60870
+Gold Standard,Efficient appliances,2009.0,160862
+Gold Standard,Efficient appliances,2010.0,259976
+Gold Standard,Efficient appliances,2011.0,395868
+Gold Standard,Efficient appliances,2012.0,637346
+Gold Standard,Efficient appliances,2013.0,1011462
+Gold Standard,Efficient appliances,2014.0,1142087
+Gold Standard,Efficient appliances,2015.0,1268789
+Gold Standard,Efficient appliances,2016.0,1362095
+Gold Standard,Efficient appliances,2017.0,1783567
+Gold Standard,Efficient appliances,2018.0,1763917
+Gold Standard,Efficient appliances,2019.0,1912861
+Gold Standard,Efficient appliances,2020.0,3102998
+Gold Standard,Efficient appliances,2021.0,8546317
+Gold Standard,Efficient appliances,2022.0,11626236
+Gold Standard,Efficient appliances,2023.0,14069291
+Gold Standard,Efficient appliances,2024.0,8970822
+Gold Standard,Efficient appliances,2025.0,138299
+Gold Standard,Hydropower,2007.0,87
+Gold Standard,Hydropower,2008.0,233
+Gold Standard,Hydropower,2009.0,314
+Gold Standard,Hydropower,2010.0,8793
+Gold Standard,Hydropower,2011.0,26375
+Gold Standard,Hydropower,2012.0,40690
+Gold Standard,Hydropower,2013.0,28431
+Gold Standard,Hydropower,2014.0,7232
+Gold Standard,Hydropower,2015.0,17430
+Gold Standard,Hydropower,2016.0,21121
+Gold Standard,Hydropower,2017.0,18559
+Gold Standard,Hydropower,2022.0,446
+Gold Standard,Hydropower,2023.0,16387
+Gold Standard,Hydropower,2024.0,17045
+Gold Standard,Other,2011.0,177187
+Gold Standard,Other,2012.0,219044
+Gold Standard,Other,2013.0,303128
+Gold Standard,Other,2014.0,38404
+Gold Standard,Other,2015.0,88277
+Gold Standard,Other,2016.0,124748
+Gold Standard,Other,2017.0,272582
+Gold Standard,Other,2018.0,398032
+Gold Standard,Other,2019.0,347489
+Gold Standard,Other,2020.0,439172
+Gold Standard,Other,2021.0,963613
+Gold Standard,Other,2022.0,1103887
+Gold Standard,Other,2023.0,800679
+Gold Standard,Other,2024.0,604983
+Gold Standard,Other,2025.0,90185
+Gold Standard,Solar,2010.0,487
+Gold Standard,Solar,2011.0,2542
+Gold Standard,Solar,2012.0,12645
+Gold Standard,Solar,2013.0,35401
+Gold Standard,Solar,2014.0,48776
+Gold Standard,Solar,2015.0,55050
+Gold Standard,Solar,2016.0,68030
+Gold Standard,Solar,2017.0,39168
+Gold Standard,Solar,2018.0,125070
+Gold Standard,Solar,2019.0,1169321
+Gold Standard,Solar,2020.0,2349900
+Gold Standard,Solar,2021.0,2977331
+Gold Standard,Solar,2022.0,2958067
+Gold Standard,Solar,2023.0,1753980
+Gold Standard,Solar,2024.0,431088
+Gold Standard,Wind,2004.0,56399
+Gold Standard,Wind,2005.0,183663
+Gold Standard,Wind,2006.0,174375
+Gold Standard,Wind,2007.0,191374
+Gold Standard,Wind,2008.0,68435
+Gold Standard,Wind,2009.0,220211
+Gold Standard,Wind,2010.0,764215
+Gold Standard,Wind,2011.0,1219111
+Gold Standard,Wind,2012.0,1178173
+Gold Standard,Wind,2013.0,856603
+Gold Standard,Wind,2014.0,965689
+Gold Standard,Wind,2015.0,1614305
+Gold Standard,Wind,2016.0,2103086
+Gold Standard,Wind,2017.0,1808478
+Gold Standard,Wind,2018.0,2255479
+Gold Standard,Wind,2019.0,2872405
+Gold Standard,Wind,2020.0,3937784
+Gold Standard,Wind,2021.0,6090788
+Gold Standard,Wind,2022.0,7242339
+Gold Standard,Wind,2023.0,6253969
+Gold Standard,Wind,2024.0,2666095
+Gold Standard,Wind,2025.0,795526

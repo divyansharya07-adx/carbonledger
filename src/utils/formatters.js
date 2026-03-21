@@ -24,6 +24,7 @@ export const GROUP_MAP = {
   ],
   'Energy': [
     'Bioenergy',
+    'Cleaner cooking',
     'Electric vehicles',
     'Energy storage',
     'Geothermal',
@@ -36,9 +37,8 @@ export const GROUP_MAP = {
     'Efficient appliances',
   ],
   'Agriculture': [
-    'Agriculture',
+    'Soil & Livestock',
     'Biochar',
-    'Cleaner cooking',
     'Composting',
     'Rice cultivation',
     'Water purification',
@@ -73,7 +73,7 @@ export const REGISTRY_COLORS = {
   'CAR': '#CCDF84',
 };
 
-export const EXCLUDED_CATEGORIES = ['No Methodology Provided', 'Unmatched'];
+export const EXCLUDED_CATEGORIES = ['No Methodology Provided', 'Unmatched', 'Other'];
 
 export const getGroup = (category) => {
   for (const [group, cats] of Object.entries(GROUP_MAP)) {

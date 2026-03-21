@@ -51,19 +51,19 @@ ACR,United States,Afforestation/Reforestation,2019.0,1364185
 ACR,United States,Afforestation/Reforestation,2020.0,1179164
 ACR,United States,Afforestation/Reforestation,2021.0,804970
 ACR,United States,Afforestation/Reforestation,2022.0,716959
-ACR,United States,Agriculture,2011.0,2
-ACR,United States,Agriculture,2013.0,19183
-ACR,United States,Agriculture,2014.0,24558
-ACR,United States,Agriculture,2015.0,237423
-ACR,United States,Agriculture,2016.0,270942
-ACR,United States,Agriculture,2017.0,314532
-ACR,United States,Agriculture,2018.0,288967
-ACR,United States,Agriculture,2019.0,298295
-ACR,United States,Agriculture,2020.0,190533
-ACR,United States,Agriculture,2021.0,99693
-ACR,United States,Agriculture,2022.0,44778
-ACR,United States,Agriculture,2023.0,40128
-ACR,United States,Agriculture,2024.0,23141
+ACR,United States,Soil & Livestock,2011.0,2
+ACR,United States,Soil & Livestock,2013.0,19183
+ACR,United States,Soil & Livestock,2014.0,24558
+ACR,United States,Soil & Livestock,2015.0,237423
+ACR,United States,Soil & Livestock,2016.0,270942
+ACR,United States,Soil & Livestock,2017.0,314532
+ACR,United States,Soil & Livestock,2018.0,288967
+ACR,United States,Soil & Livestock,2019.0,298295
+ACR,United States,Soil & Livestock,2020.0,190533
+ACR,United States,Soil & Livestock,2021.0,99693
+ACR,United States,Soil & Livestock,2022.0,44778
+ACR,United States,Soil & Livestock,2023.0,40128
+ACR,United States,Soil & Livestock,2024.0,23141
 ACR,United States,Electric vehicles,2003.0,3832
 ACR,United States,Electric vehicles,2004.0,5689
 ACR,United States,Electric vehicles,2005.0,13528
@@ -207,24 +207,24 @@ ACR,United States,Waste to energy,2014.0,278098
 ACR,United States,Waste to energy,2015.0,470530
 ACR,United States,Wastewater treatment,2008.0,100000
 ACR,United States,Wastewater treatment,2019.0,11295
-ARB,United States,Agriculture,2007.0,16834
-ARB,United States,Agriculture,2008.0,7
-ARB,United States,Agriculture,2009.0,19750
-ARB,United States,Agriculture,2010.0,126499
-ARB,United States,Agriculture,2011.0,279239
-ARB,United States,Agriculture,2012.0,348882
-ARB,United States,Agriculture,2013.0,550902
-ARB,United States,Agriculture,2014.0,792806
-ARB,United States,Agriculture,2015.0,959364
-ARB,United States,Agriculture,2016.0,1166696
-ARB,United States,Agriculture,2017.0,1158511
-ARB,United States,Agriculture,2018.0,1025466
-ARB,United States,Agriculture,2019.0,1001108
-ARB,United States,Agriculture,2020.0,770208
-ARB,United States,Agriculture,2021.0,520078
-ARB,United States,Agriculture,2022.0,430742
-ARB,United States,Agriculture,2023.0,361786
-ARB,United States,Agriculture,2024.0,136952
+ARB,United States,Soil & Livestock,2007.0,16834
+ARB,United States,Soil & Livestock,2008.0,7
+ARB,United States,Soil & Livestock,2009.0,19750
+ARB,United States,Soil & Livestock,2010.0,126499
+ARB,United States,Soil & Livestock,2011.0,279239
+ARB,United States,Soil & Livestock,2012.0,348882
+ARB,United States,Soil & Livestock,2013.0,550902
+ARB,United States,Soil & Livestock,2014.0,792806
+ARB,United States,Soil & Livestock,2015.0,959364
+ARB,United States,Soil & Livestock,2016.0,1166696
+ARB,United States,Soil & Livestock,2017.0,1158511
+ARB,United States,Soil & Livestock,2018.0,1025466
+ARB,United States,Soil & Livestock,2019.0,1001108
+ARB,United States,Soil & Livestock,2020.0,770208
+ARB,United States,Soil & Livestock,2021.0,520078
+ARB,United States,Soil & Livestock,2022.0,430742
+ARB,United States,Soil & Livestock,2023.0,361786
+ARB,United States,Soil & Livestock,2024.0,136952
 ARB,United States,Forest management,2004.0,9602
 ARB,United States,Forest management,2005.0,188025
 ARB,United States,Forest management,2006.0,296706
@@ -283,7 +283,7 @@ ARB,United States,Industrial efficiency,2022.0,681895
 ARB,United States,Industrial efficiency,2023.0,450209
 ARB,United States,Industrial efficiency,2024.0,853863
 ARB,United States,Industrial efficiency,2025.0,97359
-CAR,Mexico,Agriculture,2011.0,575
+CAR,Mexico,Soil & Livestock,2011.0,575
 CAR,Mexico,Forest management,2014.0,934
 CAR,Mexico,Forest management,2015.0,6495
 CAR,Mexico,Forest management,2016.0,12828
@@ -305,25 +305,25 @@ CAR,Mexico,Landfill gas,2021.0,20172
 CAR,Mexico,Landfill gas,2022.0,100850
 CAR,Mexico,Landfill gas,2023.0,140907
 CAR,Mexico,Landfill gas,2024.0,130886
-CAR,United States,Agriculture,2007.0,35807
-CAR,United States,Agriculture,2008.0,35468
-CAR,United States,Agriculture,2009.0,142645
-CAR,United States,Agriculture,2010.0,298048
-CAR,United States,Agriculture,2011.0,404708
-CAR,United States,Agriculture,2012.0,493365
-CAR,United States,Agriculture,2013.0,734768
-CAR,United States,Agriculture,2014.0,824136
-CAR,United States,Agriculture,2015.0,783320
-CAR,United States,Agriculture,2016.0,1027844
-CAR,United States,Agriculture,2017.0,1010942
-CAR,United States,Agriculture,2018.0,914263
-CAR,United States,Agriculture,2019.0,880455
-CAR,United States,Agriculture,2020.0,745709
-CAR,United States,Agriculture,2021.0,683916
-CAR,United States,Agriculture,2022.0,781556
-CAR,United States,Agriculture,2023.0,757973
-CAR,United States,Agriculture,2024.0,320400
-CAR,United States,Agriculture,2025.0,101914
+CAR,United States,Soil & Livestock,2007.0,35807
+CAR,United States,Soil & Livestock,2008.0,35468
+CAR,United States,Soil & Livestock,2009.0,142645
+CAR,United States,Soil & Livestock,2010.0,298048
+CAR,United States,Soil & Livestock,2011.0,404708
+CAR,United States,Soil & Livestock,2012.0,493365
+CAR,United States,Soil & Livestock,2013.0,734768
+CAR,United States,Soil & Livestock,2014.0,824136
+CAR,United States,Soil & Livestock,2015.0,783320
+CAR,United States,Soil & Livestock,2016.0,1027844
+CAR,United States,Soil & Livestock,2017.0,1010942
+CAR,United States,Soil & Livestock,2018.0,914263
+CAR,United States,Soil & Livestock,2019.0,880455
+CAR,United States,Soil & Livestock,2020.0,745709
+CAR,United States,Soil & Livestock,2021.0,683916
+CAR,United States,Soil & Livestock,2022.0,781556
+CAR,United States,Soil & Livestock,2023.0,757973
+CAR,United States,Soil & Livestock,2024.0,320400
+CAR,United States,Soil & Livestock,2025.0,101914
 CAR,United States,Composting,2008.0,6554
 CAR,United States,Composting,2009.0,27751
 CAR,United States,Composting,2010.0,45940
@@ -489,23 +489,6 @@ Gold Standard,Aruba,Mixed renewables,2015.0,207365
 Gold Standard,Aruba,Mixed renewables,2016.0,172049
 Gold Standard,Aruba,Mixed renewables,2017.0,151796
 Gold Standard,Aruba,Mixed renewables,2018.0,66382
-Gold Standard,Australia,No Methodology Provided,2009.0,2808
-Gold Standard,Australia,No Methodology Provided,2010.0,9355
-Gold Standard,Australia,No Methodology Provided,2011.0,15952
-Gold Standard,Australia,No Methodology Provided,2012.0,21738
-Gold Standard,Australia,No Methodology Provided,2013.0,24914
-Gold Standard,Australia,No Methodology Provided,2014.0,47528
-Gold Standard,Australia,No Methodology Provided,2015.0,32672
-Gold Standard,Australia,No Methodology Provided,2016.0,37522
-Gold Standard,Australia,No Methodology Provided,2017.0,66908
-Gold Standard,Australia,No Methodology Provided,2018.0,42946
-Gold Standard,Australia,No Methodology Provided,2019.0,45584
-Gold Standard,Australia,No Methodology Provided,2020.0,48329
-Gold Standard,Australia,No Methodology Provided,2021.0,20000
-Gold Standard,Australia,No Methodology Provided,2022.0,20000
-Gold Standard,Australia,No Methodology Provided,2024.0,10000
-Gold Standard,Australia,No Methodology Provided,2025.0,7500
-Gold Standard,Australia,No Methodology Provided,2026.0,5000
 Gold Standard,Bangladesh,Cleaner cooking,2014.0,40779
 Gold Standard,Bangladesh,Cleaner cooking,2015.0,311253
 Gold Standard,Bangladesh,Cleaner cooking,2016.0,280540
@@ -630,11 +613,6 @@ Gold Standard,Brazil,Mixed renewables,2017.0,45385
 Gold Standard,Brazil,Mixed renewables,2018.0,38772
 Gold Standard,Brazil,Mixed renewables,2019.0,50977
 Gold Standard,Brazil,Mixed renewables,2020.0,39960
-Gold Standard,Brazil,No Methodology Provided,2021.0,1842871
-Gold Standard,Brazil,No Methodology Provided,2022.0,1743022
-Gold Standard,Brazil,No Methodology Provided,2023.0,1795426
-Gold Standard,Brazil,No Methodology Provided,2024.0,911968
-Gold Standard,Brazil,No Methodology Provided,2025.0,90185
 Gold Standard,Bulgaria,Mixed renewables,2013.0,30777
 Gold Standard,Bulgaria,Mixed renewables,2014.0,129871
 Gold Standard,Bulgaria,Mixed renewables,2015.0,149513
@@ -656,16 +634,6 @@ Gold Standard,Burkina Faso,Cleaner cooking,2021.0,63197
 Gold Standard,Burkina Faso,Cleaner cooking,2022.0,115172
 Gold Standard,Burkina Faso,Cleaner cooking,2023.0,85230
 Gold Standard,Burkina Faso,Cleaner cooking,2024.0,21961
-Gold Standard,Burkina Faso,No Methodology Provided,2015.0,18930
-Gold Standard,Burkina Faso,No Methodology Provided,2016.0,51331
-Gold Standard,Burkina Faso,No Methodology Provided,2017.0,91502
-Gold Standard,Burkina Faso,No Methodology Provided,2018.0,100200
-Gold Standard,Burkina Faso,No Methodology Provided,2019.0,100074
-Gold Standard,Burkina Faso,No Methodology Provided,2020.0,125710
-Gold Standard,Burkina Faso,No Methodology Provided,2021.0,121765
-Gold Standard,Burkina Faso,No Methodology Provided,2022.0,149409
-Gold Standard,Burkina Faso,No Methodology Provided,2023.0,91438
-Gold Standard,Burkina Faso,No Methodology Provided,2024.0,20424
 Gold Standard,Burundi,Cleaner cooking,2020.0,15558
 Gold Standard,Burundi,Cleaner cooking,2021.0,144046
 Gold Standard,Burundi,Cleaner cooking,2022.0,383467
@@ -686,20 +654,6 @@ Gold Standard,Cambodia,Cleaner cooking,2020.0,62820
 Gold Standard,Cambodia,Cleaner cooking,2021.0,52392
 Gold Standard,Cambodia,Cleaner cooking,2022.0,62022
 Gold Standard,Cambodia,Cleaner cooking,2023.0,52441
-Gold Standard,Cambodia,No Methodology Provided,2011.0,20804
-Gold Standard,Cambodia,No Methodology Provided,2012.0,55005
-Gold Standard,Cambodia,No Methodology Provided,2013.0,74862
-Gold Standard,Cambodia,No Methodology Provided,2014.0,125055
-Gold Standard,Cambodia,No Methodology Provided,2015.0,143856
-Gold Standard,Cambodia,No Methodology Provided,2016.0,128217
-Gold Standard,Cambodia,No Methodology Provided,2017.0,135544
-Gold Standard,Cambodia,No Methodology Provided,2018.0,95206
-Gold Standard,Cambodia,No Methodology Provided,2019.0,108510
-Gold Standard,Cambodia,No Methodology Provided,2020.0,127810
-Gold Standard,Cambodia,No Methodology Provided,2021.0,101922
-Gold Standard,Cambodia,No Methodology Provided,2022.0,111716
-Gold Standard,Cambodia,No Methodology Provided,2023.0,101103
-Gold Standard,Cambodia,No Methodology Provided,2024.0,35018
 Gold Standard,Cameroon,Cleaner cooking,2014.0,654
 Gold Standard,Cameroon,Cleaner cooking,2015.0,1536
 Gold Standard,Cameroon,Cleaner cooking,2016.0,303
@@ -715,15 +669,6 @@ Gold Standard,Cameroon,Efficient appliances,2020.0,2081
 Gold Standard,Cameroon,Efficient appliances,2021.0,3816
 Gold Standard,Cameroon,Efficient appliances,2022.0,2999
 Gold Standard,Cameroon,Efficient appliances,2023.0,2873
-Gold Standard,Cameroon,No Methodology Provided,2015.0,457
-Gold Standard,Cameroon,No Methodology Provided,2016.0,1513
-Gold Standard,Cameroon,No Methodology Provided,2017.0,1956
-Gold Standard,Cameroon,No Methodology Provided,2018.0,8395
-Gold Standard,Cameroon,No Methodology Provided,2019.0,10000
-Gold Standard,Cameroon,No Methodology Provided,2020.0,10000
-Gold Standard,Cameroon,No Methodology Provided,2021.0,10000
-Gold Standard,Cameroon,No Methodology Provided,2022.0,10000
-Gold Standard,Cameroon,No Methodology Provided,2023.0,9151
 Gold Standard,Canada,Industrial efficiency,2012.0,54
 Gold Standard,Canada,Industrial efficiency,2013.0,402
 Gold Standard,Canada,Industrial efficiency,2014.0,402
@@ -773,18 +718,6 @@ Gold Standard,Canada,Industrial efficiency,2057.0,1443
 Gold Standard,Canada,Industrial efficiency,2058.0,1253
 Gold Standard,Canada,Industrial efficiency,2059.0,1165
 Gold Standard,Canada,Industrial efficiency,2060.0,2966
-Gold Standard,Chad,No Methodology Provided,2012.0,9043
-Gold Standard,Chad,No Methodology Provided,2013.0,8999
-Gold Standard,Chad,No Methodology Provided,2014.0,9026
-Gold Standard,Chad,No Methodology Provided,2015.0,9024
-Gold Standard,Chad,No Methodology Provided,2016.0,6892
-Gold Standard,Chad,No Methodology Provided,2017.0,4511
-Gold Standard,Chad,No Methodology Provided,2018.0,4776
-Gold Standard,Chad,No Methodology Provided,2019.0,7700
-Gold Standard,Chad,No Methodology Provided,2020.0,7683
-Gold Standard,Chad,No Methodology Provided,2021.0,8538
-Gold Standard,Chad,No Methodology Provided,2022.0,19142
-Gold Standard,Chad,No Methodology Provided,2023.0,20000
 Gold Standard,Chile,Mixed renewables,2014.0,90795
 Gold Standard,Chile,Mixed renewables,2015.0,176019
 Gold Standard,Chile,Mixed renewables,2016.0,139930
@@ -795,20 +728,10 @@ Gold Standard,Chile,Mixed renewables,2020.0,156703
 Gold Standard,Chile,Mixed renewables,2021.0,276139
 Gold Standard,Chile,Mixed renewables,2022.0,351860
 Gold Standard,Chile,Mixed renewables,2023.0,121621
-Gold Standard,Chile,No Methodology Provided,2014.0,124582
-Gold Standard,Chile,No Methodology Provided,2015.0,424111
-Gold Standard,Chile,No Methodology Provided,2016.0,306737
-Gold Standard,Chile,No Methodology Provided,2017.0,397252
-Gold Standard,Chile,No Methodology Provided,2018.0,368869
-Gold Standard,Chile,No Methodology Provided,2019.0,328451
-Gold Standard,Chile,No Methodology Provided,2020.0,237524
-Gold Standard,Chile,No Methodology Provided,2021.0,250301
-Gold Standard,Chile,No Methodology Provided,2022.0,273896
-Gold Standard,Chile,No Methodology Provided,2023.0,244191
-Gold Standard,China,Agriculture,2020.0,378102
-Gold Standard,China,Agriculture,2021.0,3314499
-Gold Standard,China,Agriculture,2022.0,2866588
-Gold Standard,China,Agriculture,2023.0,631494
+Gold Standard,China,Soil & Livestock,2020.0,378102
+Gold Standard,China,Soil & Livestock,2021.0,3314499
+Gold Standard,China,Soil & Livestock,2022.0,2866588
+Gold Standard,China,Soil & Livestock,2023.0,631494
 Gold Standard,China,Bioenergy,2011.0,13110
 Gold Standard,China,Bioenergy,2012.0,151822
 Gold Standard,China,Bioenergy,2013.0,33733
@@ -879,35 +802,6 @@ Gold Standard,China,Mixed renewables,2021.0,1414819
 Gold Standard,China,Mixed renewables,2022.0,1212533
 Gold Standard,China,Mixed renewables,2023.0,264714
 Gold Standard,China,Mixed renewables,2024.0,14157
-Gold Standard,China,No Methodology Provided,2013.0,14626
-Gold Standard,China,No Methodology Provided,2014.0,229933
-Gold Standard,China,No Methodology Provided,2015.0,406007
-Gold Standard,China,No Methodology Provided,2016.0,455907
-Gold Standard,China,No Methodology Provided,2017.0,350989
-Gold Standard,China,No Methodology Provided,2018.0,353426
-Gold Standard,China,No Methodology Provided,2019.0,304525
-Gold Standard,China,No Methodology Provided,2020.0,402047
-Gold Standard,China,No Methodology Provided,2021.0,367540
-Gold Standard,China,No Methodology Provided,2022.0,359773
-Gold Standard,China,No Methodology Provided,2023.0,322639
-Gold Standard,China,No Methodology Provided,2024.0,538
-Gold Standard,China,No Methodology Provided,2025.0,538
-Gold Standard,China,No Methodology Provided,2026.0,513
-Gold Standard,China,No Methodology Provided,2027.0,493
-Gold Standard,China,No Methodology Provided,2028.0,463
-Gold Standard,China,No Methodology Provided,2029.0,437
-Gold Standard,China,No Methodology Provided,2030.0,418
-Gold Standard,China,No Methodology Provided,2031.0,390
-Gold Standard,China,No Methodology Provided,2032.0,349
-Gold Standard,China,No Methodology Provided,2033.0,322
-Gold Standard,China,No Methodology Provided,2034.0,206
-Gold Standard,China,No Methodology Provided,2035.0,178
-Gold Standard,China,No Methodology Provided,2036.0,159
-Gold Standard,China,No Methodology Provided,2037.0,141
-Gold Standard,China,No Methodology Provided,2038.0,127
-Gold Standard,China,No Methodology Provided,2039.0,110
-Gold Standard,China,No Methodology Provided,2040.0,93
-Gold Standard,China,No Methodology Provided,2041.0,111
 Gold Standard,China,Waste to energy,2008.0,78373
 Gold Standard,China,Waste to energy,2009.0,275925
 Gold Standard,China,Waste to energy,2010.0,340761
@@ -969,35 +863,6 @@ Gold Standard,Colombia,Mixed renewables,2018.0,35143
 Gold Standard,Colombia,Mixed renewables,2019.0,60378
 Gold Standard,Colombia,Mixed renewables,2020.0,72951
 Gold Standard,Colombia,Mixed renewables,2021.0,56026
-Gold Standard,Colombia,No Methodology Provided,2007.0,287
-Gold Standard,Colombia,No Methodology Provided,2008.0,4109
-Gold Standard,Colombia,No Methodology Provided,2009.0,7087
-Gold Standard,Colombia,No Methodology Provided,2010.0,21284
-Gold Standard,Colombia,No Methodology Provided,2011.0,45888
-Gold Standard,Colombia,No Methodology Provided,2012.0,67592
-Gold Standard,Colombia,No Methodology Provided,2013.0,81791
-Gold Standard,Colombia,No Methodology Provided,2014.0,104673
-Gold Standard,Colombia,No Methodology Provided,2016.0,2360
-Gold Standard,Colombia,No Methodology Provided,2017.0,90080
-Gold Standard,Colombia,No Methodology Provided,2018.0,184890
-Gold Standard,Colombia,No Methodology Provided,2019.0,349298
-Gold Standard,Colombia,No Methodology Provided,2020.0,394663
-Gold Standard,Colombia,No Methodology Provided,2021.0,390532
-Gold Standard,Colombia,No Methodology Provided,2022.0,330554
-Gold Standard,Colombia,No Methodology Provided,2023.0,147621
-Gold Standard,Colombia,No Methodology Provided,2024.0,101680
-Gold Standard,Colombia,No Methodology Provided,2025.0,56961
-Gold Standard,Colombia,No Methodology Provided,2026.0,91507
-Gold Standard,Colombia,No Methodology Provided,2027.0,92384
-Gold Standard,Colombia,No Methodology Provided,2028.0,93271
-Gold Standard,Colombia,No Methodology Provided,2029.0,29016
-Gold Standard,Colombia,No Methodology Provided,2031.0,4948
-Gold Standard,Colombia,No Methodology Provided,2032.0,10778
-Gold Standard,Colombia,No Methodology Provided,2033.0,11538
-Gold Standard,Colombia,No Methodology Provided,2034.0,12320
-Gold Standard,Colombia,No Methodology Provided,2035.0,13127
-Gold Standard,Colombia,No Methodology Provided,2036.0,13955
-Gold Standard,Colombia,No Methodology Provided,2037.0,14806
 Gold Standard,Congo,Cleaner cooking,2014.0,3095
 Gold Standard,Congo,Cleaner cooking,2015.0,6125
 Gold Standard,Congo,Cleaner cooking,2016.0,4339
@@ -1014,18 +879,6 @@ Gold Standard,Congo the Democratic Republic of the,Industrial efficiency,2021.0,
 Gold Standard,Congo the Democratic Republic of the,Industrial efficiency,2022.0,104801
 Gold Standard,Congo the Democratic Republic of the,Industrial efficiency,2023.0,86657
 Gold Standard,Congo the Democratic Republic of the,Industrial efficiency,2024.0,43210
-Gold Standard,Congo the Democratic Republic of the,No Methodology Provided,2011.0,104
-Gold Standard,Congo the Democratic Republic of the,No Methodology Provided,2012.0,15283
-Gold Standard,Congo the Democratic Republic of the,No Methodology Provided,2013.0,26414
-Gold Standard,Congo the Democratic Republic of the,No Methodology Provided,2014.0,34145
-Gold Standard,Congo the Democratic Republic of the,No Methodology Provided,2015.0,55148
-Gold Standard,Congo the Democratic Republic of the,No Methodology Provided,2016.0,92924
-Gold Standard,Congo the Democratic Republic of the,No Methodology Provided,2017.0,68899
-Gold Standard,Congo the Democratic Republic of the,No Methodology Provided,2018.0,78608
-Gold Standard,Congo the Democratic Republic of the,No Methodology Provided,2019.0,80264
-Gold Standard,Congo the Democratic Republic of the,No Methodology Provided,2020.0,80264
-Gold Standard,Congo the Democratic Republic of the,No Methodology Provided,2021.0,80265
-Gold Standard,Congo the Democratic Republic of the,No Methodology Provided,2022.0,51004
 Gold Standard,Congo the Democratic Republic of the,Solar,2023.0,29155
 Gold Standard,Congo the Democratic Republic of the,Solar,2024.0,2762
 Gold Standard,Costa Rica,Mixed renewables,2013.0,4456
@@ -1039,64 +892,6 @@ Gold Standard,Costa Rica,Mixed renewables,2021.0,9433
 Gold Standard,Costa Rica,Mixed renewables,2022.0,7860
 Gold Standard,Costa Rica,Mixed renewables,2023.0,8837
 Gold Standard,Costa Rica,Mixed renewables,2024.0,4150
-Gold Standard,Costa Rica,No Methodology Provided,2008.0,711
-Gold Standard,Costa Rica,No Methodology Provided,2009.0,788
-Gold Standard,Costa Rica,No Methodology Provided,2010.0,3980
-Gold Standard,Costa Rica,No Methodology Provided,2011.0,6772
-Gold Standard,Costa Rica,No Methodology Provided,2012.0,16229
-Gold Standard,Costa Rica,No Methodology Provided,2013.0,20675
-Gold Standard,Costa Rica,No Methodology Provided,2014.0,17407
-Gold Standard,Costa Rica,No Methodology Provided,2015.0,21160
-Gold Standard,Costa Rica,No Methodology Provided,2016.0,21160
-Gold Standard,Costa Rica,No Methodology Provided,2017.0,21160
-Gold Standard,Costa Rica,No Methodology Provided,2018.0,21160
-Gold Standard,Costa Rica,No Methodology Provided,2019.0,21160
-Gold Standard,Costa Rica,No Methodology Provided,2020.0,21156
-Gold Standard,Costa Rica,No Methodology Provided,2021.0,12114
-Gold Standard,Costa Rica,No Methodology Provided,2022.0,8343
-Gold Standard,Costa Rica,No Methodology Provided,2023.0,7530
-Gold Standard,Costa Rica,No Methodology Provided,2024.0,30875
-Gold Standard,Costa Rica,No Methodology Provided,2025.0,28501
-Gold Standard,Costa Rica,No Methodology Provided,2026.0,28501
-Gold Standard,Costa Rica,No Methodology Provided,2027.0,28501
-Gold Standard,Costa Rica,No Methodology Provided,2028.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2029.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2030.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2031.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2032.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2033.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2034.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2035.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2036.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2037.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2038.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2039.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2040.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2041.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2042.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2043.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2044.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2045.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2046.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2047.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2048.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2049.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2050.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2051.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2052.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2053.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2054.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2055.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2056.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2057.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2058.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2059.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2060.0,664
-Gold Standard,Costa Rica,No Methodology Provided,2061.0,678
-Gold Standard,C√¥te d'Ivoire,No Methodology Provided,2021.0,4853
-Gold Standard,C√¥te d'Ivoire,No Methodology Provided,2022.0,44286
-Gold Standard,C√¥te d'Ivoire,No Methodology Provided,2023.0,82252
-Gold Standard,C√¥te d'Ivoire,No Methodology Provided,2024.0,79256
 Gold Standard,Dominican Republic,Mixed renewables,2016.0,14905
 Gold Standard,Dominican Republic,Mixed renewables,2017.0,29442
 Gold Standard,Dominican Republic,Mixed renewables,2018.0,31793
@@ -1106,16 +901,6 @@ Gold Standard,Dominican Republic,Mixed renewables,2021.0,30905
 Gold Standard,Dominican Republic,Mixed renewables,2022.0,29510
 Gold Standard,Dominican Republic,Mixed renewables,2023.0,65788
 Gold Standard,Dominican Republic,Mixed renewables,2024.0,33266
-Gold Standard,Egypt,No Methodology Provided,2016.0,381
-Gold Standard,Egypt,No Methodology Provided,2017.0,381
-Gold Standard,Egypt,No Methodology Provided,2018.0,381
-Gold Standard,Egypt,No Methodology Provided,2019.0,381
-Gold Standard,Egypt,No Methodology Provided,2020.0,17039
-Gold Standard,Egypt,No Methodology Provided,2021.0,714249
-Gold Standard,Egypt,No Methodology Provided,2022.0,1140727
-Gold Standard,Egypt,No Methodology Provided,2023.0,1045818
-Gold Standard,Egypt,No Methodology Provided,2024.0,1011776
-Gold Standard,Egypt,No Methodology Provided,2025.0,316511
 Gold Standard,Eritrea,Cleaner cooking,2009.0,1271
 Gold Standard,Eritrea,Cleaner cooking,2010.0,3166
 Gold Standard,Eritrea,Cleaner cooking,2011.0,2720
@@ -1132,14 +917,6 @@ Gold Standard,Eritrea,Cleaner cooking,2021.0,134359
 Gold Standard,Eritrea,Cleaner cooking,2022.0,152752
 Gold Standard,Eritrea,Cleaner cooking,2023.0,71203
 Gold Standard,Eritrea,Cleaner cooking,2024.0,18655
-Gold Standard,Eritrea,No Methodology Provided,2017.0,5009
-Gold Standard,Eritrea,No Methodology Provided,2018.0,48534
-Gold Standard,Eritrea,No Methodology Provided,2019.0,46892
-Gold Standard,Eritrea,No Methodology Provided,2020.0,40469
-Gold Standard,Eritrea,No Methodology Provided,2021.0,31613
-Gold Standard,Eritrea,No Methodology Provided,2022.0,40370
-Gold Standard,Eritrea,No Methodology Provided,2023.0,32300
-Gold Standard,Eritrea,No Methodology Provided,2024.0,27738
 Gold Standard,Eritrea,Water purification,2016.0,13258
 Gold Standard,Eritrea,Water purification,2017.0,98195
 Gold Standard,Eritrea,Water purification,2018.0,123596
@@ -1163,35 +940,6 @@ Gold Standard,Ethiopia,Efficient appliances,2015.0,21309
 Gold Standard,Ethiopia,Efficient appliances,2021.0,106659
 Gold Standard,Ethiopia,Efficient appliances,2022.0,100525
 Gold Standard,Ethiopia,Efficient appliances,2023.0,98921
-Gold Standard,Ethiopia,No Methodology Provided,2008.0,8844
-Gold Standard,Ethiopia,No Methodology Provided,2009.0,17740
-Gold Standard,Ethiopia,No Methodology Provided,2010.0,18302
-Gold Standard,Ethiopia,No Methodology Provided,2011.0,19145
-Gold Standard,Ethiopia,No Methodology Provided,2012.0,19708
-Gold Standard,Ethiopia,No Methodology Provided,2013.0,20270
-Gold Standard,Ethiopia,No Methodology Provided,2014.0,20832
-Gold Standard,Ethiopia,No Methodology Provided,2015.0,21594
-Gold Standard,Ethiopia,No Methodology Provided,2016.0,43425
-Gold Standard,Ethiopia,No Methodology Provided,2017.0,44549
-Gold Standard,Ethiopia,No Methodology Provided,2018.0,65145
-Gold Standard,Ethiopia,No Methodology Provided,2019.0,78512
-Gold Standard,Ethiopia,No Methodology Provided,2020.0,96986
-Gold Standard,Ethiopia,No Methodology Provided,2021.0,121406
-Gold Standard,Ethiopia,No Methodology Provided,2022.0,100667
-Gold Standard,Ethiopia,No Methodology Provided,2023.0,94608
-Gold Standard,Ethiopia,No Methodology Provided,2024.0,31353
-Gold Standard,Ethiopia,No Methodology Provided,2025.0,8482
-Gold Standard,Ethiopia,No Methodology Provided,2026.0,8482
-Gold Standard,Ethiopia,No Methodology Provided,2027.0,8482
-Gold Standard,Ethiopia,No Methodology Provided,2028.0,7007
-Gold Standard,Ethiopia,No Methodology Provided,2029.0,6506
-Gold Standard,Ethiopia,No Methodology Provided,2030.0,6506
-Gold Standard,Ethiopia,No Methodology Provided,2031.0,6506
-Gold Standard,Ethiopia,No Methodology Provided,2032.0,6506
-Gold Standard,Ethiopia,No Methodology Provided,2033.0,6506
-Gold Standard,Ethiopia,No Methodology Provided,2034.0,6506
-Gold Standard,Ethiopia,No Methodology Provided,2035.0,6506
-Gold Standard,Ethiopia,No Methodology Provided,2036.0,6506
 Gold Standard,Ethiopia,Solar,2010.0,11
 Gold Standard,Ethiopia,Solar,2011.0,996
 Gold Standard,Ethiopia,Solar,2012.0,2341
@@ -1256,9 +1004,6 @@ Gold Standard,Ghana,Industrial efficiency,2019.0,681733
 Gold Standard,Ghana,Industrial efficiency,2020.0,738366
 Gold Standard,Ghana,Industrial efficiency,2021.0,691865
 Gold Standard,Ghana,Industrial efficiency,2022.0,317233
-Gold Standard,Ghana,No Methodology Provided,2018.0,4519
-Gold Standard,Ghana,No Methodology Provided,2019.0,7968
-Gold Standard,Ghana,No Methodology Provided,2020.0,6265
 Gold Standard,Guatemala,Cleaner cooking,2012.0,1615
 Gold Standard,Guatemala,Cleaner cooking,2013.0,44850
 Gold Standard,Guatemala,Cleaner cooking,2014.0,184949
@@ -1322,21 +1067,12 @@ Gold Standard,Honduras,Mixed renewables,2017.0,39382
 Gold Standard,Honduras,Mixed renewables,2018.0,38262
 Gold Standard,Honduras,Mixed renewables,2019.0,23452
 Gold Standard,Honduras,Mixed renewables,2020.0,27755
-Gold Standard,Honduras,No Methodology Provided,2016.0,805
-Gold Standard,Honduras,No Methodology Provided,2017.0,8100
-Gold Standard,Honduras,No Methodology Provided,2018.0,9750
-Gold Standard,Honduras,No Methodology Provided,2019.0,991
-Gold Standard,Honduras,No Methodology Provided,2020.0,6367
-Gold Standard,Honduras,No Methodology Provided,2021.0,6986
-Gold Standard,Honduras,No Methodology Provided,2022.0,7741
-Gold Standard,Honduras,No Methodology Provided,2023.0,8357
-Gold Standard,Honduras,No Methodology Provided,2024.0,7075
-Gold Standard,India,Agriculture,2017.0,64379
-Gold Standard,India,Agriculture,2018.0,77448
-Gold Standard,India,Agriculture,2019.0,24143
-Gold Standard,India,Agriculture,2020.0,41067
-Gold Standard,India,Agriculture,2021.0,50213
-Gold Standard,India,Agriculture,2022.0,35344
+Gold Standard,India,Soil & Livestock,2017.0,64379
+Gold Standard,India,Soil & Livestock,2018.0,77448
+Gold Standard,India,Soil & Livestock,2019.0,24143
+Gold Standard,India,Soil & Livestock,2020.0,41067
+Gold Standard,India,Soil & Livestock,2021.0,50213
+Gold Standard,India,Soil & Livestock,2022.0,35344
 Gold Standard,India,Bioenergy,2007.0,5104
 Gold Standard,India,Bioenergy,2008.0,11852
 Gold Standard,India,Bioenergy,2009.0,12268
@@ -1427,27 +1163,6 @@ Gold Standard,India,Mixed renewables,2022.0,8726066
 Gold Standard,India,Mixed renewables,2023.0,6389725
 Gold Standard,India,Mixed renewables,2024.0,1702488
 Gold Standard,India,Mixed renewables,2025.0,330125
-Gold Standard,India,No Methodology Provided,2005.0,628
-Gold Standard,India,No Methodology Provided,2006.0,832
-Gold Standard,India,No Methodology Provided,2007.0,1341
-Gold Standard,India,No Methodology Provided,2008.0,1841
-Gold Standard,India,No Methodology Provided,2009.0,2529
-Gold Standard,India,No Methodology Provided,2010.0,3870
-Gold Standard,India,No Methodology Provided,2011.0,4567
-Gold Standard,India,No Methodology Provided,2012.0,7782
-Gold Standard,India,No Methodology Provided,2013.0,57954
-Gold Standard,India,No Methodology Provided,2014.0,63450
-Gold Standard,India,No Methodology Provided,2015.0,75332
-Gold Standard,India,No Methodology Provided,2016.0,176502
-Gold Standard,India,No Methodology Provided,2017.0,193095
-Gold Standard,India,No Methodology Provided,2018.0,355186
-Gold Standard,India,No Methodology Provided,2019.0,1824692
-Gold Standard,India,No Methodology Provided,2020.0,3749161
-Gold Standard,India,No Methodology Provided,2021.0,4958276
-Gold Standard,India,No Methodology Provided,2022.0,5102262
-Gold Standard,India,No Methodology Provided,2023.0,4958717
-Gold Standard,India,No Methodology Provided,2024.0,1333657
-Gold Standard,India,No Methodology Provided,2025.0,418108
 Gold Standard,India,Solar,2010.0,1482
 Gold Standard,India,Solar,2011.0,6827
 Gold Standard,India,Solar,2012.0,10264
@@ -1503,19 +1218,6 @@ Gold Standard,Indonesia,Mixed renewables,2020.0,1176647
 Gold Standard,Indonesia,Mixed renewables,2021.0,618624
 Gold Standard,Indonesia,Mixed renewables,2022.0,520447
 Gold Standard,Indonesia,Mixed renewables,2023.0,44765
-Gold Standard,Indonesia,No Methodology Provided,2011.0,6270
-Gold Standard,Indonesia,No Methodology Provided,2012.0,15917
-Gold Standard,Indonesia,No Methodology Provided,2013.0,28183
-Gold Standard,Indonesia,No Methodology Provided,2014.0,36739
-Gold Standard,Indonesia,No Methodology Provided,2015.0,45597
-Gold Standard,Indonesia,No Methodology Provided,2016.0,44848
-Gold Standard,Indonesia,No Methodology Provided,2017.0,44922
-Gold Standard,Indonesia,No Methodology Provided,2018.0,51267
-Gold Standard,Indonesia,No Methodology Provided,2019.0,57664
-Gold Standard,Indonesia,No Methodology Provided,2020.0,62847
-Gold Standard,Indonesia,No Methodology Provided,2021.0,70308
-Gold Standard,Indonesia,No Methodology Provided,2022.0,64219
-Gold Standard,Indonesia,No Methodology Provided,2023.0,56053
 Gold Standard,Indonesia,Water purification,2015.0,217
 Gold Standard,Indonesia,Water purification,2016.0,7493
 Gold Standard,Indonesia,Water purification,2017.0,10177
@@ -1533,10 +1235,6 @@ Gold Standard,International,Industrial efficiency,2013.0,27697
 Gold Standard,International,Industrial efficiency,2014.0,72641
 Gold Standard,International,Industrial efficiency,2015.0,52795
 Gold Standard,International,Industrial efficiency,2016.0,17916
-Gold Standard,International,No Methodology Provided,2021.0,2862
-Gold Standard,International,No Methodology Provided,2022.0,24478
-Gold Standard,International,No Methodology Provided,2023.0,39701
-Gold Standard,International,No Methodology Provided,2024.0,2398
 Gold Standard,Iraq,Mixed renewables,2018.0,44
 Gold Standard,Iraq,Mixed renewables,2019.0,159
 Gold Standard,Iraq,Mixed renewables,2020.0,111
@@ -1590,19 +1288,6 @@ Gold Standard,Kenya,Industrial efficiency,2021.0,60000
 Gold Standard,Kenya,Industrial efficiency,2022.0,60616
 Gold Standard,Kenya,Industrial efficiency,2023.0,122061
 Gold Standard,Kenya,Industrial efficiency,2024.0,399244
-Gold Standard,Kenya,No Methodology Provided,2013.0,24590
-Gold Standard,Kenya,No Methodology Provided,2014.0,48701
-Gold Standard,Kenya,No Methodology Provided,2015.0,28275
-Gold Standard,Kenya,No Methodology Provided,2016.0,171411
-Gold Standard,Kenya,No Methodology Provided,2017.0,292746
-Gold Standard,Kenya,No Methodology Provided,2018.0,338982
-Gold Standard,Kenya,No Methodology Provided,2019.0,291530
-Gold Standard,Kenya,No Methodology Provided,2020.0,449529
-Gold Standard,Kenya,No Methodology Provided,2021.0,2569386
-Gold Standard,Kenya,No Methodology Provided,2022.0,3315723
-Gold Standard,Kenya,No Methodology Provided,2023.0,3326737
-Gold Standard,Kenya,No Methodology Provided,2024.0,1893255
-Gold Standard,Kenya,No Methodology Provided,2025.0,4727
 Gold Standard,Kenya,Solar,2017.0,1926
 Gold Standard,Kenya,Solar,2018.0,3758
 Gold Standard,Kenya,Solar,2019.0,5433
@@ -1638,33 +1323,8 @@ Gold Standard,Laos,Mixed renewables,2020.0,97236
 Gold Standard,Laos,Mixed renewables,2021.0,99860
 Gold Standard,Laos,Mixed renewables,2022.0,97623
 Gold Standard,Laos,Mixed renewables,2023.0,62192
-Gold Standard,Laos,No Methodology Provided,2012.0,343
-Gold Standard,Laos,No Methodology Provided,2013.0,3947
-Gold Standard,Laos,No Methodology Provided,2014.0,8380
-Gold Standard,Laos,No Methodology Provided,2015.0,16071
-Gold Standard,Laos,No Methodology Provided,2016.0,48095
-Gold Standard,Laos,No Methodology Provided,2017.0,58463
-Gold Standard,Laos,No Methodology Provided,2018.0,50877
-Gold Standard,Laos,No Methodology Provided,2019.0,72881
-Gold Standard,Laos,No Methodology Provided,2020.0,60000
-Gold Standard,Laos,No Methodology Provided,2021.0,60000
-Gold Standard,Laos,No Methodology Provided,2022.0,60000
-Gold Standard,Laos,No Methodology Provided,2023.0,60000
-Gold Standard,Laos,No Methodology Provided,2024.0,60000
-Gold Standard,Laos,No Methodology Provided,2025.0,15000
 Gold Standard,Laos,Water purification,2022.0,5928
 Gold Standard,Laos,Water purification,2023.0,93829
-Gold Standard,Lesotho,No Methodology Provided,2012.0,4552
-Gold Standard,Lesotho,No Methodology Provided,2013.0,18268
-Gold Standard,Lesotho,No Methodology Provided,2014.0,22147
-Gold Standard,Lesotho,No Methodology Provided,2015.0,25056
-Gold Standard,Lesotho,No Methodology Provided,2016.0,27677
-Gold Standard,Lesotho,No Methodology Provided,2017.0,28839
-Gold Standard,Lesotho,No Methodology Provided,2018.0,28522
-Gold Standard,Lesotho,No Methodology Provided,2019.0,28273
-Gold Standard,Lesotho,No Methodology Provided,2020.0,48456
-Gold Standard,Lesotho,No Methodology Provided,2021.0,24662
-Gold Standard,Lesotho,No Methodology Provided,2022.0,16880
 Gold Standard,Madagascar,Cleaner cooking,2008.0,1946
 Gold Standard,Madagascar,Cleaner cooking,2009.0,4583
 Gold Standard,Madagascar,Cleaner cooking,2010.0,8212
@@ -1690,11 +1350,6 @@ Gold Standard,Madagascar,Mixed renewables,2020.0,711
 Gold Standard,Madagascar,Mixed renewables,2021.0,4342
 Gold Standard,Madagascar,Mixed renewables,2022.0,4886
 Gold Standard,Madagascar,Mixed renewables,2023.0,4125
-Gold Standard,Madagascar,No Methodology Provided,2019.0,3072
-Gold Standard,Madagascar,No Methodology Provided,2020.0,14009
-Gold Standard,Madagascar,No Methodology Provided,2021.0,29008
-Gold Standard,Madagascar,No Methodology Provided,2022.0,24243
-Gold Standard,Madagascar,No Methodology Provided,2023.0,16015
 Gold Standard,Malawi,Cleaner cooking,2009.0,9449
 Gold Standard,Malawi,Cleaner cooking,2010.0,27381
 Gold Standard,Malawi,Cleaner cooking,2011.0,80370
@@ -1722,19 +1377,6 @@ Gold Standard,Malawi,Efficient appliances,2024.0,18425
 Gold Standard,Malawi,Industrial efficiency,2009.0,35
 Gold Standard,Malawi,Industrial efficiency,2016.0,21829
 Gold Standard,Malawi,Industrial efficiency,2017.0,52831
-Gold Standard,Malawi,No Methodology Provided,2013.0,8218
-Gold Standard,Malawi,No Methodology Provided,2014.0,37071
-Gold Standard,Malawi,No Methodology Provided,2015.0,59436
-Gold Standard,Malawi,No Methodology Provided,2016.0,120657
-Gold Standard,Malawi,No Methodology Provided,2017.0,130000
-Gold Standard,Malawi,No Methodology Provided,2018.0,129559
-Gold Standard,Malawi,No Methodology Provided,2019.0,125576
-Gold Standard,Malawi,No Methodology Provided,2020.0,104849
-Gold Standard,Malawi,No Methodology Provided,2021.0,94728
-Gold Standard,Malawi,No Methodology Provided,2022.0,119239
-Gold Standard,Malawi,No Methodology Provided,2023.0,81270
-Gold Standard,Malawi,No Methodology Provided,2024.0,138176
-Gold Standard,Malawi,No Methodology Provided,2025.0,5201
 Gold Standard,Malawi,Solar,2022.0,4945
 Gold Standard,Malawi,Solar,2023.0,5891
 Gold Standard,Malawi,Water purification,2022.0,3103
@@ -1759,12 +1401,6 @@ Gold Standard,Mali,Industrial efficiency,2014.0,67375
 Gold Standard,Mali,Industrial efficiency,2015.0,155978
 Gold Standard,Mali,Industrial efficiency,2016.0,58612
 Gold Standard,Mali,Industrial efficiency,2017.0,30270
-Gold Standard,Mali,No Methodology Provided,2014.0,407
-Gold Standard,Mali,No Methodology Provided,2015.0,1723
-Gold Standard,Mali,No Methodology Provided,2016.0,6797
-Gold Standard,Mali,No Methodology Provided,2017.0,7540
-Gold Standard,Mali,No Methodology Provided,2018.0,8053
-Gold Standard,Mali,No Methodology Provided,2019.0,9117
 Gold Standard,Mali,Water purification,2023.0,124247
 Gold Standard,Mali,Water purification,2024.0,124629
 Gold Standard,Mauritius,Landfill gas,2021.0,69657
@@ -1793,14 +1429,6 @@ Gold Standard,Mongolia,Industrial efficiency,2021.0,195557
 Gold Standard,Mongolia,Industrial efficiency,2022.0,135241
 Gold Standard,Mongolia,Industrial efficiency,2023.0,48801
 Gold Standard,Mongolia,Industrial efficiency,2024.0,11973
-Gold Standard,Mongolia,No Methodology Provided,2012.0,70439
-Gold Standard,Mongolia,No Methodology Provided,2013.0,112452
-Gold Standard,Mongolia,No Methodology Provided,2014.0,22081
-Gold Standard,Mongolia,No Methodology Provided,2020.0,182132
-Gold Standard,Mongolia,No Methodology Provided,2021.0,439055
-Gold Standard,Mongolia,No Methodology Provided,2022.0,400753
-Gold Standard,Mongolia,No Methodology Provided,2023.0,236048
-Gold Standard,Mongolia,No Methodology Provided,2024.0,45686
 Gold Standard,Morocco,Mixed renewables,2018.0,113619
 Gold Standard,Morocco,Mixed renewables,2019.0,158360
 Gold Standard,Morocco,Mixed renewables,2020.0,79180
@@ -1827,13 +1455,6 @@ Gold Standard,Mozambique,Efficient appliances,2022.0,8536
 Gold Standard,Mozambique,Efficient appliances,2023.0,1959
 Gold Standard,Mozambique,Industrial efficiency,2023.0,829
 Gold Standard,Mozambique,Industrial efficiency,2024.0,2894
-Gold Standard,Mozambique,No Methodology Provided,2019.0,13072
-Gold Standard,Mozambique,No Methodology Provided,2020.0,150805
-Gold Standard,Mozambique,No Methodology Provided,2021.0,366616
-Gold Standard,Mozambique,No Methodology Provided,2022.0,474263
-Gold Standard,Mozambique,No Methodology Provided,2023.0,820845
-Gold Standard,Mozambique,No Methodology Provided,2024.0,868477
-Gold Standard,Mozambique,No Methodology Provided,2025.0,80542
 Gold Standard,Myanmar,Cleaner cooking,2015.0,8068
 Gold Standard,Myanmar,Cleaner cooking,2016.0,31737
 Gold Standard,Myanmar,Cleaner cooking,2017.0,21400
@@ -1842,11 +1463,6 @@ Gold Standard,Myanmar,Cleaner cooking,2019.0,37790
 Gold Standard,Myanmar,Cleaner cooking,2020.0,32770
 Gold Standard,Myanmar,Cleaner cooking,2021.0,29168
 Gold Standard,Myanmar,Cleaner cooking,2022.0,32394
-Gold Standard,Myanmar,No Methodology Provided,2018.0,14442
-Gold Standard,Myanmar,No Methodology Provided,2019.0,45542
-Gold Standard,Myanmar,No Methodology Provided,2020.0,42772
-Gold Standard,Myanmar,No Methodology Provided,2021.0,36496
-Gold Standard,Myanmar,No Methodology Provided,2022.0,6095
 Gold Standard,Namibia,Efficient appliances,2022.0,4928
 Gold Standard,Namibia,Efficient appliances,2023.0,6736
 Gold Standard,Nepal,Bioenergy,2013.0,24575
@@ -1896,10 +1512,6 @@ Gold Standard,Nepal,Industrial efficiency,2019.0,19374
 Gold Standard,Nepal,Industrial efficiency,2020.0,18136
 Gold Standard,Nepal,Industrial efficiency,2021.0,14185
 Gold Standard,Nepal,Industrial efficiency,2022.0,8645
-Gold Standard,Nepal,No Methodology Provided,2021.0,3773
-Gold Standard,Nepal,No Methodology Provided,2022.0,21120
-Gold Standard,Nepal,No Methodology Provided,2023.0,152481
-Gold Standard,Nepal,No Methodology Provided,2024.0,72080
 Gold Standard,New Caledonia,Mixed renewables,2008.0,17285
 Gold Standard,New Caledonia,Mixed renewables,2009.0,29619
 Gold Standard,New Caledonia,Mixed renewables,2010.0,38811
@@ -1916,10 +1528,6 @@ Gold Standard,New Caledonia,Mixed renewables,2020.0,37422
 Gold Standard,New Caledonia,Mixed renewables,2021.0,34094
 Gold Standard,New Caledonia,Mixed renewables,2022.0,9641
 Gold Standard,New Zealand,Industrial efficiency,2007.0,31895
-Gold Standard,New Zealand,No Methodology Provided,2004.0,56399
-Gold Standard,New Zealand,No Methodology Provided,2005.0,183663
-Gold Standard,New Zealand,No Methodology Provided,2006.0,174375
-Gold Standard,New Zealand,No Methodology Provided,2007.0,191374
 Gold Standard,Nicaragua,Afforestation/Reforestation,2014.0,6
 Gold Standard,Nicaragua,Afforestation/Reforestation,2015.0,202
 Gold Standard,Nicaragua,Afforestation/Reforestation,2016.0,189
@@ -1963,16 +1571,6 @@ Gold Standard,Nicaragua,Mixed renewables,2021.0,55919
 Gold Standard,Nicaragua,Mixed renewables,2022.0,32441
 Gold Standard,Nicaragua,Mixed renewables,2023.0,38291
 Gold Standard,Nicaragua,Mixed renewables,2024.0,15368
-Gold Standard,Nicaragua,No Methodology Provided,2014.0,62627
-Gold Standard,Nicaragua,No Methodology Provided,2015.0,69104
-Gold Standard,Nicaragua,No Methodology Provided,2016.0,85334
-Gold Standard,Nicaragua,No Methodology Provided,2017.0,71420
-Gold Standard,Nicaragua,No Methodology Provided,2018.0,101981
-Gold Standard,Nicaragua,No Methodology Provided,2019.0,131611
-Gold Standard,Nicaragua,No Methodology Provided,2020.0,59211
-Gold Standard,Nicaragua,No Methodology Provided,2021.0,57886
-Gold Standard,Nicaragua,No Methodology Provided,2022.0,48764
-Gold Standard,Nicaragua,No Methodology Provided,2023.0,47006
 Gold Standard,Nigeria,Cleaner cooking,2017.0,188100
 Gold Standard,Nigeria,Cleaner cooking,2018.0,372536
 Gold Standard,Nigeria,Cleaner cooking,2019.0,699518
@@ -1994,10 +1592,6 @@ Gold Standard,Nigeria,Efficient appliances,2020.0,23826
 Gold Standard,Nigeria,Efficient appliances,2021.0,21236
 Gold Standard,Nigeria,Efficient appliances,2022.0,12178
 Gold Standard,Nigeria,Efficient appliances,2023.0,2475
-Gold Standard,Nigeria,No Methodology Provided,2021.0,1580492
-Gold Standard,Nigeria,No Methodology Provided,2022.0,1961201
-Gold Standard,Nigeria,No Methodology Provided,2023.0,1647662
-Gold Standard,Nigeria,No Methodology Provided,2024.0,1993050
 Gold Standard,Pakistan,Mixed renewables,2014.0,131394
 Gold Standard,Pakistan,Mixed renewables,2017.0,58844
 Gold Standard,Pakistan,Mixed renewables,2018.0,79729
@@ -2006,73 +1600,8 @@ Gold Standard,Pakistan,Mixed renewables,2020.0,156221
 Gold Standard,Pakistan,Mixed renewables,2021.0,253535
 Gold Standard,Pakistan,Mixed renewables,2022.0,219060
 Gold Standard,Pakistan,Mixed renewables,2023.0,18908
-Gold Standard,Pakistan,No Methodology Provided,2022.0,10867
-Gold Standard,Pakistan,No Methodology Provided,2023.0,35847
-Gold Standard,Panama,No Methodology Provided,1996.0,764
-Gold Standard,Panama,No Methodology Provided,1997.0,1605
-Gold Standard,Panama,No Methodology Provided,1998.0,1898
-Gold Standard,Panama,No Methodology Provided,1999.0,2988
-Gold Standard,Panama,No Methodology Provided,2000.0,3864
-Gold Standard,Panama,No Methodology Provided,2001.0,4468
-Gold Standard,Panama,No Methodology Provided,2002.0,5107
-Gold Standard,Panama,No Methodology Provided,2003.0,6523
-Gold Standard,Panama,No Methodology Provided,2004.0,7235
-Gold Standard,Panama,No Methodology Provided,2005.0,10582
-Gold Standard,Panama,No Methodology Provided,2006.0,20390
-Gold Standard,Panama,No Methodology Provided,2007.0,18521
-Gold Standard,Panama,No Methodology Provided,2008.0,27822
-Gold Standard,Panama,No Methodology Provided,2009.0,77253
-Gold Standard,Panama,No Methodology Provided,2010.0,129843
-Gold Standard,Panama,No Methodology Provided,2011.0,192274
-Gold Standard,Panama,No Methodology Provided,2012.0,243958
-Gold Standard,Panama,No Methodology Provided,2013.0,280144
-Gold Standard,Panama,No Methodology Provided,2014.0,326712
-Gold Standard,Panama,No Methodology Provided,2015.0,358328
-Gold Standard,Panama,No Methodology Provided,2016.0,333966
-Gold Standard,Panama,No Methodology Provided,2017.0,304268
-Gold Standard,Panama,No Methodology Provided,2018.0,301140
-Gold Standard,Panama,No Methodology Provided,2019.0,336760
-Gold Standard,Panama,No Methodology Provided,2020.0,290299
-Gold Standard,Panama,No Methodology Provided,2021.0,301312
-Gold Standard,Panama,No Methodology Provided,2022.0,242078
-Gold Standard,Panama,No Methodology Provided,2023.0,216521
-Gold Standard,Panama,No Methodology Provided,2024.0,99010
-Gold Standard,Panama,No Methodology Provided,2025.0,17437
-Gold Standard,Panama,No Methodology Provided,2026.0,17437
-Gold Standard,Panama,No Methodology Provided,2027.0,17437
-Gold Standard,Panama,No Methodology Provided,2028.0,17437
-Gold Standard,Panama,No Methodology Provided,2029.0,17437
-Gold Standard,Panama,No Methodology Provided,2030.0,17437
-Gold Standard,Panama,No Methodology Provided,2031.0,17437
-Gold Standard,Panama,No Methodology Provided,2032.0,17437
-Gold Standard,Panama,No Methodology Provided,2033.0,17437
-Gold Standard,Panama,No Methodology Provided,2034.0,16417
-Gold Standard,Panama,No Methodology Provided,2035.0,17437
-Gold Standard,Panama,No Methodology Provided,2036.0,361
-Gold Standard,Panama,No Methodology Provided,2037.0,361
-Gold Standard,Panama,No Methodology Provided,2038.0,361
-Gold Standard,Panama,No Methodology Provided,2039.0,361
-Gold Standard,Panama,No Methodology Provided,2040.0,361
-Gold Standard,Panama,No Methodology Provided,2041.0,361
-Gold Standard,Panama,No Methodology Provided,2042.0,361
-Gold Standard,Panama,No Methodology Provided,2043.0,361
-Gold Standard,Panama,No Methodology Provided,2044.0,361
-Gold Standard,Panama,No Methodology Provided,2045.0,361
-Gold Standard,Panama,No Methodology Provided,2046.0,361
-Gold Standard,Panama,No Methodology Provided,2047.0,361
-Gold Standard,Panama,No Methodology Provided,2048.0,361
-Gold Standard,Panama,No Methodology Provided,2049.0,361
-Gold Standard,Panama,No Methodology Provided,2050.0,361
-Gold Standard,Panama,No Methodology Provided,2051.0,361
-Gold Standard,Panama,No Methodology Provided,2052.0,361
-Gold Standard,Panama,No Methodology Provided,2053.0,361
-Gold Standard,Panama,No Methodology Provided,2054.0,361
 Gold Standard,Papua New Guinea,Mixed renewables,2012.0,12998
 Gold Standard,Papua New Guinea,Mixed renewables,2013.0,87554
-Gold Standard,Papua New Guinea,No Methodology Provided,2020.0,3920
-Gold Standard,Papua New Guinea,No Methodology Provided,2021.0,37675
-Gold Standard,Papua New Guinea,No Methodology Provided,2022.0,45043
-Gold Standard,Papua New Guinea,No Methodology Provided,2023.0,30305
 Gold Standard,Peru,Cleaner cooking,2008.0,1049
 Gold Standard,Peru,Cleaner cooking,2009.0,15276
 Gold Standard,Peru,Cleaner cooking,2010.0,46470
@@ -2095,32 +1624,6 @@ Gold Standard,Peru,Mixed renewables,2018.0,18456
 Gold Standard,Peru,Mixed renewables,2019.0,21481
 Gold Standard,Peru,Mixed renewables,2020.0,21308
 Gold Standard,Peru,Mixed renewables,2021.0,9378
-Gold Standard,Peru,No Methodology Provided,2010.0,487
-Gold Standard,Peru,No Methodology Provided,2011.0,2581
-Gold Standard,Peru,No Methodology Provided,2012.0,3708
-Gold Standard,Peru,No Methodology Provided,2013.0,4936
-Gold Standard,Peru,No Methodology Provided,2014.0,5147
-Gold Standard,Peru,No Methodology Provided,2015.0,5368
-Gold Standard,Peru,No Methodology Provided,2016.0,2411
-Gold Standard,Peru,No Methodology Provided,2017.0,2515
-Gold Standard,Peru,No Methodology Provided,2018.0,146
-Gold Standard,Peru,No Methodology Provided,2019.0,65
-Gold Standard,Peru,No Methodology Provided,2020.0,671
-Gold Standard,Peru,No Methodology Provided,2021.0,3269
-Gold Standard,Peru,No Methodology Provided,2022.0,3539
-Gold Standard,Peru,No Methodology Provided,2023.0,2703
-Gold Standard,Peru,No Methodology Provided,2024.0,4411
-Gold Standard,Peru,No Methodology Provided,2025.0,2580
-Gold Standard,Peru,No Methodology Provided,2026.0,441
-Gold Standard,Peru,No Methodology Provided,2027.0,1059
-Gold Standard,Peru,No Methodology Provided,2028.0,4687
-Gold Standard,Peru,No Methodology Provided,2029.0,6338
-Gold Standard,Peru,No Methodology Provided,2030.0,3686
-Gold Standard,Peru,No Methodology Provided,2031.0,2067
-Gold Standard,Peru,No Methodology Provided,2032.0,1993
-Gold Standard,Peru,No Methodology Provided,2033.0,3688
-Gold Standard,Peru,No Methodology Provided,2034.0,4768
-Gold Standard,Peru,No Methodology Provided,2035.0,900
 Gold Standard,Philippines,Mixed renewables,2015.0,53693
 Gold Standard,Philippines,Mixed renewables,2016.0,114684
 Gold Standard,Philippines,Mixed renewables,2017.0,147195
@@ -2129,13 +1632,6 @@ Gold Standard,Philippines,Mixed renewables,2019.0,76670
 Gold Standard,Philippines,Mixed renewables,2020.0,66198
 Gold Standard,Philippines,Mixed renewables,2021.0,53360
 Gold Standard,Philippines,Mixed renewables,2022.0,111361
-Gold Standard,Romania,No Methodology Provided,2017.0,58384
-Gold Standard,Romania,No Methodology Provided,2018.0,4519
-Gold Standard,Romania,No Methodology Provided,2019.0,59746
-Gold Standard,Romania,No Methodology Provided,2020.0,53538
-Gold Standard,Romania,No Methodology Provided,2021.0,51569
-Gold Standard,Romania,No Methodology Provided,2022.0,32166
-Gold Standard,Romania,No Methodology Provided,2023.0,22891
 Gold Standard,Romania,Waste management,2022.0,44289
 Gold Standard,Romania,Waste management,2023.0,57053
 Gold Standard,Romania,Waste management,2024.0,7435
@@ -2179,14 +1675,6 @@ Gold Standard,Rwanda,Mixed renewables,2017.0,9076
 Gold Standard,Rwanda,Mixed renewables,2018.0,8795
 Gold Standard,Rwanda,Mixed renewables,2019.0,8607
 Gold Standard,Rwanda,Mixed renewables,2020.0,8572
-Gold Standard,Rwanda,No Methodology Provided,2017.0,8967
-Gold Standard,Rwanda,No Methodology Provided,2018.0,20928
-Gold Standard,Rwanda,No Methodology Provided,2019.0,78098
-Gold Standard,Rwanda,No Methodology Provided,2020.0,83260
-Gold Standard,Rwanda,No Methodology Provided,2021.0,147921
-Gold Standard,Rwanda,No Methodology Provided,2022.0,203492
-Gold Standard,Rwanda,No Methodology Provided,2023.0,207739
-Gold Standard,Rwanda,No Methodology Provided,2024.0,76619
 Gold Standard,Rwanda,Water purification,2023.0,22941
 Gold Standard,Rwanda,Water purification,2024.0,51080
 Gold Standard,Rwanda,Water purification,2025.0,6257
@@ -2196,25 +1684,11 @@ Gold Standard,Senegal,Cleaner cooking,2020.0,3544
 Gold Standard,Senegal,Cleaner cooking,2021.0,3393
 Gold Standard,Senegal,Cleaner cooking,2022.0,3225
 Gold Standard,Senegal,Cleaner cooking,2023.0,986
-Gold Standard,Senegal,No Methodology Provided,2017.0,14913
-Gold Standard,Senegal,No Methodology Provided,2018.0,67516
-Gold Standard,Senegal,No Methodology Provided,2019.0,68855
-Gold Standard,Senegal,No Methodology Provided,2020.0,66466
-Gold Standard,Senegal,No Methodology Provided,2021.0,115768
-Gold Standard,Senegal,No Methodology Provided,2022.0,154498
-Gold Standard,Senegal,No Methodology Provided,2023.0,123240
-Gold Standard,Senegal,No Methodology Provided,2024.0,101623
 Gold Standard,Sierra Leone,Cleaner cooking,2019.0,15088
 Gold Standard,Sierra Leone,Cleaner cooking,2020.0,65386
 Gold Standard,Sierra Leone,Cleaner cooking,2021.0,67844
 Gold Standard,Sierra Leone,Cleaner cooking,2022.0,73967
 Gold Standard,Sierra Leone,Cleaner cooking,2023.0,34380
-Gold Standard,Somalia,No Methodology Provided,2019.0,81483
-Gold Standard,Somalia,No Methodology Provided,2020.0,227263
-Gold Standard,Somalia,No Methodology Provided,2021.0,598106
-Gold Standard,Somalia,No Methodology Provided,2022.0,823729
-Gold Standard,Somalia,No Methodology Provided,2023.0,1059656
-Gold Standard,Somalia,No Methodology Provided,2024.0,381335
 Gold Standard,South Africa,Bioenergy,2012.0,206
 Gold Standard,South Africa,Bioenergy,2013.0,2885
 Gold Standard,South Africa,Bioenergy,2014.0,3197
@@ -2245,14 +1719,6 @@ Gold Standard,South Africa,Industrial efficiency,2015.0,16178
 Gold Standard,South Africa,Industrial efficiency,2016.0,11976
 Gold Standard,South Africa,Industrial efficiency,2017.0,5106
 Gold Standard,South Africa,Industrial efficiency,2018.0,114
-Gold Standard,South Africa,No Methodology Provided,2008.0,1884
-Gold Standard,South Africa,No Methodology Provided,2009.0,6880
-Gold Standard,South Africa,No Methodology Provided,2010.0,577
-Gold Standard,South Africa,No Methodology Provided,2020.0,1655
-Gold Standard,South Africa,No Methodology Provided,2021.0,31173
-Gold Standard,South Africa,No Methodology Provided,2022.0,29862
-Gold Standard,South Africa,No Methodology Provided,2023.0,29812
-Gold Standard,South Africa,No Methodology Provided,2024.0,6328
 Gold Standard,Sri Lanka,Mixed renewables,2012.0,7078
 Gold Standard,Sri Lanka,Mixed renewables,2016.0,31342
 Gold Standard,Sri Lanka,Mixed renewables,2017.0,49103
@@ -2275,14 +1741,6 @@ Gold Standard,Sudan,Cleaner cooking,2020.0,50873
 Gold Standard,Switzerland,Industrial efficiency,2022.0,87
 Gold Standard,Switzerland,Industrial efficiency,2023.0,149
 Gold Standard,Switzerland,Industrial efficiency,2024.0,144
-Gold Standard,Switzerland,No Methodology Provided,2017.0,993
-Gold Standard,Switzerland,No Methodology Provided,2018.0,7823
-Gold Standard,Switzerland,No Methodology Provided,2019.0,7770
-Gold Standard,Switzerland,No Methodology Provided,2020.0,9313
-Gold Standard,Switzerland,No Methodology Provided,2021.0,9432
-Gold Standard,Switzerland,No Methodology Provided,2022.0,1
-Gold Standard,Switzerland,No Methodology Provided,2023.0,512
-Gold Standard,Switzerland,No Methodology Provided,2024.0,985
 Gold Standard,Taiwan,Mixed renewables,2008.0,217064
 Gold Standard,Taiwan,Mixed renewables,2009.0,238414
 Gold Standard,Taiwan,Mixed renewables,2010.0,357132
@@ -2319,9 +1777,6 @@ Gold Standard,Tanzania United Republic of,Cleaner cooking,2024.0,417
 Gold Standard,Tanzania United Republic of,Efficient appliances,2021.0,494
 Gold Standard,Tanzania United Republic of,Efficient appliances,2022.0,2968
 Gold Standard,Tanzania United Republic of,Efficient appliances,2023.0,1047
-Gold Standard,Tanzania United Republic of,No Methodology Provided,2022.0,40472
-Gold Standard,Tanzania United Republic of,No Methodology Provided,2023.0,175064
-Gold Standard,Tanzania United Republic of,No Methodology Provided,2024.0,34053
 Gold Standard,Tanzania United Republic of,Water purification,2022.0,7354
 Gold Standard,Tanzania United Republic of,Water purification,2023.0,40944
 Gold Standard,Tanzania United Republic of,Water purification,2024.0,24100
@@ -2359,19 +1814,6 @@ Gold Standard,Thailand,Wastewater treatment,2018.0,62980
 Gold Standard,Thailand,Wastewater treatment,2019.0,78200
 Gold Standard,Thailand,Wastewater treatment,2020.0,56069
 Gold Standard,Thailand,Wastewater treatment,2021.0,33352
-Gold Standard,Timor-Leste,No Methodology Provided,2010.0,505
-Gold Standard,Timor-Leste,No Methodology Provided,2011.0,866
-Gold Standard,Timor-Leste,No Methodology Provided,2012.0,1494
-Gold Standard,Timor-Leste,No Methodology Provided,2013.0,1940
-Gold Standard,Timor-Leste,No Methodology Provided,2014.0,3252
-Gold Standard,Timor-Leste,No Methodology Provided,2015.0,5275
-Gold Standard,Timor-Leste,No Methodology Provided,2016.0,11525
-Gold Standard,Timor-Leste,No Methodology Provided,2017.0,5019
-Gold Standard,Timor-Leste,No Methodology Provided,2018.0,12796
-Gold Standard,Timor-Leste,No Methodology Provided,2019.0,15988
-Gold Standard,Timor-Leste,No Methodology Provided,2020.0,16106
-Gold Standard,Timor-Leste,No Methodology Provided,2022.0,19833
-Gold Standard,Timor-Leste,No Methodology Provided,2023.0,34331
 Gold Standard,Togo,Cleaner cooking,2020.0,7357
 Gold Standard,Togo,Cleaner cooking,2021.0,31174
 Gold Standard,Togo,Cleaner cooking,2022.0,4055
@@ -2405,23 +1847,13 @@ Gold Standard,Togo,Industrial efficiency,2041.0,237
 Gold Standard,Togo,Industrial efficiency,2042.0,234
 Gold Standard,Togo,Industrial efficiency,2043.0,20
 Gold Standard,Togo,Industrial efficiency,2044.0,20
-Gold Standard,Togo,No Methodology Provided,2013.0,1093
-Gold Standard,Togo,No Methodology Provided,2014.0,958
-Gold Standard,Togo,No Methodology Provided,2015.0,1783
-Gold Standard,Togo,No Methodology Provided,2016.0,738
-Gold Standard,Togo,No Methodology Provided,2017.0,429
-Gold Standard,Togo,No Methodology Provided,2018.0,1364
-Gold Standard,Togo,No Methodology Provided,2019.0,1427
-Gold Standard,Togo,No Methodology Provided,2020.0,559
-Gold Standard,Togo,No Methodology Provided,2023.0,3477
-Gold Standard,Togo,No Methodology Provided,2024.0,2919
 Gold Standard,Togo,Water purification,2022.0,179284
 Gold Standard,Togo,Water purification,2023.0,278237
 Gold Standard,Togo,Water purification,2024.0,48488
-Gold Standard,Turkey,Agriculture,2012.0,3588
-Gold Standard,Turkey,Agriculture,2013.0,11089
-Gold Standard,Turkey,Agriculture,2014.0,13772
-Gold Standard,Turkey,Agriculture,2015.0,15416
+Gold Standard,Turkey,Soil & Livestock,2012.0,3588
+Gold Standard,Turkey,Soil & Livestock,2013.0,11089
+Gold Standard,Turkey,Soil & Livestock,2014.0,13772
+Gold Standard,Turkey,Soil & Livestock,2015.0,15416
 Gold Standard,Turkey,Heat recovery,2014.0,59334
 Gold Standard,Turkey,Industrial efficiency,2020.0,4223
 Gold Standard,Turkey,Industrial efficiency,2021.0,27326
@@ -2462,24 +1894,6 @@ Gold Standard,Turkey,Mixed renewables,2022.0,4931385
 Gold Standard,Turkey,Mixed renewables,2023.0,3364691
 Gold Standard,Turkey,Mixed renewables,2024.0,1310258
 Gold Standard,Turkey,Mixed renewables,2025.0,69135
-Gold Standard,Turkey,No Methodology Provided,2008.0,68435
-Gold Standard,Turkey,No Methodology Provided,2009.0,220211
-Gold Standard,Turkey,No Methodology Provided,2010.0,772227
-Gold Standard,Turkey,No Methodology Provided,2011.0,1424825
-Gold Standard,Turkey,No Methodology Provided,2012.0,1482198
-Gold Standard,Turkey,No Methodology Provided,2013.0,1280947
-Gold Standard,Turkey,No Methodology Provided,2014.0,935946
-Gold Standard,Turkey,No Methodology Provided,2015.0,1447338
-Gold Standard,Turkey,No Methodology Provided,2016.0,1907289
-Gold Standard,Turkey,No Methodology Provided,2017.0,1796904
-Gold Standard,Turkey,No Methodology Provided,2018.0,1976590
-Gold Standard,Turkey,No Methodology Provided,2019.0,2164792
-Gold Standard,Turkey,No Methodology Provided,2020.0,2874556
-Gold Standard,Turkey,No Methodology Provided,2021.0,3604751
-Gold Standard,Turkey,No Methodology Provided,2022.0,4140916
-Gold Standard,Turkey,No Methodology Provided,2023.0,2865503
-Gold Standard,Turkey,No Methodology Provided,2024.0,1089188
-Gold Standard,Turkey,No Methodology Provided,2025.0,101313
 Gold Standard,Turkey,Waste to energy,2014.0,1215
 Gold Standard,Turkey,Waste to energy,2015.0,15496
 Gold Standard,Turkey,Waste to energy,2016.0,11438
@@ -2521,25 +1935,6 @@ Gold Standard,Uganda,Industrial efficiency,2019.0,27256
 Gold Standard,Uganda,Industrial efficiency,2020.0,16743
 Gold Standard,Uganda,Industrial efficiency,2023.0,207274
 Gold Standard,Uganda,Industrial efficiency,2024.0,50637
-Gold Standard,Uganda,No Methodology Provided,2007.0,14976
-Gold Standard,Uganda,No Methodology Provided,2008.0,46107
-Gold Standard,Uganda,No Methodology Provided,2009.0,112991
-Gold Standard,Uganda,No Methodology Provided,2010.0,171748
-Gold Standard,Uganda,No Methodology Provided,2011.0,239975
-Gold Standard,Uganda,No Methodology Provided,2012.0,407620
-Gold Standard,Uganda,No Methodology Provided,2013.0,523097
-Gold Standard,Uganda,No Methodology Provided,2014.0,782840
-Gold Standard,Uganda,No Methodology Provided,2015.0,845590
-Gold Standard,Uganda,No Methodology Provided,2016.0,750710
-Gold Standard,Uganda,No Methodology Provided,2017.0,931903
-Gold Standard,Uganda,No Methodology Provided,2018.0,941601
-Gold Standard,Uganda,No Methodology Provided,2019.0,992432
-Gold Standard,Uganda,No Methodology Provided,2020.0,1505680
-Gold Standard,Uganda,No Methodology Provided,2021.0,2401051
-Gold Standard,Uganda,No Methodology Provided,2022.0,3092931
-Gold Standard,Uganda,No Methodology Provided,2023.0,3838250
-Gold Standard,Uganda,No Methodology Provided,2024.0,2941098
-Gold Standard,Uganda,No Methodology Provided,2025.0,1241
 Gold Standard,Uganda,Water purification,2014.0,25516
 Gold Standard,Uganda,Water purification,2015.0,15764
 Gold Standard,Uganda,Water purification,2016.0,10000
@@ -2551,58 +1946,7 @@ Gold Standard,Uganda,Water purification,2021.0,3341
 Gold Standard,Uganda,Water purification,2022.0,61395
 Gold Standard,Uganda,Water purification,2023.0,123279
 Gold Standard,Uganda,Water purification,2024.0,47527
-Gold Standard,United States,Agriculture,2015.0,5352
-Gold Standard,United States,No Methodology Provided,2009.0,4912
-Gold Standard,United States,No Methodology Provided,2010.0,8949
-Gold Standard,United States,No Methodology Provided,2011.0,10737
-Gold Standard,United States,No Methodology Provided,2012.0,11376
-Gold Standard,United States,No Methodology Provided,2013.0,13802
-Gold Standard,United States,No Methodology Provided,2014.0,14197
-Gold Standard,United States,No Methodology Provided,2015.0,14082
-Gold Standard,United States,No Methodology Provided,2016.0,14229
-Gold Standard,United States,No Methodology Provided,2017.0,15815
-Gold Standard,United States,No Methodology Provided,2018.0,19207
-Gold Standard,United States,No Methodology Provided,2019.0,17537
-Gold Standard,United States,No Methodology Provided,2020.0,37416
-Gold Standard,United States,No Methodology Provided,2021.0,40828
-Gold Standard,United States,No Methodology Provided,2022.0,30285
-Gold Standard,United States,No Methodology Provided,2023.0,37101
-Gold Standard,United States,No Methodology Provided,2024.0,46246
-Gold Standard,United States,No Methodology Provided,2025.0,50320
-Gold Standard,United States,No Methodology Provided,2026.0,51850
-Gold Standard,United States,No Methodology Provided,2027.0,53964
-Gold Standard,United States,No Methodology Provided,2028.0,53402
-Gold Standard,United States,No Methodology Provided,2029.0,52688
-Gold Standard,United States,No Methodology Provided,2030.0,49325
-Gold Standard,United States,No Methodology Provided,2031.0,45492
-Gold Standard,United States,No Methodology Provided,2032.0,40437
-Gold Standard,United States,No Methodology Provided,2033.0,36246
-Gold Standard,United States,No Methodology Provided,2034.0,31812
-Gold Standard,United States,No Methodology Provided,2035.0,29118
-Gold Standard,United States,No Methodology Provided,2036.0,24511
-Gold Standard,United States,No Methodology Provided,2037.0,22768
-Gold Standard,United States,No Methodology Provided,2038.0,19256
-Gold Standard,United States,No Methodology Provided,2039.0,18758
-Gold Standard,United States,No Methodology Provided,2040.0,15800
-Gold Standard,United States,No Methodology Provided,2041.0,13694
-Gold Standard,United States,No Methodology Provided,2042.0,11157
-Gold Standard,United States,No Methodology Provided,2043.0,8697
-Gold Standard,United States,No Methodology Provided,2044.0,7225
-Gold Standard,United States,No Methodology Provided,2045.0,5753
-Gold Standard,United States,No Methodology Provided,2046.0,3963
-Gold Standard,United States,No Methodology Provided,2047.0,3609
-Gold Standard,United States,No Methodology Provided,2048.0,2383
-Gold Standard,United States,No Methodology Provided,2049.0,3287
-Gold Standard,United States,No Methodology Provided,2050.0,1484
-Gold Standard,United States,No Methodology Provided,2051.0,1985
-Gold Standard,United States,No Methodology Provided,2052.0,1451
-Gold Standard,United States,No Methodology Provided,2053.0,1401
-Gold Standard,United States,No Methodology Provided,2054.0,1336
-Gold Standard,United States,No Methodology Provided,2055.0,1514
-Gold Standard,United States,No Methodology Provided,2056.0,1380
-Gold Standard,United States,No Methodology Provided,2057.0,1252
-Gold Standard,United States,No Methodology Provided,2058.0,1090
-Gold Standard,United States,No Methodology Provided,2059.0,1010
+Gold Standard,United States,Soil & Livestock,2015.0,5352
 Gold Standard,Vietnam,Cleaner cooking,2010.0,151052
 Gold Standard,Vietnam,Cleaner cooking,2011.0,359900
 Gold Standard,Vietnam,Cleaner cooking,2012.0,484059
@@ -2640,9 +1984,6 @@ Gold Standard,Vietnam,Mixed renewables,2022.0,2722772
 Gold Standard,Vietnam,Mixed renewables,2023.0,1616799
 Gold Standard,Vietnam,Mixed renewables,2024.0,978798
 Gold Standard,Vietnam,Mixed renewables,2025.0,291366
-Gold Standard,Vietnam,No Methodology Provided,2021.0,23003
-Gold Standard,Vietnam,No Methodology Provided,2022.0,110494
-Gold Standard,Vietnam,No Methodology Provided,2023.0,117519
 Gold Standard,Zambia,Cleaner cooking,2019.0,2102
 Gold Standard,Zambia,Cleaner cooking,2020.0,73468
 Gold Standard,Zambia,Cleaner cooking,2021.0,484367
@@ -2654,25 +1995,11 @@ Gold Standard,Zambia,Efficient appliances,2021.0,2195
 Gold Standard,Zambia,Efficient appliances,2022.0,19885
 Gold Standard,Zambia,Efficient appliances,2023.0,41995
 Gold Standard,Zambia,Efficient appliances,2024.0,22765
-Gold Standard,Zambia,No Methodology Provided,2007.0,87
-Gold Standard,Zambia,No Methodology Provided,2008.0,233
-Gold Standard,Zambia,No Methodology Provided,2009.0,314
-Gold Standard,Zambia,No Methodology Provided,2010.0,781
-Gold Standard,Zambia,No Methodology Provided,2011.0,944
-Gold Standard,Zambia,No Methodology Provided,2012.0,1122
-Gold Standard,Zambia,No Methodology Provided,2020.0,27202
-Gold Standard,Zambia,No Methodology Provided,2021.0,121165
-Gold Standard,Zambia,No Methodology Provided,2022.0,168810
-Gold Standard,Zambia,No Methodology Provided,2023.0,304079
-Gold Standard,Zambia,No Methodology Provided,2024.0,49644
 Gold Standard,Zimbabwe,Cleaner cooking,2018.0,32657
 Gold Standard,Zimbabwe,Cleaner cooking,2019.0,52554
 Gold Standard,Zimbabwe,Cleaner cooking,2020.0,41374
 Gold Standard,Zimbabwe,Cleaner cooking,2021.0,34143
 Gold Standard,Zimbabwe,Cleaner cooking,2022.0,13596
-Gold Standard,Zimbabwe,No Methodology Provided,2021.0,8371
-Gold Standard,Zimbabwe,No Methodology Provided,2022.0,452875
-Gold Standard,Zimbabwe,No Methodology Provided,2023.0,1029511
 Verra,Angola,Mixed renewables,2021.0,8938
 Verra,Angola,Mixed renewables,2022.0,135653
 Verra,Argentina,Afforestation/Reforestation,2016.0,680
@@ -2738,12 +2065,12 @@ Verra,Belize,Forest management,2018.0,211044
 Verra,Belize,Forest management,2019.0,214870
 Verra,Belize,Forest management,2020.0,373214
 Verra,Belize,Forest management,2021.0,6994
-Verra,Benin,Agriculture,2017.0,20235
-Verra,Benin,Agriculture,2018.0,70343
-Verra,Benin,Agriculture,2019.0,76274
-Verra,Benin,Agriculture,2020.0,123848
-Verra,Bolivia,Agriculture,2022.0,2009
-Verra,Bolivia,Agriculture,2023.0,5997
+Verra,Benin,Soil & Livestock,2017.0,20235
+Verra,Benin,Soil & Livestock,2018.0,70343
+Verra,Benin,Soil & Livestock,2019.0,76274
+Verra,Benin,Soil & Livestock,2020.0,123848
+Verra,Bolivia,Soil & Livestock,2022.0,2009
+Verra,Bolivia,Soil & Livestock,2023.0,5997
 Verra,Bolivia,Forest management,2011.0,22000
 Verra,Bolivia,Mixed renewables,2011.0,50000
 Verra,Brazil,Afforestation/Reforestation,1999.0,118878
@@ -2760,23 +2087,23 @@ Verra,Brazil,Afforestation/Reforestation,2020.0,25209
 Verra,Brazil,Afforestation/Reforestation,2021.0,38988
 Verra,Brazil,Afforestation/Reforestation,2022.0,67135
 Verra,Brazil,Afforestation/Reforestation,2023.0,100000
-Verra,Brazil,Agriculture,2007.0,3881
-Verra,Brazil,Agriculture,2008.0,41885
-Verra,Brazil,Agriculture,2009.0,74550
-Verra,Brazil,Agriculture,2010.0,124412
-Verra,Brazil,Agriculture,2011.0,3635
-Verra,Brazil,Agriculture,2012.0,8839
-Verra,Brazil,Agriculture,2013.0,29143
-Verra,Brazil,Agriculture,2014.0,11412
-Verra,Brazil,Agriculture,2015.0,11207
-Verra,Brazil,Agriculture,2016.0,7306
-Verra,Brazil,Agriculture,2017.0,83707
-Verra,Brazil,Agriculture,2018.0,69383
-Verra,Brazil,Agriculture,2019.0,62432
-Verra,Brazil,Agriculture,2020.0,78818
-Verra,Brazil,Agriculture,2021.0,144333
-Verra,Brazil,Agriculture,2022.0,204299
-Verra,Brazil,Agriculture,2023.0,208933
+Verra,Brazil,Soil & Livestock,2007.0,3881
+Verra,Brazil,Soil & Livestock,2008.0,41885
+Verra,Brazil,Soil & Livestock,2009.0,74550
+Verra,Brazil,Soil & Livestock,2010.0,124412
+Verra,Brazil,Soil & Livestock,2011.0,3635
+Verra,Brazil,Soil & Livestock,2012.0,8839
+Verra,Brazil,Soil & Livestock,2013.0,29143
+Verra,Brazil,Soil & Livestock,2014.0,11412
+Verra,Brazil,Soil & Livestock,2015.0,11207
+Verra,Brazil,Soil & Livestock,2016.0,7306
+Verra,Brazil,Soil & Livestock,2017.0,83707
+Verra,Brazil,Soil & Livestock,2018.0,69383
+Verra,Brazil,Soil & Livestock,2019.0,62432
+Verra,Brazil,Soil & Livestock,2020.0,78818
+Verra,Brazil,Soil & Livestock,2021.0,144333
+Verra,Brazil,Soil & Livestock,2022.0,204299
+Verra,Brazil,Soil & Livestock,2023.0,208933
 Verra,Brazil,Bioenergy,2002.0,26045
 Verra,Brazil,Bioenergy,2003.0,184
 Verra,Brazil,Bioenergy,2004.0,385
@@ -2887,13 +2214,13 @@ Verra,Burundi,Efficient appliances,2021.0,507694
 Verra,Burundi,Efficient appliances,2022.0,583465
 Verra,Burundi,Efficient appliances,2023.0,632566
 Verra,Cambodia,Afforestation/Reforestation,2008.0,48000
-Verra,Cambodia,Agriculture,2015.0,4111460
-Verra,Cambodia,Agriculture,2016.0,4111460
-Verra,Cambodia,Agriculture,2017.0,4111460
-Verra,Cambodia,Agriculture,2018.0,4075359
-Verra,Cambodia,Agriculture,2019.0,4075359
-Verra,Cambodia,Agriculture,2020.0,3946277
-Verra,Cambodia,Agriculture,2021.0,3841272
+Verra,Cambodia,Soil & Livestock,2015.0,4111460
+Verra,Cambodia,Soil & Livestock,2016.0,4111460
+Verra,Cambodia,Soil & Livestock,2017.0,4111460
+Verra,Cambodia,Soil & Livestock,2018.0,4075359
+Verra,Cambodia,Soil & Livestock,2019.0,4075359
+Verra,Cambodia,Soil & Livestock,2020.0,3946277
+Verra,Cambodia,Soil & Livestock,2021.0,3841272
 Verra,Cambodia,Bioenergy,2022.0,33462
 Verra,Cambodia,Bioenergy,2023.0,106638
 Verra,Cambodia,Bioenergy,2024.0,100000
@@ -2968,11 +2295,11 @@ Verra,Canada,Waste management,2018.0,470664
 Verra,Canada,Waste management,2019.0,555628
 Verra,Canada,Waste management,2020.0,640222
 Verra,Canada,Waste management,2021.0,556570
-Verra,Central African Republic,Agriculture,2016.0,73222
-Verra,Central African Republic,Agriculture,2017.0,170837
-Verra,Central African Republic,Agriculture,2018.0,325498
-Verra,Central African Republic,Agriculture,2019.0,334613
-Verra,Central African Republic,Agriculture,2020.0,390448
+Verra,Central African Republic,Soil & Livestock,2016.0,73222
+Verra,Central African Republic,Soil & Livestock,2017.0,170837
+Verra,Central African Republic,Soil & Livestock,2018.0,325498
+Verra,Central African Republic,Soil & Livestock,2019.0,334613
+Verra,Central African Republic,Soil & Livestock,2020.0,390448
 Verra,Chile,Afforestation/Reforestation,2003.0,402436
 Verra,Chile,Afforestation/Reforestation,2012.0,990978
 Verra,Chile,Bioenergy,2014.0,96119
@@ -3034,12 +2361,12 @@ Verra,China,Afforestation/Reforestation,2018.0,2663215
 Verra,China,Afforestation/Reforestation,2019.0,3796117
 Verra,China,Afforestation/Reforestation,2020.0,4717286
 Verra,China,Afforestation/Reforestation,2021.0,3191864
-Verra,China,Agriculture,2019.0,1810
-Verra,China,Agriculture,2020.0,113758
-Verra,China,Agriculture,2021.0,504253
-Verra,China,Agriculture,2022.0,560466
-Verra,China,Agriculture,2023.0,167768
-Verra,China,Agriculture,2024.0,40928
+Verra,China,Soil & Livestock,2019.0,1810
+Verra,China,Soil & Livestock,2020.0,113758
+Verra,China,Soil & Livestock,2021.0,504253
+Verra,China,Soil & Livestock,2022.0,560466
+Verra,China,Soil & Livestock,2023.0,167768
+Verra,China,Soil & Livestock,2024.0,40928
 Verra,China,Biochar,2021.0,14070
 Verra,China,Biochar,2022.0,606
 Verra,China,Bioenergy,2007.0,138962
@@ -3138,10 +2465,10 @@ Verra,China,Mixed renewables,2014.0,6078634
 Verra,China,Mixed renewables,2015.0,7102067
 Verra,China,Mixed renewables,2016.0,8767603
 Verra,China,Mixed renewables,2017.0,11031691
-Verra,China,Mixed renewables,2018.0,10516294
-Verra,China,Mixed renewables,2019.0,8798847
-Verra,China,Mixed renewables,2020.0,6897124
-Verra,China,Mixed renewables,2021.0,4103575
+Verra,China,Mixed renewables,2018.0,9256294
+Verra,China,Mixed renewables,2019.0,7598847
+Verra,China,Mixed renewables,2020.0,5577124
+Verra,China,Mixed renewables,2021.0,3323575
 Verra,China,Mixed renewables,2022.0,1062225
 Verra,China,Mixed renewables,2023.0,356097
 Verra,China,Mixed renewables,2024.0,130914
@@ -3186,8 +2513,8 @@ Verra,Colombia,Afforestation/Reforestation,2020.0,419517
 Verra,Colombia,Afforestation/Reforestation,2021.0,79971
 Verra,Colombia,Afforestation/Reforestation,2022.0,53660
 Verra,Colombia,Afforestation/Reforestation,2023.0,5
-Verra,Colombia,Agriculture,2010.0,104478
-Verra,Colombia,Agriculture,2012.0,330710
+Verra,Colombia,Soil & Livestock,2010.0,104478
+Verra,Colombia,Soil & Livestock,2012.0,330710
 Verra,Colombia,Forest management,2013.0,3615316
 Verra,Colombia,Forest management,2014.0,7100589
 Verra,Colombia,Forest management,2015.0,9118
@@ -3237,18 +2564,18 @@ Verra,"Congo, The Democratic Republic of The",Afforestation/Reforestation,2010.0
 Verra,"Congo, The Democratic Republic of The",Afforestation/Reforestation,2011.0,320334
 Verra,"Congo, The Democratic Republic of The",Afforestation/Reforestation,2012.0,330912
 Verra,"Congo, The Democratic Republic of The",Afforestation/Reforestation,2013.0,340986
-Verra,"Congo, The Democratic Republic of The",Agriculture,2011.0,1252975
-Verra,"Congo, The Democratic Republic of The",Agriculture,2012.0,1734609
-Verra,"Congo, The Democratic Republic of The",Agriculture,2013.0,2583673
-Verra,"Congo, The Democratic Republic of The",Agriculture,2014.0,2583673
-Verra,"Congo, The Democratic Republic of The",Agriculture,2015.0,2583673
-Verra,"Congo, The Democratic Republic of The",Agriculture,2016.0,2583673
-Verra,"Congo, The Democratic Republic of The",Agriculture,2017.0,4574504
-Verra,"Congo, The Democratic Republic of The",Agriculture,2018.0,5849190
-Verra,"Congo, The Democratic Republic of The",Agriculture,2019.0,3800000
-Verra,"Congo, The Democratic Republic of The",Agriculture,2020.0,3800000
-Verra,"Congo, The Democratic Republic of The",Agriculture,2021.0,2904200
-Verra,"Congo, The Democratic Republic of The",Agriculture,2022.0,2604452
+Verra,"Congo, The Democratic Republic of The",Soil & Livestock,2011.0,1252975
+Verra,"Congo, The Democratic Republic of The",Soil & Livestock,2012.0,1734609
+Verra,"Congo, The Democratic Republic of The",Soil & Livestock,2013.0,2583673
+Verra,"Congo, The Democratic Republic of The",Soil & Livestock,2014.0,2583673
+Verra,"Congo, The Democratic Republic of The",Soil & Livestock,2015.0,2583673
+Verra,"Congo, The Democratic Republic of The",Soil & Livestock,2016.0,2583673
+Verra,"Congo, The Democratic Republic of The",Soil & Livestock,2017.0,4574504
+Verra,"Congo, The Democratic Republic of The",Soil & Livestock,2018.0,5849190
+Verra,"Congo, The Democratic Republic of The",Soil & Livestock,2019.0,3800000
+Verra,"Congo, The Democratic Republic of The",Soil & Livestock,2020.0,3800000
+Verra,"Congo, The Democratic Republic of The",Soil & Livestock,2021.0,2904200
+Verra,"Congo, The Democratic Republic of The",Soil & Livestock,2022.0,2604452
 Verra,"Congo, The Democratic Republic of The",Mixed renewables,2020.0,20665
 Verra,"Congo, The Democratic Republic of The",Mixed renewables,2021.0,169235
 Verra,"Congo, The Democratic Republic of The",Mixed renewables,2022.0,422148
@@ -3271,11 +2598,11 @@ Verra,Cote D'Ivoire,Mixed renewables,2020.0,884101
 Verra,Cote D'Ivoire,Mixed renewables,2021.0,691737
 Verra,Cote D'Ivoire,Mixed renewables,2022.0,839009
 Verra,Cote D'Ivoire,Mixed renewables,2023.0,491357
-Verra,Cyprus,Agriculture,2008.0,15171
+Verra,Cyprus,Soil & Livestock,2008.0,15171
 Verra,Denmark,Forest management,2021.0,19585
 Verra,Denmark,Forest management,2022.0,501297
 Verra,Denmark,Forest management,2023.0,1803830
-Verra,Dominican Republic,Agriculture,2021.0,23657
+Verra,Dominican Republic,Soil & Livestock,2021.0,23657
 Verra,Dominican Republic,Mixed renewables,2016.0,50655
 Verra,Dominican Republic,Mixed renewables,2017.0,354735
 Verra,Dominican Republic,Mixed renewables,2018.0,428074
@@ -3318,14 +2645,14 @@ Verra,Fiji,Efficient appliances,2021.0,10000
 Verra,Fiji,Efficient appliances,2023.0,20000
 Verra,Gambia,Mixed renewables,2023.0,163558
 Verra,Gambia,Mixed renewables,2024.0,258608
-Verra,Germany,Agriculture,2000.0,2000
-Verra,Germany,Agriculture,2001.0,59034
-Verra,Germany,Agriculture,2002.0,1042930
-Verra,Germany,Agriculture,2003.0,696896
-Verra,Germany,Agriculture,2004.0,396393
-Verra,Germany,Agriculture,2005.0,530578
-Verra,Germany,Agriculture,2006.0,662810
-Verra,Germany,Agriculture,2007.0,538547
+Verra,Germany,Soil & Livestock,2000.0,2000
+Verra,Germany,Soil & Livestock,2001.0,59034
+Verra,Germany,Soil & Livestock,2002.0,1042930
+Verra,Germany,Soil & Livestock,2003.0,696896
+Verra,Germany,Soil & Livestock,2004.0,396393
+Verra,Germany,Soil & Livestock,2005.0,530578
+Verra,Germany,Soil & Livestock,2006.0,662810
+Verra,Germany,Soil & Livestock,2007.0,538547
 Verra,Germany,Hydropower,2001.0,17681
 Verra,Germany,Hydropower,2002.0,1330251
 Verra,Germany,Hydropower,2003.0,580981
@@ -3355,7 +2682,7 @@ Verra,Ghana,Afforestation/Reforestation,2020.0,100698
 Verra,Ghana,Afforestation/Reforestation,2021.0,194997
 Verra,Ghana,Afforestation/Reforestation,2022.0,270292
 Verra,Ghana,Afforestation/Reforestation,2023.0,108459
-Verra,Ghana,Agriculture,2018.0,155431
+Verra,Ghana,Soil & Livestock,2018.0,155431
 Verra,Ghana,Efficient appliances,2012.0,7331
 Verra,Ghana,Efficient appliances,2014.0,18818
 Verra,Ghana,Efficient appliances,2015.0,22795
@@ -3436,14 +2763,14 @@ Verra,India,Afforestation/Reforestation,2021.0,316885
 Verra,India,Afforestation/Reforestation,2022.0,48635
 Verra,India,Afforestation/Reforestation,2023.0,12837
 Verra,India,Afforestation/Reforestation,2024.0,3869
-Verra,India,Agriculture,2006.0,17919
-Verra,India,Agriculture,2007.0,31558
-Verra,India,Agriculture,2008.0,50626
-Verra,India,Agriculture,2009.0,15822
-Verra,India,Agriculture,2021.0,9023
-Verra,India,Agriculture,2022.0,24047
-Verra,India,Agriculture,2023.0,30612
-Verra,India,Agriculture,2024.0,15000
+Verra,India,Soil & Livestock,2006.0,17919
+Verra,India,Soil & Livestock,2007.0,31558
+Verra,India,Soil & Livestock,2008.0,50626
+Verra,India,Soil & Livestock,2009.0,15822
+Verra,India,Soil & Livestock,2021.0,9023
+Verra,India,Soil & Livestock,2022.0,24047
+Verra,India,Soil & Livestock,2023.0,30612
+Verra,India,Soil & Livestock,2024.0,15000
 Verra,India,Bioenergy,2005.0,29557
 Verra,India,Bioenergy,2006.0,86904
 Verra,India,Bioenergy,2007.0,82659
@@ -3464,9 +2791,6 @@ Verra,India,Bioenergy,2021.0,294523
 Verra,India,Bioenergy,2022.0,170096
 Verra,India,Bioenergy,2023.0,58905
 Verra,India,Bioenergy,2024.0,2298
-Verra,India,Cleaner cooking,2020.0,116
-Verra,India,Cleaner cooking,2021.0,4072
-Verra,India,Cleaner cooking,2022.0,2933
 Verra,India,Efficient appliances,2006.0,19502
 Verra,India,Efficient appliances,2007.0,20836
 Verra,India,Efficient appliances,2008.0,28092
@@ -3588,17 +2912,17 @@ Verra,India,Wastewater treatment,2015.0,20002
 Verra,India,Wastewater treatment,2016.0,5291
 Verra,Indonesia,Afforestation/Reforestation,2011.0,125391
 Verra,Indonesia,Afforestation/Reforestation,2015.0,271680
-Verra,Indonesia,Agriculture,2009.0,1090676
-Verra,Indonesia,Agriculture,2010.0,2305237
-Verra,Indonesia,Agriculture,2011.0,2584019
-Verra,Indonesia,Agriculture,2012.0,3035753
-Verra,Indonesia,Agriculture,2013.0,3862941
-Verra,Indonesia,Agriculture,2014.0,4294135
-Verra,Indonesia,Agriculture,2015.0,3925272
-Verra,Indonesia,Agriculture,2016.0,3493722
-Verra,Indonesia,Agriculture,2017.0,3953900
-Verra,Indonesia,Agriculture,2018.0,3403066
-Verra,Indonesia,Agriculture,2019.0,1676895
+Verra,Indonesia,Soil & Livestock,2009.0,1090676
+Verra,Indonesia,Soil & Livestock,2010.0,2305237
+Verra,Indonesia,Soil & Livestock,2011.0,2584019
+Verra,Indonesia,Soil & Livestock,2012.0,3035753
+Verra,Indonesia,Soil & Livestock,2013.0,3862941
+Verra,Indonesia,Soil & Livestock,2014.0,4294135
+Verra,Indonesia,Soil & Livestock,2015.0,3925272
+Verra,Indonesia,Soil & Livestock,2016.0,3493722
+Verra,Indonesia,Soil & Livestock,2017.0,3953900
+Verra,Indonesia,Soil & Livestock,2018.0,3403066
+Verra,Indonesia,Soil & Livestock,2019.0,1676895
 Verra,Indonesia,Forest management,2010.0,12748611
 Verra,Indonesia,Forest management,2015.0,4339233
 Verra,Indonesia,Forest management,2016.0,336581
@@ -3645,24 +2969,24 @@ Verra,Kenya,Afforestation/Reforestation,2018.0,148661
 Verra,Kenya,Afforestation/Reforestation,2019.0,151058
 Verra,Kenya,Afforestation/Reforestation,2020.0,72322
 Verra,Kenya,Afforestation/Reforestation,2021.0,7394
-Verra,Kenya,Agriculture,2005.0,162219
-Verra,Kenya,Agriculture,2006.0,190864
-Verra,Kenya,Agriculture,2007.0,199432
-Verra,Kenya,Agriculture,2008.0,200328
-Verra,Kenya,Agriculture,2009.0,201095
-Verra,Kenya,Agriculture,2010.0,1176555
-Verra,Kenya,Agriculture,2011.0,1413876
-Verra,Kenya,Agriculture,2012.0,1244239
-Verra,Kenya,Agriculture,2013.0,3106104
-Verra,Kenya,Agriculture,2014.0,837664
-Verra,Kenya,Agriculture,2015.0,2066116
-Verra,Kenya,Agriculture,2016.0,2663108
-Verra,Kenya,Agriculture,2017.0,2687827
-Verra,Kenya,Agriculture,2018.0,2451608
-Verra,Kenya,Agriculture,2019.0,2369163
-Verra,Kenya,Agriculture,2020.0,2624954
-Verra,Kenya,Agriculture,2021.0,1872613
-Verra,Kenya,Agriculture,2022.0,1838889
+Verra,Kenya,Soil & Livestock,2005.0,162219
+Verra,Kenya,Soil & Livestock,2006.0,190864
+Verra,Kenya,Soil & Livestock,2007.0,199432
+Verra,Kenya,Soil & Livestock,2008.0,200328
+Verra,Kenya,Soil & Livestock,2009.0,201095
+Verra,Kenya,Soil & Livestock,2010.0,1176555
+Verra,Kenya,Soil & Livestock,2011.0,1413876
+Verra,Kenya,Soil & Livestock,2012.0,1244239
+Verra,Kenya,Soil & Livestock,2013.0,3106104
+Verra,Kenya,Soil & Livestock,2014.0,837664
+Verra,Kenya,Soil & Livestock,2015.0,2066116
+Verra,Kenya,Soil & Livestock,2016.0,2663108
+Verra,Kenya,Soil & Livestock,2017.0,2687827
+Verra,Kenya,Soil & Livestock,2018.0,2451608
+Verra,Kenya,Soil & Livestock,2019.0,2369163
+Verra,Kenya,Soil & Livestock,2020.0,2624954
+Verra,Kenya,Soil & Livestock,2021.0,1872613
+Verra,Kenya,Soil & Livestock,2022.0,1838889
 Verra,Kenya,Bioenergy,2015.0,7504
 Verra,Kenya,Efficient appliances,2011.0,41508
 Verra,Kenya,Efficient appliances,2012.0,26414
@@ -3719,8 +3043,8 @@ Verra,Lao,Afforestation/Reforestation,2019.0,44752
 Verra,Lao,Afforestation/Reforestation,2020.0,83407
 Verra,Lao,Afforestation/Reforestation,2021.0,66206
 Verra,Lao,Afforestation/Reforestation,2022.0,62414
-Verra,Lao,Agriculture,2022.0,373
-Verra,Lao,Agriculture,2023.0,4002
+Verra,Lao,Soil & Livestock,2022.0,373
+Verra,Lao,Soil & Livestock,2023.0,4002
 Verra,Lao,Bioenergy,2023.0,23867
 Verra,Lao,Bioenergy,2024.0,76133
 Verra,Lao,Fossil gas leaks,2022.0,94224
@@ -3731,16 +3055,16 @@ Verra,Lao,Mixed renewables,2021.0,34143
 Verra,Lao,Mixed renewables,2022.0,32659
 Verra,Liberia,Industrial efficiency,2016.0,9100
 Verra,Liberia,Industrial efficiency,2018.0,13806
-Verra,Madagascar,Agriculture,2008.0,1118
-Verra,Madagascar,Agriculture,2009.0,3406
-Verra,Madagascar,Agriculture,2010.0,3160
-Verra,Madagascar,Agriculture,2011.0,3424
-Verra,Madagascar,Agriculture,2012.0,3014
-Verra,Madagascar,Agriculture,2013.0,7872
-Verra,Madagascar,Agriculture,2014.0,3878
-Verra,Madagascar,Agriculture,2015.0,4439
-Verra,Madagascar,Agriculture,2016.0,4975
-Verra,Madagascar,Agriculture,2017.0,4700
+Verra,Madagascar,Soil & Livestock,2008.0,1118
+Verra,Madagascar,Soil & Livestock,2009.0,3406
+Verra,Madagascar,Soil & Livestock,2010.0,3160
+Verra,Madagascar,Soil & Livestock,2011.0,3424
+Verra,Madagascar,Soil & Livestock,2012.0,3014
+Verra,Madagascar,Soil & Livestock,2013.0,7872
+Verra,Madagascar,Soil & Livestock,2014.0,3878
+Verra,Madagascar,Soil & Livestock,2015.0,4439
+Verra,Madagascar,Soil & Livestock,2016.0,4975
+Verra,Madagascar,Soil & Livestock,2017.0,4700
 Verra,Madagascar,Efficient appliances,2019.0,43553
 Verra,Madagascar,Efficient appliances,2021.0,552592
 Verra,Madagascar,Efficient appliances,2022.0,957362
@@ -3963,7 +3287,7 @@ Verra,Panama,Afforestation/Reforestation,2018.0,10264
 Verra,Panama,Afforestation/Reforestation,2019.0,10263
 Verra,Panama,Afforestation/Reforestation,2020.0,10264
 Verra,Panama,Afforestation/Reforestation,2021.0,10263
-Verra,Papua New Guinea,Agriculture,2017.0,1327442
+Verra,Papua New Guinea,Soil & Livestock,2017.0,1327442
 Verra,Papua New Guinea,Forest management,2009.0,614104
 Verra,Papua New Guinea,Forest management,2013.0,129972
 Verra,Papua New Guinea,Forest management,2014.0,145000
@@ -4101,9 +3425,9 @@ Verra,Sierra Leone,Forest management,2018.0,459234
 Verra,Sierra Leone,Mixed renewables,2023.0,2078
 Verra,Sierra Leone,Mixed renewables,2024.0,107476
 Verra,Sierra Leone,Mixed renewables,2025.0,22257
-Verra,Singapore,Agriculture,2022.0,8606
-Verra,Singapore,Agriculture,2023.0,21484
-Verra,Singapore,Agriculture,2024.0,38648
+Verra,Singapore,Soil & Livestock,2022.0,8606
+Verra,Singapore,Soil & Livestock,2023.0,21484
+Verra,Singapore,Soil & Livestock,2024.0,38648
 Verra,Singapore,Efficient appliances,2010.0,574
 Verra,Singapore,Efficient appliances,2011.0,3826
 Verra,Singapore,Efficient appliances,2012.0,4410
@@ -4130,13 +3454,13 @@ Verra,South Africa,Afforestation/Reforestation,2019.0,179699
 Verra,South Africa,Afforestation/Reforestation,2020.0,177764
 Verra,South Africa,Afforestation/Reforestation,2021.0,179677
 Verra,South Africa,Afforestation/Reforestation,2022.0,179609
-Verra,South Africa,Agriculture,2018.0,35819
-Verra,South Africa,Agriculture,2019.0,85013
-Verra,South Africa,Agriculture,2020.0,182
-Verra,South Africa,Agriculture,2021.0,45725
-Verra,South Africa,Agriculture,2022.0,46727
-Verra,South Africa,Agriculture,2023.0,46896
-Verra,South Africa,Agriculture,2024.0,209260
+Verra,South Africa,Soil & Livestock,2018.0,35819
+Verra,South Africa,Soil & Livestock,2019.0,85013
+Verra,South Africa,Soil & Livestock,2020.0,182
+Verra,South Africa,Soil & Livestock,2021.0,45725
+Verra,South Africa,Soil & Livestock,2022.0,46727
+Verra,South Africa,Soil & Livestock,2023.0,46896
+Verra,South Africa,Soil & Livestock,2024.0,209260
 Verra,South Africa,Bioenergy,2011.0,9643
 Verra,South Africa,Efficient appliances,2011.0,19692
 Verra,South Africa,Efficient appliances,2012.0,9671
@@ -4240,8 +3564,8 @@ Verra,"Tanzania, United Republic Of",Afforestation/Reforestation,2002.0,139358
 Verra,"Tanzania, United Republic Of",Afforestation/Reforestation,2008.0,22790
 Verra,"Tanzania, United Republic Of",Afforestation/Reforestation,2012.0,59738
 Verra,"Tanzania, United Republic Of",Afforestation/Reforestation,2013.0,532089
-Verra,"Tanzania, United Republic Of",Agriculture,2022.0,40
-Verra,"Tanzania, United Republic Of",Agriculture,2023.0,927
+Verra,"Tanzania, United Republic Of",Soil & Livestock,2022.0,40
+Verra,"Tanzania, United Republic Of",Soil & Livestock,2023.0,927
 Verra,"Tanzania, United Republic Of",Forest management,2012.0,36171
 Verra,"Tanzania, United Republic Of",Forest management,2016.0,1516
 Verra,"Tanzania, United Republic Of",Forest management,2017.0,544611
@@ -4256,9 +3580,9 @@ Verra,"Tanzania, United Republic Of",Mixed renewables,2020.0,923
 Verra,"Tanzania, United Republic Of",Mixed renewables,2021.0,134297
 Verra,"Tanzania, United Republic Of",Mixed renewables,2022.0,791788
 Verra,"Tanzania, United Republic Of",Mixed renewables,2023.0,517112
-Verra,Thailand,Agriculture,2007.0,31267
-Verra,Thailand,Agriculture,2008.0,49598
-Verra,Thailand,Agriculture,2009.0,8630
+Verra,Thailand,Soil & Livestock,2007.0,31267
+Verra,Thailand,Soil & Livestock,2008.0,49598
+Verra,Thailand,Soil & Livestock,2009.0,8630
 Verra,Thailand,Bioenergy,2023.0,6335
 Verra,Thailand,Bioenergy,2024.0,11088
 Verra,Thailand,Forest management,2011.0,6464
@@ -4448,25 +3772,25 @@ Verra,United States,Afforestation/Reforestation,2021.0,62040
 Verra,United States,Afforestation/Reforestation,2022.0,85899
 Verra,United States,Afforestation/Reforestation,2023.0,113293
 Verra,United States,Afforestation/Reforestation,2024.0,137882
-Verra,United States,Agriculture,2006.0,12054
-Verra,United States,Agriculture,2007.0,25552
-Verra,United States,Agriculture,2008.0,26907
-Verra,United States,Agriculture,2009.0,28103
-Verra,United States,Agriculture,2010.0,70943
-Verra,United States,Agriculture,2011.0,90274
-Verra,United States,Agriculture,2012.0,85910
-Verra,United States,Agriculture,2013.0,67269
-Verra,United States,Agriculture,2014.0,54359
-Verra,United States,Agriculture,2015.0,4720
-Verra,United States,Agriculture,2016.0,3829
-Verra,United States,Agriculture,2017.0,3250
-Verra,United States,Agriculture,2018.0,6302
-Verra,United States,Agriculture,2019.0,8940
-Verra,United States,Agriculture,2020.0,15260
-Verra,United States,Agriculture,2021.0,23597
-Verra,United States,Agriculture,2022.0,56332
-Verra,United States,Agriculture,2023.0,70156
-Verra,United States,Agriculture,2024.0,35692
+Verra,United States,Soil & Livestock,2006.0,12054
+Verra,United States,Soil & Livestock,2007.0,25552
+Verra,United States,Soil & Livestock,2008.0,26907
+Verra,United States,Soil & Livestock,2009.0,28103
+Verra,United States,Soil & Livestock,2010.0,70943
+Verra,United States,Soil & Livestock,2011.0,90274
+Verra,United States,Soil & Livestock,2012.0,85910
+Verra,United States,Soil & Livestock,2013.0,67269
+Verra,United States,Soil & Livestock,2014.0,54359
+Verra,United States,Soil & Livestock,2015.0,4720
+Verra,United States,Soil & Livestock,2016.0,3829
+Verra,United States,Soil & Livestock,2017.0,3250
+Verra,United States,Soil & Livestock,2018.0,6302
+Verra,United States,Soil & Livestock,2019.0,8940
+Verra,United States,Soil & Livestock,2020.0,15260
+Verra,United States,Soil & Livestock,2021.0,23597
+Verra,United States,Soil & Livestock,2022.0,56332
+Verra,United States,Soil & Livestock,2023.0,70156
+Verra,United States,Soil & Livestock,2024.0,35692
 Verra,United States,Bioenergy,2018.0,9181
 Verra,United States,Bioenergy,2019.0,2390
 Verra,United States,Bioenergy,2020.0,3581
@@ -4663,22 +3987,22 @@ Verra,Vietnam,Mixed renewables,2021.0,360789
 Verra,Vietnam,Mixed renewables,2022.0,1844730
 Verra,Vietnam,Mixed renewables,2023.0,3499646
 Verra,Vietnam,Mixed renewables,2024.0,1960757
-Verra,Zambia,Agriculture,2009.0,24878
-Verra,Zambia,Agriculture,2010.0,98702
-Verra,Zambia,Agriculture,2011.0,98702
-Verra,Zambia,Agriculture,2012.0,98973
-Verra,Zambia,Agriculture,2013.0,124511
-Verra,Zambia,Agriculture,2014.0,132994
-Verra,Zambia,Agriculture,2015.0,562212
-Verra,Zambia,Agriculture,2016.0,1024032
-Verra,Zambia,Agriculture,2017.0,1251129
-Verra,Zambia,Agriculture,2018.0,1390181
-Verra,Zambia,Agriculture,2019.0,1564344
-Verra,Zambia,Agriculture,2020.0,1648022
-Verra,Zambia,Agriculture,2021.0,1973231
-Verra,Zambia,Agriculture,2022.0,1645425
-Verra,Zambia,Agriculture,2023.0,2659133
-Verra,Zambia,Agriculture,2024.0,192361
+Verra,Zambia,Soil & Livestock,2009.0,24878
+Verra,Zambia,Soil & Livestock,2010.0,98702
+Verra,Zambia,Soil & Livestock,2011.0,98702
+Verra,Zambia,Soil & Livestock,2012.0,98973
+Verra,Zambia,Soil & Livestock,2013.0,124511
+Verra,Zambia,Soil & Livestock,2014.0,132994
+Verra,Zambia,Soil & Livestock,2015.0,562212
+Verra,Zambia,Soil & Livestock,2016.0,1024032
+Verra,Zambia,Soil & Livestock,2017.0,1251129
+Verra,Zambia,Soil & Livestock,2018.0,1390181
+Verra,Zambia,Soil & Livestock,2019.0,1564344
+Verra,Zambia,Soil & Livestock,2020.0,1648022
+Verra,Zambia,Soil & Livestock,2021.0,1973231
+Verra,Zambia,Soil & Livestock,2022.0,1645425
+Verra,Zambia,Soil & Livestock,2023.0,2659133
+Verra,Zambia,Soil & Livestock,2024.0,192361
 Verra,Zambia,Bioenergy,2022.0,500
 Verra,Zambia,Bioenergy,2023.0,500
 Verra,Zambia,Efficient appliances,2011.0,13801
@@ -4699,16 +4023,960 @@ Verra,Zambia,Mixed renewables,2020.0,4636
 Verra,Zambia,Mixed renewables,2021.0,1011309
 Verra,Zambia,Mixed renewables,2022.0,1681731
 Verra,Zambia,Mixed renewables,2023.0,380822
-Verra,Zimbabwe,Agriculture,2011.0,2751549
-Verra,Zimbabwe,Agriculture,2012.0,3964164
-Verra,Zimbabwe,Agriculture,2013.0,2425232
-Verra,Zimbabwe,Agriculture,2014.0,3160600
-Verra,Zimbabwe,Agriculture,2015.0,3895970
-Verra,Zimbabwe,Agriculture,2016.0,3212593
-Verra,Zimbabwe,Agriculture,2017.0,3318200
-Verra,Zimbabwe,Agriculture,2018.0,2503362
-Verra,Zimbabwe,Agriculture,2019.0,1591283
+Verra,Zimbabwe,Soil & Livestock,2011.0,2751549
+Verra,Zimbabwe,Soil & Livestock,2012.0,3964164
+Verra,Zimbabwe,Soil & Livestock,2013.0,2425232
+Verra,Zimbabwe,Soil & Livestock,2014.0,3160600
+Verra,Zimbabwe,Soil & Livestock,2015.0,3895970
+Verra,Zimbabwe,Soil & Livestock,2016.0,3212593
+Verra,Zimbabwe,Soil & Livestock,2017.0,3318200
+Verra,Zimbabwe,Soil & Livestock,2018.0,2503362
+Verra,Zimbabwe,Soil & Livestock,2019.0,1591283
 Verra,Zimbabwe,Mixed renewables,2020.0,1
 Verra,Zimbabwe,Mixed renewables,2021.0,239628
 Verra,Zimbabwe,Mixed renewables,2022.0,1011452
 Verra,Zimbabwe,Mixed renewables,2023.0,195456
+Verra,China,Rice cultivation,2018.0,1260000
+Verra,China,Rice cultivation,2019.0,1200000
+Verra,China,Rice cultivation,2020.0,1320000
+Verra,China,Rice cultivation,2021.0,780000
+Verra,India,Public transit,2020.0,116
+Verra,India,Public transit,2021.0,4072
+Verra,India,Public transit,2022.0,2933
+Gold Standard,Australia,Afforestation/Reforestation,2009.0,2808
+Gold Standard,Australia,Afforestation/Reforestation,2010.0,9355
+Gold Standard,Australia,Afforestation/Reforestation,2011.0,15952
+Gold Standard,Australia,Afforestation/Reforestation,2012.0,21738
+Gold Standard,Australia,Afforestation/Reforestation,2013.0,24914
+Gold Standard,Australia,Afforestation/Reforestation,2014.0,47528
+Gold Standard,Australia,Afforestation/Reforestation,2015.0,32672
+Gold Standard,Australia,Afforestation/Reforestation,2016.0,37522
+Gold Standard,Australia,Afforestation/Reforestation,2017.0,66908
+Gold Standard,Australia,Afforestation/Reforestation,2018.0,42946
+Gold Standard,Australia,Afforestation/Reforestation,2019.0,45584
+Gold Standard,Australia,Afforestation/Reforestation,2020.0,48329
+Gold Standard,Australia,Afforestation/Reforestation,2021.0,20000
+Gold Standard,Australia,Afforestation/Reforestation,2022.0,20000
+Gold Standard,Australia,Afforestation/Reforestation,2024.0,10000
+Gold Standard,Australia,Afforestation/Reforestation,2025.0,7500
+Gold Standard,Australia,Afforestation/Reforestation,2026.0,5000
+Gold Standard,Brazil,Bioenergy,2010.0,11314
+Gold Standard,Brazil,Bioenergy,2011.0,29263
+Gold Standard,Brazil,Bioenergy,2012.0,65566
+Gold Standard,Brazil,Bioenergy,2013.0,57619
+Gold Standard,Brazil,Bioenergy,2014.0,54831
+Gold Standard,Brazil,Bioenergy,2015.0,49362
+Gold Standard,Brazil,Bioenergy,2016.0,48658
+Gold Standard,Brazil,Bioenergy,2017.0,48162
+Gold Standard,Brazil,Bioenergy,2018.0,56842
+Gold Standard,Brazil,Bioenergy,2019.0,45042
+Gold Standard,Brazil,Bioenergy,2020.0,38704
+Gold Standard,Brazil,Bioenergy,2021.0,1243842
+Gold Standard,Brazil,Bioenergy,2022.0,976268
+Gold Standard,Brazil,Bioenergy,2023.0,1180413
+Gold Standard,Brazil,Bioenergy,2024.0,391608
+Gold Standard,Brazil,Other,2021.0,599029
+Gold Standard,Brazil,Other,2022.0,766754
+Gold Standard,Brazil,Other,2023.0,615013
+Gold Standard,Brazil,Other,2024.0,520360
+Gold Standard,Brazil,Other,2025.0,90185
+Gold Standard,Burkina Faso,Efficient appliances,2015.0,18930
+Gold Standard,Burkina Faso,Efficient appliances,2016.0,51331
+Gold Standard,Burkina Faso,Efficient appliances,2017.0,91502
+Gold Standard,Burkina Faso,Efficient appliances,2018.0,100200
+Gold Standard,Burkina Faso,Efficient appliances,2019.0,100074
+Gold Standard,Burkina Faso,Efficient appliances,2020.0,125710
+Gold Standard,Burkina Faso,Efficient appliances,2021.0,121765
+Gold Standard,Burkina Faso,Efficient appliances,2022.0,146951
+Gold Standard,Burkina Faso,Efficient appliances,2023.0,40000
+Gold Standard,Burkina Faso,Other,2022.0,2458
+Gold Standard,Burkina Faso,Other,2023.0,51438
+Gold Standard,Burkina Faso,Other,2024.0,20424
+Gold Standard,Cambodia,Efficient appliances,2011.0,20804
+Gold Standard,Cambodia,Efficient appliances,2012.0,55005
+Gold Standard,Cambodia,Efficient appliances,2013.0,74862
+Gold Standard,Cambodia,Efficient appliances,2014.0,125055
+Gold Standard,Cambodia,Efficient appliances,2015.0,143856
+Gold Standard,Cambodia,Efficient appliances,2016.0,128217
+Gold Standard,Cambodia,Efficient appliances,2017.0,135544
+Gold Standard,Cambodia,Efficient appliances,2018.0,95206
+Gold Standard,Cambodia,Efficient appliances,2019.0,108510
+Gold Standard,Cambodia,Efficient appliances,2020.0,127810
+Gold Standard,Cambodia,Efficient appliances,2021.0,101922
+Gold Standard,Cambodia,Efficient appliances,2022.0,111716
+Gold Standard,Cambodia,Efficient appliances,2023.0,101103
+Gold Standard,Cambodia,Efficient appliances,2024.0,35018
+Gold Standard,Cameroon,Efficient appliances,2015.0,457
+Gold Standard,Cameroon,Efficient appliances,2016.0,1513
+Gold Standard,Cameroon,Efficient appliances,2017.0,1956
+Gold Standard,Cameroon,Efficient appliances,2018.0,8395
+Gold Standard,Cameroon,Efficient appliances,2019.0,10000
+Gold Standard,Cameroon,Efficient appliances,2020.0,10000
+Gold Standard,Cameroon,Efficient appliances,2021.0,10000
+Gold Standard,Cameroon,Efficient appliances,2022.0,10000
+Gold Standard,Cameroon,Efficient appliances,2023.0,9151
+Gold Standard,Chad,Solar,2012.0,9043
+Gold Standard,Chad,Solar,2013.0,8999
+Gold Standard,Chad,Solar,2014.0,9026
+Gold Standard,Chad,Solar,2015.0,9024
+Gold Standard,Chad,Solar,2016.0,6892
+Gold Standard,Chad,Solar,2017.0,4511
+Gold Standard,Chad,Solar,2018.0,4776
+Gold Standard,Chad,Solar,2019.0,7700
+Gold Standard,Chad,Solar,2020.0,7683
+Gold Standard,Chad,Solar,2021.0,8538
+Gold Standard,Chad,Solar,2022.0,19142
+Gold Standard,Chad,Solar,2023.0,20000
+Gold Standard,Chile,Bioenergy,2014.0,124582
+Gold Standard,Chile,Bioenergy,2015.0,424111
+Gold Standard,Chile,Bioenergy,2016.0,306737
+Gold Standard,Chile,Bioenergy,2017.0,397252
+Gold Standard,Chile,Bioenergy,2018.0,368869
+Gold Standard,Chile,Bioenergy,2019.0,328451
+Gold Standard,Chile,Bioenergy,2020.0,237524
+Gold Standard,Chile,Bioenergy,2021.0,250301
+Gold Standard,Chile,Bioenergy,2022.0,273896
+Gold Standard,Chile,Bioenergy,2023.0,244191
+Gold Standard,China,Afforestation/Reforestation,2014.0,99
+Gold Standard,China,Afforestation/Reforestation,2015.0,99
+Gold Standard,China,Afforestation/Reforestation,2016.0,15615
+Gold Standard,China,Afforestation/Reforestation,2017.0,13164
+Gold Standard,China,Afforestation/Reforestation,2018.0,18483
+Gold Standard,China,Afforestation/Reforestation,2019.0,24632
+Gold Standard,China,Afforestation/Reforestation,2020.0,31845
+Gold Standard,China,Afforestation/Reforestation,2021.0,2175
+Gold Standard,China,Afforestation/Reforestation,2022.0,2195
+Gold Standard,China,Afforestation/Reforestation,2023.0,2202
+Gold Standard,China,Afforestation/Reforestation,2024.0,538
+Gold Standard,China,Afforestation/Reforestation,2025.0,538
+Gold Standard,China,Afforestation/Reforestation,2026.0,513
+Gold Standard,China,Afforestation/Reforestation,2027.0,493
+Gold Standard,China,Afforestation/Reforestation,2028.0,463
+Gold Standard,China,Afforestation/Reforestation,2029.0,437
+Gold Standard,China,Afforestation/Reforestation,2030.0,418
+Gold Standard,China,Afforestation/Reforestation,2031.0,390
+Gold Standard,China,Afforestation/Reforestation,2032.0,349
+Gold Standard,China,Afforestation/Reforestation,2033.0,322
+Gold Standard,China,Afforestation/Reforestation,2034.0,206
+Gold Standard,China,Afforestation/Reforestation,2035.0,178
+Gold Standard,China,Afforestation/Reforestation,2036.0,159
+Gold Standard,China,Afforestation/Reforestation,2037.0,141
+Gold Standard,China,Afforestation/Reforestation,2038.0,127
+Gold Standard,China,Afforestation/Reforestation,2039.0,110
+Gold Standard,China,Afforestation/Reforestation,2040.0,93
+Gold Standard,China,Afforestation/Reforestation,2041.0,111
+Gold Standard,China,Bioenergy,2013.0,14626
+Gold Standard,China,Bioenergy,2014.0,176528
+Gold Standard,China,Bioenergy,2015.0,298903
+Gold Standard,China,Bioenergy,2016.0,332964
+Gold Standard,China,Bioenergy,2017.0,337825
+Gold Standard,China,Bioenergy,2018.0,334943
+Gold Standard,China,Bioenergy,2019.0,279893
+Gold Standard,China,Bioenergy,2020.0,300956
+Gold Standard,China,Bioenergy,2021.0,311281
+Gold Standard,China,Bioenergy,2022.0,302448
+Gold Standard,China,Bioenergy,2023.0,297532
+Gold Standard,China,Wind,2014.0,53306
+Gold Standard,China,Wind,2015.0,107005
+Gold Standard,China,Wind,2016.0,107328
+Gold Standard,China,Wind,2020.0,69246
+Gold Standard,China,Wind,2021.0,54084
+Gold Standard,China,Wind,2022.0,55130
+Gold Standard,China,Wind,2023.0,22905
+Gold Standard,Colombia,Afforestation/Reforestation,2007.0,287
+Gold Standard,Colombia,Afforestation/Reforestation,2008.0,4109
+Gold Standard,Colombia,Afforestation/Reforestation,2009.0,7087
+Gold Standard,Colombia,Afforestation/Reforestation,2010.0,21284
+Gold Standard,Colombia,Afforestation/Reforestation,2011.0,45888
+Gold Standard,Colombia,Afforestation/Reforestation,2012.0,67592
+Gold Standard,Colombia,Afforestation/Reforestation,2013.0,81791
+Gold Standard,Colombia,Afforestation/Reforestation,2014.0,104673
+Gold Standard,Colombia,Afforestation/Reforestation,2016.0,2360
+Gold Standard,Colombia,Afforestation/Reforestation,2017.0,90080
+Gold Standard,Colombia,Afforestation/Reforestation,2018.0,184890
+Gold Standard,Colombia,Afforestation/Reforestation,2019.0,349298
+Gold Standard,Colombia,Afforestation/Reforestation,2020.0,394663
+Gold Standard,Colombia,Afforestation/Reforestation,2021.0,390532
+Gold Standard,Colombia,Afforestation/Reforestation,2022.0,330554
+Gold Standard,Colombia,Afforestation/Reforestation,2023.0,147621
+Gold Standard,Colombia,Afforestation/Reforestation,2024.0,101680
+Gold Standard,Colombia,Afforestation/Reforestation,2025.0,56961
+Gold Standard,Colombia,Afforestation/Reforestation,2026.0,91507
+Gold Standard,Colombia,Afforestation/Reforestation,2027.0,92384
+Gold Standard,Colombia,Afforestation/Reforestation,2028.0,93271
+Gold Standard,Colombia,Afforestation/Reforestation,2029.0,29016
+Gold Standard,Colombia,Afforestation/Reforestation,2031.0,4948
+Gold Standard,Colombia,Afforestation/Reforestation,2032.0,10778
+Gold Standard,Colombia,Afforestation/Reforestation,2033.0,11538
+Gold Standard,Colombia,Afforestation/Reforestation,2034.0,12320
+Gold Standard,Colombia,Afforestation/Reforestation,2035.0,13127
+Gold Standard,Colombia,Afforestation/Reforestation,2036.0,13955
+Gold Standard,Colombia,Afforestation/Reforestation,2037.0,14806
+Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2011.0,104
+Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2012.0,15283
+Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2013.0,26414
+Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2014.0,34145
+Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2015.0,55148
+Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2016.0,92924
+Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2017.0,68899
+Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2018.0,78608
+Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2019.0,80264
+Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2020.0,80264
+Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2021.0,80265
+Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2022.0,51004
+Gold Standard,Costa Rica,Afforestation/Reforestation,2008.0,711
+Gold Standard,Costa Rica,Afforestation/Reforestation,2009.0,788
+Gold Standard,Costa Rica,Afforestation/Reforestation,2010.0,3980
+Gold Standard,Costa Rica,Afforestation/Reforestation,2011.0,6772
+Gold Standard,Costa Rica,Afforestation/Reforestation,2012.0,16229
+Gold Standard,Costa Rica,Afforestation/Reforestation,2013.0,20675
+Gold Standard,Costa Rica,Afforestation/Reforestation,2014.0,17407
+Gold Standard,Costa Rica,Afforestation/Reforestation,2015.0,21160
+Gold Standard,Costa Rica,Afforestation/Reforestation,2016.0,21160
+Gold Standard,Costa Rica,Afforestation/Reforestation,2017.0,21160
+Gold Standard,Costa Rica,Afforestation/Reforestation,2018.0,21160
+Gold Standard,Costa Rica,Afforestation/Reforestation,2019.0,21160
+Gold Standard,Costa Rica,Afforestation/Reforestation,2020.0,21156
+Gold Standard,Costa Rica,Afforestation/Reforestation,2021.0,12114
+Gold Standard,Costa Rica,Afforestation/Reforestation,2022.0,8343
+Gold Standard,Costa Rica,Afforestation/Reforestation,2023.0,7530
+Gold Standard,Costa Rica,Afforestation/Reforestation,2024.0,30875
+Gold Standard,Costa Rica,Afforestation/Reforestation,2025.0,28501
+Gold Standard,Costa Rica,Afforestation/Reforestation,2026.0,28501
+Gold Standard,Costa Rica,Afforestation/Reforestation,2027.0,28501
+Gold Standard,Costa Rica,Afforestation/Reforestation,2028.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2029.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2030.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2031.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2032.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2033.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2034.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2035.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2036.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2037.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2038.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2039.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2040.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2041.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2042.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2043.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2044.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2045.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2046.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2047.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2048.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2049.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2050.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2051.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2052.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2053.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2054.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2055.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2056.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2057.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2058.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2059.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2060.0,664
+Gold Standard,Costa Rica,Afforestation/Reforestation,2061.0,678
+Gold Standard,C√¥te d'Ivoire,Efficient appliances,2021.0,4853
+Gold Standard,C√¥te d'Ivoire,Efficient appliances,2022.0,44286
+Gold Standard,C√¥te d'Ivoire,Efficient appliances,2023.0,67578
+Gold Standard,C√¥te d'Ivoire,Efficient appliances,2024.0,50535
+Gold Standard,C√¥te d'Ivoire,Other,2023.0,14674
+Gold Standard,C√¥te d'Ivoire,Other,2024.0,28721
+Gold Standard,Egypt,Afforestation/Reforestation,2016.0,381
+Gold Standard,Egypt,Afforestation/Reforestation,2017.0,381
+Gold Standard,Egypt,Afforestation/Reforestation,2018.0,381
+Gold Standard,Egypt,Afforestation/Reforestation,2019.0,381
+Gold Standard,Egypt,Afforestation/Reforestation,2020.0,381
+Gold Standard,Egypt,Solar,2022.0,1629
+Gold Standard,Egypt,Solar,2023.0,8516
+Gold Standard,Egypt,Solar,2024.0,14390
+Gold Standard,Egypt,Wind,2020.0,16658
+Gold Standard,Egypt,Wind,2021.0,714249
+Gold Standard,Egypt,Wind,2022.0,1139098
+Gold Standard,Egypt,Wind,2023.0,1037302
+Gold Standard,Egypt,Wind,2024.0,997386
+Gold Standard,Egypt,Wind,2025.0,316511
+Gold Standard,Eritrea,Efficient appliances,2017.0,5009
+Gold Standard,Eritrea,Efficient appliances,2018.0,48534
+Gold Standard,Eritrea,Efficient appliances,2019.0,46892
+Gold Standard,Eritrea,Efficient appliances,2020.0,40469
+Gold Standard,Eritrea,Efficient appliances,2021.0,31613
+Gold Standard,Eritrea,Efficient appliances,2022.0,40370
+Gold Standard,Eritrea,Efficient appliances,2023.0,32300
+Gold Standard,Eritrea,Efficient appliances,2024.0,27738
+Gold Standard,Ethiopia,Afforestation/Reforestation,2008.0,8844
+Gold Standard,Ethiopia,Afforestation/Reforestation,2009.0,17740
+Gold Standard,Ethiopia,Afforestation/Reforestation,2010.0,18302
+Gold Standard,Ethiopia,Afforestation/Reforestation,2011.0,19145
+Gold Standard,Ethiopia,Afforestation/Reforestation,2012.0,19708
+Gold Standard,Ethiopia,Afforestation/Reforestation,2013.0,20270
+Gold Standard,Ethiopia,Afforestation/Reforestation,2014.0,20832
+Gold Standard,Ethiopia,Afforestation/Reforestation,2015.0,21594
+Gold Standard,Ethiopia,Afforestation/Reforestation,2016.0,43425
+Gold Standard,Ethiopia,Afforestation/Reforestation,2017.0,35849
+Gold Standard,Ethiopia,Afforestation/Reforestation,2018.0,44931
+Gold Standard,Ethiopia,Afforestation/Reforestation,2019.0,44931
+Gold Standard,Ethiopia,Afforestation/Reforestation,2020.0,44931
+Gold Standard,Ethiopia,Afforestation/Reforestation,2021.0,43559
+Gold Standard,Ethiopia,Afforestation/Reforestation,2022.0,8982
+Gold Standard,Ethiopia,Afforestation/Reforestation,2023.0,8482
+Gold Standard,Ethiopia,Afforestation/Reforestation,2024.0,8482
+Gold Standard,Ethiopia,Afforestation/Reforestation,2025.0,8482
+Gold Standard,Ethiopia,Afforestation/Reforestation,2026.0,8482
+Gold Standard,Ethiopia,Afforestation/Reforestation,2027.0,8482
+Gold Standard,Ethiopia,Afforestation/Reforestation,2028.0,7007
+Gold Standard,Ethiopia,Afforestation/Reforestation,2029.0,6506
+Gold Standard,Ethiopia,Afforestation/Reforestation,2030.0,6506
+Gold Standard,Ethiopia,Afforestation/Reforestation,2031.0,6506
+Gold Standard,Ethiopia,Afforestation/Reforestation,2032.0,6506
+Gold Standard,Ethiopia,Afforestation/Reforestation,2033.0,6506
+Gold Standard,Ethiopia,Afforestation/Reforestation,2034.0,6506
+Gold Standard,Ethiopia,Afforestation/Reforestation,2035.0,6506
+Gold Standard,Ethiopia,Afforestation/Reforestation,2036.0,6506
+Gold Standard,Ethiopia,Efficient appliances,2017.0,8700
+Gold Standard,Ethiopia,Efficient appliances,2018.0,20214
+Gold Standard,Ethiopia,Efficient appliances,2019.0,33581
+Gold Standard,Ethiopia,Efficient appliances,2020.0,52055
+Gold Standard,Ethiopia,Efficient appliances,2021.0,77847
+Gold Standard,Ethiopia,Efficient appliances,2022.0,91685
+Gold Standard,Ethiopia,Efficient appliances,2023.0,86126
+Gold Standard,Ethiopia,Efficient appliances,2024.0,22871
+Gold Standard,Georgia,Afforestation/Reforestation,2009.0,4912
+Gold Standard,Georgia,Afforestation/Reforestation,2010.0,8949
+Gold Standard,Georgia,Afforestation/Reforestation,2011.0,10737
+Gold Standard,Georgia,Afforestation/Reforestation,2012.0,11376
+Gold Standard,Georgia,Afforestation/Reforestation,2013.0,13802
+Gold Standard,Georgia,Afforestation/Reforestation,2014.0,14023
+Gold Standard,Georgia,Afforestation/Reforestation,2015.0,14082
+Gold Standard,Georgia,Afforestation/Reforestation,2016.0,14229
+Gold Standard,Georgia,Afforestation/Reforestation,2017.0,15001
+Gold Standard,Georgia,Afforestation/Reforestation,2018.0,14717
+Gold Standard,Georgia,Afforestation/Reforestation,2019.0,15004
+Gold Standard,Georgia,Afforestation/Reforestation,2020.0,36165
+Gold Standard,Georgia,Afforestation/Reforestation,2021.0,39331
+Gold Standard,Georgia,Afforestation/Reforestation,2022.0,28553
+Gold Standard,Georgia,Afforestation/Reforestation,2023.0,35207
+Gold Standard,Georgia,Afforestation/Reforestation,2024.0,44248
+Gold Standard,Georgia,Afforestation/Reforestation,2025.0,48181
+Gold Standard,Georgia,Afforestation/Reforestation,2026.0,49453
+Gold Standard,Georgia,Afforestation/Reforestation,2027.0,51446
+Gold Standard,Georgia,Afforestation/Reforestation,2028.0,50744
+Gold Standard,Georgia,Afforestation/Reforestation,2029.0,50119
+Gold Standard,Georgia,Afforestation/Reforestation,2030.0,46624
+Gold Standard,Georgia,Afforestation/Reforestation,2031.0,42761
+Gold Standard,Georgia,Afforestation/Reforestation,2032.0,37952
+Gold Standard,Georgia,Afforestation/Reforestation,2033.0,33969
+Gold Standard,Georgia,Afforestation/Reforestation,2034.0,29787
+Gold Standard,Georgia,Afforestation/Reforestation,2035.0,27124
+Gold Standard,Georgia,Afforestation/Reforestation,2036.0,22580
+Gold Standard,Georgia,Afforestation/Reforestation,2037.0,20920
+Gold Standard,Georgia,Afforestation/Reforestation,2038.0,17640
+Gold Standard,Georgia,Afforestation/Reforestation,2039.0,17092
+Gold Standard,Georgia,Afforestation/Reforestation,2040.0,14223
+Gold Standard,Georgia,Afforestation/Reforestation,2041.0,12247
+Gold Standard,Georgia,Afforestation/Reforestation,2042.0,9591
+Gold Standard,Georgia,Afforestation/Reforestation,2043.0,7173
+Gold Standard,Georgia,Afforestation/Reforestation,2044.0,5610
+Gold Standard,Georgia,Afforestation/Reforestation,2045.0,4097
+Gold Standard,Georgia,Afforestation/Reforestation,2046.0,2205
+Gold Standard,Georgia,Afforestation/Reforestation,2047.0,1960
+Gold Standard,Georgia,Afforestation/Reforestation,2048.0,612
+Gold Standard,Georgia,Afforestation/Reforestation,2049.0,1676
+Gold Standard,Georgia,Afforestation/Reforestation,2050.0,78
+Gold Standard,Georgia,Afforestation/Reforestation,2051.0,486
+Gold Standard,Georgia,Afforestation/Reforestation,2052.0,58
+Gold Standard,Ghana,Afforestation/Reforestation,2018.0,4519
+Gold Standard,Ghana,Afforestation/Reforestation,2019.0,7968
+Gold Standard,Ghana,Afforestation/Reforestation,2020.0,6265
+Gold Standard,Ghana,Efficient appliances,2012.0,22
+Gold Standard,Ghana,Efficient appliances,2013.0,3800
+Gold Standard,Ghana,Efficient appliances,2014.0,10537
+Gold Standard,Ghana,Efficient appliances,2015.0,10000
+Gold Standard,Ghana,Efficient appliances,2016.0,10000
+Gold Standard,Ghana,Efficient appliances,2017.0,10000
+Gold Standard,Ghana,Efficient appliances,2018.0,10000
+Gold Standard,Ghana,Efficient appliances,2019.0,8396
+Gold Standard,Ghana,Efficient appliances,2020.0,7367
+Gold Standard,Ghana,Efficient appliances,2021.0,8202
+Gold Standard,Ghana,Efficient appliances,2022.0,4434
+Gold Standard,Honduras,Afforestation/Reforestation,2016.0,805
+Gold Standard,Honduras,Afforestation/Reforestation,2017.0,8100
+Gold Standard,Honduras,Afforestation/Reforestation,2018.0,9750
+Gold Standard,Honduras,Efficient appliances,2017.0,17215
+Gold Standard,Honduras,Efficient appliances,2018.0,35967
+Gold Standard,Honduras,Efficient appliances,2019.0,32809
+Gold Standard,Honduras,Efficient appliances,2020.0,19657
+Gold Standard,Honduras,Efficient appliances,2021.0,6986
+Gold Standard,Honduras,Efficient appliances,2022.0,7741
+Gold Standard,Honduras,Efficient appliances,2023.0,8357
+Gold Standard,Honduras,Efficient appliances,2024.0,7075
+Gold Standard,India,Afforestation/Reforestation,2005.0,628
+Gold Standard,India,Afforestation/Reforestation,2006.0,832
+Gold Standard,India,Afforestation/Reforestation,2007.0,1341
+Gold Standard,India,Afforestation/Reforestation,2008.0,1841
+Gold Standard,India,Afforestation/Reforestation,2009.0,2529
+Gold Standard,India,Afforestation/Reforestation,2010.0,3870
+Gold Standard,India,Afforestation/Reforestation,2011.0,4567
+Gold Standard,India,Afforestation/Reforestation,2012.0,4873
+Gold Standard,India,Afforestation/Reforestation,2013.0,5056
+Gold Standard,India,Afforestation/Reforestation,2014.0,5073
+Gold Standard,India,Afforestation/Reforestation,2015.0,5974
+Gold Standard,India,Afforestation/Reforestation,2016.0,4905
+Gold Standard,India,Afforestation/Reforestation,2017.0,4941
+Gold Standard,India,Afforestation/Reforestation,2018.0,4941
+Gold Standard,India,Afforestation/Reforestation,2019.0,8925
+Gold Standard,India,Afforestation/Reforestation,2020.0,30918
+Gold Standard,India,Afforestation/Reforestation,2021.0,11767
+Gold Standard,India,Afforestation/Reforestation,2022.0,2705
+Gold Standard,India,Bioenergy,2009.0,8464
+Gold Standard,India,Bioenergy,2010.0,23763
+Gold Standard,India,Bioenergy,2011.0,23629
+Gold Standard,India,Bioenergy,2012.0,23450
+Gold Standard,India,Bioenergy,2013.0,23315
+Gold Standard,India,Bioenergy,2014.0,23194
+Gold Standard,India,Bioenergy,2015.0,23166
+Gold Standard,India,Bioenergy,2016.0,23200
+Gold Standard,India,Bioenergy,2017.0,43934
+Gold Standard,India,Bioenergy,2018.0,43148
+Gold Standard,India,Bioenergy,2019.0,57667
+Gold Standard,India,Bioenergy,2020.0,119962
+Gold Standard,India,Bioenergy,2021.0,218856
+Gold Standard,India,Bioenergy,2022.0,247691
+Gold Standard,India,Bioenergy,2023.0,192456
+Gold Standard,India,Bioenergy,2024.0,79706
+Gold Standard,India,Efficient appliances,2012.0,5722
+Gold Standard,India,Efficient appliances,2013.0,90774
+Gold Standard,India,Efficient appliances,2014.0,135242
+Gold Standard,India,Efficient appliances,2015.0,124874
+Gold Standard,India,Efficient appliances,2016.0,116815
+Gold Standard,India,Efficient appliances,2017.0,111698
+Gold Standard,India,Efficient appliances,2018.0,79435
+Gold Standard,India,Efficient appliances,2019.0,26898
+Gold Standard,India,Efficient appliances,2020.0,19054
+Gold Standard,India,Efficient appliances,2021.0,35785
+Gold Standard,India,Efficient appliances,2022.0,116093
+Gold Standard,India,Efficient appliances,2023.0,758334
+Gold Standard,India,Efficient appliances,2024.0,274085
+Gold Standard,India,Efficient appliances,2025.0,32829
+Gold Standard,India,Solar,2013.0,21612
+Gold Standard,India,Solar,2014.0,34749
+Gold Standard,India,Solar,2015.0,40804
+Gold Standard,India,Solar,2016.0,56757
+Gold Standard,India,Solar,2017.0,25515
+Gold Standard,India,Solar,2018.0,96876
+Gold Standard,India,Solar,2019.0,1122968
+Gold Standard,India,Solar,2020.0,2268936
+Gold Standard,India,Solar,2021.0,2818807
+Gold Standard,India,Solar,2022.0,2721571
+Gold Standard,India,Solar,2023.0,1567121
+Gold Standard,India,Solar,2024.0,318093
+Gold Standard,India,Wind,2015.0,17438
+Gold Standard,India,Wind,2016.0,104060
+Gold Standard,India,Wind,2017.0,133298
+Gold Standard,India,Wind,2018.0,223604
+Gold Standard,India,Wind,2019.0,639159
+Gold Standard,India,Wind,2020.0,1316509
+Gold Standard,India,Wind,2021.0,1873061
+Gold Standard,India,Wind,2022.0,2014202
+Gold Standard,India,Wind,2023.0,2440806
+Gold Standard,India,Wind,2024.0,661773
+Gold Standard,India,Wind,2025.0,385279
+Gold Standard,Indonesia,Bioenergy,2011.0,6270
+Gold Standard,Indonesia,Bioenergy,2012.0,15917
+Gold Standard,Indonesia,Bioenergy,2013.0,28183
+Gold Standard,Indonesia,Bioenergy,2014.0,36739
+Gold Standard,Indonesia,Bioenergy,2015.0,45597
+Gold Standard,Indonesia,Bioenergy,2016.0,44848
+Gold Standard,Indonesia,Bioenergy,2017.0,44922
+Gold Standard,Indonesia,Bioenergy,2018.0,51267
+Gold Standard,Indonesia,Bioenergy,2019.0,57664
+Gold Standard,Indonesia,Bioenergy,2020.0,62847
+Gold Standard,Indonesia,Bioenergy,2021.0,70308
+Gold Standard,Indonesia,Bioenergy,2022.0,64219
+Gold Standard,Indonesia,Bioenergy,2023.0,56053
+Gold Standard,International,Efficient appliances,2021.0,2862
+Gold Standard,International,Efficient appliances,2022.0,24478
+Gold Standard,International,Efficient appliances,2023.0,39701
+Gold Standard,International,Efficient appliances,2024.0,2398
+Gold Standard,Kenya,Afforestation/Reforestation,2018.0,31278
+Gold Standard,Kenya,Afforestation/Reforestation,2020.0,17787
+Gold Standard,Kenya,Bioenergy,2013.0,24590
+Gold Standard,Kenya,Bioenergy,2014.0,48701
+Gold Standard,Kenya,Bioenergy,2015.0,28275
+Gold Standard,Kenya,Bioenergy,2016.0,14185
+Gold Standard,Kenya,Bioenergy,2017.0,14153
+Gold Standard,Kenya,Bioenergy,2018.0,14157
+Gold Standard,Kenya,Bioenergy,2019.0,14157
+Gold Standard,Kenya,Bioenergy,2020.0,6361
+Gold Standard,Kenya,Efficient appliances,2016.0,157226
+Gold Standard,Kenya,Efficient appliances,2017.0,278593
+Gold Standard,Kenya,Efficient appliances,2018.0,293547
+Gold Standard,Kenya,Efficient appliances,2019.0,277373
+Gold Standard,Kenya,Efficient appliances,2020.0,425381
+Gold Standard,Kenya,Efficient appliances,2021.0,2569386
+Gold Standard,Kenya,Efficient appliances,2022.0,3315723
+Gold Standard,Kenya,Efficient appliances,2023.0,3326737
+Gold Standard,Kenya,Efficient appliances,2024.0,1893255
+Gold Standard,Kenya,Efficient appliances,2025.0,4727
+Gold Standard,Kenya,Solar,2017.0,72
+Gold Standard,Kenya,Solar,2018.0,11442
+Gold Standard,Kenya,Solar,2019.0,23826
+Gold Standard,Kenya,Solar,2020.0,52364
+Gold Standard,Kenya,Solar,2021.0,60000
+Gold Standard,Kenya,Solar,2022.0,60000
+Gold Standard,Lao People's Democratic Republic,Efficient appliances,2012.0,343
+Gold Standard,Lao People's Democratic Republic,Efficient appliances,2013.0,3947
+Gold Standard,Lao People's Democratic Republic,Efficient appliances,2014.0,8380
+Gold Standard,Lao People's Democratic Republic,Efficient appliances,2015.0,16071
+Gold Standard,Lao People's Democratic Republic,Efficient appliances,2016.0,26974
+Gold Standard,Lao People's Democratic Republic,Efficient appliances,2017.0,39904
+Gold Standard,Lao People's Democratic Republic,Efficient appliances,2018.0,50877
+Gold Standard,Lao People's Democratic Republic,Efficient appliances,2019.0,72881
+Gold Standard,Lao People's Democratic Republic,Efficient appliances,2020.0,60000
+Gold Standard,Lao People's Democratic Republic,Efficient appliances,2021.0,60000
+Gold Standard,Lao People's Democratic Republic,Efficient appliances,2022.0,60000
+Gold Standard,Lao People's Democratic Republic,Efficient appliances,2023.0,60000
+Gold Standard,Lao People's Democratic Republic,Efficient appliances,2024.0,60000
+Gold Standard,Lao People's Democratic Republic,Efficient appliances,2025.0,15000
+Gold Standard,Lao People's Democratic Republic,Hydropower,2016.0,21121
+Gold Standard,Lao People's Democratic Republic,Hydropower,2017.0,18559
+Gold Standard,Lesotho,Efficient appliances,2012.0,4552
+Gold Standard,Lesotho,Efficient appliances,2013.0,18268
+Gold Standard,Lesotho,Efficient appliances,2014.0,22147
+Gold Standard,Lesotho,Efficient appliances,2015.0,25056
+Gold Standard,Lesotho,Efficient appliances,2016.0,27677
+Gold Standard,Lesotho,Efficient appliances,2017.0,28839
+Gold Standard,Lesotho,Efficient appliances,2018.0,28522
+Gold Standard,Lesotho,Efficient appliances,2019.0,28273
+Gold Standard,Lesotho,Efficient appliances,2020.0,48456
+Gold Standard,Lesotho,Efficient appliances,2021.0,24662
+Gold Standard,Lesotho,Efficient appliances,2022.0,16880
+Gold Standard,Madagascar,Efficient appliances,2019.0,3072
+Gold Standard,Madagascar,Efficient appliances,2020.0,14009
+Gold Standard,Madagascar,Efficient appliances,2021.0,29008
+Gold Standard,Madagascar,Efficient appliances,2022.0,24243
+Gold Standard,Madagascar,Efficient appliances,2023.0,16015
+Gold Standard,Malawi,Efficient appliances,2013.0,8218
+Gold Standard,Malawi,Efficient appliances,2014.0,37071
+Gold Standard,Malawi,Efficient appliances,2015.0,59436
+Gold Standard,Malawi,Efficient appliances,2016.0,142486
+Gold Standard,Malawi,Efficient appliances,2017.0,182831
+Gold Standard,Malawi,Efficient appliances,2018.0,129559
+Gold Standard,Malawi,Efficient appliances,2019.0,125576
+Gold Standard,Malawi,Efficient appliances,2020.0,104849
+Gold Standard,Malawi,Efficient appliances,2021.0,94728
+Gold Standard,Malawi,Efficient appliances,2022.0,119239
+Gold Standard,Malawi,Efficient appliances,2023.0,81270
+Gold Standard,Malawi,Efficient appliances,2024.0,138176
+Gold Standard,Malawi,Efficient appliances,2025.0,5201
+Gold Standard,Mali,Efficient appliances,2007.0,114
+Gold Standard,Mali,Efficient appliances,2008.0,16825
+Gold Standard,Mali,Efficient appliances,2009.0,44672
+Gold Standard,Mali,Efficient appliances,2010.0,90315
+Gold Standard,Mali,Efficient appliances,2011.0,154522
+Gold Standard,Mali,Efficient appliances,2012.0,165651
+Gold Standard,Mali,Efficient appliances,2013.0,217007
+Gold Standard,Mali,Efficient appliances,2014.0,67782
+Gold Standard,Mali,Efficient appliances,2015.0,157701
+Gold Standard,Mali,Efficient appliances,2016.0,65409
+Gold Standard,Mali,Efficient appliances,2017.0,37810
+Gold Standard,Mali,Efficient appliances,2018.0,8053
+Gold Standard,Mali,Efficient appliances,2019.0,9117
+Gold Standard,Mongolia,Efficient appliances,2012.0,70439
+Gold Standard,Mongolia,Efficient appliances,2013.0,112452
+Gold Standard,Mongolia,Efficient appliances,2014.0,22081
+Gold Standard,Mongolia,Efficient appliances,2020.0,182132
+Gold Standard,Mongolia,Efficient appliances,2021.0,240587
+Gold Standard,Mongolia,Efficient appliances,2022.0,227382
+Gold Standard,Mongolia,Efficient appliances,2023.0,186644
+Gold Standard,Mongolia,Efficient appliances,2024.0,45686
+Gold Standard,Mongolia,Wind,2021.0,198468
+Gold Standard,Mongolia,Wind,2022.0,173371
+Gold Standard,Mongolia,Wind,2023.0,49404
+Gold Standard,Mozambique,Efficient appliances,2019.0,13072
+Gold Standard,Mozambique,Efficient appliances,2020.0,150805
+Gold Standard,Mozambique,Efficient appliances,2021.0,366616
+Gold Standard,Mozambique,Efficient appliances,2022.0,474263
+Gold Standard,Mozambique,Efficient appliances,2023.0,820845
+Gold Standard,Mozambique,Efficient appliances,2024.0,868477
+Gold Standard,Mozambique,Efficient appliances,2025.0,80542
+Gold Standard,Myanmar,Efficient appliances,2018.0,14442
+Gold Standard,Myanmar,Efficient appliances,2019.0,45542
+Gold Standard,Myanmar,Efficient appliances,2020.0,42772
+Gold Standard,Myanmar,Efficient appliances,2021.0,36496
+Gold Standard,Myanmar,Efficient appliances,2022.0,6095
+Gold Standard,Nepal,Efficient appliances,2021.0,3773
+Gold Standard,Nepal,Efficient appliances,2022.0,21120
+Gold Standard,Nepal,Efficient appliances,2023.0,152481
+Gold Standard,Nepal,Efficient appliances,2024.0,72080
+Gold Standard,New Zealand,Wind,2004.0,56399
+Gold Standard,New Zealand,Wind,2005.0,183663
+Gold Standard,New Zealand,Wind,2006.0,174375
+Gold Standard,New Zealand,Wind,2007.0,191374
+Gold Standard,Nicaragua,Afforestation/Reforestation,2015.0,9150
+Gold Standard,Nicaragua,Afforestation/Reforestation,2016.0,19916
+Gold Standard,Nicaragua,Afforestation/Reforestation,2017.0,13896
+Gold Standard,Nicaragua,Afforestation/Reforestation,2018.0,18879
+Gold Standard,Nicaragua,Afforestation/Reforestation,2019.0,9017
+Gold Standard,Nicaragua,Afforestation/Reforestation,2020.0,6992
+Gold Standard,Nicaragua,Afforestation/Reforestation,2021.0,3719
+Gold Standard,Nicaragua,Wind,2014.0,62627
+Gold Standard,Nicaragua,Wind,2015.0,59954
+Gold Standard,Nicaragua,Wind,2016.0,65418
+Gold Standard,Nicaragua,Wind,2017.0,57524
+Gold Standard,Nicaragua,Wind,2018.0,83102
+Gold Standard,Nicaragua,Wind,2019.0,122594
+Gold Standard,Nicaragua,Wind,2020.0,52219
+Gold Standard,Nicaragua,Wind,2021.0,54167
+Gold Standard,Nicaragua,Wind,2022.0,48764
+Gold Standard,Nicaragua,Wind,2023.0,47006
+Gold Standard,Nigeria,Efficient appliances,2021.0,1580492
+Gold Standard,Nigeria,Efficient appliances,2022.0,1961201
+Gold Standard,Nigeria,Efficient appliances,2023.0,1647662
+Gold Standard,Nigeria,Efficient appliances,2024.0,1993050
+Gold Standard,Pakistan,Other,2022.0,10867
+Gold Standard,Pakistan,Other,2023.0,35847
+Gold Standard,Panama,Afforestation/Reforestation,1996.0,764
+Gold Standard,Panama,Afforestation/Reforestation,1997.0,1605
+Gold Standard,Panama,Afforestation/Reforestation,1998.0,1898
+Gold Standard,Panama,Afforestation/Reforestation,1999.0,2988
+Gold Standard,Panama,Afforestation/Reforestation,2000.0,3864
+Gold Standard,Panama,Afforestation/Reforestation,2001.0,4468
+Gold Standard,Panama,Afforestation/Reforestation,2002.0,5107
+Gold Standard,Panama,Afforestation/Reforestation,2003.0,6523
+Gold Standard,Panama,Afforestation/Reforestation,2004.0,7235
+Gold Standard,Panama,Afforestation/Reforestation,2005.0,10582
+Gold Standard,Panama,Afforestation/Reforestation,2006.0,20390
+Gold Standard,Panama,Afforestation/Reforestation,2007.0,18521
+Gold Standard,Panama,Afforestation/Reforestation,2008.0,27822
+Gold Standard,Panama,Afforestation/Reforestation,2009.0,77253
+Gold Standard,Panama,Afforestation/Reforestation,2010.0,129843
+Gold Standard,Panama,Afforestation/Reforestation,2011.0,192274
+Gold Standard,Panama,Afforestation/Reforestation,2012.0,243958
+Gold Standard,Panama,Afforestation/Reforestation,2013.0,280144
+Gold Standard,Panama,Afforestation/Reforestation,2014.0,326712
+Gold Standard,Panama,Afforestation/Reforestation,2015.0,358328
+Gold Standard,Panama,Afforestation/Reforestation,2016.0,333966
+Gold Standard,Panama,Afforestation/Reforestation,2017.0,304268
+Gold Standard,Panama,Afforestation/Reforestation,2018.0,301140
+Gold Standard,Panama,Afforestation/Reforestation,2019.0,335580
+Gold Standard,Panama,Afforestation/Reforestation,2020.0,283447
+Gold Standard,Panama,Afforestation/Reforestation,2021.0,294960
+Gold Standard,Panama,Afforestation/Reforestation,2022.0,236168
+Gold Standard,Panama,Afforestation/Reforestation,2023.0,210215
+Gold Standard,Panama,Afforestation/Reforestation,2024.0,99010
+Gold Standard,Panama,Afforestation/Reforestation,2025.0,17437
+Gold Standard,Panama,Afforestation/Reforestation,2026.0,17437
+Gold Standard,Panama,Afforestation/Reforestation,2027.0,17437
+Gold Standard,Panama,Afforestation/Reforestation,2028.0,17437
+Gold Standard,Panama,Afforestation/Reforestation,2029.0,17437
+Gold Standard,Panama,Afforestation/Reforestation,2030.0,17437
+Gold Standard,Panama,Afforestation/Reforestation,2031.0,17437
+Gold Standard,Panama,Afforestation/Reforestation,2032.0,17437
+Gold Standard,Panama,Afforestation/Reforestation,2033.0,17437
+Gold Standard,Panama,Afforestation/Reforestation,2034.0,16417
+Gold Standard,Panama,Afforestation/Reforestation,2035.0,17437
+Gold Standard,Panama,Afforestation/Reforestation,2036.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2037.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2038.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2039.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2040.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2041.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2042.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2043.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2044.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2045.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2046.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2047.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2048.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2049.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2050.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2051.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2052.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2053.0,361
+Gold Standard,Panama,Afforestation/Reforestation,2054.0,361
+Gold Standard,Panama,Solar,2019.0,1180
+Gold Standard,Panama,Solar,2020.0,6852
+Gold Standard,Panama,Solar,2021.0,6352
+Gold Standard,Panama,Solar,2022.0,5910
+Gold Standard,Panama,Solar,2023.0,6306
+Gold Standard,Papua New Guinea,Afforestation/Reforestation,2020.0,3920
+Gold Standard,Papua New Guinea,Afforestation/Reforestation,2021.0,37675
+Gold Standard,Papua New Guinea,Afforestation/Reforestation,2022.0,45043
+Gold Standard,Papua New Guinea,Afforestation/Reforestation,2023.0,30305
+Gold Standard,Peru,Afforestation/Reforestation,2011.0,39
+Gold Standard,Peru,Afforestation/Reforestation,2012.0,106
+Gold Standard,Peru,Afforestation/Reforestation,2013.0,146
+Gold Standard,Peru,Afforestation/Reforestation,2014.0,146
+Gold Standard,Peru,Afforestation/Reforestation,2015.0,146
+Gold Standard,Peru,Afforestation/Reforestation,2016.0,146
+Gold Standard,Peru,Afforestation/Reforestation,2017.0,146
+Gold Standard,Peru,Afforestation/Reforestation,2018.0,146
+Gold Standard,Peru,Afforestation/Reforestation,2019.0,65
+Gold Standard,Peru,Afforestation/Reforestation,2020.0,671
+Gold Standard,Peru,Afforestation/Reforestation,2021.0,3269
+Gold Standard,Peru,Afforestation/Reforestation,2022.0,3539
+Gold Standard,Peru,Afforestation/Reforestation,2023.0,2703
+Gold Standard,Peru,Afforestation/Reforestation,2024.0,4411
+Gold Standard,Peru,Afforestation/Reforestation,2025.0,2580
+Gold Standard,Peru,Afforestation/Reforestation,2026.0,441
+Gold Standard,Peru,Afforestation/Reforestation,2027.0,1059
+Gold Standard,Peru,Afforestation/Reforestation,2028.0,4687
+Gold Standard,Peru,Afforestation/Reforestation,2029.0,6338
+Gold Standard,Peru,Afforestation/Reforestation,2030.0,3686
+Gold Standard,Peru,Afforestation/Reforestation,2031.0,2067
+Gold Standard,Peru,Afforestation/Reforestation,2032.0,1993
+Gold Standard,Peru,Afforestation/Reforestation,2033.0,3688
+Gold Standard,Peru,Afforestation/Reforestation,2034.0,4768
+Gold Standard,Peru,Afforestation/Reforestation,2035.0,900
+Gold Standard,Peru,Solar,2010.0,487
+Gold Standard,Peru,Solar,2011.0,2542
+Gold Standard,Peru,Solar,2012.0,3602
+Gold Standard,Peru,Solar,2013.0,4790
+Gold Standard,Peru,Solar,2014.0,5001
+Gold Standard,Peru,Solar,2015.0,5222
+Gold Standard,Peru,Solar,2016.0,2265
+Gold Standard,Peru,Solar,2017.0,2369
+Gold Standard,Romania,Other,2017.0,58384
+Gold Standard,Romania,Other,2018.0,4519
+Gold Standard,Romania,Other,2019.0,59746
+Gold Standard,Romania,Other,2020.0,53538
+Gold Standard,Romania,Other,2021.0,51569
+Gold Standard,Romania,Other,2022.0,32166
+Gold Standard,Romania,Other,2023.0,22891
+Gold Standard,Rwanda,Efficient appliances,2015.0,446
+Gold Standard,Rwanda,Efficient appliances,2016.0,20915
+Gold Standard,Rwanda,Efficient appliances,2017.0,39836
+Gold Standard,Rwanda,Efficient appliances,2018.0,47617
+Gold Standard,Rwanda,Efficient appliances,2019.0,102486
+Gold Standard,Rwanda,Efficient appliances,2020.0,104559
+Gold Standard,Rwanda,Efficient appliances,2021.0,162087
+Gold Standard,Rwanda,Efficient appliances,2022.0,212517
+Gold Standard,Rwanda,Efficient appliances,2023.0,207739
+Gold Standard,Rwanda,Efficient appliances,2024.0,76619
+Gold Standard,Senegal,Efficient appliances,2021.0,10878
+Gold Standard,Senegal,Efficient appliances,2022.0,29632
+Gold Standard,Senegal,Efficient appliances,2023.0,17211
+Gold Standard,Senegal,Other,2017.0,14913
+Gold Standard,Senegal,Other,2018.0,67516
+Gold Standard,Senegal,Other,2019.0,68855
+Gold Standard,Senegal,Other,2020.0,66466
+Gold Standard,Senegal,Other,2021.0,65525
+Gold Standard,Senegal,Other,2022.0,65672
+Gold Standard,Senegal,Other,2023.0,56843
+Gold Standard,Senegal,Other,2024.0,34349
+Gold Standard,Senegal,Solar,2021.0,39365
+Gold Standard,Senegal,Solar,2022.0,59194
+Gold Standard,Senegal,Solar,2023.0,49186
+Gold Standard,Senegal,Solar,2024.0,67274
+Gold Standard,Somalia,Efficient appliances,2019.0,81483
+Gold Standard,Somalia,Efficient appliances,2020.0,227263
+Gold Standard,Somalia,Efficient appliances,2021.0,598106
+Gold Standard,Somalia,Efficient appliances,2022.0,823729
+Gold Standard,Somalia,Efficient appliances,2023.0,1059656
+Gold Standard,Somalia,Efficient appliances,2024.0,381335
+Gold Standard,South Africa,Efficient appliances,2008.0,1884
+Gold Standard,South Africa,Efficient appliances,2009.0,6880
+Gold Standard,South Africa,Efficient appliances,2010.0,577
+Gold Standard,South Africa,Solar,2020.0,1655
+Gold Standard,South Africa,Solar,2021.0,31173
+Gold Standard,South Africa,Solar,2022.0,29862
+Gold Standard,South Africa,Solar,2023.0,29812
+Gold Standard,South Africa,Solar,2024.0,6328
+Gold Standard,Switzerland,Bioenergy,2017.0,993
+Gold Standard,Switzerland,Bioenergy,2018.0,7823
+Gold Standard,Switzerland,Bioenergy,2019.0,7770
+Gold Standard,Switzerland,Bioenergy,2020.0,9313
+Gold Standard,Switzerland,Bioenergy,2021.0,9432
+Gold Standard,Switzerland,Other,2022.0,52
+Gold Standard,Switzerland,Other,2023.0,661
+Gold Standard,Switzerland,Other,2024.0,1129
+Gold Standard,Tanzania United Republic of,Efficient appliances,2022.0,40472
+Gold Standard,Tanzania United Republic of,Efficient appliances,2023.0,175064
+Gold Standard,Tanzania United Republic of,Efficient appliances,2024.0,34053
+Gold Standard,Timor-Leste,Afforestation/Reforestation,2010.0,505
+Gold Standard,Timor-Leste,Afforestation/Reforestation,2011.0,866
+Gold Standard,Timor-Leste,Afforestation/Reforestation,2012.0,1494
+Gold Standard,Timor-Leste,Afforestation/Reforestation,2013.0,1940
+Gold Standard,Timor-Leste,Afforestation/Reforestation,2014.0,3252
+Gold Standard,Timor-Leste,Afforestation/Reforestation,2015.0,5275
+Gold Standard,Timor-Leste,Afforestation/Reforestation,2016.0,11525
+Gold Standard,Timor-Leste,Afforestation/Reforestation,2017.0,5019
+Gold Standard,Timor-Leste,Afforestation/Reforestation,2018.0,12796
+Gold Standard,Timor-Leste,Afforestation/Reforestation,2019.0,15988
+Gold Standard,Timor-Leste,Afforestation/Reforestation,2020.0,16106
+Gold Standard,Timor-Leste,Afforestation/Reforestation,2022.0,19833
+Gold Standard,Timor-Leste,Afforestation/Reforestation,2023.0,34331
+Gold Standard,Togo,Efficient appliances,2023.0,3477
+Gold Standard,Togo,Efficient appliances,2024.0,2919
+Gold Standard,Togo,Other,2013.0,1093
+Gold Standard,Togo,Other,2014.0,958
+Gold Standard,Togo,Other,2015.0,1783
+Gold Standard,Togo,Other,2016.0,738
+Gold Standard,Togo,Other,2017.0,429
+Gold Standard,Togo,Other,2018.0,1364
+Gold Standard,Togo,Other,2019.0,1427
+Gold Standard,Togo,Other,2020.0,559
+Gold Standard,Turkey,Bioenergy,2011.0,3096
+Gold Standard,Turkey,Bioenergy,2012.0,45413
+Gold Standard,Turkey,Bioenergy,2013.0,107036
+Gold Standard,Turkey,Bioenergy,2014.0,78958
+Gold Standard,Turkey,Bioenergy,2016.0,81009
+Gold Standard,Turkey,Bioenergy,2017.0,179248
+Gold Standard,Turkey,Bioenergy,2018.0,27817
+Gold Standard,Turkey,Bioenergy,2019.0,54140
+Gold Standard,Turkey,Bioenergy,2020.0,395627
+Gold Standard,Turkey,Bioenergy,2021.0,458321
+Gold Standard,Turkey,Bioenergy,2022.0,415811
+Gold Standard,Turkey,Bioenergy,2023.0,237050
+Gold Standard,Turkey,Bioenergy,2024.0,40204
+Gold Standard,Turkey,Bioenergy,2025.0,7577
+Gold Standard,Turkey,Hydropower,2010.0,8012
+Gold Standard,Turkey,Hydropower,2011.0,25431
+Gold Standard,Turkey,Hydropower,2012.0,39568
+Gold Standard,Turkey,Hydropower,2013.0,28431
+Gold Standard,Turkey,Hydropower,2014.0,7232
+Gold Standard,Turkey,Hydropower,2015.0,17430
+Gold Standard,Turkey,Hydropower,2022.0,446
+Gold Standard,Turkey,Hydropower,2023.0,16387
+Gold Standard,Turkey,Hydropower,2024.0,17045
+Gold Standard,Turkey,Other,2011.0,177187
+Gold Standard,Turkey,Other,2012.0,219044
+Gold Standard,Turkey,Other,2013.0,288877
+Gold Standard,Turkey,Solar,2022.0,47663
+Gold Standard,Turkey,Solar,2023.0,73039
+Gold Standard,Turkey,Solar,2024.0,25003
+Gold Standard,Turkey,Wind,2008.0,68435
+Gold Standard,Turkey,Wind,2009.0,220211
+Gold Standard,Turkey,Wind,2010.0,764215
+Gold Standard,Turkey,Wind,2011.0,1219111
+Gold Standard,Turkey,Wind,2012.0,1178173
+Gold Standard,Turkey,Wind,2013.0,856603
+Gold Standard,Turkey,Wind,2014.0,849756
+Gold Standard,Turkey,Wind,2015.0,1429908
+Gold Standard,Turkey,Wind,2016.0,1826280
+Gold Standard,Turkey,Wind,2017.0,1617656
+Gold Standard,Turkey,Wind,2018.0,1948773
+Gold Standard,Turkey,Wind,2019.0,2110652
+Gold Standard,Turkey,Wind,2020.0,2483152
+Gold Standard,Turkey,Wind,2021.0,3173756
+Gold Standard,Turkey,Wind,2022.0,3701280
+Gold Standard,Turkey,Wind,2023.0,2539027
+Gold Standard,Turkey,Wind,2024.0,1006936
+Gold Standard,Turkey,Wind,2025.0,93736
+Gold Standard,Uganda,Afforestation/Reforestation,2008.0,3946
+Gold Standard,Uganda,Afforestation/Reforestation,2009.0,3681
+Gold Standard,Uganda,Afforestation/Reforestation,2010.0,2664
+Gold Standard,Uganda,Afforestation/Reforestation,2011.0,19433
+Gold Standard,Uganda,Afforestation/Reforestation,2012.0,72008
+Gold Standard,Uganda,Afforestation/Reforestation,2013.0,40963
+Gold Standard,Uganda,Afforestation/Reforestation,2014.0,69048
+Gold Standard,Uganda,Afforestation/Reforestation,2015.0,133628
+Gold Standard,Uganda,Afforestation/Reforestation,2016.0,135062
+Gold Standard,Uganda,Afforestation/Reforestation,2017.0,137455
+Gold Standard,Uganda,Afforestation/Reforestation,2018.0,165090
+Gold Standard,Uganda,Afforestation/Reforestation,2019.0,219215
+Gold Standard,Uganda,Afforestation/Reforestation,2020.0,196565
+Gold Standard,Uganda,Afforestation/Reforestation,2021.0,149828
+Gold Standard,Uganda,Afforestation/Reforestation,2022.0,5534
+Gold Standard,Uganda,Bioenergy,2024.0,5290
+Gold Standard,Uganda,Bioenergy,2025.0,1241
+Gold Standard,Uganda,Efficient appliances,2007.0,14976
+Gold Standard,Uganda,Efficient appliances,2008.0,42161
+Gold Standard,Uganda,Efficient appliances,2009.0,109310
+Gold Standard,Uganda,Efficient appliances,2010.0,169084
+Gold Standard,Uganda,Efficient appliances,2011.0,220542
+Gold Standard,Uganda,Efficient appliances,2012.0,335612
+Gold Standard,Uganda,Efficient appliances,2013.0,482134
+Gold Standard,Uganda,Efficient appliances,2014.0,713792
+Gold Standard,Uganda,Efficient appliances,2015.0,711962
+Gold Standard,Uganda,Efficient appliances,2016.0,613532
+Gold Standard,Uganda,Efficient appliances,2017.0,794130
+Gold Standard,Uganda,Efficient appliances,2018.0,793349
+Gold Standard,Uganda,Efficient appliances,2019.0,786826
+Gold Standard,Uganda,Efficient appliances,2020.0,1313448
+Gold Standard,Uganda,Efficient appliances,2021.0,2238127
+Gold Standard,Uganda,Efficient appliances,2022.0,3074301
+Gold Standard,Uganda,Efficient appliances,2023.0,3838250
+Gold Standard,Uganda,Efficient appliances,2024.0,2935808
+Gold Standard,Uganda,Solar,2016.0,2116
+Gold Standard,Uganda,Solar,2017.0,6701
+Gold Standard,Uganda,Solar,2018.0,11976
+Gold Standard,Uganda,Solar,2019.0,13647
+Gold Standard,Uganda,Solar,2020.0,12410
+Gold Standard,Uganda,Solar,2021.0,13096
+Gold Standard,Uganda,Solar,2022.0,13096
+Gold Standard,United States,Afforestation/Reforestation,2014.0,174
+Gold Standard,United States,Afforestation/Reforestation,2017.0,814
+Gold Standard,United States,Afforestation/Reforestation,2018.0,4490
+Gold Standard,United States,Afforestation/Reforestation,2019.0,2533
+Gold Standard,United States,Afforestation/Reforestation,2020.0,1251
+Gold Standard,United States,Afforestation/Reforestation,2021.0,1497
+Gold Standard,United States,Afforestation/Reforestation,2022.0,1732
+Gold Standard,United States,Afforestation/Reforestation,2023.0,1894
+Gold Standard,United States,Afforestation/Reforestation,2024.0,1998
+Gold Standard,United States,Afforestation/Reforestation,2025.0,2139
+Gold Standard,United States,Afforestation/Reforestation,2026.0,2397
+Gold Standard,United States,Afforestation/Reforestation,2027.0,2518
+Gold Standard,United States,Afforestation/Reforestation,2028.0,2658
+Gold Standard,United States,Afforestation/Reforestation,2029.0,2569
+Gold Standard,United States,Afforestation/Reforestation,2030.0,2701
+Gold Standard,United States,Afforestation/Reforestation,2031.0,2731
+Gold Standard,United States,Afforestation/Reforestation,2032.0,2485
+Gold Standard,United States,Afforestation/Reforestation,2033.0,2277
+Gold Standard,United States,Afforestation/Reforestation,2034.0,2025
+Gold Standard,United States,Afforestation/Reforestation,2035.0,1994
+Gold Standard,United States,Afforestation/Reforestation,2036.0,1931
+Gold Standard,United States,Afforestation/Reforestation,2037.0,1848
+Gold Standard,United States,Afforestation/Reforestation,2038.0,1616
+Gold Standard,United States,Afforestation/Reforestation,2039.0,1666
+Gold Standard,United States,Afforestation/Reforestation,2040.0,1577
+Gold Standard,United States,Afforestation/Reforestation,2041.0,1447
+Gold Standard,United States,Afforestation/Reforestation,2042.0,1566
+Gold Standard,United States,Afforestation/Reforestation,2043.0,1524
+Gold Standard,United States,Afforestation/Reforestation,2044.0,1615
+Gold Standard,United States,Afforestation/Reforestation,2045.0,1656
+Gold Standard,United States,Afforestation/Reforestation,2046.0,1758
+Gold Standard,United States,Afforestation/Reforestation,2047.0,1649
+Gold Standard,United States,Afforestation/Reforestation,2048.0,1771
+Gold Standard,United States,Afforestation/Reforestation,2049.0,1611
+Gold Standard,United States,Afforestation/Reforestation,2050.0,1406
+Gold Standard,United States,Afforestation/Reforestation,2051.0,1499
+Gold Standard,United States,Afforestation/Reforestation,2052.0,1393
+Gold Standard,United States,Afforestation/Reforestation,2053.0,1401
+Gold Standard,United States,Afforestation/Reforestation,2054.0,1336
+Gold Standard,United States,Afforestation/Reforestation,2055.0,1514
+Gold Standard,United States,Afforestation/Reforestation,2056.0,1380
+Gold Standard,United States,Afforestation/Reforestation,2057.0,1252
+Gold Standard,United States,Afforestation/Reforestation,2058.0,1090
+Gold Standard,United States,Afforestation/Reforestation,2059.0,1010
+Gold Standard,Viet Nam,Other,2013.0,13158
+Gold Standard,Viet Nam,Other,2014.0,37446
+Gold Standard,Viet Nam,Other,2015.0,86494
+Gold Standard,Viet Nam,Other,2016.0,124010
+Gold Standard,Viet Nam,Other,2017.0,198856
+Gold Standard,Viet Nam,Other,2018.0,324633
+Gold Standard,Viet Nam,Other,2019.0,217461
+Gold Standard,Viet Nam,Other,2020.0,318609
+Gold Standard,Viet Nam,Other,2021.0,247490
+Gold Standard,Viet Nam,Other,2022.0,225918
+Gold Standard,Viet Nam,Other,2023.0,3312
+Gold Standard,Viet Nam,Wind,2021.0,23003
+Gold Standard,Viet Nam,Wind,2022.0,110494
+Gold Standard,Viet Nam,Wind,2023.0,117519
+Gold Standard,Zambia,Efficient appliances,2020.0,27202
+Gold Standard,Zambia,Efficient appliances,2021.0,121165
+Gold Standard,Zambia,Efficient appliances,2022.0,168810
+Gold Standard,Zambia,Efficient appliances,2023.0,304079
+Gold Standard,Zambia,Efficient appliances,2024.0,49644
+Gold Standard,Zambia,Hydropower,2007.0,87
+Gold Standard,Zambia,Hydropower,2008.0,233
+Gold Standard,Zambia,Hydropower,2009.0,314
+Gold Standard,Zambia,Hydropower,2010.0,781
+Gold Standard,Zambia,Hydropower,2011.0,944
+Gold Standard,Zambia,Hydropower,2012.0,1122
+Gold Standard,Zimbabwe,Efficient appliances,2021.0,8371
+Gold Standard,Zimbabwe,Efficient appliances,2022.0,452875
+Gold Standard,Zimbabwe,Efficient appliances,2023.0,1029511
