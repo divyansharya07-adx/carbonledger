@@ -162,15 +162,17 @@ const ProjectActivity = ({ data }) => {
             {trendData.length > 0 && (
               <>
                 <div className="detail-section-title">Credits Over Time</div>
-                <ResponsiveContainer width="100%" height={180}>
-                  <LineChart data={trendData} margin={{ top: 5, right: 10, bottom: 5, left: 0 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
-                    <XAxis dataKey="year" tick={{ fontSize: 9 }} />
-                    <YAxis tick={{ fontSize: 9 }} tickFormatter={formatCredits} />
-                    <Tooltip content={<ChartTooltip />} />
-                    <Line type="monotone" dataKey="credits" stroke="#029bd6" strokeWidth={2} dot={{ r: 2, fill: '#029bd6' }} />
-                  </LineChart>
-                </ResponsiveContainer>
+                <div key={selectedActivity} style={{ width: '100%', height: 180, minHeight: 180 }}>
+                  <ResponsiveContainer width="100%" height={180} debounceMs={50}>
+                    <LineChart data={trendData} margin={{ top: 5, right: 10, bottom: 5, left: 0 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                      <XAxis dataKey="year" tick={{ fontSize: 9 }} />
+                      <YAxis tick={{ fontSize: 9 }} tickFormatter={formatCredits} />
+                      <Tooltip content={<ChartTooltip />} />
+                      <Line type="monotone" dataKey="credits" stroke="#029bd6" strokeWidth={2} dot={{ r: 2, fill: '#029bd6' }} />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </div>
               </>
             )}
 
