@@ -156,15 +156,17 @@ const CountryExplorer = ({ data }) => {
 
         <div className="chart-card">
           <div className="chart-card-title"><TrendingUp size={14} /> {lineTitle}</div>
-          <ResponsiveContainer width="100%" height={200}>
-            <LineChart data={lineData} margin={{ top: 5, right: 10, bottom: 5, left: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
-              <XAxis dataKey="year" tick={{ fontSize: 9 }} />
-              <YAxis tick={{ fontSize: 9 }} tickFormatter={formatCredits} />
-              <Tooltip content={<ChartTooltip />} />
-              <Line type="monotone" dataKey="credits" stroke="#029bd6" strokeWidth={2} dot={{ r: 2, fill: '#029bd6' }} />
-            </LineChart>
-          </ResponsiveContainer>
+          <div key={selectedCountry} style={{ width: '100%', height: 200, minHeight: 200 }}>
+            <ResponsiveContainer width="100%" height={200} debounceMs={50}>
+              <LineChart data={lineData} margin={{ top: 5, right: 10, bottom: 5, left: 0 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                <XAxis dataKey="year" tick={{ fontSize: 9 }} />
+                <YAxis tick={{ fontSize: 9 }} tickFormatter={formatCredits} />
+                <Tooltip content={<ChartTooltip />} />
+                <Line type="monotone" dataKey="credits" stroke="#029bd6" strokeWidth={2} dot={{ r: 2, fill: '#029bd6' }} />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
     </div>
