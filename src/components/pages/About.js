@@ -111,6 +111,55 @@ const About = () => {
         </div>
 
         <div className="about-section">
+          <div className="about-section-title">Methodology</div>
+
+          <p className="about-text" style={{ fontWeight: 500, marginBottom: 4 }}>Credit Aggregation</p>
+          <p className="about-text">
+            Raw issuance records from each registry sheet were grouped by vintage year and project type
+            category. Project types were resolved via <code>methodology_mapping.csv</code>, which maps
+            414 unique methodology codes and protocol names to 31 project activity categories across all
+            four registries. Match rate across all issuance rows is approximately 99.9%.
+          </p>
+
+          <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Project Count</p>
+          <p className="about-text">
+            Unique project counts are derived from registry-specific ID columns: <code>ID</code> (Verra),
+            <code> GSID</code> (Gold Standard), <code>Project ID</code> (ACR and CAR). Rows with null
+            IDs are excluded. Each project is assigned its most frequent methodology code and looked up
+            in <code>methodology_mapping.csv</code> to determine its category. Total across all four
+            registries: 5,191 projects (Verra 2,074 · Gold Standard 1,545 · CAR 829 · ACR 743).
+          </p>
+
+          <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Data Pipeline</p>
+          <p className="about-text">
+            Aggregation was performed using a Python/pandas script against the raw XLSX source. All
+            figures are derived exclusively from public registry records — no proprietary data,
+            modelling, or estimates were used.
+          </p>
+
+          <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Known Limitations</p>
+          <ul className="about-text" style={{ paddingLeft: '1.2em' }}>
+            <li>
+              Approximately 146M Gold Standard credits from blank-methodology rows were recategorised
+              by project type name rather than methodology code.
+            </li>
+            <li>
+              Verra AFOLU projects are disaggregated using methodology codes; a small number of
+              unmatched rows (primarily pre-2008) are excluded from category breakdowns.
+            </li>
+            <li>
+              CAR protocol strings include version suffixes that are stripped during matching — a small
+              number of protocols with ambiguous names may be misclassified.
+            </li>
+            <li>
+              The grand total may vary by approximately 7,000 credits due to AMS-III.AK remapping
+              (Cleaner cooking → Public transit) in Section B of the pipeline, where the source rows
+              were not present in all pipeline runs.
+            </li>
+          </ul>
+        </div>
+
+        <div className="about-section">
           <button className="taxonomy-toggle" onClick={() => setTaxonomyOpen(o => !o)}>
             <span className="about-section-title" style={{ margin: 0 }}>Methodology Taxonomy</span>
             <span className="taxonomy-chevron">{taxonomyOpen ? '▼' : '▶'}</span>

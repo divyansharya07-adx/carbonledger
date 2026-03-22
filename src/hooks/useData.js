@@ -21,6 +21,7 @@ const COUNTRY_NAME_MAP = {
 const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
   const [rawAgg, setRawAgg] = useState(null);
   const [rawCountry, setRawCountry] = useState(null);
+  const [rawProjCounts, setRawProjCounts] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -40,8 +41,9 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
     Promise.all([
       loadCSV(process.env.PUBLIC_URL + '/aggregated_data.csv'),
       loadCSV(process.env.PUBLIC_URL + '/country_aggregated_data.csv'),
+      loadCSV(process.env.PUBLIC_URL + '/project_counts.csv'),
     ])
-      .then(([agg, country]) => {
+      .then(([agg, country, projCounts]) => {
         const normalizeAgg = agg
           .map((r) => ({
             registry: (r['Registry'] || '').trim(),
@@ -63,6 +65,7 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
 
         setRawAgg(normalizeAgg);
         setRawCountry(normalizeCountry);
+        setRawProjCounts(projCounts);
         setLoading(false);
       })
       .catch((err) => {
@@ -194,6 +197,22 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
     return map;
   }, [creditsByActivity]);
 
+  const projectCountByCategory = useMemo(() => {
+    if (!rawProjCounts) return {};
+    const map = {};
+    rawProjCounts.forEach((row) => {
+      const cat = (row['Project Type Category'] || '').trim();
+      const cnt = parseInt(row['Project Count'], 10) || 0;
+      if (cat) map[cat] = (map[cat] || 0) + cnt;
+    });
+    return map;
+  }, [rawProjCounts]);
+
+  const totalProjectCount = useMemo(
+    () => Object.values(projectCountByCategory).reduce((s, v) => s + v, 0),
+    [projectCountByCategory]
+  );
+
   // Country-specific data for country explorer
   const getCountryData = (countryName) => {
     if (!countryName || countryName === '🌍 Global') {
@@ -255,6 +274,8 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
     getCountryData,
     getActivityCountries,
     getActivityTrend,
+    projectCountByCategory,
+    totalProjectCount,
   };
 };
 
