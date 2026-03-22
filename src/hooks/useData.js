@@ -201,12 +201,24 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
     if (!rawProjCounts) return {};
     const map = {};
     rawProjCounts.forEach((row) => {
+      const reg = (row['Registry'] || '').trim();
       const cat = (row['Project Type Category'] || '').trim();
       const cnt = parseInt(row['Project Count'], 10) || 0;
-      if (cat) map[cat] = (map[cat] || 0) + cnt;
+      if (!cat) return;
+      if (selectedRegistry && selectedRegistry !== 'all') {
+        const regLower = selectedRegistry.toLowerCase();
+        if (regLower === 'gold') {
+          if (reg !== 'Gold Standard') return;
+        } else if (regLower === 'arb') {
+          if (reg !== 'ARB' && reg !== 'CAR') return;
+        } else {
+          if (reg.toLowerCase() !== regLower) return;
+        }
+      }
+      map[cat] = (map[cat] || 0) + cnt;
     });
     return map;
-  }, [rawProjCounts]);
+  }, [rawProjCounts, selectedRegistry]);
 
   const totalProjectCount = useMemo(
     () => Object.values(projectCountByCategory).reduce((s, v) => s + v, 0),

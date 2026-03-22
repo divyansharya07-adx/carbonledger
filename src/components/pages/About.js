@@ -157,6 +157,44 @@ const About = () => {
               were not present in all pipeline runs.
             </li>
           </ul>
+
+          <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Category Taxonomy</p>
+          <p className="about-text">
+            The 30 project activity categories used in this dashboard are adapted from the activity
+            typology defined in the{' '}
+            <a
+              href="https://unepccc.org/article-6-pipeline/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="about-link"
+            >
+              UNFCCC Article 6 Pipeline
+            </a>
+            {' '}dataset compiled by the UNEP Copenhagen Climate Centre (accessed 2025). That dataset
+            enumerates 34 activity types spanning the full range of mitigation interventions tracked
+            in international carbon markets; 29 of these are adopted verbatim. The taxonomy diverges
+            in five cases:
+          </p>
+          <ul className="about-text" style={{ paddingLeft: '1.2em' }}>
+            <li>
+              <strong>Agriculture → Soil &amp; Livestock.</strong> The broad A6 "Agriculture" type
+              was retitled to more precisely reflect the voluntary market activities it encompasses:
+              soil carbon sequestration and livestock methane reduction. Rice cultivation retains its
+              own category owing to its dedicated methodology family across all four registries.
+            </li>
+            <li>
+              <strong>Tree plantation → merged into Afforestation/Reforestation.</strong> Plantation
+              forestry projects in all four registries are classified under afforestation/reforestation
+              methodology codes; no distinct tree plantation category exists in the four-registry
+              methodology mapping.
+            </li>
+            <li>
+              <strong>Green hydrogen, Green ammonia, Carbon capture → excluded.</strong> These types
+              appear in the A6 forward pipeline but have no representation in the 2000–2025 voluntary
+              registry dataset. No methodology codes or protocol names for these activities are present
+              across Verra, Gold Standard, ACR, or CAR.
+            </li>
+          </ul>
         </div>
 
         <div className="about-section">
