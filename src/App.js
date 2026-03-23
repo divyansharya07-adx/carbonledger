@@ -80,7 +80,7 @@ function App() {
       case 'activity':
         return <ProjectActivity data={data} />;
       case 'country':
-        return <CountryExplorer data={data} />;
+        return <CountryExplorer data={data} isDarkMode={darkMode} />;
       case 'registry':
         return <RegistryIntelligence data={data} />;
       case 'about':
