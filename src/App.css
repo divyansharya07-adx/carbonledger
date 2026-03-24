@@ -1285,6 +1285,11 @@ body {
 .country-detail-panel.open {
   transform: translateX(0);
 }
+.country-detail-panel.light {
+  background: #ffffff;
+  border-left: 2px solid #e85724;
+  color: #333232;
+}
 @media (max-width: 768px) {
   .country-detail-panel { width: 100%; }
 }

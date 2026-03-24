@@ -49,19 +49,76 @@ const COUNTRY_CENTROIDS = {
 };
 
 /* ─── CountryPanel sub-component ─── */
-const CountryPanel = ({ data: pd, onClose }) => {
+const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
+  const [hoveredPoint, setHoveredPoint] = useState(null);
   const maxAct = pd.actBreakdown[0]?.credits || 1;
+
+  /* Theme tokens */
+  const t = {
+    titleColor:      isDarkMode ? '#ffffff'                   : '#333232',
+    closeColor:      isDarkMode ? '#aaaaaa'                   : '#777777',
+    labelColor:      isDarkMode ? '#888888'                   : '#777777',
+    dividerColor:    isDarkMode ? 'rgba(255,255,255,0.08)'    : 'rgba(0,0,0,0.08)',
+    actNameColor:    isDarkMode ? '#cccccc'                   : '#555555',
+    actCredColor:    isDarkMode ? '#888888'                   : '#666666',
+    actBarBg:        isDarkMode ? 'rgba(255,255,255,0.08)'    : '#f0e8dc',
+    insightBg:       isDarkMode ? 'rgba(243,126,81,0.08)'     : '#f5f0e7',
+    insightColor:    isDarkMode ? '#cccccc'                   : '#555555',
+    chartLabelColor: isDarkMode ? '#555555'                   : '#aaaaaa',
+    gridColor:       isDarkMode ? 'rgba(255,255,255,0.08)'    : '#e8e0d0',
+    dotStroke:       isDarkMode ? '#1a1a1a'                   : '#ffffff',
+  };
+
+  /* Chart geometry */
+  const sparkData = pd.yearlyTrend || [];
+  const VW = 300, VH = 140;
+  const padT = 12, padB = 24, padL = 36, padR = 8;
+  const cW = VW - padL - padR;
+  const cH = VH - padT - padB;
+
+  const fmtY = (v) => {
+    if (v >= 1e9) return `${(v / 1e9).toFixed(1)}b`;
+    if (v >= 1e6) return `${Math.round(v / 1e6)}m`;
+    if (v >= 1e3) return `${Math.round(v / 1e3)}k`;
+    return String(v);
+  };
+
+  let pts = [], sparkPoints = '', areaPoints = '', gridLines = [], xLabelIndices = [];
+  if (sparkData.length >= 2) {
+    const minYr = sparkData[0].year;
+    const maxYr = sparkData[sparkData.length - 1].year;
+    const maxCr = Math.max(...sparkData.map(d => d.credits));
+    pts = sparkData.map(d => [
+      padL + ((d.year - minYr) / Math.max(maxYr - minYr, 1)) * cW,
+      padT + cH - (d.credits / maxCr) * cH,
+    ]);
+    sparkPoints = pts.map(([x, y]) => `${x.toFixed(2)},${y.toFixed(2)}`).join(' ');
+    const baseY = (padT + cH).toFixed(2);
+    areaPoints = `${pts[0][0].toFixed(2)},${baseY} ${sparkPoints} ${pts[pts.length - 1][0].toFixed(2)},${baseY}`;
+    gridLines = [0.25, 0.5, 0.75].map(pct => ({
+      yCoord: padT + cH - pct * cH,
+      label: fmtY(maxCr * pct),
+    }));
+    if (sparkData.length <= 6) {
+      xLabelIndices = sparkData.map((_, i) => i);
+    } else {
+      const s = new Set([0, sparkData.length - 1]);
+      for (let i = 1; i <= 4; i++) s.add(Math.round(i * (sparkData.length - 1) / 5));
+      xLabelIndices = [...s].sort((a, b) => a - b);
+    }
+  }
+
   return (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column', gap: 0 }}>
       {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20 }}>
-        <div style={{ fontSize: 20, fontWeight: 700, color: '#ffffff', lineHeight: 1.2 }}>
+        <div style={{ fontSize: 20, fontWeight: 700, color: t.titleColor, lineHeight: 1.2 }}>
           {pd.name}
         </div>
         <button
           onClick={onClose}
           style={{
-            background: 'none', border: 'none', color: '#aaaaaa',
+            background: 'none', border: 'none', color: t.closeColor,
             fontSize: 20, cursor: 'pointer', lineHeight: 1, padding: '0 0 0 12px', flexShrink: 0,
           }}
         >×</button>
@@ -75,7 +132,7 @@ const CountryPanel = ({ data: pd, onClose }) => {
         { label: 'ACTIVE SINCE',   value: pd.minYear !== Infinity ? Math.floor(pd.minYear) : '—' },
       ].map(({ label, value }) => (
         <div key={label} style={{ marginBottom: 14 }}>
-          <div style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#888888', marginBottom: 3 }}>
+          <div style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.labelColor, marginBottom: 3 }}>
             {label}
           </div>
           <div style={{ fontSize: 15, fontWeight: 700, color: '#e85724' }}>{value}</div>
@@ -83,24 +140,24 @@ const CountryPanel = ({ data: pd, onClose }) => {
       ))}
 
       {/* Divider */}
-      <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', margin: '8px 0 14px' }} />
+      <div style={{ borderTop: `1px solid ${t.dividerColor}`, margin: '8px 0 14px' }} />
 
       {/* Credits by Activity bars */}
-      <div style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#888888', marginBottom: 10 }}>
+      <div style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.labelColor, marginBottom: 10 }}>
         Credits by Activity
       </div>
       <div style={{ flex: 1, overflowY: 'auto' }}>
         {pd.actBreakdown.slice(0, 8).map(({ name, credits }) => (
           <div key={name} style={{ marginBottom: 10 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 3 }}>
-              <span style={{ fontSize: 10, color: '#cccccc', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '65%' }}>
+              <span style={{ fontSize: 10, color: t.actNameColor, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '65%' }}>
                 {name}
               </span>
-              <span style={{ fontSize: 10, color: '#888888', flexShrink: 0, marginLeft: 6 }}>
+              <span style={{ fontSize: 10, color: t.actCredColor, flexShrink: 0, marginLeft: 6 }}>
                 {formatCredits(credits)}
               </span>
             </div>
-            <div style={{ height: 4, background: 'rgba(255,255,255,0.08)', borderRadius: 2, overflow: 'hidden' }}>
+            <div style={{ height: 4, background: t.actBarBg, borderRadius: 2, overflow: 'hidden' }}>
               <div style={{
                 height: '100%',
                 width: `${(credits / maxAct) * 100}%`,
@@ -115,15 +172,15 @@ const CountryPanel = ({ data: pd, onClose }) => {
       {/* Insights */}
       {pd.insights?.length > 0 && (
         <>
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', margin: '14px 0 10px' }} />
-          <div style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#888888', marginBottom: 8 }}>
+          <div style={{ borderTop: `1px solid ${t.dividerColor}`, margin: '14px 0 10px' }} />
+          <div style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.labelColor, marginBottom: 8 }}>
             Insights
           </div>
           {pd.insights.map((insight, i) => (
             <div key={i} style={{
               fontSize: 10,
-              color: '#cccccc',
-              background: 'rgba(243, 126, 81, 0.08)',
+              color: t.insightColor,
+              background: t.insightBg,
               borderLeft: '2px solid #F37E51',
               padding: '6px 8px',
               borderRadius: '0 3px 3px 0',
@@ -136,11 +193,118 @@ const CountryPanel = ({ data: pd, onClose }) => {
         </>
       )}
 
+      {/* Credits Over Time chart */}
+      {sparkData.length >= 2 && (
+        <>
+          <div style={{ borderTop: `1px solid ${t.dividerColor}`, margin: '14px 0 10px' }} />
+          <div style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.labelColor, marginBottom: 8 }}>
+            Credits over time
+          </div>
+          <div style={{ position: 'relative', width: '100%', flexShrink: 0 }}>
+            <svg
+              viewBox={`0 0 ${VW} ${VH}`}
+              width="100%"
+              height="140"
+              preserveAspectRatio="none"
+              overflow="visible"
+              style={{ display: 'block', overflow: 'visible' }}
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const mouseXPct = (e.clientX - rect.left) / rect.width;
+                let bestIdx = 0, bestDist = Infinity;
+                pts.forEach(([x], i) => {
+                  const dist = Math.abs(x / VW - mouseXPct);
+                  if (dist < bestDist) { bestDist = dist; bestIdx = i; }
+                });
+                setHoveredPoint(bestIdx);
+              }}
+              onMouseLeave={() => setHoveredPoint(null)}
+            >
+              {/* Grid lines */}
+              {gridLines.map(({ yCoord, label }, i) => (
+                <g key={i}>
+                  <line
+                    x1={padL} y1={yCoord} x2={VW - padR} y2={yCoord}
+                    stroke={t.gridColor}
+                    strokeWidth="0.5"
+                    strokeDasharray="3,3"
+                  />
+                  <text x={padL - 3} y={yCoord + 3} fontSize="7" fill={t.chartLabelColor} textAnchor="end">
+                    {label}
+                  </text>
+                </g>
+              ))}
+
+              {/* Area fill */}
+              <polygon points={areaPoints} fill="rgba(232,87,36,0.10)" />
+
+              {/* Line */}
+              <polyline
+                points={sparkPoints}
+                fill="none"
+                stroke="#e85724"
+                strokeWidth="1.5"
+                strokeLinejoin="round"
+                strokeLinecap="round"
+              />
+
+              {/* Data points */}
+              {pts.map(([x, y], i) => (
+                <circle
+                  key={i}
+                  cx={x} cy={y}
+                  r={hoveredPoint === i ? 4 : 2.5}
+                  fill="#e85724"
+                  stroke={t.dotStroke}
+                  strokeWidth="1.5"
+                />
+              ))}
+
+              {/* X-axis labels */}
+              {xLabelIndices.map((idx, pos) => (
+                <text
+                  key={idx}
+                  x={pts[idx][0]}
+                  y={VH - 5}
+                  fontSize="7"
+                  fill={t.chartLabelColor}
+                  textAnchor={pos === 0 ? 'start' : pos === xLabelIndices.length - 1 ? 'end' : 'middle'}
+                >
+                  {sparkData[idx].year}
+                </text>
+              ))}
+            </svg>
+
+            {/* Hover tooltip */}
+            {hoveredPoint !== null && (
+              <div style={{
+                position: 'absolute',
+                left: `${(pts[hoveredPoint][0] / VW) * 100}%`,
+                top: `${(pts[hoveredPoint][1] / VH) * 140}px`,
+                transform: 'translate(-50%, -140%)',
+                background: 'rgba(20,20,20,0.92)',
+                color: '#ffffff',
+                fontSize: 9,
+                fontWeight: 600,
+                padding: '3px 7px',
+                borderRadius: 3,
+                whiteSpace: 'nowrap',
+                pointerEvents: 'none',
+                zIndex: 10,
+                letterSpacing: '0.05em',
+              }}>
+                {sparkData[hoveredPoint].year}: {fmtY(sparkData[hoveredPoint].credits)}
+              </div>
+            )}
+          </div>
+        </>
+      )}
+
       {/* Registry pills */}
       {pd.registries.length > 0 && (
         <>
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', margin: '14px 0 10px' }} />
-          <div style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#888888', marginBottom: 8 }}>
+          <div style={{ borderTop: `1px solid ${t.dividerColor}`, margin: '14px 0 10px' }} />
+          <div style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.labelColor, marginBottom: 8 }}>
             Registries
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
@@ -275,7 +439,15 @@ const CountryExplorer = ({ data, isDarkMode }) => {
     if (insights.length < 2 && actBreakdown.length >= 5) {
       insights.push(`${selectedCountry.dataName} has a diversified portfolio spanning ${actBreakdown.length} activity types.`);
     }
-    return { name: selectedCountry.dataName, totalCred, globalPct, topActivity, minYear, actBreakdown, registries, insights };
+    const yearMap = {};
+    records.forEach(r => {
+      const yr = Math.floor(r.year);
+      if (yr > 0) yearMap[yr] = (yearMap[yr] || 0) + r.credits;
+    });
+    const yearlyTrend = Object.entries(yearMap)
+      .map(([y, c]) => ({ year: parseInt(y), credits: c }))
+      .sort((a, b) => a.year - b.year);
+    return { name: selectedCountry.dataName, totalCred, globalPct, topActivity, minYear, actBreakdown, registries, insights, yearlyTrend };
   }, [selectedCountry, data]);
 
   /* ─── Event handlers ─── */
@@ -386,9 +558,9 @@ const CountryExplorer = ({ data, isDarkMode }) => {
         ↺ Reset View
       </button>
 
-      <div className={`country-detail-panel${panelOpen ? ' open' : ''}`}>
+      <div className={`country-detail-panel${panelOpen ? ' open' : ''}${!isDarkMode ? ' light' : ''}`}>
         {countryPanelInfo && (
-          <CountryPanel data={countryPanelInfo} onClose={handleReset} />
+          <CountryPanel data={countryPanelInfo} onClose={handleReset} isDarkMode={isDarkMode} />
         )}
       </div>
     </div>
