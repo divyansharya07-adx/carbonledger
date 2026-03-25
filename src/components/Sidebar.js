@@ -30,9 +30,14 @@ const Sidebar = ({ activePage, setActivePage, darkMode, setDarkMode, onExport, s
             key={item.id}
             className={`sidebar-btn ${activePage === item.id ? 'active' : ''}`}
             onClick={() => setActivePage(item.id)}
+            onMouseEnter={() => setHovered(item.id)}
+            onMouseLeave={() => setHovered(null)}
           >
             <item.icon size={16} />
             <span>{item.label}</span>
+            {!sidebarExpanded && hovered === item.id && (
+              <div className="sidebar-tooltip">{item.label}</div>
+            )}
           </button>
         ))}
 

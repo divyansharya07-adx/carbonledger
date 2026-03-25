@@ -166,8 +166,9 @@ const Topbar = ({
           ↓ Export
         </button>
 
+        <div style={{ width: 1, height: 24, background: 'var(--border)', marginLeft: 12, marginRight: 12, flexShrink: 0, alignSelf: 'center' }} />
+
         <div style={{
-          marginLeft: 18,
           display: 'flex',
           alignItems: 'center',
           flexShrink: 0,

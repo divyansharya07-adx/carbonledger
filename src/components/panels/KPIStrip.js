@@ -87,10 +87,12 @@ const KPIStrip = ({ data, selectedActivity, activeGroup }) => {
         <div className="kpi-value">{formatCredits(displayCredits)}</div>
         {activeGroup && <div className="kpi-sub orange">{activeGroup}</div>}
         {activityLabel && <div className="kpi-sub orange">{activityLabel}</div>}
+        {!activeGroup && !activityLabel && <div className="kpi-sub muted">across all registries</div>}
       </div>
       <div className="kpi-item">
         <div className="kpi-label">COUNTRIES ACTIVE</div>
         <div className="kpi-value">{displayCountryCount}</div>
+        <div className="kpi-sub muted">with active projects</div>
       </div>
       <div className="kpi-item">
         <div className="kpi-label">TOP REGISTRY</div>
@@ -105,12 +107,14 @@ const KPIStrip = ({ data, selectedActivity, activeGroup }) => {
       <div className="kpi-item">
         <div className="kpi-label">PROJECT ACTIVITIES</div>
         <div className="kpi-value">{displayActivityCount}</div>
+        <div className="kpi-sub muted">unique categories</div>
       </div>
       <div className="kpi-item">
         <div className="kpi-label">PROJECT COUNT</div>
         <div className="kpi-value">
           {displayProjectCount > 0 ? displayProjectCount.toLocaleString() : '—'}
         </div>
+        <div className="kpi-sub muted">verified projects</div>
       </div>
     </div>
   );

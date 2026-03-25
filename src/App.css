@@ -103,6 +103,7 @@ body {
 .sidebar.collapsed {
   width: 52px;
   min-width: 52px;
+  overflow: visible;
 }
 
 .sidebar.collapsed .sidebar-btn {
@@ -262,6 +263,10 @@ body {
 
 .sidebar-btn:hover .sidebar-tooltip {
   opacity: 1;
+}
+
+.sidebar.collapsed .sidebar-tooltip {
+  left: 58px;
 }
 
 /* ═══════════════════════════════════════════
@@ -542,6 +547,7 @@ body {
 .kpi-sub.green { background: rgba(140,183,63,0.15); color: #8cb73f; }
 .kpi-sub.orange { background: rgba(232,87,36,0.15); color: #e85724; }
 .kpi-sub.blue { background: rgba(2,155,214,0.15); color: #029bd6; }
+.kpi-sub.muted { background: var(--bg-elevated); color: var(--text-muted); }
 
 /* ═══════════════════════════════════════════
    ACTIVITY INTELLIGENCE PANEL
