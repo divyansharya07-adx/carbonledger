@@ -37,6 +37,7 @@ function App() {
   const [sidebarExpanded, setSidebarExpanded] = useState(true);
 
   const handleReset = useCallback(() => {
+    setActivePage('overview');
     setSelectedActivity(null);
     setSelectedRegistry('all');
     setYearRange([2000, 2025]);
