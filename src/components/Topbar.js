@@ -31,6 +31,7 @@ const Topbar = ({
   setYearRange,
   onExport,
   onReset,
+  isDarkMode,
 }) => {
   const [yearDropdownOpen, setYearDropdownOpen] = useState(false);
   const [customMode, setCustomMode] = useState(false);
@@ -156,6 +157,27 @@ const Topbar = ({
         <button className="export-btn" onClick={onExport}>
           ↓ Export
         </button>
+
+        <div style={{
+          marginLeft: 18,
+          display: 'flex',
+          alignItems: 'center',
+          flexShrink: 0,
+          ...(isDarkMode ? { background: '#ffffff', borderRadius: 6, padding: '4px 8px' } : {}),
+        }}>
+          <a
+            href="https://www.ceew.in/publications?field_focus_area_tid=247&field_pub_type_tid=All&field_authors_target_id_selective=All&title="
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ lineHeight: 0, textDecoration: 'none' }}
+          >
+            <img
+              src={process.env.PUBLIC_URL + '/ceew_logo.png'}
+              alt="CEEW"
+              style={{ height: 34, width: 'auto', display: 'block' }}
+            />
+          </a>
+        </div>
       </div>
     </div>
   );

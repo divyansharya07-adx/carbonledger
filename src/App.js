@@ -120,6 +120,7 @@ function App() {
           setYearRange={setYearRange}
           onExport={handleExport}
           onReset={handleReset}
+          isDarkMode={darkMode}
         />
         <div className="app-page">
           {renderPage()}
