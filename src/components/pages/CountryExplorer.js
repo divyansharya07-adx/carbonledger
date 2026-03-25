@@ -433,16 +433,17 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     ? (DATA_TO_MAPBOX[selectedCountry.dataName] || selectedCountry.dataName)
     : '';
 
-  const fillLayer = {
+  const fillLayer = useMemo(() => ({
     id: 'country-fill',
     type: 'fill',
+    source: 'country-boundaries',
     'source-layer': 'country_boundaries',
     filter: ['==', ['get', 'disputed'], 'false'],
     paint: {
-      'fill-color': '#F37E51',
+      'fill-color': '#e85724',
       'fill-opacity': fillOpacityExpression,
     },
-  };
+  }), [fillOpacityExpression]);
 
   const hoverLayer = {
     id: 'country-fill-hover',
@@ -522,14 +523,19 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
 
   /* ─── Event handlers ─── */
   const handleMouseMove = useCallback((e) => {
-    const features = e.target.queryRenderedFeatures(e.point, { layers: ['country-fill'] });
-    if (features[0] && !hasLoggedRef.current) {
-      console.log('[CountryExplorer] feature props sample:', features[0].properties);
-      hasLoggedRef.current = true;
+    if (!e.lngLat) return;
+    try {
+      const features = e.target.queryRenderedFeatures(e.point, { layers: ['country-fill'] });
+      if (features[0] && !hasLoggedRef.current) {
+        console.log('[CountryExplorer] feature props sample:', features[0].properties);
+        hasLoggedRef.current = true;
+      }
+      const name = features[0]?.properties?.name_en ?? null;
+      setHoveredCountry(name);
+      setCursor(name ? 'pointer' : '');
+    } catch (err) {
+      // Silently ignore Mapbox internal errors during mousemove
     }
-    const name = features[0]?.properties?.name_en ?? null;
-    setHoveredCountry(name);
-    setCursor(name ? 'pointer' : '');
   }, []);
 
   const handleMouseLeave = useCallback(() => {
@@ -547,6 +553,7 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
   }, []);
 
   const handleCountryClick = useCallback((e) => {
+    if (!e.lngLat) return;
     const features = e.target.queryRenderedFeatures(e.point, { layers: ['country-fill'] });
     if (!features.length) return;
     const mapboxName = features[0].properties.name_en;
@@ -602,12 +609,14 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
           ? 'mapbox://styles/mapbox/dark-v11'
           : 'mapbox://styles/mapbox/light-v11'}
         cursor={cursor}
+        interactiveLayerIds={mapLoaded ? ['country-fill'] : []}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onClick={handleCountryClick}
         onLoad={() => setMapLoaded(true)}
+        onError={(e) => { if (e.error?.message?.includes("reading '0'")) return; console.error(e); }}
       >
-        {mapLoaded && (
+        {mapLoaded && data?.creditsByCountry?.length > 0 && (
           <Source
             id="country-boundaries"
             type="vector"

@@ -129,7 +129,7 @@ const InsightCards = ({ data, selectedActivity }) => {
       </div>
       <div className="insights-grid">
         {insights.map((insight, i) => (
-          <div key={i} className="insight-card">
+          <div key={i} className={`insight-card${i % 2 === 0 ? ' primary' : ''}`}>
             <span className="insight-dot" style={{ background: insight.color }} />
             <div className="insight-text">{insight.text}</div>
           </div>
