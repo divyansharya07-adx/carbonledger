@@ -35,6 +35,7 @@ function App() {
   const [selectedActivity, setSelectedActivity] = useState(null);
   const [activeGroup, setActiveGroup] = useState(null);
   const [sidebarExpanded, setSidebarExpanded] = useState(true);
+  const [initialCountry, setInitialCountry] = useState(null);
 
   const handleReset = useCallback(() => {
     setActivePage('overview');
@@ -43,6 +44,15 @@ function App() {
     setYearRange([2000, 2025]);
     setActiveGroup(null);
   }, []);
+
+  const handleNavigateToCountry = useCallback((countryName) => {
+    setInitialCountry(countryName);
+    setActivePage('country');
+  }, []);
+
+  useEffect(() => {
+    if (activePage !== 'country') setInitialCountry(null);
+  }, [activePage]);
 
   const data = useData(selectedRegistry, yearRange, selectedActivity);
 
@@ -81,7 +91,7 @@ function App() {
       case 'activity':
         return <ProjectActivity data={data} />;
       case 'country':
-        return <CountryExplorer data={data} isDarkMode={darkMode} />;
+        return <CountryExplorer data={data} isDarkMode={darkMode} initialCountry={initialCountry} />;
       case 'registry':
         return <RegistryIntelligence data={data} />;
       case 'about':
@@ -96,6 +106,7 @@ function App() {
             activeGroup={activeGroup}
             setActiveGroup={setActiveGroup}
             onReset={handleReset}
+            onCountryClick={handleNavigateToCountry}
           />
         );
     }

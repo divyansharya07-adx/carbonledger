@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo, useRef } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import Map, { Source, Layer, Marker, NavigationControl } from 'react-map-gl/mapbox';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { formatCredits, REGISTRY_COLORS } from '../../utils/formatters';
@@ -331,9 +331,10 @@ const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
 };
 
 /* ─── Main component ─── */
-const CountryExplorer = ({ data, isDarkMode }) => {
+const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
   const mapRef = useRef(null);
   const hasLoggedRef = useRef(false);
+  const initialCountryRef = useRef(initialCountry);
   const [hoveredCountry,  setHoveredCountry]  = useState(null);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [panelOpen,       setPanelOpen]       = useState(false);
@@ -501,6 +502,16 @@ const CountryExplorer = ({ data, isDarkMode }) => {
       mapRef.current.flyTo({ center: [0, 20], zoom: 1.5, duration: 1000 });
     }
   }, []);
+
+  /* ─── Auto-open from Overview map click ─── */
+  useEffect(() => {
+    if (!mapLoaded || !initialCountryRef.current) return;
+    const ic = initialCountryRef.current;
+    initialCountryRef.current = null;
+    const mapboxName = DATA_TO_MAPBOX[ic] || ic;
+    const credits = data.creditsByCountry?.find(c => c.name === ic)?.credits || 0;
+    openCountry(ic, mapboxName, credits);
+  }, [mapLoaded, data, openCountry]);
 
   /* ─── Top 10 markers (exclude selected) ─── */
   const top10Markers = useMemo(() =>

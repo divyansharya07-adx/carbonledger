@@ -40,7 +40,7 @@ const COUNTRY_COORDS = {
   'Angola': [17, -12],
 };
 
-const GlobalMap = ({ data, selectedActivity }) => {
+const GlobalMap = ({ data, selectedActivity, onCountryClick }) => {
   const svgRef = useRef(null);
   const containerRef = useRef(null);
   const [tooltip, setTooltip] = useState(null);
@@ -129,7 +129,8 @@ const GlobalMap = ({ data, selectedActivity }) => {
           .attr('stroke-width', 0.5)
           .attr('stroke-opacity', 0.3)
           .style('cursor', 'pointer')
-          .on('mouseover', (event) => {
+          .on('mouseover', function(event) {
+            d3.select(this).transition().duration(100).attr('r', radius * 1.4);
             setTooltip({
               x: event.offsetX + 10,
               y: event.offsetY - 10,
@@ -137,10 +138,16 @@ const GlobalMap = ({ data, selectedActivity }) => {
               credits: country.credits,
             });
           })
-          .on('mouseout', () => setTooltip(null));
+          .on('mouseout', function() {
+            d3.select(this).transition().duration(100).attr('r', radius);
+            setTooltip(null);
+          })
+          .on('click', function() {
+            if (onCountryClick) onCountryClick(country.name);
+          });
       });
     }
-  }, [worldData, data, selectedActivity, maxCredits, countryCreditMap]);
+  }, [worldData, data, selectedActivity, maxCredits, countryCreditMap, onCountryClick]);
 
   return (
     <div className="map-panel overview-map">
@@ -149,7 +156,7 @@ const GlobalMap = ({ data, selectedActivity }) => {
           ◎ Global Distribution
           {selectedActivity && <span className="map-badge">{selectedActivity}</span>}
         </div>
-        {!selectedActivity && <div className="map-hint">Select an activity to filter</div>}
+        {!selectedActivity && <div className="map-hint">Click a country to explore</div>}
       </div>
       <div className="map-container" ref={containerRef}>
         <svg ref={svgRef} />
