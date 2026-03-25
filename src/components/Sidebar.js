@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LayoutGrid, Hexagon, Globe, Diamond, TrendingUp, Download, Info, Sun, Moon, ChevronLeft, ChevronRight } from 'lucide-react';
+import { LayoutGrid, Hexagon, Globe, Diamond, TrendingUp, Download, Info, Sun, Moon, ChevronLeft, ChevronRight, Menu } from 'lucide-react';
 
 const NAV_ITEMS = [
   { id: 'overview', icon: LayoutGrid, label: 'Overview' },
@@ -14,7 +14,7 @@ const Sidebar = ({ activePage, setActivePage, darkMode, setDarkMode, onExport, s
   return (
     <div className={`sidebar${!sidebarExpanded ? ' collapsed' : ''}`}>
       <div className="sidebar-logo" onClick={() => setActivePage('overview')}>
-        <div className="sidebar-logo-mark"><span>CL</span></div>
+        <div className="sidebar-logo-mark"><Menu size={20} /></div>
         <button
           className="sidebar-collapse-btn"
           onClick={(e) => { e.stopPropagation(); setSidebarExpanded(!sidebarExpanded); }}

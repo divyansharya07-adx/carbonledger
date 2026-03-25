@@ -34,6 +34,7 @@ const Topbar = ({
   isDarkMode,
 }) => {
   const [yearDropdownOpen, setYearDropdownOpen] = useState(false);
+  const [brandHovered, setBrandHovered] = useState(false);
   const [customMode, setCustomMode] = useState(false);
   const [customFrom, setCustomFrom] = useState(yearRange[0]);
   const [customTo, setCustomTo] = useState(yearRange[1]);
@@ -66,8 +67,15 @@ const Topbar = ({
 
   return (
     <div className="topbar">
-      <div className="topbar-breadcrumb" onClick={onReset} style={{ cursor: 'pointer' }}>
-        <span className="brand-carbon">Carbon</span><span className="brand-ledger">Ledger</span>
+      <div className="topbar-breadcrumb" style={{ cursor: 'default' }}>
+        <span
+          onClick={onReset}
+          onMouseEnter={() => setBrandHovered(true)}
+          onMouseLeave={() => setBrandHovered(false)}
+          style={{ cursor: 'pointer', opacity: brandHovered ? 0.7 : 1, transition: 'opacity 0.15s' }}
+        >
+          <span className="brand-carbon">Carbon</span><span className="brand-ledger">Ledger</span>
+        </span>
         <span className="topbar-sep">›</span>
         <span className="crumb-name">{pageName}</span>
       </div>

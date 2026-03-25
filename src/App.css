@@ -139,14 +139,10 @@ body {
 }
 
 .sidebar-logo-mark {
-  width: 28px;
-  height: 28px;
-  min-width: 28px;
-  border-radius: 7px;
-  background: var(--orange);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--text-muted);
 }
 
 .sidebar-logo-mark span {
