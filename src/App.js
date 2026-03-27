@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
 import Overview from './components/pages/Overview';
 import ProjectActivity from './components/pages/ProjectActivity';
+import Projects from './components/pages/Projects';
 import CountryExplorer from './components/pages/CountryExplorer';
 import RegistryIntelligence from './components/pages/RegistryIntelligence';
 import About from './components/pages/About';
@@ -88,6 +89,8 @@ function App() {
 
   const renderPage = () => {
     switch (activePage) {
+      case 'projects':
+        return <Projects data={data} />;
       case 'activity':
         return <ProjectActivity data={data} />;
       case 'country':

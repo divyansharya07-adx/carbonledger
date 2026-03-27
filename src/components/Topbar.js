@@ -2,9 +2,13 @@ import { useState, useRef, useEffect } from 'react';
 
 const PAGE_NAMES = {
   overview: 'Overview',
+  projects: 'Projects',
   activity: 'Project Activity',
+  explorer: 'Country Explorer',
   country: 'Country Explorer',
+  intelligence: 'Market Intelligence',
   registry: 'Registry Intelligence',
+  about: 'About',
 };
 
 const REGISTRIES = [

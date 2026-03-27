@@ -420,8 +420,9 @@ def main():
     verra_counts = {}
     for _, meth in proj_meth_v.items():
         cat = lookup_cat_e('Verra', meth)
-        if cat:
-            verra_counts[cat] = verra_counts.get(cat, 0) + 1
+        if cat is None:
+            cat = 'Other'
+        verra_counts[cat] = verra_counts.get(cat, 0) + 1
     print(f"  Verra: {len(proj_meth_v)} unique projects, {sum(verra_counts.values())} matched")
     for cat, cnt in sorted(verra_counts.items()):
         proj_results.append({'Registry': 'Verra', 'Project Type Category': cat, 'Project Count': cnt})
@@ -439,8 +440,9 @@ def main():
     gold_counts = {}
     for _, meth in proj_meth_g.items():
         cat = lookup_cat_e('Gold', meth)
-        if cat:
-            gold_counts[cat] = gold_counts.get(cat, 0) + 1
+        if cat is None:
+            cat = 'Other'
+        gold_counts[cat] = gold_counts.get(cat, 0) + 1
     print(f"  Gold Standard: {len(proj_meth_g)} unique projects, {sum(gold_counts.values())} matched")
     for cat, cnt in sorted(gold_counts.items()):
         proj_results.append({'Registry': 'Gold Standard', 'Project Type Category': cat, 'Project Count': cnt})

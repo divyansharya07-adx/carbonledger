@@ -28,7 +28,6 @@ export const GROUP_MAP = {
     'Electric vehicles',
     'Energy storage',
     'Geothermal',
-    'Green hydrogen',
     'Grid efficiency',
     'Hydropower',
     'Mixed renewables',
@@ -45,7 +44,6 @@ export const GROUP_MAP = {
     'Wastewater treatment',
   ],
   'Waste & Industrial': [
-    'Carbon capture',
     'Fossil gas leaks',
     'Heat recovery',
     'Industrial efficiency',

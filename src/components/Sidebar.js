@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { LayoutGrid, Hexagon, Globe, Diamond, TrendingUp, Download, Info, Sun, Moon, ChevronLeft, ChevronRight, Menu } from 'lucide-react';
+import { LayoutGrid, Hexagon, Globe, Diamond, TrendingUp, Download, Info, Sun, Moon, ChevronLeft, ChevronRight, Menu, LayoutList } from 'lucide-react';
 
 const NAV_ITEMS = [
   { id: 'overview', icon: LayoutGrid, label: 'Overview' },
+  { id: 'projects', icon: LayoutList, label: 'Projects' },
   { id: 'activity', icon: Hexagon, label: 'Project Activity' },
   { id: 'country', icon: Globe, label: 'Country Explorer' },
   { id: 'registry', icon: Diamond, label: 'Registry Intelligence' },

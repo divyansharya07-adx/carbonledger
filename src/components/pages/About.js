@@ -97,7 +97,9 @@ const About = () => {
           <p className="about-text">
             Covers voluntary carbon credit issuances across four major registries: Verra
             (VCS), Gold Standard, ACR (American Carbon Registry), and CAR (Climate Action
-            Reserve). Retirement data is not tracked. Data spans 1996–2025.
+            Reserve). Retirement data is tracked at the project level — credits issued, retired, and
+            remaining are available for each project on the Projects page, cross-matched by Project ID across
+            all four registries. Data spans 1996–2025.
           </p>
         </div>
 
@@ -128,8 +130,11 @@ const About = () => {
             Unique project counts are derived from registry-specific ID columns: <code>ID</code> (Verra),
             <code> GSID</code> (Gold Standard), <code>Project ID</code> (ACR and CAR). Rows with null
             IDs are excluded. Each project is assigned its most frequent methodology code and looked up
-            in <code>methodology_mapping.csv</code> to determine its category. Total across all four
-            registries: 5,191 projects (Verra 2,074 · Gold Standard 1,545 · CAR 829 · ACR 743).
+            in <code>methodology_mapping.csv</code> to determine its category. Projects whose methodology
+            string could not be resolved are counted under 'Other' and excluded from category breakdowns —
+            these represent 562 projects (&lt;10% of total), primarily Gold Standard projects with blank
+            methodology fields. Total across all four
+            registries: 5,753 projects (Verra 2,093 · Gold Standard 2,088 · CAR 829 · ACR 743).
           </p>
 
           <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Data Pipeline</p>
@@ -142,8 +147,10 @@ const About = () => {
           <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Known Limitations</p>
           <ul className="about-text" style={{ paddingLeft: '1.2em' }}>
             <li>
-              Approximately 146M Gold Standard credits from blank-methodology rows were recategorised
-              by project type name rather than methodology code.
+              Some Gold Standard projects lack methodology codes in the source registry. These have been
+              categorised by project type name where possible (~141.5M credits). A small residual
+              (~6M credits, &lt;0.3% of total) could not be categorised and are excluded from category
+              breakdowns.
             </li>
             <li>
               Verra AFOLU projects are disaggregated using methodology codes; a small number of
@@ -170,6 +177,14 @@ const About = () => {
               Verra, Gold Standard, and ACR). These are retrospective issuances — formally issued years
               after the reduction occurred — and are included in the total count and accessible via the
               year-range filter.
+            </li>
+            <li>
+              One Gold Standard project (GSID 7511 — a CER-to-VER conversion record) appears in the
+              issuances data but is absent from the Gold Standard Projects master list, likely because it
+              was registered under its original CDM project number (GS3705) rather than as a standalone
+              Gold Standard project. This project (500 credits issued) is counted in the Overview project
+              total but does not appear on the Projects page. This is a source data characteristic of the
+              Gold Standard registry, not a pipeline error.
             </li>
           </ul>
 
