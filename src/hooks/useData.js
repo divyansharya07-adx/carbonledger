@@ -24,9 +24,7 @@ const COUNTRY_NAME_MAP = {
   'SV': 'El Salvador',
   'Lao': 'Laos',
   'Bolivia Plurinational State of': 'Bolivia',
-  "C\u00f4te d'Ivoire": 'Ivory Coast',
   "C\u221a\u00a5te d'Ivoire": 'Ivory Coast',
-  'Tanzania, United Republic of': 'Tanzania',
   'Tanzania United Republic of': 'Tanzania',
   'Tanzania, United Republic Of': 'Tanzania',
 };
