@@ -13,6 +13,7 @@ const ActivityIntelligence = ({ data, selectedActivity, setSelectedActivity, act
     return creditsByActivity.filter(a => a.group === activeGroup);
   }, [creditsByActivity, activeGroup]);
 
+  const filteredTotal = filteredActivities.reduce((s, a) => s + a.credits, 0);
   const displayedActivities = showAll ? filteredActivities : filteredActivities.slice(0, 8);
 
   return (
@@ -45,10 +46,13 @@ const ActivityIntelligence = ({ data, selectedActivity, setSelectedActivity, act
         </div>
       </div>
 
-      <div className="activity-list">
+      <div className="activity-list" style={{ paddingRight: 16 }}>
         {displayedActivities.map((activity, i) => {
           const rank = creditsByActivity.indexOf(activity) + 1;
           const totalActivityCredits = activity.credits;
+          const sharePct = filteredTotal > 0
+            ? ((totalActivityCredits / filteredTotal) * 100).toFixed(1)
+            : '0';
           const groupColor = GROUP_COLORS[activity.group] || '#e85724';
           const isSelected = selectedActivity === activity.name;
 
@@ -57,6 +61,7 @@ const ActivityIntelligence = ({ data, selectedActivity, setSelectedActivity, act
               key={activity.name}
               className={`activity-row ${isSelected ? 'selected' : ''}`}
               onClick={() => setSelectedActivity(isSelected ? null : activity.name)}
+              style={{ paddingRight: 24 }}
             >
               <div className="activity-rank">{rank}</div>
               <div className="activity-name-col">
@@ -65,7 +70,7 @@ const ActivityIntelligence = ({ data, selectedActivity, setSelectedActivity, act
                   {activity.group}
                 </div>
               </div>
-              <div className="stacked-bar">
+              <div className="stacked-bar" style={{ marginRight: 8 }}>
                 {activity.registryBreakdown.map(reg => {
                   const pct = totalActivityCredits > 0
                     ? (reg.credits / totalActivityCredits) * 100
@@ -79,7 +84,8 @@ const ActivityIntelligence = ({ data, selectedActivity, setSelectedActivity, act
                   );
                 })}
               </div>
-              <div className="activity-credits">{formatCredits(totalActivityCredits)}</div>
+              <div className="activity-credits" style={{ textAlign: 'right' }}>{formatCredits(totalActivityCredits)}</div>
+              <div style={{ textAlign: 'right', fontSize: 10, color: 'var(--text-muted)' }}>{sharePct}%</div>
             </div>
           );
         })}

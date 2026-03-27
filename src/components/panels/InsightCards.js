@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { formatCredits, getGroup, GROUP_COLORS, GROUP_MAP } from '../../utils/formatters';
+import { formatCredits, getGroup, GROUP_COLORS } from '../../utils/formatters';
 
 const InsightCards = ({ data, selectedActivity }) => {
   const insights = useMemo(() => {
@@ -64,24 +64,28 @@ const InsightCards = ({ data, selectedActivity }) => {
     const topReg = creditsByRegistry?.[0];
     const topCountry = creditsByCountry?.[0];
 
-    const forestShare = creditsByGroup['Forest & Nature'] && totalCredits > 0
-      ? ((creditsByGroup['Forest & Nature'] / totalCredits) * 100).toFixed(1)
+    const topGroup = Object.entries(creditsByGroup).sort((a, b) => b[1] - a[1])[0];
+    const topGroupName = topGroup?.[0] || 'Forest & Nature';
+    const topGroupShare = topGroup && totalCredits > 0
+      ? ((topGroup[1] / totalCredits) * 100).toFixed(1)
       : '0';
+    const topGroupColor = GROUP_COLORS[topGroupName] || '#8cb73f';
 
-    const energyCredits = creditsByGroup['Energy'] || 0;
-    const energyShare = totalCredits > 0
-      ? ((energyCredits / totalCredits) * 100).toFixed(1)
+    const secondCountry = creditsByCountry?.[1];
+    const secondCountryPct = secondCountry && totalCredits > 0
+      ? ((secondCountry.credits / totalCredits) * 100).toFixed(1)
       : '0';
-
-    const energyCategories = GROUP_MAP['Energy'] || [];
-    const topEnergy = creditsByActivity?.find(a => energyCategories.includes(a.name));
+    const secondCountryTopAct = secondCountry
+      ? Object.entries(data.creditsByCountryAndActivity?.[secondCountry.name] || {})
+          .sort((a, b) => b[1] - a[1])[0]?.[0]
+      : null;
 
     return [
       {
-        color: '#8cb73f',
+        color: topGroupColor,
         text: (
           <>
-            <strong>Forest & Nature</strong> dominates with <strong>{forestShare}%</strong> of all credits issued.
+            <strong>{topGroupName}</strong> dominates with <strong>{topGroupShare}%</strong> of all credits issued.
             {topActivity && <> <strong>{topActivity.name}</strong> is the largest single activity at <strong>{formatCredits(topActivity.credits)}</strong>.</>}
           </>
         ),
@@ -114,8 +118,10 @@ const InsightCards = ({ data, selectedActivity }) => {
         color: '#CCDF84',
         text: (
           <>
-            <strong>Energy</strong> accounts for <strong>{energyShare}%</strong> of all credits.
-            {topEnergy && <> <strong>{topEnergy.name}</strong> is the largest energy activity.</>}
+            {secondCountry
+              ? <><strong>{secondCountry.name}</strong> is the second-largest market with <strong>{formatCredits(secondCountry.credits)}</strong> (<strong>{secondCountryPct}%</strong> of global).{secondCountryTopAct && <> <strong>{secondCountryTopAct}</strong> is its largest activity.</>}</>
+              : <>No second country data available.</>
+            }
           </>
         ),
       },

@@ -198,7 +198,11 @@ const KPIStrip = ({ data, selectedActivity, activeGroup }) => {
       <div className="kpi-item">
         <div className="kpi-label">PROJECT ACTIVITIES</div>
         <div className="kpi-value">{displayActivityCount}</div>
-        <div className="kpi-sub muted">unique categories</div>
+        <div className={activeGroup ? 'kpi-sub orange' : 'kpi-sub muted'}>
+          {activeGroup && totalCredits > 0
+            ? `${((creditsByGroup[activeGroup] / totalCredits) * 100).toFixed(1)}% of total market`
+            : 'unique categories'}
+        </div>
       </div>
       <div className="kpi-item">
         <div className="kpi-label">PROJECT COUNT</div>

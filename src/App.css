@@ -655,7 +655,7 @@ body {
 
 .activity-row {
   display: grid;
-  grid-template-columns: 20px 1fr 1fr 52px;
+  grid-template-columns: 20px 1fr 1fr 48px 48px;
   align-items: center;
   padding: 5px 6px;
   border-radius: 4px;
