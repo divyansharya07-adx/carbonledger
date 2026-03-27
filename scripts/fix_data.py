@@ -78,6 +78,17 @@ def main():
     cty_col  = "Country"
 
     # -----------------------------------------------------------------------
+    # SECTION 0 — Remove ARB (California compliance program, not a voluntary registry)
+    # -----------------------------------------------------------------------
+    print("\n--- SECTION 0: Remove ARB ---")
+    n_arb_agg  = (agg[reg_col]  == 'ARB').sum()
+    n_arb_ctry = (ctry[reg_col] == 'ARB').sum()
+    agg  = agg[agg[reg_col]   != 'ARB'].copy()
+    ctry = ctry[ctry[reg_col] != 'ARB'].copy()
+    print(f"  Removed {n_arb_agg} ARB rows from aggregated_data.csv")
+    print(f"  Removed {n_arb_ctry} ARB rows from country_aggregated_data.csv")
+
+    # -----------------------------------------------------------------------
     # Read Verra VCUS sheet once (used for A and B)
     # -----------------------------------------------------------------------
     print("\nReading Verra VCUS sheet…")
@@ -257,6 +268,84 @@ def main():
 
         print(f"  Adding {len(new_ctry_rows)} new rows to country_aggregated_data.csv")
         ctry = pd.concat([ctry, new_ctry_rows], ignore_index=True)
+
+    # -----------------------------------------------------------------------
+    # SECTION F — Ingest CAR (Climate Action Reserve)
+    # NOTE: Verra processed total (~1,365.9M) is ~100.8M below the Berkeley
+    # VROD summary (~1,466.7M). The VROD file has only one Verra issuance
+    # sheet (Verra VCUS); no additional sheet bridges the gap. Known limitation.
+    # -----------------------------------------------------------------------
+    print("\n--- SECTION F: Ingest CAR ---")
+    car_raw = pd.read_excel(RAW_EXCEL, sheet_name='CAR Issuances', engine='openpyxl')
+    car_raw['vintage_year'] = pd.to_numeric(car_raw['Vintage'], errors='coerce')
+    car_raw['qty']          = pd.to_numeric(car_raw['Total Offset Credits Issued'], errors='coerce').fillna(0)
+    car_raw = car_raw[car_raw['qty'] > 0].copy()
+    print(f"  CAR Issuances rows (positive credits): {len(car_raw):,}")
+
+    # Build protocol → category lookup from methodology_mapping.csv (Registry='CAR')
+    meth_map_f = pd.read_csv('public/methodology_mapping.csv', dtype=str).fillna('')
+    car_lookup = {}
+    for _, r in meth_map_f[meth_map_f['Registry'] == 'CAR'].iterrows():
+        code = r['Methodology Code'].strip()
+        name = r['Methodology Name'].strip()
+        cat  = r['Project Type Category'].strip()
+        if code:
+            car_lookup[code] = cat
+        if name:
+            car_lookup[name] = cat
+
+    def map_car_protocol(proto):
+        v = str(proto or '').strip()
+        if not v or v.lower() in ('nan', 'none', ''):
+            return 'No Methodology Provided'
+        if v in car_lookup:
+            return car_lookup[v]
+        # Substring match — protocol name may be embedded in version string
+        for key, cat in car_lookup.items():
+            if key and key in v:
+                return cat
+        return 'No Methodology Provided'
+
+    car_raw['cat'] = car_raw['Protocol and Version'].apply(map_car_protocol)
+
+    cat_summary_f = car_raw.groupby('cat')['qty'].sum().sort_values(ascending=False)
+    print("  CAR category mapping:")
+    for cat, tot in cat_summary_f.items():
+        print(f"    {cat}: {tot:,.0f}")
+
+    # Remove any existing CAR rows from agg (idempotency — matches ctry handling below)
+    n_old_car_agg = (agg[reg_col] == 'CAR').sum()
+    if n_old_car_agg > 0:
+        agg = agg[agg[reg_col] != 'CAR'].copy()
+        print(f"  Removed {n_old_car_agg} existing CAR rows from aggregated_data.csv")
+
+    # Aggregate-level rows (Registry, Project Type Category, Vintage Year, Total Credits Issued)
+    car_agg_rows = (
+        car_raw
+        .groupby(['cat', 'vintage_year'])['qty']
+        .sum().astype(int).reset_index()
+    )
+    car_agg_rows.columns = [agg_col, yr_col, cr_col]
+    car_agg_rows[reg_col] = 'CAR'
+    car_agg_rows = car_agg_rows[[reg_col, agg_col, yr_col, cr_col]]
+    print(f"  Adding {len(car_agg_rows)} rows to aggregated_data.csv")
+    print(f"  CAR total credits: {car_agg_rows[cr_col].sum():,}")
+    agg = pd.concat([agg, car_agg_rows], ignore_index=True)
+
+    # Country-level rows — drop stale 194 rows, replace with freshly derived rows
+    n_old_car = (ctry[reg_col] == 'CAR').sum()
+    ctry = ctry[ctry[reg_col] != 'CAR'].copy()
+    print(f"  Replaced {n_old_car} existing CAR rows in country_aggregated_data.csv")
+    car_ctry_rows = (
+        car_raw[car_raw['Project Site Country'].notna()]
+        .groupby(['Project Site Country', 'cat', 'vintage_year'])['qty']
+        .sum().astype(int).reset_index()
+    )
+    car_ctry_rows.columns = [cty_col, agg_col, yr_col, cr_col]
+    car_ctry_rows[reg_col] = 'CAR'
+    car_ctry_rows = car_ctry_rows[[reg_col, cty_col, agg_col, yr_col, cr_col]]
+    print(f"  Adding {len(car_ctry_rows)} country rows to country_aggregated_data.csv")
+    ctry = pd.concat([ctry, car_ctry_rows], ignore_index=True)
 
     # -----------------------------------------------------------------------
     # Drop rows where credits went to 0 or negative (sanity clean-up)

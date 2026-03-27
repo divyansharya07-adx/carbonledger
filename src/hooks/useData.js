@@ -16,6 +16,8 @@ const COUNTRY_NAME_MAP = {
   'Syrian Arab Republic': 'Syria',
   "Côte d'Ivoire": 'Ivory Coast',
   'Moldova, Republic of': 'Moldova',
+  'US': 'United States',
+  'MX': 'Mexico',
 };
 
 const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
@@ -80,14 +82,14 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
     if (!rawAgg) return [];
     return rawAgg.filter((d) => {
       if (selectedYearRange) {
-        if (d.year < selectedYearRange[0] || d.year > selectedYearRange[1]) return false;
+        if (d.year < selectedYearRange[0] || (d.year > selectedYearRange[1] && d.year <= 2025)) return false;
       }
       if (selectedRegistry && selectedRegistry !== 'all') {
         const regLower = selectedRegistry.toLowerCase();
         if (regLower === 'gold') {
           if (d.registry !== 'Gold Standard') return false;
-        } else if (regLower === 'arb') {
-          if (d.registry !== 'ARB' && d.registry !== 'CAR') return false;
+        } else if (regLower === 'car') {
+          if (d.registry !== 'CAR') return false;
         } else {
           if (d.registry.toLowerCase() !== regLower) return false;
         }
@@ -100,14 +102,14 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
     if (!rawCountry) return [];
     return rawCountry.filter((d) => {
       if (selectedYearRange) {
-        if (d.year < selectedYearRange[0] || d.year > selectedYearRange[1]) return false;
+        if (d.year < selectedYearRange[0] || (d.year > selectedYearRange[1] && d.year <= 2025)) return false;
       }
       if (selectedRegistry && selectedRegistry !== 'all') {
         const regLower = selectedRegistry.toLowerCase();
         if (regLower === 'gold') {
           if (d.registry !== 'Gold Standard') return false;
-        } else if (regLower === 'arb') {
-          if (d.registry !== 'ARB' && d.registry !== 'CAR') return false;
+        } else if (regLower === 'car') {
+          if (d.registry !== 'CAR') return false;
         } else {
           if (d.registry.toLowerCase() !== regLower) return false;
         }
@@ -209,8 +211,8 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
         const regLower = selectedRegistry.toLowerCase();
         if (regLower === 'gold') {
           if (reg !== 'Gold Standard') return;
-        } else if (regLower === 'arb') {
-          if (reg !== 'ARB' && reg !== 'CAR') return;
+        } else if (regLower === 'car') {
+          if (reg !== 'CAR') return;
         } else {
           if (reg.toLowerCase() !== regLower) return;
         }

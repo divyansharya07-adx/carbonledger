@@ -95,8 +95,9 @@ const About = () => {
         <div className="about-section">
           <div className="about-section-title">Coverage</div>
           <p className="about-text">
-            Covers voluntary carbon credit issuances and retirements across four major
-            registries: Verra, Gold Standard, ACR, and CAR/ARB. Data spans 2000–2025.
+            Covers voluntary carbon credit issuances across four major registries: Verra
+            (VCS), Gold Standard, ACR (American Carbon Registry), and CAR (Climate Action
+            Reserve). Retirement data is not tracked. Data spans 1996–2025.
           </p>
         </div>
 
@@ -117,8 +118,9 @@ const About = () => {
           <p className="about-text">
             Raw issuance records from each registry sheet were grouped by vintage year and project type
             category. Project types were resolved via <code>methodology_mapping.csv</code>, which maps
-            414 unique methodology codes and protocol names to 31 project activity categories across all
-            four registries. Match rate across all issuance rows is approximately 99.9%.
+            444 methodology mappings (283 Verra methodology codes, 81 Gold Standard protocols, 46 ACR
+            protocols, 32 CAR protocols, and 2 ART protocols) to 30 project activity categories across
+            all four registries. Match rate across all issuance rows is approximately 99.9%.
           </p>
 
           <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Project Count</p>
@@ -155,6 +157,19 @@ const About = () => {
               The grand total may vary by approximately 7,000 credits due to AMS-III.AK remapping
               (Cleaner cooking → Public transit) in Section B of the pipeline, where the source rows
               were not present in all pipeline runs.
+            </li>
+            <li>
+              Gold Standard A/R (Afforestation/Reforestation) projects issue credits across their full
+              monitoring window in a single batch. This results in 1,727,744 credits (~0.07% of total)
+              carrying future vintage years (2026–2061), formally issued with serial numbers since
+              2014–2016. These credits are included in the total count but fall outside the 1996–2025
+              year-range filter.
+            </li>
+            <li>
+              A small number of credits carry pre-2000 vintage years (1996–1999, ~249,854 credits across
+              Verra, Gold Standard, and ACR). These are retrospective issuances — formally issued years
+              after the reduction occurred — and are included in the total count and accessible via the
+              year-range filter.
             </li>
           </ul>
 

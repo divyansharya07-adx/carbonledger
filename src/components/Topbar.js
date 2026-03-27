@@ -12,11 +12,11 @@ const REGISTRIES = [
   { id: 'verra', label: 'Verra' },
   { id: 'gold', label: 'Gold Standard' },
   { id: 'acr', label: 'ACR' },
-  { id: 'arb', label: 'ARB' },
+  { id: 'car', label: 'CAR' },
 ];
 
 const YEAR_PRESETS = [
-  { label: 'All time', range: [2000, 2025] },
+  { label: 'All time', range: [1996, 2025] },
   { label: 'Last 5Y', range: [2020, 2025] },
   { label: '2020–2025', range: [2020, 2025] },
   { label: '2015–2020', range: [2015, 2020] },
@@ -53,7 +53,7 @@ const Topbar = ({
   const applyCustomRange = () => {
     const from = Number(customFrom);
     const to = Number(customTo);
-    if (from >= 2000 && to <= 2025 && from < to) {
+    if (from >= 1996 && to <= 2025 && from < to) {
       setYearRange([from, to]);
     }
   };
@@ -101,7 +101,7 @@ const Topbar = ({
               <input
                 className="year-custom-input"
                 type="number"
-                min="2000"
+                min="1996"
                 max="2025"
                 value={customFrom}
                 onChange={e => setCustomFrom(e.target.value)}
@@ -112,7 +112,7 @@ const Topbar = ({
               <input
                 className="year-custom-input"
                 type="number"
-                min="2000"
+                min="1996"
                 max="2025"
                 value={customTo}
                 onChange={e => setCustomTo(e.target.value)}

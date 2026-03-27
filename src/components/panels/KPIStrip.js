@@ -180,7 +180,7 @@ const KPIStrip = ({ data, selectedActivity, activeGroup }) => {
       <div className="kpi-item">
         <div className="kpi-label">COUNTRIES ACTIVE</div>
         <div className="kpi-value">{displayCountryCount}</div>
-        <div className="kpi-sub muted">with active projects</div>
+        <div className="kpi-sub muted">with issued credits</div>
         <Sparkline values={countriesByYearSeries} />
       </div>
       <div className="kpi-item">

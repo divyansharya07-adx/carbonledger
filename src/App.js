@@ -31,7 +31,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [activePage, setActivePage] = useState('overview');
   const [selectedRegistry, setSelectedRegistry] = useState('all');
-  const [yearRange, setYearRange] = useState([2000, 2025]);
+  const [yearRange, setYearRange] = useState([1996, 2025]);
   const [selectedActivity, setSelectedActivity] = useState(null);
   const [activeGroup, setActiveGroup] = useState(null);
   const [sidebarExpanded, setSidebarExpanded] = useState(true);
@@ -41,7 +41,7 @@ function App() {
     setActivePage('overview');
     setSelectedActivity(null);
     setSelectedRegistry('all');
-    setYearRange([2000, 2025]);
+    setYearRange([1996, 2025]);
     setActiveGroup(null);
   }, []);
 

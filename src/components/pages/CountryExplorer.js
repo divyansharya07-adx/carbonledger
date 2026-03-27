@@ -152,7 +152,7 @@ const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
     return String(v);
   };
 
-  let pts = [], sparkPoints = '', areaPoints = '', gridLines = [], xLabelIndices = [];
+  let pts = [], gridLines = [], xLabelIndices = [], smoothLinePath = '';
   if (sparkData.length >= 2) {
     const minYr = sparkData[0].year;
     const maxYr = sparkData[sparkData.length - 1].year;
@@ -161,20 +161,26 @@ const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
       padL + ((d.year - minYr) / Math.max(maxYr - minYr, 1)) * cW,
       padT + cH - (d.credits / maxCr) * cH,
     ]);
-    sparkPoints = pts.map(([x, y]) => `${x.toFixed(2)},${y.toFixed(2)}`).join(' ');
-    const baseY = (padT + cH).toFixed(2);
-    areaPoints = `${pts[0][0].toFixed(2)},${baseY} ${sparkPoints} ${pts[pts.length - 1][0].toFixed(2)},${baseY}`;
+    smoothLinePath = `M${pts[0][0].toFixed(2)},${pts[0][1].toFixed(2)}`;
+    for (let i = 0; i < pts.length - 1; i++) {
+      const p0 = pts[Math.max(i - 1, 0)];
+      const p1 = pts[i];
+      const p2 = pts[i + 1];
+      const p3 = pts[Math.min(i + 2, pts.length - 1)];
+      const cp1x = (p1[0] + (p2[0] - p0[0]) / 6).toFixed(2);
+      const cp1y = (p1[1] + (p2[1] - p0[1]) / 6).toFixed(2);
+      const cp2x = (p2[0] - (p3[0] - p1[0]) / 6).toFixed(2);
+      const cp2y = (p2[1] - (p3[1] - p1[1]) / 6).toFixed(2);
+      smoothLinePath += ` C${cp1x},${cp1y} ${cp2x},${cp2y} ${p2[0].toFixed(2)},${p2[1].toFixed(2)}`;
+    }
     gridLines = [0.25, 0.5, 0.75].map(pct => ({
       yCoord: padT + cH - pct * cH,
       label: fmtY(maxCr * pct),
     }));
-    if (sparkData.length <= 6) {
-      xLabelIndices = sparkData.map((_, i) => i);
-    } else {
-      const s = new Set([0, sparkData.length - 1]);
-      for (let i = 1; i <= 4; i++) s.add(Math.round(i * (sparkData.length - 1) / 5));
-      xLabelIndices = [...s].sort((a, b) => a - b);
-    }
+    xLabelIndices = sparkData
+      .map((d, i) => ({ year: Math.floor(d.year), i }))
+      .filter(({ year }) => year % 5 === 0)
+      .map(({ i }) => i);
   }
 
   return (
@@ -273,7 +279,7 @@ const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
             <svg
               viewBox={`0 0 ${VW} ${VH}`}
               width="100%"
-              height="140"
+              height="160"
               preserveAspectRatio="none"
               overflow="visible"
               style={{ display: 'block', overflow: 'visible' }}
@@ -304,12 +310,9 @@ const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
                 </g>
               ))}
 
-              {/* Area fill */}
-              <polygon points={areaPoints} fill="rgba(232,87,36,0.10)" />
-
               {/* Line */}
-              <polyline
-                points={sparkPoints}
+              <path
+                d={smoothLinePath}
                 fill="none"
                 stroke="#e85724"
                 strokeWidth="1.5"
@@ -349,7 +352,7 @@ const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
               <div style={{
                 position: 'absolute',
                 left: `${(pts[hoveredPoint][0] / VW) * 100}%`,
-                top: `${(pts[hoveredPoint][1] / VH) * 140}px`,
+                top: `${(pts[hoveredPoint][1] / VH) * 160}px`,
                 transform: 'translate(-50%, -140%)',
                 background: 'rgba(20,20,20,0.92)',
                 color: '#ffffff',
@@ -513,7 +516,7 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     const yearMap = {};
     records.forEach(r => {
       const yr = Math.floor(r.year);
-      if (yr > 0) yearMap[yr] = (yearMap[yr] || 0) + r.credits;
+      if (yr > 0 && yr <= 2025) yearMap[yr] = (yearMap[yr] || 0) + r.credits;
     });
     const yearlyTrend = Object.entries(yearMap)
       .map(([y, c]) => ({ year: parseInt(y), credits: c }))

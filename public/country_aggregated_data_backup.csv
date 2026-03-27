@@ -207,6 +207,276 @@ ACR,United States,Waste to energy,2014.0,278098
 ACR,United States,Waste to energy,2015.0,470530
 ACR,United States,Wastewater treatment,2008.0,100000
 ACR,United States,Wastewater treatment,2019.0,11295
+ARB,United States,Soil & Livestock,2007.0,16834
+ARB,United States,Soil & Livestock,2008.0,7
+ARB,United States,Soil & Livestock,2009.0,19750
+ARB,United States,Soil & Livestock,2010.0,126499
+ARB,United States,Soil & Livestock,2011.0,279239
+ARB,United States,Soil & Livestock,2012.0,348882
+ARB,United States,Soil & Livestock,2013.0,550902
+ARB,United States,Soil & Livestock,2014.0,792806
+ARB,United States,Soil & Livestock,2015.0,959364
+ARB,United States,Soil & Livestock,2016.0,1166696
+ARB,United States,Soil & Livestock,2017.0,1158511
+ARB,United States,Soil & Livestock,2018.0,1025466
+ARB,United States,Soil & Livestock,2019.0,1001108
+ARB,United States,Soil & Livestock,2020.0,770208
+ARB,United States,Soil & Livestock,2021.0,520078
+ARB,United States,Soil & Livestock,2022.0,430742
+ARB,United States,Soil & Livestock,2023.0,361786
+ARB,United States,Soil & Livestock,2024.0,136952
+ARB,United States,Forest management,2004.0,9602
+ARB,United States,Forest management,2005.0,188025
+ARB,United States,Forest management,2006.0,296706
+ARB,United States,Forest management,2007.0,2976009
+ARB,United States,Forest management,2008.0,1241585
+ARB,United States,Forest management,2009.0,940220
+ARB,United States,Forest management,2010.0,1526633
+ARB,United States,Forest management,2011.0,2650606
+ARB,United States,Forest management,2012.0,1753177
+ARB,United States,Forest management,2013.0,5400641
+ARB,United States,Forest management,2014.0,11084831
+ARB,United States,Forest management,2015.0,15713220
+ARB,United States,Forest management,2016.0,48639658
+ARB,United States,Forest management,2017.0,35754491
+ARB,United States,Forest management,2018.0,26256701
+ARB,United States,Forest management,2019.0,29793198
+ARB,United States,Forest management,2020.0,11974666
+ARB,United States,Forest management,2021.0,12085469
+ARB,United States,Forest management,2022.0,6572556
+ARB,United States,Forest management,2023.0,7102605
+ARB,United States,Forest management,2024.0,7225851
+ARB,United States,Forest management,2025.0,24582
+ARB,United States,Fossil gas leaks,2006.0,90135
+ARB,United States,Fossil gas leaks,2007.0,29266
+ARB,United States,Fossil gas leaks,2008.0,68452
+ARB,United States,Fossil gas leaks,2009.0,884871
+ARB,United States,Fossil gas leaks,2010.0,120324
+ARB,United States,Fossil gas leaks,2011.0,221106
+ARB,United States,Fossil gas leaks,2012.0,227218
+ARB,United States,Fossil gas leaks,2013.0,472326
+ARB,United States,Fossil gas leaks,2014.0,1046653
+ARB,United States,Fossil gas leaks,2015.0,413493
+ARB,United States,Fossil gas leaks,2016.0,1073406
+ARB,United States,Fossil gas leaks,2017.0,1026208
+ARB,United States,Fossil gas leaks,2018.0,976242
+ARB,United States,Fossil gas leaks,2019.0,776506
+ARB,United States,Fossil gas leaks,2020.0,996501
+ARB,United States,Fossil gas leaks,2021.0,1740132
+ARB,United States,Fossil gas leaks,2022.0,2264800
+ARB,United States,Fossil gas leaks,2023.0,3449267
+ARB,United States,Fossil gas leaks,2024.0,4279389
+ARB,United States,Fossil gas leaks,2025.0,2595031
+ARB,United States,Industrial efficiency,2010.0,916844
+ARB,United States,Industrial efficiency,2011.0,2173459
+ARB,United States,Industrial efficiency,2012.0,2736536
+ARB,United States,Industrial efficiency,2013.0,1990597
+ARB,United States,Industrial efficiency,2014.0,1829677
+ARB,United States,Industrial efficiency,2015.0,1814707
+ARB,United States,Industrial efficiency,2016.0,2489208
+ARB,United States,Industrial efficiency,2017.0,2627943
+ARB,United States,Industrial efficiency,2018.0,2767227
+ARB,United States,Industrial efficiency,2019.0,2622819
+ARB,United States,Industrial efficiency,2020.0,1547792
+ARB,United States,Industrial efficiency,2021.0,1277761
+ARB,United States,Industrial efficiency,2022.0,681895
+ARB,United States,Industrial efficiency,2023.0,450209
+ARB,United States,Industrial efficiency,2024.0,853863
+ARB,United States,Industrial efficiency,2025.0,97359
+CAR,Mexico,Soil & Livestock,2011.0,575
+CAR,Mexico,Forest management,2014.0,934
+CAR,Mexico,Forest management,2015.0,6495
+CAR,Mexico,Forest management,2016.0,12828
+CAR,Mexico,Forest management,2017.0,14635
+CAR,Mexico,Forest management,2018.0,62544
+CAR,Mexico,Forest management,2019.0,155704
+CAR,Mexico,Forest management,2020.0,526250
+CAR,Mexico,Forest management,2021.0,2274599
+CAR,Mexico,Forest management,2022.0,5127807
+CAR,Mexico,Forest management,2023.0,5496871
+CAR,Mexico,Forest management,2024.0,3566469
+CAR,Mexico,Forest management,2025.0,937114
+CAR,Mexico,Landfill gas,2016.0,8230
+CAR,Mexico,Landfill gas,2017.0,9376
+CAR,Mexico,Landfill gas,2018.0,12267
+CAR,Mexico,Landfill gas,2019.0,10848
+CAR,Mexico,Landfill gas,2020.0,15042
+CAR,Mexico,Landfill gas,2021.0,20172
+CAR,Mexico,Landfill gas,2022.0,100850
+CAR,Mexico,Landfill gas,2023.0,140907
+CAR,Mexico,Landfill gas,2024.0,130886
+CAR,United States,Soil & Livestock,2007.0,35807
+CAR,United States,Soil & Livestock,2008.0,35468
+CAR,United States,Soil & Livestock,2009.0,142645
+CAR,United States,Soil & Livestock,2010.0,298048
+CAR,United States,Soil & Livestock,2011.0,404708
+CAR,United States,Soil & Livestock,2012.0,493365
+CAR,United States,Soil & Livestock,2013.0,734768
+CAR,United States,Soil & Livestock,2014.0,824136
+CAR,United States,Soil & Livestock,2015.0,783320
+CAR,United States,Soil & Livestock,2016.0,1027844
+CAR,United States,Soil & Livestock,2017.0,1010942
+CAR,United States,Soil & Livestock,2018.0,914263
+CAR,United States,Soil & Livestock,2019.0,880455
+CAR,United States,Soil & Livestock,2020.0,745709
+CAR,United States,Soil & Livestock,2021.0,683916
+CAR,United States,Soil & Livestock,2022.0,781556
+CAR,United States,Soil & Livestock,2023.0,757973
+CAR,United States,Soil & Livestock,2024.0,320400
+CAR,United States,Soil & Livestock,2025.0,101914
+CAR,United States,Composting,2008.0,6554
+CAR,United States,Composting,2009.0,27751
+CAR,United States,Composting,2010.0,45940
+CAR,United States,Composting,2011.0,52011
+CAR,United States,Composting,2012.0,87807
+CAR,United States,Composting,2013.0,122509
+CAR,United States,Composting,2014.0,96601
+CAR,United States,Composting,2015.0,88201
+CAR,United States,Composting,2016.0,38243
+CAR,United States,Composting,2017.0,44351
+CAR,United States,Composting,2018.0,33724
+CAR,United States,Composting,2019.0,9035
+CAR,United States,Composting,2020.0,53502
+CAR,United States,Composting,2021.0,48192
+CAR,United States,Composting,2022.0,64392
+CAR,United States,Composting,2023.0,80087
+CAR,United States,Composting,2024.0,58745
+CAR,United States,Forest management,2002.0,7293
+CAR,United States,Forest management,2003.0,17942
+CAR,United States,Forest management,2004.0,67124
+CAR,United States,Forest management,2005.0,263908
+CAR,United States,Forest management,2006.0,384846
+CAR,United States,Forest management,2007.0,3164845
+CAR,United States,Forest management,2008.0,1591844
+CAR,United States,Forest management,2009.0,1323586
+CAR,United States,Forest management,2010.0,2285602
+CAR,United States,Forest management,2011.0,2366605
+CAR,United States,Forest management,2012.0,1820062
+CAR,United States,Forest management,2013.0,4577382
+CAR,United States,Forest management,2014.0,4817581
+CAR,United States,Forest management,2015.0,7608173
+CAR,United States,Forest management,2016.0,9721339
+CAR,United States,Forest management,2017.0,9485656
+CAR,United States,Forest management,2018.0,15026583
+CAR,United States,Forest management,2019.0,13251088
+CAR,United States,Forest management,2020.0,5584037
+CAR,United States,Forest management,2021.0,6322796
+CAR,United States,Forest management,2022.0,4057217
+CAR,United States,Forest management,2023.0,3249919
+CAR,United States,Forest management,2024.0,3466923
+CAR,United States,Fossil gas leaks,2009.0,21902
+CAR,United States,Fossil gas leaks,2010.0,82977
+CAR,United States,Fossil gas leaks,2011.0,123555
+CAR,United States,Fossil gas leaks,2012.0,150216
+CAR,United States,Fossil gas leaks,2013.0,323685
+CAR,United States,Fossil gas leaks,2014.0,507105
+CAR,United States,Fossil gas leaks,2015.0,189455
+CAR,United States,Fossil gas leaks,2016.0,234621
+CAR,United States,Fossil gas leaks,2017.0,320214
+CAR,United States,Fossil gas leaks,2018.0,283656
+CAR,United States,Fossil gas leaks,2019.0,193290
+CAR,United States,Fossil gas leaks,2020.0,182382
+CAR,United States,Fossil gas leaks,2021.0,346846
+CAR,United States,Fossil gas leaks,2022.0,261720
+CAR,United States,Fossil gas leaks,2023.0,329027
+CAR,United States,Fossil gas leaks,2024.0,564108
+CAR,United States,Fossil gas leaks,2025.0,2013186
+CAR,United States,Industrial efficiency,2009.0,683087
+CAR,United States,Industrial efficiency,2010.0,3077340
+CAR,United States,Industrial efficiency,2011.0,3546904
+CAR,United States,Industrial efficiency,2012.0,2556723
+CAR,United States,Industrial efficiency,2013.0,1227591
+CAR,United States,Industrial efficiency,2014.0,1123204
+CAR,United States,Industrial efficiency,2015.0,883728
+CAR,United States,Industrial efficiency,2016.0,1076515
+CAR,United States,Industrial efficiency,2017.0,1741726
+CAR,United States,Industrial efficiency,2018.0,1674225
+CAR,United States,Industrial efficiency,2019.0,293757
+CAR,United States,Industrial efficiency,2020.0,570630
+CAR,United States,Industrial efficiency,2021.0,2403325
+CAR,United States,Industrial efficiency,2022.0,4650653
+CAR,United States,Industrial efficiency,2023.0,5275446
+CAR,United States,Industrial efficiency,2024.0,5911034
+CAR,United States,Industrial efficiency,2025.0,4497581
+CAR,United States,Landfill gas,2003.0,23089
+CAR,United States,Landfill gas,2004.0,39724
+CAR,United States,Landfill gas,2005.0,109181
+CAR,United States,Landfill gas,2006.0,154539
+CAR,United States,Landfill gas,2007.0,196273
+CAR,United States,Landfill gas,2008.0,985090
+CAR,United States,Landfill gas,2009.0,2219431
+CAR,United States,Landfill gas,2010.0,3917039
+CAR,United States,Landfill gas,2011.0,4503675
+CAR,United States,Landfill gas,2012.0,4099390
+CAR,United States,Landfill gas,2013.0,3443630
+CAR,United States,Landfill gas,2014.0,2862632
+CAR,United States,Landfill gas,2015.0,2603964
+CAR,United States,Landfill gas,2016.0,2207844
+CAR,United States,Landfill gas,2017.0,2256155
+CAR,United States,Landfill gas,2018.0,2325511
+CAR,United States,Landfill gas,2019.0,2214914
+CAR,United States,Landfill gas,2020.0,2414175
+CAR,United States,Landfill gas,2021.0,2607948
+CAR,United States,Landfill gas,2022.0,2919802
+CAR,United States,Landfill gas,2023.0,2704118
+CAR,United States,Landfill gas,2024.0,1614486
+CAR,United States,Landfill gas,2025.0,19907
+CAR,United States,Nitric acid,2008.0,106064
+CAR,United States,Nitric acid,2009.0,487045
+CAR,United States,Nitric acid,2010.0,1233760
+CAR,United States,Nitric acid,2011.0,1858067
+CAR,United States,Nitric acid,2012.0,2239193
+CAR,United States,Nitric acid,2013.0,1497340
+CAR,United States,Nitric acid,2014.0,1243351
+CAR,United States,Nitric acid,2015.0,1190142
+CAR,United States,Nitric acid,2016.0,1193156
+CAR,United States,Nitric acid,2017.0,1151792
+CAR,United States,Nitric acid,2018.0,1003570
+CAR,United States,Nitric acid,2019.0,1183399
+CAR,United States,Nitric acid,2020.0,1436765
+CAR,United States,Nitric acid,2021.0,1448129
+CAR,United States,Nitric acid,2022.0,1466181
+CAR,United States,Nitric acid,2023.0,1692482
+CAR,United States,Nitric acid,2024.0,1250880
+CAR,United States,Nitric acid,2025.0,710641
+CAR,United States,Rewilding,2002.0,5672
+CAR,United States,Rewilding,2003.0,10732
+CAR,United States,Rewilding,2004.0,43380
+CAR,United States,Rewilding,2005.0,58815
+CAR,United States,Rewilding,2006.0,58815
+CAR,United States,Rewilding,2007.0,59124
+CAR,United States,Rewilding,2008.0,100016
+CAR,United States,Rewilding,2009.0,105184
+CAR,United States,Rewilding,2010.0,219538
+CAR,United States,Rewilding,2011.0,312178
+CAR,United States,Rewilding,2012.0,289545
+CAR,United States,Rewilding,2013.0,166436
+CAR,United States,Rewilding,2014.0,52409
+CAR,United States,Rewilding,2015.0,129468
+CAR,United States,Rewilding,2016.0,107457
+CAR,United States,Rewilding,2017.0,127881
+CAR,United States,Rewilding,2018.0,131460
+CAR,United States,Rewilding,2019.0,89439
+CAR,United States,Rewilding,2020.0,89249
+CAR,United States,Rewilding,2021.0,92404
+CAR,United States,Rewilding,2022.0,125839
+CAR,United States,Rewilding,2023.0,92258
+CAR,United States,Rewilding,2024.0,34561
+CAR,United States,Rewilding,2025.0,2617
+CAR,United States,Waste to energy,2008.0,25599
+CAR,United States,Waste to energy,2009.0,18858
+CAR,United States,Waste to energy,2013.0,19515
+CAR,United States,Waste to energy,2014.0,19980
+CAR,United States,Waste to energy,2015.0,18798
+CAR,United States,Waste to energy,2016.0,16249
+CAR,United States,Waste to energy,2017.0,11806
+CAR,United States,Waste to energy,2018.0,14823
+CAR,United States,Waste to energy,2019.0,18159
+CAR,United States,Waste to energy,2020.0,19959
+CAR,United States,Waste to energy,2021.0,18652
+CAR,United States,Waste to energy,2022.0,22257
+CAR,United States,Waste to energy,2023.0,33085
+CAR,United States,Waste to energy,2024.0,22770
 Gold Standard,Argentina,Mixed renewables,2019.0,9108
 Gold Standard,Argentina,Mixed renewables,2020.0,18326
 Gold Standard,Argentina,Mixed renewables,2021.0,19198
@@ -2195,10 +2465,10 @@ Verra,China,Mixed renewables,2014.0,6078634
 Verra,China,Mixed renewables,2015.0,7102067
 Verra,China,Mixed renewables,2016.0,8767603
 Verra,China,Mixed renewables,2017.0,11031691
-Verra,China,Mixed renewables,2018.0,6736294
-Verra,China,Mixed renewables,2019.0,5198847
-Verra,China,Mixed renewables,2020.0,2937124
-Verra,China,Mixed renewables,2021.0,1763575
+Verra,China,Mixed renewables,2018.0,7996294
+Verra,China,Mixed renewables,2019.0,6398847
+Verra,China,Mixed renewables,2020.0,4257124
+Verra,China,Mixed renewables,2021.0,2543575
 Verra,China,Mixed renewables,2022.0,1062225
 Verra,China,Mixed renewables,2023.0,356097
 Verra,China,Mixed renewables,2024.0,130914
@@ -3766,13 +4036,13 @@ Verra,Zimbabwe,Mixed renewables,2020.0,1
 Verra,Zimbabwe,Mixed renewables,2021.0,239628
 Verra,Zimbabwe,Mixed renewables,2022.0,1011452
 Verra,Zimbabwe,Mixed renewables,2023.0,195456
-Verra,China,Rice cultivation,2018.0,3780000
-Verra,China,Rice cultivation,2019.0,3600000
-Verra,China,Rice cultivation,2020.0,3960000
-Verra,China,Rice cultivation,2021.0,2340000
-Verra,India,Public transit,2020.0,348
-Verra,India,Public transit,2021.0,12216
-Verra,India,Public transit,2022.0,8799
+Verra,China,Rice cultivation,2018.0,2520000
+Verra,China,Rice cultivation,2019.0,2400000
+Verra,China,Rice cultivation,2020.0,2640000
+Verra,China,Rice cultivation,2021.0,1560000
+Verra,India,Public transit,2020.0,232
+Verra,India,Public transit,2021.0,8144
+Verra,India,Public transit,2022.0,5866
 Gold Standard,Australia,Afforestation/Reforestation,2009.0,2808
 Gold Standard,Australia,Afforestation/Reforestation,2010.0,9355
 Gold Standard,Australia,Afforestation/Reforestation,2011.0,15952
@@ -4710,197 +4980,3 @@ Gold Standard,Zambia,Hydropower,2012.0,1122
 Gold Standard,Zimbabwe,Efficient appliances,2021.0,8371
 Gold Standard,Zimbabwe,Efficient appliances,2022.0,452875
 Gold Standard,Zimbabwe,Efficient appliances,2023.0,1029511
-CAR,MX,Forest management,2014.0,934
-CAR,MX,Forest management,2015.0,6495
-CAR,MX,Forest management,2016.0,12828
-CAR,MX,Forest management,2017.0,14635
-CAR,MX,Forest management,2018.0,62544
-CAR,MX,Forest management,2019.0,155704
-CAR,MX,Forest management,2020.0,526250
-CAR,MX,Forest management,2021.0,2274599
-CAR,MX,Forest management,2022.0,5127807
-CAR,MX,Forest management,2023.0,5496871
-CAR,MX,Forest management,2024.0,3566469
-CAR,MX,Forest management,2025.0,937114
-CAR,MX,Landfill gas,2016.0,8230
-CAR,MX,Landfill gas,2017.0,9376
-CAR,MX,Landfill gas,2018.0,12267
-CAR,MX,Landfill gas,2019.0,10848
-CAR,MX,Landfill gas,2020.0,15042
-CAR,MX,Landfill gas,2021.0,20172
-CAR,MX,Landfill gas,2022.0,100850
-CAR,MX,Landfill gas,2023.0,140907
-CAR,MX,Landfill gas,2024.0,130886
-CAR,MX,Soil & Livestock,2011.0,575
-CAR,US,Composting,2008.0,6554
-CAR,US,Composting,2009.0,27751
-CAR,US,Composting,2010.0,45940
-CAR,US,Composting,2011.0,52011
-CAR,US,Composting,2012.0,87807
-CAR,US,Composting,2013.0,122509
-CAR,US,Composting,2014.0,96601
-CAR,US,Composting,2015.0,88201
-CAR,US,Composting,2016.0,38243
-CAR,US,Composting,2017.0,44351
-CAR,US,Composting,2018.0,33724
-CAR,US,Composting,2019.0,9035
-CAR,US,Composting,2020.0,53502
-CAR,US,Composting,2021.0,48192
-CAR,US,Composting,2022.0,64392
-CAR,US,Composting,2023.0,80087
-CAR,US,Composting,2024.0,58745
-CAR,US,Forest management,2002.0,7293
-CAR,US,Forest management,2003.0,17942
-CAR,US,Forest management,2004.0,67124
-CAR,US,Forest management,2005.0,263908
-CAR,US,Forest management,2006.0,384846
-CAR,US,Forest management,2007.0,3164845
-CAR,US,Forest management,2008.0,1591844
-CAR,US,Forest management,2009.0,1323586
-CAR,US,Forest management,2010.0,2285602
-CAR,US,Forest management,2011.0,2366605
-CAR,US,Forest management,2012.0,1820062
-CAR,US,Forest management,2013.0,4577382
-CAR,US,Forest management,2014.0,4817581
-CAR,US,Forest management,2015.0,7608173
-CAR,US,Forest management,2016.0,9721339
-CAR,US,Forest management,2017.0,9485656
-CAR,US,Forest management,2018.0,15026583
-CAR,US,Forest management,2019.0,13251088
-CAR,US,Forest management,2020.0,5584037
-CAR,US,Forest management,2021.0,6322796
-CAR,US,Forest management,2022.0,4057217
-CAR,US,Forest management,2023.0,3249919
-CAR,US,Forest management,2024.0,3466923
-CAR,US,Fossil gas leaks,2009.0,21902
-CAR,US,Fossil gas leaks,2010.0,82977
-CAR,US,Fossil gas leaks,2011.0,123555
-CAR,US,Fossil gas leaks,2012.0,150216
-CAR,US,Fossil gas leaks,2013.0,323685
-CAR,US,Fossil gas leaks,2014.0,507105
-CAR,US,Fossil gas leaks,2015.0,189455
-CAR,US,Fossil gas leaks,2016.0,234621
-CAR,US,Fossil gas leaks,2017.0,320214
-CAR,US,Fossil gas leaks,2018.0,283656
-CAR,US,Fossil gas leaks,2019.0,193290
-CAR,US,Fossil gas leaks,2020.0,182382
-CAR,US,Fossil gas leaks,2021.0,346846
-CAR,US,Fossil gas leaks,2022.0,261720
-CAR,US,Fossil gas leaks,2023.0,329027
-CAR,US,Fossil gas leaks,2024.0,564108
-CAR,US,Fossil gas leaks,2025.0,2013186
-CAR,US,Industrial efficiency,2009.0,683087
-CAR,US,Industrial efficiency,2010.0,3077340
-CAR,US,Industrial efficiency,2011.0,3546904
-CAR,US,Industrial efficiency,2012.0,2556723
-CAR,US,Industrial efficiency,2013.0,1227591
-CAR,US,Industrial efficiency,2014.0,1123204
-CAR,US,Industrial efficiency,2015.0,883728
-CAR,US,Industrial efficiency,2016.0,1076515
-CAR,US,Industrial efficiency,2017.0,1741726
-CAR,US,Industrial efficiency,2018.0,1674225
-CAR,US,Industrial efficiency,2019.0,293757
-CAR,US,Industrial efficiency,2020.0,570630
-CAR,US,Industrial efficiency,2021.0,2403325
-CAR,US,Industrial efficiency,2022.0,4650653
-CAR,US,Industrial efficiency,2023.0,5275446
-CAR,US,Industrial efficiency,2024.0,5911034
-CAR,US,Industrial efficiency,2025.0,4497581
-CAR,US,Landfill gas,2003.0,23089
-CAR,US,Landfill gas,2004.0,39724
-CAR,US,Landfill gas,2005.0,109181
-CAR,US,Landfill gas,2006.0,154539
-CAR,US,Landfill gas,2007.0,196273
-CAR,US,Landfill gas,2008.0,985090
-CAR,US,Landfill gas,2009.0,2219431
-CAR,US,Landfill gas,2010.0,3917039
-CAR,US,Landfill gas,2011.0,4503675
-CAR,US,Landfill gas,2012.0,4099390
-CAR,US,Landfill gas,2013.0,3443630
-CAR,US,Landfill gas,2014.0,2862632
-CAR,US,Landfill gas,2015.0,2603964
-CAR,US,Landfill gas,2016.0,2207844
-CAR,US,Landfill gas,2017.0,2256155
-CAR,US,Landfill gas,2018.0,2325511
-CAR,US,Landfill gas,2019.0,2214914
-CAR,US,Landfill gas,2020.0,2414175
-CAR,US,Landfill gas,2021.0,2607948
-CAR,US,Landfill gas,2022.0,2919802
-CAR,US,Landfill gas,2023.0,2704118
-CAR,US,Landfill gas,2024.0,1614486
-CAR,US,Landfill gas,2025.0,19907
-CAR,US,Nitric acid,2008.0,106064
-CAR,US,Nitric acid,2009.0,487045
-CAR,US,Nitric acid,2010.0,1233760
-CAR,US,Nitric acid,2011.0,1858067
-CAR,US,Nitric acid,2012.0,2239193
-CAR,US,Nitric acid,2013.0,1497340
-CAR,US,Nitric acid,2014.0,1243351
-CAR,US,Nitric acid,2015.0,1190142
-CAR,US,Nitric acid,2016.0,1193156
-CAR,US,Nitric acid,2017.0,1151792
-CAR,US,Nitric acid,2018.0,1003570
-CAR,US,Nitric acid,2019.0,1183399
-CAR,US,Nitric acid,2020.0,1436765
-CAR,US,Nitric acid,2021.0,1448129
-CAR,US,Nitric acid,2022.0,1466181
-CAR,US,Nitric acid,2023.0,1692482
-CAR,US,Nitric acid,2024.0,1250880
-CAR,US,Nitric acid,2025.0,710641
-CAR,US,Rewilding,2002.0,5672
-CAR,US,Rewilding,2003.0,10732
-CAR,US,Rewilding,2004.0,43380
-CAR,US,Rewilding,2005.0,58815
-CAR,US,Rewilding,2006.0,58815
-CAR,US,Rewilding,2007.0,59124
-CAR,US,Rewilding,2008.0,100016
-CAR,US,Rewilding,2009.0,105184
-CAR,US,Rewilding,2010.0,219538
-CAR,US,Rewilding,2011.0,312178
-CAR,US,Rewilding,2012.0,289545
-CAR,US,Rewilding,2013.0,166436
-CAR,US,Rewilding,2014.0,52409
-CAR,US,Rewilding,2015.0,129468
-CAR,US,Rewilding,2016.0,107457
-CAR,US,Rewilding,2017.0,127881
-CAR,US,Rewilding,2018.0,131460
-CAR,US,Rewilding,2019.0,89439
-CAR,US,Rewilding,2020.0,89249
-CAR,US,Rewilding,2021.0,92404
-CAR,US,Rewilding,2022.0,125839
-CAR,US,Rewilding,2023.0,92258
-CAR,US,Rewilding,2024.0,34561
-CAR,US,Rewilding,2025.0,2617
-CAR,US,Soil & Livestock,2007.0,35807
-CAR,US,Soil & Livestock,2008.0,35468
-CAR,US,Soil & Livestock,2009.0,142645
-CAR,US,Soil & Livestock,2010.0,298048
-CAR,US,Soil & Livestock,2011.0,404708
-CAR,US,Soil & Livestock,2012.0,493365
-CAR,US,Soil & Livestock,2013.0,734768
-CAR,US,Soil & Livestock,2014.0,824136
-CAR,US,Soil & Livestock,2015.0,783320
-CAR,US,Soil & Livestock,2016.0,1027844
-CAR,US,Soil & Livestock,2017.0,1010942
-CAR,US,Soil & Livestock,2018.0,914263
-CAR,US,Soil & Livestock,2019.0,880455
-CAR,US,Soil & Livestock,2020.0,745709
-CAR,US,Soil & Livestock,2021.0,683916
-CAR,US,Soil & Livestock,2022.0,781556
-CAR,US,Soil & Livestock,2023.0,757973
-CAR,US,Soil & Livestock,2024.0,320400
-CAR,US,Soil & Livestock,2025.0,101914
-CAR,US,Waste to energy,2008.0,25599
-CAR,US,Waste to energy,2009.0,18858
-CAR,US,Waste to energy,2013.0,19515
-CAR,US,Waste to energy,2014.0,19980
-CAR,US,Waste to energy,2015.0,18798
-CAR,US,Waste to energy,2016.0,16249
-CAR,US,Waste to energy,2017.0,11806
-CAR,US,Waste to energy,2018.0,14823
-CAR,US,Waste to energy,2019.0,18159
-CAR,US,Waste to energy,2020.0,19959
-CAR,US,Waste to energy,2021.0,18652
-CAR,US,Waste to energy,2022.0,22257
-CAR,US,Waste to energy,2023.0,33085
-CAR,US,Waste to energy,2024.0,22770
