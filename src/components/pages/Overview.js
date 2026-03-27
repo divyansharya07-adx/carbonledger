@@ -17,7 +17,7 @@ const Overview = ({ data, selectedActivity, setSelectedActivity, setActivePage, 
         onReset={onReset}
       />
       <GlobalMap data={data} selectedActivity={selectedActivity} onCountryClick={onCountryClick} />
-      <InsightCards data={data} selectedActivity={selectedActivity} />
+      <InsightCards data={data} selectedActivity={selectedActivity} activeGroup={activeGroup} />
       <TopCountries
         data={data}
         selectedActivity={selectedActivity}
