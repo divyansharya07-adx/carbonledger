@@ -32,11 +32,17 @@ const TopCountries = ({ data, selectedActivity, onNavigateCountry }) => {
               <div className="country-bar-bg">
                 <div className="country-bar-fill" style={{ width: `${pct}%` }} />
               </div>
-              <div style={{ textAlign: 'right', whiteSpace: 'nowrap', fontSize: '13px', fontWeight: 400 }}>
-                {formatCredits(country.credits)}
+              <div className="cl-tooltip-wrap">
+                <div style={{ textAlign: 'right', whiteSpace: 'nowrap', fontSize: '13px', fontWeight: 400 }}>
+                  {formatCredits(country.credits)}
+                </div>
+                <span className="cl-tooltip">Credits issued</span>
               </div>
-              <div style={{ textAlign: 'right', whiteSpace: 'nowrap', fontSize: '11px', color: 'var(--text-muted)', marginRight: '8px' }}>
-                {totalForDenom > 0 ? ((country.credits / totalForDenom) * 100).toFixed(1) + '%' : '0.0%'}
+              <div className="cl-tooltip-wrap">
+                <div style={{ textAlign: 'right', whiteSpace: 'nowrap', fontSize: '11px', color: 'var(--text-muted)', marginRight: '8px' }}>
+                  {totalForDenom > 0 ? ((country.credits / totalForDenom) * 100).toFixed(1) + '%' : '0.0%'}
+                </div>
+                <span className="cl-tooltip">Credit share</span>
               </div>
             </div>
           );

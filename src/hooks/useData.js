@@ -18,6 +18,17 @@ const COUNTRY_NAME_MAP = {
   'Moldova, Republic of': 'Moldova',
   'US': 'United States',
   'MX': 'Mexico',
+  'DE': 'Germany',
+  'FR': 'France',
+  'NI': 'Nicaragua',
+  'SV': 'El Salvador',
+  'Lao': 'Laos',
+  'Bolivia Plurinational State of': 'Bolivia',
+  "C\u00f4te d'Ivoire": 'Ivory Coast',
+  "C\u221a\u00a5te d'Ivoire": 'Ivory Coast',
+  'Tanzania, United Republic of': 'Tanzania',
+  'Tanzania United Republic of': 'Tanzania',
+  'Tanzania, United Republic Of': 'Tanzania',
 };
 
 const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
@@ -63,7 +74,7 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
             year: parseFloat(r['Vintage Year']) || 0,
             credits: parseInt(r['Total Credits Issued']) || 0,
           }))
-          .filter((d) => d.registry && d.country && d.category && d.year > 0 && !EXCLUDED_CATEGORIES.includes(d.category));
+          .filter((d) => d.registry && d.country && d.country !== 'International' && d.category && d.year > 0 && !EXCLUDED_CATEGORIES.includes(d.category));
 
         setRawAgg(normalizeAgg);
         setRawCountry(normalizeCountry);

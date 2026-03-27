@@ -1880,3 +1880,32 @@ body {
     border-right: none;
   }
 }
+
+.cl-tooltip-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.cl-tooltip-wrap .cl-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  background: #333232;
+  color: #f5f0e7;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 100;
+}
+
+.cl-tooltip-wrap:hover .cl-tooltip {
+  visibility: visible;
+  opacity: 1;
+}

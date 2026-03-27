@@ -84,8 +84,14 @@ const ActivityIntelligence = ({ data, selectedActivity, setSelectedActivity, act
                   );
                 })}
               </div>
-              <div className="activity-credits" style={{ textAlign: 'right' }}>{formatCredits(totalActivityCredits)}</div>
-              <div style={{ textAlign: 'right', fontSize: 10, color: 'var(--text-muted)' }}>{sharePct}%</div>
+              <div className="cl-tooltip-wrap">
+                <div className="activity-credits" style={{ textAlign: 'right' }}>{formatCredits(totalActivityCredits)}</div>
+                <span className="cl-tooltip">Credits issued</span>
+              </div>
+              <div className="cl-tooltip-wrap">
+                <div style={{ textAlign: 'right', fontSize: 10, color: 'var(--text-muted)' }}>{sharePct}%</div>
+                <span className="cl-tooltip">Market share</span>
+              </div>
             </div>
           );
         })}
