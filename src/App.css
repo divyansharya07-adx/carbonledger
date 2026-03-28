@@ -1950,6 +1950,7 @@ body {
 
 /* ── Projects page ─────────────────────────────── */
 .projects-page { display:flex; flex-direction:column; height:100%; overflow:hidden; }
+.projects-loading { display:flex; align-items:center; justify-content:center; height:200px; color:var(--text-muted); font-size:0.9rem; }
 .projects-kpi-strip { display:grid; grid-template-columns:repeat(7,1fr); border-bottom:0.5px solid var(--border); flex-shrink:0; }
 .projects-toolbar { display:flex; align-items:center; gap:8px; padding:8px 16px; border-bottom:0.5px solid var(--border); flex-wrap:wrap; flex-shrink:0; }
 .projects-toolbar .search-input { margin-bottom: 0; }

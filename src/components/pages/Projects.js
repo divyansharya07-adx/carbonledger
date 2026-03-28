@@ -3,6 +3,7 @@ import { Search } from 'lucide-react';
 import { formatCredits, getGroup, GROUP_COLORS } from '../../utils/formatters';
 import ProjectsTable from '../panels/ProjectsTable';
 import ProjectDetailPanel from '../panels/ProjectDetailPanel';
+import useProjectsData from '../../hooks/useProjectsData';
 
 export const COUNTRY_FLAGS = {
   'Afghanistan': '🇦🇫', 'Albania': '🇦🇱', 'Algeria': '🇩🇿', 'Angola': '🇦🇴',
@@ -54,7 +55,7 @@ const PAGE_SIZE = 50;
 const retRateColor = (pct) => pct > 60 ? '#8cb73f' : pct > 30 ? '#e8a124' : '#e85724';
 
 const Projects = ({ data }) => {
-  const { projectsData } = data;
+  const { projectsData, projectsLoading } = useProjectsData();
 
   const [search, setSearch] = useState('');
   const [registryFilter, setRegistryFilter] = useState('all');
@@ -148,6 +149,10 @@ const Projects = ({ data }) => {
 
   const selectionActive = selectedIds.size > 0;
   const retRateC = retRateColor(kpi.retRate);
+
+  if (projectsLoading) {
+    return <div className="projects-loading">Loading projects...</div>;
+  }
 
   return (
     <div className="projects-page">

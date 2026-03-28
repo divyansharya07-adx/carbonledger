@@ -33,7 +33,6 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
   const [rawAgg, setRawAgg] = useState(null);
   const [rawCountry, setRawCountry] = useState(null);
   const [rawProjCounts, setRawProjCounts] = useState(null);
-  const [rawProjectsData, setRawProjectsData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -54,9 +53,8 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
       loadCSV(process.env.PUBLIC_URL + '/aggregated_data.csv'),
       loadCSV(process.env.PUBLIC_URL + '/country_aggregated_data.csv'),
       loadCSV(process.env.PUBLIC_URL + '/project_counts.csv'),
-      loadCSV(process.env.PUBLIC_URL + '/data/projects_data.csv'),
     ])
-      .then(([agg, country, projCounts, projects]) => {
+      .then(([agg, country, projCounts]) => {
         const normalizeAgg = agg
           .map((r) => ({
             registry: (r['Registry'] || '').trim(),
@@ -76,33 +74,9 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
           }))
           .filter((d) => d.registry && d.country && d.country !== 'International' && d.category && d.year > 0 && !EXCLUDED_CATEGORIES.includes(d.category));
 
-        const projectsData = projects.map((r) => ({
-          project_id: (r['project_id'] || '').trim(),
-          project_name: (r['project_name'] || '').trim(),
-          registry: (r['registry'] || '').trim(),
-          country: (r['country'] || '').trim() || null,
-          project_type: (r['project_type'] || '').trim() || null,
-          methodology: (r['methodology'] || '').trim() || null,
-          category: (r['category'] || '').trim() || null,
-          proponent: (r['proponent'] || '').trim() || null,
-          status: (r['status'] || '').trim() || null,
-          registration_date: (r['registration_date'] || '').trim() || null,
-          credits_issued: parseInt(r['credits_issued'], 10) || 0,
-          credits_retired: parseInt(r['credits_retired'], 10) || 0,
-          credits_remaining: parseInt(r['credits_remaining'], 10) || 0,
-          retirement_rate: parseFloat(r['retirement_rate']) || 0,
-          corsia_eligible: r['corsia_eligible'] === 'True' || r['corsia_eligible'] === 'true' || r['corsia_eligible'] === '1',
-          sdg_eligible: r['sdg_eligible'] === 'True' || r['sdg_eligible'] === 'true' || r['sdg_eligible'] === '1',
-          crediting_period_start: (r['crediting_period_start'] || '').trim() || null,
-          crediting_period_end: (r['crediting_period_end'] || '').trim() || null,
-          verification_body: (r['verification_body'] || '').trim() || null,
-          documents_url: (r['documents_url'] || '').trim() || null,
-        }));
-
         setRawAgg(normalizeAgg);
         setRawCountry(normalizeCountry);
         setRawProjCounts(projCounts);
-        setRawProjectsData(projectsData);
         setLoading(false);
       })
       .catch((err) => {
@@ -325,7 +299,6 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
     getActivityTrend,
     projectCountByCategory,
     totalProjectCount,
-    projectsData: rawProjectsData || [],
   };
 };
 
