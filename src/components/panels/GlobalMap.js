@@ -45,12 +45,23 @@ const GlobalMap = ({ data, selectedActivity, onCountryClick }) => {
   const containerRef = useRef(null);
   const [tooltip, setTooltip] = useState(null);
   const [worldData, setWorldData] = useState(null);
+  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     fetch(WORLD_TOPO_URL)
       .then(r => r.json())
       .then(d => setWorldData(d))
       .catch(err => console.error('Map data load error:', err));
+  }, []);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const ro = new ResizeObserver(entries => {
+      const { width, height } = entries[0].contentRect;
+      setContainerSize({ width, height });
+    });
+    ro.observe(containerRef.current);
+    return () => ro.disconnect();
   }, []);
 
   const countryCreditMap = useMemo(() => {
@@ -147,7 +158,7 @@ const GlobalMap = ({ data, selectedActivity, onCountryClick }) => {
           });
       });
     }
-  }, [worldData, data, selectedActivity, maxCredits, countryCreditMap, onCountryClick]);
+  }, [worldData, data, selectedActivity, maxCredits, countryCreditMap, onCountryClick, containerSize]);
 
   return (
     <div className="map-panel overview-map">
