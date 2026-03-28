@@ -2,9 +2,9 @@
 fix_data.py — CarbonLedger data correction script
 
 Applies six surgical fixes to aggregated_data.csv and country_aggregated_data.csv:
-  A) AMS-III.AU: move credits from 'Mixed renewables' → 'Rice cultivation' (Verra)
-  B) AMS-III.AK: move credits from 'Cleaner cooking' → 'Public transit' (Verra)
-  C) Rename project type 'Agriculture' → 'Soil & Livestock' in both CSVs
+  A) AMS-III.AU: move credits from 'Mixed renewables' ->'Rice cultivation' (Verra)
+  B) AMS-III.AK: move credits from 'Cleaner cooking' ->'Public transit' (Verra)
+  C) Rename project type 'Agriculture' ->'Soil & Livestock' in both CSVs
   D) Gold Standard unmapped rows: replace 'No Methodology Provided' with
      categorized rows derived from the raw Excel project type labels
 
@@ -15,6 +15,9 @@ Usage:
 Requires: pandas, openpyxl
 """
 
+import json
+import shutil
+
 import pandas as pd
 import re
 
@@ -23,7 +26,7 @@ AGG_CSV   = "public/aggregated_data.csv"
 CTRY_CSV  = "public/country_aggregated_data.csv"
 
 # ---------------------------------------------------------------------------
-# Gold Standard project-type → Project Type Category mapping
+# Gold Standard project-type ->Project Type Category mapping
 # ---------------------------------------------------------------------------
 def map_gold_project_type(pt):
     """Map a Gold Standard project type label to a Project Type Category."""
@@ -97,7 +100,7 @@ def main():
     vcus["qty"] = pd.to_numeric(vcus["Quantity Issued"], errors="coerce").fillna(0)
 
     # -----------------------------------------------------------------------
-    # SECTION A — AMS-III.AU: Mixed renewables → Rice cultivation (Verra)
+    # SECTION A — AMS-III.AU: Mixed renewables ->Rice cultivation (Verra)
     # -----------------------------------------------------------------------
     print("\n--- FIX A: AMS-III.AU ---")
     mask_au = vcus["Methodology"].astype(str).str.contains("AMS-III.AU", regex=False, na=False)
@@ -145,7 +148,7 @@ def main():
     print("  country_aggregated_data.csv updated.")
 
     # -----------------------------------------------------------------------
-    # SECTION B — AMS-III.AK: Cleaner cooking → Public transit (Verra)
+    # SECTION B — AMS-III.AK: Cleaner cooking ->Public transit (Verra)
     # -----------------------------------------------------------------------
     print("\n--- FIX B: AMS-III.AK ---")
     mask_ak = vcus["Methodology"].astype(str).str.strip() == "AMS-III.AK"
@@ -191,7 +194,7 @@ def main():
     print("  country_aggregated_data.csv updated.")
 
     # -----------------------------------------------------------------------
-    # SECTION C — Rename project type 'Agriculture' → 'Soil & Livestock'
+    # SECTION C — Rename project type 'Agriculture' ->'Soil & Livestock'
     # -----------------------------------------------------------------------
     print("\n--- FIX C: Agriculture -> Soil & Livestock ---")
     n_agg  = (agg[agg_col]  == "Agriculture").sum()
@@ -202,7 +205,7 @@ def main():
     print(f"  Renamed {n_ctry} rows in country_aggregated_data.csv")
 
     # -----------------------------------------------------------------------
-    # SECTION D — Gold Standard unmapped rows → categorized by project type
+    # SECTION D — Gold Standard unmapped rows ->categorized by project type
     # -----------------------------------------------------------------------
     print("\n--- FIX D: Gold Standard 'No Methodology Provided' ---")
     no_meth_count = (agg[agg_col] == "No Methodology Provided").sum()
@@ -282,7 +285,7 @@ def main():
     car_raw = car_raw[car_raw['qty'] > 0].copy()
     print(f"  CAR Issuances rows (positive credits): {len(car_raw):,}")
 
-    # Build protocol → category lookup from methodology_mapping.csv (Registry='CAR')
+    # Build protocol ->category lookup from methodology_mapping.csv (Registry='CAR')
     meth_map_f = pd.read_csv('public/methodology_mapping.csv', dtype=str).fillna('')
     car_lookup = {}
     for _, r in meth_map_f[meth_map_f['Registry'] == 'CAR'].iterrows():
@@ -378,8 +381,8 @@ def main():
     PROJECT_COUNTS_CSV = "public/project_counts.csv"
 
     meth_df = pd.read_csv(METH_MAP_CSV, dtype=str).fillna('')
-    code_to_cat = {}   # (registry, code) → category   — Verra, Gold
-    name_to_cat = {}   # (registry, name) → category   — ACR, CAR
+    code_to_cat = {}   # (registry, code) ->category   — Verra, Gold
+    name_to_cat = {}   # (registry, name) ->category   — ACR, CAR
     for _, r in meth_df.iterrows():
         reg  = r['Registry'].strip()
         code = r['Methodology Code'].strip()
@@ -512,6 +515,164 @@ def main():
 
     ag_leftover = agg[agg[agg_col] == "Agriculture"]
     print(f"'Agriculture' project type rows remaining: {len(ag_leftover)}")
+
+    # -----------------------------------------------------------------------
+    # SECTION G — Enrich CSVs with retirement data from projects_data.csv
+    # -----------------------------------------------------------------------
+    print("\n=== SECTION G: Retirement enrichment ===")
+
+    PROJECTS_CSV = "public/data/projects_data.csv"
+    AGG_BACKUP   = "public/aggregated_data_backup.csv"
+    CTRY_BACKUP  = "public/country_aggregated_data_backup.csv"
+    PC_BACKUP    = "public/project_counts_backup.csv"
+
+    # Back up all 3 CSVs
+    shutil.copy(AGG_CSV,            AGG_BACKUP)
+    shutil.copy(CTRY_CSV,           CTRY_BACKUP)
+    shutil.copy(PROJECT_COUNTS_CSV, PC_BACKUP)
+    print("  Backed up all 3 CSVs")
+
+    # Load projects_data.csv
+    proj = pd.read_csv(PROJECTS_CSV)
+    proj['credits_issued']    = pd.to_numeric(proj['credits_issued'],    errors='coerce').fillna(0)
+    proj['credits_retired']   = pd.to_numeric(proj['credits_retired'],   errors='coerce').fillna(0)
+    proj['credits_remaining'] = pd.to_numeric(proj['credits_remaining'], errors='coerce').fillna(0)
+    print(f"  Loaded projects_data.csv: {len(proj)} rows")
+
+    # ------------------------------------------------------------------
+    # ADDITION 1 — aggregated_data.csv: retirement per Registry+Category
+    # ------------------------------------------------------------------
+    ret_by_reg_cat = (
+        proj.groupby(['registry', 'category'])
+        .agg(
+            total_issued_proj=('credits_issued',  'sum'),
+            total_credits_retired=('credits_retired', 'sum'),
+        )
+        .reset_index()
+    )
+    ret_by_reg_cat['retirement_rate'] = (
+        ret_by_reg_cat['total_credits_retired']
+        / ret_by_reg_cat['total_issued_proj'].replace(0, float('nan'))
+        * 100
+    ).round(1).fillna(0)
+    ret_by_reg_cat = ret_by_reg_cat.rename(columns={
+        'registry': reg_col,
+        'category': agg_col,
+    })[[reg_col, agg_col, 'total_credits_retired', 'retirement_rate']]
+
+    for col in ['total_credits_retired', 'retirement_rate']:
+        if col in agg.columns:
+            agg = agg.drop(columns=[col])
+    agg = agg.merge(ret_by_reg_cat, on=[reg_col, agg_col], how='left')
+    agg['total_credits_retired'] = agg['total_credits_retired'].fillna(0).astype(int)
+    agg['retirement_rate']       = agg['retirement_rate'].fillna(0)
+    agg.to_csv(AGG_CSV, index=False)
+    print(f"  aggregated_data.csv: added total_credits_retired, retirement_rate ->{len(agg)} rows saved")
+
+    # ------------------------------------------------------------------
+    # ADDITION 2 — country_aggregated_data.csv: per-country stats + registry_breakdown
+    # ------------------------------------------------------------------
+    country_stats = (
+        proj.groupby('country')
+        .agg(
+            total_credits_issued=('credits_issued',    'sum'),
+            total_credits_retired=('credits_retired',  'sum'),
+            total_credits_remaining=('credits_remaining', 'sum'),
+        )
+        .reset_index()
+    )
+    country_stats['retirement_rate'] = (
+        country_stats['total_credits_retired']
+        / country_stats['total_credits_issued'].replace(0, float('nan'))
+        * 100
+    ).round(1).fillna(0)
+    country_stats = country_stats.rename(columns={'country': cty_col})
+
+    # Build per-country registry breakdown as JSON string
+    reg_breakdown = {}
+    for (country, registry), grp in proj.groupby(['country', 'registry']):
+        if country not in reg_breakdown:
+            reg_breakdown[country] = {}
+        reg_breakdown[country][registry] = {
+            'issued':   int(grp['credits_issued'].sum()),
+            'retired':  int(grp['credits_retired'].sum()),
+            'projects': int(len(grp)),
+        }
+    country_stats['registry_breakdown'] = country_stats[cty_col].map(
+        lambda c: json.dumps(reg_breakdown.get(c, {}))
+    )
+
+    for col in ['total_credits_issued', 'total_credits_retired', 'total_credits_remaining',
+                'retirement_rate', 'registry_breakdown']:
+        if col in ctry.columns:
+            ctry = ctry.drop(columns=[col])
+    ctry = ctry.merge(country_stats, on=cty_col, how='left')
+    ctry['total_credits_issued']    = ctry['total_credits_issued'].fillna(0).astype(int)
+    ctry['total_credits_retired']   = ctry['total_credits_retired'].fillna(0).astype(int)
+    ctry['total_credits_remaining'] = ctry['total_credits_remaining'].fillna(0).astype(int)
+    ctry['retirement_rate']         = ctry['retirement_rate'].fillna(0)
+    ctry['registry_breakdown']      = ctry['registry_breakdown'].fillna('{}')
+    ctry.to_csv(CTRY_CSV, index=False)
+    print(f"  country_aggregated_data.csv: added 5 columns (incl. registry_breakdown JSON) ->{len(ctry)} rows saved")
+
+    # ------------------------------------------------------------------
+    # ADDITION 3 — project_counts.csv: per-registry retirement stats
+    # ------------------------------------------------------------------
+    reg_stats = (
+        proj.groupby('registry')
+        .agg(
+            total_credits_issued=('credits_issued',    'sum'),
+            total_credits_retired=('credits_retired',  'sum'),
+            total_credits_remaining=('credits_remaining', 'sum'),
+            project_count=('project_id', 'count'),
+        )
+        .reset_index()
+    )
+    reg_stats['retirement_rate'] = (
+        reg_stats['total_credits_retired']
+        / reg_stats['total_credits_issued'].replace(0, float('nan'))
+        * 100
+    ).round(1).fillna(0)
+    reg_stats = reg_stats.rename(columns={'registry': reg_col})
+
+    for col in ['total_credits_issued', 'total_credits_retired', 'total_credits_remaining',
+                'retirement_rate', 'project_count']:
+        if col in project_counts_df.columns:
+            project_counts_df = project_counts_df.drop(columns=[col])
+    project_counts_df = project_counts_df.merge(reg_stats, on=reg_col, how='left')
+    project_counts_df['total_credits_issued']    = project_counts_df['total_credits_issued'].fillna(0).astype(int)
+    project_counts_df['total_credits_retired']   = project_counts_df['total_credits_retired'].fillna(0).astype(int)
+    project_counts_df['total_credits_remaining'] = project_counts_df['total_credits_remaining'].fillna(0).astype(int)
+    project_counts_df['retirement_rate']         = project_counts_df['retirement_rate'].fillna(0)
+    project_counts_df['project_count']           = project_counts_df['project_count'].fillna(0).astype(int)
+    project_counts_df.to_csv(PROJECT_COUNTS_CSV, index=False)
+    print(f"  project_counts.csv: added 5 columns ->{len(project_counts_df)} rows saved")
+
+    # ------------------------------------------------------------------
+    # Verification prints
+    # ------------------------------------------------------------------
+    print("\n--- SECTION G VERIFICATION ---")
+    global_issued  = proj['credits_issued'].sum()
+    global_retired = proj['credits_retired'].sum()
+    global_rate    = (global_retired / global_issued * 100) if global_issued > 0 else 0
+    print(f"1. Global retirement rate: {global_rate:.1f}%")
+
+    top3 = (
+        proj.groupby('country')['credits_retired']
+        .sum().sort_values(ascending=False).head(3)
+    )
+    print("2. Top 3 countries by credits_retired:")
+    for country, val in top3.items():
+        print(f"   {country}: {val:,.0f}")
+
+    print("3. Per-registry retirement rates:")
+    for _, row in reg_stats.iterrows():
+        print(f"   {row[reg_col]}: {row['retirement_rate']:.1f}%")
+
+    print("4. CSV column verification:")
+    for csv_path in [AGG_CSV, CTRY_CSV, PROJECT_COUNTS_CSV]:
+        cols = pd.read_csv(csv_path, nrows=0).columns.tolist()
+        print(f"   {csv_path}: {cols}")
 
 
 if __name__ == "__main__":
