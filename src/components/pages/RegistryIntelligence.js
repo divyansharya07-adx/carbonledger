@@ -22,7 +22,7 @@ const SPECIALTIES = {
   'Verra': 'Nature-based leader',
   'Gold Standard': 'Clean energy specialist',
   'ACR': 'Industrial systems focus',
-  'ARB': 'Compliance-grade registry',
+  'CAR': 'Climate Action Reserve',
 };
 
 const RegistryIntelligence = ({ data }) => {

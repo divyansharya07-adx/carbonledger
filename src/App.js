@@ -13,7 +13,7 @@ import useData from './hooks/useData';
 const LoadingSkeleton = () => (
   <div className="loading-shell">
     <div className="loading-sidebar" />
-    <div className="loading-main">
+    <div className="loading-main" style={{ height: 'calc(100vh - 58px)', padding: '0', overflow: 'hidden' }}>
       <div className="skeleton-bar" style={{ height: 44, marginBottom: 1 }} />
       <div className="skeleton-bar" style={{ height: 68, marginBottom: 1 }} />
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, flex: 1 }}>
@@ -29,7 +29,7 @@ const LoadingSkeleton = () => (
 );
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [activePage, setActivePage] = useState('overview');
   const [selectedRegistry, setSelectedRegistry] = useState('all');
   const [yearRange, setYearRange] = useState([1996, 2025]);

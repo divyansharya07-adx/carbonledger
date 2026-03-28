@@ -346,7 +346,7 @@ body {
 .pill.active[data-reg="verra"] { background: #029bd6; }
 .pill.active[data-reg="gold"] { background: #8cb73f; }
 .pill.active[data-reg="acr"] { background: #e85724; }
-.pill.active[data-reg="arb"] { background: #CCDF84; color: #0d0d12; }
+.pill.active[data-reg="car"] { background: #CCDF84; color: #0d0d12; }
 
 /* Year Range */
 .year-range-btn {
@@ -509,6 +509,7 @@ body {
   padding: 12px clamp(10px, 1.5vw, 20px) 0;
   position: relative;
   border-right: 0.5px solid var(--border);
+  min-height: 80px;
 }
 
 .kpi-item:last-child {

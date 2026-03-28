@@ -67,7 +67,6 @@ export const REGISTRY_COLORS = {
   'Verra': '#029bd6',
   'Gold Standard': '#8cb73f',
   'ACR': '#e85724',
-  'ARB': '#CCDF84',
   'CAR': '#CCDF84',
 };
 
