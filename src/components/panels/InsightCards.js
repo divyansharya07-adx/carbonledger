@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { formatCredits, getGroup, GROUP_COLORS } from '../../utils/formatters';
 
-const InsightCards = ({ data, selectedActivity, activeGroup }) => {
+const InsightCards = ({ data, selectedActivity }) => {
   const insights = useMemo(() => {
     if (!data) return [];
 
@@ -134,7 +134,7 @@ const InsightCards = ({ data, selectedActivity, activeGroup }) => {
           : <>No second country data.</>,
       },
     ];
-  }, [data, selectedActivity, activeGroup]);
+  }, [data, selectedActivity]);
 
   return (
     <div className="insights-panel overview-insights">
