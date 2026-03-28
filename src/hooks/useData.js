@@ -61,6 +61,7 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
             category: (r['Project Type Category'] || '').trim(),
             year: parseFloat(r['Vintage Year']) || 0,
             credits: parseInt(r['Total Credits Issued']) || 0,
+            creditsRetired: parseInt(r['total_credits_retired']) || 0,
           }))
           .filter((d) => d.registry && d.category && d.year > 0 && !EXCLUDED_CATEGORIES.includes(d.category));
 
@@ -236,6 +237,33 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
     [projectCountByCategory]
   );
 
+  const globalRetirementStats = useMemo(() => {
+    if (!rawProjCounts) return { globalRetirementRate: 0, globalCreditsRetired: 0 };
+    const seenReg = new Set();
+    let totalIssued = 0;
+    let totalRetired = 0;
+    rawProjCounts.forEach((row) => {
+      const reg = (row['Registry'] || '').trim();
+      if (!reg) return;
+      if (selectedRegistry && selectedRegistry !== 'all') {
+        const regLower = selectedRegistry.toLowerCase();
+        if (regLower === 'gold') { if (reg !== 'Gold Standard') return; }
+        else if (regLower === 'car') { if (reg !== 'CAR') return; }
+        else { if (reg.toLowerCase() !== regLower) return; }
+      }
+      // De-duplicate by Registry — values repeat once per category row
+      if (!seenReg.has(reg)) {
+        seenReg.add(reg);
+        totalIssued  += parseInt(row['total_credits_issued'],  10) || 0;
+        totalRetired += parseInt(row['total_credits_retired'], 10) || 0;
+      }
+    });
+    const globalRetirementRate = totalIssued > 0
+      ? Math.round(totalRetired / totalIssued * 1000) / 10
+      : 0;
+    return { globalRetirementRate, globalCreditsRetired: totalRetired };
+  }, [rawProjCounts, selectedRegistry]);
+
   // Country-specific data for country explorer
   const getCountryData = (countryName) => {
     if (!countryName || countryName === '🌍 Global') {
@@ -299,6 +327,8 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
     getActivityTrend,
     projectCountByCategory,
     totalProjectCount,
+    globalRetirementRate: globalRetirementStats.globalRetirementRate,
+    globalCreditsRetired: globalRetirementStats.globalCreditsRetired,
   };
 };
 

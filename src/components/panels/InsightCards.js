@@ -7,34 +7,38 @@ const InsightCards = ({ data, selectedActivity, activeGroup }) => {
 
     const { creditsByActivity, creditsByCountry, totalCredits, creditsByGroup, filteredAgg = [] } = data;
 
-    // Market concentration — filter-aware
-    const concAgg = selectedActivity
-      ? filteredAgg.filter(d => d.category === selectedActivity)
-      : activeGroup
-        ? filteredAgg.filter(d => getGroup(d.category) === activeGroup)
-        : filteredAgg;
+    // Retirement rate — authoritative from project_counts.csv (per-registry lifetime totals)
+    const retirementRate = data.globalRetirementRate ?? 0;
+    const totalRetired   = data.globalCreditsRetired ?? 0;
 
-    const regTotals = {};
-    concAgg.forEach(d => { regTotals[d.registry] = (regTotals[d.registry] || 0) + d.credits; });
-    const sortedRegs = Object.entries(regTotals).sort((a, b) => b[1] - a[1]);
-    const concTotal = concAgg.reduce((s, d) => s + d.credits, 0);
-    const top2Credits = (sortedRegs[0]?.[1] || 0) + (sortedRegs[1]?.[1] || 0);
-    const top2Pct = concTotal > 0 ? (top2Credits / concTotal * 100) : 0;
-    const top2Names = sortedRegs.length >= 2
-      ? `${sortedRegs[0][0]} + ${sortedRegs[1][0]}`
-      : sortedRegs[0]?.[0] || '';
-    const topRegPctVal = concTotal > 0 && sortedRegs[0] ? (sortedRegs[0][1] / concTotal * 100) : 0;
-    const topRegName = sortedRegs[0]?.[0] || '';
+    // Top registry by retirement rate — computed from filteredAgg
+    const regRetired = {};
+    const retSeen = new Set();
+    filteredAgg.forEach(d => {
+      const key = `${d.registry}|${d.category}`;
+      if (!retSeen.has(key)) {
+        retSeen.add(key);
+        regRetired[d.registry] = (regRetired[d.registry] || 0) + d.creditsRetired;
+      }
+    });
+    const regIssued = {};
+    filteredAgg.forEach(d => { regIssued[d.registry] = (regIssued[d.registry] || 0) + d.credits; });
 
-    const concentrationCard = {
-      accentColor: '#029bd6',
-      tag: 'CONCENTRATION',
-      heroStat: `${top2Pct.toFixed(1)}%`,
-      description: sortedRegs.length >= 2
-        ? <>{top2Names} control <strong>{top2Pct.toFixed(0)}%</strong> of credits. {topRegName} alone holds <strong>{topRegPctVal.toFixed(0)}%</strong>.</>
-        : topRegName
-          ? <><strong>{topRegName}</strong> holds <strong>{topRegPctVal.toFixed(0)}%</strong> of credits in this segment.</>
-          : <>No registry data available.</>,
+    const topRetReg = Object.entries(regRetired)
+      .map(([reg, ret]) => ({ reg, rate: regIssued[reg] > 0 ? ret / regIssued[reg] * 100 : 0 }))
+      .sort((a, b) => b.rate - a.rate)[0];
+
+    const retirementCard = {
+      accentColor: '#CCDF84',
+      tagColor: '#0C0B0B',
+      tag: 'RETIREMENT RATE',
+      heroStat: `${retirementRate.toFixed(1)}%`,
+      description: (
+        <>
+          <strong>{formatCredits(totalRetired)}</strong> credits retired.
+          {topRetReg && <> {topRetReg.reg} leads at <strong>{topRetReg.rate.toFixed(1)}%</strong>.</>}
+        </>
+      ),
     };
 
     if (selectedActivity) {
@@ -57,7 +61,7 @@ const InsightCards = ({ data, selectedActivity, activeGroup }) => {
             </>
           ),
         },
-        concentrationCard,
+        retirementCard,
         {
           accentColor: '#e85724',
           tag: 'COUNTRY #1',
@@ -112,7 +116,7 @@ const InsightCards = ({ data, selectedActivity, activeGroup }) => {
           </>
         ),
       },
-      concentrationCard,
+      retirementCard,
       {
         accentColor: '#e85724',
         tag: 'COUNTRY #1',
@@ -144,7 +148,7 @@ const InsightCards = ({ data, selectedActivity, activeGroup }) => {
             <div className="insight-content">
               <span
                 className="insight-tag"
-                style={{ background: `${insight.accentColor}26`, color: insight.accentColor }}
+                style={{ background: `${insight.accentColor}26`, color: insight.tagColor || insight.accentColor }}
               >
                 {insight.tag}
               </span>
