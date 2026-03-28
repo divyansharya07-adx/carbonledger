@@ -185,7 +185,7 @@ const Topbar = ({
             style={{ lineHeight: 0, textDecoration: 'none' }}
           >
             <img
-              src={process.env.PUBLIC_URL + '/ceew_logo.png'}
+              src={process.env.PUBLIC_URL + '/ceew_logo.webp'}
               alt="CEEW"
               style={{ height: 34, width: 'auto', display: 'block' }}
             />
