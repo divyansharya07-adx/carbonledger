@@ -264,6 +264,25 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
     return { globalRetirementRate, globalCreditsRetired: totalRetired };
   }, [rawProjCounts, selectedRegistry]);
 
+  const registryStats = useMemo(() => {
+    if (!rawProjCounts) return {};
+    const seen = new Set();
+    const map = {};
+    rawProjCounts.forEach((row) => {
+      const reg = (row['Registry'] || '').trim();
+      if (!reg || seen.has(reg)) return;
+      seen.add(reg);
+      map[reg] = {
+        issued:         parseInt(row['total_credits_issued'],    10) || 0,
+        retired:        parseInt(row['total_credits_retired'],   10) || 0,
+        remaining:      parseInt(row['total_credits_remaining'], 10) || 0,
+        retirementRate: parseFloat(row['retirement_rate'])           || 0,
+        projectCount:   parseInt(row['project_count'],          10) || 0,
+      };
+    });
+    return map;
+  }, [rawProjCounts]);
+
   // Country-specific data for country explorer
   const getCountryData = (countryName) => {
     if (!countryName || countryName === '🌍 Global') {
@@ -329,6 +348,7 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
     totalProjectCount,
     globalRetirementRate: globalRetirementStats.globalRetirementRate,
     globalCreditsRetired: globalRetirementStats.globalCreditsRetired,
+    registryStats,
   };
 };
 

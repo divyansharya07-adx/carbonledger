@@ -25,8 +25,15 @@ const SPECIALTIES = {
   'CAR': 'Climate Action Reserve',
 };
 
+const VINTAGE_YEARS = {
+  'Verra': '~2014',
+  'Gold Standard': '~2019',
+  'ACR': '~2019',
+  'CAR': '~2017',
+};
+
 const RegistryIntelligence = ({ data }) => {
-  const { creditsByRegistry, creditsByActivity, totalCredits } = data;
+  const { creditsByRegistry, creditsByActivity, totalCredits, registryStats } = data;
 
   const registryDetails = useMemo(() => {
     return creditsByRegistry.map(reg => {
@@ -62,6 +69,8 @@ const RegistryIntelligence = ({ data }) => {
         topActivities,
         topCountries,
         specialty: SPECIALTIES[reg.name] || 'Carbon market participant',
+        stats: registryStats[reg.name] || null,
+        vintageYear: VINTAGE_YEARS[reg.name] || null,
       };
     });
   }, [creditsByRegistry, data, totalCredits]);
@@ -107,6 +116,34 @@ const RegistryIntelligence = ({ data }) => {
                 <span className="registry-mini-value">{formatCredits(c.credits)}</span>
               </div>
             ))}
+
+            {reg.stats && (
+              <>
+                <div className="registry-card-section">Market Stats</div>
+                <div className="registry-mini-row">
+                  <span className="registry-mini-name">RETIRED</span>
+                  <span className="registry-mini-value">{formatCredits(reg.stats.retired)}</span>
+                </div>
+                <div className="registry-mini-row">
+                  <span className="registry-mini-name">REMAINING</span>
+                  <span className="registry-mini-value">{formatCredits(reg.stats.remaining)}</span>
+                </div>
+                <div className="registry-mini-row">
+                  <span className="registry-mini-name">RET. RATE</span>
+                  <span className="registry-mini-value">{reg.stats.retirementRate.toFixed(1)}%</span>
+                </div>
+                <div className="registry-mini-row">
+                  <span className="registry-mini-name">PROJECTS</span>
+                  <span className="registry-mini-value">{reg.stats.projectCount.toLocaleString()}</span>
+                </div>
+                {reg.vintageYear && (
+                  <div className="registry-mini-row">
+                    <span className="registry-mini-name">AVG VINTAGE</span>
+                    <span className="registry-mini-value">{reg.vintageYear}</span>
+                  </div>
+                )}
+              </>
+            )}
 
             <div
               className="registry-specialty"
