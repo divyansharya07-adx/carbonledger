@@ -280,7 +280,7 @@ const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
                     {regName === 'Gold Standard' ? 'GS' : regName}
                   </span>
                   {stats.projects != null && (
-                    <span style={{ fontSize: 8, color: t.labelColor, fontStyle: 'italic' }}>{stats.projects} projects (all-time)</span>
+                    <span style={{ fontSize: 8, color: t.labelColor, fontStyle: 'italic' }}>{stats.projects} projects</span>
                   )}
                 </div>
                 <div style={{ display: 'flex', gap: 12, marginBottom: 4 }}>
@@ -540,12 +540,11 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     if (!selectedCountry) return null;
     const { records } = data.getCountryData(selectedCountry.dataName);
     const totalCred = records.reduce((s, r) => s + r.credits, 0);
-    const staticBreakdown = records[0]?.registryBreakdown || {};
     const registryMap = {};
     const seenVintage = new Set();
     records.forEach(r => {
       const reg = r.registry;
-      if (!registryMap[reg]) registryMap[reg] = { issued: 0, retired: 0 };
+      if (!registryMap[reg]) registryMap[reg] = { issued: 0, retired: 0, projectIds: new Set() };
       registryMap[reg].issued += r.credits || 0;
       // vintage_credits_retired repeats across all category rows for same (reg, year)
       // — de-duplicate by (registry, year) before summing
@@ -554,6 +553,8 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
         seenVintage.add(vintageKey);
         registryMap[reg].retired += r.vintageCreditsRetired || 0;
       }
+      // projectIds: Set union — idempotent, handles category-row repetition automatically
+      (r.projectIds || []).forEach(id => registryMap[reg].projectIds.add(id));
     });
     const dynamicRegistryBreakdown = Object.keys(registryMap).length > 0
       ? Object.fromEntries(
@@ -562,7 +563,7 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
               issued: registryMap[reg].issued,
               retired: registryMap[reg].retired,
               allTimeIssued: registryMap[reg].issued,
-              projects: staticBreakdown[reg]?.projects ?? null,
+              projects: registryMap[reg].projectIds.size || null,
             }
           ])
         )

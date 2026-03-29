@@ -79,6 +79,7 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
             registryBreakdown: (() => { try { return JSON.parse(r['registry_breakdown'] || 'null'); } catch (e) { return null; } })(),
             vintageCreditsRetired: parseInt(r['vintage_credits_retired'], 10) || 0,
             vintageRetirementRate: parseFloat(r['vintage_retirement_rate']) || 0,
+            projectIds: (() => { try { return JSON.parse(r['project_ids'] || '[]'); } catch(e) { return []; } })(),
           }))
           .filter((d) => d.registry && d.country && d.country !== 'International' && d.category && d.year > 0 && !EXCLUDED_CATEGORIES.includes(d.category));
 
