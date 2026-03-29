@@ -167,28 +167,28 @@ def build_vintage_project_lookup():
     verra['vintage_year'] = pd.to_datetime(verra['Vintage Start']).dt.year
     verra['country'] = verra['Country/Area'].apply(norm)
     for (yr, cty), grp in verra.groupby(['vintage_year', 'country']):
-        lookup[('Verra', cty, int(yr))] = grp['ID'].nunique()
+        lookup[('Verra', cty, int(yr))] = grp['ID'].astype(str).unique().tolist()
 
     # --- Gold Standard ---
     gold = pd.read_excel(RAW_EXCEL, sheet_name='Gold Issuances',
                          usecols=['GSID', 'Country', 'Vintage'])
     gold['country'] = gold['Country'].apply(norm)
     for (yr, cty), grp in gold.groupby(['Vintage', 'country']):
-        lookup[('Gold Standard', cty, int(yr))] = grp['GSID'].nunique()
+        lookup[('Gold Standard', cty, int(yr))] = grp['GSID'].astype(str).unique().tolist()
 
     # --- ACR ---
     acr = pd.read_excel(RAW_EXCEL, sheet_name='ACR Issuances',
                         usecols=['Project ID', 'Project Site Country', 'Vintage'])
     acr['country'] = acr['Project Site Country'].apply(norm)
     for (yr, cty), grp in acr.groupby(['Vintage', 'country']):
-        lookup[('ACR', cty, int(yr))] = grp['Project ID'].nunique()
+        lookup[('ACR', cty, int(yr))] = grp['Project ID'].astype(str).unique().tolist()
 
     # --- CAR ---
     car = pd.read_excel(RAW_EXCEL, sheet_name='CAR Issuances',
                         usecols=['Project ID', 'Project Site Country', 'Vintage'])
     car['country'] = car['Project Site Country'].apply(norm)
     for (yr, cty), grp in car.groupby(['Vintage', 'country']):
-        lookup[('CAR', cty, int(yr))] = grp['Project ID'].nunique()
+        lookup[('CAR', cty, int(yr))] = grp['Project ID'].astype(str).unique().tolist()
 
     print(f"  build_vintage_project_lookup: {len(lookup)} (registry, country, year) keys built")
     return lookup
@@ -789,19 +789,21 @@ def main():
     print("  Building vintage project lookup...")
     proj_lookup = build_vintage_project_lookup()
 
-    ctry['project_count'] = ctry.apply(
-        lambda r: proj_lookup.get(
-            (r[reg_col], r[cty_col], int(r[yr_col])), 0
+    ctry['project_ids'] = ctry.apply(
+        lambda r: json.dumps(
+            proj_lookup.get(
+                (r[reg_col], r[cty_col], int(r[yr_col])), []
+            )
         ),
         axis=1,
-    ).astype(int)
+    )
 
     # Spot checks
-    india_verra_2015_proj = proj_lookup.get(('Verra', 'India', 2015), 0)
-    print(f"  SPOT CHECK India/Verra/2015 project_count: {india_verra_2015_proj}")
+    india_verra_2015 = proj_lookup.get(('Verra', 'India', 2015), [])
+    print(f"  SPOT CHECK India/Verra/2015 project_ids count: {len(india_verra_2015)} (expected ~184)")
 
-    india_gs_2020_proj = proj_lookup.get(('Gold Standard', 'India', 2020), 0)
-    print(f"  SPOT CHECK India/GS/2020 project_count: {india_gs_2020_proj}")
+    india_gs_2020 = proj_lookup.get(('Gold Standard', 'India', 2020), [])
+    print(f"  SPOT CHECK India/GS/2020 project_ids count: {len(india_gs_2020)} (expected ~175)")
 
     ctry.to_csv(CTRY_CSV, index=False)
     print(f"  country_aggregated_data.csv: added 7 columns (incl. registry_breakdown JSON + vintage retirement) ->{len(ctry)} rows saved")
