@@ -137,6 +137,63 @@ def build_vintage_retirement_lookup():
     return lookup
 
 
+def build_vintage_project_lookup():
+    RETIREMENT_COUNTRY_MAP = {
+        'Viet Nam': 'Vietnam',
+        'Congo, The Democratic Republic of The': 'DR Congo',
+        'Congo, Republic of': 'Congo',
+        'Korea, Republic of': 'South Korea',
+        'Tanzania, United Republic of': 'Tanzania',
+        "Lao People's Democratic Republic": 'Laos',
+        'Bolivia, Plurinational State of': 'Bolivia',
+        'Venezuela, Bolivarian Republic of': 'Venezuela',
+        'Iran, Islamic Republic of': 'Iran',
+        'Russian Federation': 'Russia',
+        'Syrian Arab Republic': 'Syria',
+        "Côte d'Ivoire": 'Ivory Coast',
+        'Moldova, Republic of': 'Moldova',
+        'US': 'United States',
+    }
+
+    def norm(c):
+        c = str(c).strip()
+        return RETIREMENT_COUNTRY_MAP.get(c, c)
+
+    lookup = {}
+
+    # --- Verra ---
+    verra = pd.read_excel(RAW_EXCEL, sheet_name='Verra VCUS',
+                          usecols=['ID', 'Country/Area', 'Vintage Start'])
+    verra['vintage_year'] = pd.to_datetime(verra['Vintage Start']).dt.year
+    verra['country'] = verra['Country/Area'].apply(norm)
+    for (yr, cty), grp in verra.groupby(['vintage_year', 'country']):
+        lookup[('Verra', cty, int(yr))] = grp['ID'].nunique()
+
+    # --- Gold Standard ---
+    gold = pd.read_excel(RAW_EXCEL, sheet_name='Gold Issuances',
+                         usecols=['GSID', 'Country', 'Vintage'])
+    gold['country'] = gold['Country'].apply(norm)
+    for (yr, cty), grp in gold.groupby(['Vintage', 'country']):
+        lookup[('Gold Standard', cty, int(yr))] = grp['GSID'].nunique()
+
+    # --- ACR ---
+    acr = pd.read_excel(RAW_EXCEL, sheet_name='ACR Issuances',
+                        usecols=['Project ID', 'Project Site Country', 'Vintage'])
+    acr['country'] = acr['Project Site Country'].apply(norm)
+    for (yr, cty), grp in acr.groupby(['Vintage', 'country']):
+        lookup[('ACR', cty, int(yr))] = grp['Project ID'].nunique()
+
+    # --- CAR ---
+    car = pd.read_excel(RAW_EXCEL, sheet_name='CAR Issuances',
+                        usecols=['Project ID', 'Project Site Country', 'Vintage'])
+    car['country'] = car['Project Site Country'].apply(norm)
+    for (yr, cty), grp in car.groupby(['Vintage', 'country']):
+        lookup[('CAR', cty, int(yr))] = grp['Project ID'].nunique()
+
+    print(f"  build_vintage_project_lookup: {len(lookup)} (registry, country, year) keys built")
+    return lookup
+
+
 def main():
     # -----------------------------------------------------------------------
     # Load CSVs
@@ -725,6 +782,26 @@ def main():
     ]
     india_gs_2020 = int(ig20['vintage_credits_retired'].iloc[0]) if len(ig20) else 0
     print(f"  SPOT CHECK India/GoldStandard/2020 vintage_credits_retired: {india_gs_2020:,}  (expected ~7,908,077)")
+
+    # ------------------------------------------------------------------
+    # ADDITION 2c — project_count
+    # ------------------------------------------------------------------
+    print("  Building vintage project lookup...")
+    proj_lookup = build_vintage_project_lookup()
+
+    ctry['project_count'] = ctry.apply(
+        lambda r: proj_lookup.get(
+            (r[reg_col], r[cty_col], int(r[yr_col])), 0
+        ),
+        axis=1,
+    ).astype(int)
+
+    # Spot checks
+    india_verra_2015_proj = proj_lookup.get(('Verra', 'India', 2015), 0)
+    print(f"  SPOT CHECK India/Verra/2015 project_count: {india_verra_2015_proj}")
+
+    india_gs_2020_proj = proj_lookup.get(('Gold Standard', 'India', 2020), 0)
+    print(f"  SPOT CHECK India/GS/2020 project_count: {india_gs_2020_proj}")
 
     ctry.to_csv(CTRY_CSV, index=False)
     print(f"  country_aggregated_data.csv: added 7 columns (incl. registry_breakdown JSON + vintage retirement) ->{len(ctry)} rows saved")
