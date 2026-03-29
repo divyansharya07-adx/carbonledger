@@ -72,6 +72,11 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
             category: (r['Project Type Category'] || '').trim(),
             year: parseFloat(r['Vintage Year']) || 0,
             credits: parseInt(r['Total Credits Issued']) || 0,
+            // Per-country lifetime totals (repeat identically across all rows for same country)
+            creditsRetired:    parseFloat(r['total_credits_retired'])   || 0,
+            creditsRemaining:  parseFloat(r['total_credits_remaining']) || 0,
+            retirementRate:    parseFloat(r['retirement_rate'])         || 0,
+            registryBreakdown: (() => { try { return JSON.parse(r['registry_breakdown'] || 'null'); } catch (e) { return null; } })(),
           }))
           .filter((d) => d.registry && d.country && d.country !== 'International' && d.category && d.year > 0 && !EXCLUDED_CATEGORIES.includes(d.category));
 

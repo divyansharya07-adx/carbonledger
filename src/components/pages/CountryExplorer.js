@@ -136,6 +136,7 @@ const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
     chartLabelColor: isDarkMode ? '#555555'                   : '#aaaaaa',
     gridColor:       isDarkMode ? 'rgba(255,255,255,0.08)'    : '#e8e0d0',
     dotStroke:       isDarkMode ? '#1a1a1a'                   : '#ffffff',
+    sectionBg:       isDarkMode ? 'rgba(255,255,255,0.04)'    : 'rgba(0,0,0,0.03)',
   };
 
   /* Chart geometry */
@@ -199,56 +200,115 @@ const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
         >×</button>
       </div>
 
-      {/* KPI rows */}
-      {[
-        { label: 'TOTAL CREDITS',  value: formatCredits(pd.totalCred) },
-        { label: '% OF GLOBAL',    value: `${pd.globalPct}%` },
-        { label: 'TOP ACTIVITY',   value: pd.topActivity },
-        { label: 'ACTIVE SINCE',   value: pd.minYear !== Infinity ? Math.floor(pd.minYear) : '—' },
-      ].map(({ label, value }) => (
-        <div key={label} style={{ marginBottom: 14 }}>
-          <div style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.labelColor, marginBottom: 3 }}>
-            {label}
-          </div>
-          <div style={{ fontSize: 15, fontWeight: 700, color: '#e85724' }}>{value}</div>
-        </div>
-      ))}
-
-      {/* Divider */}
-      <div style={{ borderTop: `1px solid ${t.dividerColor}`, margin: '8px 0 14px' }} />
-
-      {/* Credits by Activity bars */}
-      <div style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.labelColor, marginBottom: 10 }}>
-        Credits by Activity
-      </div>
-      <div style={{ flex: 1, overflowY: 'auto' }}>
-        {pd.actBreakdown.slice(0, 8).map(({ name, credits }) => (
-          <div key={name} style={{ marginBottom: 10 }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 3 }}>
-              <span style={{ fontSize: 10, color: t.actNameColor, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '65%' }}>
-                {name}
-              </span>
-              <span style={{ fontSize: 10, color: t.actCredColor, flexShrink: 0, marginLeft: 6 }}>
-                {formatCredits(credits)}
-              </span>
+      {/* KPI grid — Total Credits + % of Global */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 10 }}>
+        {[
+          { label: 'TOTAL CREDITS', value: formatCredits(pd.totalCred) },
+          { label: '% OF GLOBAL',   value: `${pd.globalPct}%` },
+        ].map(({ label, value }) => (
+          <div key={label} style={{ background: t.sectionBg, borderRadius: 8, padding: '8px 10px' }}>
+            <div style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.labelColor, marginBottom: 3 }}>
+              {label}
             </div>
-            <div style={{ height: 4, background: t.actBarBg, borderRadius: 2, overflow: 'hidden' }}>
-              <div style={{
-                height: '100%',
-                width: `${(credits / maxAct) * 100}%`,
-                background: '#e85724',
-                borderRadius: 2,
-              }} />
-            </div>
+            <div style={{ fontSize: 15, fontWeight: 500, color: '#e85724' }}>{value}</div>
           </div>
         ))}
       </div>
 
+      {/* Retirement stats */}
+      {pd.creditsRetired > 0 && (
+        <div style={{
+          background: t.sectionBg, borderRadius: 8, padding: '10px 12px',
+          borderLeft: '2px solid #e85724', marginBottom: 8,
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+            <span style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.titleColor }}>
+              Retirement Stats
+            </span>
+            <span style={{ fontSize: 8, color: t.labelColor, fontStyle: 'italic' }}>all-time totals</span>
+          </div>
+          {[
+            { label: 'RETIRED',   value: formatCredits(pd.creditsRetired),   color: '#e85724'      },
+            { label: 'REMAINING', value: formatCredits(pd.creditsRemaining), color: t.actNameColor },
+            { label: 'RET. RATE', value: `${pd.retirementRate.toFixed(1)}%`, color: '#22a05a'      },
+          ].map(({ label, value, color }) => (
+            <div key={label} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 5 }}>
+              <span style={{ fontSize: 10, letterSpacing: '0.06em', textTransform: 'uppercase', color: t.labelColor }}>{label}</span>
+              <span style={{ fontSize: 12, fontWeight: 500, color }}>{value}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Project Profile */}
+      <div style={{
+        background: t.sectionBg, borderRadius: 8, padding: '10px 12px',
+        borderLeft: '2px solid #e85724', marginBottom: 8,
+      }}>
+        <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.titleColor, marginBottom: 8 }}>
+          Project Profile
+        </div>
+        {[
+          { label: 'TOP ACTIVITY', value: pd.topActivity },
+          { label: 'ACTIVE SINCE', value: pd.minYear !== Infinity ? Math.floor(pd.minYear) : '—' },
+        ].map(({ label, value }) => (
+          <div key={label} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 5 }}>
+            <span style={{ fontSize: 10, letterSpacing: '0.06em', textTransform: 'uppercase', color: t.labelColor }}>{label}</span>
+            <span style={{ fontSize: 12, fontWeight: 500, color: t.actNameColor }}>{value}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* By Registry breakdown */}
+      {pd.registryBreakdown && Object.keys(pd.registryBreakdown).length > 0 && (
+        <div style={{
+          background: t.sectionBg, borderRadius: 8, padding: '10px 12px',
+          borderLeft: '2px solid #e85724', marginBottom: 8,
+        }}>
+          <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.titleColor, marginBottom: 8 }}>
+            By Registry
+          </div>
+          {Object.entries(pd.registryBreakdown).map(([regName, stats], idx, arr) => {
+            const regRate = stats.issued > 0
+              ? ((stats.retired / stats.issued) * 100).toFixed(1)
+              : '0.0';
+            const color = REGISTRY_COLORS[regName] || '#999999';
+            return (
+              <div key={regName}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
+                  <span style={{ fontSize: 10, fontWeight: 600, padding: '2px 7px', borderRadius: 4, background: color + '33', color }}>
+                    {regName === 'Gold Standard' ? 'GS' : regName}
+                  </span>
+                  <span style={{ fontSize: 12, fontWeight: 500, color: t.actNameColor }}>{stats.projects} projects</span>
+                </div>
+                <div style={{ display: 'flex', gap: 12, marginBottom: 4 }}>
+                  {[
+                    { label: 'ISSUED',  value: formatCredits(stats.issued),  color: t.actNameColor },
+                    { label: 'RETIRED', value: formatCredits(stats.retired), color: '#e85724'      },
+                    { label: 'RET. RATE', value: `${regRate}%`,              color: '#22a05a'      },
+                  ].map(({ label, value, color: vc }) => (
+                    <div key={label} style={{ flex: 1 }}>
+                      <div style={{ fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.06em', color: t.labelColor, marginBottom: 1 }}>{label}</div>
+                      <div style={{ fontSize: 11, fontWeight: 500, color: vc }}>{value}</div>
+                    </div>
+                  ))}
+                </div>
+                {idx < arr.length - 1 && (
+                  <div style={{ borderTop: `0.5px solid ${t.dividerColor}`, margin: '6px 0' }} />
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+
       {/* Insights */}
       {pd.insights?.length > 0 && (
-        <>
-          <div style={{ borderTop: `1px solid ${t.dividerColor}`, margin: '14px 0 10px' }} />
-          <div style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.labelColor, marginBottom: 8 }}>
+        <div style={{
+          background: t.sectionBg, borderRadius: 8, padding: '10px 12px',
+          borderLeft: '2px solid #e85724', marginBottom: 8,
+        }}>
+          <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.titleColor, marginBottom: 8 }}>
             Insights
           </div>
           {pd.insights.map((insight, i) => (
@@ -265,7 +325,7 @@ const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
               {insight}
             </div>
           ))}
-        </>
+        </div>
       )}
 
       {/* Credits Over Time chart */}
@@ -372,32 +432,31 @@ const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
         </>
       )}
 
-      {/* Registry pills */}
-      {pd.registries.length > 0 && (
-        <>
-          <div style={{ borderTop: `1px solid ${t.dividerColor}`, margin: '14px 0 10px' }} />
-          <div style={{ fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.labelColor, marginBottom: 8 }}>
-            Registries
-          </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-            {pd.registries.map(({ name }) => (
-              <span
-                key={name}
-                style={{
-                  fontSize: 10,
-                  fontWeight: 600,
-                  padding: '3px 8px',
-                  borderRadius: 4,
-                  background: ((REGISTRY_COLORS[name] || '#999999') + '33'),
-                  color: REGISTRY_COLORS[name] || '#999999',
-                }}
-              >
+      {/* Credits by Activity */}
+      <div style={{
+        background: t.sectionBg, borderRadius: 8, padding: '10px 12px',
+        borderLeft: '2px solid #e85724', marginBottom: 8,
+      }}>
+        <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.titleColor, marginBottom: 10 }}>
+          Credits by Activity
+        </div>
+        {pd.actBreakdown.slice(0, 8).map(({ name, credits }) => (
+          <div key={name} style={{ marginBottom: 10 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 3 }}>
+              <span style={{ fontSize: 10, color: t.actNameColor, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '65%' }}>
                 {name}
               </span>
-            ))}
+              <span style={{ fontSize: 10, color: t.actCredColor, flexShrink: 0, marginLeft: 6 }}>
+                {formatCredits(credits)}
+              </span>
+            </div>
+            <div style={{ height: 4, background: t.actBarBg, borderRadius: 2, overflow: 'hidden' }}>
+              <div style={{ height: '100%', width: `${(credits / maxAct) * 100}%`, background: '#e85724', borderRadius: 2 }} />
+            </div>
           </div>
-        </>
-      )}
+        ))}
+      </div>
+
     </div>
   );
 };
@@ -521,7 +580,13 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     const yearlyTrend = Object.entries(yearMap)
       .map(([y, c]) => ({ year: parseInt(y), credits: c }))
       .sort((a, b) => a.year - b.year);
-    return { name: selectedCountry.dataName, totalCred, globalPct, topActivity, minYear, actBreakdown, registries, insights, yearlyTrend };
+    // Per-country lifetime totals — take from first record (values are identical across all rows)
+    const firstRec = records[0] || {};
+    const creditsRetired    = firstRec.creditsRetired   ?? 0;
+    const creditsRemaining  = firstRec.creditsRemaining ?? 0;
+    const retirementRate    = firstRec.retirementRate   ?? 0;
+    const registryBreakdown = firstRec.registryBreakdown ?? null;
+    return { name: selectedCountry.dataName, totalCred, globalPct, topActivity, minYear, actBreakdown, registries, insights, yearlyTrend, creditsRetired, creditsRemaining, retirementRate, registryBreakdown };
   }, [selectedCountry, data]);
 
   /* ─── Event handlers ─── */
