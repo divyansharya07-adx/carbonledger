@@ -73,7 +73,7 @@ const RegistryIntelligence = ({ data }) => {
         vintageYear: VINTAGE_YEARS[reg.name] || null,
       };
     });
-  }, [creditsByRegistry, data, totalCredits]);
+  }, [creditsByRegistry, data, totalCredits, registryStats]);
 
   // Comparison chart data: top 8 activities, grouped by registry
   const comparisonData = useMemo(() => {
