@@ -260,7 +260,7 @@ const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
       </div>
 
       {/* By Registry breakdown */}
-      {pd.registryBreakdown && Object.keys(pd.registryBreakdown).length > 0 && (
+      {pd.dynamicRegistryBreakdown && Object.keys(pd.dynamicRegistryBreakdown).length > 0 && (
         <div style={{
           background: t.sectionBg, borderRadius: 8, padding: '10px 12px',
           borderLeft: '2px solid #e85724', marginBottom: 8,
@@ -268,18 +268,20 @@ const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
           <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.titleColor, marginBottom: 8 }}>
             By Registry
           </div>
-          {Object.entries(pd.registryBreakdown).map(([regName, stats], idx, arr) => {
-            const regRate = stats.issued > 0
-              ? ((stats.retired / stats.issued) * 100).toFixed(1)
+          {Object.entries(pd.dynamicRegistryBreakdown).map(([regName, stats], idx, arr) => {
+            const regRate = stats.allTimeIssued > 0
+              ? ((stats.retired / stats.allTimeIssued) * 100).toFixed(1)
               : '0.0';
             const color = REGISTRY_COLORS[regName] || '#999999';
             return (
               <div key={regName}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
                   <span style={{ fontSize: 10, fontWeight: 600, padding: '2px 7px', borderRadius: 4, background: color + '33', color }}>
                     {regName === 'Gold Standard' ? 'GS' : regName}
                   </span>
-                  <span style={{ fontSize: 12, fontWeight: 500, color: t.actNameColor }}>{stats.projects} projects</span>
+                  {stats.projects != null && (
+                    <span style={{ fontSize: 8, color: t.labelColor, fontStyle: 'italic' }}>{stats.projects} projects (all-time)</span>
+                  )}
                 </div>
                 <div style={{ display: 'flex', gap: 12, marginBottom: 4 }}>
                   {[
@@ -538,6 +540,33 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     if (!selectedCountry) return null;
     const { records } = data.getCountryData(selectedCountry.dataName);
     const totalCred = records.reduce((s, r) => s + r.credits, 0);
+    const staticBreakdown = records[0]?.registryBreakdown || {};
+    const registryMap = {};
+    const seenVintage = new Set();
+    records.forEach(r => {
+      const reg = r.registry;
+      if (!registryMap[reg]) registryMap[reg] = { issued: 0, retired: 0 };
+      registryMap[reg].issued += r.credits || 0;
+      // vintage_credits_retired repeats across all category rows for same (reg, year)
+      // — de-duplicate by (registry, year) before summing
+      const vintageKey = `${reg}|${r.year}`;
+      if (!seenVintage.has(vintageKey)) {
+        seenVintage.add(vintageKey);
+        registryMap[reg].retired += r.vintageCreditsRetired || 0;
+      }
+    });
+    const dynamicRegistryBreakdown = Object.keys(registryMap).length > 0
+      ? Object.fromEntries(
+          Object.keys(registryMap).map(reg => [
+            reg, {
+              issued: registryMap[reg].issued,
+              retired: registryMap[reg].retired,
+              allTimeIssued: registryMap[reg].issued,
+              projects: staticBreakdown[reg]?.projects ?? null,
+            }
+          ])
+        )
+      : null;
     const globalPct = data.totalCredits > 0
       ? ((totalCred / data.totalCredits) * 100).toFixed(1) : '0.0';
     const actMap = {};
@@ -581,12 +610,10 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
       .map(([y, c]) => ({ year: parseInt(y), credits: c }))
       .sort((a, b) => a.year - b.year);
     // Per-country lifetime totals — take from first record (values are identical across all rows)
-    const firstRec = records[0] || {};
-    const creditsRetired    = firstRec.creditsRetired   ?? 0;
-    const creditsRemaining  = firstRec.creditsRemaining ?? 0;
-    const retirementRate    = firstRec.retirementRate   ?? 0;
-    const registryBreakdown = firstRec.registryBreakdown ?? null;
-    return { name: selectedCountry.dataName, totalCred, globalPct, topActivity, minYear, actBreakdown, registries, insights, yearlyTrend, creditsRetired, creditsRemaining, retirementRate, registryBreakdown };
+    const creditsRetired    = records[0]?.creditsRetired   ?? 0;
+    const creditsRemaining  = records[0]?.creditsRemaining ?? 0;
+    const retirementRate    = records[0]?.retirementRate   ?? 0;
+    return { name: selectedCountry.dataName, totalCred, globalPct, topActivity, minYear, actBreakdown, registries, insights, yearlyTrend, creditsRetired, creditsRemaining, retirementRate, dynamicRegistryBreakdown };
   }, [selectedCountry, data]);
 
   /* ─── Event handlers ─── */
