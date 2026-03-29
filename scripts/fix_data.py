@@ -64,6 +64,79 @@ def map_gold_project_type(pt):
     return "Other"
 
 
+def build_vintage_retirement_lookup():
+    """Return dict keyed (registry, country, vintage_year) -> credits_retired int.
+
+    Reads the four retirement sheets from the raw Excel file and groups by
+    (registry label, normalised country, vintage year).  All existing country
+    lifetime columns in country_aggregated_data.csv are left untouched.
+    """
+    RETIREMENT_COUNTRY_MAP = {
+        'Viet Nam':                               'Vietnam',
+        'Congo, The Democratic Republic of The':  'DR Congo',
+        'Congo, Republic of':                     'Congo',
+        'Korea, Republic of':                     'South Korea',
+        'Tanzania, United Republic of':           'Tanzania',
+        "Lao People's Democratic Republic":       'Laos',
+        'Bolivia, Plurinational State of':        'Bolivia',
+        'Venezuela, Bolivarian Republic of':      'Venezuela',
+        'Iran, Islamic Republic of':              'Iran',
+        'Russian Federation':                     'Russia',
+        'Syrian Arab Republic':                   'Syria',
+        "Côte d'Ivoire":                          'Ivory Coast',
+        'Moldova, Republic of':                   'Moldova',
+        'US':                                     'United States',
+    }
+
+    def norm(c):
+        c = str(c).strip()
+        return RETIREMENT_COUNTRY_MAP.get(c, c)
+
+    lookup = {}
+
+    # --- Verra ---
+    verra = pd.read_excel(RAW_EXCEL, sheet_name='Verra VCUS',
+                          usecols=['Vintage Start', 'Country/Area',
+                                   'Quantity Issued', 'Retirement/Cancellation Date'])
+    verra = verra[verra['Retirement/Cancellation Date'].notna()].copy()
+    verra['vintage_year'] = pd.to_datetime(verra['Vintage Start']).dt.year
+    verra['country'] = verra['Country/Area'].apply(norm)
+    verra['qty'] = pd.to_numeric(verra['Quantity Issued'], errors='coerce').fillna(0)
+    for (yr, cty), grp in verra.groupby(['vintage_year', 'country']):
+        key = ('Verra', cty, int(yr))
+        lookup[key] = lookup.get(key, 0) + int(grp['qty'].sum())
+
+    # --- Gold Standard ---
+    gold = pd.read_excel(RAW_EXCEL, sheet_name='Gold Retirements',
+                         usecols=['Vintage', 'Country', 'Quantity'])
+    gold['country'] = gold['Country'].apply(norm)
+    gold['qty'] = pd.to_numeric(gold['Quantity'], errors='coerce').fillna(0)
+    for (yr, cty), grp in gold.groupby(['Vintage', 'country']):
+        key = ('Gold Standard', cty, int(yr))
+        lookup[key] = lookup.get(key, 0) + int(grp['qty'].sum())
+
+    # --- ACR ---
+    acr = pd.read_excel(RAW_EXCEL, sheet_name='ACR Retirements',
+                        usecols=['Vintage', 'Project Site Country', 'Quantity of Credits'])
+    acr['country'] = acr['Project Site Country'].apply(norm)
+    acr['qty'] = pd.to_numeric(acr['Quantity of Credits'], errors='coerce').fillna(0)
+    for (yr, cty), grp in acr.groupby(['Vintage', 'country']):
+        key = ('ACR', cty, int(yr))
+        lookup[key] = lookup.get(key, 0) + int(grp['qty'].sum())
+
+    # --- CAR ---
+    car = pd.read_excel(RAW_EXCEL, sheet_name='CAR Retirements',
+                        usecols=['Vintage', 'Project Site Country', 'Quantity of Offset Credits'])
+    car['country'] = car['Project Site Country'].apply(norm)
+    car['qty'] = pd.to_numeric(car['Quantity of Offset Credits'], errors='coerce').fillna(0)
+    for (yr, cty), grp in car.groupby(['Vintage', 'country']):
+        key = ('CAR', cty, int(yr))
+        lookup[key] = lookup.get(key, 0) + int(grp['qty'].sum())
+
+    print(f"  build_vintage_retirement_lookup: {len(lookup)} (registry, country, year) keys built")
+    return lookup
+
+
 def main():
     # -----------------------------------------------------------------------
     # Load CSVs
@@ -612,8 +685,49 @@ def main():
     ctry['total_credits_remaining'] = ctry['total_credits_remaining'].fillna(0).astype(int)
     ctry['retirement_rate']         = ctry['retirement_rate'].fillna(0)
     ctry['registry_breakdown']      = ctry['registry_breakdown'].fillna('{}')
+
+    # ------------------------------------------------------------------
+    # ADDITION 2b — vintage_credits_retired + vintage_retirement_rate
+    # ------------------------------------------------------------------
+    print("  Building vintage retirement lookup from raw Excel...")
+    vint_lookup = build_vintage_retirement_lookup()
+
+    ctry['vintage_credits_retired'] = ctry.apply(
+        lambda r: vint_lookup.get(
+            (r[reg_col], r[cty_col], int(r[yr_col])), 0
+        ),
+        axis=1,
+    ).astype(int)
+
+    ctry['vintage_retirement_rate'] = (
+        ctry['vintage_credits_retired']
+        / ctry[cr_col].replace(0, float('nan'))
+        * 100
+    ).round(1).fillna(0)
+
+    unmatched = (ctry['vintage_credits_retired'] == 0) & (ctry[cr_col] > 0)
+    print(f"  Rows with issued credits but no vintage retirement match: {unmatched.sum()}")
+
+    # Note: vintage_credits_retired repeats across all category rows for the same
+    # (Registry, Country, Year) — use .iloc[0] not .sum() to read the per-year value.
+    iv15 = ctry[
+        (ctry[reg_col] == 'Verra') &
+        (ctry[cty_col] == 'India') &
+        (ctry[yr_col] == 2015)
+    ]
+    india_verra_2015 = int(iv15['vintage_credits_retired'].iloc[0]) if len(iv15) else 0
+    print(f"  SPOT CHECK India/Verra/2015 vintage_credits_retired: {india_verra_2015:,}  (expected ~8,996,504)")
+
+    ig20 = ctry[
+        (ctry[reg_col] == 'Gold Standard') &
+        (ctry[cty_col] == 'India') &
+        (ctry[yr_col] == 2020)
+    ]
+    india_gs_2020 = int(ig20['vintage_credits_retired'].iloc[0]) if len(ig20) else 0
+    print(f"  SPOT CHECK India/GoldStandard/2020 vintage_credits_retired: {india_gs_2020:,}  (expected ~7,908,077)")
+
     ctry.to_csv(CTRY_CSV, index=False)
-    print(f"  country_aggregated_data.csv: added 5 columns (incl. registry_breakdown JSON) ->{len(ctry)} rows saved")
+    print(f"  country_aggregated_data.csv: added 7 columns (incl. registry_breakdown JSON + vintage retirement) ->{len(ctry)} rows saved")
 
     # ------------------------------------------------------------------
     # ADDITION 3 — project_counts.csv: per-registry retirement stats
