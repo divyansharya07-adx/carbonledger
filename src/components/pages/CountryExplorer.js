@@ -761,7 +761,7 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
       })
       .catch(() => {})
       .finally(() => setCo2Loading(false));
-  }, [selectedCountry]); // co2Data intentionally excluded — stale read is safe for cache check
+  }, [selectedCountry, co2Data]);
 
   /* ─── Top 10 markers (exclude selected) ─── */
   const top10Markers = useMemo(() =>
