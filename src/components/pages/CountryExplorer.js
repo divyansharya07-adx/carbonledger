@@ -124,6 +124,22 @@ const COUNTRY_ISO2_MAP = {
   'Colombia': 'CO', 'Vietnam': 'VN', 'Turkey': 'TR', 'Chile': 'CL',
   'Mexico': 'MX', 'Uganda': 'UG', 'Tanzania': 'TZ', 'Philippines': 'PH',
   'Thailand': 'TH', 'Ethiopia': 'ET', 'Myanmar': 'MM', 'Nigeria': 'NG',
+  'DR Congo': 'CD', 'Bangladesh': 'BD', 'Zimbabwe': 'ZW', 'Zambia': 'ZM',
+  'South Korea': 'KR', 'Malawi': 'MW', 'Uruguay': 'UY', 'Rwanda': 'RW',
+  'South Africa': 'ZA', 'Ghana': 'GH', 'Guatemala': 'GT', 'Germany': 'DE',
+  'Madagascar': 'MG', 'Pakistan': 'PK', 'Canada': 'CA', 'Nepal': 'NP',
+  'Malaysia': 'MY', 'Honduras': 'HN', 'Ivory Coast': 'CI', 'Egypt': 'EG',
+  'Panama': 'PA', 'Burundi': 'BI', 'Argentina': 'AR', 'Mozambique': 'MZ',
+  'Laos': 'LA', 'Sierra Leone': 'SL', 'Belize': 'BZ', 'Bulgaria': 'BG',
+  'Paraguay': 'PY', 'Papua New Guinea': 'PG', 'Senegal': 'SN',
+  'Mongolia': 'MN', 'Nicaragua': 'NI', 'Mali': 'ML', 'Uzbekistan': 'UZ',
+  'Denmark': 'DK', 'Dominican Republic': 'DO', 'Singapore': 'SG',
+  'Oman': 'OM', 'Burkina Faso': 'BF', 'Morocco': 'MA', 'Australia': 'AU',
+  'Kazakhstan': 'KZ', 'Cameroon': 'CM', 'Mauritania': 'MR', 'Georgia': 'GE',
+  'Benin': 'BJ', 'Togo': 'TG', 'Russia': 'RU', 'Costa Rica': 'CR',
+  'New Zealand': 'NZ', 'Bolivia': 'BO', 'Congo': 'CG', 'France': 'FR',
+  'Mauritius': 'MU', 'Gambia': 'GM', 'El Salvador': 'SV', 'Namibia': 'NA',
+  'Romania': 'RO', 'Sri Lanka': 'LK', 'Netherlands': 'NL',
 };
 
 /* ─── CountryPanel sub-component ─── */

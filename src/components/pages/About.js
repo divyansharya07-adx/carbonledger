@@ -17,6 +17,7 @@ const About = () => {
   const [taxonomyOpen, setTaxonomyOpen] = useState(false);
   const [openGroups, setOpenGroups] = useState(new Set());
   const [openSubs, setOpenSubs] = useState(new Set());
+  const [exclusionsOpen, setExclusionsOpen] = useState(false);
 
   useEffect(() => {
     Papa.parse(process.env.PUBLIC_URL + '/methodology_mapping.csv', {
@@ -255,6 +256,15 @@ const About = () => {
               not resolve to a valid mapping, in which case the panel displays "Emissions data
               unavailable" for that country.
             </li>
+            <li>
+              <strong>Countries without VCM Contribution data.</strong> Of 112 countries in the dataset,
+              30 do not display a VCM Contribution to Decarbonisation figure. Six are excluded due to
+              data constraints — three are territories without World Bank sovereign membership (Taiwan,
+              Aruba, New Caledonia) and three have incomplete or discontinued World Bank emissions series
+              (Somalia, Eritrea, Central African Republic). The remaining 24 are sovereign states with
+              valid World Bank data but below the credit volume threshold used when building the country
+              mapping. See the full list below.
+            </li>
           </ul>
 
           <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Category Taxonomy</p>
@@ -294,6 +304,73 @@ const About = () => {
               across Verra, Gold Standard, ACR, or CAR.
             </li>
           </ul>
+        </div>
+
+        <div className="about-section">
+          <button
+            className="taxonomy-toggle"
+            onClick={() => setExclusionsOpen(o => !o)}
+          >
+            <span className="about-section-title" style={{ margin: 0 }}>Countries Without Emissions Data</span>
+            <span className="taxonomy-chevron">{exclusionsOpen ? '▼' : '▶'}</span>
+          </button>
+
+          {exclusionsOpen && (
+            <div style={{ marginTop: 12 }}>
+              <p className="about-text">
+                The following 30 countries do not display a VCM Contribution to Decarbonisation figure.
+                Reasons are grouped below.
+              </p>
+
+              <p className="about-text" style={{ fontWeight: 500, marginTop: 12, marginBottom: 4 }}>
+                Territories — not WB sovereign members (3)
+              </p>
+              <ul className="about-text" style={{ paddingLeft: '1.2em' }}>
+                <li>Taiwan — 5,822,790 credits</li>
+                <li>Aruba — 1,075,844 credits</li>
+                <li>New Caledonia — 507,905 credits</li>
+              </ul>
+
+              <p className="about-text" style={{ fontWeight: 500, marginTop: 12, marginBottom: 4 }}>
+                World Bank data absent or incomplete (3)
+              </p>
+              <ul className="about-text" style={{ paddingLeft: '1.2em' }}>
+                <li>Somalia — 3,171,572 credits (large multi-year gaps)</li>
+                <li>Eritrea — 2,481,615 credits (no post-2011 data)</li>
+                <li>Central African Republic — 1,294,618 credits (series ends 2015)</li>
+              </ul>
+
+              <p className="about-text" style={{ fontWeight: 500, marginTop: 12, marginBottom: 4 }}>
+                Below credit volume threshold — WB data exists (24)
+              </p>
+              <ul className="about-text" style={{ paddingLeft: '1.2em' }}>
+                <li>Sudan — 368,399 credits</li>
+                <li>Tajikistan — 315,553 credits</li>
+                <li>Guinea-Bissau — 302,043 credits</li>
+                <li>Lesotho — 273,332 credits</li>
+                <li>Haiti — 157,887 credits</li>
+                <li>Ecuador — 151,697 credits</li>
+                <li>Angola — 144,591 credits</li>
+                <li>Timor-Leste — 128,930 credits</li>
+                <li>Chad — 115,334 credits</li>
+                <li>Guinea — 66,779 credits</li>
+                <li>United Kingdom — 65,152 credits</li>
+                <li>United Arab Emirates — 47,452 credits</li>
+                <li>Switzerland — 43,670 credits</li>
+                <li>Niger — 38,769 credits</li>
+                <li>Fiji — 30,000 credits</li>
+                <li>Liberia — 22,906 credits</li>
+                <li>Comoros — 17,454 credits</li>
+                <li>Israel — 16,574 credits</li>
+                <li>Cyprus — 15,171 credits</li>
+                <li>Iceland — 12,514 credits</li>
+                <li>Iraq — 1,830 credits</li>
+                <li>Austria — 980 credits</li>
+                <li>Estonia — 230 credits</li>
+                <li>Netherlands — 1,241,840 credits (mapping added in this release)</li>
+              </ul>
+            </div>
+          )}
         </div>
 
         <div className="about-section">

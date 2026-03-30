@@ -27,6 +27,8 @@ const COUNTRY_NAME_MAP = {
   "C\u221a\u00a5te d'Ivoire": 'Ivory Coast',
   'Tanzania United Republic of': 'Tanzania',
   'Tanzania, United Republic Of': 'Tanzania',
+  "Cote D'Ivoire": 'Ivory Coast',
+  'Congo the Democratic Republic of the': 'DR Congo',
 };
 
 const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
