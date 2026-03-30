@@ -93,6 +93,18 @@ const About = () => {
         </div>
 
         <div className="about-section">
+          <div className="about-section-title">Additional Data Sources</div>
+          <p className="about-text">
+            National CO₂ emissions data used in the VCM Contribution to Decarbonisation metric
+            is retrieved at runtime from the World Bank Open Data API (indicator
+            EN.GHG.CO2.MT.CE.AR5). This indicator reports total greenhouse gas emissions from
+            fossil fuels and industry in megatonnes of CO₂ equivalent, derived using IPCC Fifth
+            Assessment Report (AR5) Global Warming Potentials. Data is accessed under the World
+            Bank's open data licence.
+          </p>
+        </div>
+
+        <div className="about-section">
           <div className="about-section-title">Coverage</div>
           <p className="about-text">
             Covers voluntary carbon credit issuances across four major registries: Verra
@@ -135,6 +147,42 @@ const About = () => {
             these represent 562 projects (&lt;10% of total), primarily Gold Standard projects with blank
             methodology fields. Total across all four
             registries: 5,753 projects (Verra 2,093 · Gold Standard 2,088 · CAR 829 · ACR 743).
+          </p>
+
+          <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Retirement Rate</p>
+          <p className="about-text">
+            The retirement rate for each country and registry is calculated as total credits
+            retired divided by total credits issued, expressed as a percentage. These are
+            all-time lifetime totals pre-computed in the data pipeline from registry retirement
+            records — they are not filtered by the year range selector. A credit is counted
+            as retired when a formal cancellation or retirement transaction is recorded in the
+            source registry data, irrespective of when the underlying credit was originally issued.
+          </p>
+
+          <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>VCM Contribution to Decarbonisation</p>
+          <p className="about-text">
+            This metric estimates the share of a country's national CO₂ emissions that has been
+            addressed through voluntary carbon market (VCM) retirement activity. It is computed
+            as a weighted aggregate ratio:
+          </p>
+          <p className="about-text" style={{ fontStyle: 'italic' }}>
+            (Sum of vintage-year credits retired) ÷ (Sum of national CO₂ emissions for matched
+            vintage years) × 100
+          </p>
+          <p className="about-text">
+            The numerator uses credits keyed to their vintage year — the year the underlying
+            emissions reduction occurred — not the calendar year in which the retirement
+            transaction was recorded. This vintage-year alignment methodology follows the
+            activity-period attribution principle consistent with IPCC AR6 guidance, ensuring
+            that abatement is compared against emissions from the same period in which the
+            reduction activity took place.
+          </p>
+          <p className="about-text">
+            National emissions data is sourced from the World Bank API (indicator
+            EN.GHG.CO2.MT.CE.AR5, derived from IPCC AR5 Global Warming Potentials). Only
+            vintage years where both registry retirement data and World Bank emissions data are
+            available are included in the computation. The metric responds to the registry and
+            year range filters on the Country Explorer page.
           </p>
 
           <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Data Pipeline</p>
@@ -185,6 +233,27 @@ const About = () => {
               Gold Standard project. This project (500 credits issued) is counted in the Overview project
               total but does not appear on the Projects page. This is a source data characteristic of the
               Gold Standard registry, not a pipeline error.
+            </li>
+            <li>
+              <strong>Retirement Rate is an all-time figure.</strong> The retirement rate
+              displayed in the Country Explorer panel reflects lifetime totals across all years
+              and does not update when the year range filter is changed. This is a structural
+              constraint arising from how retirement records are aggregated across registries
+              in the source data.
+            </li>
+            <li>
+              <strong>World Bank emissions data lag.</strong> The EN.GHG.CO2.MT.CE.AR5
+              indicator typically lags one to two years behind the current date. Vintage years
+              for which World Bank data is not yet available are excluded from the VCM
+              Contribution to Decarbonisation computation, which means the most recent vintage
+              years may be underrepresented in this metric.
+            </li>
+            <li>
+              <strong>Country name mapping for emissions data.</strong> The VCM Contribution
+              metric requires matching country names in the registry data to ISO 3166-1 alpha-2
+              codes used by the World Bank API. A small number of countries or territories may
+              not resolve to a valid mapping, in which case the panel displays "Emissions data
+              unavailable" for that country.
             </li>
           </ul>
 

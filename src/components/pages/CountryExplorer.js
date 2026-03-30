@@ -117,6 +117,15 @@ const COUNTRY_CENTROIDS = {
   'Angola':         [17.0,  -12.0],
 };
 
+/* ─── World Bank ISO2 codes for CO₂ emissions lookup ─── */
+const COUNTRY_ISO2_MAP = {
+  'India': 'IN', 'United States': 'US', 'China': 'CN', 'Brazil': 'BR',
+  'Indonesia': 'ID', 'Kenya': 'KE', 'Cambodia': 'KH', 'Peru': 'PE',
+  'Colombia': 'CO', 'Vietnam': 'VN', 'Turkey': 'TR', 'Chile': 'CL',
+  'Mexico': 'MX', 'Uganda': 'UG', 'Tanzania': 'TZ', 'Philippines': 'PH',
+  'Thailand': 'TH', 'Ethiopia': 'ET', 'Myanmar': 'MM', 'Nigeria': 'NG',
+};
+
 /* ─── CountryPanel sub-component ─── */
 const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
   const [hoveredPoint, setHoveredPoint] = useState(null);
@@ -330,6 +339,35 @@ const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
         </div>
       )}
 
+      {/* VCM Contribution to Decarbonisation */}
+      {pd.co2HasMapping && (
+        <div style={{
+          background: t.sectionBg, borderRadius: 8, padding: '10px 12px',
+          borderLeft: '2px solid #22a05a', marginBottom: 8,
+        }}>
+          <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.titleColor, marginBottom: 4 }}>
+            VCM Contribution to Decarbonisation
+          </div>
+          <div style={{ fontSize: 9, color: t.labelColor, marginBottom: 8 }}>
+            Credits abated as % of national CO₂ emissions
+          </div>
+          {pd.co2Loading ? (
+            <div style={{ fontSize: 10, color: t.labelColor, fontStyle: 'italic' }}>Fetching emissions data…</div>
+          ) : pd.co2Contribution != null ? (
+            <>
+              <div style={{ fontSize: 22, fontWeight: 700, color: '#22a05a', marginBottom: 4 }}>
+                {pd.co2Contribution.toFixed(2)}%
+              </div>
+              <div style={{ fontSize: 8, color: t.labelColor, fontStyle: 'italic' }}>
+                Based on World Bank CO₂ data (EN.GHG.CO2.MT.CE.AR5)
+              </div>
+            </>
+          ) : (
+            <div style={{ fontSize: 10, color: t.labelColor, fontStyle: 'italic' }}>Emissions data unavailable</div>
+          )}
+        </div>
+      )}
+
       {/* Credits Over Time chart */}
       {sparkData.length >= 2 && (
         <>
@@ -473,6 +511,8 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
   const [panelOpen,       setPanelOpen]       = useState(false);
   const [cursor,          setCursor]          = useState('');
   const [mapLoaded,       setMapLoaded]       = useState(false);
+  const [co2Data,         setCo2Data]         = useState({});
+  const [co2Loading,      setCo2Loading]      = useState(false);
 
   /* ─── Choropleth opacity match expression ─── */
   const fillOpacityExpression = useMemo(() => {
@@ -542,6 +582,7 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     const totalCred = records.reduce((s, r) => s + r.credits, 0);
     const registryMap = {};
     const seenVintage = new Set();
+    const perYearAbated = {};
     records.forEach(r => {
       const reg = r.registry;
       if (!registryMap[reg]) registryMap[reg] = { issued: 0, retired: 0, projectIds: new Set() };
@@ -552,10 +593,22 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
       if (!seenVintage.has(vintageKey)) {
         seenVintage.add(vintageKey);
         registryMap[reg].retired += r.vintageCreditsRetired || 0;
+        perYearAbated[Math.floor(r.year)] = (perYearAbated[Math.floor(r.year)] || 0) + (r.vintageCreditsRetired || 0);
       }
       // projectIds: Set union — idempotent, handles category-row repetition automatically
       (r.projectIds || []).forEach(id => registryMap[reg].projectIds.add(id));
     });
+    const co2HasMapping = !!COUNTRY_ISO2_MAP[selectedCountry.dataName];
+    const countryEmissions = co2Data[selectedCountry.dataName] || null;
+    let co2Contribution = null;
+    if (countryEmissions) {
+      let totalAbated = 0, totalEmissions = 0;
+      Object.entries(perYearAbated).forEach(([yr, abated]) => {
+        const emissions = countryEmissions[parseInt(yr)];
+        if (emissions > 0) { totalAbated += abated; totalEmissions += emissions; }
+      });
+      if (totalEmissions > 0) co2Contribution = (totalAbated / totalEmissions) * 100;
+    }
     const dynamicRegistryBreakdown = Object.keys(registryMap).length > 0
       ? Object.fromEntries(
           Object.keys(registryMap).map(reg => [
@@ -614,8 +667,8 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     const creditsRetired    = records[0]?.creditsRetired   ?? 0;
     const creditsRemaining  = records[0]?.creditsRemaining ?? 0;
     const retirementRate    = records[0]?.retirementRate   ?? 0;
-    return { name: selectedCountry.dataName, totalCred, globalPct, topActivity, minYear, actBreakdown, registries, insights, yearlyTrend, creditsRetired, creditsRemaining, retirementRate, dynamicRegistryBreakdown };
-  }, [selectedCountry, data]);
+    return { name: selectedCountry.dataName, totalCred, globalPct, topActivity, minYear, actBreakdown, registries, insights, yearlyTrend, creditsRetired, creditsRemaining, retirementRate, dynamicRegistryBreakdown, co2HasMapping, co2Loading, co2Contribution };
+  }, [selectedCountry, data, co2Data, co2Loading]);
 
   /* ─── Event handlers ─── */
   const handleMouseMove = useCallback((e) => {
@@ -684,6 +737,31 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     const credits = data.creditsByCountry?.find(c => c.name === ic)?.credits || 0;
     openCountry(ic, mapboxName, credits);
   }, [mapLoaded, data, openCountry]);
+
+  /* ─── Fetch World Bank CO₂ data for selected country ─── */
+  useEffect(() => {
+    if (!selectedCountry) return;
+    const name = selectedCountry.dataName;
+    const iso2 = COUNTRY_ISO2_MAP[name];
+    if (!iso2 || co2Data[name]) return;
+    setCo2Loading(true);
+    fetch(
+      `https://api.worldbank.org/v2/country/${iso2}/indicator/EN.GHG.CO2.MT.CE.AR5?format=json&date=1990:2024&per_page=50`
+    )
+      .then(r => r.json())
+      .then(response => {
+        const yearMap = {};
+        const records = (Array.isArray(response) && response.length > 1)
+          ? response[1]
+          : null;
+        (records || []).forEach(rec => {
+          if (rec.value != null) yearMap[parseInt(rec.date)] = rec.value * 1e6;
+        });
+        setCo2Data(prev => ({ ...prev, [name]: yearMap }));
+      })
+      .catch(() => {})
+      .finally(() => setCo2Loading(false));
+  }, [selectedCountry]); // co2Data intentionally excluded — stale read is safe for cache check
 
   /* ─── Top 10 markers (exclude selected) ─── */
   const top10Markers = useMemo(() =>
