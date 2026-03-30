@@ -693,10 +693,10 @@ Verra,Mixed renewables,2014.0,28137339,380345644,64.5
 Verra,Mixed renewables,2015.0,29458654,380345644,64.5
 Verra,Mixed renewables,2016.0,32586801,380345644,64.5
 Verra,Mixed renewables,2017.0,41354011,380345644,64.5
-Verra,Mixed renewables,2018.0,42897070,380345644,64.5
-Verra,Mixed renewables,2019.0,49473297,380345644,64.5
-Verra,Mixed renewables,2020.0,42720502,380345644,64.5
-Verra,Mixed renewables,2021.0,42141280,380345644,64.5
+Verra,Mixed renewables,2018.0,36597070,380345644,64.5
+Verra,Mixed renewables,2019.0,43473297,380345644,64.5
+Verra,Mixed renewables,2020.0,36120502,380345644,64.5
+Verra,Mixed renewables,2021.0,38241280,380345644,64.5
 Verra,Mixed renewables,2022.0,46171249,380345644,64.5
 Verra,Mixed renewables,2023.0,32109989,380345644,64.5
 Verra,Mixed renewables,2024.0,16402305,380345644,64.5
@@ -795,13 +795,13 @@ Verra,Wind,2015.0,37852,255643,83.7
 Verra,Wind,2016.0,61411,255643,83.7
 Verra,Wind,2017.0,81648,255643,83.7
 Verra,Wind,2018.0,103596,255643,83.7
-Verra,Rice cultivation,2018.0,8820000,3353505,73.5
-Verra,Rice cultivation,2019.0,8400000,3353505,73.5
-Verra,Rice cultivation,2020.0,9240000,3353505,73.5
-Verra,Rice cultivation,2021.0,5460000,3353505,73.5
-Verra,Public transit,2020.0,812,2280,32.0
-Verra,Public transit,2021.0,28504,2280,32.0
-Verra,Public transit,2022.0,20531,2280,32.0
+Verra,Rice cultivation,2018.0,15120000,3353505,73.5
+Verra,Rice cultivation,2019.0,14400000,3353505,73.5
+Verra,Rice cultivation,2020.0,15840000,3353505,73.5
+Verra,Rice cultivation,2021.0,9360000,3353505,73.5
+Verra,Public transit,2020.0,1392,2280,32.0
+Verra,Public transit,2021.0,48864,2280,32.0
+Verra,Public transit,2022.0,35196,2280,32.0
 Gold Standard,Afforestation/Reforestation,1996.0,764,365607,44.2
 Gold Standard,Afforestation/Reforestation,1997.0,1605,365607,44.2
 Gold Standard,Afforestation/Reforestation,1998.0,1898,365607,44.2

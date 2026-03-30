@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import {
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, CartesianGrid,
+  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, CartesianGrid, Cell,
 } from 'recharts';
-import { formatCredits, formatPct, REGISTRY_COLORS } from '../../utils/formatters';
+import { formatCredits, formatPct, REGISTRY_COLORS, getGroupColor } from '../../utils/formatters';
 
 const ChartTooltip = ({ active, payload }) => {
   if (!active || !payload || !payload.length) return null;
@@ -89,86 +89,141 @@ const RegistryIntelligence = ({ data }) => {
 
   const registryNames = creditsByRegistry.map(r => r.name);
 
+  const regMap = useMemo(() =>
+    Object.fromEntries(registryDetails.map(r => [r.name, r])),
+    [registryDetails]
+  );
+
+  const stackedBarData = useMemo(() =>
+    creditsByRegistry.map(reg => ({
+      name: reg.name === 'Gold Standard' ? 'Gold Std' : reg.name,
+      retired: Math.round((registryStats[reg.name]?.retired || 0) / 1e6),
+      remaining: Math.round((registryStats[reg.name]?.remaining || 0) / 1e6),
+      color: reg.color,
+    })),
+    [creditsByRegistry, registryStats]
+  );
+
+  const renderCard = (reg) => {
+    if (!reg) return null;
+    return (
+      <div key={reg.name} className="registry-card" style={{ borderTopColor: reg.color }}>
+        <div className="registry-card-header-row">
+          <div className="registry-pill" style={{ background: reg.color + '18' }}>
+            <div className="registry-pill-dot" style={{ background: reg.color }} />
+            <span className="registry-pill-name" style={{ color: reg.color }}>{reg.name}</span>
+          </div>
+          <span className="registry-specialty" style={{ background: reg.color + '18', color: reg.color, marginTop: 0 }}>
+            {SPECIALTIES[reg.name]}
+          </span>
+        </div>
+        <div className="registry-card-credits">{formatCredits(reg.credits)}</div>
+        <div className="registry-card-pct">{formatPct(reg.pct)} of global market</div>
+
+        <div style={{ background: 'var(--section-box-bg)', borderRadius: 8, padding: '6px 10px', borderLeft: '2px solid #e85724', marginBottom: 6 }}>
+          <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-primary)', marginBottom: 5 }}>
+            Top Activities
+          </div>
+          {reg.topActivities.map(a => (
+            <div key={a.name} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 3 }}>
+              <span style={{ fontSize: 10, letterSpacing: '0.06em', textTransform: 'uppercase', color: getGroupColor(a.name) || '#777777' }}>{a.name}</span>
+              <span style={{ fontSize: 12, fontWeight: 500, color: 'var(--text-primary)' }}>{formatCredits(a.credits)}</span>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ background: 'var(--section-box-bg)', borderRadius: 8, padding: '6px 10px', borderLeft: '2px solid #e85724', marginBottom: 6 }}>
+          <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-primary)', marginBottom: 5 }}>
+            Top Countries
+          </div>
+          {reg.topCountries.map(c => (
+            <div key={c.name} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 3 }}>
+              <span style={{ fontSize: 10, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#777777' }}>{c.name}</span>
+              <span style={{ fontSize: 12, fontWeight: 500, color: 'var(--text-primary)' }}>{formatCredits(c.credits)}</span>
+            </div>
+          ))}
+        </div>
+
+        {reg.stats && (
+          <div style={{ background: 'var(--section-box-bg)', borderRadius: 8, padding: '6px 10px', borderLeft: '2px solid #e85724', marginBottom: 0 }}>
+            <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-primary)', marginBottom: 5 }}>
+              Market Stats
+            </div>
+            {[
+              { label: 'RETIRED',     value: formatCredits(reg.stats.retired),          color: '#e85724' },
+              { label: 'REMAINING',   value: formatCredits(reg.stats.remaining),        color: 'var(--text-primary)' },
+              { label: 'RET. RATE',   value: reg.stats.retirementRate.toFixed(1) + '%', color: '#22a05a' },
+              { label: 'PROJECTS',    value: reg.stats.projectCount.toLocaleString(),   color: 'var(--text-primary)' },
+              ...(reg.vintageYear ? [{ label: 'AVG VINTAGE', value: reg.vintageYear, color: 'var(--text-primary)' }] : []),
+            ].map(({ label, value, color }) => (
+              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 3 }}>
+                <span style={{ fontSize: 10, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#777777' }}>{label}</span>
+                <span style={{ fontSize: 12, fontWeight: 500, color }}>{value}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div className="registry-page">
       <div className="registry-grid">
-        {registryDetails.map(reg => (
-          <div key={reg.name} className="registry-card">
-            <div className="registry-card-header">
-              <div className="registry-color-dot" style={{ background: reg.color }} />
-              <div className="registry-card-name">{reg.name}</div>
-            </div>
-            <div className="registry-card-credits">{formatCredits(reg.credits)}</div>
-            <div className="registry-card-pct">{formatPct(reg.pct)} of global market</div>
+        {renderCard(regMap['Verra'])}
+        {renderCard(regMap['Gold Standard'])}
 
-            <div className="registry-card-section">Top Activities</div>
-            {reg.topActivities.map(a => (
-              <div key={a.name} className="registry-mini-row">
-                <span className="registry-mini-name">{a.name}</span>
-                <span className="registry-mini-value">{formatCredits(a.credits)}</span>
+        <div className="registry-chart-panel">
+          <div className="registry-chart-title">Retired vs Remaining — by registry</div>
+          <div className="registry-chart-legend">
+            {creditsByRegistry.map(reg => (
+              <div key={reg.name} className="registry-chart-legend-item">
+                <div className="registry-chart-legend-sq" style={{ background: reg.color }} />
+                {reg.name}
               </div>
             ))}
-
-            <div className="registry-card-section">Top Countries</div>
-            {reg.topCountries.map(c => (
-              <div key={c.name} className="registry-mini-row">
-                <span className="registry-mini-name">{c.name}</span>
-                <span className="registry-mini-value">{formatCredits(c.credits)}</span>
-              </div>
-            ))}
-
-            {reg.stats && (
-              <>
-                <div className="registry-card-section">Market Stats</div>
-                <div className="registry-mini-row">
-                  <span className="registry-mini-name">RETIRED</span>
-                  <span className="registry-mini-value">{formatCredits(reg.stats.retired)}</span>
-                </div>
-                <div className="registry-mini-row">
-                  <span className="registry-mini-name">REMAINING</span>
-                  <span className="registry-mini-value">{formatCredits(reg.stats.remaining)}</span>
-                </div>
-                <div className="registry-mini-row">
-                  <span className="registry-mini-name">RET. RATE</span>
-                  <span className="registry-mini-value">{reg.stats.retirementRate.toFixed(1)}%</span>
-                </div>
-                <div className="registry-mini-row">
-                  <span className="registry-mini-name">PROJECTS</span>
-                  <span className="registry-mini-value">{reg.stats.projectCount.toLocaleString()}</span>
-                </div>
-                {reg.vintageYear && (
-                  <div className="registry-mini-row">
-                    <span className="registry-mini-name">AVG VINTAGE</span>
-                    <span className="registry-mini-value">{reg.vintageYear}</span>
-                  </div>
-                )}
-              </>
-            )}
-
-            <div
-              className="registry-specialty"
-              style={{ background: reg.color + '22', color: reg.color }}
-            >
-              {reg.specialty}
+            <div className="registry-chart-legend-item">
+              <div className="registry-chart-legend-sq" style={{ background: 'var(--border)', border: '0.5px solid var(--border)' }} />
+              Remaining
             </div>
           </div>
-        ))}
-      </div>
+          <div className="registry-chart-wrap">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={stackedBarData}>
+                <XAxis dataKey="name" tick={{ fontSize: 8 }} />
+                <YAxis tickFormatter={v => v + 'm'} tick={{ fontSize: 8 }} />
+                <Tooltip formatter={(v, n) => [v + 'm', n]} />
+                <Bar dataKey="retired" stackId="s" name="Retired" radius={[0, 0, 0, 0]}>
+                  {creditsByRegistry.map((reg, i) => (
+                    <Cell key={i} fill={reg.color} />
+                  ))}
+                </Bar>
+                <Bar dataKey="remaining" stackId="s" name="Remaining" fill="#e8e2d8" radius={[3, 3, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
 
-      <div className="comparison-section">
-        <div className="comparison-title">Registry Comparison — Top Activities</div>
-        <ResponsiveContainer width="100%" height={320}>
-          <BarChart data={comparisonData} margin={{ top: 5, right: 10, bottom: 5, left: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
-            <XAxis dataKey="name" tick={{ fontSize: 9 }} />
-            <YAxis tick={{ fontSize: 9 }} tickFormatter={formatCredits} />
-            <Tooltip content={<ChartTooltip />} />
-            <Legend wrapperStyle={{ fontSize: 9 }} />
-            {registryNames.map(name => (
-              <Bar key={name} dataKey={name} fill={REGISTRY_COLORS[name] || '#999'} barSize={12} radius={[2, 2, 0, 0]} />
-            ))}
-          </BarChart>
-        </ResponsiveContainer>
+        {renderCard(regMap['ACR'])}
+        {renderCard(regMap['CAR'])}
+
+        <div className="registry-chart-panel">
+          <div className="registry-chart-title">Registry Comparison — Top Activities</div>
+          <div className="registry-chart-wrap">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={comparisonData} margin={{ top: 5, right: 10, bottom: 5, left: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                <XAxis dataKey="name" tick={{ fontSize: 9 }} />
+                <YAxis tick={{ fontSize: 9 }} tickFormatter={formatCredits} />
+                <Tooltip content={<ChartTooltip />} />
+                <Legend wrapperStyle={{ fontSize: 9 }} />
+                {registryNames.map(name => (
+                  <Bar key={name} dataKey={name} fill={REGISTRY_COLORS[name] || '#999'} barSize={12} radius={[2, 2, 0, 0]} />
+                ))}
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
       </div>
     </div>
   );
