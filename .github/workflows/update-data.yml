@@ -35,15 +35,15 @@ jobs:
           echo "filename=$filename" >> $GITHUB_OUTPUT
           echo "Found: $filename"
 
-      - name: Run fix_data.py
-        env:
-          VROD_EXCEL_PATH: ${{ github.workspace }}/data/${{ steps.find_excel.outputs.filename }}
-        run: python scripts/fix_data.py
-
       - name: Run build_projects.py
         env:
           VROD_EXCEL_PATH: ${{ github.workspace }}/data/${{ steps.find_excel.outputs.filename }}
         run: python scripts/build_projects.py
+
+      - name: Run fix_data.py
+        env:
+          VROD_EXCEL_PATH: ${{ github.workspace }}/data/${{ steps.find_excel.outputs.filename }}
+        run: python scripts/fix_data.py
 
       - name: Commit updated CSVs
         run: |
