@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          lfs: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -25,14 +27,21 @@ jobs:
       - name: Install dependencies
         run: pip install pandas openpyxl xlrd
 
+      - name: Find Excel file
+        id: find_excel
+        run: |
+          filename=$(ls data/*.xlsx | head -1 | xargs basename)
+          echo "filename=$filename" >> $GITHUB_OUTPUT
+          echo "Found: $filename"
+
       - name: Run fix_data.py
         env:
-          VROD_EXCEL_PATH: ${{ github.workspace }}/data/VROD-registry-files--2025-12.xlsx
+          VROD_EXCEL_PATH: ${{ github.workspace }}/data/${{ steps.find_excel.outputs.filename }}
         run: python scripts/fix_data.py
 
       - name: Run build_projects.py
         env:
-          VROD_EXCEL_PATH: ${{ github.workspace }}/data/VROD-registry-files--2025-12.xlsx
+          VROD_EXCEL_PATH: ${{ github.workspace }}/data/${{ steps.find_excel.outputs.filename }}
         run: python scripts/build_projects.py
 
       - name: Commit updated CSVs
