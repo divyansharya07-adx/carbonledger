@@ -15,9 +15,18 @@ Requires: pandas, openpyxl
 import os
 import pandas as pd
 
-RAW_EXCEL  = r"E:\Claude\Claude_trial\VROD-registry-files--2025-12.xlsx"
-OUTPUT_CSV          = r"E:\Claude\carbonledger\public\data\projects_data.csv"
-METHODOLOGY_MAP_CSV = r"E:\Claude\carbonledger\public\methodology_mapping.csv"
+RAW_EXCEL = os.environ.get(
+    "VROD_EXCEL_PATH",
+    r"E:\Claude\Claude_trial\VROD-registry-files--2025-12.xlsx"
+)
+OUTPUT_CSV = os.environ.get(
+    "OUTPUT_CSV",
+    "public/data/projects_data.csv"
+)
+METHODOLOGY_MAP_CSV = os.environ.get(
+    "METHODOLOGY_MAP_CSV",
+    "public/methodology_mapping.csv"
+)
 
 os.makedirs(os.path.dirname(OUTPUT_CSV), exist_ok=True)
 
