@@ -24,7 +24,7 @@ import re
 
 RAW_EXCEL = os.environ.get(
     "VROD_EXCEL_PATH",
-    r"E:\Claude\Claude_trial\VROD-registry-files--2025-12.xlsx"
+    r"E:\Personal\Personal Project\VROD-registry-files--2026-02.xlsx"
 )
 AGG_CSV   = "public/aggregated_data.csv"
 CTRY_CSV  = "public/country_aggregated_data.csv"
