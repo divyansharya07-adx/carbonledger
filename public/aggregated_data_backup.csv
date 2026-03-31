@@ -693,10 +693,10 @@ Verra,Mixed renewables,2014.0,28137339,380345644.0,64.5
 Verra,Mixed renewables,2015.0,29458654,380345644.0,64.5
 Verra,Mixed renewables,2016.0,32586801,380345644.0,64.5
 Verra,Mixed renewables,2017.0,41354011,380345644.0,64.5
-Verra,Mixed renewables,2018.0,36597070,380345644.0,64.5
-Verra,Mixed renewables,2019.0,43473297,380345644.0,64.5
-Verra,Mixed renewables,2020.0,36120502,380345644.0,64.5
-Verra,Mixed renewables,2021.0,38241280,380345644.0,64.5
+Verra,Mixed renewables,2018.0,35337070,380345644.0,64.5
+Verra,Mixed renewables,2019.0,42273297,380345644.0,64.5
+Verra,Mixed renewables,2020.0,34800502,380345644.0,64.5
+Verra,Mixed renewables,2021.0,37461280,380345644.0,64.5
 Verra,Mixed renewables,2022.0,46171249,380345644.0,64.5
 Verra,Mixed renewables,2023.0,32109989,380345644.0,64.5
 Verra,Mixed renewables,2024.0,16402305,380345644.0,64.5
@@ -795,13 +795,13 @@ Verra,Wind,2015.0,37852,255643.0,83.7
 Verra,Wind,2016.0,61411,255643.0,83.7
 Verra,Wind,2017.0,81648,255643.0,83.7
 Verra,Wind,2018.0,103596,255643.0,83.7
-Verra,Rice cultivation,2018.0,15120000,3353505.0,73.5
-Verra,Rice cultivation,2019.0,14400000,3353505.0,73.5
-Verra,Rice cultivation,2020.0,15840000,3353505.0,73.5
-Verra,Rice cultivation,2021.0,9360000,3353505.0,73.5
-Verra,Public transit,2020.0,1392,2280.0,32.0
-Verra,Public transit,2021.0,48864,2280.0,32.0
-Verra,Public transit,2022.0,35196,2280.0,32.0
+Verra,Rice cultivation,2018.0,16380000,3353505.0,73.5
+Verra,Rice cultivation,2019.0,15600000,3353505.0,73.5
+Verra,Rice cultivation,2020.0,17160000,3353505.0,73.5
+Verra,Rice cultivation,2021.0,10140000,3353505.0,73.5
+Verra,Public transit,2020.0,1508,2280.0,32.0
+Verra,Public transit,2021.0,52936,2280.0,32.0
+Verra,Public transit,2022.0,38129,2280.0,32.0
 Gold Standard,Afforestation/Reforestation,1996.0,764,365607.0,44.2
 Gold Standard,Afforestation/Reforestation,1997.0,1605,365607.0,44.2
 Gold Standard,Afforestation/Reforestation,1998.0,1898,365607.0,44.2
@@ -1006,11 +1006,11 @@ CAR,Forest management,2017.0,9500291,,
 CAR,Forest management,2018.0,15089127,,
 CAR,Forest management,2019.0,13406792,,
 CAR,Forest management,2020.0,6110287,,
-CAR,Forest management,2021.0,8597395,,
-CAR,Forest management,2022.0,9185024,,
-CAR,Forest management,2023.0,8746790,,
-CAR,Forest management,2024.0,7033392,,
-CAR,Forest management,2025.0,937114,,
+CAR,Forest management,2021.0,8604235,,
+CAR,Forest management,2022.0,9275485,,
+CAR,Forest management,2023.0,8919991,,
+CAR,Forest management,2024.0,7397705,,
+CAR,Forest management,2025.0,2191011,,
 CAR,Fossil gas leaks,2009.0,21902,,
 CAR,Fossil gas leaks,2010.0,82977,,
 CAR,Fossil gas leaks,2011.0,123555,,
@@ -1027,7 +1027,7 @@ CAR,Fossil gas leaks,2021.0,346846,,
 CAR,Fossil gas leaks,2022.0,261720,,
 CAR,Fossil gas leaks,2023.0,329027,,
 CAR,Fossil gas leaks,2024.0,564108,,
-CAR,Fossil gas leaks,2025.0,2013186,,
+CAR,Fossil gas leaks,2025.0,2404458,,
 CAR,Industrial efficiency,2009.0,683087,,
 CAR,Industrial efficiency,2010.0,3077340,,
 CAR,Industrial efficiency,2011.0,3546904,,
@@ -1044,7 +1044,7 @@ CAR,Industrial efficiency,2021.0,2403325,,
 CAR,Industrial efficiency,2022.0,4650653,,
 CAR,Industrial efficiency,2023.0,5275446,,
 CAR,Industrial efficiency,2024.0,5911034,,
-CAR,Industrial efficiency,2025.0,4497581,,
+CAR,Industrial efficiency,2025.0,4663534,,
 CAR,Landfill gas,2003.0,23089,,
 CAR,Landfill gas,2004.0,39724,,
 CAR,Landfill gas,2005.0,109181,,
@@ -1065,9 +1065,9 @@ CAR,Landfill gas,2019.0,2225762,,
 CAR,Landfill gas,2020.0,2429217,,
 CAR,Landfill gas,2021.0,2628120,,
 CAR,Landfill gas,2022.0,3020652,,
-CAR,Landfill gas,2023.0,2845025,,
-CAR,Landfill gas,2024.0,1745372,,
-CAR,Landfill gas,2025.0,19907,,
+CAR,Landfill gas,2023.0,2846589,,
+CAR,Landfill gas,2024.0,2239533,,
+CAR,Landfill gas,2025.0,81615,,
 CAR,Nitric acid,2008.0,106064,,
 CAR,Nitric acid,2009.0,487045,,
 CAR,Nitric acid,2010.0,1233760,,
@@ -1083,9 +1083,9 @@ CAR,Nitric acid,2019.0,1183399,,
 CAR,Nitric acid,2020.0,1436765,,
 CAR,Nitric acid,2021.0,1448129,,
 CAR,Nitric acid,2022.0,1466181,,
-CAR,Nitric acid,2023.0,1692482,,
-CAR,Nitric acid,2024.0,1250880,,
-CAR,Nitric acid,2025.0,710641,,
+CAR,Nitric acid,2023.0,1713422,,
+CAR,Nitric acid,2024.0,1368394,,
+CAR,Nitric acid,2025.0,826914,,
 CAR,Rewilding,2002.0,5672,,
 CAR,Rewilding,2003.0,10732,,
 CAR,Rewilding,2004.0,43380,,
@@ -1108,8 +1108,8 @@ CAR,Rewilding,2020.0,89249,,
 CAR,Rewilding,2021.0,92404,,
 CAR,Rewilding,2022.0,125839,,
 CAR,Rewilding,2023.0,92258,,
-CAR,Rewilding,2024.0,34561,,
-CAR,Rewilding,2025.0,2617,,
+CAR,Rewilding,2024.0,35451,,
+CAR,Rewilding,2025.0,3079,,
 CAR,Soil & Livestock,2007.0,35807,,
 CAR,Soil & Livestock,2008.0,35468,,
 CAR,Soil & Livestock,2009.0,142645,,
@@ -1121,14 +1121,14 @@ CAR,Soil & Livestock,2014.0,824136,,
 CAR,Soil & Livestock,2015.0,783320,,
 CAR,Soil & Livestock,2016.0,1027844,,
 CAR,Soil & Livestock,2017.0,1010942,,
-CAR,Soil & Livestock,2018.0,914263,,
-CAR,Soil & Livestock,2019.0,880455,,
-CAR,Soil & Livestock,2020.0,745709,,
-CAR,Soil & Livestock,2021.0,683916,,
-CAR,Soil & Livestock,2022.0,781556,,
-CAR,Soil & Livestock,2023.0,757973,,
-CAR,Soil & Livestock,2024.0,320400,,
-CAR,Soil & Livestock,2025.0,101914,,
+CAR,Soil & Livestock,2018.0,919142,,
+CAR,Soil & Livestock,2019.0,904793,,
+CAR,Soil & Livestock,2020.0,785248,,
+CAR,Soil & Livestock,2021.0,759842,,
+CAR,Soil & Livestock,2022.0,919132,,
+CAR,Soil & Livestock,2023.0,1075428,,
+CAR,Soil & Livestock,2024.0,898768,,
+CAR,Soil & Livestock,2025.0,118377,,
 CAR,Waste to energy,2008.0,25599,,
 CAR,Waste to energy,2009.0,18858,,
 CAR,Waste to energy,2013.0,19515,,
