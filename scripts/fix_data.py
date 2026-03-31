@@ -871,6 +871,71 @@ def main():
         cols = pd.read_csv(csv_path, nrows=0).columns.tolist()
         print(f"   {csv_path}: {cols}")
 
+    # ------------------------------------------------------------------
+    # ADDITION 4 — Refresh Total Credits Issued in aggregated_data.csv
+    #              (per-vintage rebuild from raw Excel for Verra + GS)
+    # ------------------------------------------------------------------
+    print("\n=== ADDITION 4: Refresh Total Credits Issued in aggregated_data.csv ===")
+
+    before_verra = int(agg.loc[agg[reg_col] == 'Verra', cr_col].sum())
+    before_gs    = int(agg.loc[agg[reg_col] == 'Gold Standard', cr_col].sum())
+    print(f"  Before — Verra: {before_verra:,}  Gold Standard: {before_gs:,}")
+
+    vcus_a4 = vcus[['vintage_year', 'Methodology', 'qty']].copy()
+    vcus_a4[agg_col] = vcus_a4['Methodology'].apply(
+        lambda m: code_to_cat.get(
+            ('Verra', str(m or '').strip().split(';')[0].strip()), 'Other'
+        )
+    )
+    verra_vyr = (
+        vcus_a4.groupby(['vintage_year', agg_col])['qty']
+        .sum().astype(int).reset_index()
+        .rename(columns={'vintage_year': yr_col, 'qty': cr_col})
+    )
+    verra_vyr[reg_col] = 'Verra'
+
+    gold_src = gold if gold is not None else pd.read_excel(
+        RAW_EXCEL, sheet_name='Gold Issuances', engine='openpyxl'
+    )
+    if 'vintage_year' not in gold_src.columns:
+        gold_src = gold_src.copy()
+        gold_src['vintage_year'] = pd.to_numeric(gold_src['Vintage'], errors='coerce')
+        gold_src['qty']          = pd.to_numeric(gold_src['Quantity'], errors='coerce').fillna(0)
+    gold_a4 = gold_src[['vintage_year', 'Project Type', 'qty']].copy()
+    gold_a4[agg_col] = gold_a4['Project Type'].apply(map_gold_project_type)
+    gs_vyr = (
+        gold_a4.groupby(['vintage_year', agg_col])['qty']
+        .sum().astype(int).reset_index()
+        .rename(columns={'vintage_year': yr_col, 'qty': cr_col})
+    )
+    gs_vyr[reg_col] = 'Gold Standard'
+
+    ret_cols = [c for c in ['total_credits_retired', 'retirement_rate'] if c in agg.columns]
+    new_vg = pd.concat([verra_vyr, gs_vyr], ignore_index=True)
+    if ret_cols:
+        ret_lookup = (
+            agg[agg[reg_col].isin(['Verra', 'Gold Standard'])]
+            [[reg_col, agg_col] + ret_cols]
+            .drop_duplicates([reg_col, agg_col])
+        )
+        new_vg = new_vg.merge(ret_lookup, on=[reg_col, agg_col], how='left')
+        if 'total_credits_retired' in new_vg.columns:
+            new_vg['total_credits_retired'] = new_vg['total_credits_retired'].fillna(0).astype(int)
+        if 'retirement_rate' in new_vg.columns:
+            new_vg['retirement_rate'] = new_vg['retirement_rate'].fillna(0)
+
+    agg = pd.concat(
+        [agg[~agg[reg_col].isin(['Verra', 'Gold Standard'])], new_vg],
+        ignore_index=True,
+    )
+    agg[cr_col] = agg[cr_col].fillna(0).astype(int)
+    agg.to_csv(AGG_CSV, index=False)
+
+    after_verra = int(agg.loc[agg[reg_col] == 'Verra', cr_col].sum())
+    after_gs    = int(agg.loc[agg[reg_col] == 'Gold Standard', cr_col].sum())
+    print(f"  After  — Verra: {after_verra:,}  Gold Standard: {after_gs:,}")
+    print(f"  aggregated_data.csv: refreshed {len(new_vg)} Verra/GS rows → {len(agg)} total rows saved")
+
 
 if __name__ == "__main__":
     main()
