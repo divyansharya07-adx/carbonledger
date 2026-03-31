@@ -283,10 +283,9 @@ def build_gold():
     ret_gsid = ret['GSID'].astype(str).str.strip()
     retired = ret['qty'].groupby(ret_gsid).sum().rename('credits_retired')
 
-    # CORSIA: 'Eligible for CORSIA?' any 'Yes' per GSID
+    # CORSIA: Label column contains 'CORSIA' text (File B: replaces 'Eligible for CORSIA?' column)
     corsia_map = (
-        iss['Eligible for CORSIA?'].astype(str).str.strip().str.lower()
-        .eq('yes')
+        iss['Label'].astype(str).str.contains('CORSIA', na=False)
         .groupby(iss_gsid)
         .any()
         .rename('corsia_eligible')
