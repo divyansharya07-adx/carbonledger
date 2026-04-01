@@ -124,6 +124,8 @@ def _map_gold_project_type(pt):
         return 'Solar'
     if re.match(r'small.*hydro|hydro', pl):
         return 'Hydropower'
+    if pl == 'geothermal':
+        return 'Geothermal'
     if pl == 'grid efficiency':
         return 'Grid efficiency'
     if re.match(r'energy efficiency', pl):

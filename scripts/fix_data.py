@@ -49,6 +49,8 @@ def map_gold_project_type(pt):
         return "Solar"
     if re.match(r"small.*hydro|hydro", pl):
         return "Hydropower"
+    if pl == "geothermal":
+        return "Geothermal"
     if pl == "grid efficiency":
         return "Grid efficiency"
     if re.match(r"energy efficiency", pl):
@@ -901,8 +903,12 @@ def main():
         gold_src = gold_src.copy()
         gold_src['vintage_year'] = pd.to_numeric(gold_src['Vintage'], errors='coerce')
         gold_src['qty']          = pd.to_numeric(gold_src['Quantity'], errors='coerce').fillna(0)
-    gold_a4 = gold_src[['vintage_year', 'Project Type', 'qty']].copy()
-    gold_a4[agg_col] = gold_a4['Project Type'].apply(map_gold_project_type)
+    gold_a4 = gold_src[['vintage_year', 'Project Type', 'Methodology', 'qty']].copy()
+    gold_a4['Methodology'] = gold_a4['Methodology'].fillna('').astype(str).str.strip()
+    gold_a4[agg_col] = gold_a4.apply(
+        lambda r: lookup_cat_e('Gold', r['Methodology']) or map_gold_project_type(r['Project Type']),
+        axis=1,
+    )
     gs_vyr = (
         gold_a4.groupby(['vintage_year', agg_col])['qty']
         .sum().astype(int).reset_index()
