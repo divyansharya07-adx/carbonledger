@@ -20,23 +20,25 @@ Verra,Waste management,8
 Verra,Waste to energy,30
 Verra,Wastewater treatment,2
 Verra,Wind,1
-Gold Standard,Afforestation/Reforestation,4
-Gold Standard,Bioenergy,68
+Gold Standard,Afforestation/Reforestation,34
+Gold Standard,Bioenergy,128
 Gold Standard,Cleaner cooking,575
-Gold Standard,Efficient appliances,166
+Gold Standard,Efficient appliances,574
 Gold Standard,Electric vehicles,1
 Gold Standard,Geothermal,3
 Gold Standard,Heat recovery,1
+Gold Standard,Hydropower,7
 Gold Standard,Industrial efficiency,83
 Gold Standard,Landfill gas,19
 Gold Standard,Mixed renewables,450
-Gold Standard,Other,635
+Gold Standard,Other,23
 Gold Standard,Soil & Livestock,17
-Gold Standard,Solar,31
+Gold Standard,Solar,59
 Gold Standard,Waste management,2
 Gold Standard,Waste to energy,31
 Gold Standard,Wastewater treatment,3
 Gold Standard,Water purification,25
+Gold Standard,Wind,79
 ACR,Afforestation/Reforestation,3
 ACR,Bioenergy,1
 ACR,Electric vehicles,36
