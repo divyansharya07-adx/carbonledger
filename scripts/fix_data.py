@@ -569,18 +569,19 @@ def main():
     # --- Gold Standard (reuse gold DataFrame from Section D, or load fresh if D was skipped) ---
     if gold is None:
         gold = pd.read_excel(RAW_EXCEL, sheet_name="Gold Issuances", engine="openpyxl")
-    gold_e = gold[['GSID', 'Methodology']].copy()
+    gold_e = gold[['GSID', 'Methodology', 'Project Type']].copy()
     gold_e['GSID'] = gold_e['GSID'].astype(str).str.strip()
     gold_e['Methodology'] = gold_e['Methodology'].fillna('').astype(str).str.strip()
+    gold_e['Project Type'] = gold_e['Project Type'].fillna('').astype(str).str.strip()
     gold_e = gold_e[gold_e['GSID'].str.len() > 0]
-    proj_meth_g = (gold_e.groupby('GSID')['Methodology']
-                         .agg(lambda x: x[x != ''].mode().iloc[0]
-                                        if len(x[x != ''].mode()) > 0 else ''))
+    _mode = lambda x: x[x != ''].mode().iloc[0] if len(x[x != ''].mode()) > 0 else ''
+    proj_meth_g = gold_e.groupby('GSID')['Methodology'].agg(_mode)
+    proj_pt_g   = gold_e.groupby('GSID')['Project Type'].agg(_mode)
     gold_counts = {}
-    for _, meth in proj_meth_g.items():
+    for gsid, meth in proj_meth_g.items():
         cat = lookup_cat_e('Gold', meth)
         if cat is None:
-            cat = 'Other'
+            cat = map_gold_project_type(proj_pt_g.get(gsid, ''))
         gold_counts[cat] = gold_counts.get(cat, 0) + 1
     print(f"  Gold Standard: {len(proj_meth_g)} unique projects, {sum(gold_counts.values())} matched")
     for cat, cnt in sorted(gold_counts.items()):
