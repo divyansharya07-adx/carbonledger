@@ -364,21 +364,21 @@ CAR,Waste to energy,2022.0,22257,225517,80.4
 CAR,Waste to energy,2023.0,33085,225517,80.4
 CAR,Waste to energy,2024.0,22770,225517,80.4
 Verra,Afforestation/Reforestation,1999.0,118878,56221476,70.8
-Verra,Other,2000.0,10167,0,0.0
+Verra,Other,2000.0,10167,2708138,93.4
 Verra,Soil & Livestock,2000.0,2000,121686184,67.9
 Verra,Afforestation/Reforestation,2001.0,1223324,56221476,70.8
 Verra,Bioenergy,2001.0,115,10467120,48.5
 Verra,Hydropower,2001.0,17681,23935800,71.7
 Verra,Landfill gas,2001.0,1084101,17281979,59.1
 Verra,Mixed renewables,2001.0,126608,385727823,65.1
-Verra,Other,2001.0,87803,0,0.0
+Verra,Other,2001.0,87803,2708138,93.4
 Verra,Soil & Livestock,2001.0,59034,121686184,67.9
 Verra,Afforestation/Reforestation,2002.0,155144,56221476,70.8
 Verra,Bioenergy,2002.0,26635,10467120,48.5
 Verra,Forest management,2002.0,881529,218230117,71.5
 Verra,Hydropower,2002.0,1330251,23935800,71.7
 Verra,Mixed renewables,2002.0,151106,385727823,65.1
-Verra,Other,2002.0,246121,0,0.0
+Verra,Other,2002.0,246121,2708138,93.4
 Verra,Soil & Livestock,2002.0,1042930,121686184,67.9
 Verra,Afforestation/Reforestation,2003.0,601059,56221476,70.8
 Verra,Bioenergy,2003.0,91584,10467120,48.5
@@ -386,7 +386,7 @@ Verra,Efficient appliances,2003.0,13333,7542210,39.6
 Verra,Forest management,2003.0,514614,218230117,71.5
 Verra,Hydropower,2003.0,580981,23935800,71.7
 Verra,Mixed renewables,2003.0,77477,385727823,65.1
-Verra,Other,2003.0,581736,0,0.0
+Verra,Other,2003.0,581736,2708138,93.4
 Verra,Soil & Livestock,2003.0,696896,121686184,67.9
 Verra,Afforestation/Reforestation,2004.0,463340,56221476,70.8
 Verra,Bioenergy,2004.0,22885,10467120,48.5
@@ -395,7 +395,7 @@ Verra,Forest management,2004.0,211840,218230117,71.5
 Verra,Hydropower,2004.0,115559,23935800,71.7
 Verra,Industrial efficiency,2004.0,112305,12301081,67.9
 Verra,Mixed renewables,2004.0,449498,385727823,65.1
-Verra,Other,2004.0,108003,0,0.0
+Verra,Other,2004.0,108003,2708138,93.4
 Verra,Soil & Livestock,2004.0,396393,121686184,67.9
 Verra,Waste to energy,2004.0,53775,22894980,77.1
 Verra,Afforestation/Reforestation,2005.0,63917,56221476,70.8
@@ -405,7 +405,7 @@ Verra,Forest management,2005.0,581322,218230117,71.5
 Verra,Hydropower,2005.0,194494,23935800,71.7
 Verra,Landfill gas,2005.0,3240,17281979,59.1
 Verra,Mixed renewables,2005.0,579758,385727823,65.1
-Verra,Other,2005.0,137549,0,0.0
+Verra,Other,2005.0,137549,2708138,93.4
 Verra,Soil & Livestock,2005.0,692797,121686184,67.9
 Verra,Solar,2005.0,8208,2179124,72.1
 Verra,Waste to energy,2005.0,70936,22894980,77.1
@@ -419,7 +419,7 @@ Verra,Hydropower,2006.0,921540,23935800,71.7
 Verra,Industrial efficiency,2006.0,297618,12301081,67.9
 Verra,Landfill gas,2006.0,235360,17281979,59.1
 Verra,Mixed renewables,2006.0,6542648,385727823,65.1
-Verra,Other,2006.0,689505,0,0.0
+Verra,Other,2006.0,689505,2708138,93.4
 Verra,Soil & Livestock,2006.0,883647,121686184,67.9
 Verra,Solar,2006.0,186698,2179124,72.1
 Verra,Waste to energy,2006.0,806947,22894980,77.1
@@ -433,7 +433,7 @@ Verra,Hydropower,2007.0,2136654,23935800,71.7
 Verra,Industrial efficiency,2007.0,1071190,12301081,67.9
 Verra,Landfill gas,2007.0,590114,17281979,59.1
 Verra,Mixed renewables,2007.0,14865833,385727823,65.1
-Verra,Other,2007.0,1038059,0,0.0
+Verra,Other,2007.0,1038059,2708138,93.4
 Verra,Soil & Livestock,2007.0,830237,121686184,67.9
 Verra,Solar,2007.0,45062,2179124,72.1
 Verra,Waste to energy,2007.0,1217176,22894980,77.1
@@ -704,225 +704,225 @@ Verra,Fossil gas leaks,2025.0,118365,3239718,27.3
 Verra,Landfill gas,2025.0,1502,17281979,59.1
 Verra,Mixed renewables,2025.0,3210144,385727823,65.1
 Verra,Solar,2025.0,6390,2179124,72.1
-Gold Standard,Afforestation/Reforestation,1996.0,764,365640,44.2
-Gold Standard,Afforestation/Reforestation,1997.0,1605,365640,44.2
-Gold Standard,Afforestation/Reforestation,1998.0,1898,365640,44.2
-Gold Standard,Afforestation/Reforestation,1999.0,2988,365640,44.2
-Gold Standard,Afforestation/Reforestation,2000.0,3864,365640,44.2
-Gold Standard,Afforestation/Reforestation,2001.0,4468,365640,44.2
-Gold Standard,Bioenergy,2001.0,8560,5673420,21.9
-Gold Standard,Afforestation/Reforestation,2002.0,5107,365640,44.2
-Gold Standard,Bioenergy,2002.0,16362,5673420,21.9
-Gold Standard,Afforestation/Reforestation,2003.0,6523,365640,44.2
-Gold Standard,Bioenergy,2003.0,17606,5673420,21.9
-Gold Standard,Afforestation/Reforestation,2004.0,7235,365640,44.2
-Gold Standard,Wind,2004.0,56399,0,0.0
-Gold Standard,Afforestation/Reforestation,2005.0,11210,365640,44.2
-Gold Standard,Wind,2005.0,183663,0,0.0
-Gold Standard,Afforestation/Reforestation,2006.0,21222,365640,44.2
-Gold Standard,Bioenergy,2006.0,245918,5673420,21.9
-Gold Standard,Hydropower,2006.0,14072,0,0.0
-Gold Standard,Wind,2006.0,174375,0,0.0
-Gold Standard,Afforestation/Reforestation,2007.0,20149,365640,44.2
-Gold Standard,Bioenergy,2007.0,337476,5673420,21.9
-Gold Standard,Efficient appliances,2007.0,16336,8192426,34.8
-Gold Standard,Hydropower,2007.0,12668,0,0.0
-Gold Standard,Other,2007.0,216373,84466356,51.9
-Gold Standard,Wind,2007.0,409090,0,0.0
-Gold Standard,Afforestation/Reforestation,2008.0,47283,365640,44.2
-Gold Standard,Bioenergy,2008.0,187972,5673420,21.9
-Gold Standard,Efficient appliances,2008.0,191879,8192426,34.8
-Gold Standard,Hydropower,2008.0,28703,0,0.0
-Gold Standard,Other,2008.0,751215,84466356,51.9
-Gold Standard,Solar,2008.0,1946,861134,27.5
-Gold Standard,Wind,2008.0,1086666,0,0.0
-Gold Standard,Afforestation/Reforestation,2009.0,117048,365640,44.2
-Gold Standard,Bioenergy,2009.0,300692,5673420,21.9
-Gold Standard,Efficient appliances,2009.0,654038,8192426,34.8
-Gold Standard,Hydropower,2009.0,78990,0,0.0
-Gold Standard,Other,2009.0,848751,84466356,51.9
-Gold Standard,Solar,2009.0,4967,861134,27.5
-Gold Standard,Wind,2009.0,1483060,0,0.0
-Gold Standard,Afforestation/Reforestation,2010.0,199404,365640,44.2
-Gold Standard,Bioenergy,2010.0,610900,5673420,21.9
-Gold Standard,Efficient appliances,2010.0,1211745,8192426,34.8
-Gold Standard,Hydropower,2010.0,164831,0,0.0
-Gold Standard,Other,2010.0,1241119,84466356,51.9
-Gold Standard,Solar,2010.0,13790,861134,27.5
-Gold Standard,Wind,2010.0,2081086,0,0.0
-Gold Standard,Afforestation/Reforestation,2011.0,342281,365640,44.2
-Gold Standard,Bioenergy,2011.0,992998,5673420,21.9
-Gold Standard,Efficient appliances,2011.0,3582873,8192426,34.8
-Gold Standard,Hydropower,2011.0,247286,0,0.0
-Gold Standard,Other,2011.0,1928293,84466356,51.9
-Gold Standard,Solar,2011.0,137083,861134,27.5
-Gold Standard,Wind,2011.0,3051863,0,0.0
-Gold Standard,Afforestation/Reforestation,2012.0,516202,365640,44.2
-Gold Standard,Bioenergy,2012.0,1682968,5673420,21.9
-Gold Standard,Efficient appliances,2012.0,4652244,8192426,34.8
-Gold Standard,Hydropower,2012.0,281395,0,0.0
-Gold Standard,Other,2012.0,3191877,84466356,51.9
-Gold Standard,Solar,2012.0,297845,861134,27.5
-Gold Standard,Wind,2012.0,3265368,0,0.0
-Gold Standard,Afforestation/Reforestation,2013.0,566799,365640,44.2
-Gold Standard,Bioenergy,2013.0,2935496,5673420,21.9
-Gold Standard,Efficient appliances,2013.0,4980632,8192426,34.8
-Gold Standard,Hydropower,2013.0,379848,0,0.0
-Gold Standard,Other,2013.0,4692974,84466356,51.9
-Gold Standard,Solar,2013.0,568161,861134,27.5
-Gold Standard,Wind,2013.0,3097090,0,0.0
-Gold Standard,Afforestation/Reforestation,2014.0,701023,365640,44.2
-Gold Standard,Bioenergy,2014.0,4098569,5673420,21.9
-Gold Standard,Efficient appliances,2014.0,4927159,8192426,34.8
-Gold Standard,Hydropower,2014.0,395640,0,0.0
-Gold Standard,Other,2014.0,3580972,84466356,51.9
-Gold Standard,Solar,2014.0,845847,861134,27.5
-Gold Standard,Wind,2014.0,4092583,0,0.0
-Gold Standard,Afforestation/Reforestation,2015.0,714725,365640,44.2
-Gold Standard,Bioenergy,2015.0,4064914,5673420,21.9
-Gold Standard,Efficient appliances,2015.0,5682798,8192426,34.8
-Gold Standard,Hydropower,2015.0,544846,0,0.0
-Gold Standard,Other,2015.0,2457639,84466356,51.9
-Gold Standard,Solar,2015.0,799423,861134,27.5
-Gold Standard,Wind,2015.0,5683761,0,0.0
-Gold Standard,Afforestation/Reforestation,2016.0,794471,365640,44.2
-Gold Standard,Bioenergy,2016.0,4028769,5673420,21.9
-Gold Standard,Efficient appliances,2016.0,5898262,8192426,34.8
-Gold Standard,Hydropower,2016.0,564965,0,0.0
-Gold Standard,Other,2016.0,2888062,84466356,51.9
-Gold Standard,Solar,2016.0,1007591,861134,27.5
-Gold Standard,Wind,2016.0,6683715,0,0.0
-Gold Standard,Afforestation/Reforestation,2017.0,819842,365640,44.2
-Gold Standard,Bioenergy,2017.0,3893438,5673420,21.9
-Gold Standard,Efficient appliances,2017.0,7461032,8192426,34.8
-Gold Standard,Hydropower,2017.0,662699,0,0.0
-Gold Standard,Other,2017.0,1626743,84466356,51.9
-Gold Standard,Solar,2017.0,1024046,861134,27.5
-Gold Standard,Wind,2017.0,6800551,0,0.0
-Gold Standard,Afforestation/Reforestation,2018.0,991410,365640,44.2
-Gold Standard,Bioenergy,2018.0,4045721,5673420,21.9
-Gold Standard,Efficient appliances,2018.0,7704643,8192426,34.8
-Gold Standard,Hydropower,2018.0,472995,0,0.0
-Gold Standard,Other,2018.0,2562652,84466356,51.9
-Gold Standard,Solar,2018.0,1471364,861134,27.5
-Gold Standard,Wind,2018.0,8613287,0,0.0
-Gold Standard,Afforestation/Reforestation,2019.0,1219378,365640,44.2
-Gold Standard,Bioenergy,2019.0,4436359,5673420,21.9
-Gold Standard,Efficient appliances,2019.0,8727504,8192426,34.8
-Gold Standard,Hydropower,2019.0,566027,0,0.0
-Gold Standard,Other,2019.0,3492042,84466356,51.9
-Gold Standard,Solar,2019.0,4355073,861134,27.5
-Gold Standard,Wind,2019.0,10446239,0,0.0
-Gold Standard,Afforestation/Reforestation,2020.0,1257759,365640,44.2
-Gold Standard,Bioenergy,2020.0,5004174,5673420,21.9
-Gold Standard,Efficient appliances,2020.0,10497848,8192426,34.8
-Gold Standard,Hydropower,2020.0,571439,0,0.0
-Gold Standard,Other,2020.0,4501667,84466356,51.9
-Gold Standard,Solar,2020.0,7312855,861134,27.5
-Gold Standard,Wind,2020.0,12450418,0,0.0
-Gold Standard,Afforestation/Reforestation,2021.0,1121517,365640,44.2
-Gold Standard,Bioenergy,2021.0,9180994,5673420,21.9
-Gold Standard,Efficient appliances,2021.0,23919869,8192426,34.8
-Gold Standard,Hydropower,2021.0,461132,0,0.0
-Gold Standard,Other,2021.0,5117070,84466356,51.9
-Gold Standard,Solar,2021.0,8529703,861134,27.5
-Gold Standard,Wind,2021.0,14044058,0,0.0
-Gold Standard,Afforestation/Reforestation,2022.0,788385,365640,44.2
-Gold Standard,Bioenergy,2022.0,8748319,5673420,21.9
-Gold Standard,Efficient appliances,2022.0,31638782,8192426,34.8
-Gold Standard,Hydropower,2022.0,386891,0,0.0
-Gold Standard,Other,2022.0,4974557,84466356,51.9
-Gold Standard,Solar,2022.0,10376933,861134,27.5
-Gold Standard,Wind,2022.0,16431401,0,0.0
-Gold Standard,Afforestation/Reforestation,2023.0,498707,365640,44.2
-Gold Standard,Bioenergy,2023.0,5180307,5673420,21.9
-Gold Standard,Efficient appliances,2023.0,32146725,8192426,34.8
-Gold Standard,Hydropower,2023.0,214117,0,0.0
-Gold Standard,Other,2023.0,3748362,84466356,51.9
-Gold Standard,Solar,2023.0,6387541,861134,27.5
-Gold Standard,Wind,2023.0,13504254,0,0.0
-Gold Standard,Afforestation/Reforestation,2024.0,321910,365640,44.2
-Gold Standard,Bioenergy,2024.0,1652779,5673420,21.9
-Gold Standard,Efficient appliances,2024.0,23984244,8192426,34.8
-Gold Standard,Hydropower,2024.0,88809,0,0.0
-Gold Standard,Other,2024.0,1240185,84466356,51.9
-Gold Standard,Solar,2024.0,1957804,861134,27.5
-Gold Standard,Wind,2024.0,5856318,0,0.0
-Gold Standard,Afforestation/Reforestation,2025.0,183904,365640,44.2
-Gold Standard,Bioenergy,2025.0,181808,5673420,21.9
-Gold Standard,Efficient appliances,2025.0,2316599,8192426,34.8
-Gold Standard,Hydropower,2025.0,11276,0,0.0
-Gold Standard,Other,2025.0,92610,84466356,51.9
-Gold Standard,Solar,2025.0,3967,861134,27.5
-Gold Standard,Wind,2025.0,1489619,0,0.0
-Gold Standard,Afforestation/Reforestation,2026.0,235949,365640,44.2
-Gold Standard,Other,2026.0,2418,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2027.0,275884,365640,44.2
-Gold Standard,Other,2027.0,2418,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2028.0,249187,365640,44.2
-Gold Standard,Other,2028.0,2418,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2029.0,183772,365640,44.2
-Gold Standard,Other,2029.0,2418,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2030.0,78838,365640,44.2
-Gold Standard,Other,2030.0,2418,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2031.0,78016,365640,44.2
-Gold Standard,Other,2031.0,2418,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2032.0,78637,365640,44.2
-Gold Standard,Other,2032.0,2418,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2033.0,76826,365640,44.2
-Gold Standard,Other,2033.0,1752,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2034.0,73144,365640,44.2
-Gold Standard,Other,2034.0,1692,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2035.0,68404,365640,44.2
-Gold Standard,Other,2035.0,1692,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2036.0,46663,365640,44.2
-Gold Standard,Other,2036.0,1695,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2037.0,40830,365640,44.2
-Gold Standard,Other,2037.0,1692,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2038.0,22460,365640,44.2
-Gold Standard,Other,2038.0,1695,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2039.0,23339,365640,44.2
-Gold Standard,Other,2039.0,1692,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2040.0,20274,365640,44.2
-Gold Standard,Other,2040.0,1684,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2041.0,18046,365640,44.2
-Gold Standard,Other,2041.0,1687,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2042.0,12446,365640,44.2
-Gold Standard,Other,2042.0,1684,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2043.0,11660,365640,44.2
-Gold Standard,Other,2043.0,1470,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2044.0,9776,365640,44.2
-Gold Standard,Other,2044.0,1470,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2045.0,9675,365640,44.2
-Gold Standard,Other,2045.0,1451,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2046.0,7891,365640,44.2
-Gold Standard,Other,2046.0,1451,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2047.0,7543,365640,44.2
-Gold Standard,Other,2047.0,1451,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2048.0,6323,365640,44.2
-Gold Standard,Other,2048.0,1451,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2049.0,7232,365640,44.2
-Gold Standard,Other,2049.0,1451,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2050.0,2678,365640,44.2
-Gold Standard,Other,2050.0,1451,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2051.0,3010,365640,44.2
-Gold Standard,Other,2051.0,1451,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2052.0,2476,365640,44.2
-Gold Standard,Other,2052.0,1451,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2053.0,2426,365640,44.2
-Gold Standard,Other,2053.0,1451,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2054.0,2361,365640,44.2
-Gold Standard,Other,2054.0,1451,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2055.0,2178,365640,44.2
-Gold Standard,Other,2055.0,1451,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2056.0,2044,365640,44.2
-Gold Standard,Other,2056.0,1451,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2057.0,1916,365640,44.2
-Gold Standard,Other,2057.0,1443,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2058.0,1754,365640,44.2
-Gold Standard,Other,2058.0,1253,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2059.0,1674,365640,44.2
-Gold Standard,Other,2059.0,1165,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2060.0,664,365640,44.2
-Gold Standard,Other,2060.0,2966,84466356,51.9
-Gold Standard,Afforestation/Reforestation,2061.0,678,365640,44.2
+Gold Standard,Afforestation/Reforestation,1996.0,764,5801401,44.8
+Gold Standard,Afforestation/Reforestation,1997.0,1605,5801401,44.8
+Gold Standard,Afforestation/Reforestation,1998.0,1898,5801401,44.8
+Gold Standard,Afforestation/Reforestation,1999.0,2988,5801401,44.8
+Gold Standard,Afforestation/Reforestation,2000.0,3864,5801401,44.8
+Gold Standard,Afforestation/Reforestation,2001.0,4468,5801401,44.8
+Gold Standard,Bioenergy,2001.0,8560,13901610,33.1
+Gold Standard,Afforestation/Reforestation,2002.0,5107,5801401,44.8
+Gold Standard,Bioenergy,2002.0,16362,13901610,33.1
+Gold Standard,Afforestation/Reforestation,2003.0,6523,5801401,44.8
+Gold Standard,Bioenergy,2003.0,17606,13901610,33.1
+Gold Standard,Afforestation/Reforestation,2004.0,7235,5801401,44.8
+Gold Standard,Wind,2004.0,56399,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2005.0,11210,5801401,44.8
+Gold Standard,Wind,2005.0,183663,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2006.0,21222,5801401,44.8
+Gold Standard,Bioenergy,2006.0,245918,13901610,33.1
+Gold Standard,Hydropower,2006.0,14072,220830,50.4
+Gold Standard,Wind,2006.0,174375,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2007.0,20149,5801401,44.8
+Gold Standard,Bioenergy,2007.0,337476,13901610,33.1
+Gold Standard,Efficient appliances,2007.0,16336,42957667,48.5
+Gold Standard,Hydropower,2007.0,12668,220830,50.4
+Gold Standard,Other,2007.0,216373,2906789,62.5
+Gold Standard,Wind,2007.0,409090,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2008.0,47283,5801401,44.8
+Gold Standard,Bioenergy,2008.0,187972,13901610,33.1
+Gold Standard,Efficient appliances,2008.0,191879,42957667,48.5
+Gold Standard,Hydropower,2008.0,28703,220830,50.4
+Gold Standard,Other,2008.0,751215,2906789,62.5
+Gold Standard,Solar,2008.0,1946,7430714,48.3
+Gold Standard,Wind,2008.0,1086666,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2009.0,117048,5801401,44.8
+Gold Standard,Bioenergy,2009.0,300692,13901610,33.1
+Gold Standard,Efficient appliances,2009.0,654038,42957667,48.5
+Gold Standard,Hydropower,2009.0,78990,220830,50.4
+Gold Standard,Other,2009.0,848751,2906789,62.5
+Gold Standard,Solar,2009.0,4967,7430714,48.3
+Gold Standard,Wind,2009.0,1483060,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2010.0,199404,5801401,44.8
+Gold Standard,Bioenergy,2010.0,610900,13901610,33.1
+Gold Standard,Efficient appliances,2010.0,1211745,42957667,48.5
+Gold Standard,Hydropower,2010.0,164831,220830,50.4
+Gold Standard,Other,2010.0,1241119,2906789,62.5
+Gold Standard,Solar,2010.0,13790,7430714,48.3
+Gold Standard,Wind,2010.0,2081086,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2011.0,342281,5801401,44.8
+Gold Standard,Bioenergy,2011.0,992998,13901610,33.1
+Gold Standard,Efficient appliances,2011.0,3582873,42957667,48.5
+Gold Standard,Hydropower,2011.0,247286,220830,50.4
+Gold Standard,Other,2011.0,1928293,2906789,62.5
+Gold Standard,Solar,2011.0,137083,7430714,48.3
+Gold Standard,Wind,2011.0,3051863,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2012.0,516202,5801401,44.8
+Gold Standard,Bioenergy,2012.0,1682968,13901610,33.1
+Gold Standard,Efficient appliances,2012.0,4652244,42957667,48.5
+Gold Standard,Hydropower,2012.0,281395,220830,50.4
+Gold Standard,Other,2012.0,3191877,2906789,62.5
+Gold Standard,Solar,2012.0,297845,7430714,48.3
+Gold Standard,Wind,2012.0,3265368,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2013.0,566799,5801401,44.8
+Gold Standard,Bioenergy,2013.0,2935496,13901610,33.1
+Gold Standard,Efficient appliances,2013.0,4980632,42957667,48.5
+Gold Standard,Hydropower,2013.0,379848,220830,50.4
+Gold Standard,Other,2013.0,4692974,2906789,62.5
+Gold Standard,Solar,2013.0,568161,7430714,48.3
+Gold Standard,Wind,2013.0,3097090,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2014.0,701023,5801401,44.8
+Gold Standard,Bioenergy,2014.0,4098569,13901610,33.1
+Gold Standard,Efficient appliances,2014.0,4927159,42957667,48.5
+Gold Standard,Hydropower,2014.0,395640,220830,50.4
+Gold Standard,Other,2014.0,3580972,2906789,62.5
+Gold Standard,Solar,2014.0,845847,7430714,48.3
+Gold Standard,Wind,2014.0,4092583,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2015.0,714725,5801401,44.8
+Gold Standard,Bioenergy,2015.0,4064914,13901610,33.1
+Gold Standard,Efficient appliances,2015.0,5682798,42957667,48.5
+Gold Standard,Hydropower,2015.0,544846,220830,50.4
+Gold Standard,Other,2015.0,2457639,2906789,62.5
+Gold Standard,Solar,2015.0,799423,7430714,48.3
+Gold Standard,Wind,2015.0,5683761,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2016.0,794471,5801401,44.8
+Gold Standard,Bioenergy,2016.0,4028769,13901610,33.1
+Gold Standard,Efficient appliances,2016.0,5898262,42957667,48.5
+Gold Standard,Hydropower,2016.0,564965,220830,50.4
+Gold Standard,Other,2016.0,2888062,2906789,62.5
+Gold Standard,Solar,2016.0,1007591,7430714,48.3
+Gold Standard,Wind,2016.0,6683715,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2017.0,819842,5801401,44.8
+Gold Standard,Bioenergy,2017.0,3893438,13901610,33.1
+Gold Standard,Efficient appliances,2017.0,7461032,42957667,48.5
+Gold Standard,Hydropower,2017.0,662699,220830,50.4
+Gold Standard,Other,2017.0,1626743,2906789,62.5
+Gold Standard,Solar,2017.0,1024046,7430714,48.3
+Gold Standard,Wind,2017.0,6800551,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2018.0,991410,5801401,44.8
+Gold Standard,Bioenergy,2018.0,4045721,13901610,33.1
+Gold Standard,Efficient appliances,2018.0,7704643,42957667,48.5
+Gold Standard,Hydropower,2018.0,472995,220830,50.4
+Gold Standard,Other,2018.0,2562652,2906789,62.5
+Gold Standard,Solar,2018.0,1471364,7430714,48.3
+Gold Standard,Wind,2018.0,8613287,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2019.0,1219378,5801401,44.8
+Gold Standard,Bioenergy,2019.0,4436359,13901610,33.1
+Gold Standard,Efficient appliances,2019.0,8727504,42957667,48.5
+Gold Standard,Hydropower,2019.0,566027,220830,50.4
+Gold Standard,Other,2019.0,3492042,2906789,62.5
+Gold Standard,Solar,2019.0,4355073,7430714,48.3
+Gold Standard,Wind,2019.0,10446239,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2020.0,1257759,5801401,44.8
+Gold Standard,Bioenergy,2020.0,5004174,13901610,33.1
+Gold Standard,Efficient appliances,2020.0,10497848,42957667,48.5
+Gold Standard,Hydropower,2020.0,571439,220830,50.4
+Gold Standard,Other,2020.0,4501667,2906789,62.5
+Gold Standard,Solar,2020.0,7312855,7430714,48.3
+Gold Standard,Wind,2020.0,12450418,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2021.0,1121517,5801401,44.8
+Gold Standard,Bioenergy,2021.0,9180994,13901610,33.1
+Gold Standard,Efficient appliances,2021.0,23919869,42957667,48.5
+Gold Standard,Hydropower,2021.0,461132,220830,50.4
+Gold Standard,Other,2021.0,5117070,2906789,62.5
+Gold Standard,Solar,2021.0,8529703,7430714,48.3
+Gold Standard,Wind,2021.0,14044058,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2022.0,788385,5801401,44.8
+Gold Standard,Bioenergy,2022.0,8748319,13901610,33.1
+Gold Standard,Efficient appliances,2022.0,31638782,42957667,48.5
+Gold Standard,Hydropower,2022.0,386891,220830,50.4
+Gold Standard,Other,2022.0,4974557,2906789,62.5
+Gold Standard,Solar,2022.0,10376933,7430714,48.3
+Gold Standard,Wind,2022.0,16431401,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2023.0,498707,5801401,44.8
+Gold Standard,Bioenergy,2023.0,5180307,13901610,33.1
+Gold Standard,Efficient appliances,2023.0,32146725,42957667,48.5
+Gold Standard,Hydropower,2023.0,214117,220830,50.4
+Gold Standard,Other,2023.0,3748362,2906789,62.5
+Gold Standard,Solar,2023.0,6387541,7430714,48.3
+Gold Standard,Wind,2023.0,13504254,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2024.0,321910,5801401,44.8
+Gold Standard,Bioenergy,2024.0,1652779,13901610,33.1
+Gold Standard,Efficient appliances,2024.0,23984244,42957667,48.5
+Gold Standard,Hydropower,2024.0,88809,220830,50.4
+Gold Standard,Other,2024.0,1240185,2906789,62.5
+Gold Standard,Solar,2024.0,1957804,7430714,48.3
+Gold Standard,Wind,2024.0,5856318,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2025.0,183904,5801401,44.8
+Gold Standard,Bioenergy,2025.0,181808,13901610,33.1
+Gold Standard,Efficient appliances,2025.0,2316599,42957667,48.5
+Gold Standard,Hydropower,2025.0,11276,220830,50.4
+Gold Standard,Other,2025.0,92610,2906789,62.5
+Gold Standard,Solar,2025.0,3967,7430714,48.3
+Gold Standard,Wind,2025.0,1489619,26339965,50.5
+Gold Standard,Afforestation/Reforestation,2026.0,235949,5801401,44.8
+Gold Standard,Other,2026.0,2418,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2027.0,275884,5801401,44.8
+Gold Standard,Other,2027.0,2418,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2028.0,249187,5801401,44.8
+Gold Standard,Other,2028.0,2418,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2029.0,183772,5801401,44.8
+Gold Standard,Other,2029.0,2418,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2030.0,78838,5801401,44.8
+Gold Standard,Other,2030.0,2418,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2031.0,78016,5801401,44.8
+Gold Standard,Other,2031.0,2418,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2032.0,78637,5801401,44.8
+Gold Standard,Other,2032.0,2418,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2033.0,76826,5801401,44.8
+Gold Standard,Other,2033.0,1752,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2034.0,73144,5801401,44.8
+Gold Standard,Other,2034.0,1692,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2035.0,68404,5801401,44.8
+Gold Standard,Other,2035.0,1692,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2036.0,46663,5801401,44.8
+Gold Standard,Other,2036.0,1695,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2037.0,40830,5801401,44.8
+Gold Standard,Other,2037.0,1692,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2038.0,22460,5801401,44.8
+Gold Standard,Other,2038.0,1695,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2039.0,23339,5801401,44.8
+Gold Standard,Other,2039.0,1692,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2040.0,20274,5801401,44.8
+Gold Standard,Other,2040.0,1684,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2041.0,18046,5801401,44.8
+Gold Standard,Other,2041.0,1687,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2042.0,12446,5801401,44.8
+Gold Standard,Other,2042.0,1684,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2043.0,11660,5801401,44.8
+Gold Standard,Other,2043.0,1470,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2044.0,9776,5801401,44.8
+Gold Standard,Other,2044.0,1470,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2045.0,9675,5801401,44.8
+Gold Standard,Other,2045.0,1451,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2046.0,7891,5801401,44.8
+Gold Standard,Other,2046.0,1451,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2047.0,7543,5801401,44.8
+Gold Standard,Other,2047.0,1451,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2048.0,6323,5801401,44.8
+Gold Standard,Other,2048.0,1451,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2049.0,7232,5801401,44.8
+Gold Standard,Other,2049.0,1451,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2050.0,2678,5801401,44.8
+Gold Standard,Other,2050.0,1451,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2051.0,3010,5801401,44.8
+Gold Standard,Other,2051.0,1451,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2052.0,2476,5801401,44.8
+Gold Standard,Other,2052.0,1451,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2053.0,2426,5801401,44.8
+Gold Standard,Other,2053.0,1451,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2054.0,2361,5801401,44.8
+Gold Standard,Other,2054.0,1451,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2055.0,2178,5801401,44.8
+Gold Standard,Other,2055.0,1451,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2056.0,2044,5801401,44.8
+Gold Standard,Other,2056.0,1451,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2057.0,1916,5801401,44.8
+Gold Standard,Other,2057.0,1443,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2058.0,1754,5801401,44.8
+Gold Standard,Other,2058.0,1253,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2059.0,1674,5801401,44.8
+Gold Standard,Other,2059.0,1165,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2060.0,664,5801401,44.8
+Gold Standard,Other,2060.0,2966,2906789,62.5
+Gold Standard,Afforestation/Reforestation,2061.0,678,5801401,44.8
