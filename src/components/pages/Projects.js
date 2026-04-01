@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 import { Search } from 'lucide-react';
-import { formatCredits, getGroup, GROUP_COLORS } from '../../utils/formatters';
+import { formatCredits, getGroup, GROUP_COLORS, EXCLUDED_CATEGORIES } from '../../utils/formatters';
 import ProjectsTable from '../panels/ProjectsTable';
 import ProjectDetailPanel from '../panels/ProjectDetailPanel';
 import useProjectsData from '../../hooks/useProjectsData';
@@ -92,6 +92,7 @@ const Projects = ({ data }) => {
       if (groupFilter && getGroup(p.category || '') !== groupFilter) return false;
       if (corsiaFilter && !p.corsia_eligible) return false;
       if (sdgFilter && !p.sdg_eligible) return false;
+      if (EXCLUDED_CATEGORIES.includes(p.category)) return false;
       return true;
     });
   }, [projectsData, search, registryFilter, groupFilter, corsiaFilter, sdgFilter]);

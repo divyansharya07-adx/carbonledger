@@ -13,11 +13,12 @@ Requires: pandas, openpyxl
 """
 
 import os
+import re
 import pandas as pd
 
 RAW_EXCEL = os.environ.get(
     "VROD_EXCEL_PATH",
-    r"E:\Claude\Claude_trial\VROD-registry-files--2025-12.xlsx"
+    r"E:\Personal\Personal Project\VROD-registry-files--2026-02.xlsx"
 )
 OUTPUT_CSV = os.environ.get(
     "OUTPUT_CSV",
@@ -107,10 +108,47 @@ def build_category_lookup():
     return verra_by_code, name_lookup
 
 
-def lookup_category(registry, methodology, verra_by_code, name_lookup):
+def _map_gold_project_type(pt):
+    """Map a Gold Standard Project Type label to a category (mirrors fix_data.py)."""
+    if pd.isna(pt):
+        return 'Other'
+    pt = str(pt).strip()
+    pl = pt.lower()
+    if pl == 'wind':
+        return 'Wind'
+    if pl in ('a/r', 'afforestation/reforestation') or re.match(r'afforest|reforest', pl):
+        return 'Afforestation/Reforestation'
+    if re.match(r'biogas|biomass', pl):
+        return 'Bioenergy'
+    if re.match(r'solar|pv$', pl):
+        return 'Solar'
+    if re.match(r'small.*hydro|hydro', pl):
+        return 'Hydropower'
+    if pl == 'grid efficiency':
+        return 'Grid efficiency'
+    if re.match(r'energy efficiency', pl):
+        return 'Efficient appliances'
+    if pl == 'agriculture':
+        return 'Soil & Livestock'
+    if pl == 'composting':
+        return 'Composting'
+    if re.match(r'manure|livestock', pl):
+        return 'Soil & Livestock'
+    if pl == 'landfill gas':
+        return 'Landfill gas'
+    if re.match(r'waste', pl):
+        return 'Waste management'
+    if re.match(r'industrial', pl):
+        return 'Industrial efficiency'
+    return 'Other'
+
+
+def lookup_category(registry, methodology, verra_by_code, name_lookup, project_type=None):
     """Return the Project Type Category for a project, or 'Other' if unresolved."""
     meth = str(methodology).strip() if pd.notna(methodology) else ''
     if not meth or meth.lower() in ('nan', 'none', ''):
+        if registry == 'Gold Standard':
+            return _map_gold_project_type(project_type)
         return 'Other'
 
     if registry == 'Verra':
@@ -418,7 +456,7 @@ def main():
     # Resolve category via methodology_mapping.csv
     verra_by_code, name_lookup = build_category_lookup()
     all_df['category'] = all_df.apply(
-        lambda r: lookup_category(r['registry'], r['methodology'], verra_by_code, name_lookup),
+        lambda r: lookup_category(r['registry'], r['methodology'], verra_by_code, name_lookup, r.get('project_type')),
         axis=1,
     )
     print(f"\nCategory coverage: {(all_df['category'] != 'Other').sum()} / {len(all_df)} projects resolved")

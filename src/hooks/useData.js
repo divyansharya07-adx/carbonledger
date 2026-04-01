@@ -227,6 +227,7 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
       const cat = (row['Project Type Category'] || '').trim();
       const cnt = parseInt(row['Project Count'], 10) || 0;
       if (!cat) return;
+      if (EXCLUDED_CATEGORIES.includes(cat)) return;
       if (selectedRegistry && selectedRegistry !== 'all') {
         const regLower = selectedRegistry.toLowerCase();
         if (regLower === 'gold') {

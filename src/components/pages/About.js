@@ -82,9 +82,9 @@ const About = () => {
 
         <div className="about-section">
           <div className="about-section-title">Dataset</div>
-          <p className="about-text">Dataset: VROD Registry Files — December 2025</p>
+          <p className="about-text">Dataset: VROD Registry Files — February 2026</p>
           <a
-            href="https://gspp.berkeley.edu/assets/uploads/page/VROD-registry-files--2025-12.xlsx"
+            href="https://gspp.berkeley.edu/assets/uploads/page/VROD-registry-files--2026-02.xlsx"
             target="_blank"
             rel="noopener noreferrer"
             className="about-link"
@@ -119,7 +119,7 @@ const About = () => {
         <div className="about-section">
           <div className="about-section-title">Data Limitations</div>
           <ul className="about-text" style={{ paddingLeft: '1.2em' }}>
-            <li>Credit volumes for 2024 and 2025 are lower than prior years as this dataset is a December 2025 snapshot and recent vintages are still accumulating.</li>
+            <li>Credit volumes for 2024 and 2025 are lower than prior years as this dataset is a February 2026 snapshot and recent vintages are still accumulating.</li>
             <li>Several project types have sparse or discontinued data: Nitric acid (ends 2001), Wind (ends 2018), Electric vehicles (ends 2019), Rewilding (ends 2019), Rice cultivation (ends 2021 for Verra), and Wastewater treatment (ends 2021). This reflects actual market activity, not missing data.</li>
             <li>Some Gold Standard projects lack methodology codes in the source registry. These have been categorized by project type where possible.</li>
             <li>Verra projects labeled "Agriculture Forestry and Other Land Use" at the registry level are disaggregated into specific project types using methodology codes. A small number of unmatched rows (2000–2007) are excluded from category breakdowns.</li>
@@ -144,10 +144,10 @@ const About = () => {
             <code> GSID</code> (Gold Standard), <code>Project ID</code> (ACR and CAR). Rows with null
             IDs are excluded. Each project is assigned its most frequent methodology code and looked up
             in <code>methodology_mapping.csv</code> to determine its category. Projects whose methodology
-            string could not be resolved are counted under 'Other' and excluded from category breakdowns —
-            these represent 562 projects (&lt;10% of total), primarily Gold Standard projects with blank
-            methodology fields. Total across all four
-            registries: 5,753 projects (Verra 2,093 · Gold Standard 2,088 · CAR 829 · ACR 743).
+            could not be resolved — either through methodology code or project type fallback — are
+            excluded from all pages. These represent 42 projects (&lt;1% of total): 19 Verra coal-mine-methane projects and 23 Gold Standard projects
+            with no usable metadata. Total across all four
+            registries: 5,834 projects (Verra 2,104 · Gold Standard 2,113 · CAR 858 · ACR 759).
           </p>
 
           <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Retirement Rate</p>
@@ -197,9 +197,8 @@ const About = () => {
           <ul className="about-text" style={{ paddingLeft: '1.2em' }}>
             <li>
               Some Gold Standard projects lack methodology codes in the source registry. These have been
-              categorised by project type name where possible (~141.5M credits). A small residual
-              (~6M credits, &lt;0.3% of total) could not be categorised and are excluded from category
-              breakdowns.
+              categorised by project type name where possible (~158M credits). A small residual
+              (~7.5M credits, &lt;0.3% of total) could not be categorised and are excluded from all pages.
             </li>
             <li>
               Verra AFOLU projects are disaggregated using methodology codes; a small number of
