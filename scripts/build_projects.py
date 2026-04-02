@@ -491,6 +491,65 @@ def main():
     else:
         print("\n5. No duplicate project_ids.")
 
+    # -----------------------------------------------------------------------
+    # Unmapped methodology warnings
+    # -----------------------------------------------------------------------
+    print("\n=== UNMAPPED METHODOLOGY WARNINGS ===")
+    val_df = pd.read_csv(OUTPUT_CSV)
+    val_df['credits_issued'] = pd.to_numeric(val_df['credits_issued'], errors='coerce').fillna(0)
+
+    # 1. Projects in 'Other' category
+    other_df = val_df[val_df['category'] == 'Other'].copy()
+    if len(other_df) == 0:
+        print("No projects in 'Other' category.")
+    else:
+        for reg, grp in other_df.groupby('registry'):
+            print(f"{reg}: {len(grp)} projects, {grp['credits_issued'].sum():,.0f} credits in 'Other' category")
+            grp = grp.copy()
+            grp['_label'] = grp.apply(
+                lambda r: (
+                    f"(blank methodology, Project Type = {str(r.get('project_type') or '').strip() or 'unknown'})"
+                    if reg == 'Gold Standard'
+                    else "(blank methodology)"
+                ) if (
+                    not str(r['methodology'] or '').strip()
+                    or str(r['methodology']).strip().lower() in ('nan', 'none', 'not provided')
+                ) else str(r['methodology']).strip(),
+                axis=1
+            )
+            for label, sub in grp.groupby('_label'):
+                print(f"  - {label}: {len(sub)} projects, {int(sub['credits_issued'].sum()):,.0f} credits")
+
+    # 2. Non-Other projects resolved via fallback (methodology not directly in mapping CSV)
+    non_other = val_df[
+        (val_df['category'] != 'Other') &
+        val_df['methodology'].fillna('').astype(str).str.strip().str.len().gt(0)
+    ].copy()
+    non_other = non_other[
+        ~non_other['methodology'].astype(str).str.strip().str.lower().isin(
+            ['nan', 'none', 'not provided', '']
+        )
+    ].copy()
+
+    def _found_in_map(row):
+        meth = str(row['methodology']).strip()
+        reg  = row['registry']
+        if reg == 'Verra':
+            return any(code.strip() in verra_by_code for code in meth.split(';'))
+        reg_key = {'Gold Standard': 'Gold', 'ACR': 'ACR', 'CAR': 'CAR'}.get(reg, reg)
+        return (reg_key, meth) in name_lookup
+
+    non_other['_in_map'] = non_other.apply(_found_in_map, axis=1)
+    fallback_df = non_other[~non_other['_in_map']]
+    if len(fallback_df) > 0:
+        for (reg, meth), grp in fallback_df.groupby(['registry', 'methodology']):
+            print(
+                f"WARNING: Methodology code {meth!r} ({reg}) resolved via fallback, "
+                f"not in methodology_mapping.csv — {int(grp['credits_issued'].sum()):,.0f} credits"
+            )
+    else:
+        print("All non-Other methodology codes found in methodology_mapping.csv.")
+
 
 if __name__ == '__main__':
     main()

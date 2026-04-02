@@ -943,6 +943,26 @@ def main():
     print(f"  After  — Verra: {after_verra:,}  Gold Standard: {after_gs:,}")
     print(f"  aggregated_data.csv: refreshed {len(new_vg)} Verra/GS rows → {len(agg)} total rows saved")
 
+    # -----------------------------------------------------------------------
+    # ADDITION 4 VALIDATION
+    # -----------------------------------------------------------------------
+    print("\n=== ADDITION 4 VALIDATION ===")
+    for reg_name in ['Verra', 'Gold Standard']:
+        reg_rows = agg[agg[reg_col] == reg_name]
+        other_credits = int(reg_rows.loc[reg_rows[agg_col] == 'Other', cr_col].sum())
+        other_count   = int((reg_rows[agg_col] == 'Other').sum())
+        print(f"{reg_name} Other: {other_credits:,} credits ({other_count} rows)")
+    # Count GS issuance rows in ADDITION 4 that used project-type fallback
+    gs_meths = gold_a4['Methodology'].fillna('').astype(str).str.strip()
+    gs_with_meth = gs_meths[
+        gs_meths.str.len().gt(0) &
+        ~gs_meths.str.lower().isin(['nan', 'none', ''])
+    ]
+    fallback_n = int(
+        gs_with_meth.apply(lambda m: lookup_cat_e('Gold', m) is None).sum()
+    )
+    print(f"Codes resolved via Project Type fallback: {fallback_n}")
+
 
 if __name__ == "__main__":
     main()
