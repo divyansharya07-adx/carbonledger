@@ -1,34 +1,37 @@
 Registry,Project Type Category,Project Count
-Verra,Afforestation/Reforestation,154
-Verra,Biochar,2
-Verra,Bioenergy,91
-Verra,Efficient appliances,136
-Verra,Energy storage,9
+Verra,Afforestation/Reforestation,148
+Verra,Biochar,4
+Verra,Bioenergy,86
+Verra,Composting,8
+Verra,Efficient appliances,137
 Verra,Forest management,124
-Verra,Fossil gas leaks,19
-Verra,Hydropower,51
-Verra,Industrial efficiency,53
+Verra,Fossil gas leaks,45
+Verra,Heat recovery,3
+Verra,Hydropower,26
+Verra,Industrial efficiency,46
 Verra,Landfill gas,114
 Verra,Mixed renewables,1129
 Verra,Other,19
 Verra,Public transit,1
 Verra,Reforestation and ecosystem restoration,16
+Verra,Rewilding,7
 Verra,Rice cultivation,25
-Verra,Soil & Livestock,107
+Verra,Soil & Livestock,109
 Verra,Solar,13
-Verra,Waste management,8
-Verra,Waste to energy,30
-Verra,Wastewater treatment,2
+Verra,Waste management,12
+Verra,Waste to energy,28
+Verra,Wastewater treatment,3
 Verra,Wind,1
 Gold Standard,Afforestation/Reforestation,34
-Gold Standard,Bioenergy,128
-Gold Standard,Cleaner cooking,575
-Gold Standard,Efficient appliances,574
+Gold Standard,Bioenergy,127
+Gold Standard,Cleaner cooking,602
+Gold Standard,Composting,6
+Gold Standard,Efficient appliances,567
 Gold Standard,Electric vehicles,1
 Gold Standard,Geothermal,3
 Gold Standard,Heat recovery,1
 Gold Standard,Hydropower,7
-Gold Standard,Industrial efficiency,83
+Gold Standard,Industrial efficiency,57
 Gold Standard,Landfill gas,19
 Gold Standard,Mixed renewables,450
 Gold Standard,Other,23
@@ -38,7 +41,7 @@ Gold Standard,Waste management,2
 Gold Standard,Waste to energy,31
 Gold Standard,Wastewater treatment,3
 Gold Standard,Water purification,25
-Gold Standard,Wind,79
+Gold Standard,Wind,80
 ACR,Afforestation/Reforestation,3
 ACR,Bioenergy,1
 ACR,Electric vehicles,36
