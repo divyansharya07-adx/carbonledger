@@ -160,11 +160,11 @@ Methodology Code,Registry,Methodology Name,Project Type Category
 ,Gold,AMS-II.J. Demand-side activities for efficient lighting technologies,Efficient appliances
 ,Gold,AMS-I.J. Solar water heating systems (SWH),Solar
 ,Gold,AMS-II.M Demand-side energy efficiency activities for installation of low-flow hot water savings devices,Efficient appliances
-VMR0014,Verra,VMR0014; VM0038,Forest management
+VMR0014,Verra,VMR0014; VM0038,Electric vehicles
 VM0047,Verra,VM0047,Forest management
 ACM0022,Verra,ACM0022,Landfill gas
 AMS-I.C.,Verra,AMS-I.C.; AMS-III.D.,Mixed renewables
-VM0042,Verra,VM0042,Forest management
+VM0042,Verra,VM0042,Soil & Livestock
 VM0033,Verra,VM0033,Reforestation and ecosystem restoration
 VM0044,Verra,VM0044,Biochar
 AMS-III.D.,Verra,AMS-III.D.; AMS-III.E.; AMS-III.F.,Soil & Livestock
@@ -178,14 +178,14 @@ VM0007,Verra,VM0007; VM0048,Forest management
 AMS-III.AR,Verra,AMS-III.AR,Efficient appliances
 VMR0014,Verra,VMR0014,Forest management
 AMS-III.F.,Verra,AMS-III.F.,Composting
-VM0041,Verra,VM0041,Forest management
+VM0041,Verra,VM0041,Soil & Livestock
 VM0007,Verra,VM0007; VM0047,Forest management
 ACM0001,Verra,ACM0001,Landfill gas
 VM0043,Verra,VM0043,Industrial efficiency
 AMS-III.AO.,Verra,AMS-III.AO.; AMS-III.AQ,Waste management
-VM0038,Verra,VM0038,Forest management
+VM0038,Verra,VM0038,Electric vehicles
 VM0032,Verra,VM0032,Rewilding
-VMR0007,Verra,VMR0007; VMR0008,Forest management
+VMR0007,Verra,VMR0007; VMR0008,Waste management
 VM0007,Verra,VM0007,Forest management
 VM0050,Verra,VM0050,Fossil gas leaks
 AMS-I.C.,Verra,AMS-I.C.; AMS-III.D.; AMS-III.AO.,Mixed renewables
@@ -200,7 +200,7 @@ VM0034,Verra,VM0034,Reforestation and ecosystem restoration
 VM0049,Verra,VM0049,Engineered Removals
 AMS-III.H.,Verra,AMS-III.H.,Landfill gas
 AMS-III.E.,Verra,AMS-III.E.,Soil & Livestock
-VMR0007,Verra,VMR0007,Forest management
+VMR0007,Verra,VMR0007,Waste management
 ACM0002,Verra,ACM0002,Mixed renewables
 VM0035,Verra,VM0035,Soil & Livestock
 AM0023,Verra,AM0023,Fossil gas leaks
@@ -211,7 +211,7 @@ AMS-III.D.,Verra,AMS-III.D.,Soil & Livestock
 AMS-I.D.,Verra,AMS-I.D.; AMS-III.H.,Mixed renewables
 AMS-III.D.,Verra,AMS-III.D.; AMS-III.F.; VMR0007,Soil & Livestock
 ACM0006,Verra,ACM0006; AMS-III.E.,Bioenergy
-VMR0004,Verra,VMR0004; VM0038; Methodology Under Development,Forest management
+VMR0004,Verra,VMR0004; VM0038; Methodology Under Development,Electric vehicles
 ACM0017,Verra,ACM0017,Forest management
 AMS-III.AK,Verra,AMS-III.AK,Public transit
 AMS-III.AO.,Verra,AMS-III.AO.,Waste management
@@ -238,7 +238,7 @@ AMS-I.D.,Verra,AMS-I.D.; AMS-III.G.,Mixed renewables
 AMS-III.D.,Verra,AMS-III.D.; AMS-III.H.; AMS-III.AO.,Soil & Livestock
 VM0047,Verra,VM0047; VM0048,Forest management
 VM0046,Verra,VM0046,Reforestation and ecosystem restoration
-VM0042,Verra,VM0042; VM0047,Forest management
+VM0042,Verra,VM0042; VM0047,Soil & Livestock
 VM0033,Verra,VM0033; VM0042,Reforestation and ecosystem restoration
 VM0033,Verra,VM0033; VM0047,Reforestation and ecosystem restoration
 AMS-III.I.,Verra,AMS-III.I.,Wastewater treatment
@@ -256,7 +256,7 @@ AMS-II.G.,Verra,AMS-II.G.,Efficient appliances
 AMS-I.C.,Verra,AMS-I.C.; AMS-III.H.,Mixed renewables
 ACM0012,Verra,ACM0012; AMS-III.Q,Waste to energy
 AMS-I.F.,Verra,AMS-I.F.; AM0123,Bioenergy
-VM0042,Verra,VM0042; VM0048,Forest management
+VM0042,Verra,VM0042; VM0048,Soil & Livestock
 AMS-I.E.,Verra,AMS-I.E.,Bioenergy
 VM0009,Verra,VM0009,Soil & Livestock
 ACM0003,Verra,ACM0003,Industrial efficiency
@@ -272,7 +272,7 @@ AM0090,Verra,AM0090,Hydropower
 AMS-I.B.,Verra,AMS-I.B.,Solar
 AR-AMS0007,Verra,AR-AMS0007,Afforestation/Reforestation
 AMS-I.C.,Verra,AMS-I.C.; AMS-I.F.; AMS-III.H.,Mixed renewables
-VM0041,Verra,VM0041; VM0042,Forest management
+VM0041,Verra,VM0041; VM0042,Soil & Livestock
 AMS-II.G.,Verra,AMS-II.G.; VMR0006,Efficient appliances
 AMS-II.E.,Verra,AMS-II.E.,Efficient appliances
 ACM0021,Verra,ACM0021,Grid efficiency
