@@ -176,7 +176,7 @@ AMS-I.E.,Verra,AMS-I.E.; AMS-III.AV.,Bioenergy
 VM0048,Verra,VM0048,Reforestation and ecosystem restoration
 VM0007,Verra,VM0007; VM0048,Forest management
 AMS-III.AR,Verra,AMS-III.AR,Efficient appliances
-VMR0014,Verra,VMR0014,Forest management
+VMR0014,Verra,VMR0014,Electric vehicles
 AMS-III.F.,Verra,AMS-III.F.,Composting
 VM0041,Verra,VM0041,Soil & Livestock
 VM0007,Verra,VM0007; VM0047,Forest management
@@ -226,7 +226,7 @@ VM0015,Verra,VM0015,Forest management
 AMS-I.F.,Verra,AMS-I.F.; AMS-III.C.,Bioenergy
 VM0007,Verra,VM0007; VM0033,Forest management
 AMS-I.D.,Verra,AMS-I.D.,Mixed renewables
-VMR0008,Verra,VMR0008,Forest management
+VMR0008,Verra,VMR0008,Waste management
 AMS-III.AV.,Verra,AMS-III.AV.,Bioenergy
 AMS-II.C.,Verra,AMS-II.C.,Efficient appliances
 AMS-I.C.,Verra,AMS-I.C.,Mixed renewables
@@ -248,7 +248,7 @@ AMS-III.Q,Verra,AMS-III.Q,Heat recovery
 AMS-I.E.,Verra,AMS-I.E.; VMR0006; AMS-III.AV.,Bioenergy
 AMS-I.E.,Verra,AMS-I.E.; AMS-III.D.,Bioenergy
 AMS-I.D.,Verra,AMS-I.D.; AMS-I.F.,Mixed renewables
-AMS-III.Z,Verra,AMS-III.Z,Efficient appliances
+AMS-III.Z,Verra,AMS-III.Z,Industrial efficiency
 VMR0009,Verra,VMR0009,Fossil gas leaks
 AMS-I.C.,Verra,AMS-I.C.; AMS-III.D.; AMS-III.H.; AMS-III.AO.,Mixed renewables
 AMS-III.Y,Verra,AMS-III.Y,Soil & Livestock
@@ -314,7 +314,7 @@ AMS-III.BA,Verra,AMS-III.BA,Biochar
 AMS-III.J.,Verra,AMS-III.J.,Cleaner cooking
 VMR0006,Verra,VMR0006; AMS-III.BG,Mixed renewables
 VM0024,Verra,VM0024; VM0021,Soil & Livestock
-VM0018,Verra,VM0018; ACM0022,Forest management
+VM0018,Verra,VM0018; ACM0022,Waste management
 VM0006,Verra,VM0006,Afforestation/Reforestation
 AMS-III.G.,Verra,AMS-III.G.,Landfill gas
 VM0040,Verra,VM0040,Cleaner cooking
@@ -338,11 +338,11 @@ VMR0006,Verra,VMR0006; AMS-III.AV.,Mixed renewables
 VM0005,Verra,VM0005; VM0007; VM0017,Forest management
 AMS-III.E.,Verra,AMS-III.E.; AMS-III.F.,Soil & Livestock
 VM0021,Verra,VM0021,Reforestation and ecosystem restoration
-VM0018,Verra,VM0018,Forest management
+VM0018,Verra,VM0018,Waste management
 AMS-I.D.,Verra,AMS-I.D.; AMS-III.G.; AMS-III.AO.,Mixed renewables
 ACM0006,Verra,ACM0006,Bioenergy
 VM0003,Verra,VM0003; AR-ACM0003,Afforestation/Reforestation
-VM0025,Verra,VM0025,Reforestation and ecosystem restoration
+VM0025,Verra,VM0025,Mixed renewables
 AMS-II.G.,Verra,AMS-II.G.; VMR0006; AMS-III.AR,Efficient appliances
 AMS-II.G.,Verra,AMS-II.G.; AMS-III.AR,Efficient appliances
 AMS-III.F.,Verra,AMS-III.F.; AMS-III.AO.,Composting
@@ -410,7 +410,7 @@ ACM0011,Verra,ACM0011,Landfill gas
 ACM0017,Verra,ACM0017; VM0017,Forest management
 AM0059,Verra,AM0059,Waste to energy
 VMR0001,Verra,VMR0001,Forest management
-AMS-III.M.,Verra,AMS-III.M.,Industrial efficiency
+AMS-III.M.,Verra,AMS-III.M.,Wastewater treatment
 AR-AMS0002,Verra,AR-AMS0002,Afforestation/Reforestation
 AMS-II.H.,Verra,AMS-II.H.,Efficient appliances
 AR-ACM0002,Verra,AR-ACM0002,Afforestation/Reforestation
@@ -423,7 +423,7 @@ AR-AM0005,Verra,AR-AM0005; AR-ACM0003,Afforestation/Reforestation
 ACM0012,Verra,ACM0012; AMS-I.C.,Waste to energy
 AR-AM0005,Verra,AR-AM0005,Afforestation/Reforestation
 VM0007,Verra,VM0007; AR-ACM0003,Forest management
-VM0019,Verra,VM0019,Reforestation and ecosystem restoration
+VM0019,Verra,VM0019,Public transit
 AM0031,Verra,AM0031,Public transit
 AM0028,Verra,AM0028; AM0034,Mixed renewables
 AM0014,Verra,AM0014,Afforestation/Reforestation
@@ -439,7 +439,7 @@ ACM0008,Verra,ACM0008; VMR0002,Fossil gas leaks
 VM0005,Verra,VM0005; VM0015; Methodology Under Development,Forest management
 VM0001,Verra,VM0001,Waste to energy
 AMS-III.BB.,Verra,AMS-III.BB.,Grid efficiency
-VM0025,Verra,VM0025; VMD0038,Reforestation and ecosystem restoration
-VM0014,Verra,VM0014,Reforestation and ecosystem restoration
+VM0025,Verra,VM0025; VMD0038,Mixed renewables
+VM0014,Verra,VM0014,Fossil gas leaks
 AMS-I.C.,Verra,AMS-I.C.; AMS-I.D.,Mixed renewables
 AR-AM0002,Verra,AR-AM0002,Afforestation/Reforestation
