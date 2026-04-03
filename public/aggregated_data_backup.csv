@@ -190,344 +190,370 @@ ACR,Waste to energy,2014.0,278098,1733142.0,68.9
 ACR,Waste to energy,2015.0,470530,1733142.0,68.9
 ACR,Wastewater treatment,2008.0,100000,11295.0,10.1
 ACR,Wastewater treatment,2019.0,11295,11295.0,10.1
-Verra,Afforestation/Reforestation,1999.0,118878,56221476.0,70.8
+Verra,Afforestation/Reforestation,1999.0,118878,53683475.0,73.9
 Verra,Other,2000.0,10167,2708138.0,93.4
-Verra,Soil & Livestock,2000.0,2000,121686184.0,67.9
-Verra,Afforestation/Reforestation,2001.0,1223324,56221476.0,70.8
-Verra,Bioenergy,2001.0,115,10467120.0,48.5
-Verra,Hydropower,2001.0,17681,23935800.0,71.7
+Verra,Soil & Livestock,2000.0,2000,123194732.0,67.5
+Verra,Afforestation/Reforestation,2001.0,1223324,53683475.0,73.9
+Verra,Bioenergy,2001.0,115,10329683.0,48.6
+Verra,Fossil gas leaks,2001.0,17681,18019951.0,36.4
 Verra,Landfill gas,2001.0,1084101,17281979.0,59.1
 Verra,Mixed renewables,2001.0,126608,385727823.0,65.1
 Verra,Other,2001.0,87803,2708138.0,93.4
-Verra,Soil & Livestock,2001.0,59034,121686184.0,67.9
-Verra,Afforestation/Reforestation,2002.0,155144,56221476.0,70.8
-Verra,Bioenergy,2002.0,26635,10467120.0,48.5
+Verra,Soil & Livestock,2001.0,59034,123194732.0,67.5
+Verra,Afforestation/Reforestation,2002.0,155144,53683475.0,73.9
+Verra,Bioenergy,2002.0,26635,10329683.0,48.6
 Verra,Forest management,2002.0,881529,218230117.0,71.5
-Verra,Hydropower,2002.0,1330251,23935800.0,71.7
+Verra,Fossil gas leaks,2002.0,1330251,18019951.0,36.4
 Verra,Mixed renewables,2002.0,151106,385727823.0,65.1
 Verra,Other,2002.0,246121,2708138.0,93.4
-Verra,Soil & Livestock,2002.0,1042930,121686184.0,67.9
-Verra,Afforestation/Reforestation,2003.0,601059,56221476.0,70.8
-Verra,Bioenergy,2003.0,91584,10467120.0,48.5
-Verra,Efficient appliances,2003.0,13333,7542210.0,39.6
+Verra,Soil & Livestock,2002.0,1042930,123194732.0,67.5
+Verra,Afforestation/Reforestation,2003.0,601059,53683475.0,73.9
+Verra,Bioenergy,2003.0,91584,10329683.0,48.6
+Verra,Efficient appliances,2003.0,13333,7542210.0,39.2
 Verra,Forest management,2003.0,514614,218230117.0,71.5
-Verra,Hydropower,2003.0,580981,23935800.0,71.7
+Verra,Fossil gas leaks,2003.0,580981,18019951.0,36.4
 Verra,Mixed renewables,2003.0,77477,385727823.0,65.1
 Verra,Other,2003.0,581736,2708138.0,93.4
-Verra,Soil & Livestock,2003.0,696896,121686184.0,67.9
-Verra,Afforestation/Reforestation,2004.0,463340,56221476.0,70.8
-Verra,Bioenergy,2004.0,22885,10467120.0,48.5
-Verra,Efficient appliances,2004.0,29221,7542210.0,39.6
+Verra,Soil & Livestock,2003.0,696896,123194732.0,67.5
+Verra,Afforestation/Reforestation,2004.0,463340,53683475.0,73.9
+Verra,Bioenergy,2004.0,22885,10329683.0,48.6
+Verra,Efficient appliances,2004.0,29221,7542210.0,39.2
 Verra,Forest management,2004.0,211840,218230117.0,71.5
-Verra,Hydropower,2004.0,115559,23935800.0,71.7
-Verra,Industrial efficiency,2004.0,112305,12301081.0,67.9
+Verra,Fossil gas leaks,2004.0,98559,18019951.0,36.4
+Verra,Hydropower,2004.0,17000,16589213.0,80.3
+Verra,Industrial efficiency,2004.0,112305,14310732.0,76.0
 Verra,Mixed renewables,2004.0,449498,385727823.0,65.1
 Verra,Other,2004.0,108003,2708138.0,93.4
-Verra,Soil & Livestock,2004.0,396393,121686184.0,67.9
-Verra,Waste to energy,2004.0,53775,22894980.0,77.1
-Verra,Afforestation/Reforestation,2005.0,63917,56221476.0,70.8
-Verra,Bioenergy,2005.0,47012,10467120.0,48.5
-Verra,Efficient appliances,2005.0,85019,7542210.0,39.6
+Verra,Soil & Livestock,2004.0,396393,123194732.0,67.5
+Verra,Waste to energy,2004.0,53775,18943085.0,73.9
+Verra,Afforestation/Reforestation,2005.0,63917,53683475.0,73.9
+Verra,Bioenergy,2005.0,47012,10329683.0,48.6
+Verra,Efficient appliances,2005.0,85019,7542210.0,39.2
 Verra,Forest management,2005.0,581322,218230117.0,71.5
-Verra,Hydropower,2005.0,194494,23935800.0,71.7
+Verra,Fossil gas leaks,2005.0,83124,18019951.0,36.4
+Verra,Hydropower,2005.0,111370,16589213.0,80.3
 Verra,Landfill gas,2005.0,3240,17281979.0,59.1
 Verra,Mixed renewables,2005.0,579758,385727823.0,65.1
 Verra,Other,2005.0,137549,2708138.0,93.4
-Verra,Soil & Livestock,2005.0,692797,121686184.0,67.9
+Verra,Soil & Livestock,2005.0,692797,123194732.0,67.5
 Verra,Solar,2005.0,8208,2179124.0,72.1
-Verra,Waste to energy,2005.0,70936,22894980.0,77.1
-Verra,Afforestation/Reforestation,2006.0,125658,56221476.0,70.8
-Verra,Bioenergy,2006.0,322868,10467120.0,48.5
-Verra,Efficient appliances,2006.0,28218,7542210.0,39.6
-Verra,Energy storage,2006.0,35582,9540126.0,29.8
+Verra,Waste to energy,2005.0,70936,18943085.0,73.9
+Verra,Afforestation/Reforestation,2006.0,125658,53683475.0,73.9
+Verra,Bioenergy,2006.0,322868,10329683.0,48.6
+Verra,Efficient appliances,2006.0,28218,7542210.0,39.2
 Verra,Forest management,2006.0,450748,218230117.0,71.5
-Verra,Fossil gas leaks,2006.0,52460,3239718.0,27.3
-Verra,Hydropower,2006.0,921540,23935800.0,71.7
-Verra,Industrial efficiency,2006.0,297618,12301081.0,67.9
+Verra,Fossil gas leaks,2006.0,264673,18019951.0,36.4
+Verra,Heat recovery,2006.0,17919,0.0,0.0
+Verra,Hydropower,2006.0,692449,16589213.0,80.3
+Verra,Industrial efficiency,2006.0,886431,14310732.0,76.0
 Verra,Landfill gas,2006.0,235360,17281979.0,59.1
 Verra,Mixed renewables,2006.0,6542648,385727823.0,65.1
 Verra,Other,2006.0,689505,2708138.0,93.4
-Verra,Soil & Livestock,2006.0,883647,121686184.0,67.9
+Verra,Soil & Livestock,2006.0,865728,123194732.0,67.5
 Verra,Solar,2006.0,186698,2179124.0,72.1
-Verra,Waste to energy,2006.0,806947,22894980.0,77.1
-Verra,Wastewater treatment,2006.0,29391,193207.0,87.3
-Verra,Afforestation/Reforestation,2007.0,409276,56221476.0,70.8
-Verra,Bioenergy,2007.0,813820,10467120.0,48.5
-Verra,Efficient appliances,2007.0,146858,7542210.0,39.6
+Verra,Waste to energy,2006.0,279702,18943085.0,73.9
+Verra,Wastewater treatment,2006.0,20283,118043.0,86.1
+Verra,Afforestation/Reforestation,2007.0,409276,53683475.0,73.9
+Verra,Bioenergy,2007.0,813820,10329683.0,48.6
+Verra,Composting,2007.0,8269,0.0,0.0
+Verra,Efficient appliances,2007.0,146858,7542210.0,39.2
 Verra,Forest management,2007.0,4155991,218230117.0,71.5
-Verra,Fossil gas leaks,2007.0,88206,3239718.0,27.3
-Verra,Hydropower,2007.0,2136654,23935800.0,71.7
-Verra,Industrial efficiency,2007.0,1071190,12301081.0,67.9
+Verra,Fossil gas leaks,2007.0,914148,18019951.0,36.4
+Verra,Heat recovery,2007.0,23289,0.0,0.0
+Verra,Hydropower,2007.0,1222506,16589213.0,80.3
+Verra,Industrial efficiency,2007.0,1842316,14310732.0,76.0
 Verra,Landfill gas,2007.0,590114,17281979.0,59.1
 Verra,Mixed renewables,2007.0,14865833,385727823.0,65.1
 Verra,Other,2007.0,1038059,2708138.0,93.4
-Verra,Soil & Livestock,2007.0,830237,121686184.0,67.9
+Verra,Soil & Livestock,2007.0,798679,123194732.0,67.5
 Verra,Solar,2007.0,45062,2179124.0,72.1
-Verra,Waste to energy,2007.0,1217176,22894980.0,77.1
-Verra,Wastewater treatment,2007.0,35514,193207.0,87.3
-Verra,Afforestation/Reforestation,2008.0,345089,56221476.0,70.8
-Verra,Bioenergy,2008.0,1012932,10467120.0,48.5
-Verra,Efficient appliances,2008.0,160692,7542210.0,39.6
+Verra,Waste to energy,2007.0,463771,18943085.0,73.9
+Verra,Wastewater treatment,2007.0,105999,118043.0,86.1
+Verra,Afforestation/Reforestation,2008.0,345089,53683475.0,73.9
+Verra,Bioenergy,2008.0,1012932,10329683.0,48.6
+Verra,Composting,2008.0,27674,0.0,0.0
+Verra,Efficient appliances,2008.0,160692,7542210.0,39.2
 Verra,Forest management,2008.0,8747357,218230117.0,71.5
-Verra,Fossil gas leaks,2008.0,55056,3239718.0,27.3
-Verra,Hydropower,2008.0,2403786,23935800.0,71.7
-Verra,Industrial efficiency,2008.0,4379734,12301081.0,67.9
+Verra,Fossil gas leaks,2008.0,482289,18019951.0,36.4
+Verra,Heat recovery,2008.0,24070,0.0,0.0
+Verra,Hydropower,2008.0,1956287,16589213.0,80.3
+Verra,Industrial efficiency,2008.0,5009719,14310732.0,76.0
 Verra,Landfill gas,2008.0,434657,17281979.0,59.1
 Verra,Mixed renewables,2008.0,19906758,385727823.0,65.1
-Verra,Soil & Livestock,2008.0,385633,121686184.0,67.9
+Verra,Soil & Livestock,2008.0,333889,123194732.0,67.5
 Verra,Solar,2008.0,90265,2179124.0,72.1
-Verra,Waste management,2008.0,323595,5810600.0,89.9
-Verra,Waste to energy,2008.0,1013039,22894980.0,77.1
-Verra,Wastewater treatment,2008.0,39031,193207.0,87.3
-Verra,Afforestation/Reforestation,2009.0,2641961,56221476.0,70.8
-Verra,Bioenergy,2009.0,1353891,10467120.0,48.5
-Verra,Efficient appliances,2009.0,323539,7542210.0,39.6
+Verra,Waste management,2008.0,323595,5923921.0,88.2
+Verra,Waste to energy,2008.0,431543,18943085.0,73.9
+Verra,Wastewater treatment,2008.0,10808,118043.0,86.1
+Verra,Afforestation/Reforestation,2009.0,2641961,53683475.0,73.9
+Verra,Bioenergy,2009.0,1353891,10329683.0,48.6
+Verra,Composting,2009.0,3406,0.0,0.0
+Verra,Efficient appliances,2009.0,323539,7542210.0,39.2
 Verra,Forest management,2009.0,8609628,218230117.0,71.5
-Verra,Fossil gas leaks,2009.0,47965,3239718.0,27.3
-Verra,Hydropower,2009.0,2540713,23935800.0,71.7
-Verra,Industrial efficiency,2009.0,731884,12301081.0,67.9
+Verra,Fossil gas leaks,2009.0,97961,18019951.0,36.4
+Verra,Heat recovery,2009.0,15822,0.0,0.0
+Verra,Hydropower,2009.0,2490717,16589213.0,80.3
+Verra,Industrial efficiency,2009.0,1275981,14310732.0,76.0
 Verra,Landfill gas,2009.0,883458,17281979.0,59.1
 Verra,Mixed renewables,2009.0,20066188,385727823.0,65.1
 Verra,Reforestation and ecosystem restoration,2009.0,26925,4645227.0,74.0
-Verra,Soil & Livestock,2009.0,1447160,121686184.0,67.9
+Verra,Soil & Livestock,2009.0,1427932,123194732.0,67.5
 Verra,Solar,2009.0,44642,2179124.0,72.1
-Verra,Waste management,2009.0,339719,5810600.0,89.9
-Verra,Waste to energy,2009.0,795836,22894980.0,77.1
-Verra,Afforestation/Reforestation,2010.0,1316959,56221476.0,70.8
-Verra,Bioenergy,2010.0,1100055,10467120.0,48.5
-Verra,Efficient appliances,2010.0,778466,7542210.0,39.6
+Verra,Waste management,2009.0,339719,5923921.0,88.2
+Verra,Waste to energy,2009.0,251739,18943085.0,73.9
+Verra,Afforestation/Reforestation,2010.0,1316959,53683475.0,73.9
+Verra,Bioenergy,2010.0,1100055,10329683.0,48.6
+Verra,Composting,2010.0,3160,0.0,0.0
+Verra,Efficient appliances,2010.0,778466,7542210.0,39.2
 Verra,Forest management,2010.0,19826010,218230117.0,71.5
-Verra,Fossil gas leaks,2010.0,181629,3239718.0,27.3
-Verra,Hydropower,2010.0,2915051,23935800.0,71.7
-Verra,Industrial efficiency,2010.0,696496,12301081.0,67.9
+Verra,Fossil gas leaks,2010.0,302426,18019951.0,36.4
+Verra,Heat recovery,2010.0,54958,0.0,0.0
+Verra,Hydropower,2010.0,2794254,16589213.0,80.3
+Verra,Industrial efficiency,2010.0,937555,14310732.0,76.0
 Verra,Landfill gas,2010.0,1128806,17281979.0,59.1
 Verra,Mixed renewables,2010.0,23906845,385727823.0,65.1
 Verra,Reforestation and ecosystem restoration,2010.0,29179,4645227.0,74.0
-Verra,Soil & Livestock,2010.0,3883487,121686184.0,67.9
+Verra,Soil & Livestock,2010.0,3825369,123194732.0,67.5
 Verra,Solar,2010.0,99302,2179124.0,72.1
-Verra,Waste management,2010.0,435876,5810600.0,89.9
-Verra,Waste to energy,2010.0,1127551,22894980.0,77.1
-Verra,Wastewater treatment,2010.0,7442,193207.0,87.3
-Verra,Afforestation/Reforestation,2011.0,3553123,56221476.0,70.8
-Verra,Bioenergy,2011.0,923063,10467120.0,48.5
-Verra,Efficient appliances,2011.0,467757,7542210.0,39.6
+Verra,Waste management,2010.0,435876,5923921.0,88.2
+Verra,Waste to energy,2010.0,893934,18943085.0,73.9
+Verra,Afforestation/Reforestation,2011.0,3553123,53683475.0,73.9
+Verra,Bioenergy,2011.0,923063,10329683.0,48.6
+Verra,Composting,2011.0,3424,0.0,0.0
+Verra,Efficient appliances,2011.0,467757,7542210.0,39.2
 Verra,Forest management,2011.0,3322185,218230117.0,71.5
-Verra,Fossil gas leaks,2011.0,150076,3239718.0,27.3
-Verra,Hydropower,2011.0,4151093,23935800.0,71.7
-Verra,Industrial efficiency,2011.0,700635,12301081.0,67.9
+Verra,Fossil gas leaks,2011.0,315012,18019951.0,36.4
+Verra,Heat recovery,2011.0,63808,0.0,0.0
+Verra,Hydropower,2011.0,3986157,16589213.0,80.3
+Verra,Industrial efficiency,2011.0,928763,14310732.0,76.0
 Verra,Landfill gas,2011.0,1148178,17281979.0,59.1
 Verra,Mixed renewables,2011.0,22135657,385727823.0,65.1
 Verra,Reforestation and ecosystem restoration,2011.0,126249,4645227.0,74.0
-Verra,Soil & Livestock,2011.0,8198454,121686184.0,67.9
-Verra,Waste management,2011.0,435545,5810600.0,89.9
-Verra,Waste to energy,2011.0,2234262,22894980.0,77.1
-Verra,Wastewater treatment,2011.0,22357,193207.0,87.3
-Verra,Afforestation/Reforestation,2012.0,5188254,56221476.0,70.8
-Verra,Bioenergy,2012.0,763536,10467120.0,48.5
-Verra,Efficient appliances,2012.0,819474,7542210.0,39.6
+Verra,Soil & Livestock,2011.0,8131222,123194732.0,67.5
+Verra,Waste management,2011.0,435545,5923921.0,88.2
+Verra,Waste to energy,2011.0,2028491,18943085.0,73.9
+Verra,Afforestation/Reforestation,2012.0,5188254,53683475.0,73.9
+Verra,Bioenergy,2012.0,763536,10329683.0,48.6
+Verra,Composting,2012.0,3014,0.0,0.0
+Verra,Efficient appliances,2012.0,819474,7542210.0,39.2
 Verra,Forest management,2012.0,12648057,218230117.0,71.5
-Verra,Fossil gas leaks,2012.0,120541,3239718.0,27.3
-Verra,Hydropower,2012.0,2801480,23935800.0,71.7
-Verra,Industrial efficiency,2012.0,802773,12301081.0,67.9
+Verra,Fossil gas leaks,2012.0,276307,18019951.0,36.4
+Verra,Heat recovery,2012.0,63879,0.0,0.0
+Verra,Hydropower,2012.0,2645714,16589213.0,80.3
+Verra,Industrial efficiency,2012.0,1081528,14310732.0,76.0
 Verra,Landfill gas,2012.0,999584,17281979.0,59.1
 Verra,Mixed renewables,2012.0,25005517,385727823.0,65.1
 Verra,Reforestation and ecosystem restoration,2012.0,138900,4645227.0,74.0
-Verra,Soil & Livestock,2012.0,10506211,121686184.0,67.9
+Verra,Soil & Livestock,2012.0,10439318,123194732.0,67.5
 Verra,Solar,2012.0,84825,2179124.0,72.1
-Verra,Waste management,2012.0,437444,5810600.0,89.9
-Verra,Waste to energy,2012.0,2551685,22894980.0,77.1
-Verra,Wastewater treatment,2012.0,22091,193207.0,87.3
-Verra,Afforestation/Reforestation,2013.0,4851072,56221476.0,70.8
-Verra,Bioenergy,2013.0,917881,10467120.0,48.5
-Verra,Efficient appliances,2013.0,640304,7542210.0,39.6
+Verra,Waste management,2012.0,437444,5923921.0,88.2
+Verra,Waste to energy,2012.0,2295021,18943085.0,73.9
+Verra,Afforestation/Reforestation,2013.0,4851072,53683475.0,73.9
+Verra,Bioenergy,2013.0,917881,10329683.0,48.6
+Verra,Composting,2013.0,7872,0.0,0.0
+Verra,Efficient appliances,2013.0,640304,7542210.0,39.2
 Verra,Forest management,2013.0,22576800,218230117.0,71.5
-Verra,Fossil gas leaks,2013.0,3378004,3239718.0,27.3
-Verra,Hydropower,2013.0,523550,23935800.0,71.7
-Verra,Industrial efficiency,2013.0,395019,12301081.0,67.9
+Verra,Fossil gas leaks,2013.0,397634,18019951.0,36.4
+Verra,Heat recovery,2013.0,64294,0.0,0.0
+Verra,Hydropower,2013.0,293341,16589213.0,80.3
+Verra,Industrial efficiency,2013.0,598200,14310732.0,76.0
 Verra,Landfill gas,2013.0,551878,17281979.0,59.1
 Verra,Mixed renewables,2013.0,23743174,385727823.0,65.1
 Verra,Reforestation and ecosystem restoration,2013.0,145136,4645227.0,74.0
-Verra,Soil & Livestock,2013.0,12206745,121686184.0,67.9
+Verra,Rewilding,2013.0,3210579,0.0,0.0
+Verra,Soil & Livestock,2013.0,12134579,123194732.0,67.5
 Verra,Solar,2013.0,79750,2179124.0,72.1
-Verra,Waste management,2013.0,388641,5810600.0,89.9
-Verra,Waste to energy,2013.0,2633871,22894980.0,77.1
-Verra,Wastewater treatment,2013.0,18784,193207.0,87.3
+Verra,Waste management,2013.0,388641,5923921.0,88.2
+Verra,Waste to energy,2013.0,2449474,18943085.0,73.9
 Verra,Wind,2013.0,1601,255643.0,83.7
-Verra,Afforestation/Reforestation,2014.0,6915702,56221476.0,70.8
-Verra,Bioenergy,2014.0,1089860,10467120.0,48.5
-Verra,Efficient appliances,2014.0,676696,7542210.0,39.6
+Verra,Afforestation/Reforestation,2014.0,6915702,53683475.0,73.9
+Verra,Bioenergy,2014.0,1089860,10329683.0,48.6
+Verra,Composting,2014.0,3878,0.0,0.0
+Verra,Efficient appliances,2014.0,676696,7542210.0,39.2
 Verra,Forest management,2014.0,26757942,218230117.0,71.5
-Verra,Fossil gas leaks,2014.0,158380,3239718.0,27.3
-Verra,Hydropower,2014.0,648129,23935800.0,71.7
-Verra,Industrial efficiency,2014.0,440335,12301081.0,67.9
+Verra,Fossil gas leaks,2014.0,448634,18019951.0,36.4
+Verra,Heat recovery,2014.0,50639,0.0,0.0
+Verra,Hydropower,2014.0,357875,16589213.0,80.3
+Verra,Industrial efficiency,2014.0,757235,14310732.0,76.0
 Verra,Landfill gas,2014.0,674490,17281979.0,59.1
 Verra,Mixed renewables,2014.0,28137339,385727823.0,65.1
 Verra,Reforestation and ecosystem restoration,2014.0,147461,4645227.0,74.0
-Verra,Soil & Livestock,2014.0,11078715,121686184.0,67.9
+Verra,Soil & Livestock,2014.0,11024198,123194732.0,67.5
 Verra,Solar,2014.0,56903,2179124.0,72.1
-Verra,Waste management,2014.0,421653,5810600.0,89.9
-Verra,Waste to energy,2014.0,3505346,22894980.0,77.1
-Verra,Wastewater treatment,2014.0,21448,193207.0,87.3
+Verra,Waste management,2014.0,421653,5923921.0,88.2
+Verra,Waste to energy,2014.0,3209894,18943085.0,73.9
 Verra,Wind,2014.0,19299,255643.0,83.7
-Verra,Afforestation/Reforestation,2015.0,4706419,56221476.0,70.8
-Verra,Bioenergy,2015.0,1175132,10467120.0,48.5
-Verra,Efficient appliances,2015.0,1141704,7542210.0,39.6
+Verra,Afforestation/Reforestation,2015.0,4706419,53683475.0,73.9
+Verra,Bioenergy,2015.0,1175132,10329683.0,48.6
+Verra,Composting,2015.0,4439,0.0,0.0
+Verra,Efficient appliances,2015.0,1141704,7542210.0,39.2
 Verra,Forest management,2015.0,25831926,218230117.0,71.5
-Verra,Hydropower,2015.0,769023,23935800.0,71.7
-Verra,Industrial efficiency,2015.0,392732,12301081.0,67.9
+Verra,Fossil gas leaks,2015.0,298207,18019951.0,36.4
+Verra,Hydropower,2015.0,470816,16589213.0,80.3
+Verra,Industrial efficiency,2015.0,622385,14310732.0,76.0
 Verra,Landfill gas,2015.0,637699,17281979.0,59.1
 Verra,Mixed renewables,2015.0,29458654,385727823.0,65.1
 Verra,Reforestation and ecosystem restoration,2015.0,144319,4645227.0,74.0
-Verra,Soil & Livestock,2015.0,17165069,121686184.0,67.9
+Verra,Soil & Livestock,2015.0,17160630,123194732.0,67.5
 Verra,Solar,2015.0,186857,2179124.0,72.1
-Verra,Waste management,2015.0,417420,5810600.0,89.9
-Verra,Waste to energy,2015.0,3356326,22894980.0,77.1
-Verra,Wastewater treatment,2015.0,20002,193207.0,87.3
+Verra,Waste management,2015.0,417420,5923921.0,88.2
+Verra,Waste to energy,2015.0,3146675,18943085.0,73.9
 Verra,Wind,2015.0,37852,255643.0,83.7
-Verra,Afforestation/Reforestation,2016.0,4502643,56221476.0,70.8
-Verra,Bioenergy,2016.0,1242224,10467120.0,48.5
-Verra,Efficient appliances,2016.0,537962,7542210.0,39.6
+Verra,Afforestation/Reforestation,2016.0,4201279,53683475.0,73.9
+Verra,Bioenergy,2016.0,1242224,10329683.0,48.6
+Verra,Composting,2016.0,4975,0.0,0.0
+Verra,Efficient appliances,2016.0,537962,7542210.0,39.2
 Verra,Forest management,2016.0,32946498,218230117.0,71.5
-Verra,Hydropower,2016.0,1112944,23935800.0,71.7
-Verra,Industrial efficiency,2016.0,534626,12301081.0,67.9
+Verra,Fossil gas leaks,2016.0,604426,18019951.0,36.4
+Verra,Hydropower,2016.0,508518,16589213.0,80.3
+Verra,Industrial efficiency,2016.0,708151,14310732.0,76.0
 Verra,Landfill gas,2016.0,791132,17281979.0,59.1
 Verra,Mixed renewables,2016.0,32586801,385727823.0,65.1
 Verra,Reforestation and ecosystem restoration,2016.0,169161,4645227.0,74.0
-Verra,Soil & Livestock,2016.0,17177920,121686184.0,67.9
+Verra,Rewilding,2016.0,301364,0.0,0.0
+Verra,Soil & Livestock,2016.0,17172945,123194732.0,67.5
 Verra,Solar,2016.0,311085,2179124.0,72.1
-Verra,Waste management,2016.0,484969,5810600.0,89.9
-Verra,Waste to energy,2016.0,3198345,22894980.0,77.1
-Verra,Wastewater treatment,2016.0,5291,193207.0,87.3
+Verra,Waste management,2016.0,484969,5923921.0,88.2
+Verra,Waste to energy,2016.0,3030111,18943085.0,73.9
 Verra,Wind,2016.0,61411,255643.0,83.7
-Verra,Afforestation/Reforestation,2017.0,7710877,56221476.0,70.8
-Verra,Bioenergy,2017.0,859166,10467120.0,48.5
-Verra,Efficient appliances,2017.0,483304,7542210.0,39.6
-Verra,Energy storage,2017.0,1483554,9540126.0,29.8
+Verra,Afforestation/Reforestation,2017.0,6856935,53683475.0,73.9
+Verra,Bioenergy,2017.0,859166,10329683.0,48.6
+Verra,Composting,2017.0,4700,0.0,0.0
+Verra,Efficient appliances,2017.0,483304,7542210.0,39.2
 Verra,Forest management,2017.0,29770872,218230117.0,71.5
-Verra,Fossil gas leaks,2017.0,2982814,3239718.0,27.3
-Verra,Hydropower,2017.0,844703,23935800.0,71.7
-Verra,Industrial efficiency,2017.0,251744,12301081.0,67.9
+Verra,Fossil gas leaks,2017.0,2094141,18019951.0,36.4
+Verra,Hydropower,2017.0,234116,16589213.0,80.3
+Verra,Industrial efficiency,2017.0,331606,14310732.0,76.0
 Verra,Landfill gas,2017.0,2181412,17281979.0,59.1
 Verra,Mixed renewables,2017.0,41354011,385727823.0,65.1
 Verra,Reforestation and ecosystem restoration,2017.0,295190,4645227.0,74.0
-Verra,Soil & Livestock,2017.0,21507191,121686184.0,67.9
+Verra,Rewilding,2017.0,3836756,0.0,0.0
+Verra,Soil & Livestock,2017.0,21502491,123194732.0,67.5
 Verra,Solar,2017.0,339631,2179124.0,72.1
-Verra,Waste management,2017.0,282641,5810600.0,89.9
-Verra,Waste to energy,2017.0,3210004,22894980.0,77.1
+Verra,Waste management,2017.0,282641,5923921.0,88.2
+Verra,Waste to energy,2017.0,3130142,18943085.0,73.9
 Verra,Wind,2017.0,81648,255643.0,83.7
-Verra,Afforestation/Reforestation,2018.0,8938468,56221476.0,70.8
-Verra,Bioenergy,2018.0,527981,10467120.0,48.5
-Verra,Efficient appliances,2018.0,339490,7542210.0,39.6
-Verra,Energy storage,2018.0,2998783,9540126.0,29.8
+Verra,Afforestation/Reforestation,2018.0,7623104,53683475.0,73.9
+Verra,Bioenergy,2018.0,518800,10329683.0,48.6
+Verra,Composting,2018.0,35819,0.0,0.0
+Verra,Efficient appliances,2018.0,339490,7542210.0,39.2
 Verra,Forest management,2018.0,26352662,218230117.0,71.5
-Verra,Hydropower,2018.0,1509532,23935800.0,71.7
-Verra,Industrial efficiency,2018.0,318958,12301081.0,67.9
+Verra,Fossil gas leaks,2018.0,4293345,18019951.0,36.4
+Verra,Hydropower,2018.0,214970,16589213.0,80.3
+Verra,Industrial efficiency,2018.0,328139,14310732.0,76.0
 Verra,Landfill gas,2018.0,611995,17281979.0,59.1
 Verra,Mixed renewables,2018.0,49197070,385727823.0,65.1
 Verra,Reforestation and ecosystem restoration,2018.0,443085,4645227.0,74.0
+Verra,Rewilding,2018.0,1315364,0.0,0.0
 Verra,Rice cultivation,2018.0,2520000,3353512.0,73.5
-Verra,Soil & Livestock,2018.0,20335349,121686184.0,67.9
+Verra,Soil & Livestock,2018.0,20299530,123194732.0,67.5
 Verra,Solar,2018.0,313929,2179124.0,72.1
-Verra,Waste management,2018.0,514993,5810600.0,89.9
-Verra,Waste to energy,2018.0,2125550,22894980.0,77.1
+Verra,Waste management,2018.0,514993,5923921.0,88.2
+Verra,Waste to energy,2018.0,2125550,18943085.0,73.9
 Verra,Wind,2018.0,103596,255643.0,83.7
-Verra,Afforestation/Reforestation,2019.0,9496908,56221476.0,70.8
-Verra,Bioenergy,2019.0,499687,10467120.0,48.5
-Verra,Efficient appliances,2019.0,587870,7542210.0,39.6
-Verra,Energy storage,2019.0,4502169,9540126.0,29.8
+Verra,Afforestation/Reforestation,2019.0,7994696,53683475.0,73.9
+Verra,Bioenergy,2019.0,497297,10329683.0,48.6
+Verra,Composting,2019.0,85013,0.0,0.0
+Verra,Efficient appliances,2019.0,587870,7542210.0,39.2
 Verra,Forest management,2019.0,31611315,218230117.0,71.5
-Verra,Fossil gas leaks,2019.0,30184,3239718.0,27.3
-Verra,Hydropower,2019.0,1597103,23935800.0,71.7
-Verra,Industrial efficiency,2019.0,475713,12301081.0,67.9
+Verra,Fossil gas leaks,2019.0,5880625,18019951.0,36.4
+Verra,Hydropower,2019.0,218647,16589213.0,80.3
+Verra,Industrial efficiency,2019.0,480415,14310732.0,76.0
 Verra,Landfill gas,2019.0,1613962,17281979.0,59.1
 Verra,Mixed renewables,2019.0,55473297,385727823.0,65.1
 Verra,Reforestation and ecosystem restoration,2019.0,383610,4645227.0,74.0
+Verra,Rewilding,2019.0,1502212,0.0,0.0
 Verra,Rice cultivation,2019.0,2400000,3353512.0,73.5
-Verra,Soil & Livestock,2019.0,15646126,121686184.0,67.9
+Verra,Soil & Livestock,2019.0,15588985,123194732.0,67.5
 Verra,Solar,2019.0,47882,2179124.0,72.1
-Verra,Waste management,2019.0,609799,5810600.0,89.9
-Verra,Waste to energy,2019.0,238467,22894980.0,77.1
-Verra,Afforestation/Reforestation,2020.0,9118707,56221476.0,70.8
-Verra,Bioenergy,2020.0,656379,10467120.0,48.5
-Verra,Efficient appliances,2020.0,1028900,7542210.0,39.6
-Verra,Energy storage,2020.0,2197523,9540126.0,29.8
+Verra,Waste management,2019.0,609799,5923921.0,88.2
+Verra,Waste to energy,2019.0,238467,18943085.0,73.9
+Verra,Afforestation/Reforestation,2020.0,7558650,53683475.0,73.9
+Verra,Bioenergy,2020.0,652798,10329683.0,48.6
+Verra,Composting,2020.0,1199,0.0,0.0
+Verra,Efficient appliances,2020.0,1028900,7542210.0,39.2
 Verra,Forest management,2020.0,25872980,218230117.0,71.5
-Verra,Fossil gas leaks,2020.0,190557,3239718.0,27.3
-Verra,Hydropower,2020.0,1938651,23935800.0,71.7
-Verra,Industrial efficiency,2020.0,1740631,12301081.0,67.9
+Verra,Fossil gas leaks,2020.0,3583975,18019951.0,36.4
+Verra,Hydropower,2020.0,552305,16589213.0,80.3
+Verra,Industrial efficiency,2020.0,763795,14310732.0,76.0
 Verra,Landfill gas,2020.0,3220746,17281979.0,59.1
 Verra,Mixed renewables,2020.0,49393993,385727823.0,65.1
 Verra,Public transit,2020.0,232,2280.0,32.0
 Verra,Reforestation and ecosystem restoration,2020.0,964225,4645227.0,74.0
+Verra,Rewilding,2020.0,1560057,0.0,0.0
 Verra,Rice cultivation,2020.0,2640000,3353512.0,73.5
-Verra,Soil & Livestock,2020.0,12743592,121686184.0,67.9
+Verra,Soil & Livestock,2020.0,13880475,123194732.0,67.5
 Verra,Solar,2020.0,141604,2179124.0,72.1
-Verra,Waste management,2020.0,689756,5810600.0,89.9
-Verra,Waste to energy,2020.0,694147,22894980.0,77.1
-Verra,Afforestation/Reforestation,2021.0,4896878,56221476.0,70.8
-Verra,Biochar,2021.0,14070,13745.0,93.7
-Verra,Bioenergy,2021.0,1182745,10467120.0,48.5
-Verra,Efficient appliances,2021.0,3177016,7542210.0,39.6
-Verra,Energy storage,2021.0,8009231,9540126.0,29.8
+Verra,Waste management,2020.0,722542,5923921.0,88.2
+Verra,Waste to energy,2020.0,694147,18943085.0,73.9
+Verra,Afforestation/Reforestation,2021.0,3916967,53683475.0,73.9
+Verra,Biochar,2021.0,14070,18082.0,32.8
+Verra,Bioenergy,2021.0,1099532,10329683.0,48.6
+Verra,Composting,2021.0,52708,0.0,0.0
+Verra,Efficient appliances,2021.0,3188487,7542210.0,39.2
 Verra,Forest management,2021.0,10738958,218230117.0,71.5
-Verra,Fossil gas leaks,2021.0,295659,3239718.0,27.3
-Verra,Hydropower,2021.0,2574475,23935800.0,71.7
-Verra,Industrial efficiency,2021.0,2766054,12301081.0,67.9
+Verra,Fossil gas leaks,2021.0,9472541,18019951.0,36.4
+Verra,Hydropower,2021.0,1135416,16589213.0,80.3
+Verra,Industrial efficiency,2021.0,886532,14310732.0,76.0
 Verra,Landfill gas,2021.0,4866369,17281979.0,59.1
 Verra,Mixed renewables,2021.0,46238867,385727823.0,65.1
 Verra,Public transit,2021.0,8144,2280.0,32.0
 Verra,Reforestation and ecosystem restoration,2021.0,1797212,4645227.0,74.0
+Verra,Rewilding,2021.0,979911,0.0,0.0
 Verra,Rice cultivation,2021.0,1560000,3353512.0,73.5
-Verra,Soil & Livestock,2021.0,11348886,121686184.0,67.9
+Verra,Soil & Livestock,2021.0,13418806,123194732.0,67.5
 Verra,Solar,2021.0,344585,2179124.0,72.1
-Verra,Waste management,2021.0,596467,5810600.0,89.9
-Verra,Waste to energy,2021.0,266143,22894980.0,77.1
-Verra,Afforestation/Reforestation,2022.0,1430192,56221476.0,70.8
-Verra,Biochar,2022.0,606,13745.0,93.7
-Verra,Bioenergy,2022.0,1088034,10467120.0,48.5
-Verra,Efficient appliances,2022.0,4586356,7542210.0,39.6
-Verra,Energy storage,2022.0,8295224,9540126.0,29.8
+Verra,Waste management,2021.0,696511,5923921.0,88.2
+Verra,Waste to energy,2021.0,266143,18943085.0,73.9
+Verra,Afforestation/Reforestation,2022.0,1250583,53683475.0,73.9
+Verra,Biochar,2022.0,606,18082.0,32.8
+Verra,Bioenergy,2022.0,1001923,10329683.0,48.6
+Verra,Composting,2022.0,74954,0.0,0.0
+Verra,Efficient appliances,2022.0,4630892,7542210.0,39.2
 Verra,Forest management,2022.0,8314215,218230117.0,71.5
-Verra,Fossil gas leaks,2022.0,1013660,3239718.0,27.3
-Verra,Hydropower,2022.0,1276361,23935800.0,71.7
-Verra,Industrial efficiency,2022.0,1534483,12301081.0,67.9
+Verra,Fossil gas leaks,2022.0,9799184,18019951.0,36.4
+Verra,Hydropower,2022.0,705935,16589213.0,80.3
+Verra,Industrial efficiency,2022.0,718895,14310732.0,76.0
 Verra,Landfill gas,2022.0,4782881,17281979.0,59.1
 Verra,Mixed renewables,2022.0,46272392,385727823.0,65.1
 Verra,Public transit,2022.0,5866,2280.0,32.0
 Verra,Reforestation and ecosystem restoration,2022.0,1260523,4645227.0,74.0
-Verra,Soil & Livestock,2022.0,7023260,121686184.0,67.9
+Verra,Rewilding,2022.0,179609,0.0,0.0
+Verra,Soil & Livestock,2022.0,7776156,123194732.0,67.5
 Verra,Solar,2022.0,363738,2179124.0,72.1
-Verra,Waste management,2022.0,87267,5810600.0,89.9
-Verra,Waste to energy,2022.0,368537,22894980.0,77.1
-Verra,Afforestation/Reforestation,2023.0,443891,56221476.0,70.8
-Verra,Bioenergy,2023.0,2479692,10467120.0,48.5
-Verra,Efficient appliances,2023.0,2343293,7542210.0,39.6
-Verra,Energy storage,2023.0,940769,9540126.0,29.8
+Verra,Waste management,2022.0,196706,5923921.0,88.2
+Verra,Waste to energy,2022.0,368537,18943085.0,73.9
+Verra,Afforestation/Reforestation,2023.0,443891,53683475.0,73.9
+Verra,Biochar,2023.0,25510,18082.0,32.8
+Verra,Bioenergy,2023.0,2359772,10329683.0,48.6
+Verra,Composting,2023.0,61162,0.0,0.0
+Verra,Efficient appliances,2023.0,2422245,7542210.0,39.2
 Verra,Forest management,2023.0,3739004,218230117.0,71.5
-Verra,Fossil gas leaks,2023.0,1535633,3239718.0,27.3
-Verra,Hydropower,2023.0,486420,23935800.0,71.7
-Verra,Industrial efficiency,2023.0,415293,12301081.0,67.9
+Verra,Fossil gas leaks,2023.0,2829625,18019951.0,36.4
+Verra,Hydropower,2023.0,50245,16589213.0,80.3
+Verra,Industrial efficiency,2023.0,439402,14310732.0,76.0
 Verra,Landfill gas,2023.0,2121116,17281979.0,59.1
 Verra,Mixed renewables,2023.0,32377418,385727823.0,65.1
 Verra,Reforestation and ecosystem restoration,2023.0,206902,4645227.0,74.0
-Verra,Soil & Livestock,2023.0,3281820,121686184.0,67.9
+Verra,Soil & Livestock,2023.0,3288161,123194732.0,67.5
 Verra,Solar,2023.0,170356,2179124.0,72.1
-Verra,Waste to energy,2023.0,164462,22894980.0,77.1
-Verra,Afforestation/Reforestation,2024.0,151029,56221476.0,70.8
-Verra,Bioenergy,2024.0,2948136,10467120.0,48.5
-Verra,Efficient appliances,2024.0,655180,7542210.0,39.6
-Verra,Energy storage,2024.0,3574034,9540126.0,29.8
+Verra,Waste management,2023.0,6798,5923921.0,88.2
+Verra,Waste to energy,2023.0,164462,18943085.0,73.9
+Verra,Afforestation/Reforestation,2024.0,151029,53683475.0,73.9
+Verra,Biochar,2024.0,15000,18082.0,32.8
+Verra,Bioenergy,2024.0,2919249,10329683.0,48.6
+Verra,Composting,2024.0,46104,0.0,0.0
+Verra,Efficient appliances,2024.0,715180,7542210.0,39.2
 Verra,Forest management,2024.0,648170,218230117.0,71.5
-Verra,Fossil gas leaks,2024.0,1449322,3239718.0,27.3
-Verra,Hydropower,2024.0,8127,23935800.0,71.7
-Verra,Industrial efficiency,2024.0,51033,12301081.0,67.9
+Verra,Fossil gas leaks,2024.0,4971483,18019951.0,36.4
+Verra,Industrial efficiency,2024.0,125555,14310732.0,76.0
 Verra,Landfill gas,2024.0,676113,17281979.0,59.1
 Verra,Mixed renewables,2024.0,17011058,385727823.0,65.1
-Verra,Soil & Livestock,2024.0,574308,121686184.0,67.9
+Verra,Soil & Livestock,2024.0,467569,123194732.0,67.5
 Verra,Solar,2024.0,99490,2179124.0,72.1
-Verra,Waste to energy,2024.0,51238,22894980.0,77.1
-Verra,Bioenergy,2025.0,445087,10467120.0,48.5
-Verra,Fossil gas leaks,2025.0,118365,3239718.0,27.3
+Verra,Waste to energy,2024.0,51238,18943085.0,73.9
+Verra,Bioenergy,2025.0,445087,10329683.0,48.6
+Verra,Fossil gas leaks,2025.0,118365,18019951.0,36.4
 Verra,Landfill gas,2025.0,1502,17281979.0,59.1
 Verra,Mixed renewables,2025.0,3210144,385727823.0,65.1
 Verra,Solar,2025.0,6390,2179124.0,72.1
@@ -543,101 +569,103 @@ Gold Standard,Mixed renewables,2002.0,16362,56745917.0,41.9
 Gold Standard,Afforestation/Reforestation,2003.0,6523,5801401.0,44.8
 Gold Standard,Mixed renewables,2003.0,17606,56745917.0,41.9
 Gold Standard,Afforestation/Reforestation,2004.0,7235,5801401.0,44.8
-Gold Standard,Wind,2004.0,56399,26339965.0,50.5
+Gold Standard,Wind,2004.0,56399,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2005.0,11210,5801401.0,44.8
-Gold Standard,Wind,2005.0,183663,26339965.0,50.5
+Gold Standard,Wind,2005.0,183663,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2006.0,21222,5801401.0,44.8
-Gold Standard,Bioenergy,2006.0,229473,13901610.0,33.1
+Gold Standard,Bioenergy,2006.0,229473,13859748.0,33.0
 Gold Standard,Mixed renewables,2006.0,30517,56745917.0,41.9
-Gold Standard,Wind,2006.0,174375,26339965.0,50.5
+Gold Standard,Wind,2006.0,174375,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2007.0,20149,5801401.0,44.8
-Gold Standard,Bioenergy,2007.0,253341,13901610.0,33.1
-Gold Standard,Cleaner cooking,2007.0,5821,46091911.0,73.0
-Gold Standard,Efficient appliances,2007.0,14976,42957667.0,48.5
+Gold Standard,Bioenergy,2007.0,253341,13859748.0,33.0
+Gold Standard,Cleaner cooking,2007.0,5821,52045398.0,71.9
+Gold Standard,Efficient appliances,2007.0,14976,42883063.0,48.5
 Gold Standard,Hydropower,2007.0,87,220830.0,50.4
-Gold Standard,Industrial efficiency,2007.0,32009,10474202.0,66.9
+Gold Standard,Industrial efficiency,2007.0,32009,4538916.0,70.4
 Gold Standard,Landfill gas,2007.0,206996,15450567.0,61.7
 Gold Standard,Mixed renewables,2007.0,287339,56745917.0,41.9
-Gold Standard,Wind,2007.0,191374,26339965.0,50.5
+Gold Standard,Wind,2007.0,191374,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2008.0,47283,5801401.0,44.8
-Gold Standard,Bioenergy,2008.0,11852,13901610.0,33.1
-Gold Standard,Cleaner cooking,2008.0,33122,46091911.0,73.0
-Gold Standard,Efficient appliances,2008.0,44045,42957667.0,48.5
+Gold Standard,Bioenergy,2008.0,11852,13859748.0,33.0
+Gold Standard,Cleaner cooking,2008.0,64277,52045398.0,71.9
+Gold Standard,Efficient appliances,2008.0,44045,42883063.0,48.5
 Gold Standard,Hydropower,2008.0,233,220830.0,50.4
-Gold Standard,Industrial efficiency,2008.0,54093,10474202.0,66.9
+Gold Standard,Industrial efficiency,2008.0,22938,4538916.0,70.4
 Gold Standard,Landfill gas,2008.0,489334,15450567.0,61.7
 Gold Standard,Mixed renewables,2008.0,1468587,56745917.0,41.9
 Gold Standard,Waste to energy,2008.0,78680,3212790.0,64.6
-Gold Standard,Wind,2008.0,68435,26339965.0,50.5
+Gold Standard,Wind,2008.0,68435,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2009.0,117048,5801401.0,44.8
-Gold Standard,Bioenergy,2009.0,25889,13901610.0,33.1
-Gold Standard,Cleaner cooking,2009.0,110739,46091911.0,73.0
-Gold Standard,Efficient appliances,2009.0,116566,42957667.0,48.5
+Gold Standard,Bioenergy,2009.0,25889,13859748.0,33.0
+Gold Standard,Cleaner cooking,2009.0,233743,52045398.0,71.9
+Gold Standard,Efficient appliances,2009.0,116566,42883063.0,48.5
 Gold Standard,Hydropower,2009.0,314,220830.0,50.4
-Gold Standard,Industrial efficiency,2009.0,189614,10474202.0,66.9
+Gold Standard,Industrial efficiency,2009.0,66610,4538916.0,70.4
 Gold Standard,Landfill gas,2009.0,573147,15450567.0,61.7
 Gold Standard,Mixed renewables,2009.0,1840754,56745917.0,41.9
 Gold Standard,Waste to energy,2009.0,277992,3212790.0,64.6
 Gold Standard,Wastewater treatment,2009.0,15272,114712.0,26.2
-Gold Standard,Wind,2009.0,220211,26339965.0,50.5
+Gold Standard,Wind,2009.0,220211,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2010.0,199404,5801401.0,44.8
-Gold Standard,Bioenergy,2010.0,42250,13901610.0,33.1
-Gold Standard,Cleaner cooking,2010.0,474924,46091911.0,73.0
-Gold Standard,Efficient appliances,2010.0,237641,42957667.0,48.5
+Gold Standard,Bioenergy,2010.0,42250,13859748.0,33.0
+Gold Standard,Cleaner cooking,2010.0,707418,52045398.0,71.9
+Gold Standard,Efficient appliances,2010.0,237641,42883063.0,48.5
 Gold Standard,Hydropower,2010.0,8793,220830.0,50.4
-Gold Standard,Industrial efficiency,2010.0,383242,10474202.0,66.9
+Gold Standard,Industrial efficiency,2010.0,150748,4538916.0,70.4
 Gold Standard,Landfill gas,2010.0,854339,15450567.0,61.7
 Gold Standard,Mixed renewables,2010.0,2153536,56745917.0,41.9
 Gold Standard,Solar,2010.0,1980,7430714.0,48.3
 Gold Standard,Waste to energy,2010.0,352046,3212790.0,64.6
 Gold Standard,Wastewater treatment,2010.0,30247,114712.0,26.2
-Gold Standard,Wind,2010.0,784473,26339965.0,50.5
+Gold Standard,Wind,2010.0,784473,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2011.0,342281,5801401.0,44.8
-Gold Standard,Bioenergy,2011.0,92444,13901610.0,33.1
-Gold Standard,Cleaner cooking,2011.0,2793839,46091911.0,73.0
-Gold Standard,Efficient appliances,2011.0,423761,42957667.0,48.5
+Gold Standard,Bioenergy,2011.0,92444,13859748.0,33.0
+Gold Standard,Cleaner cooking,2011.0,3103401,52045398.0,71.9
+Gold Standard,Efficient appliances,2011.0,423761,42883063.0,48.5
 Gold Standard,Hydropower,2011.0,26375,220830.0,50.4
-Gold Standard,Industrial efficiency,2011.0,554738,10474202.0,66.9
+Gold Standard,Industrial efficiency,2011.0,245176,4538916.0,70.4
 Gold Standard,Landfill gas,2011.0,1139104,15450567.0,61.7
 Gold Standard,Mixed renewables,2011.0,2794785,56745917.0,41.9
 Gold Standard,Other,2011.0,304472,2906789.0,62.5
 Gold Standard,Solar,2011.0,10365,7430714.0,48.3
 Gold Standard,Waste to energy,2011.0,314681,3212790.0,64.6
 Gold Standard,Wastewater treatment,2011.0,27698,114712.0,26.2
-Gold Standard,Wind,2011.0,1458134,26339965.0,50.5
+Gold Standard,Wind,2011.0,1458134,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2012.0,516202,5801401.0,44.8
-Gold Standard,Bioenergy,2012.0,406967,13901610.0,33.1
-Gold Standard,Cleaner cooking,2012.0,3737492,46091911.0,73.0
-Gold Standard,Efficient appliances,2012.0,652527,42957667.0,48.5
+Gold Standard,Bioenergy,2012.0,406967,13859748.0,33.0
+Gold Standard,Cleaner cooking,2012.0,3999017,52045398.0,71.9
+Gold Standard,Efficient appliances,2012.0,652527,42883063.0,48.5
 Gold Standard,Hydropower,2012.0,40690,220830.0,50.4
-Gold Standard,Industrial efficiency,2012.0,558947,10474202.0,66.9
+Gold Standard,Industrial efficiency,2012.0,297422,4538916.0,70.4
 Gold Standard,Landfill gas,2012.0,2383458,15450567.0,61.7
 Gold Standard,Mixed renewables,2012.0,3070898,56745917.0,41.9
 Gold Standard,Other,2012.0,341692,2906789.0,62.5
 Gold Standard,Soil & Livestock,2012.0,3588,4862408.0,64.6
 Gold Standard,Solar,2012.0,25250,7430714.0,48.3
 Gold Standard,Waste to energy,2012.0,417064,3212790.0,64.6
-Gold Standard,Wind,2012.0,1733124,26339965.0,50.5
+Gold Standard,Wind,2012.0,1733124,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2013.0,566799,5801401.0,44.8
-Gold Standard,Bioenergy,2013.0,566963,13901610.0,33.1
-Gold Standard,Cleaner cooking,2013.0,3930132,46091911.0,73.0
-Gold Standard,Efficient appliances,2013.0,916623,42957667.0,48.5
+Gold Standard,Bioenergy,2013.0,566963,13859748.0,33.0
+Gold Standard,Cleaner cooking,2013.0,4263763,52045398.0,71.9
+Gold Standard,Composting,2013.0,511,0.0,0.0
+Gold Standard,Efficient appliances,2013.0,916112,42883063.0,48.5
 Gold Standard,Hydropower,2013.0,28431,220830.0,50.4
-Gold Standard,Industrial efficiency,2013.0,771892,10474202.0,66.9
+Gold Standard,Industrial efficiency,2013.0,438261,4538916.0,70.4
 Gold Standard,Landfill gas,2013.0,3931039,15450567.0,61.7
 Gold Standard,Mixed renewables,2013.0,4206888,56745917.0,41.9
 Gold Standard,Other,2013.0,452153,2906789.0,62.5
 Gold Standard,Soil & Livestock,2013.0,11089,4862408.0,64.6
 Gold Standard,Solar,2013.0,51304,7430714.0,48.3
 Gold Standard,Waste to energy,2013.0,383235,3212790.0,64.6
-Gold Standard,Wind,2013.0,1404452,26339965.0,50.5
+Gold Standard,Wind,2013.0,1404452,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2014.0,701023,5801401.0,44.8
-Gold Standard,Bioenergy,2014.0,1150563,13901610.0,33.1
-Gold Standard,Cleaner cooking,2014.0,3846036,46091911.0,73.0
-Gold Standard,Efficient appliances,2014.0,1199467,42957667.0,48.5
+Gold Standard,Bioenergy,2014.0,1150563,13859748.0,33.0
+Gold Standard,Cleaner cooking,2014.0,4251925,52045398.0,71.9
+Gold Standard,Composting,2014.0,1231,0.0,0.0
+Gold Standard,Efficient appliances,2014.0,1198236,42883063.0,48.5
 Gold Standard,Heat recovery,2014.0,59334,25.0,0.0
 Gold Standard,Hydropower,2014.0,7232,220830.0,50.4
-Gold Standard,Industrial efficiency,2014.0,877625,10474202.0,66.9
+Gold Standard,Industrial efficiency,2014.0,471736,4538916.0,70.4
 Gold Standard,Landfill gas,2014.0,3457581,15450567.0,61.7
 Gold Standard,Mixed renewables,2014.0,5550464,56745917.0,41.9
 Gold Standard,Other,2014.0,958,2906789.0,62.5
@@ -646,13 +674,14 @@ Gold Standard,Solar,2014.0,65236,7430714.0,48.3
 Gold Standard,Waste to energy,2014.0,317570,3212790.0,64.6
 Gold Standard,Wastewater treatment,2014.0,1892,114712.0,26.2
 Gold Standard,Water purification,2014.0,25516,1035398.0,22.6
-Gold Standard,Wind,2014.0,1367524,26339965.0,50.5
+Gold Standard,Wind,2014.0,1367524,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2015.0,714725,5801401.0,44.8
-Gold Standard,Bioenergy,2015.0,1512876,13901610.0,33.1
-Gold Standard,Cleaner cooking,2015.0,3966616,46091911.0,73.0
-Gold Standard,Efficient appliances,2015.0,1411495,42957667.0,48.5
+Gold Standard,Bioenergy,2015.0,1510596,13859748.0,33.0
+Gold Standard,Cleaner cooking,2015.0,4452288,52045398.0,71.9
+Gold Standard,Composting,2015.0,1565,0.0,0.0
+Gold Standard,Efficient appliances,2015.0,1409930,42883063.0,48.5
 Gold Standard,Hydropower,2015.0,17430,220830.0,50.4
-Gold Standard,Industrial efficiency,2015.0,1069854,10474202.0,66.9
+Gold Standard,Industrial efficiency,2015.0,584182,4538916.0,70.4
 Gold Standard,Landfill gas,2015.0,2278055,15450567.0,61.7
 Gold Standard,Mixed renewables,2015.0,6364444,56745917.0,41.9
 Gold Standard,Other,2015.0,1783,2906789.0,62.5
@@ -660,14 +689,15 @@ Gold Standard,Soil & Livestock,2015.0,20768,4862408.0,64.6
 Gold Standard,Solar,2015.0,60885,7430714.0,48.3
 Gold Standard,Waste to energy,2015.0,333242,3212790.0,64.6
 Gold Standard,Water purification,2015.0,15981,1035398.0,22.6
-Gold Standard,Wind,2015.0,2179952,26339965.0,50.5
+Gold Standard,Wind,2015.0,2182232,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2016.0,794471,5801401.0,44.8
-Gold Standard,Bioenergy,2016.0,1598542,13901610.0,33.1
-Gold Standard,Cleaner cooking,2016.0,3772343,46091911.0,73.0
-Gold Standard,Efficient appliances,2016.0,1709204,42957667.0,48.5
+Gold Standard,Bioenergy,2016.0,1588542,13859748.0,33.0
+Gold Standard,Cleaner cooking,2016.0,4309687,52045398.0,71.9
+Gold Standard,Composting,2016.0,1953,0.0,0.0
+Gold Standard,Efficient appliances,2016.0,1707251,42883063.0,48.5
 Gold Standard,Electric vehicles,2016.0,45967,0.0,0.0
 Gold Standard,Hydropower,2016.0,21121,220830.0,50.4
-Gold Standard,Industrial efficiency,2016.0,986512,10474202.0,66.9
+Gold Standard,Industrial efficiency,2016.0,449168,4538916.0,70.4
 Gold Standard,Landfill gas,2016.0,2487208,15450567.0,61.7
 Gold Standard,Mixed renewables,2016.0,7177022,56745917.0,41.9
 Gold Standard,Other,2016.0,738,2906789.0,62.5
@@ -675,14 +705,15 @@ Gold Standard,Solar,2016.0,75139,7430714.0,48.3
 Gold Standard,Waste to energy,2016.0,274955,3212790.0,64.6
 Gold Standard,Wastewater treatment,2016.0,83770,114712.0,26.2
 Gold Standard,Water purification,2016.0,30751,1035398.0,22.6
-Gold Standard,Wind,2016.0,2808092,26339965.0,50.5
+Gold Standard,Wind,2016.0,2818092,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2017.0,819842,5801401.0,44.8
-Gold Standard,Bioenergy,2017.0,1947864,13901610.0,33.1
-Gold Standard,Cleaner cooking,2017.0,3774520,46091911.0,73.0
-Gold Standard,Efficient appliances,2017.0,2508036,42957667.0,48.5
+Gold Standard,Bioenergy,2017.0,1937864,13859748.0,33.0
+Gold Standard,Cleaner cooking,2017.0,4529805,52045398.0,71.9
+Gold Standard,Composting,2017.0,4655,0.0,0.0
+Gold Standard,Efficient appliances,2017.0,2503381,42883063.0,48.5
 Gold Standard,Electric vehicles,2017.0,46838,0.0,0.0
 Gold Standard,Hydropower,2017.0,18559,220830.0,50.4
-Gold Standard,Industrial efficiency,2017.0,1319504,10474202.0,66.9
+Gold Standard,Industrial efficiency,2017.0,564219,4538916.0,70.4
 Gold Standard,Landfill gas,2017.0,438907,15450567.0,61.7
 Gold Standard,Mixed renewables,2017.0,8031423,56745917.0,41.9
 Gold Standard,Other,2017.0,73726,2906789.0,62.5
@@ -691,13 +722,14 @@ Gold Standard,Solar,2017.0,49046,7430714.0,48.3
 Gold Standard,Waste to energy,2017.0,569730,3212790.0,64.6
 Gold Standard,Wastewater treatment,2017.0,48306,114712.0,26.2
 Gold Standard,Water purification,2017.0,118372,1035398.0,22.6
-Gold Standard,Wind,2017.0,2459299,26339965.0,50.5
+Gold Standard,Wind,2017.0,2469299,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2018.0,991410,5801401.0,44.8
-Gold Standard,Bioenergy,2018.0,2072909,13901610.0,33.1
-Gold Standard,Cleaner cooking,2018.0,3816469,46091911.0,73.0
-Gold Standard,Efficient appliances,2018.0,3078867,42957667.0,48.5
+Gold Standard,Bioenergy,2018.0,2064742,13859748.0,33.0
+Gold Standard,Cleaner cooking,2018.0,4368180,52045398.0,71.9
+Gold Standard,Composting,2018.0,5946,0.0,0.0
+Gold Standard,Efficient appliances,2018.0,3068817,42883063.0,48.5
 Gold Standard,Hydropower,2018.0,35143,220830.0,50.4
-Gold Standard,Industrial efficiency,2018.0,1226166,10474202.0,66.9
+Gold Standard,Industrial efficiency,2018.0,678559,4538916.0,70.4
 Gold Standard,Landfill gas,2018.0,372156,15450567.0,61.7
 Gold Standard,Mixed renewables,2018.0,10342427,56745917.0,41.9
 Gold Standard,Other,2018.0,73399,2906789.0,62.5
@@ -706,13 +738,14 @@ Gold Standard,Solar,2018.0,128895,7430714.0,48.3
 Gold Standard,Waste to energy,2018.0,591253,3212790.0,64.6
 Gold Standard,Wastewater treatment,2018.0,62980,114712.0,26.2
 Gold Standard,Water purification,2018.0,145147,1035398.0,22.6
-Gold Standard,Wind,2018.0,2847403,26339965.0,50.5
+Gold Standard,Wind,2018.0,2855570,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2019.0,1219378,5801401.0,44.8
-Gold Standard,Bioenergy,2019.0,2534271,13901610.0,33.1
-Gold Standard,Cleaner cooking,2019.0,4473076,46091911.0,73.0
-Gold Standard,Efficient appliances,2019.0,3513974,42957667.0,48.5
+Gold Standard,Bioenergy,2019.0,2524271,13859748.0,33.0
+Gold Standard,Cleaner cooking,2019.0,5146413,52045398.0,71.9
+Gold Standard,Composting,2019.0,13162,0.0,0.0
+Gold Standard,Efficient appliances,2019.0,3494072,42883063.0,48.5
 Gold Standard,Hydropower,2019.0,60378,220830.0,50.4
-Gold Standard,Industrial efficiency,2019.0,1202756,10474202.0,66.9
+Gold Standard,Industrial efficiency,2019.0,536159,4538916.0,70.4
 Gold Standard,Landfill gas,2019.0,733690,15450567.0,61.7
 Gold Standard,Mixed renewables,2019.0,14043965,56745917.0,41.9
 Gold Standard,Other,2019.0,130028,2906789.0,62.5
@@ -722,14 +755,15 @@ Gold Standard,Waste management,2019.0,281,8219.0,7.5
 Gold Standard,Waste to energy,2019.0,458085,3212790.0,64.6
 Gold Standard,Wastewater treatment,2019.0,78200,114712.0,26.2
 Gold Standard,Water purification,2019.0,154312,1035398.0,22.6
-Gold Standard,Wind,2019.0,3447238,26339965.0,50.5
+Gold Standard,Wind,2019.0,3457238,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2020.0,1257759,5801401.0,44.8
-Gold Standard,Bioenergy,2020.0,2631894,13901610.0,33.1
-Gold Standard,Cleaner cooking,2020.0,4578700,46091911.0,73.0
-Gold Standard,Efficient appliances,2020.0,4894717,42957667.0,48.5
+Gold Standard,Bioenergy,2020.0,2626894,13859748.0,33.0
+Gold Standard,Cleaner cooking,2020.0,5358873,52045398.0,71.9
+Gold Standard,Composting,2020.0,14315,0.0,0.0
+Gold Standard,Efficient appliances,2020.0,4873036,42883063.0,48.5
 Gold Standard,Geothermal,2020.0,170459,1697877.0,48.8
 Gold Standard,Hydropower,2020.0,72951,220830.0,50.4
-Gold Standard,Industrial efficiency,2020.0,1473517,10474202.0,66.9
+Gold Standard,Industrial efficiency,2020.0,700710,4538916.0,70.4
 Gold Standard,Landfill gas,2020.0,1510928,15450567.0,61.7
 Gold Standard,Mixed renewables,2020.0,16846906,56745917.0,41.9
 Gold Standard,Other,2020.0,120563,2906789.0,62.5
@@ -739,14 +773,15 @@ Gold Standard,Waste management,2020.0,447,8219.0,7.5
 Gold Standard,Waste to energy,2020.0,181823,3212790.0,64.6
 Gold Standard,Wastewater treatment,2020.0,56069,114712.0,26.2
 Gold Standard,Water purification,2020.0,422803,1035398.0,22.6
-Gold Standard,Wind,2020.0,4479134,26339965.0,50.5
+Gold Standard,Wind,2020.0,4484134,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2021.0,1121517,5801401.0,44.8
-Gold Standard,Bioenergy,2021.0,4695347,13901610.0,33.1
-Gold Standard,Cleaner cooking,2021.0,5638843,46091911.0,73.0
-Gold Standard,Efficient appliances,2021.0,14853599,42957667.0,48.5
+Gold Standard,Bioenergy,2021.0,4695347,13859748.0,33.0
+Gold Standard,Cleaner cooking,2021.0,6601401,52045398.0,71.9
+Gold Standard,Composting,2021.0,6153,0.0,0.0
+Gold Standard,Efficient appliances,2021.0,14847446,42883063.0,48.5
 Gold Standard,Geothermal,2021.0,918338,1697877.0,48.8
 Gold Standard,Hydropower,2021.0,56026,220830.0,50.4
-Gold Standard,Industrial efficiency,2021.0,1439458,10474202.0,66.9
+Gold Standard,Industrial efficiency,2021.0,476900,4538916.0,70.4
 Gold Standard,Landfill gas,2021.0,1507201,15450567.0,61.7
 Gold Standard,Mixed renewables,2021.0,15666564,56745917.0,41.9
 Gold Standard,Other,2021.0,716123,2906789.0,62.5
@@ -756,14 +791,15 @@ Gold Standard,Waste management,2021.0,208,8219.0,7.5
 Gold Standard,Waste to energy,2021.0,142305,3212790.0,64.6
 Gold Standard,Wastewater treatment,2021.0,33352,114712.0,26.2
 Gold Standard,Water purification,2021.0,585277,1035398.0,22.6
-Gold Standard,Wind,2021.0,6953111,26339965.0,50.5
+Gold Standard,Wind,2021.0,6953111,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2022.0,788385,5801401.0,44.8
-Gold Standard,Bioenergy,2022.0,6337933,13901610.0,33.1
-Gold Standard,Cleaner cooking,2022.0,7561028,46091911.0,73.0
-Gold Standard,Efficient appliances,2022.0,19416130,42957667.0,48.5
+Gold Standard,Bioenergy,2022.0,6337933,13859748.0,33.0
+Gold Standard,Cleaner cooking,2022.0,8237850,52045398.0,71.9
+Gold Standard,Composting,2022.0,5967,0.0,0.0
+Gold Standard,Efficient appliances,2022.0,19410163,42883063.0,48.5
 Gold Standard,Geothermal,2022.0,926726,1697877.0,48.8
 Gold Standard,Hydropower,2022.0,446,220830.0,50.4
-Gold Standard,Industrial efficiency,2022.0,1214895,10474202.0,66.9
+Gold Standard,Industrial efficiency,2022.0,538073,4538916.0,70.4
 Gold Standard,Landfill gas,2022.0,1437183,15450567.0,61.7
 Gold Standard,Mixed renewables,2022.0,18269099,56745917.0,41.9
 Gold Standard,Other,2022.0,901281,2906789.0,62.5
@@ -772,14 +808,15 @@ Gold Standard,Solar,2022.0,4008514,7430714.0,48.3
 Gold Standard,Waste management,2022.0,44557,8219.0,7.5
 Gold Standard,Waste to energy,2022.0,177969,3212790.0,64.6
 Gold Standard,Water purification,2022.0,974812,1035398.0,22.6
-Gold Standard,Wind,2022.0,8384378,26339965.0,50.5
+Gold Standard,Wind,2022.0,8384378,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2023.0,498707,5801401.0,44.8
-Gold Standard,Bioenergy,2023.0,7688658,13901610.0,33.1
-Gold Standard,Cleaner cooking,2023.0,6633700,46091911.0,73.0
-Gold Standard,Efficient appliances,2023.0,19265928,42957667.0,48.5
+Gold Standard,Bioenergy,2023.0,7688658,13859748.0,33.0
+Gold Standard,Cleaner cooking,2023.0,7663380,52045398.0,71.9
+Gold Standard,Composting,2023.0,3920,0.0,0.0
+Gold Standard,Efficient appliances,2023.0,19262008,42883063.0,48.5
 Gold Standard,Geothermal,2023.0,915434,1697877.0,48.8
 Gold Standard,Hydropower,2023.0,16387,220830.0,50.4
-Gold Standard,Industrial efficiency,2023.0,1153585,10474202.0,66.9
+Gold Standard,Industrial efficiency,2023.0,123905,4538916.0,70.4
 Gold Standard,Landfill gas,2023.0,987413,15450567.0,61.7
 Gold Standard,Mixed renewables,2023.0,12401899,56745917.0,41.9
 Gold Standard,Other,2023.0,838668,2906789.0,62.5
@@ -788,14 +825,14 @@ Gold Standard,Solar,2023.0,1998216,7430714.0,48.3
 Gold Standard,Waste management,2023.0,57168,8219.0,7.5
 Gold Standard,Waste to energy,2023.0,79104,3212790.0,64.6
 Gold Standard,Water purification,2023.0,1556718,1035398.0,22.6
-Gold Standard,Wind,2023.0,6956934,26339965.0,50.5
+Gold Standard,Wind,2023.0,6956934,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2024.0,321910,5801401.0,44.8
-Gold Standard,Bioenergy,2024.0,7042595,13901610.0,33.1
-Gold Standard,Cleaner cooking,2024.0,3571024,46091911.0,73.0
-Gold Standard,Efficient appliances,2024.0,13416961,42957667.0,48.5
+Gold Standard,Bioenergy,2024.0,7042595,13859748.0,33.0
+Gold Standard,Cleaner cooking,2024.0,4588393,52045398.0,71.9
+Gold Standard,Efficient appliances,2024.0,13416961,42883063.0,48.5
 Gold Standard,Geothermal,2024.0,551154,1697877.0,48.8
 Gold Standard,Hydropower,2024.0,21918,220830.0,50.4
-Gold Standard,Industrial efficiency,2024.0,1020422,10474202.0,66.9
+Gold Standard,Industrial efficiency,2024.0,3053,4538916.0,70.4
 Gold Standard,Landfill gas,2024.0,259734,15450567.0,61.7
 Gold Standard,Mixed renewables,2024.0,4001973,56745917.0,41.9
 Gold Standard,Other,2024.0,604839,2906789.0,62.5
@@ -803,88 +840,88 @@ Gold Standard,Solar,2024.0,552311,7430714.0,48.3
 Gold Standard,Waste management,2024.0,7435,8219.0,7.5
 Gold Standard,Waste to energy,2024.0,21251,3212790.0,64.6
 Gold Standard,Water purification,2024.0,549856,1035398.0,22.6
-Gold Standard,Wind,2024.0,3158666,26339965.0,50.5
+Gold Standard,Wind,2024.0,3158666,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2025.0,183904,5801401.0,44.8
-Gold Standard,Bioenergy,2025.0,1156746,13901610.0,33.1
-Gold Standard,Cleaner cooking,2025.0,381070,46091911.0,73.0
-Gold Standard,Efficient appliances,2025.0,862812,42957667.0,48.5
+Gold Standard,Bioenergy,2025.0,1156746,13859748.0,33.0
+Gold Standard,Cleaner cooking,2025.0,456037,52045398.0,71.9
+Gold Standard,Efficient appliances,2025.0,862812,42883063.0,48.5
 Gold Standard,Hydropower,2025.0,5872,220830.0,50.4
-Gold Standard,Industrial efficiency,2025.0,77392,10474202.0,66.9
+Gold Standard,Industrial efficiency,2025.0,2425,4538916.0,70.4
 Gold Standard,Mixed renewables,2025.0,697568,56745917.0,41.9
 Gold Standard,Other,2025.0,90185,2906789.0,62.5
 Gold Standard,Solar,2025.0,16555,7430714.0,48.3
 Gold Standard,Water purification,2025.0,6257,1035398.0,22.6
-Gold Standard,Wind,2025.0,801422,26339965.0,50.5
+Gold Standard,Wind,2025.0,801422,26381827.0,50.6
 Gold Standard,Afforestation/Reforestation,2026.0,235949,5801401.0,44.8
-Gold Standard,Industrial efficiency,2026.0,2418,10474202.0,66.9
+Gold Standard,Industrial efficiency,2026.0,2418,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2027.0,275884,5801401.0,44.8
-Gold Standard,Industrial efficiency,2027.0,2418,10474202.0,66.9
+Gold Standard,Industrial efficiency,2027.0,2418,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2028.0,249187,5801401.0,44.8
-Gold Standard,Industrial efficiency,2028.0,2418,10474202.0,66.9
+Gold Standard,Industrial efficiency,2028.0,2418,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2029.0,183772,5801401.0,44.8
-Gold Standard,Industrial efficiency,2029.0,2418,10474202.0,66.9
+Gold Standard,Industrial efficiency,2029.0,2418,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2030.0,78838,5801401.0,44.8
-Gold Standard,Industrial efficiency,2030.0,2418,10474202.0,66.9
+Gold Standard,Industrial efficiency,2030.0,2418,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2031.0,78016,5801401.0,44.8
-Gold Standard,Industrial efficiency,2031.0,2418,10474202.0,66.9
+Gold Standard,Industrial efficiency,2031.0,2418,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2032.0,78637,5801401.0,44.8
-Gold Standard,Industrial efficiency,2032.0,2418,10474202.0,66.9
+Gold Standard,Industrial efficiency,2032.0,2418,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2033.0,76826,5801401.0,44.8
-Gold Standard,Industrial efficiency,2033.0,1752,10474202.0,66.9
+Gold Standard,Industrial efficiency,2033.0,1752,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2034.0,73144,5801401.0,44.8
-Gold Standard,Industrial efficiency,2034.0,1692,10474202.0,66.9
+Gold Standard,Industrial efficiency,2034.0,1692,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2035.0,68404,5801401.0,44.8
-Gold Standard,Industrial efficiency,2035.0,1692,10474202.0,66.9
+Gold Standard,Industrial efficiency,2035.0,1692,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2036.0,46663,5801401.0,44.8
-Gold Standard,Industrial efficiency,2036.0,1695,10474202.0,66.9
+Gold Standard,Industrial efficiency,2036.0,1695,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2037.0,40830,5801401.0,44.8
-Gold Standard,Industrial efficiency,2037.0,1692,10474202.0,66.9
+Gold Standard,Industrial efficiency,2037.0,1692,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2038.0,22460,5801401.0,44.8
-Gold Standard,Industrial efficiency,2038.0,1695,10474202.0,66.9
+Gold Standard,Industrial efficiency,2038.0,1695,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2039.0,23339,5801401.0,44.8
-Gold Standard,Industrial efficiency,2039.0,1692,10474202.0,66.9
+Gold Standard,Industrial efficiency,2039.0,1692,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2040.0,20274,5801401.0,44.8
-Gold Standard,Industrial efficiency,2040.0,1684,10474202.0,66.9
+Gold Standard,Industrial efficiency,2040.0,1684,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2041.0,18046,5801401.0,44.8
-Gold Standard,Industrial efficiency,2041.0,1687,10474202.0,66.9
+Gold Standard,Industrial efficiency,2041.0,1687,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2042.0,12446,5801401.0,44.8
-Gold Standard,Industrial efficiency,2042.0,1684,10474202.0,66.9
+Gold Standard,Industrial efficiency,2042.0,1684,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2043.0,11660,5801401.0,44.8
-Gold Standard,Industrial efficiency,2043.0,1470,10474202.0,66.9
+Gold Standard,Industrial efficiency,2043.0,1470,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2044.0,9776,5801401.0,44.8
-Gold Standard,Industrial efficiency,2044.0,1470,10474202.0,66.9
+Gold Standard,Industrial efficiency,2044.0,1470,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2045.0,9675,5801401.0,44.8
-Gold Standard,Industrial efficiency,2045.0,1451,10474202.0,66.9
+Gold Standard,Industrial efficiency,2045.0,1451,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2046.0,7891,5801401.0,44.8
-Gold Standard,Industrial efficiency,2046.0,1451,10474202.0,66.9
+Gold Standard,Industrial efficiency,2046.0,1451,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2047.0,7543,5801401.0,44.8
-Gold Standard,Industrial efficiency,2047.0,1451,10474202.0,66.9
+Gold Standard,Industrial efficiency,2047.0,1451,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2048.0,6323,5801401.0,44.8
-Gold Standard,Industrial efficiency,2048.0,1451,10474202.0,66.9
+Gold Standard,Industrial efficiency,2048.0,1451,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2049.0,7232,5801401.0,44.8
-Gold Standard,Industrial efficiency,2049.0,1451,10474202.0,66.9
+Gold Standard,Industrial efficiency,2049.0,1451,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2050.0,2678,5801401.0,44.8
-Gold Standard,Industrial efficiency,2050.0,1451,10474202.0,66.9
+Gold Standard,Industrial efficiency,2050.0,1451,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2051.0,3010,5801401.0,44.8
-Gold Standard,Industrial efficiency,2051.0,1451,10474202.0,66.9
+Gold Standard,Industrial efficiency,2051.0,1451,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2052.0,2476,5801401.0,44.8
-Gold Standard,Industrial efficiency,2052.0,1451,10474202.0,66.9
+Gold Standard,Industrial efficiency,2052.0,1451,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2053.0,2426,5801401.0,44.8
-Gold Standard,Industrial efficiency,2053.0,1451,10474202.0,66.9
+Gold Standard,Industrial efficiency,2053.0,1451,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2054.0,2361,5801401.0,44.8
-Gold Standard,Industrial efficiency,2054.0,1451,10474202.0,66.9
+Gold Standard,Industrial efficiency,2054.0,1451,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2055.0,2178,5801401.0,44.8
-Gold Standard,Industrial efficiency,2055.0,1451,10474202.0,66.9
+Gold Standard,Industrial efficiency,2055.0,1451,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2056.0,2044,5801401.0,44.8
-Gold Standard,Industrial efficiency,2056.0,1451,10474202.0,66.9
+Gold Standard,Industrial efficiency,2056.0,1451,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2057.0,1916,5801401.0,44.8
-Gold Standard,Industrial efficiency,2057.0,1443,10474202.0,66.9
+Gold Standard,Industrial efficiency,2057.0,1443,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2058.0,1754,5801401.0,44.8
-Gold Standard,Industrial efficiency,2058.0,1253,10474202.0,66.9
+Gold Standard,Industrial efficiency,2058.0,1253,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2059.0,1674,5801401.0,44.8
-Gold Standard,Industrial efficiency,2059.0,1165,10474202.0,66.9
+Gold Standard,Industrial efficiency,2059.0,1165,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2060.0,664,5801401.0,44.8
-Gold Standard,Industrial efficiency,2060.0,2966,10474202.0,66.9
+Gold Standard,Industrial efficiency,2060.0,2966,4538916.0,70.4
 Gold Standard,Afforestation/Reforestation,2061.0,678,5801401.0,44.8
 CAR,Composting,2008.0,6554,,
 CAR,Composting,2009.0,27751,,
