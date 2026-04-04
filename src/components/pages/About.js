@@ -134,7 +134,7 @@ const About = () => {
             Raw issuance records from each registry sheet were grouped by vintage year and project type
             category. Project types were resolved via <code>methodology_mapping.csv</code>, which maps
             444 methodology mappings (283 Verra methodology codes, 81 Gold Standard protocols, 46 ACR
-            protocols, 32 CAR protocols, and 2 ART protocols) to 30 project activity categories across
+            protocols, 32 CAR protocols, and 2 ART protocols) to 31 project activity categories across
             all four registries. Match rate across all issuance rows is approximately 99.9%.
           </p>
 
@@ -268,7 +268,7 @@ const About = () => {
 
           <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Category Taxonomy</p>
           <p className="about-text">
-            The 30 project activity categories used in this dashboard are adapted from the activity
+            The 31 project activity categories used in this dashboard are adapted from the activity
             typology defined in the{' '}
             <a
               href="https://unepccc.org/article-6-pipeline/"
@@ -281,7 +281,7 @@ const About = () => {
             {' '}dataset compiled by the UNEP Copenhagen Climate Centre (accessed 2025). That dataset
             enumerates 34 activity types spanning the full range of mitigation interventions tracked
             in international carbon markets; 29 of these are adopted verbatim. The taxonomy diverges
-            in five cases:
+            in five cases and adds one category beyond the A6 framework:
           </p>
           <ul className="about-text" style={{ paddingLeft: '1.2em' }}>
             <li>
@@ -298,9 +298,18 @@ const About = () => {
             </li>
             <li>
               <strong>Green hydrogen, Green ammonia, Carbon capture → excluded.</strong> These types
-              appear in the A6 forward pipeline but have no representation in the 2000–2025 voluntary
+              appear in the A6 forward pipeline but have no representation in the 2000–Feb 2026 voluntary
               registry dataset. No methodology codes or protocol names for these activities are present
               across Verra, Gold Standard, ACR, or CAR.
+            </li>
+            <li>
+              <strong>Engineered Removals added as a category beyond the A6 framework.</strong> The A6
+              typology includes 'Carbon capture', which covers industrial point-source CCS (emissions
+              prevention). Engineered Removals covers a distinct class — Carbon Dioxide Removal (CDR)
+              as defined by IPCC AR6 — where projects actively remove CO₂ already in the atmosphere
+              through engineered or geological processes. Currently mapped to VM0049 (Biochar Utilization
+              with Geological Storage). Future subcategories may include DACCS, BECCS, and enhanced rock
+              weathering as these methodologies mature in the voluntary carbon market.
             </li>
           </ul>
         </div>
