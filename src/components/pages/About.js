@@ -19,6 +19,8 @@ const About = () => {
   const [openSubs, setOpenSubs] = useState(new Set());
   const [exclusionsOpen, setExclusionsOpen] = useState(false);
   const [openExclusionGroups, setOpenExclusionGroups] = useState(new Set());
+  const [categoriesOpen, setCategoriesOpen] = useState(false);
+  const [openCategoryGroups, setOpenCategoryGroups] = useState(new Set());
 
   useEffect(() => {
     Papa.parse(process.env.PUBLIC_URL + '/methodology_mapping.csv', {
@@ -59,6 +61,7 @@ const About = () => {
   const toggleGroup = (g) => setOpenGroups(p => { const n = new Set(p); n.has(g) ? n.delete(g) : n.add(g); return n; });
   const toggleSub = (key) => setOpenSubs(p => { const n = new Set(p); n.has(key) ? n.delete(key) : n.add(key); return n; });
   const toggleExclusionGroup = (g) => setOpenExclusionGroups(p => { const n = new Set(p); n.has(g) ? n.delete(g) : n.add(g); return n; });
+  const toggleCategoryGroup = (g) => setOpenCategoryGroups(p => { const n = new Set(p); n.has(g) ? n.delete(g) : n.add(g); return n; });
 
   return (
     <div className="about-page">
@@ -314,6 +317,192 @@ const About = () => {
               weathering as these methodologies mature in the voluntary carbon market.
             </li>
           </ul>
+        </div>
+
+        <div className="about-section">
+          <button className="taxonomy-toggle" onClick={() => setCategoriesOpen(o => !o)}>
+            <span className="about-section-title" style={{ margin: 0 }}>Project Activity Categories</span>
+            <span className="taxonomy-chevron">{categoriesOpen ? '▼' : '▶'}</span>
+          </button>
+
+          {categoriesOpen && (
+            <div style={{ marginTop: 12 }}>
+              <p className="about-text">
+                Each of the 31 project activity categories used in this dashboard is defined below, grouped by the four filter groups. Categories marked with ◦ currently have no credits in the dataset but are mapped and ready for future projects.
+              </p>
+              <div className="taxonomy-tree">
+
+                <div className="taxonomy-group">
+                  <button className="taxonomy-group-row" onClick={() => toggleCategoryGroup('forest')}>
+                    <span className="taxonomy-group-name">Forest &amp; Nature (4)</span>
+                    <span className="taxonomy-chevron-sm">{openCategoryGroups.has('forest') ? '▼' : '▶'}</span>
+                  </button>
+                  {openCategoryGroups.has('forest') && (
+                    <div className="taxonomy-subs">
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Afforestation/Reforestation</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that establish new forests on previously unforested land (afforestation) or restore forests on land that was previously forested (reforestation). Includes avoided deforestation projects under REDD+ frameworks.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Forest management</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that improve the management of existing forests to increase carbon stocks or reduce emissions from degradation. Includes improved forest management (IFM) and conservation of existing high-carbon-stock forests.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Reforestation and ecosystem restoration</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that restore degraded ecosystems — including tropical forests, mangroves, and other natural habitats — through active replanting and natural regeneration.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Rewilding</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that restore natural ecological processes and biodiversity by removing human pressures, reintroducing species, and allowing natural succession. Includes sustainable grassland management.</div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="taxonomy-group">
+                  <button className="taxonomy-group-row" onClick={() => toggleCategoryGroup('energy')}>
+                    <span className="taxonomy-group-name">Energy (12)</span>
+                    <span className="taxonomy-chevron-sm">{openCategoryGroups.has('energy') ? '▼' : '▶'}</span>
+                  </button>
+                  {openCategoryGroups.has('energy') && (
+                    <div className="taxonomy-subs">
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Bioenergy</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that generate energy from biomass, biogas, or other biological sources, displacing fossil fuel combustion. Includes agricultural waste, landfill biogas, and purpose-grown biomass for heat and power.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Cleaner cooking</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that replace traditional biomass cookstoves with cleaner, more efficient alternatives — reducing emissions from incomplete combustion and improving household air quality in developing countries.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Electric vehicles</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that deploy electric or hybrid vehicles and charging infrastructure, displacing petrol and diesel vehicle emissions across transport fleets.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Energy storage ◦</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that deploy battery or other storage technologies to enable higher penetration of variable renewable energy. No methodology currently maps to this category.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Efficient appliances</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that distribute efficient lighting, appliances, or equipment — primarily in residential settings — reducing electricity consumption and associated emissions.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Geothermal</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that generate electricity or heat from geothermal resources, displacing fossil fuel generation.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Grid efficiency ◦</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that reduce transmission and distribution losses in electricity grids, or improve grid management to reduce the need for fossil fuel peaking capacity.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Hydropower</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that generate electricity from water flow — including run-of-river and reservoir-based schemes — displacing fossil fuel generation.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Mixed renewables</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects deploying multiple renewable energy technologies at a single site, or portfolios of renewable projects where a single methodology category does not apply.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Public transit</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that expand or improve public transportation systems — including bus rapid transit, rail, and non-motorised transport — displacing private vehicle use.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Solar</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that generate electricity from solar photovoltaic or solar thermal systems, displacing fossil fuel generation.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Wind</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that generate electricity from wind turbines — onshore or offshore — displacing fossil fuel generation.</div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="taxonomy-group">
+                  <button className="taxonomy-group-row" onClick={() => toggleCategoryGroup('agriculture')}>
+                    <span className="taxonomy-group-name">Agriculture (2)</span>
+                    <span className="taxonomy-chevron-sm">{openCategoryGroups.has('agriculture') ? '▼' : '▶'}</span>
+                  </button>
+                  {openCategoryGroups.has('agriculture') && (
+                    <div className="taxonomy-subs">
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Soil &amp; Livestock</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that reduce agricultural emissions or sequester carbon in soils through improved farming practices — including reduced tillage, cover cropping, improved grazing management, and livestock methane reduction.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Rice cultivation</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that modify water and nutrient management in flooded rice paddies to reduce methane emissions from anaerobic decomposition of organic matter.</div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="taxonomy-group">
+                  <button className="taxonomy-group-row" onClick={() => toggleCategoryGroup('waste')}>
+                    <span className="taxonomy-group-name">Waste &amp; Industrial (13)</span>
+                    <span className="taxonomy-chevron-sm">{openCategoryGroups.has('waste') ? '▼' : '▶'}</span>
+                  </button>
+                  {openCategoryGroups.has('waste') && (
+                    <div className="taxonomy-subs">
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Biochar</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that produce biochar from biomass pyrolysis and apply it to soils, storing carbon in a stable form while improving soil health.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Composting</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that divert organic waste from landfill to aerobic composting, reducing methane emissions from anaerobic decomposition.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Engineered Removals ◦</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that actively remove CO₂ from the atmosphere through engineered or geological processes — including geological biochar storage. Represents the Carbon Dioxide Removal (CDR) category as defined by IPCC AR6, distinct from industrial point-source CCS. No credits in the current dataset; future methodologies include DACCS, BECCS, and enhanced rock weathering.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Fossil gas leaks</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that detect and repair methane leaks from oil and gas infrastructure — including pipelines, compressor stations, and abandoned wells — preventing fugitive emissions from reaching the atmosphere.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Heat recovery</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that capture waste heat from industrial processes or power generation for productive use, reducing the need for additional fuel combustion.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Industrial efficiency</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that reduce energy consumption or process emissions in manufacturing, mining, and other industrial sectors through equipment upgrades, process optimisation, or fuel switching.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Landfill gas</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that capture methane from decomposing waste in landfills — for electricity generation, flaring, or direct use — preventing its release into the atmosphere.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Nitric acid</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that reduce nitrous oxide (N₂O) emissions from nitric acid production, a key step in fertiliser manufacturing, through catalytic reduction.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Oil Field Gas Recovery</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that capture associated petroleum gas (APG) at oil production sites — gas that would otherwise be flared or vented — for productive use or safe disposal.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Waste management</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that improve the handling, collection, or disposal of solid waste to reduce methane and other greenhouse gas emissions.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Waste to energy</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that convert waste materials into energy through incineration, gasification, or pyrolysis, displacing fossil fuels while reducing landfill volumes.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Water purification</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that provide clean water access through efficient purification systems, reducing the need for boiling water with biomass or fossil fuels.</div>
+                      </div>
+                      <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Wastewater treatment</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that treat municipal or industrial wastewater to reduce methane and nitrous oxide emissions from untreated effluent.</div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="about-section">
