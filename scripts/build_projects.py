@@ -495,35 +495,57 @@ def main():
         print("\n5. No duplicate project_ids.")
 
     # -----------------------------------------------------------------------
-    # Unmapped methodology warnings
+    # Unmapped methodology report
     # -----------------------------------------------------------------------
-    print("\n=== UNMAPPED METHODOLOGY WARNINGS ===")
+    print("\n=== UNMAPPED METHODOLOGY REPORT ===")
     val_df = pd.read_csv(OUTPUT_CSV)
     val_df['credits_issued'] = pd.to_numeric(val_df['credits_issued'], errors='coerce').fillna(0)
 
-    # 1. Projects in 'Other' category
-    other_df = val_df[val_df['category'] == 'Other'].copy()
-    if len(other_df) == 0:
-        print("No projects in 'Other' category.")
-    else:
-        for reg, grp in other_df.groupby('registry'):
-            print(f"{reg}: {len(grp)} projects, {grp['credits_issued'].sum():,.0f} credits in 'Other' category")
-            grp = grp.copy()
-            grp['_label'] = grp.apply(
-                lambda r: (
-                    f"(blank methodology, Project Type = {str(r.get('project_type') or '').strip() or 'unknown'})"
-                    if reg == 'Gold Standard'
-                    else "(blank methodology)"
-                ) if (
-                    not str(r['methodology'] or '').strip()
-                    or str(r['methodology']).strip().lower() in ('nan', 'none', 'not provided')
-                ) else str(r['methodology']).strip(),
-                axis=1
-            )
-            for label, sub in grp.groupby('_label'):
-                print(f"  - {label}: {len(sub)} projects, {int(sub['credits_issued'].sum()):,.0f} credits")
+    other_df = val_df[
+        (val_df['category'] == 'Other') &
+        ~val_df['methodology'].fillna('').astype(str).str.strip().str.lower().isin(
+            ['', 'nan', 'none', 'not provided']
+        )
+    ].copy()
 
-    # 2. Non-Other projects resolved via fallback (methodology not directly in mapping CSV)
+    REGISTRIES_ORDERED = [
+        ('Verra',         'verra'),
+        ('Gold Standard', 'gs'),
+        ('ACR',           'acr'),
+        ('CAR',           'car'),
+    ]
+    for reg_name, _ in REGISTRIES_ORDERED:
+        reg_other = other_df[other_df['registry'] == reg_name]
+        if reg_name == 'Verra':
+            code_credits = {}
+            for _, row in reg_other.iterrows():
+                for code in str(row['methodology']).split(';'):
+                    code = code.strip()
+                    if code:
+                        code_credits[code] = code_credits.get(code, 0) + row['credits_issued']
+            entries = sorted(code_credits.items(), key=lambda x: -x[1])
+            n = len(entries)
+            total = sum(v for _, v in entries)
+            if n == 0:
+                print("Verra: 0 unmapped codes \u2713")
+            else:
+                print(f"Verra: {n} unmapped code{'s' if n != 1 else ''} (affecting {total:,.0f} credits)")
+                for code, cred in entries:
+                    print(f"  - {code}: {cred:,.0f} credits")
+        else:
+            grp = reg_other.groupby('methodology')['credits_issued'].sum().sort_values(ascending=False)
+            n = len(grp)
+            total = grp.sum()
+            word = 'methodologies' if n != 1 else 'methodology'
+            if n == 0:
+                print(f"{reg_name}: 0 unmapped {word} \u2713")
+            else:
+                print(f"{reg_name}: {n} unmapped {word} (affecting {total:,.0f} credits)")
+                for meth, cred in grp.items():
+                    print(f'  - "{meth}": {cred:,.0f} credits')
+    print("===================================")
+
+    # Non-Other projects resolved via fallback (methodology not directly in mapping CSV)
     non_other = val_df[
         (val_df['category'] != 'Other') &
         val_df['methodology'].fillna('').astype(str).str.strip().str.len().gt(0)
