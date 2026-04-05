@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import { Search } from 'lucide-react';
 import { formatCredits, getGroup, GROUP_COLORS, EXCLUDED_CATEGORIES } from '../../utils/formatters';
 import ProjectsTable from '../panels/ProjectsTable';
@@ -44,21 +44,18 @@ export const COUNTRY_FLAGS = {
   'Yemen': '🇾🇪', 'Zambia': '🇿🇲', 'Zimbabwe': '🇿🇼',
 };
 
-const REGISTRIES = ['all', 'Verra', 'Gold Standard', 'ACR', 'CAR'];
-const REG_LABEL = { all: 'All', 'Verra': 'Verra', 'Gold Standard': 'Gold Standard', 'ACR': 'ACR', 'CAR': 'CAR' };
-const REG_DATA_ATTR = { all: 'all', 'Verra': 'verra', 'Gold Standard': 'gold', 'ACR': 'acr', 'CAR': 'car' };
 const GROUPS = ['Forest & Nature', 'Energy', 'Agriculture', 'Waste & Industrial'];
+const GLOBAL_TO_REGISTRY = { all: 'all', verra: 'Verra', gold: 'Gold Standard', acr: 'ACR', car: 'CAR' };
 
 const SORT_NUMERIC = new Set(['credits_issued','credits_retired','credits_remaining','retirement_rate']);
 const PAGE_SIZE = 50;
 
 const retRateColor = (pct) => pct > 60 ? '#8cb73f' : pct > 30 ? '#e8a124' : '#e85724';
 
-const Projects = ({ data }) => {
+const Projects = ({ data, selectedRegistry = 'all' }) => {
   const { projectsData, projectsLoading } = useProjectsData();
 
   const [search, setSearch] = useState('');
-  const [registryFilter, setRegistryFilter] = useState('all');
   const [groupFilter, setGroupFilter] = useState(null);
   const [corsiaFilter, setCorsiaFilter] = useState(false);
   const [sdgFilter, setSdgFilter] = useState(false);
@@ -67,6 +64,8 @@ const Projects = ({ data }) => {
   const [page, setPage] = useState(1);
   const [selectedProject, setSelectedProject] = useState(null);
   const [selectedIds, setSelectedIds] = useState(new Set());
+
+  useEffect(() => { setPage(1); }, [selectedRegistry]);
 
   const handleSort = useCallback((col) => {
     setSortCol(prev => {
@@ -83,19 +82,20 @@ const Projects = ({ data }) => {
 
   const filteredProjects = useMemo(() => {
     const q = search.trim().toLowerCase();
+    const effectiveRegistry = GLOBAL_TO_REGISTRY[selectedRegistry] ?? 'all';
     return projectsData.filter(p => {
       if (q) {
         const haystack = `${p.project_name} ${p.project_id} ${p.proponent || ''} ${p.country || ''}`.toLowerCase();
         if (!haystack.includes(q)) return false;
       }
-      if (registryFilter !== 'all' && p.registry !== registryFilter) return false;
+      if (effectiveRegistry !== 'all' && p.registry !== effectiveRegistry) return false;
       if (groupFilter && getGroup(p.category || '') !== groupFilter) return false;
       if (corsiaFilter && !p.corsia_eligible) return false;
       if (sdgFilter && !p.sdg_eligible) return false;
       if (EXCLUDED_CATEGORIES.includes(p.category)) return false;
       return true;
     });
-  }, [projectsData, search, registryFilter, groupFilter, corsiaFilter, sdgFilter]);
+  }, [projectsData, search, selectedRegistry, groupFilter, corsiaFilter, sdgFilter]);
 
   const sortedProjects = useMemo(() => {
     const arr = [...filteredProjects];
@@ -211,20 +211,6 @@ const Projects = ({ data }) => {
             value={search}
             onChange={e => { setSearch(e.target.value); setPage(1); }}
           />
-        </div>
-
-        <div style={{ display: 'flex', gap: 4 }}>
-          {REGISTRIES.map(reg => (
-            <button
-              key={reg}
-              className={`pill ${registryFilter === reg ? 'active' : ''}`}
-              data-reg={REG_DATA_ATTR[reg]}
-              onClick={() => handleFilter(setRegistryFilter)(reg)}
-              style={{ padding: '4px 10px', fontSize: 11 }}
-            >
-              {REG_LABEL[reg]}
-            </button>
-          ))}
         </div>
 
         <div style={{ display: 'flex', gap: 4 }}>
