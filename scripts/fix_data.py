@@ -9,7 +9,6 @@ Applies six surgical fixes to aggregated_data.csv and country_aggregated_data.cs
      categorized rows derived from the raw Excel project type labels
 
 Usage:
-  cd e:/Claude/carbonledger
   python scripts/fix_data.py
 
 Requires: pandas, openpyxl
@@ -18,14 +17,17 @@ Requires: pandas, openpyxl
 import json
 import os
 import shutil
+import sys
 
 import pandas as pd
 import re
 
-RAW_EXCEL = os.environ.get(
-    "VROD_EXCEL_PATH",
-    r"E:\Personal\Personal Project\VROD-registry-files--2026-02.xlsx"
-)
+RAW_EXCEL = os.environ.get("VROD_EXCEL_PATH")
+if not RAW_EXCEL:
+    print("Error: VROD_EXCEL_PATH environment variable is not set.")
+    print("  Set it to the path of the VROD Excel file, e.g.:")
+    print("  export VROD_EXCEL_PATH=/path/to/VROD-registry-files.xlsx")
+    sys.exit(1)
 AGG_CSV   = "public/aggregated_data.csv"
 CTRY_CSV  = "public/country_aggregated_data.csv"
 

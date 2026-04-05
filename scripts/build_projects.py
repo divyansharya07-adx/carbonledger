@@ -6,7 +6,6 @@ public/data/projects_data.csv with a unified schema across
 ACR, CAR, Gold Standard, and Verra.
 
 Usage:
-  cd e:/Claude/carbonledger
   python scripts/build_projects.py
 
 Requires: pandas, openpyxl
@@ -14,12 +13,16 @@ Requires: pandas, openpyxl
 
 import os
 import re
+import sys
+
 import pandas as pd
 
-RAW_EXCEL = os.environ.get(
-    "VROD_EXCEL_PATH",
-    r"E:\Personal\Personal Project\VROD-registry-files--2026-02.xlsx"
-)
+RAW_EXCEL = os.environ.get("VROD_EXCEL_PATH")
+if not RAW_EXCEL:
+    print("Error: VROD_EXCEL_PATH environment variable is not set.")
+    print("  Set it to the path of the VROD Excel file, e.g.:")
+    print("  export VROD_EXCEL_PATH=/path/to/VROD-registry-files.xlsx")
+    sys.exit(1)
 OUTPUT_CSV = os.environ.get(
     "OUTPUT_CSV",
     "public/data/projects_data.csv"
