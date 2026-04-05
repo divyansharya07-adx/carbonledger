@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import './App.css';
 import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
@@ -38,14 +38,6 @@ function App() {
   const [sidebarExpanded, setSidebarExpanded] = useState(true);
   const [initialCountry, setInitialCountry] = useState(null);
 
-  const handleReset = useCallback(() => {
-    setActivePage('overview');
-    setSelectedActivity(null);
-    setSelectedRegistry('all');
-    setYearRange([1996, 2025]);
-    setActiveGroup(null);
-  }, []);
-
   const handleNavigateToCountry = useCallback((countryName) => {
     setInitialCountry(countryName);
     setActivePage('country');
@@ -56,6 +48,22 @@ function App() {
   }, [activePage]);
 
   const data = useData(selectedRegistry, yearRange, selectedActivity);
+
+  const yearRangeInitialized = useRef(false);
+  useEffect(() => {
+    if (!data.loading && data.dataMinYear && data.releaseYear && !yearRangeInitialized.current) {
+      yearRangeInitialized.current = true;
+      setYearRange([data.dataMinYear, data.releaseYear]);
+    }
+  }, [data.loading, data.dataMinYear, data.releaseYear]);
+
+  const handleReset = useCallback(() => {
+    setActivePage('overview');
+    setSelectedActivity(null);
+    setSelectedRegistry('all');
+    setYearRange([data.dataMinYear || 1996, data.releaseYear || 2025]);
+    setActiveGroup(null);
+  }, [data.dataMinYear, data.releaseYear]);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
@@ -133,6 +141,8 @@ function App() {
           setSelectedRegistry={setSelectedRegistry}
           yearRange={yearRange}
           setYearRange={setYearRange}
+          dataMinYear={data.dataMinYear}
+          dataMaxYear={data.releaseYear}
           onExport={handleExport}
           onReset={handleReset}
           isDarkMode={darkMode}

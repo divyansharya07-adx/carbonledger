@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 
 const PAGE_NAMES = {
   overview: 'Overview',
@@ -19,13 +19,6 @@ const REGISTRIES = [
   { id: 'car', label: 'CAR' },
 ];
 
-const YEAR_PRESETS = [
-  { label: 'All time', range: [1996, 2025] },
-  { label: 'Last 5Y', range: [2020, 2025] },
-  { label: '2020–2025', range: [2020, 2025] },
-  { label: '2015–2020', range: [2015, 2020] },
-  { label: '2010–2015', range: [2010, 2015] },
-];
 
 const Topbar = ({
   activePage,
@@ -36,6 +29,8 @@ const Topbar = ({
   onExport,
   onReset,
   isDarkMode,
+  dataMinYear = 1996,
+  dataMaxYear = 2025,
 }) => {
   const [yearDropdownOpen, setYearDropdownOpen] = useState(false);
   const [brandHovered, setBrandHovered] = useState(false);
@@ -43,6 +38,14 @@ const Topbar = ({
   const [customFrom, setCustomFrom] = useState(yearRange[0]);
   const [customTo, setCustomTo] = useState(yearRange[1]);
   const yearRef = useRef(null);
+
+  const yearPresets = useMemo(() => [
+    { label: 'All time',  range: [dataMinYear, dataMaxYear] },
+    { label: 'Last 5Y',   range: [dataMaxYear - 4, dataMaxYear] },
+    { label: '2020–2025', range: [2020, 2025] },
+    { label: '2015–2020', range: [2015, 2020] },
+    { label: '2010–2015', range: [2010, 2015] },
+  ], [dataMinYear, dataMaxYear]);
 
   useEffect(() => {
     const handler = (e) => {
@@ -57,14 +60,14 @@ const Topbar = ({
   const applyCustomRange = () => {
     const from = Number(customFrom);
     const to = Number(customTo);
-    if (from >= 1996 && to <= 2025 && from < to) {
+    if (from >= dataMinYear && to <= dataMaxYear && from < to) {
       setYearRange([from, to]);
     }
   };
 
   const pageName = PAGE_NAMES[activePage] || 'Overview';
 
-  const isMatchingPreset = YEAR_PRESETS.some(p => p.range[0] === yearRange[0] && p.range[1] === yearRange[1]);
+  const isMatchingPreset = yearPresets.some(p => p.range[0] === yearRange[0] && p.range[1] === yearRange[1]);
   const yearLabel = isMatchingPreset
     ? `${yearRange[0]} – ${yearRange[1]}`
     : `${yearRange[0]} – ${yearRange[1]} ✎`;
@@ -105,8 +108,8 @@ const Topbar = ({
               <input
                 className="year-custom-input"
                 type="number"
-                min="1996"
-                max="2025"
+                min={dataMinYear}
+                max={dataMaxYear}
                 value={customFrom}
                 onChange={e => setCustomFrom(e.target.value)}
                 onBlur={applyCustomRange}
@@ -116,8 +119,8 @@ const Topbar = ({
               <input
                 className="year-custom-input"
                 type="number"
-                min="1996"
-                max="2025"
+                min={dataMinYear}
+                max={dataMaxYear}
                 value={customTo}
                 onChange={e => setCustomTo(e.target.value)}
                 onBlur={applyCustomRange}
@@ -138,10 +141,10 @@ const Topbar = ({
           )}
           {yearDropdownOpen && !customMode && (
             <div className="year-dropdown">
-              {YEAR_PRESETS.map((preset) => (
+              {yearPresets.map((preset) => (
                 <div
                   key={preset.label}
-                  className={`year-dropdown-item ${YEAR_PRESETS.some(p => p.label === preset.label) && preset.range[0] === yearRange[0] && preset.range[1] === yearRange[1] ? 'active' : ''}`}
+                  className={`year-dropdown-item ${yearPresets.some(p => p.label === preset.label) && preset.range[0] === yearRange[0] && preset.range[1] === yearRange[1] ? 'active' : ''}`}
                   onClick={() => {
                     setYearRange(preset.range);
                     setYearDropdownOpen(false);

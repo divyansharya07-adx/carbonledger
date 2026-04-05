@@ -117,7 +117,7 @@ const About = () => {
             (VCS), Gold Standard, ACR (American Carbon Registry), and CAR (Climate Action
             Reserve). Retirement data is tracked at the project level — credits issued, retired, and
             remaining are available for each project on the Projects page, cross-matched by Project ID across
-            all four registries. Data spans 1996–2025.
+            all four registries. Data spans 1996–present.
           </p>
         </div>
 
@@ -222,7 +222,7 @@ const About = () => {
               Gold Standard A/R (Afforestation/Reforestation) projects issue credits across their full
               monitoring window in a single batch. This results in 1,727,744 credits (~0.07% of total)
               carrying future vintage years (2026–2061), formally issued with serial numbers since
-              2014–2016. These credits are included in the total count but fall outside the 1996–2025
+              2014–2016. These credits are included in the total count but fall outside the
               year-range filter.
             </li>
             <li>

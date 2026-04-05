@@ -97,12 +97,25 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
       });
   }, []);
 
+  const releaseYear = useMemo(() => {
+    if (!rawAgg || rawAgg.length === 0) return new Date().getFullYear();
+    const currentYear = new Date().getFullYear();
+    const years = rawAgg.map(d => d.year).filter(y => y > 0 && y <= currentYear);
+    return years.length > 0 ? Math.max(...years) : currentYear;
+  }, [rawAgg]);
+
+  const dataMinYear = useMemo(() => {
+    if (!rawAgg || rawAgg.length === 0) return 1996;
+    const years = rawAgg.map(d => d.year).filter(y => y > 0);
+    return years.length > 0 ? Math.min(...years) : 1996;
+  }, [rawAgg]);
+
   // Apply global filters
   const filteredAgg = useMemo(() => {
     if (!rawAgg) return [];
     return rawAgg.filter((d) => {
       if (selectedYearRange) {
-        if (d.year < selectedYearRange[0] || (d.year > selectedYearRange[1] && d.year <= 2025)) return false;
+        if (d.year < selectedYearRange[0] || (d.year > selectedYearRange[1] && d.year <= releaseYear)) return false;
       }
       if (selectedRegistry && selectedRegistry !== 'all') {
         const regLower = selectedRegistry.toLowerCase();
@@ -116,13 +129,13 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
       }
       return true;
     });
-  }, [rawAgg, selectedRegistry, selectedYearRange]);
+  }, [rawAgg, selectedRegistry, selectedYearRange, releaseYear]);
 
   const filteredCountry = useMemo(() => {
     if (!rawCountry) return [];
     return rawCountry.filter((d) => {
       if (selectedYearRange) {
-        if (d.year < selectedYearRange[0] || (d.year > selectedYearRange[1] && d.year <= 2025)) return false;
+        if (d.year < selectedYearRange[0] || (d.year > selectedYearRange[1] && d.year <= releaseYear)) return false;
       }
       if (selectedRegistry && selectedRegistry !== 'all') {
         const regLower = selectedRegistry.toLowerCase();
@@ -136,7 +149,7 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
       }
       return true;
     });
-  }, [rawCountry, selectedRegistry, selectedYearRange]);
+  }, [rawCountry, selectedRegistry, selectedYearRange, releaseYear]);
 
   // Computed values
   const totalCredits = useMemo(() => filteredAgg.reduce((s, d) => s + d.credits, 0), [filteredAgg]);
@@ -341,6 +354,8 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
   return {
     loading,
     error,
+    dataMinYear,
+    releaseYear,
     totalCredits,
     creditsByActivity,
     creditsByRegistry,

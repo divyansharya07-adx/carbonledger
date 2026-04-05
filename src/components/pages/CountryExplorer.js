@@ -674,7 +674,7 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     const yearMap = {};
     records.forEach(r => {
       const yr = Math.floor(r.year);
-      if (yr > 0 && yr <= 2025) yearMap[yr] = (yearMap[yr] || 0) + r.credits;
+      if (yr > 0 && yr <= (data.releaseYear || 2025)) yearMap[yr] = (yearMap[yr] || 0) + r.credits;
     });
     const yearlyTrend = Object.entries(yearMap)
       .map(([y, c]) => ({ year: parseInt(y), credits: c }))
