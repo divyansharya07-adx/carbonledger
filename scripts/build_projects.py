@@ -148,12 +148,39 @@ def _map_gold_project_type(pt):
     return 'Other'
 
 
+def _map_verra_project_type(pt):
+    """Map a Verra Project Type label to a category. Returns None if unrecognised."""
+    if pd.isna(pt):
+        return None
+    pt = str(pt).strip()
+    pl = pt.lower()
+    if 'agriculture forestry' in pl or 'land use' in pl:
+        return 'Afforestation/Reforestation'
+    if 'energy industries' in pl:
+        return 'Mixed renewables'
+    if 'energy demand' in pl:
+        return 'Efficient appliances'
+    if 'fugitive emissions' in pl:
+        return 'Fossil gas leaks'
+    if 'waste handling' in pl or 'waste disposal' in pl:
+        return 'Waste management'
+    if 'livestock' in pl or 'manure' in pl:
+        return 'Soil & Livestock'
+    if 'transport' in pl:
+        return 'Public transit'
+    if 'chemical' in pl or 'construction' in pl or 'manufacturing' in pl or 'mining' in pl or 'metal' in pl:
+        return 'Industrial efficiency'
+    return None
+
+
 def lookup_category(registry, methodology, verra_by_code, name_lookup, project_type=None):
     """Return the Project Type Category for a project, or 'Other' if unresolved."""
     meth = str(methodology).strip() if pd.notna(methodology) else ''
     if not meth or meth.lower() in ('nan', 'none', ''):
         if registry == 'Gold Standard':
             return _map_gold_project_type(project_type)
+        if registry == 'Verra':
+            return _map_verra_project_type(project_type) or 'Other'
         return 'Other'
 
     if registry == 'Verra':
@@ -162,7 +189,7 @@ def lookup_category(registry, methodology, verra_by_code, name_lookup, project_t
             code = code.strip()
             if code in verra_by_code:
                 return verra_by_code[code]
-        return 'Other'
+        return _map_verra_project_type(project_type) or 'Other'
 
     reg_key = {'ACR': 'ACR', 'CAR': 'CAR', 'Gold Standard': 'Gold'}.get(registry)
     if not reg_key:

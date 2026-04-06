@@ -72,6 +72,31 @@ def map_gold_project_type(pt):
     return "Other"
 
 
+def _map_verra_project_type(pt):
+    """Map a Verra Project Type label to a category. Returns None if unrecognised."""
+    if pd.isna(pt):
+        return None
+    pt = str(pt).strip()
+    pl = pt.lower()
+    if 'agriculture forestry' in pl or 'land use' in pl:
+        return 'Afforestation/Reforestation'
+    if 'energy industries' in pl:
+        return 'Mixed renewables'
+    if 'energy demand' in pl:
+        return 'Efficient appliances'
+    if 'fugitive emissions' in pl:
+        return 'Fossil gas leaks'
+    if 'waste handling' in pl or 'waste disposal' in pl:
+        return 'Waste management'
+    if 'livestock' in pl or 'manure' in pl:
+        return 'Soil & Livestock'
+    if 'transport' in pl:
+        return 'Public transit'
+    if 'chemical' in pl or 'construction' in pl or 'manufacturing' in pl or 'mining' in pl or 'metal' in pl:
+        return 'Industrial efficiency'
+    return None
+
+
 def build_vintage_retirement_lookup():
     """Return dict keyed (registry, country, vintage_year) -> credits_retired int.
 
@@ -236,6 +261,14 @@ def main():
     vcus = pd.read_excel(RAW_EXCEL, sheet_name="Verra VCUS", engine="openpyxl")
     vcus["vintage_year"] = pd.to_datetime(vcus["Vintage Start"], errors="coerce").dt.year
     vcus["qty"] = pd.to_numeric(vcus["Quantity Issued"], errors="coerce").fillna(0)
+
+    # Build project-type lookup for Verra blank-methodology fallback (ID -> Project Type)
+    verra_proj = pd.read_excel(RAW_EXCEL, sheet_name="Verra Projects",
+                               usecols=["ID", "Project Type"], engine="openpyxl")
+    verra_project_type = dict(zip(
+        verra_proj["ID"].astype(str).str.strip(),
+        verra_proj["Project Type"].astype(str).str.strip(),
+    ))
 
     # -----------------------------------------------------------------------
     # SECTION A — AMS-III.AU: Mixed renewables ->Rice cultivation (Verra)
@@ -559,10 +592,10 @@ def main():
                          .agg(lambda x: x[x != ''].mode().iloc[0]
                                         if len(x[x != ''].mode()) > 0 else ''))
     verra_counts = {}
-    for _, meth in proj_meth_v.items():
+    for proj_id, meth in proj_meth_v.items():
         cat = lookup_cat_e('Verra', meth)
         if cat is None:
-            cat = 'Other'
+            cat = _map_verra_project_type(verra_project_type.get(proj_id, '')) or 'Other'
         verra_counts[cat] = verra_counts.get(cat, 0) + 1
     print(f"  Verra: {len(proj_meth_v)} unique projects, {sum(verra_counts.values())} matched")
     for cat, cnt in sorted(verra_counts.items()):
@@ -886,11 +919,15 @@ def main():
     before_gs    = int(agg.loc[agg[reg_col] == 'Gold Standard', cr_col].sum())
     print(f"  Before — Verra: {before_verra:,}  Gold Standard: {before_gs:,}")
 
-    vcus_a4 = vcus[['vintage_year', 'Methodology', 'qty']].copy()
-    vcus_a4[agg_col] = vcus_a4['Methodology'].apply(
-        lambda m: code_to_cat.get(
-            ('Verra', str(m or '').strip().split(';')[0].strip()), 'Other'
-        )
+    vcus_a4 = vcus[['ID', 'vintage_year', 'Methodology', 'qty']].copy()
+    vcus_a4['ID'] = vcus_a4['ID'].astype(str).str.strip()
+    vcus_a4[agg_col] = vcus_a4.apply(
+        lambda r: (
+            code_to_cat.get(('Verra', str(r['Methodology'] or '').strip().split(';')[0].strip()))
+            or _map_verra_project_type(verra_project_type.get(r['ID'], ''))
+            or 'Other'
+        ),
+        axis=1,
     )
     verra_vyr = (
         vcus_a4.groupby(['vintage_year', agg_col])['qty']
