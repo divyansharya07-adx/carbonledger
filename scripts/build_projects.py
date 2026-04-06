@@ -68,6 +68,7 @@ OUTPUT_COLS = [
     'retirement_rate', 'corsia_eligible', 'sdg_eligible',
     'crediting_period_start', 'crediting_period_end',
     'verification_body', 'documents_url',
+    'vintage_year', 'lifetime_credits_issued', 'lifetime_credits_retired',
 ]
 
 
@@ -219,54 +220,66 @@ def build_acr():
     iss  = pd.read_excel(RAW_EXCEL, sheet_name='ACR Issuances', engine='openpyxl')
     ret  = pd.read_excel(RAW_EXCEL, sheet_name='ACR Retirements', engine='openpyxl')
 
-    # Credits aggregated per project
-    issued  = (coerce_credits(iss['Total Credits Issued'])
-               .groupby(iss['Project ID'].astype(str).str.strip())
-               .sum().rename('credits_issued'))
-    retired = (coerce_credits(ret['Quantity of Credits'])
-               .groupby(ret['Project ID'].astype(str).str.strip())
-               .sum().rename('credits_retired'))
+    iss_pid = iss['Project ID'].astype(str).str.strip()
+    iss_vyr = pd.to_numeric(iss['Vintage'], errors='coerce')
 
-    # CORSIA: CCP Approved == 'Yes' in any issuance row
-    corsia_map = (
-        iss['CCP Approved'].astype(str).str.strip().str.lower()
-        .eq('yes')
-        .groupby(iss['Project ID'].astype(str).str.strip())
-        .any()
-        .rename('corsia_eligible')
+    # Credits issued grouped by (project_id, vintage_year)
+    issued = (
+        coerce_credits(iss['Total Credits Issued'])
+        .groupby([iss_pid, iss_vyr])
+        .sum()
+        .rename('credits_issued')
+        .reset_index()
+        .rename(columns={'Project ID': 'project_id', 'Vintage': 'vintage_year'})
     )
 
+    ret_pid = ret['Project ID'].astype(str).str.strip()
+    ret_vyr = pd.to_numeric(ret['Vintage'], errors='coerce')
+    retired = (
+        coerce_credits(ret['Quantity of Credits'])
+        .groupby([ret_pid, ret_vyr])
+        .sum()
+        .rename('credits_retired')
+        .reset_index()
+        .rename(columns={'Project ID': 'project_id', 'Vintage': 'vintage_year'})
+    )
+
+    # Vintage-level credits frame
+    vint = issued.merge(retired, on=['project_id', 'vintage_year'], how='left')
+    vint['credits_retired'] = vint['credits_retired'].fillna(0).round().astype(int)
+    vint['credits_issued']  = vint['credits_issued'].round().astype(int)
+
+    # Project-level metadata
     proj['_id'] = proj['Project ID'].astype(str).str.strip()
-    proj = proj.set_index('_id')
-    proj = proj.join(issued).join(retired).join(corsia_map)
-    proj.index.name = 'project_id'
-    proj = proj.reset_index()
-
-    # SDG: Sustainable Development Goal(s) not empty
     sdg_col = 'Sustainable Development Goal(s)'
-    proj['sdg_eligible'] = proj[sdg_col].notna() & \
-                           (proj[sdg_col].astype(str).str.strip() != '')
+    corsia_map = (
+        iss['CCP Approved'].astype(str).str.strip().str.lower()
+        .eq('yes').groupby(iss_pid).any().rename('corsia_eligible')
+    )
+    sdg_map = (
+        proj[sdg_col].notna() & (proj[sdg_col].astype(str).str.strip() != '')
+    )
+    meta = pd.DataFrame({
+        'project_id':            proj['_id'].values,
+        'project_name':          proj['Project Name'].values,
+        'country':               proj['Project Site Country'].apply(normalize_country).values,
+        'project_type':          proj['Project Type'].values,
+        'methodology':           proj['Project Methodology/Protocol'].values,
+        'proponent':             proj['Project Developer'].values,
+        'status':                proj['Voluntary Status'].values,
+        'sdg_eligible':          sdg_map.values,
+        'crediting_period_start': proj['Current Crediting Period Start Date'].values,
+        'crediting_period_end':   proj['Current Crediting Period End Date'].values,
+        'verification_body':     proj['Current VVB'].values,
+        'documents_url':         proj['Documents'].values,
+    })
+    meta = meta.join(corsia_map.rename('corsia_eligible'), on='project_id')
+    meta['corsia_eligible'] = meta['corsia_eligible'].fillna(False)
+    meta['registration_date'] = None
+    meta['registry'] = 'ACR'
 
-    df = pd.DataFrame()
-    df['project_id']            = proj['project_id']
-    df['project_name']          = proj['Project Name']
-    df['registry']              = 'ACR'
-    df['country']               = proj['Project Site Country'].apply(normalize_country)
-    df['project_type']          = proj['Project Type']
-    df['methodology']           = proj['Project Methodology/Protocol']
-    df['proponent']             = proj['Project Developer']
-    df['status']                = proj['Voluntary Status']
-    df['registration_date']     = None
-    df['credits_issued']        = proj['credits_issued'].fillna(0).round().astype(int)
-    df['credits_retired']       = proj['credits_retired'].fillna(0).round().astype(int)
-    df['corsia_eligible']       = proj['corsia_eligible'].fillna(False)
-    df['sdg_eligible']          = proj['sdg_eligible']
-    df['crediting_period_start'] = proj['Current Crediting Period Start Date']
-    df['crediting_period_end']   = proj['Current Crediting Period End Date']
-    df['verification_body']     = proj['Current VVB']
-    df['documents_url']         = proj['Documents']
-
-    print(f"  ACR projects: {len(df)}")
+    df = vint.merge(meta, on='project_id', how='left')
+    print(f"  ACR vintage rows: {len(df)}  (unique projects: {df['project_id'].nunique()})")
     return df
 
 
@@ -279,57 +292,71 @@ def build_car():
     iss  = pd.read_excel(RAW_EXCEL, sheet_name='CAR Issuances', engine='openpyxl')
     ret  = pd.read_excel(RAW_EXCEL, sheet_name='CAR Retirements', engine='openpyxl')
 
-    issued  = (coerce_credits(iss['Total Offset Credits Issued'])
-               .groupby(iss['Project ID'].astype(str).str.strip())
-               .sum().rename('credits_issued'))
-    retired = (coerce_credits(ret['Quantity of Offset Credits'])
-               .groupby(ret['Project ID'].astype(str).str.strip())
-               .sum().rename('credits_retired'))
+    iss_pid = iss['Project ID'].astype(str).str.strip()
+    iss_vyr = pd.to_numeric(iss['Vintage'], errors='coerce')
 
-    # CORSIA: either CORSIA period column == 'Yes'
-    iss_id = iss['Project ID'].astype(str).str.strip()
+    issued = (
+        coerce_credits(iss['Total Offset Credits Issued'])
+        .groupby([iss_pid, iss_vyr])
+        .sum()
+        .rename('credits_issued')
+        .reset_index()
+        .rename(columns={'Project ID': 'project_id', 'Vintage': 'vintage_year'})
+    )
+
+    ret_pid = ret['Project ID'].astype(str).str.strip()
+    ret_vyr = pd.to_numeric(ret['Vintage'], errors='coerce')
+    retired = (
+        coerce_credits(ret['Quantity of Offset Credits'])
+        .groupby([ret_pid, ret_vyr])
+        .sum()
+        .rename('credits_retired')
+        .reset_index()
+        .rename(columns={'Project ID': 'project_id', 'Vintage': 'vintage_year'})
+    )
+
+    vint = issued.merge(retired, on=['project_id', 'vintage_year'], how='left')
+    vint['credits_retired'] = vint['credits_retired'].fillna(0).round().astype(int)
+    vint['credits_issued']  = vint['credits_issued'].round().astype(int)
+
+    # Project-level metadata
+    iss_id = iss_pid  # alias for readability below
     corsia_21 = iss['Eligible for CORSIA 2021-2023 Compliance Period'].astype(str).str.strip().str.lower().eq('yes')
     corsia_24 = iss['Eligible for CORSIA 2024-2026 Compliance Period'].astype(str).str.strip().str.lower().eq('yes')
-    corsia_map = ((corsia_21 | corsia_24)
-                  .groupby(iss_id).any().rename('corsia_eligible'))
+    corsia_map = ((corsia_21 | corsia_24).groupby(iss_id).any().rename('corsia_eligible'))
 
-    # Methodology: most common Protocol and Version per project
     proto_mode = (iss.groupby(iss_id)['Protocol and Version']
                   .agg(lambda x: x.dropna().mode().iloc[0] if len(x.dropna().mode()) > 0 else None)
                   .rename('methodology'))
 
     proj['_id'] = proj['Project ID'].astype(str).str.strip()
-    proj = proj.set_index('_id')
-    proj = proj.join(issued).join(retired).join(corsia_map).join(proto_mode)
-    proj.index.name = 'project_id'
-    proj = proj.reset_index()
-
-    # SDG
     sdg_col = 'SDG Impact'
-    proj['sdg_eligible'] = proj[sdg_col].notna() & \
-                           (proj[sdg_col].astype(str).str.strip().str.lower() != 'nan') & \
-                           (proj[sdg_col].astype(str).str.strip() != '')
+    sdg_map = (
+        proj[sdg_col].notna() &
+        (proj[sdg_col].astype(str).str.strip().str.lower() != 'nan') &
+        (proj[sdg_col].astype(str).str.strip() != '')
+    )
+    meta = pd.DataFrame({
+        'project_id':   proj['_id'].values,
+        'project_name': proj['Project Name'].values,
+        'country':      proj['Project Site Country'].apply(normalize_country).values,
+        'project_type': proj['Project Type'].values,
+        'proponent':    proj['Project Developer'].values,
+        'status':       proj['Status'].values,
+        'registration_date': proj['Project Registered Date'].values,
+        'sdg_eligible': sdg_map.values,
+        'crediting_period_start': None,
+        'crediting_period_end':   None,
+        'verification_body': proj['Verification Body'].values,
+        'documents_url':     proj['Documents'].values,
+    })
+    meta = meta.join(corsia_map.rename('corsia_eligible'), on='project_id')
+    meta['corsia_eligible'] = meta['corsia_eligible'].fillna(False)
+    meta = meta.join(proto_mode.rename('methodology'), on='project_id')
+    meta['registry'] = 'CAR'
 
-    df = pd.DataFrame()
-    df['project_id']            = proj['project_id']
-    df['project_name']          = proj['Project Name']
-    df['registry']              = 'CAR'
-    df['country']               = proj['Project Site Country'].apply(normalize_country)
-    df['project_type']          = proj['Project Type']
-    df['methodology']           = proj['methodology']
-    df['proponent']             = proj['Project Developer']
-    df['status']                = proj['Status']
-    df['registration_date']     = proj['Project Registered Date']
-    df['credits_issued']        = proj['credits_issued'].fillna(0).round().astype(int)
-    df['credits_retired']       = proj['credits_retired'].fillna(0).round().astype(int)
-    df['corsia_eligible']       = proj['corsia_eligible'].fillna(False)
-    df['sdg_eligible']          = proj['sdg_eligible']
-    df['crediting_period_start'] = None
-    df['crediting_period_end']   = None
-    df['verification_body']     = proj['Verification Body']
-    df['documents_url']         = proj['Documents']
-
-    print(f"  CAR projects: {len(df)}")
+    df = vint.merge(meta, on='project_id', how='left')
+    print(f"  CAR vintage rows: {len(df)}  (unique projects: {df['project_id'].nunique()})")
     return df
 
 
@@ -345,52 +372,65 @@ def build_gold():
     iss['qty'] = coerce_credits(iss['Quantity'])
     ret['qty'] = coerce_credits(ret['Quantity'])
 
-    # Credits issued: only rows with Credit Status == 'Issued'
     iss_gsid = iss['GSID'].astype(str).str.strip()
+    iss_vyr  = pd.to_numeric(iss['Vintage'], errors='coerce')
     issued_mask = iss['Credit Status'].astype(str).str.strip().str.lower() == 'issued'
-    issued  = iss[issued_mask]['qty'].groupby(iss_gsid[issued_mask]).sum().rename('credits_issued')
 
-    ret_gsid = ret['GSID'].astype(str).str.strip()
-    retired = ret['qty'].groupby(ret_gsid).sum().rename('credits_retired')
-
-    # CORSIA: Label column contains 'CORSIA' text (File B: replaces 'Eligible for CORSIA?' column)
-    corsia_map = (
-        iss['Label'].astype(str).str.contains('CORSIA', na=False)
-        .groupby(iss_gsid)
-        .any()
-        .rename('corsia_eligible')
+    # Credits issued grouped by (GSID, vintage_year) — issued-only rows
+    iss_ok = iss[issued_mask].copy()
+    iss_ok_gsid = iss_gsid[issued_mask]
+    iss_ok_vyr  = iss_vyr[issued_mask]
+    issued = (
+        iss_ok['qty']
+        .groupby(['GS' + iss_ok_gsid, iss_ok_vyr])
+        .sum()
+        .rename('credits_issued')
+        .reset_index()
+        .rename(columns={'GSID': 'project_id', 'Vintage': 'vintage_year'})
     )
 
+    ret_gsid = ret['GSID'].astype(str).str.strip()
+    ret_vyr  = pd.to_numeric(ret['Vintage'], errors='coerce')
+    retired = (
+        ret['qty']
+        .groupby(['GS' + ret_gsid, ret_vyr])
+        .sum()
+        .rename('credits_retired')
+        .reset_index()
+        .rename(columns={'GSID': 'project_id', 'Vintage': 'vintage_year'})
+    )
+
+    vint = issued.merge(retired, on=['project_id', 'vintage_year'], how='left')
+    vint['credits_retired'] = vint['credits_retired'].fillna(0).round().astype(int)
+    vint['credits_issued']  = vint['credits_issued'].round().astype(int)
+
+    # Project-level metadata
+    corsia_map = (
+        iss['Label'].astype(str).str.contains('CORSIA', na=False)
+        .groupby('GS' + iss_gsid).any().rename('corsia_eligible')
+    )
     proj['_id'] = 'GS' + proj['GSID'].astype(str).str.strip()
-    # Reindex the credit series to match prefixed IDs
-    issued.index      = 'GS' + issued.index.astype(str)
-    retired.index     = 'GS' + retired.index.astype(str)
-    corsia_map.index  = 'GS' + corsia_map.index.astype(str)
-    proj = proj.set_index('_id')
-    proj = proj.join(issued).join(retired).join(corsia_map)
-    proj.index.name = 'project_id'
-    proj = proj.reset_index()
+    meta = pd.DataFrame({
+        'project_id':   proj['_id'].values,
+        'project_name': proj['Project Name'].values,
+        'country':      proj['Country'].apply(normalize_country).values,
+        'project_type': proj['Project Type'].values,
+        'methodology':  proj['Methodology'].values,
+        'proponent':    proj['Project Developer Name'].values,
+        'status':       proj['Status'].values,
+        'registration_date':     None,
+        'sdg_eligible':          True,
+        'crediting_period_start': None,
+        'crediting_period_end':   None,
+        'verification_body':     None,
+        'documents_url':         None,
+    })
+    meta = meta.join(corsia_map.rename('corsia_eligible'), on='project_id')
+    meta['corsia_eligible'] = meta['corsia_eligible'].fillna(False)
+    meta['registry'] = 'Gold Standard'
 
-    df = pd.DataFrame()
-    df['project_id']            = proj['project_id']
-    df['project_name']          = proj['Project Name']
-    df['registry']              = 'Gold Standard'
-    df['country']               = proj['Country'].apply(normalize_country)
-    df['project_type']          = proj['Project Type']
-    df['methodology']           = proj['Methodology']
-    df['proponent']             = proj['Project Developer Name']
-    df['status']                = proj['Status']
-    df['registration_date']     = None
-    df['credits_issued']        = proj['credits_issued'].fillna(0).round().astype(int)
-    df['credits_retired']       = proj['credits_retired'].fillna(0).round().astype(int)
-    df['corsia_eligible']       = proj['corsia_eligible'].fillna(False)
-    df['sdg_eligible']          = True  # GS always requires SDG assessment
-    df['crediting_period_start'] = None
-    df['crediting_period_end']   = None
-    df['verification_body']     = None
-    df['documents_url']         = None
-
-    print(f"  Gold Standard projects: {len(df)}")
+    df = vint.merge(meta, on='project_id', how='left')
+    print(f"  Gold Standard vintage rows: {len(df)}  (unique projects: {df['project_id'].nunique()})")
     return df
 
 
@@ -402,65 +442,73 @@ def build_verra():
     proj = pd.read_excel(RAW_EXCEL, sheet_name='Verra Projects', engine='openpyxl')
     vcus = pd.read_excel(RAW_EXCEL, sheet_name='Verra VCUS', engine='openpyxl')
 
-    vcus['qty']  = coerce_credits(vcus['Quantity Issued'])
-    vcus_id      = vcus['ID'].astype(str).str.strip()
+    vcus['qty']         = coerce_credits(vcus['Quantity Issued'])
+    vcus['vintage_year'] = pd.to_datetime(vcus['Vintage Start'], errors='coerce').dt.year
+    vcus_raw_id         = vcus['ID'].astype(str).str.strip()
+    vcus_pid            = 'VCS' + vcus_raw_id  # prefixed project_id
 
-    issued  = vcus['qty'].groupby(vcus_id).sum().rename('credits_issued')
+    # Credits issued grouped by (project_id, vintage_year)
+    issued = (
+        vcus['qty']
+        .groupby([vcus_pid, vcus['vintage_year']])
+        .sum()
+        .rename('credits_issued')
+        .reset_index()
+        .rename(columns={'ID': 'project_id', 'vintage_year': 'vintage_year'})
+    )
 
     # Retired: rows with a retirement date that are not cancellations
     ret_mask = vcus['Retirement/Cancellation Date'].notna()
     if 'Retirement Reason' in vcus.columns:
         cancelled_mask = vcus['Retirement Reason'].astype(str).str.strip().str.lower() == 'cancelled'
         ret_mask = ret_mask & ~cancelled_mask
-    retired = vcus[ret_mask]['qty'].groupby(vcus_id[ret_mask]).sum().rename('credits_retired')
+    vcus_ret = vcus[ret_mask]
+    retired = (
+        vcus_ret['qty']
+        .groupby([vcus_pid[ret_mask], vcus_ret['vintage_year']])
+        .sum()
+        .rename('credits_retired')
+        .reset_index()
+        .rename(columns={'ID': 'project_id', 'vintage_year': 'vintage_year'})
+    )
 
-    # CORSIA: check Additional Certifications for 'CORSIA' text
+    vint = issued.merge(retired, on=['project_id', 'vintage_year'], how='left')
+    vint['credits_retired'] = vint['credits_retired'].fillna(0).round().astype(int)
+    vint['credits_issued']  = vint['credits_issued'].round().astype(int)
+
+    # Project-level metadata (corsia/sdg are per-project aggregates)
     corsia_map = (
         vcus['Additional Certifications'].astype(str).str.lower()
         .str.contains('corsia', na=False)
-        .groupby(vcus_id)
-        .any()
-        .rename('corsia_eligible')
+        .groupby(vcus_pid).any().rename('corsia_eligible')
     )
-
-    # SDG: Sustainable Development Goals not empty in any VCUS row
     sdg_map = (
         vcus['Sustainable Development Goals'].astype(str).str.strip()
-        .ne('nan').groupby(vcus_id).any()
-        .rename('sdg_eligible')
+        .ne('nan').groupby(vcus_pid).any().rename('sdg_eligible')
     )
-
     proj['_id'] = 'VCS' + proj['ID'].astype(str).str.strip()
-    # Reindex the credit series to match prefixed IDs
-    issued.index     = 'VCS' + issued.index.astype(str)
-    retired.index    = 'VCS' + retired.index.astype(str)
-    corsia_map.index = 'VCS' + corsia_map.index.astype(str)
-    sdg_map.index    = 'VCS' + sdg_map.index.astype(str)
-    proj = proj.set_index('_id')
-    proj = proj.join(issued).join(retired).join(corsia_map).join(sdg_map)
-    proj.index.name = 'project_id'
-    proj = proj.reset_index()
+    meta = pd.DataFrame({
+        'project_id':            proj['_id'].values,
+        'project_name':          proj['Name'].values,
+        'country':               proj['Country/Area'].apply(normalize_country).values,
+        'project_type':          proj['Project Type'].values,
+        'methodology':           proj['Methodology'].values,
+        'proponent':             proj['Proponent'].values,
+        'status':                proj['Status'].values,
+        'registration_date':     proj['Project Registration Date'].values,
+        'crediting_period_start': proj['Crediting Period Start Date'].values,
+        'crediting_period_end':   proj['Crediting Period End Date'].values,
+        'verification_body':     None,
+        'documents_url':         None,
+    })
+    meta = meta.join(corsia_map.rename('corsia_eligible'), on='project_id')
+    meta = meta.join(sdg_map.rename('sdg_eligible'), on='project_id')
+    meta['corsia_eligible'] = meta['corsia_eligible'].fillna(False)
+    meta['sdg_eligible']    = meta['sdg_eligible'].fillna(False)
+    meta['registry'] = 'Verra'
 
-    df = pd.DataFrame()
-    df['project_id']            = proj['project_id']
-    df['project_name']          = proj['Name']
-    df['registry']              = 'Verra'
-    df['country']               = proj['Country/Area'].apply(normalize_country)
-    df['project_type']          = proj['Project Type']
-    df['methodology']           = proj['Methodology']
-    df['proponent']             = proj['Proponent']
-    df['status']                = proj['Status']
-    df['registration_date']     = proj['Project Registration Date']
-    df['credits_issued']        = proj['credits_issued'].fillna(0).round().astype(int)
-    df['credits_retired']       = proj['credits_retired'].fillna(0).round().astype(int)
-    df['corsia_eligible']       = proj['corsia_eligible'].fillna(False)
-    df['sdg_eligible']          = proj['sdg_eligible'].fillna(False)
-    df['crediting_period_start'] = proj['Crediting Period Start Date']
-    df['crediting_period_end']   = proj['Crediting Period End Date']
-    df['verification_body']     = None
-    df['documents_url']         = None
-
-    print(f"  Verra projects: {len(df)}")
+    df = vint.merge(meta, on='project_id', how='left')
+    print(f"  Verra vintage rows: {len(df)}  (unique projects: {df['project_id'].nunique()})")
     return df
 
 
@@ -491,7 +539,11 @@ def main():
         lambda r: lookup_category(r['registry'], r['methodology'], verra_by_code, name_lookup, r.get('project_type')),
         axis=1,
     )
-    print(f"\nCategory coverage: {(all_df['category'] != 'Other').sum()} / {len(all_df)} projects resolved")
+    print(f"\nCategory coverage: {(all_df['category'] != 'Other').sum()} / {len(all_df)} vintage rows resolved")
+
+    # Lifetime totals (same value broadcast to every vintage row for a project)
+    all_df['lifetime_credits_issued']  = all_df.groupby('project_id')['credits_issued'].transform('sum')
+    all_df['lifetime_credits_retired'] = all_df.groupby('project_id')['credits_retired'].transform('sum')
 
     all_df = all_df.reindex(columns=OUTPUT_COLS)
     all_df.to_csv(OUTPUT_CSV, index=False)
@@ -509,17 +561,13 @@ def main():
     print(f"\n2. Total credits_issued: {total_issued:,.0f}  (expect ~2.55B)")
 
     n_retired = (all_df['credits_retired'] > 0).sum()
-    print(f"\n3. Projects with credits_retired > 0: {n_retired}")
+    print(f"\n3. Vintage rows with credits_retired > 0: {n_retired}")
 
-    n_corsia = all_df['corsia_eligible'].sum()
+    n_corsia = all_df.drop_duplicates('project_id')['corsia_eligible'].sum()
     print(f"\n4. CORSIA eligible projects: {n_corsia}")
 
-    dupes = all_df[all_df.duplicated('project_id', keep=False)]
-    if len(dupes):
-        print(f"\n5. WARNING: {len(dupes)} rows with duplicate project_id:")
-        print(dupes[['project_id', 'registry']].to_string())
-    else:
-        print("\n5. No duplicate project_ids.")
+    n_unique = all_df['project_id'].nunique()
+    print(f"\n5. Unique projects: {n_unique}  Total vintage rows: {len(all_df)}")
 
     # -----------------------------------------------------------------------
     # Unmapped methodology report
@@ -527,10 +575,15 @@ def main():
     print("\n=== UNMAPPED METHODOLOGY REPORT ===")
     val_df = pd.read_csv(OUTPUT_CSV)
     val_df['credits_issued'] = pd.to_numeric(val_df['credits_issued'], errors='coerce').fillna(0)
+    # Deduplicate to one row per project — methodology/category are project-level fields
+    # and credits_issued here is the vintage-row credit (use lifetime for the report)
+    val_df['lifetime_credits_issued'] = pd.to_numeric(val_df['lifetime_credits_issued'], errors='coerce').fillna(0)
+    val_proj = val_df.drop_duplicates('project_id').copy()
+    val_proj['credits_issued'] = val_proj['lifetime_credits_issued']
 
-    other_df = val_df[
-        (val_df['category'] == 'Other') &
-        ~val_df['methodology'].fillna('').astype(str).str.strip().str.lower().isin(
+    other_df = val_proj[
+        (val_proj['category'] == 'Other') &
+        ~val_proj['methodology'].fillna('').astype(str).str.strip().str.lower().isin(
             ['', 'nan', 'none', 'not provided']
         )
     ].copy()
@@ -554,7 +607,7 @@ def main():
             n = len(entries)
             total = sum(v for _, v in entries)
             if n == 0:
-                print("Verra: 0 unmapped codes \u2713")
+                print("Verra: 0 unmapped codes [ok]")
             else:
                 print(f"Verra: {n} unmapped code{'s' if n != 1 else ''} (affecting {total:,.0f} credits)")
                 for code, cred in entries:
@@ -565,7 +618,7 @@ def main():
             total = grp.sum()
             word = 'methodologies' if n != 1 else 'methodology'
             if n == 0:
-                print(f"{reg_name}: 0 unmapped {word} \u2713")
+                print(f"{reg_name}: 0 unmapped {word} [ok]")
             else:
                 print(f"{reg_name}: {n} unmapped {word} (affecting {total:,.0f} credits)")
                 for meth, cred in grp.items():
@@ -573,9 +626,9 @@ def main():
     print("===================================")
 
     # Non-Other projects resolved via fallback (methodology not directly in mapping CSV)
-    non_other = val_df[
-        (val_df['category'] != 'Other') &
-        val_df['methodology'].fillna('').astype(str).str.strip().str.len().gt(0)
+    non_other = val_proj[
+        (val_proj['category'] != 'Other') &
+        val_proj['methodology'].fillna('').astype(str).str.strip().str.len().gt(0)
     ].copy()
     non_other = non_other[
         ~non_other['methodology'].astype(str).str.strip().str.lower().isin(
