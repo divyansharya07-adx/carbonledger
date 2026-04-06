@@ -47,12 +47,12 @@ export const COUNTRY_FLAGS = {
 const GROUPS = ['Forest & Nature', 'Energy', 'Agriculture', 'Waste & Industrial'];
 const GLOBAL_TO_REGISTRY = { all: 'all', verra: 'Verra', gold: 'Gold Standard', acr: 'ACR', car: 'CAR' };
 
-const SORT_NUMERIC = new Set(['credits_issued','credits_retired','credits_remaining','retirement_rate']);
+const SORT_NUMERIC = new Set(['credits_issued','credits_retired','credits_remaining','retirement_rate','lifetime_credits_issued']);
 const PAGE_SIZE = 50;
 
 const retRateColor = (pct) => pct > 60 ? '#8cb73f' : pct > 30 ? '#e8a124' : '#e85724';
 
-const Projects = ({ data, selectedRegistry = 'all' }) => {
+const Projects = ({ data, selectedRegistry = 'all', selectedYearRange }) => {
   const { projectsData, projectsLoading } = useProjectsData();
 
   const [search, setSearch] = useState('');
@@ -66,6 +66,11 @@ const Projects = ({ data, selectedRegistry = 'all' }) => {
   const [selectedIds, setSelectedIds] = useState(new Set());
 
   useEffect(() => { setPage(1); }, [selectedRegistry]);
+
+  const { dataMinYear, releaseYear } = data;
+  const isFullRange = !selectedYearRange ||
+    (selectedYearRange[0] === dataMinYear && selectedYearRange[1] === releaseYear);
+  const rangeLabel = isFullRange ? 'all time' : `in ${selectedYearRange[0]}–${selectedYearRange[1]}`;
 
   const handleSort = useCallback((col) => {
     setSortCol(prev => {
@@ -97,8 +102,41 @@ const Projects = ({ data, selectedRegistry = 'all' }) => {
     });
   }, [projectsData, search, selectedRegistry, groupFilter, corsiaFilter, sdgFilter]);
 
+  const periodProjects = useMemo(() => {
+    if (!filteredProjects.length) return [];
+    const [startYear, endYear] = selectedYearRange ?? [0, Infinity];
+    const projectMap = new Map();
+    filteredProjects.forEach(row => {
+      const pid = row.project_id;
+      if (!projectMap.has(pid)) {
+        projectMap.set(pid, { ...row, credits_issued: 0, credits_retired: 0, credits_remaining: 0, _hasActivity: false });
+      }
+      const proj = projectMap.get(pid);
+      const yr = row.vintage_year;
+      if (yr >= startYear && yr <= endYear) {
+        proj.credits_issued += row.credits_issued;
+        proj.credits_retired += row.credits_retired;
+        proj._hasActivity = true;
+      }
+    });
+    const result = [];
+    projectMap.forEach(proj => {
+      if (proj._hasActivity) {
+        proj.credits_remaining = proj.credits_issued - proj.credits_retired;
+        proj.retirement_rate = proj.credits_issued > 0 ? (proj.credits_retired / proj.credits_issued * 100) : 0;
+        result.push(proj);
+      }
+    });
+    return result;
+  }, [filteredProjects, selectedYearRange]);
+
+  const totalUniqueProjects = useMemo(
+    () => new Set(filteredProjects.map(r => r.project_id)).size,
+    [filteredProjects]
+  );
+
   const sortedProjects = useMemo(() => {
-    const arr = [...filteredProjects];
+    const arr = [...periodProjects];
     arr.sort((a, b) => {
       const av = a[sortCol], bv = b[sortCol];
       if (SORT_NUMERIC.has(sortCol)) {
@@ -108,16 +146,16 @@ const Projects = ({ data, selectedRegistry = 'all' }) => {
       return sortDir === 'desc' ? bs.localeCompare(as) : as.localeCompare(bs);
     });
     return arr;
-  }, [filteredProjects, sortCol, sortDir]);
+  }, [periodProjects, sortCol, sortDir]);
 
   const totalPages = Math.max(1, Math.ceil(sortedProjects.length / PAGE_SIZE));
   const safePage = Math.min(page, totalPages);
   const pagedProjects = sortedProjects.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
 
   const kpiSource = useMemo(() => {
-    if (selectedIds.size > 0) return projectsData.filter(p => selectedIds.has(p.project_id));
-    return filteredProjects;
-  }, [selectedIds, projectsData, filteredProjects]);
+    if (selectedIds.size > 0) return periodProjects.filter(p => selectedIds.has(p.project_id));
+    return periodProjects;
+  }, [selectedIds, periodProjects]);
 
   const kpi = useMemo(() => {
     const totalIssued = kpiSource.reduce((s, p) => s + p.credits_issued, 0);
@@ -131,7 +169,7 @@ const Projects = ({ data, selectedRegistry = 'all' }) => {
 
   const handleExport = () => {
     const rows = selectedIds.size > 0
-      ? projectsData.filter(p => selectedIds.has(p.project_id))
+      ? periodProjects.filter(p => selectedIds.has(p.project_id))
       : sortedProjects;
     if (!rows.length) return;
     const headers = Object.keys(rows[0]);
@@ -169,12 +207,12 @@ const Projects = ({ data, selectedRegistry = 'all' }) => {
         <div className="kpi-item">
           <div className="kpi-label">CREDITS ISSUED</div>
           <div className="kpi-value">{formatCredits(kpi.totalIssued)}</div>
-          <div className="kpi-sub muted">total issued</div>
+          <div className="kpi-sub muted">{rangeLabel}</div>
         </div>
         <div className="kpi-item">
           <div className="kpi-label">CREDITS RETIRED</div>
           <div className="kpi-value">{formatCredits(kpi.totalRetired)}</div>
-          <div className="kpi-sub muted">total retired</div>
+          <div className="kpi-sub muted">{rangeLabel}</div>
         </div>
         <div className="kpi-item">
           <div className="kpi-label">CREDITS REMAINING</div>
@@ -243,7 +281,10 @@ const Projects = ({ data, selectedRegistry = 'all' }) => {
         </button>
 
         <span style={{ fontSize: 11, color: 'var(--text-muted)', whiteSpace: 'nowrap', marginLeft: 'auto' }}>
-          Showing {sortedProjects.length.toLocaleString()} of {projectsData.length.toLocaleString()} projects
+          {isFullRange
+            ? `Showing ${sortedProjects.length.toLocaleString()} of ${totalUniqueProjects.toLocaleString()} projects`
+            : `Showing ${sortedProjects.length.toLocaleString()} projects with activity in ${selectedYearRange[0]}–${selectedYearRange[1]}`
+          }
         </span>
 
         <button className="export-btn" onClick={handleExport} style={{ fontSize: 11, padding: '5px 14px' }}>

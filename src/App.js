@@ -98,7 +98,7 @@ function App() {
   const renderPage = () => {
     switch (activePage) {
       case 'projects':
-        return <Projects data={data} selectedRegistry={selectedRegistry} />;
+        return <Projects data={data} selectedRegistry={selectedRegistry} selectedYearRange={yearRange} />;
       case 'activity':
         return <ProjectActivity data={data} />;
       case 'country':

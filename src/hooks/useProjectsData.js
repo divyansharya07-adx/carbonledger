@@ -33,6 +33,9 @@ const useProjectsData = () => {
           crediting_period_end: (row['crediting_period_end'] || '').trim() || null,
           verification_body: (row['verification_body'] || '').trim() || null,
           documents_url: (row['documents_url'] || '').trim() || null,
+          vintage_year: parseInt(row['vintage_year'], 10) || 0,
+          lifetime_credits_issued: parseFloat(row['lifetime_credits_issued']) || 0,
+          lifetime_credits_retired: parseFloat(row['lifetime_credits_retired']) || 0,
         }));
         setProjectsData(parsed);
         setProjectsLoading(false);

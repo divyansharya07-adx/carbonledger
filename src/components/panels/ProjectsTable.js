@@ -25,6 +25,7 @@ const COLS = [
   { key: 'project_type', label: 'Category', width: 130 },
   { key: 'methodology', label: 'Methodology', width: 140 },
   { key: 'credits_issued', label: 'Issued', width: 80 },
+  { key: 'lifetime_credits_issued', label: 'Lifetime', width: 90 },
   { key: 'credits_retired', label: 'Retired', width: 80 },
   { key: 'credits_remaining', label: 'Remaining', width: 90 },
   { key: 'retirement_rate', label: 'Ret. %', width: 90 },
@@ -108,7 +109,7 @@ const ProjectsTable = ({
                   key={c.key}
                   className={`${c.noSort ? 'no-sort' : ''} ${sortCol === c.key ? 'sort-active' : ''}`}
                   onClick={c.noSort ? undefined : () => onSort(c.key)}
-                  style={{ textAlign: ['credits_issued','credits_retired','credits_remaining','retirement_rate'].includes(c.key) ? 'right' : 'left' }}
+                  style={{ textAlign: ['credits_issued','lifetime_credits_issued','credits_retired','credits_remaining','retirement_rate'].includes(c.key) ? 'right' : 'left' }}
                 >
                   {c.key === 'check' ? (
                     <input
@@ -182,6 +183,7 @@ const ProjectsTable = ({
                     {p.methodology || '—'}
                   </td>
                   <td style={{ textAlign: 'right' }}>{formatCredits(p.credits_issued)}</td>
+                  <td style={{ textAlign: 'right', color: 'var(--text-muted)', fontSize: 11 }}>{formatCredits(p.lifetime_credits_issued)}</td>
                   <td style={{ textAlign: 'right' }}>{formatCredits(p.credits_retired)}</td>
                   <td style={{ textAlign: 'right' }}>{formatCredits(p.credits_remaining)}</td>
                   <td style={{ textAlign: 'right' }}>
