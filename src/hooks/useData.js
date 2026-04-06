@@ -234,11 +234,11 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
 
   const projectCountByCategory = useMemo(() => {
     if (!rawProjCounts) return {};
-    const map = {};
+    const map = {}; // cat -> Set of project_ids
     rawProjCounts.forEach((row) => {
       const reg = (row['Registry'] || '').trim();
       const cat = (row['Project Type Category'] || '').trim();
-      const cnt = parseInt(row['Project Count'], 10) || 0;
+      const yr  = parseInt(row['Vintage Year'], 10) || 0;
       if (!cat) return;
       if (EXCLUDED_CATEGORIES.includes(cat)) return;
       if (selectedRegistry && selectedRegistry !== 'all') {
@@ -251,10 +251,18 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
           if (reg.toLowerCase() !== regLower) return;
         }
       }
-      map[cat] = (map[cat] || 0) + cnt;
+      if (selectedYearRange && (yr < selectedYearRange[0] || yr > selectedYearRange[1])) return;
+      if (!map[cat]) map[cat] = new Set();
+      try {
+        JSON.parse(row['project_ids'] || '[]').forEach(id => map[cat].add(id));
+      } catch(e) {
+        map[cat].add(`${reg}_${cat}_${yr}`);
+      }
     });
-    return map;
-  }, [rawProjCounts, selectedRegistry]);
+    const result = {};
+    Object.entries(map).forEach(([cat, idSet]) => { result[cat] = idSet.size; });
+    return result;
+  }, [rawProjCounts, selectedRegistry, selectedYearRange]);
 
   const totalProjectCount = useMemo(
     () => Object.values(projectCountByCategory).reduce((s, v) => s + v, 0),
@@ -263,11 +271,11 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
 
   const globalRetirementStats = useMemo(() => {
     if (!rawProjCounts) return { globalRetirementRate: 0, globalCreditsRetired: 0 };
-    const seenReg = new Set();
     let totalIssued = 0;
     let totalRetired = 0;
     rawProjCounts.forEach((row) => {
       const reg = (row['Registry'] || '').trim();
+      const yr  = parseInt(row['Vintage Year'], 10) || 0;
       if (!reg) return;
       if (selectedRegistry && selectedRegistry !== 'all') {
         const regLower = selectedRegistry.toLowerCase();
@@ -275,37 +283,42 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity) => {
         else if (regLower === 'car') { if (reg !== 'CAR') return; }
         else { if (reg.toLowerCase() !== regLower) return; }
       }
-      // De-duplicate by Registry — values repeat once per category row
-      if (!seenReg.has(reg)) {
-        seenReg.add(reg);
-        totalIssued  += parseInt(row['total_credits_issued'],  10) || 0;
-        totalRetired += parseInt(row['total_credits_retired'], 10) || 0;
-      }
+      if (selectedYearRange && (yr < selectedYearRange[0] || yr > selectedYearRange[1])) return;
+      totalIssued  += parseInt(row['total_credits_issued'],  10) || 0;
+      totalRetired += parseInt(row['total_credits_retired'], 10) || 0;
     });
     const globalRetirementRate = totalIssued > 0
       ? Math.round(totalRetired / totalIssued * 1000) / 10
       : 0;
     return { globalRetirementRate, globalCreditsRetired: totalRetired };
-  }, [rawProjCounts, selectedRegistry]);
+  }, [rawProjCounts, selectedRegistry, selectedYearRange]);
 
   const registryStats = useMemo(() => {
     if (!rawProjCounts) return {};
-    const seen = new Set();
-    const map = {};
+    const accum = {};
     rawProjCounts.forEach((row) => {
       const reg = (row['Registry'] || '').trim();
-      if (!reg || seen.has(reg)) return;
-      seen.add(reg);
+      const yr  = parseInt(row['Vintage Year'], 10) || 0;
+      if (!reg) return;
+      if (selectedYearRange && (yr < selectedYearRange[0] || yr > selectedYearRange[1])) return;
+      if (!accum[reg]) accum[reg] = { issued: 0, retired: 0, remaining: 0, idSet: new Set() };
+      accum[reg].issued    += parseInt(row['total_credits_issued'],    10) || 0;
+      accum[reg].retired   += parseInt(row['total_credits_retired'],   10) || 0;
+      accum[reg].remaining += parseInt(row['total_credits_remaining'], 10) || 0;
+      try { JSON.parse(row['project_ids'] || '[]').forEach(id => accum[reg].idSet.add(id)); } catch(e) {}
+    });
+    const map = {};
+    Object.entries(accum).forEach(([reg, a]) => {
       map[reg] = {
-        issued:         parseInt(row['total_credits_issued'],    10) || 0,
-        retired:        parseInt(row['total_credits_retired'],   10) || 0,
-        remaining:      parseInt(row['total_credits_remaining'], 10) || 0,
-        retirementRate: parseFloat(row['retirement_rate'])           || 0,
-        projectCount:   parseInt(row['project_count'],          10) || 0,
+        issued:         a.issued,
+        retired:        a.retired,
+        remaining:      a.remaining,
+        retirementRate: a.issued > 0 ? Math.round(a.retired / a.issued * 1000) / 10 : 0,
+        projectCount:   a.idSet.size,
       };
     });
     return map;
-  }, [rawProjCounts]);
+  }, [rawProjCounts, selectedYearRange]);
 
   // Country-specific data for country explorer
   const getCountryData = (countryName) => {

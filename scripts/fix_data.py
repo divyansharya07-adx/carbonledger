@@ -583,92 +583,141 @@ def main():
 
     proj_results = []
 
-    # --- Verra (reuse vcus DataFrame from Section A/B) ---
-    vcus_e = vcus[['ID', 'Methodology']].copy()
+    # --- Verra (reuse vcus DataFrame from Section A/B, which already has vintage_year) ---
+    vcus_e = vcus[['ID', 'Methodology', 'vintage_year']].copy()
     vcus_e['ID'] = vcus_e['ID'].astype(str).str.strip()
     vcus_e['Methodology'] = vcus_e['Methodology'].fillna('').astype(str).str.strip()
     vcus_e = vcus_e[vcus_e['ID'].str.len() > 0]
+    vcus_e['vintage_year'] = pd.to_numeric(vcus_e['vintage_year'], errors='coerce')
+    vcus_e = vcus_e[vcus_e['vintage_year'].notna()]
+    vcus_e['vintage_year'] = vcus_e['vintage_year'].astype(int)
+    # Mode methodology per project
     proj_meth_v = (vcus_e.groupby('ID')['Methodology']
                          .agg(lambda x: x[x != ''].mode().iloc[0]
                                         if len(x[x != ''].mode()) > 0 else ''))
-    verra_counts = {}
+    # Build project -> category map
+    proj_cat_v = {}
     for proj_id, meth in proj_meth_v.items():
         cat = lookup_cat_e('Verra', meth)
         if cat is None:
             cat = _map_verra_project_type(verra_project_type.get(proj_id, '')) or 'Other'
-        verra_counts[cat] = verra_counts.get(cat, 0) + 1
-    print(f"  Verra: {len(proj_meth_v)} unique projects, {sum(verra_counts.values())} matched")
-    for cat, cnt in sorted(verra_counts.items()):
-        proj_results.append({'Registry': 'Verra', 'Project Type Category': cat, 'Project Count': cnt})
+        proj_cat_v[proj_id] = cat
+    # Group unique (project_id, vintage_year) pairs by (category, vintage_year)
+    verra_groups = {}
+    for pid, yr in vcus_e[['ID', 'vintage_year']].drop_duplicates().itertuples(index=False):
+        cat = proj_cat_v.get(pid, 'Other')
+        key = (cat, yr)
+        if key not in verra_groups:
+            verra_groups[key] = set()
+        verra_groups[key].add(pid)
+    print(f"  Verra: {len(proj_meth_v)} unique projects, {len(verra_groups)} (category, vintage) groups")
+    for (cat, yr), ids in sorted(verra_groups.items()):
+        proj_results.append({'Registry': 'Verra', 'Project Type Category': cat,
+                             'Vintage Year': yr, 'Project Count': len(ids),
+                             'project_ids': json.dumps(sorted(ids))})
 
     # --- Gold Standard (reuse gold DataFrame from Section D, or load fresh if D was skipped) ---
     if gold is None:
         gold = pd.read_excel(RAW_EXCEL, sheet_name="Gold Issuances", engine="openpyxl")
-    gold_e = gold[['GSID', 'Methodology', 'Project Type']].copy()
+    gold_e = gold[['GSID', 'Methodology', 'Project Type', 'Vintage']].copy()
     gold_e['GSID'] = gold_e['GSID'].astype(str).str.strip()
     gold_e['Methodology'] = gold_e['Methodology'].fillna('').astype(str).str.strip()
     gold_e['Project Type'] = gold_e['Project Type'].fillna('').astype(str).str.strip()
     gold_e = gold_e[gold_e['GSID'].str.len() > 0]
+    gold_e['vintage_year'] = pd.to_numeric(gold_e['Vintage'], errors='coerce')
+    gold_e = gold_e[gold_e['vintage_year'].notna()]
+    gold_e['vintage_year'] = gold_e['vintage_year'].astype(int)
     _mode = lambda x: x[x != ''].mode().iloc[0] if len(x[x != ''].mode()) > 0 else ''
     proj_meth_g = gold_e.groupby('GSID')['Methodology'].agg(_mode)
     proj_pt_g   = gold_e.groupby('GSID')['Project Type'].agg(_mode)
-    gold_counts = {}
+    proj_cat_g = {}
     for gsid, meth in proj_meth_g.items():
         cat = lookup_cat_e('Gold', meth)
         if cat is None:
             cat = map_gold_project_type(proj_pt_g.get(gsid, ''))
-        gold_counts[cat] = gold_counts.get(cat, 0) + 1
-    print(f"  Gold Standard: {len(proj_meth_g)} unique projects, {sum(gold_counts.values())} matched")
-    for cat, cnt in sorted(gold_counts.items()):
-        proj_results.append({'Registry': 'Gold Standard', 'Project Type Category': cat, 'Project Count': cnt})
+        proj_cat_g[gsid] = cat
+    gold_groups = {}
+    for gsid, yr in gold_e[['GSID', 'vintage_year']].drop_duplicates().itertuples(index=False):
+        cat = proj_cat_g.get(gsid, 'Other')
+        key = (cat, yr)
+        if key not in gold_groups:
+            gold_groups[key] = set()
+        gold_groups[key].add(gsid)
+    print(f"  Gold Standard: {len(proj_meth_g)} unique projects, {len(gold_groups)} (category, vintage) groups")
+    for (cat, yr), ids in sorted(gold_groups.items()):
+        proj_results.append({'Registry': 'Gold Standard', 'Project Type Category': cat,
+                             'Vintage Year': yr, 'Project Count': len(ids),
+                             'project_ids': json.dumps(sorted(ids))})
 
     # --- ACR ---
     print("  Reading ACR Issuances…")
     acr_e = pd.read_excel(RAW_EXCEL, sheet_name='ACR Issuances',
-                          usecols=['Project ID', 'Project Methodology/Protocol'],
+                          usecols=['Project ID', 'Project Methodology/Protocol', 'Vintage'],
                           engine='openpyxl')
     acr_e['Project ID'] = acr_e['Project ID'].astype(str).str.strip()
     acr_e['Project Methodology/Protocol'] = acr_e['Project Methodology/Protocol'].fillna('').astype(str).str.strip()
     acr_e = acr_e[acr_e['Project ID'].str.len() > 0]
+    acr_e['vintage_year'] = pd.to_numeric(acr_e['Vintage'], errors='coerce')
+    acr_e = acr_e[acr_e['vintage_year'].notna()]
+    acr_e['vintage_year'] = acr_e['vintage_year'].astype(int)
     proj_meth_a = (acr_e.groupby('Project ID')['Project Methodology/Protocol']
                         .agg(lambda x: x[x != ''].mode().iloc[0]
                                        if len(x[x != ''].mode()) > 0 else ''))
-    acr_counts = {}
-    for _, proto in proj_meth_a.items():
+    proj_cat_a = {}
+    for pid, proto in proj_meth_a.items():
         cat = lookup_cat_e('ACR', proto)
-        if cat:
-            acr_counts[cat] = acr_counts.get(cat, 0) + 1
-    print(f"  ACR: {len(proj_meth_a)} unique projects, {sum(acr_counts.values())} matched")
-    for cat, cnt in sorted(acr_counts.items()):
-        proj_results.append({'Registry': 'ACR', 'Project Type Category': cat, 'Project Count': cnt})
+        proj_cat_a[pid] = cat or 'Other'
+    acr_groups = {}
+    for pid, yr in acr_e[['Project ID', 'vintage_year']].drop_duplicates().itertuples(index=False):
+        cat = proj_cat_a.get(pid, 'Other')
+        key = (cat, yr)
+        if key not in acr_groups:
+            acr_groups[key] = set()
+        acr_groups[key].add(pid)
+    print(f"  ACR: {len(proj_meth_a)} unique projects, {len(acr_groups)} (category, vintage) groups")
+    for (cat, yr), ids in sorted(acr_groups.items()):
+        proj_results.append({'Registry': 'ACR', 'Project Type Category': cat,
+                             'Vintage Year': yr, 'Project Count': len(ids),
+                             'project_ids': json.dumps(sorted(ids))})
 
     # --- CAR ---
     print("  Reading CAR Issuances…")
     car_e = pd.read_excel(RAW_EXCEL, sheet_name='CAR Issuances',
-                          usecols=['Project ID', 'Protocol and Version'],
+                          usecols=['Project ID', 'Protocol and Version', 'Vintage'],
                           engine='openpyxl')
     car_e['Project ID'] = car_e['Project ID'].astype(str).str.strip()
     car_e['Protocol and Version'] = car_e['Protocol and Version'].fillna('').astype(str).str.strip()
     car_e = car_e[car_e['Project ID'].str.len() > 0]
+    car_e['vintage_year'] = pd.to_numeric(car_e['Vintage'], errors='coerce')
+    car_e = car_e[car_e['vintage_year'].notna()]
+    car_e['vintage_year'] = car_e['vintage_year'].astype(int)
     proj_meth_c = (car_e.groupby('Project ID')['Protocol and Version']
                         .agg(lambda x: x[x != ''].mode().iloc[0]
                                        if len(x[x != ''].mode()) > 0 else ''))
-    car_counts = {}
-    for _, proto in proj_meth_c.items():
+    proj_cat_c = {}
+    for pid, proto in proj_meth_c.items():
         cat = lookup_cat_e('CAR', proto)
-        if cat:
-            car_counts[cat] = car_counts.get(cat, 0) + 1
-    print(f"  CAR: {len(proj_meth_c)} unique projects, {sum(car_counts.values())} matched")
-    for cat, cnt in sorted(car_counts.items()):
-        proj_results.append({'Registry': 'CAR', 'Project Type Category': cat, 'Project Count': cnt})
+        proj_cat_c[pid] = cat or 'Other'
+    car_groups = {}
+    for pid, yr in car_e[['Project ID', 'vintage_year']].drop_duplicates().itertuples(index=False):
+        cat = proj_cat_c.get(pid, 'Other')
+        key = (cat, yr)
+        if key not in car_groups:
+            car_groups[key] = set()
+        car_groups[key].add(pid)
+    print(f"  CAR: {len(proj_meth_c)} unique projects, {len(car_groups)} (category, vintage) groups")
+    for (cat, yr), ids in sorted(car_groups.items()):
+        proj_results.append({'Registry': 'CAR', 'Project Type Category': cat,
+                             'Vintage Year': yr, 'Project Count': len(ids),
+                             'project_ids': json.dumps(sorted(ids))})
 
     project_counts_df = pd.DataFrame(proj_results,
-        columns=['Registry', 'Project Type Category', 'Project Count'])
+        columns=['Registry', 'Project Type Category', 'Vintage Year', 'Project Count', 'project_ids'])
     project_counts_df.to_csv(PROJECT_COUNTS_CSV, index=False)
     print(f"\nWrote {len(project_counts_df)} rows to {PROJECT_COUNTS_CSV}")
     totals = project_counts_df.groupby('Registry')['Project Count'].sum()
     print(totals.to_string())
-    print(f"Grand total: {totals.sum():,} projects")
+    print(f"Grand total: {totals.sum():,} project-vintage combinations")
 
     # -----------------------------------------------------------------------
     # Spot checks
@@ -851,15 +900,15 @@ def main():
     print(f"  country_aggregated_data.csv: added 7 columns (incl. registry_breakdown JSON + vintage retirement) ->{len(ctry)} rows saved")
 
     # ------------------------------------------------------------------
-    # ADDITION 3 — project_counts.csv: per-registry retirement stats
+    # ADDITION 3 — project_counts.csv: per-registry × vintage-year stats
     # ------------------------------------------------------------------
     reg_stats = (
-        proj.groupby('registry')
+        proj.groupby(['registry', 'vintage_year'])
         .agg(
             total_credits_issued=('credits_issued',    'sum'),
             total_credits_retired=('credits_retired',  'sum'),
             total_credits_remaining=('credits_remaining', 'sum'),
-            project_count=('project_id', 'count'),
+            project_count=('project_id', 'nunique'),
         )
         .reset_index()
     )
@@ -868,20 +917,20 @@ def main():
         / reg_stats['total_credits_issued'].replace(0, float('nan'))
         * 100
     ).round(1).fillna(0)
-    reg_stats = reg_stats.rename(columns={'registry': reg_col})
+    reg_stats = reg_stats.rename(columns={'registry': reg_col, 'vintage_year': 'Vintage Year'})
 
     for col in ['total_credits_issued', 'total_credits_retired', 'total_credits_remaining',
                 'retirement_rate', 'project_count']:
         if col in project_counts_df.columns:
             project_counts_df = project_counts_df.drop(columns=[col])
-    project_counts_df = project_counts_df.merge(reg_stats, on=reg_col, how='left')
+    project_counts_df = project_counts_df.merge(reg_stats, on=[reg_col, 'Vintage Year'], how='left')
     project_counts_df['total_credits_issued']    = project_counts_df['total_credits_issued'].fillna(0).astype(int)
     project_counts_df['total_credits_retired']   = project_counts_df['total_credits_retired'].fillna(0).astype(int)
     project_counts_df['total_credits_remaining'] = project_counts_df['total_credits_remaining'].fillna(0).astype(int)
     project_counts_df['retirement_rate']         = project_counts_df['retirement_rate'].fillna(0)
     project_counts_df['project_count']           = project_counts_df['project_count'].fillna(0).astype(int)
     project_counts_df.to_csv(PROJECT_COUNTS_CSV, index=False)
-    print(f"  project_counts.csv: added 5 columns ->{len(project_counts_df)} rows saved")
+    print(f"  project_counts.csv: added 5 columns -> {len(project_counts_df)} rows saved")
 
     # ------------------------------------------------------------------
     # Verification prints
