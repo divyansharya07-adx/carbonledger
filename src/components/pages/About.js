@@ -75,6 +75,11 @@ const About = () => {
             Voluntary Registry Offsets Database, maintained by the Goldman School of
             Public Policy at UC Berkeley.
           </p>
+          <p className="about-text">
+            Reference: Barbara K Haya, Pamela Quartson, Tyler Bernard, Aline Abayo, Xinyun Rong,
+            Ivy S So, Micah Elias. (2026). Voluntary Registry Offsets Database v2026-02, Berkeley
+            Carbon Trading Project, University of California, Berkeley.
+          </p>
           <a
             href="https://gspp.berkeley.edu/berkeley-carbon-trading-project/offsets-database"
             target="_blank"
