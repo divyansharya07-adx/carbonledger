@@ -374,9 +374,9 @@ def build_gold():
 
     iss_gsid = iss['GSID'].astype(str).str.strip()
     iss_vyr  = pd.to_numeric(iss['Vintage'], errors='coerce')
-    issued_mask = iss['Credit Status'].astype(str).str.strip().str.lower() == 'issued'
+    issued_mask = iss['Product Type'].isin(['VER', 'CER'])
 
-    # Credits issued grouped by (GSID, vintage_year) — issued-only rows
+    # Credits issued grouped by (GSID, vintage_year) — VER/CER only (Berkeley methodology)
     iss_ok = iss[issued_mask].copy()
     iss_ok_gsid = iss_gsid[issued_mask]
     iss_ok_vyr  = iss_vyr[issued_mask]
@@ -391,9 +391,11 @@ def build_gold():
 
     ret_gsid = ret['GSID'].astype(str).str.strip()
     ret_vyr  = pd.to_numeric(ret['Vintage'], errors='coerce')
+    ret_mask = ret['Product Type'].isin(['VER', 'CER'])
+    ret_ok = ret[ret_mask]
     retired = (
-        ret['qty']
-        .groupby(['GS' + ret_gsid, ret_vyr])
+        ret_ok['qty']
+        .groupby(['GS' + ret_gsid[ret_mask], ret_vyr[ret_mask]])
         .sum()
         .rename('credits_retired')
         .reset_index()
@@ -443,14 +445,17 @@ def build_verra():
     vcus = pd.read_excel(RAW_EXCEL, sheet_name='Verra VCUS', engine='openpyxl')
 
     vcus['qty']         = coerce_credits(vcus['Quantity Issued'])
+    vcus['tvq']         = pd.to_numeric(vcus['Total Vintage Quantity'], errors='coerce').fillna(0)
     vcus['vintage_year'] = pd.to_datetime(vcus['Vintage Start'], errors='coerce').dt.year
     vcus_raw_id         = vcus['ID'].astype(str).str.strip()
     vcus_pid            = 'VCS' + vcus_raw_id  # prefixed project_id
 
-    # Credits issued grouped by (project_id, vintage_year)
+    # Credits issued: Berkeley method — deduplicate on unique vintage records, sum TVQ
+    vcus_dedup = vcus.drop_duplicates(subset=['ID', 'Vintage Start', 'Vintage End', 'Total Vintage Quantity'])
+    vcus_dedup_pid = 'VCS' + vcus_dedup['ID'].astype(str).str.strip()
     issued = (
-        vcus['qty']
-        .groupby([vcus_pid, vcus['vintage_year']])
+        vcus_dedup['tvq']
+        .groupby([vcus_dedup_pid, vcus_dedup['vintage_year']])
         .sum()
         .rename('credits_issued')
         .reset_index()
