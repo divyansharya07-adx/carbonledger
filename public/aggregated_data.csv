@@ -1,146 +1,146 @@
 Registry,Project Type Category,Vintage Year,Total Credits Issued,total_credits_retired,retirement_rate
-ACR,Afforestation/Reforestation,2009,1119,4347417,37.9
-ACR,Afforestation/Reforestation,2010,42898,4347417,37.9
-ACR,Afforestation/Reforestation,2011,3706128,4347417,37.9
-ACR,Afforestation/Reforestation,2012,369621,4347417,37.9
-ACR,Afforestation/Reforestation,2013,477297,4347417,37.9
-ACR,Afforestation/Reforestation,2014,182626,4347417,37.9
-ACR,Afforestation/Reforestation,2015,1054928,4347417,37.9
-ACR,Afforestation/Reforestation,2016,165976,4347417,37.9
-ACR,Afforestation/Reforestation,2017,1107890,4347417,37.9
-ACR,Afforestation/Reforestation,2018,308550,4347417,37.9
-ACR,Afforestation/Reforestation,2019,1364185,4347417,37.9
-ACR,Afforestation/Reforestation,2020,1179164,4347417,37.9
-ACR,Afforestation/Reforestation,2021,804970,4347417,37.9
-ACR,Afforestation/Reforestation,2022,716959,4347417,37.9
-ACR,Bioenergy,2005,316,127,11.2
-ACR,Bioenergy,2006,352,127,11.2
-ACR,Bioenergy,2007,342,127,11.2
-ACR,Bioenergy,2008,128,127,11.2
-ACR,Electric vehicles,2003,3832,840206,88.0
-ACR,Electric vehicles,2004,5689,840206,88.0
-ACR,Electric vehicles,2005,13528,840206,88.0
-ACR,Electric vehicles,2006,52424,840206,88.0
-ACR,Electric vehicles,2007,138386,840206,88.0
-ACR,Electric vehicles,2008,163974,840206,88.0
-ACR,Electric vehicles,2009,112296,840206,88.0
-ACR,Electric vehicles,2010,63490,840206,88.0
-ACR,Electric vehicles,2011,80065,840206,88.0
-ACR,Electric vehicles,2012,91789,840206,88.0
-ACR,Electric vehicles,2013,104540,840206,88.0
-ACR,Electric vehicles,2014,104696,840206,88.0
-ACR,Electric vehicles,2015,6945,840206,88.0
-ACR,Electric vehicles,2016,5597,840206,88.0
-ACR,Electric vehicles,2017,3528,840206,88.0
-ACR,Electric vehicles,2018,2565,840206,88.0
-ACR,Electric vehicles,2019,1857,840206,88.0
-ACR,Forest management,2011,16032,12920391,6.6
-ACR,Forest management,2012,4472885,12920391,6.6
-ACR,Forest management,2013,1190083,12920391,6.6
-ACR,Forest management,2014,2419251,12920391,6.6
-ACR,Forest management,2015,16294597,12920391,6.6
-ACR,Forest management,2016,31791840,12920391,6.6
-ACR,Forest management,2017,28178218,12920391,6.6
-ACR,Forest management,2018,14841681,12920391,6.6
-ACR,Forest management,2019,19376347,12920391,6.6
-ACR,Forest management,2020,13295109,12920391,6.6
-ACR,Forest management,2021,15058131,12920391,6.6
-ACR,Forest management,2022,16479146,12920391,6.6
-ACR,Forest management,2023,18080703,12920391,6.6
-ACR,Forest management,2024,13888595,12920391,6.6
-ACR,Forest management,2025,760025,12920391,6.6
-ACR,Fossil gas leaks,2014,280667,5016,0.0
-ACR,Fossil gas leaks,2015,490301,5016,0.0
-ACR,Fossil gas leaks,2016,504479,5016,0.0
-ACR,Fossil gas leaks,2017,664696,5016,0.0
-ACR,Fossil gas leaks,2018,677134,5016,0.0
-ACR,Fossil gas leaks,2019,661055,5016,0.0
-ACR,Fossil gas leaks,2020,637905,5016,0.0
-ACR,Fossil gas leaks,2021,1317563,5016,0.0
-ACR,Fossil gas leaks,2022,2005210,5016,0.0
-ACR,Fossil gas leaks,2023,3122394,5016,0.0
-ACR,Fossil gas leaks,2024,3754203,5016,0.0
-ACR,Fossil gas leaks,2025,1708826,5016,0.0
-ACR,Heat recovery,2003,135250,2168,0.5
-ACR,Heat recovery,2004,164750,2168,0.5
-ACR,Heat recovery,2005,139035,2168,0.5
-ACR,Industrial efficiency,2003,1898382,21514850,20.4
-ACR,Industrial efficiency,2004,3004613,21514850,20.4
-ACR,Industrial efficiency,2005,3081011,21514850,20.4
-ACR,Industrial efficiency,2008,319,21514850,20.4
-ACR,Industrial efficiency,2009,61523,21514850,20.4
-ACR,Industrial efficiency,2010,97226,21514850,20.4
-ACR,Industrial efficiency,2011,94841,21514850,20.4
-ACR,Industrial efficiency,2012,414463,21514850,20.4
-ACR,Industrial efficiency,2013,955174,21514850,20.4
-ACR,Industrial efficiency,2014,1039469,21514850,20.4
-ACR,Industrial efficiency,2015,1222853,21514850,20.4
-ACR,Industrial efficiency,2016,2059974,21514850,20.4
-ACR,Industrial efficiency,2017,2084927,21514850,20.4
-ACR,Industrial efficiency,2018,2554864,21514850,20.4
-ACR,Industrial efficiency,2019,12056982,21514850,20.4
-ACR,Industrial efficiency,2020,16360943,21514850,20.4
-ACR,Industrial efficiency,2021,13611270,21514850,20.4
-ACR,Industrial efficiency,2022,13441893,21514850,20.4
-ACR,Industrial efficiency,2023,17775884,21514850,20.4
-ACR,Industrial efficiency,2024,9819634,21514850,20.4
-ACR,Industrial efficiency,2025,3782348,21514850,20.4
-ACR,Landfill gas,1998,48826,2064583,43.7
-ACR,Landfill gas,1999,74895,2064583,43.7
-ACR,Landfill gas,2000,114507,2064583,43.7
-ACR,Landfill gas,2001,114478,2064583,43.7
-ACR,Landfill gas,2002,110796,2064583,43.7
-ACR,Landfill gas,2003,309610,2064583,43.7
-ACR,Landfill gas,2004,320249,2064583,43.7
-ACR,Landfill gas,2005,358764,2064583,43.7
-ACR,Landfill gas,2006,969426,2064583,43.7
-ACR,Landfill gas,2007,727364,2064583,43.7
-ACR,Landfill gas,2008,244983,2064583,43.7
-ACR,Landfill gas,2009,108593,2064583,43.7
-ACR,Landfill gas,2010,128923,2064583,43.7
-ACR,Landfill gas,2011,40121,2064583,43.7
-ACR,Landfill gas,2018,36604,2064583,43.7
-ACR,Landfill gas,2019,50086,2064583,43.7
-ACR,Landfill gas,2020,62370,2064583,43.7
-ACR,Landfill gas,2021,133689,2064583,43.7
-ACR,Landfill gas,2022,188689,2064583,43.7
-ACR,Landfill gas,2023,315723,2064583,43.7
-ACR,Landfill gas,2024,267305,2064583,43.7
-ACR,Mixed renewables,2004,5,491681,24.5
-ACR,Mixed renewables,2005,491,491681,24.5
-ACR,Mixed renewables,2006,1638,491681,24.5
-ACR,Mixed renewables,2007,1948,491681,24.5
-ACR,Mixed renewables,2009,24245,491681,24.5
-ACR,Mixed renewables,2010,132737,491681,24.5
-ACR,Mixed renewables,2011,91970,491681,24.5
-ACR,Mixed renewables,2012,102825,491681,24.5
-ACR,Mixed renewables,2013,434180,491681,24.5
-ACR,Mixed renewables,2014,141643,491681,24.5
-ACR,Mixed renewables,2015,155810,491681,24.5
-ACR,Mixed renewables,2016,258088,491681,24.5
-ACR,Mixed renewables,2017,133306,491681,24.5
-ACR,Mixed renewables,2018,195071,491681,24.5
-ACR,Mixed renewables,2019,189339,491681,24.5
-ACR,Mixed renewables,2020,84960,491681,24.5
-ACR,Mixed renewables,2021,61672,491681,24.5
+ACR,Afforestation/Reforestation,2009,1119,1004,89.7
+ACR,Afforestation/Reforestation,2010,42898,2343,5.5
+ACR,Afforestation/Reforestation,2011,3706128,5750,0.2
+ACR,Afforestation/Reforestation,2012,369621,322088,87.1
+ACR,Afforestation/Reforestation,2013,477297,421273,88.3
+ACR,Afforestation/Reforestation,2014,182626,182626,100.0
+ACR,Afforestation/Reforestation,2015,1054928,947231,89.8
+ACR,Afforestation/Reforestation,2016,165976,67675,40.8
+ACR,Afforestation/Reforestation,2017,1107890,992889,89.6
+ACR,Afforestation/Reforestation,2018,308550,56802,18.4
+ACR,Afforestation/Reforestation,2019,1364185,794802,58.3
+ACR,Afforestation/Reforestation,2020,1179164,451975,38.3
+ACR,Afforestation/Reforestation,2021,804970,23681,2.9
+ACR,Afforestation/Reforestation,2022,716959,77278,10.8
+ACR,Bioenergy,2005,316,127,40.2
+ACR,Bioenergy,2006,352,0,0.0
+ACR,Bioenergy,2007,342,0,0.0
+ACR,Bioenergy,2008,128,0,0.0
+ACR,Electric vehicles,2003,3832,3832,100.0
+ACR,Electric vehicles,2004,5689,5689,100.0
+ACR,Electric vehicles,2005,13528,13428,99.3
+ACR,Electric vehicles,2006,52424,40585,77.4
+ACR,Electric vehicles,2007,138386,113948,82.3
+ACR,Electric vehicles,2008,163974,138144,84.2
+ACR,Electric vehicles,2009,112296,59508,53.0
+ACR,Electric vehicles,2010,63490,63490,100.0
+ACR,Electric vehicles,2011,80065,80065,100.0
+ACR,Electric vehicles,2012,91789,91789,100.0
+ACR,Electric vehicles,2013,104540,104540,100.0
+ACR,Electric vehicles,2014,104696,104696,100.0
+ACR,Electric vehicles,2015,6945,6945,100.0
+ACR,Electric vehicles,2016,5597,5597,100.0
+ACR,Electric vehicles,2017,3528,3528,100.0
+ACR,Electric vehicles,2018,2565,2565,100.0
+ACR,Electric vehicles,2019,1857,1857,100.0
+ACR,Forest management,2011,16032,16032,100.0
+ACR,Forest management,2012,4472885,21240,0.5
+ACR,Forest management,2013,1190083,69472,5.8
+ACR,Forest management,2014,2419251,87012,3.6
+ACR,Forest management,2015,16294597,297903,1.8
+ACR,Forest management,2016,31791840,0,0.0
+ACR,Forest management,2017,28178218,128033,0.5
+ACR,Forest management,2018,14841681,2167736,14.6
+ACR,Forest management,2019,19376347,1945589,10.0
+ACR,Forest management,2020,13295109,2914479,21.9
+ACR,Forest management,2021,15058131,2486155,16.5
+ACR,Forest management,2022,16479146,1442767,8.8
+ACR,Forest management,2023,18080703,990847,5.5
+ACR,Forest management,2024,13888595,338194,2.4
+ACR,Forest management,2025,760025,14932,2.0
+ACR,Fossil gas leaks,2014,280667,0,0.0
+ACR,Fossil gas leaks,2015,490301,0,0.0
+ACR,Fossil gas leaks,2016,504479,0,0.0
+ACR,Fossil gas leaks,2017,664696,0,0.0
+ACR,Fossil gas leaks,2018,677134,0,0.0
+ACR,Fossil gas leaks,2019,661055,0,0.0
+ACR,Fossil gas leaks,2020,637905,0,0.0
+ACR,Fossil gas leaks,2021,1317563,0,0.0
+ACR,Fossil gas leaks,2022,2005210,2130,0.1
+ACR,Fossil gas leaks,2023,3122394,2154,0.1
+ACR,Fossil gas leaks,2024,3754203,732,0.0
+ACR,Fossil gas leaks,2025,1708826,0,0.0
+ACR,Heat recovery,2003,135250,0,0.0
+ACR,Heat recovery,2004,164750,0,0.0
+ACR,Heat recovery,2005,139035,2168,1.6
+ACR,Industrial efficiency,2003,1898382,7666,0.4
+ACR,Industrial efficiency,2004,3004613,0,0.0
+ACR,Industrial efficiency,2005,3081011,10000,0.3
+ACR,Industrial efficiency,2008,319,319,100.0
+ACR,Industrial efficiency,2009,61523,61523,100.0
+ACR,Industrial efficiency,2010,97226,97226,100.0
+ACR,Industrial efficiency,2011,94841,93646,98.7
+ACR,Industrial efficiency,2012,414463,106734,25.8
+ACR,Industrial efficiency,2013,955174,109777,11.5
+ACR,Industrial efficiency,2014,1039469,180934,17.4
+ACR,Industrial efficiency,2015,1222853,291745,23.9
+ACR,Industrial efficiency,2016,2059974,308691,15.0
+ACR,Industrial efficiency,2017,2084927,716047,34.3
+ACR,Industrial efficiency,2018,2554864,672023,26.3
+ACR,Industrial efficiency,2019,12056982,4018458,33.3
+ACR,Industrial efficiency,2020,16360943,4814038,29.4
+ACR,Industrial efficiency,2021,13611270,2948105,21.7
+ACR,Industrial efficiency,2022,13441893,2362715,17.6
+ACR,Industrial efficiency,2023,17775884,3993139,22.5
+ACR,Industrial efficiency,2024,9819634,407233,4.1
+ACR,Industrial efficiency,2025,3782348,314831,8.3
+ACR,Landfill gas,1998,48826,330,0.7
+ACR,Landfill gas,1999,74895,6547,8.7
+ACR,Landfill gas,2000,114507,1040,0.9
+ACR,Landfill gas,2001,114478,0,0.0
+ACR,Landfill gas,2002,110796,0,0.0
+ACR,Landfill gas,2003,309610,93003,30.0
+ACR,Landfill gas,2004,320249,197277,61.6
+ACR,Landfill gas,2005,358764,217230,60.5
+ACR,Landfill gas,2006,969426,614769,63.4
+ACR,Landfill gas,2007,727364,384748,52.9
+ACR,Landfill gas,2008,244983,86951,35.5
+ACR,Landfill gas,2009,108593,44000,40.5
+ACR,Landfill gas,2010,128923,0,0.0
+ACR,Landfill gas,2011,40121,40085,99.9
+ACR,Landfill gas,2018,36604,36604,100.0
+ACR,Landfill gas,2019,50086,50086,100.0
+ACR,Landfill gas,2020,62370,62370,100.0
+ACR,Landfill gas,2021,133689,80509,60.2
+ACR,Landfill gas,2022,188689,95042,50.4
+ACR,Landfill gas,2023,315723,52844,16.7
+ACR,Landfill gas,2024,267305,1148,0.4
+ACR,Mixed renewables,2004,5,0,0.0
+ACR,Mixed renewables,2005,491,0,0.0
+ACR,Mixed renewables,2006,1638,0,0.0
+ACR,Mixed renewables,2007,1948,0,0.0
+ACR,Mixed renewables,2009,24245,0,0.0
+ACR,Mixed renewables,2010,132737,4000,3.0
+ACR,Mixed renewables,2011,91970,22246,24.2
+ACR,Mixed renewables,2012,102825,14599,14.2
+ACR,Mixed renewables,2013,434180,231891,53.4
+ACR,Mixed renewables,2014,141643,221,0.2
+ACR,Mixed renewables,2015,155810,47245,30.3
+ACR,Mixed renewables,2016,258088,45777,17.7
+ACR,Mixed renewables,2017,133306,10032,7.5
+ACR,Mixed renewables,2018,195071,43307,22.2
+ACR,Mixed renewables,2019,189339,42854,22.6
+ACR,Mixed renewables,2020,84960,29429,34.6
+ACR,Mixed renewables,2021,61672,80,0.1
 ACR,Nitric acid,2001,125000,0,0.0
-ACR,Oil Field Gas Recovery,2000,991518,9006519,33.1
-ACR,Oil Field Gas Recovery,2001,718342,9006519,33.1
-ACR,Oil Field Gas Recovery,2002,736816,9006519,33.1
-ACR,Oil Field Gas Recovery,2003,1322814,9006519,33.1
-ACR,Oil Field Gas Recovery,2004,2739431,9006519,33.1
-ACR,Oil Field Gas Recovery,2005,4129065,9006519,33.1
-ACR,Oil Field Gas Recovery,2006,3281336,9006519,33.1
-ACR,Oil Field Gas Recovery,2007,4372382,9006519,33.1
-ACR,Oil Field Gas Recovery,2008,3528103,9006519,33.1
-ACR,Oil Field Gas Recovery,2009,109153,9006519,33.1
-ACR,Oil Field Gas Recovery,2010,116108,9006519,33.1
-ACR,Oil Field Gas Recovery,2011,105596,9006519,33.1
-ACR,Oil Field Gas Recovery,2012,92762,9006519,33.1
-ACR,Oil Field Gas Recovery,2013,84182,9006519,33.1
-ACR,Oil Field Gas Recovery,2023,2059142,9006519,33.1
-ACR,Oil Field Gas Recovery,2024,2396824,9006519,33.1
-ACR,Oil Field Gas Recovery,2025,442217,9006519,33.1
+ACR,Oil Field Gas Recovery,2000,991518,286301,28.9
+ACR,Oil Field Gas Recovery,2001,718342,99250,13.8
+ACR,Oil Field Gas Recovery,2002,736816,229238,31.1
+ACR,Oil Field Gas Recovery,2003,1322814,427025,32.3
+ACR,Oil Field Gas Recovery,2004,2739431,731161,26.7
+ACR,Oil Field Gas Recovery,2005,4129065,2103613,50.9
+ACR,Oil Field Gas Recovery,2006,3281336,1021871,31.1
+ACR,Oil Field Gas Recovery,2007,4372382,1934669,44.2
+ACR,Oil Field Gas Recovery,2008,3528103,920533,26.1
+ACR,Oil Field Gas Recovery,2009,109153,109153,100.0
+ACR,Oil Field Gas Recovery,2010,116108,51120,44.0
+ACR,Oil Field Gas Recovery,2011,105596,0,0.0
+ACR,Oil Field Gas Recovery,2012,92762,0,0.0
+ACR,Oil Field Gas Recovery,2013,84182,0,0.0
+ACR,Oil Field Gas Recovery,2023,2059142,326176,15.8
+ACR,Oil Field Gas Recovery,2024,2396824,662349,27.6
+ACR,Oil Field Gas Recovery,2025,442217,104060,23.5
 ACR,Reforestation and ecosystem restoration,2011,170,0,0.0
 ACR,Reforestation and ecosystem restoration,2012,683,0,0.0
 ACR,Reforestation and ecosystem restoration,2014,5316,0,0.0
@@ -148,95 +148,95 @@ ACR,Reforestation and ecosystem restoration,2015,13713,0,0.0
 ACR,Reforestation and ecosystem restoration,2016,12171,0,0.0
 ACR,Reforestation and ecosystem restoration,2017,11233,0,0.0
 ACR,Reforestation and ecosystem restoration,2018,16266,0,0.0
-ACR,Rewilding,2010,13891,164401,75.8
-ACR,Rewilding,2011,15370,164401,75.8
-ACR,Rewilding,2012,20618,164401,75.8
-ACR,Rewilding,2013,14795,164401,75.8
-ACR,Rewilding,2014,17243,164401,75.8
-ACR,Rewilding,2015,17587,164401,75.8
-ACR,Rewilding,2016,17782,164401,75.8
-ACR,Rewilding,2017,16809,164401,75.8
-ACR,Rewilding,2018,16244,164401,75.8
-ACR,Rewilding,2019,15858,164401,75.8
-ACR,Rewilding,2020,10402,164401,75.8
-ACR,Rewilding,2021,10893,164401,75.8
-ACR,Rewilding,2022,10292,164401,75.8
-ACR,Rewilding,2023,9988,164401,75.8
-ACR,Rewilding,2024,9252,164401,75.8
-ACR,Rice cultivation,2012,7,597,100.0
-ACR,Rice cultivation,2013,226,597,100.0
-ACR,Rice cultivation,2014,170,597,100.0
-ACR,Rice cultivation,2015,194,597,100.0
-ACR,Soil & Livestock,2011,2,21813,1.2
-ACR,Soil & Livestock,2013,19183,21813,1.2
-ACR,Soil & Livestock,2014,24558,21813,1.2
-ACR,Soil & Livestock,2015,237423,21813,1.2
-ACR,Soil & Livestock,2016,270942,21813,1.2
-ACR,Soil & Livestock,2017,314532,21813,1.2
-ACR,Soil & Livestock,2018,288967,21813,1.2
-ACR,Soil & Livestock,2019,298295,21813,1.2
-ACR,Soil & Livestock,2020,190533,21813,1.2
-ACR,Soil & Livestock,2021,99693,21813,1.2
-ACR,Soil & Livestock,2022,44778,21813,1.2
-ACR,Soil & Livestock,2023,40128,21813,1.2
-ACR,Soil & Livestock,2024,23141,21813,1.2
-ACR,Soil & Livestock,2025,11662,21813,1.2
-ACR,Waste to energy,2003,8072,1733142,68.9
-ACR,Waste to energy,2004,5848,1733142,68.9
-ACR,Waste to energy,2005,4409,1733142,68.9
-ACR,Waste to energy,2006,3632,1733142,68.9
-ACR,Waste to energy,2007,7998,1733142,68.9
-ACR,Waste to energy,2008,13210,1733142,68.9
-ACR,Waste to energy,2009,1033,1733142,68.9
-ACR,Waste to energy,2010,170626,1733142,68.9
-ACR,Waste to energy,2011,409787,1733142,68.9
-ACR,Waste to energy,2012,502389,1733142,68.9
-ACR,Waste to energy,2013,639196,1733142,68.9
-ACR,Waste to energy,2014,278098,1733142,68.9
-ACR,Waste to energy,2015,470530,1733142,68.9
-ACR,Wastewater treatment,2008,100000,11295,10.1
-ACR,Wastewater treatment,2019,11295,11295,10.1
-CAR,Composting,2008,6554,868211,90.7
-CAR,Composting,2009,27751,868211,90.7
-CAR,Composting,2010,45940,868211,90.7
-CAR,Composting,2011,52011,868211,90.7
-CAR,Composting,2012,87807,868211,90.7
-CAR,Composting,2013,122509,868211,90.7
-CAR,Composting,2014,96601,868211,90.7
-CAR,Composting,2015,88201,868211,90.7
-CAR,Composting,2016,38243,868211,90.7
-CAR,Composting,2017,44351,868211,90.7
-CAR,Composting,2018,33724,868211,90.7
-CAR,Composting,2019,9035,868211,90.7
-CAR,Composting,2020,53502,868211,90.7
-CAR,Composting,2021,48192,868211,90.7
-CAR,Composting,2022,64392,868211,90.7
-CAR,Composting,2023,80087,868211,90.7
-CAR,Composting,2024,58745,868211,90.7
-CAR,Forest management,2002,7293,9264358,7.7
-CAR,Forest management,2003,17942,9264358,7.7
-CAR,Forest management,2004,67124,9264358,7.7
-CAR,Forest management,2005,263908,9264358,7.7
-CAR,Forest management,2006,384846,9264358,7.7
-CAR,Forest management,2007,3164845,9264358,7.7
-CAR,Forest management,2008,1591844,9264358,7.7
-CAR,Forest management,2009,1323586,9264358,7.7
-CAR,Forest management,2010,2285602,9264358,7.7
-CAR,Forest management,2011,2366605,9264358,7.7
-CAR,Forest management,2012,1820062,9264358,7.7
-CAR,Forest management,2013,4577382,9264358,7.7
-CAR,Forest management,2014,4818515,9264358,7.7
-CAR,Forest management,2015,7614668,9264358,7.7
-CAR,Forest management,2016,9734167,9264358,7.7
-CAR,Forest management,2017,9500291,9264358,7.7
-CAR,Forest management,2018,15089127,9264358,7.7
-CAR,Forest management,2019,13406792,9264358,7.7
-CAR,Forest management,2020,6110287,9264358,7.7
-CAR,Forest management,2021,8604235,9264358,7.7
-CAR,Forest management,2022,9275485,9264358,7.7
-CAR,Forest management,2023,8919991,9264358,7.7
-CAR,Forest management,2024,7397705,9264358,7.7
-CAR,Forest management,2025,2191011,9264358,7.7
+ACR,Rewilding,2010,13891,13292,95.7
+ACR,Rewilding,2011,15370,14144,92.0
+ACR,Rewilding,2012,20618,18161,88.1
+ACR,Rewilding,2013,14795,13414,90.7
+ACR,Rewilding,2014,17243,16119,93.5
+ACR,Rewilding,2015,17587,17587,100.0
+ACR,Rewilding,2016,17782,17732,99.7
+ACR,Rewilding,2017,16809,16809,100.0
+ACR,Rewilding,2018,16244,11785,72.5
+ACR,Rewilding,2019,15858,15858,100.0
+ACR,Rewilding,2020,10402,0,0.0
+ACR,Rewilding,2021,10893,0,0.0
+ACR,Rewilding,2022,10292,0,0.0
+ACR,Rewilding,2023,9988,9500,95.1
+ACR,Rewilding,2024,9252,0,0.0
+ACR,Rice cultivation,2012,7,7,100.0
+ACR,Rice cultivation,2013,226,226,100.0
+ACR,Rice cultivation,2014,170,170,100.0
+ACR,Rice cultivation,2015,194,194,100.0
+ACR,Soil & Livestock,2011,2,2,100.0
+ACR,Soil & Livestock,2013,19183,4,0.0
+ACR,Soil & Livestock,2014,24558,0,0.0
+ACR,Soil & Livestock,2015,237423,7,0.0
+ACR,Soil & Livestock,2016,270942,38,0.0
+ACR,Soil & Livestock,2017,314532,21,0.0
+ACR,Soil & Livestock,2018,288967,0,0.0
+ACR,Soil & Livestock,2019,298295,0,0.0
+ACR,Soil & Livestock,2020,190533,0,0.0
+ACR,Soil & Livestock,2021,99693,0,0.0
+ACR,Soil & Livestock,2022,44778,21741,48.6
+ACR,Soil & Livestock,2023,40128,0,0.0
+ACR,Soil & Livestock,2024,23141,0,0.0
+ACR,Soil & Livestock,2025,11662,0,0.0
+ACR,Waste to energy,2003,8072,2500,31.0
+ACR,Waste to energy,2004,5848,32,0.5
+ACR,Waste to energy,2005,4409,231,5.2
+ACR,Waste to energy,2006,3632,3632,100.0
+ACR,Waste to energy,2007,7998,7998,100.0
+ACR,Waste to energy,2008,13210,13210,100.0
+ACR,Waste to energy,2009,1033,1033,100.0
+ACR,Waste to energy,2010,170626,0,0.0
+ACR,Waste to energy,2011,409787,27668,6.8
+ACR,Waste to energy,2012,502389,388932,77.4
+ACR,Waste to energy,2013,639196,631999,98.9
+ACR,Waste to energy,2014,278098,233230,83.9
+ACR,Waste to energy,2015,470530,422677,89.8
+ACR,Wastewater treatment,2008,100000,0,0.0
+ACR,Wastewater treatment,2019,11295,11295,100.0
+CAR,Composting,2008,6554,6554,100.0
+CAR,Composting,2009,27751,27751,100.0
+CAR,Composting,2010,45940,45940,100.0
+CAR,Composting,2011,52011,52011,100.0
+CAR,Composting,2012,87807,87807,100.0
+CAR,Composting,2013,122509,122509,100.0
+CAR,Composting,2014,96601,96601,100.0
+CAR,Composting,2015,88201,88201,100.0
+CAR,Composting,2016,38243,38243,100.0
+CAR,Composting,2017,44351,44351,100.0
+CAR,Composting,2018,33724,33724,100.0
+CAR,Composting,2019,9035,9035,100.0
+CAR,Composting,2020,53502,53502,100.0
+CAR,Composting,2021,48192,48192,100.0
+CAR,Composting,2022,64392,64392,100.0
+CAR,Composting,2023,80087,47843,59.7
+CAR,Composting,2024,58745,1555,2.6
+CAR,Forest management,2002,7293,4569,62.6
+CAR,Forest management,2003,17942,14079,78.5
+CAR,Forest management,2004,67124,18466,27.5
+CAR,Forest management,2005,263908,70488,26.7
+CAR,Forest management,2006,384846,83586,21.7
+CAR,Forest management,2007,3164845,193638,6.1
+CAR,Forest management,2008,1591844,341722,21.5
+CAR,Forest management,2009,1323586,390503,29.5
+CAR,Forest management,2010,2285602,627907,27.5
+CAR,Forest management,2011,2366605,194344,8.2
+CAR,Forest management,2012,1820062,300807,16.5
+CAR,Forest management,2013,4577382,426365,9.3
+CAR,Forest management,2014,4818515,497844,10.3
+CAR,Forest management,2015,7614668,88456,1.2
+CAR,Forest management,2016,9734167,90490,0.9
+CAR,Forest management,2017,9500291,61616,0.6
+CAR,Forest management,2018,15089127,81418,0.5
+CAR,Forest management,2019,13406792,191475,1.4
+CAR,Forest management,2020,6110287,488894,8.0
+CAR,Forest management,2021,8604235,1118627,13.0
+CAR,Forest management,2022,9275485,2102898,22.7
+CAR,Forest management,2023,8919991,1375103,15.4
+CAR,Forest management,2024,7397705,501063,6.8
+CAR,Forest management,2025,2191011,0,0.0
 CAR,Fossil gas leaks,2009,21902,0,0.0
 CAR,Fossil gas leaks,2010,82977,0,0.0
 CAR,Fossil gas leaks,2011,123555,0,0.0
@@ -254,777 +254,777 @@ CAR,Fossil gas leaks,2022,261720,0,0.0
 CAR,Fossil gas leaks,2023,329027,0,0.0
 CAR,Fossil gas leaks,2024,564108,0,0.0
 CAR,Fossil gas leaks,2025,2404458,0,0.0
-CAR,Industrial efficiency,2009,683087,12248799,29.6
-CAR,Industrial efficiency,2010,3077340,12248799,29.6
-CAR,Industrial efficiency,2011,3546904,12248799,29.6
-CAR,Industrial efficiency,2012,2556723,12248799,29.6
-CAR,Industrial efficiency,2013,1227591,12248799,29.6
-CAR,Industrial efficiency,2014,1123204,12248799,29.6
-CAR,Industrial efficiency,2015,883728,12248799,29.6
-CAR,Industrial efficiency,2016,1076515,12248799,29.6
-CAR,Industrial efficiency,2017,1741726,12248799,29.6
-CAR,Industrial efficiency,2018,1674225,12248799,29.6
-CAR,Industrial efficiency,2019,293757,12248799,29.6
-CAR,Industrial efficiency,2020,570630,12248799,29.6
-CAR,Industrial efficiency,2021,2403325,12248799,29.6
-CAR,Industrial efficiency,2022,4650653,12248799,29.6
-CAR,Industrial efficiency,2023,5275446,12248799,29.6
-CAR,Industrial efficiency,2024,5911034,12248799,29.6
-CAR,Industrial efficiency,2025,4663534,12248799,29.6
-CAR,Landfill gas,2003,23089,36483070,76.9
-CAR,Landfill gas,2004,39724,36483070,76.9
-CAR,Landfill gas,2005,109181,36483070,76.9
-CAR,Landfill gas,2006,154539,36483070,76.9
-CAR,Landfill gas,2007,196273,36483070,76.9
-CAR,Landfill gas,2008,985090,36483070,76.9
-CAR,Landfill gas,2009,2219431,36483070,76.9
-CAR,Landfill gas,2010,3917039,36483070,76.9
-CAR,Landfill gas,2011,4503675,36483070,76.9
-CAR,Landfill gas,2012,4099390,36483070,76.9
-CAR,Landfill gas,2013,3443630,36483070,76.9
-CAR,Landfill gas,2014,2862632,36483070,76.9
-CAR,Landfill gas,2015,2603964,36483070,76.9
-CAR,Landfill gas,2016,2216074,36483070,76.9
-CAR,Landfill gas,2017,2265531,36483070,76.9
-CAR,Landfill gas,2018,2337778,36483070,76.9
-CAR,Landfill gas,2019,2225762,36483070,76.9
-CAR,Landfill gas,2020,2429217,36483070,76.9
-CAR,Landfill gas,2021,2628120,36483070,76.9
-CAR,Landfill gas,2022,3020652,36483070,76.9
-CAR,Landfill gas,2023,2846589,36483070,76.9
-CAR,Landfill gas,2024,2239533,36483070,76.9
-CAR,Landfill gas,2025,81615,36483070,76.9
-CAR,Nitric acid,2008,106064,19224425,84.9
-CAR,Nitric acid,2009,487045,19224425,84.9
-CAR,Nitric acid,2010,1233760,19224425,84.9
-CAR,Nitric acid,2011,1858067,19224425,84.9
-CAR,Nitric acid,2012,2239193,19224425,84.9
-CAR,Nitric acid,2013,1497340,19224425,84.9
-CAR,Nitric acid,2014,1243351,19224425,84.9
-CAR,Nitric acid,2015,1190142,19224425,84.9
-CAR,Nitric acid,2016,1193156,19224425,84.9
-CAR,Nitric acid,2017,1151792,19224425,84.9
-CAR,Nitric acid,2018,1003570,19224425,84.9
-CAR,Nitric acid,2019,1183399,19224425,84.9
-CAR,Nitric acid,2020,1436765,19224425,84.9
-CAR,Nitric acid,2021,1448129,19224425,84.9
-CAR,Nitric acid,2022,1466181,19224425,84.9
-CAR,Nitric acid,2023,1713422,19224425,84.9
-CAR,Nitric acid,2024,1368394,19224425,84.9
-CAR,Nitric acid,2025,826914,19224425,84.9
-CAR,Rewilding,2002,5672,525945,21.0
-CAR,Rewilding,2003,10732,525945,21.0
-CAR,Rewilding,2004,43380,525945,21.0
-CAR,Rewilding,2005,58815,525945,21.0
-CAR,Rewilding,2006,58815,525945,21.0
-CAR,Rewilding,2007,59124,525945,21.0
-CAR,Rewilding,2008,100016,525945,21.0
-CAR,Rewilding,2009,105184,525945,21.0
-CAR,Rewilding,2010,219538,525945,21.0
-CAR,Rewilding,2011,312178,525945,21.0
-CAR,Rewilding,2012,289545,525945,21.0
-CAR,Rewilding,2013,166436,525945,21.0
-CAR,Rewilding,2014,52409,525945,21.0
-CAR,Rewilding,2015,129468,525945,21.0
-CAR,Rewilding,2016,107457,525945,21.0
-CAR,Rewilding,2017,127881,525945,21.0
-CAR,Rewilding,2018,131460,525945,21.0
-CAR,Rewilding,2019,89439,525945,21.0
-CAR,Rewilding,2020,89249,525945,21.0
-CAR,Rewilding,2021,92404,525945,21.0
-CAR,Rewilding,2022,125839,525945,21.0
-CAR,Rewilding,2023,92258,525945,21.0
-CAR,Rewilding,2024,35451,525945,21.0
-CAR,Rewilding,2025,3079,525945,21.0
-CAR,Soil & Livestock,2007,35807,2062158,16.9
-CAR,Soil & Livestock,2008,35468,2062158,16.9
-CAR,Soil & Livestock,2009,142645,2062158,16.9
-CAR,Soil & Livestock,2010,298048,2062158,16.9
-CAR,Soil & Livestock,2011,405283,2062158,16.9
-CAR,Soil & Livestock,2012,493365,2062158,16.9
-CAR,Soil & Livestock,2013,734768,2062158,16.9
-CAR,Soil & Livestock,2014,824136,2062158,16.9
-CAR,Soil & Livestock,2015,783320,2062158,16.9
-CAR,Soil & Livestock,2016,1027844,2062158,16.9
-CAR,Soil & Livestock,2017,1010942,2062158,16.9
-CAR,Soil & Livestock,2018,919142,2062158,16.9
-CAR,Soil & Livestock,2019,904793,2062158,16.9
-CAR,Soil & Livestock,2020,785248,2062158,16.9
-CAR,Soil & Livestock,2021,759842,2062158,16.9
-CAR,Soil & Livestock,2022,919132,2062158,16.9
-CAR,Soil & Livestock,2023,1075428,2062158,16.9
-CAR,Soil & Livestock,2024,898768,2062158,16.9
-CAR,Soil & Livestock,2025,118377,2062158,16.9
-CAR,Waste to energy,2008,25599,225517,80.4
-CAR,Waste to energy,2009,18858,225517,80.4
-CAR,Waste to energy,2013,19515,225517,80.4
-CAR,Waste to energy,2014,19980,225517,80.4
-CAR,Waste to energy,2015,18798,225517,80.4
-CAR,Waste to energy,2016,16249,225517,80.4
-CAR,Waste to energy,2017,11806,225517,80.4
-CAR,Waste to energy,2018,14823,225517,80.4
-CAR,Waste to energy,2019,18159,225517,80.4
-CAR,Waste to energy,2020,19959,225517,80.4
-CAR,Waste to energy,2021,18652,225517,80.4
-CAR,Waste to energy,2022,22257,225517,80.4
-CAR,Waste to energy,2023,33085,225517,80.4
-CAR,Waste to energy,2024,22770,225517,80.4
-Gold Standard,Afforestation/Reforestation,1996,764,5137086,59.9
-Gold Standard,Afforestation/Reforestation,1997,1605,5137086,59.9
-Gold Standard,Afforestation/Reforestation,1998,1898,5137086,59.9
-Gold Standard,Afforestation/Reforestation,1999,2988,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2000,3864,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2001,4468,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2002,5107,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2003,6523,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2004,7235,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2005,11210,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2006,21222,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2007,20149,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2008,44467,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2009,110016,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2010,186856,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2011,306938,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2012,451936,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2013,475371,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2014,587684,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2015,592792,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2016,670481,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2017,589867,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2018,681941,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2019,848644,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2020,881428,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2021,825765,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2022,658379,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2023,398445,5137086,59.9
-Gold Standard,Afforestation/Reforestation,2024,175250,5137086,59.9
-Gold Standard,Bioenergy,2006,229473,13859748,33.0
-Gold Standard,Bioenergy,2007,253341,13859748,33.0
-Gold Standard,Bioenergy,2008,11852,13859748,33.0
-Gold Standard,Bioenergy,2009,25889,13859748,33.0
-Gold Standard,Bioenergy,2010,42250,13859748,33.0
-Gold Standard,Bioenergy,2011,92444,13859748,33.0
-Gold Standard,Bioenergy,2012,406967,13859748,33.0
-Gold Standard,Bioenergy,2013,566963,13859748,33.0
-Gold Standard,Bioenergy,2014,1150563,13859748,33.0
-Gold Standard,Bioenergy,2015,1510596,13859748,33.0
-Gold Standard,Bioenergy,2016,1588542,13859748,33.0
-Gold Standard,Bioenergy,2017,1937864,13859748,33.0
-Gold Standard,Bioenergy,2018,2064742,13859748,33.0
-Gold Standard,Bioenergy,2019,2524271,13859748,33.0
-Gold Standard,Bioenergy,2020,2626894,13859748,33.0
-Gold Standard,Bioenergy,2021,4695347,13859748,33.0
-Gold Standard,Bioenergy,2022,6337933,13859748,33.0
-Gold Standard,Bioenergy,2023,7688658,13859748,33.0
-Gold Standard,Bioenergy,2024,7042595,13859748,33.0
-Gold Standard,Bioenergy,2025,1156746,13859748,33.0
-Gold Standard,Cleaner cooking,2007,5821,52045398,71.9
-Gold Standard,Cleaner cooking,2008,64277,52045398,71.9
-Gold Standard,Cleaner cooking,2009,233743,52045398,71.9
-Gold Standard,Cleaner cooking,2010,707418,52045398,71.9
-Gold Standard,Cleaner cooking,2011,3103401,52045398,71.9
-Gold Standard,Cleaner cooking,2012,3999017,52045398,71.9
-Gold Standard,Cleaner cooking,2013,4263763,52045398,71.9
-Gold Standard,Cleaner cooking,2014,4251925,52045398,71.9
-Gold Standard,Cleaner cooking,2015,4452288,52045398,71.9
-Gold Standard,Cleaner cooking,2016,4309687,52045398,71.9
-Gold Standard,Cleaner cooking,2017,4529805,52045398,71.9
-Gold Standard,Cleaner cooking,2018,4368180,52045398,71.9
-Gold Standard,Cleaner cooking,2019,5146402,52045398,71.9
-Gold Standard,Cleaner cooking,2020,5358789,52045398,71.9
-Gold Standard,Cleaner cooking,2021,6601249,52045398,71.9
-Gold Standard,Cleaner cooking,2022,8237599,52045398,71.9
-Gold Standard,Cleaner cooking,2023,7663380,52045398,71.9
-Gold Standard,Cleaner cooking,2024,4588393,52045398,71.9
-Gold Standard,Cleaner cooking,2025,456037,52045398,71.9
-Gold Standard,Composting,2013,511,56403,95.0
-Gold Standard,Composting,2014,1231,56403,95.0
-Gold Standard,Composting,2015,1565,56403,95.0
-Gold Standard,Composting,2016,1953,56403,95.0
-Gold Standard,Composting,2017,4655,56403,95.0
-Gold Standard,Composting,2018,5946,56403,95.0
-Gold Standard,Composting,2019,13162,56403,95.0
-Gold Standard,Composting,2020,14315,56403,95.0
-Gold Standard,Composting,2021,6153,56403,95.0
-Gold Standard,Composting,2022,5967,56403,95.0
-Gold Standard,Composting,2023,3920,56403,95.0
-Gold Standard,Efficient appliances,2007,14976,42883063,48.5
-Gold Standard,Efficient appliances,2008,44045,42883063,48.5
-Gold Standard,Efficient appliances,2009,116566,42883063,48.5
-Gold Standard,Efficient appliances,2010,237641,42883063,48.5
-Gold Standard,Efficient appliances,2011,423761,42883063,48.5
-Gold Standard,Efficient appliances,2012,652527,42883063,48.5
-Gold Standard,Efficient appliances,2013,916112,42883063,48.5
-Gold Standard,Efficient appliances,2014,1198236,42883063,48.5
-Gold Standard,Efficient appliances,2015,1409930,42883063,48.5
-Gold Standard,Efficient appliances,2016,1707251,42883063,48.5
-Gold Standard,Efficient appliances,2017,2503381,42883063,48.5
-Gold Standard,Efficient appliances,2018,3068817,42883063,48.5
-Gold Standard,Efficient appliances,2019,3494072,42883063,48.5
-Gold Standard,Efficient appliances,2020,4873036,42883063,48.5
-Gold Standard,Efficient appliances,2021,14847446,42883063,48.5
-Gold Standard,Efficient appliances,2022,19410163,42883063,48.5
-Gold Standard,Efficient appliances,2023,19262008,42883063,48.5
-Gold Standard,Efficient appliances,2024,13416961,42883063,48.5
-Gold Standard,Efficient appliances,2025,862812,42883063,48.5
+CAR,Industrial efficiency,2009,683087,683087,100.0
+CAR,Industrial efficiency,2010,3077340,2126621,69.1
+CAR,Industrial efficiency,2011,3546904,1329575,37.5
+CAR,Industrial efficiency,2012,2556723,9,0.0
+CAR,Industrial efficiency,2013,1227591,31500,2.6
+CAR,Industrial efficiency,2014,1123204,20,0.0
+CAR,Industrial efficiency,2015,883728,0,0.0
+CAR,Industrial efficiency,2016,1076515,0,0.0
+CAR,Industrial efficiency,2017,1741726,0,0.0
+CAR,Industrial efficiency,2018,1674225,0,0.0
+CAR,Industrial efficiency,2019,293757,0,0.0
+CAR,Industrial efficiency,2020,570630,0,0.0
+CAR,Industrial efficiency,2021,2403325,1777349,74.0
+CAR,Industrial efficiency,2022,4650653,3922316,84.3
+CAR,Industrial efficiency,2023,5275446,2077267,39.4
+CAR,Industrial efficiency,2024,5911034,91818,1.6
+CAR,Industrial efficiency,2025,4663534,209237,4.5
+CAR,Landfill gas,2003,23089,23089,100.0
+CAR,Landfill gas,2004,39724,39724,100.0
+CAR,Landfill gas,2005,109181,109181,100.0
+CAR,Landfill gas,2006,154539,148856,96.3
+CAR,Landfill gas,2007,196273,181640,92.5
+CAR,Landfill gas,2008,985090,768059,78.0
+CAR,Landfill gas,2009,2219431,1834184,82.6
+CAR,Landfill gas,2010,3917039,3037726,77.6
+CAR,Landfill gas,2011,4503675,3837329,85.2
+CAR,Landfill gas,2012,4099390,3661146,89.3
+CAR,Landfill gas,2013,3443630,3284460,95.4
+CAR,Landfill gas,2014,2862632,2509701,87.7
+CAR,Landfill gas,2015,2603964,2324067,89.3
+CAR,Landfill gas,2016,2216074,2071952,93.5
+CAR,Landfill gas,2017,2265531,2089185,92.2
+CAR,Landfill gas,2018,2337778,2007012,85.9
+CAR,Landfill gas,2019,2225762,1720853,77.3
+CAR,Landfill gas,2020,2429217,1832842,75.4
+CAR,Landfill gas,2021,2628120,1716443,65.3
+CAR,Landfill gas,2022,3020652,1931689,63.9
+CAR,Landfill gas,2023,2846589,1141548,40.1
+CAR,Landfill gas,2024,2239533,186884,8.3
+CAR,Landfill gas,2025,81615,25500,31.2
+CAR,Nitric acid,2008,106064,106064,100.0
+CAR,Nitric acid,2009,487045,487045,100.0
+CAR,Nitric acid,2010,1233760,1209449,98.0
+CAR,Nitric acid,2011,1858067,1710198,92.0
+CAR,Nitric acid,2012,2239193,1885700,84.2
+CAR,Nitric acid,2013,1497340,1497340,100.0
+CAR,Nitric acid,2014,1243351,1243351,100.0
+CAR,Nitric acid,2015,1190142,1190142,100.0
+CAR,Nitric acid,2016,1193156,1158928,97.1
+CAR,Nitric acid,2017,1151792,1151792,100.0
+CAR,Nitric acid,2018,1003570,1003570,100.0
+CAR,Nitric acid,2019,1183399,1120833,94.7
+CAR,Nitric acid,2020,1436765,1261827,87.8
+CAR,Nitric acid,2021,1448129,1323794,91.4
+CAR,Nitric acid,2022,1466181,1106379,75.5
+CAR,Nitric acid,2023,1713422,1028225,60.0
+CAR,Nitric acid,2024,1368394,618185,45.2
+CAR,Nitric acid,2025,826914,121603,14.7
+CAR,Rewilding,2002,5672,1219,21.5
+CAR,Rewilding,2003,10732,5507,51.3
+CAR,Rewilding,2004,43380,18177,41.9
+CAR,Rewilding,2005,58815,0,0.0
+CAR,Rewilding,2006,58815,0,0.0
+CAR,Rewilding,2007,59124,0,0.0
+CAR,Rewilding,2008,100016,3193,3.2
+CAR,Rewilding,2009,105184,0,0.0
+CAR,Rewilding,2010,219538,3108,1.4
+CAR,Rewilding,2011,312178,25842,8.3
+CAR,Rewilding,2012,289545,26036,9.0
+CAR,Rewilding,2013,166436,28304,17.0
+CAR,Rewilding,2014,52409,5236,10.0
+CAR,Rewilding,2015,129468,36281,28.0
+CAR,Rewilding,2016,107457,49174,45.8
+CAR,Rewilding,2017,127881,70494,55.1
+CAR,Rewilding,2018,131460,73300,55.8
+CAR,Rewilding,2019,89439,39266,43.9
+CAR,Rewilding,2020,89249,52756,59.1
+CAR,Rewilding,2021,92404,41834,45.3
+CAR,Rewilding,2022,125839,31574,25.1
+CAR,Rewilding,2023,92258,14644,15.9
+CAR,Rewilding,2024,35451,0,0.0
+CAR,Rewilding,2025,3079,0,0.0
+CAR,Soil & Livestock,2007,35807,18973,53.0
+CAR,Soil & Livestock,2008,35468,35461,100.0
+CAR,Soil & Livestock,2009,142645,104918,73.6
+CAR,Soil & Livestock,2010,298048,147887,49.6
+CAR,Soil & Livestock,2011,405283,120107,29.6
+CAR,Soil & Livestock,2012,493365,123148,25.0
+CAR,Soil & Livestock,2013,734768,125662,17.1
+CAR,Soil & Livestock,2014,824136,178017,21.6
+CAR,Soil & Livestock,2015,783320,76300,9.7
+CAR,Soil & Livestock,2016,1027844,98038,9.5
+CAR,Soil & Livestock,2017,1010942,111010,11.0
+CAR,Soil & Livestock,2018,919142,164985,17.9
+CAR,Soil & Livestock,2019,904793,135300,15.0
+CAR,Soil & Livestock,2020,785248,113693,14.5
+CAR,Soil & Livestock,2021,759842,158264,20.8
+CAR,Soil & Livestock,2022,919132,225251,24.5
+CAR,Soil & Livestock,2023,1075428,103455,9.6
+CAR,Soil & Livestock,2024,898768,21688,2.4
+CAR,Soil & Livestock,2025,118377,1,0.0
+CAR,Waste to energy,2008,25599,25599,100.0
+CAR,Waste to energy,2009,18858,18373,97.4
+CAR,Waste to energy,2013,19515,19515,100.0
+CAR,Waste to energy,2014,19980,19980,100.0
+CAR,Waste to energy,2015,18798,18798,100.0
+CAR,Waste to energy,2016,16249,16249,100.0
+CAR,Waste to energy,2017,11806,11806,100.0
+CAR,Waste to energy,2018,14823,14823,100.0
+CAR,Waste to energy,2019,18159,18159,100.0
+CAR,Waste to energy,2020,19959,19959,100.0
+CAR,Waste to energy,2021,18652,18652,100.0
+CAR,Waste to energy,2022,22257,287,1.3
+CAR,Waste to energy,2023,33085,20585,62.2
+CAR,Waste to energy,2024,22770,2732,12.0
+Gold Standard,Afforestation/Reforestation,1996,764,0,0.0
+Gold Standard,Afforestation/Reforestation,1997,1605,0,0.0
+Gold Standard,Afforestation/Reforestation,1998,1898,0,0.0
+Gold Standard,Afforestation/Reforestation,1999,2988,0,0.0
+Gold Standard,Afforestation/Reforestation,2000,3864,0,0.0
+Gold Standard,Afforestation/Reforestation,2001,4468,0,0.0
+Gold Standard,Afforestation/Reforestation,2002,5107,0,0.0
+Gold Standard,Afforestation/Reforestation,2003,6523,0,0.0
+Gold Standard,Afforestation/Reforestation,2004,7235,0,0.0
+Gold Standard,Afforestation/Reforestation,2005,11210,502,4.5
+Gold Standard,Afforestation/Reforestation,2006,21222,665,3.1
+Gold Standard,Afforestation/Reforestation,2007,20149,9341,46.4
+Gold Standard,Afforestation/Reforestation,2008,44467,30268,68.1
+Gold Standard,Afforestation/Reforestation,2009,110016,49378,44.9
+Gold Standard,Afforestation/Reforestation,2010,186856,93919,50.3
+Gold Standard,Afforestation/Reforestation,2011,306938,169697,55.3
+Gold Standard,Afforestation/Reforestation,2012,451936,328465,72.7
+Gold Standard,Afforestation/Reforestation,2013,475371,432920,91.1
+Gold Standard,Afforestation/Reforestation,2014,587684,497993,84.7
+Gold Standard,Afforestation/Reforestation,2015,592792,468908,79.1
+Gold Standard,Afforestation/Reforestation,2016,670481,511224,76.2
+Gold Standard,Afforestation/Reforestation,2017,589867,523939,88.8
+Gold Standard,Afforestation/Reforestation,2018,681941,542339,79.5
+Gold Standard,Afforestation/Reforestation,2019,848644,601059,70.8
+Gold Standard,Afforestation/Reforestation,2020,881428,409757,46.5
+Gold Standard,Afforestation/Reforestation,2021,825765,167859,20.3
+Gold Standard,Afforestation/Reforestation,2022,658379,258140,39.2
+Gold Standard,Afforestation/Reforestation,2023,398445,40476,10.2
+Gold Standard,Afforestation/Reforestation,2024,175250,237,0.1
+Gold Standard,Bioenergy,2006,229473,153521,66.9
+Gold Standard,Bioenergy,2007,253341,137641,54.3
+Gold Standard,Bioenergy,2008,11852,0,0.0
+Gold Standard,Bioenergy,2009,25889,13621,52.6
+Gold Standard,Bioenergy,2010,42250,31291,74.1
+Gold Standard,Bioenergy,2011,92444,69754,75.5
+Gold Standard,Bioenergy,2012,406967,237762,58.4
+Gold Standard,Bioenergy,2013,566963,472211,83.3
+Gold Standard,Bioenergy,2014,1150563,746188,64.9
+Gold Standard,Bioenergy,2015,1510596,902960,59.8
+Gold Standard,Bioenergy,2016,1588542,890826,56.1
+Gold Standard,Bioenergy,2017,1937864,1105195,57.0
+Gold Standard,Bioenergy,2018,2064742,1071329,51.9
+Gold Standard,Bioenergy,2019,2524271,1227985,48.6
+Gold Standard,Bioenergy,2020,2626894,1103431,42.0
+Gold Standard,Bioenergy,2021,4695347,2388698,50.9
+Gold Standard,Bioenergy,2022,6337933,1520417,24.0
+Gold Standard,Bioenergy,2023,7688658,1355525,17.6
+Gold Standard,Bioenergy,2024,7042595,365440,5.2
+Gold Standard,Bioenergy,2025,1156746,65953,5.7
+Gold Standard,Cleaner cooking,2007,5821,5821,100.0
+Gold Standard,Cleaner cooking,2008,64277,62944,97.9
+Gold Standard,Cleaner cooking,2009,233743,233743,100.0
+Gold Standard,Cleaner cooking,2010,707418,705416,99.7
+Gold Standard,Cleaner cooking,2011,3103401,3086878,99.5
+Gold Standard,Cleaner cooking,2012,3999017,3984872,99.6
+Gold Standard,Cleaner cooking,2013,4263763,4154223,97.4
+Gold Standard,Cleaner cooking,2014,4251925,4170058,98.1
+Gold Standard,Cleaner cooking,2015,4452288,4375274,98.3
+Gold Standard,Cleaner cooking,2016,4309687,4258014,98.8
+Gold Standard,Cleaner cooking,2017,4529805,4297021,94.9
+Gold Standard,Cleaner cooking,2018,4368180,3685762,84.4
+Gold Standard,Cleaner cooking,2019,5146402,4390632,85.3
+Gold Standard,Cleaner cooking,2020,5358789,4218545,78.7
+Gold Standard,Cleaner cooking,2021,6601249,3851164,58.3
+Gold Standard,Cleaner cooking,2022,8237599,3465586,42.1
+Gold Standard,Cleaner cooking,2023,7663380,2412908,31.5
+Gold Standard,Cleaner cooking,2024,4588393,674760,14.7
+Gold Standard,Cleaner cooking,2025,456037,11777,2.6
+Gold Standard,Composting,2013,511,511,100.0
+Gold Standard,Composting,2014,1231,1231,100.0
+Gold Standard,Composting,2015,1565,1562,99.8
+Gold Standard,Composting,2016,1953,1953,100.0
+Gold Standard,Composting,2017,4655,4655,100.0
+Gold Standard,Composting,2018,5946,5678,95.5
+Gold Standard,Composting,2019,13162,12148,92.3
+Gold Standard,Composting,2020,14315,12906,90.2
+Gold Standard,Composting,2021,6153,5872,95.4
+Gold Standard,Composting,2022,5967,5967,100.0
+Gold Standard,Composting,2023,3920,3920,100.0
+Gold Standard,Efficient appliances,2007,14976,14976,100.0
+Gold Standard,Efficient appliances,2008,44045,42147,95.7
+Gold Standard,Efficient appliances,2009,116566,109081,93.6
+Gold Standard,Efficient appliances,2010,237641,232419,97.8
+Gold Standard,Efficient appliances,2011,423761,412895,97.4
+Gold Standard,Efficient appliances,2012,652527,590458,90.5
+Gold Standard,Efficient appliances,2013,916112,736807,80.4
+Gold Standard,Efficient appliances,2014,1198236,1066618,89.0
+Gold Standard,Efficient appliances,2015,1409930,1217906,86.4
+Gold Standard,Efficient appliances,2016,1707251,1475131,86.4
+Gold Standard,Efficient appliances,2017,2503381,2130748,85.1
+Gold Standard,Efficient appliances,2018,3068817,2418572,78.8
+Gold Standard,Efficient appliances,2019,3494072,3023107,86.5
+Gold Standard,Efficient appliances,2020,4873036,3435195,70.5
+Gold Standard,Efficient appliances,2021,14847446,9326744,62.8
+Gold Standard,Efficient appliances,2022,19410163,8321424,42.9
+Gold Standard,Efficient appliances,2023,19262008,6138541,31.9
+Gold Standard,Efficient appliances,2024,13416961,2118583,15.8
+Gold Standard,Efficient appliances,2025,862812,71711,8.3
 Gold Standard,Electric vehicles,2016,45967,0,0.0
 Gold Standard,Electric vehicles,2017,46838,0,0.0
-Gold Standard,Geothermal,2020,170459,1697877,48.8
-Gold Standard,Geothermal,2021,918338,1697877,48.8
-Gold Standard,Geothermal,2022,926726,1697877,48.8
-Gold Standard,Geothermal,2023,915434,1697877,48.8
-Gold Standard,Geothermal,2024,551154,1697877,48.8
+Gold Standard,Geothermal,2020,170459,154637,90.7
+Gold Standard,Geothermal,2021,918338,572726,62.4
+Gold Standard,Geothermal,2022,926726,886912,95.7
+Gold Standard,Geothermal,2023,915434,80403,8.8
+Gold Standard,Geothermal,2024,551154,3199,0.6
 Gold Standard,Heat recovery,2014,59334,25,0.0
-Gold Standard,Hydropower,2007,87,220830,50.4
-Gold Standard,Hydropower,2008,233,220830,50.4
-Gold Standard,Hydropower,2009,314,220830,50.4
-Gold Standard,Hydropower,2010,8793,220830,50.4
-Gold Standard,Hydropower,2011,26375,220830,50.4
-Gold Standard,Hydropower,2012,40690,220830,50.4
-Gold Standard,Hydropower,2013,28431,220830,50.4
-Gold Standard,Hydropower,2014,7232,220830,50.4
-Gold Standard,Hydropower,2015,17430,220830,50.4
-Gold Standard,Hydropower,2016,21121,220830,50.4
-Gold Standard,Hydropower,2017,18559,220830,50.4
-Gold Standard,Hydropower,2018,35143,220830,50.4
-Gold Standard,Hydropower,2019,60378,220830,50.4
-Gold Standard,Hydropower,2020,72951,220830,50.4
-Gold Standard,Hydropower,2021,56026,220830,50.4
-Gold Standard,Hydropower,2022,446,220830,50.4
-Gold Standard,Hydropower,2023,16387,220830,50.4
-Gold Standard,Hydropower,2024,21918,220830,50.4
-Gold Standard,Hydropower,2025,5872,220830,50.4
-Gold Standard,Industrial efficiency,2007,32009,4491760,70.6
-Gold Standard,Industrial efficiency,2008,22938,4491760,70.6
-Gold Standard,Industrial efficiency,2009,66610,4491760,70.6
-Gold Standard,Industrial efficiency,2010,150748,4491760,70.6
-Gold Standard,Industrial efficiency,2011,245176,4491760,70.6
-Gold Standard,Industrial efficiency,2012,297368,4491760,70.6
-Gold Standard,Industrial efficiency,2013,437859,4491760,70.6
-Gold Standard,Industrial efficiency,2014,471334,4491760,70.6
-Gold Standard,Industrial efficiency,2015,582999,4491760,70.6
-Gold Standard,Industrial efficiency,2016,447842,4491760,70.6
-Gold Standard,Industrial efficiency,2017,562760,4491760,70.6
-Gold Standard,Industrial efficiency,2018,676134,4491760,70.6
-Gold Standard,Industrial efficiency,2019,533734,4491760,70.6
-Gold Standard,Industrial efficiency,2020,698285,4491760,70.6
-Gold Standard,Industrial efficiency,2021,474475,4491760,70.6
-Gold Standard,Industrial efficiency,2022,535648,4491760,70.6
-Gold Standard,Industrial efficiency,2023,121480,4491760,70.6
-Gold Standard,Industrial efficiency,2024,628,4491760,70.6
-Gold Standard,Landfill gas,2007,206996,15450567,61.7
-Gold Standard,Landfill gas,2008,489334,15450567,61.7
-Gold Standard,Landfill gas,2009,573147,15450567,61.7
-Gold Standard,Landfill gas,2010,854339,15450567,61.7
-Gold Standard,Landfill gas,2011,1139104,15450567,61.7
-Gold Standard,Landfill gas,2012,2383458,15450567,61.7
-Gold Standard,Landfill gas,2013,3931039,15450567,61.7
-Gold Standard,Landfill gas,2014,3457581,15450567,61.7
-Gold Standard,Landfill gas,2015,2278055,15450567,61.7
-Gold Standard,Landfill gas,2016,2487208,15450567,61.7
-Gold Standard,Landfill gas,2017,438907,15450567,61.7
-Gold Standard,Landfill gas,2018,372156,15450567,61.7
-Gold Standard,Landfill gas,2019,733690,15450567,61.7
-Gold Standard,Landfill gas,2020,1510928,15450567,61.7
-Gold Standard,Landfill gas,2021,1507201,15450567,61.7
-Gold Standard,Landfill gas,2022,1437183,15450567,61.7
-Gold Standard,Landfill gas,2023,987413,15450567,61.7
-Gold Standard,Landfill gas,2024,259734,15450567,61.7
-Gold Standard,Mixed renewables,2001,8560,56745917,41.9
-Gold Standard,Mixed renewables,2002,16362,56745917,41.9
-Gold Standard,Mixed renewables,2003,17606,56745917,41.9
-Gold Standard,Mixed renewables,2006,30517,56745917,41.9
-Gold Standard,Mixed renewables,2007,287339,56745917,41.9
-Gold Standard,Mixed renewables,2008,1468587,56745917,41.9
-Gold Standard,Mixed renewables,2009,1840754,56745917,41.9
-Gold Standard,Mixed renewables,2010,2153536,56745917,41.9
-Gold Standard,Mixed renewables,2011,2794785,56745917,41.9
-Gold Standard,Mixed renewables,2012,3070898,56745917,41.9
-Gold Standard,Mixed renewables,2013,4206388,56745917,41.9
-Gold Standard,Mixed renewables,2014,5550464,56745917,41.9
-Gold Standard,Mixed renewables,2015,6364444,56745917,41.9
-Gold Standard,Mixed renewables,2016,7177022,56745917,41.9
-Gold Standard,Mixed renewables,2017,8031423,56745917,41.9
-Gold Standard,Mixed renewables,2018,10342427,56745917,41.9
-Gold Standard,Mixed renewables,2019,14043965,56745917,41.9
-Gold Standard,Mixed renewables,2020,16846906,56745917,41.9
-Gold Standard,Mixed renewables,2021,15666564,56745917,41.9
-Gold Standard,Mixed renewables,2022,18269099,56745917,41.9
-Gold Standard,Mixed renewables,2023,12401899,56745917,41.9
-Gold Standard,Mixed renewables,2024,4001973,56745917,41.9
-Gold Standard,Mixed renewables,2025,697568,56745917,41.9
-Gold Standard,Soil & Livestock,2012,3588,4862408,64.6
-Gold Standard,Soil & Livestock,2013,11089,4862408,64.6
-Gold Standard,Soil & Livestock,2014,13772,4862408,64.6
-Gold Standard,Soil & Livestock,2015,20768,4862408,64.6
-Gold Standard,Soil & Livestock,2017,64379,4862408,64.6
-Gold Standard,Soil & Livestock,2018,77448,4862408,64.6
-Gold Standard,Soil & Livestock,2019,24143,4862408,64.6
-Gold Standard,Soil & Livestock,2020,419169,4862408,64.6
-Gold Standard,Soil & Livestock,2021,3364712,4862408,64.6
-Gold Standard,Soil & Livestock,2022,2901932,4862408,64.6
-Gold Standard,Soil & Livestock,2023,631494,4862408,64.6
-Gold Standard,Solar,2010,1980,7430714,48.3
-Gold Standard,Solar,2011,10365,7430714,48.3
-Gold Standard,Solar,2012,25250,7430714,48.3
-Gold Standard,Solar,2013,51304,7430714,48.3
-Gold Standard,Solar,2014,65236,7430714,48.3
-Gold Standard,Solar,2015,60885,7430714,48.3
-Gold Standard,Solar,2016,75139,7430714,48.3
-Gold Standard,Solar,2017,49046,7430714,48.3
-Gold Standard,Solar,2018,128895,7430714,48.3
-Gold Standard,Solar,2019,1168847,7430714,48.3
-Gold Standard,Solar,2020,2478321,7430714,48.3
-Gold Standard,Solar,2021,4682362,7430714,48.3
-Gold Standard,Solar,2022,4008514,7430714,48.3
-Gold Standard,Solar,2023,1998216,7430714,48.3
-Gold Standard,Solar,2024,552311,7430714,48.3
-Gold Standard,Solar,2025,16555,7430714,48.3
-Gold Standard,Waste management,2019,281,8219,7.5
-Gold Standard,Waste management,2020,447,8219,7.5
-Gold Standard,Waste management,2021,208,8219,7.5
-Gold Standard,Waste management,2022,44557,8219,7.5
-Gold Standard,Waste management,2023,57168,8219,7.5
-Gold Standard,Waste management,2024,7435,8219,7.5
-Gold Standard,Waste to energy,2008,78680,3212790,64.6
-Gold Standard,Waste to energy,2009,277992,3212790,64.6
-Gold Standard,Waste to energy,2010,352046,3212790,64.6
-Gold Standard,Waste to energy,2011,314681,3212790,64.6
-Gold Standard,Waste to energy,2012,417064,3212790,64.6
-Gold Standard,Waste to energy,2013,383235,3212790,64.6
-Gold Standard,Waste to energy,2014,317570,3212790,64.6
-Gold Standard,Waste to energy,2015,333242,3212790,64.6
-Gold Standard,Waste to energy,2016,274955,3212790,64.6
-Gold Standard,Waste to energy,2017,569730,3212790,64.6
-Gold Standard,Waste to energy,2018,591253,3212790,64.6
-Gold Standard,Waste to energy,2019,458085,3212790,64.6
-Gold Standard,Waste to energy,2020,181823,3212790,64.6
-Gold Standard,Waste to energy,2021,142305,3212790,64.6
-Gold Standard,Waste to energy,2022,177969,3212790,64.6
-Gold Standard,Waste to energy,2023,79104,3212790,64.6
-Gold Standard,Waste to energy,2024,21251,3212790,64.6
-Gold Standard,Wastewater treatment,2009,15272,114712,26.2
-Gold Standard,Wastewater treatment,2010,30247,114712,26.2
-Gold Standard,Wastewater treatment,2011,27698,114712,26.2
-Gold Standard,Wastewater treatment,2014,1892,114712,26.2
-Gold Standard,Wastewater treatment,2016,83770,114712,26.2
-Gold Standard,Wastewater treatment,2017,48306,114712,26.2
-Gold Standard,Wastewater treatment,2018,62980,114712,26.2
-Gold Standard,Wastewater treatment,2019,78200,114712,26.2
-Gold Standard,Wastewater treatment,2020,56069,114712,26.2
-Gold Standard,Wastewater treatment,2021,33352,114712,26.2
-Gold Standard,Water purification,2014,25516,1035398,22.6
-Gold Standard,Water purification,2015,15981,1035398,22.6
-Gold Standard,Water purification,2016,30751,1035398,22.6
-Gold Standard,Water purification,2017,118372,1035398,22.6
-Gold Standard,Water purification,2018,145147,1035398,22.6
-Gold Standard,Water purification,2019,154312,1035398,22.6
-Gold Standard,Water purification,2020,422803,1035398,22.6
-Gold Standard,Water purification,2021,585277,1035398,22.6
-Gold Standard,Water purification,2022,974812,1035398,22.6
-Gold Standard,Water purification,2023,1556718,1035398,22.6
-Gold Standard,Water purification,2024,549856,1035398,22.6
-Gold Standard,Water purification,2025,6257,1035398,22.6
-Gold Standard,Wind,2004,56399,26381827,50.6
-Gold Standard,Wind,2005,183663,26381827,50.6
-Gold Standard,Wind,2006,174375,26381827,50.6
-Gold Standard,Wind,2007,191374,26381827,50.6
-Gold Standard,Wind,2008,68435,26381827,50.6
-Gold Standard,Wind,2009,220211,26381827,50.6
-Gold Standard,Wind,2010,784473,26381827,50.6
-Gold Standard,Wind,2011,1458134,26381827,50.6
-Gold Standard,Wind,2012,1733124,26381827,50.6
-Gold Standard,Wind,2013,1404452,26381827,50.6
-Gold Standard,Wind,2014,1367524,26381827,50.6
-Gold Standard,Wind,2015,2182232,26381827,50.6
-Gold Standard,Wind,2016,2818092,26381827,50.6
-Gold Standard,Wind,2017,2469299,26381827,50.6
-Gold Standard,Wind,2018,2855570,26381827,50.6
-Gold Standard,Wind,2019,3457238,26381827,50.6
-Gold Standard,Wind,2020,4484134,26381827,50.6
-Gold Standard,Wind,2021,6953111,26381827,50.6
-Gold Standard,Wind,2022,8384378,26381827,50.6
-Gold Standard,Wind,2023,6956934,26381827,50.6
-Gold Standard,Wind,2024,3158666,26381827,50.6
-Gold Standard,Wind,2025,801422,26381827,50.6
-Verra,Afforestation/Reforestation,1999,120406,53683475,65.2
-Verra,Afforestation/Reforestation,2001,1223324,53683475,65.2
-Verra,Afforestation/Reforestation,2002,155144,53683475,65.2
-Verra,Afforestation/Reforestation,2003,601059,53683475,65.2
-Verra,Afforestation/Reforestation,2004,463340,53683475,65.2
-Verra,Afforestation/Reforestation,2005,63917,53683475,65.2
-Verra,Afforestation/Reforestation,2006,125658,53683475,65.2
-Verra,Afforestation/Reforestation,2007,443174,53683475,65.2
-Verra,Afforestation/Reforestation,2008,894299,53683475,65.2
-Verra,Afforestation/Reforestation,2009,2659248,53683475,65.2
-Verra,Afforestation/Reforestation,2010,1387762,53683475,65.2
-Verra,Afforestation/Reforestation,2011,3706675,53683475,65.2
-Verra,Afforestation/Reforestation,2012,5216327,53683475,65.2
-Verra,Afforestation/Reforestation,2013,5418475,53683475,65.2
-Verra,Afforestation/Reforestation,2014,7749986,53683475,65.2
-Verra,Afforestation/Reforestation,2015,5107941,53683475,65.2
-Verra,Afforestation/Reforestation,2016,4545035,53683475,65.2
-Verra,Afforestation/Reforestation,2017,7307401,53683475,65.2
-Verra,Afforestation/Reforestation,2018,9347320,53683475,65.2
-Verra,Afforestation/Reforestation,2019,9276474,53683475,65.2
-Verra,Afforestation/Reforestation,2020,8448721,53683475,65.2
-Verra,Afforestation/Reforestation,2021,5696321,53683475,65.2
-Verra,Afforestation/Reforestation,2022,1527463,53683475,65.2
-Verra,Afforestation/Reforestation,2023,721600,53683475,65.2
-Verra,Afforestation/Reforestation,2024,177867,53683475,65.2
-Verra,Biochar,2021,14070,18082,12.6
-Verra,Biochar,2022,14895,18082,12.6
-Verra,Biochar,2023,39919,18082,12.6
-Verra,Biochar,2024,75194,18082,12.6
-Verra,Bioenergy,2001,77699,10329683,45.6
-Verra,Bioenergy,2002,149727,10329683,45.6
-Verra,Bioenergy,2003,165588,10329683,45.6
-Verra,Bioenergy,2004,122354,10329683,45.6
-Verra,Bioenergy,2005,192389,10329683,45.6
-Verra,Bioenergy,2006,484971,10329683,45.6
-Verra,Bioenergy,2007,824022,10329683,45.6
-Verra,Bioenergy,2008,1013908,10329683,45.6
-Verra,Bioenergy,2009,1353891,10329683,45.6
-Verra,Bioenergy,2010,1101598,10329683,45.6
-Verra,Bioenergy,2011,930607,10329683,45.6
-Verra,Bioenergy,2012,766700,10329683,45.6
-Verra,Bioenergy,2013,918121,10329683,45.6
-Verra,Bioenergy,2014,1089941,10329683,45.6
-Verra,Bioenergy,2015,1182862,10329683,45.6
-Verra,Bioenergy,2016,1248869,10329683,45.6
-Verra,Bioenergy,2017,1048071,10329683,45.6
-Verra,Bioenergy,2018,584231,10329683,45.6
-Verra,Bioenergy,2019,572795,10329683,45.6
-Verra,Bioenergy,2020,730657,10329683,45.6
-Verra,Bioenergy,2021,1185003,10329683,45.6
-Verra,Bioenergy,2022,1052513,10329683,45.6
-Verra,Bioenergy,2023,2427533,10329683,45.6
-Verra,Bioenergy,2024,2954703,10329683,45.6
-Verra,Bioenergy,2025,452826,10329683,45.6
-Verra,Composting,2007,8269,391383,89.0
-Verra,Composting,2008,27674,391383,89.0
-Verra,Composting,2009,3406,391383,89.0
-Verra,Composting,2010,3160,391383,89.0
-Verra,Composting,2011,3424,391383,89.0
-Verra,Composting,2012,3014,391383,89.0
-Verra,Composting,2013,7872,391383,89.0
-Verra,Composting,2014,3878,391383,89.0
-Verra,Composting,2015,4439,391383,89.0
-Verra,Composting,2016,4975,391383,89.0
-Verra,Composting,2017,4700,391383,89.0
-Verra,Composting,2018,35819,391383,89.0
-Verra,Composting,2019,85013,391383,89.0
-Verra,Composting,2020,1199,391383,89.0
-Verra,Composting,2021,53362,391383,89.0
-Verra,Composting,2022,82164,391383,89.0
-Verra,Composting,2023,61208,391383,89.0
-Verra,Composting,2024,46104,391383,89.0
-Verra,Efficient appliances,2003,21833,6752699,36.3
-Verra,Efficient appliances,2004,50980,6752699,36.3
-Verra,Efficient appliances,2005,95880,6752699,36.3
-Verra,Efficient appliances,2006,30389,6752699,36.3
-Verra,Efficient appliances,2007,146858,6752699,36.3
-Verra,Efficient appliances,2008,241892,6752699,36.3
-Verra,Efficient appliances,2009,333482,6752699,36.3
-Verra,Efficient appliances,2010,779961,6752699,36.3
-Verra,Efficient appliances,2011,467757,6752699,36.3
-Verra,Efficient appliances,2012,780835,6752699,36.3
-Verra,Efficient appliances,2013,598909,6752699,36.3
-Verra,Efficient appliances,2014,394359,6752699,36.3
-Verra,Efficient appliances,2015,1049191,6752699,36.3
-Verra,Efficient appliances,2016,399949,6752699,36.3
-Verra,Efficient appliances,2017,290224,6752699,36.3
-Verra,Efficient appliances,2018,223609,6752699,36.3
-Verra,Efficient appliances,2019,472248,6752699,36.3
-Verra,Efficient appliances,2020,943309,6752699,36.3
-Verra,Efficient appliances,2021,3297414,6752699,36.3
-Verra,Efficient appliances,2022,4610084,6752699,36.3
-Verra,Efficient appliances,2023,2451686,6752699,36.3
-Verra,Efficient appliances,2024,915501,6752699,36.3
-Verra,Electric vehicles,2016,18,13410,4.5
-Verra,Electric vehicles,2017,115,13410,4.5
-Verra,Electric vehicles,2018,251,13410,4.5
-Verra,Electric vehicles,2019,1829,13410,4.5
-Verra,Electric vehicles,2020,5606,13410,4.5
-Verra,Electric vehicles,2021,63413,13410,4.5
-Verra,Electric vehicles,2022,188264,13410,4.5
-Verra,Electric vehicles,2023,37090,13410,4.5
-Verra,Electric vehicles,2024,2050,13410,4.5
-Verra,Forest management,2002,1660260,217030011,67.1
-Verra,Forest management,2003,550646,217030011,67.1
-Verra,Forest management,2004,211840,217030011,67.1
-Verra,Forest management,2005,983193,217030011,67.1
-Verra,Forest management,2006,450748,217030011,67.1
-Verra,Forest management,2007,8381190,217030011,67.1
-Verra,Forest management,2008,8747357,217030011,67.1
-Verra,Forest management,2009,8617291,217030011,67.1
-Verra,Forest management,2010,21230181,217030011,67.1
-Verra,Forest management,2011,3980588,217030011,67.1
-Verra,Forest management,2012,12716302,217030011,67.1
-Verra,Forest management,2013,23058356,217030011,67.1
-Verra,Forest management,2014,27618151,217030011,67.1
-Verra,Forest management,2015,26498467,217030011,67.1
-Verra,Forest management,2016,33954888,217030011,67.1
-Verra,Forest management,2017,31767410,217030011,67.1
-Verra,Forest management,2018,26343235,217030011,67.1
-Verra,Forest management,2019,33343923,217030011,67.1
-Verra,Forest management,2020,29072421,217030011,67.1
-Verra,Forest management,2021,11649418,217030011,67.1
-Verra,Forest management,2022,7962591,217030011,67.1
-Verra,Forest management,2023,4263710,217030011,67.1
-Verra,Forest management,2024,581681,217030011,67.1
-Verra,Fossil gas leaks,2000,10167,19109250,36.7
-Verra,Fossil gas leaks,2001,105494,19109250,36.7
-Verra,Fossil gas leaks,2002,1483155,19109250,36.7
-Verra,Fossil gas leaks,2003,609755,19109250,36.7
-Verra,Fossil gas leaks,2004,125847,19109250,36.7
-Verra,Fossil gas leaks,2005,107074,19109250,36.7
-Verra,Fossil gas leaks,2006,462923,19109250,36.7
-Verra,Fossil gas leaks,2007,1189141,19109250,36.7
-Verra,Fossil gas leaks,2008,484300,19109250,36.7
-Verra,Fossil gas leaks,2009,181087,19109250,36.7
-Verra,Fossil gas leaks,2010,413482,19109250,36.7
-Verra,Fossil gas leaks,2011,337944,19109250,36.7
-Verra,Fossil gas leaks,2012,323423,19109250,36.7
-Verra,Fossil gas leaks,2013,445325,19109250,36.7
-Verra,Fossil gas leaks,2014,504997,19109250,36.7
-Verra,Fossil gas leaks,2015,358566,19109250,36.7
-Verra,Fossil gas leaks,2016,650813,19109250,36.7
-Verra,Fossil gas leaks,2017,2137119,19109250,36.7
-Verra,Fossil gas leaks,2018,4330174,19109250,36.7
-Verra,Fossil gas leaks,2019,5880625,19109250,36.7
-Verra,Fossil gas leaks,2020,3583975,19109250,36.7
-Verra,Fossil gas leaks,2021,9472541,19109250,36.7
-Verra,Fossil gas leaks,2022,9799184,19109250,36.7
-Verra,Fossil gas leaks,2023,3831158,19109250,36.7
-Verra,Fossil gas leaks,2024,5064914,19109250,36.7
-Verra,Fossil gas leaks,2025,118365,19109250,36.7
-Verra,Heat recovery,2006,17919,298188,78.5
-Verra,Heat recovery,2007,23289,298188,78.5
-Verra,Heat recovery,2008,24070,298188,78.5
-Verra,Heat recovery,2009,15822,298188,78.5
-Verra,Heat recovery,2010,54958,298188,78.5
-Verra,Heat recovery,2011,64808,298188,78.5
-Verra,Heat recovery,2012,63879,298188,78.5
-Verra,Heat recovery,2013,64294,298188,78.5
-Verra,Heat recovery,2014,50639,298188,78.5
-Verra,Hydropower,2004,138647,16589213,72.5
-Verra,Hydropower,2005,111370,16589213,72.5
-Verra,Hydropower,2006,724896,16589213,72.5
-Verra,Hydropower,2007,1941192,16589213,72.5
-Verra,Hydropower,2008,2147212,16589213,72.5
-Verra,Hydropower,2009,2562900,16589213,72.5
-Verra,Hydropower,2010,2873268,16589213,72.5
-Verra,Hydropower,2011,4104602,16589213,72.5
-Verra,Hydropower,2012,2801666,16589213,72.5
-Verra,Hydropower,2013,441614,16589213,72.5
-Verra,Hydropower,2014,510341,16589213,72.5
-Verra,Hydropower,2015,544235,16589213,72.5
-Verra,Hydropower,2016,561612,16589213,72.5
-Verra,Hydropower,2017,234116,16589213,72.5
-Verra,Hydropower,2018,214970,16589213,72.5
-Verra,Hydropower,2019,256870,16589213,72.5
-Verra,Hydropower,2020,552305,16589213,72.5
-Verra,Hydropower,2021,1135416,16589213,72.5
-Verra,Hydropower,2022,979160,16589213,72.5
-Verra,Hydropower,2023,50245,16589213,72.5
-Verra,Industrial efficiency,2002,93294,16975895,72.5
-Verra,Industrial efficiency,2003,582436,16975895,72.5
-Verra,Industrial efficiency,2004,264610,16975895,72.5
-Verra,Industrial efficiency,2005,113599,16975895,72.5
-Verra,Industrial efficiency,2006,1447520,16975895,72.5
-Verra,Industrial efficiency,2007,2665682,16975895,72.5
-Verra,Industrial efficiency,2008,5801753,16975895,72.5
-Verra,Industrial efficiency,2009,1275981,16975895,72.5
-Verra,Industrial efficiency,2010,930113,16975895,72.5
-Verra,Industrial efficiency,2011,993462,16975895,72.5
-Verra,Industrial efficiency,2012,1127752,16975895,72.5
-Verra,Industrial efficiency,2013,620811,16975895,72.5
-Verra,Industrial efficiency,2014,1018124,16975895,72.5
-Verra,Industrial efficiency,2015,694896,16975895,72.5
-Verra,Industrial efficiency,2016,840873,16975895,72.5
-Verra,Industrial efficiency,2017,533588,16975895,72.5
-Verra,Industrial efficiency,2018,444020,16975895,72.5
-Verra,Industrial efficiency,2019,596044,16975895,72.5
-Verra,Industrial efficiency,2020,849411,16975895,72.5
-Verra,Industrial efficiency,2021,961400,16975895,72.5
-Verra,Industrial efficiency,2022,915967,16975895,72.5
-Verra,Industrial efficiency,2023,500238,16975895,72.5
-Verra,Industrial efficiency,2024,141066,16975895,72.5
-Verra,Landfill gas,2001,1516054,17281979,52.8
-Verra,Landfill gas,2005,3240,17281979,52.8
-Verra,Landfill gas,2006,235360,17281979,52.8
-Verra,Landfill gas,2007,594992,17281979,52.8
-Verra,Landfill gas,2008,479742,17281979,52.8
-Verra,Landfill gas,2009,953823,17281979,52.8
-Verra,Landfill gas,2010,1279499,17281979,52.8
-Verra,Landfill gas,2011,1251862,17281979,52.8
-Verra,Landfill gas,2012,1002110,17281979,52.8
-Verra,Landfill gas,2013,551878,17281979,52.8
-Verra,Landfill gas,2014,674490,17281979,52.8
-Verra,Landfill gas,2015,637699,17281979,52.8
-Verra,Landfill gas,2016,791132,17281979,52.8
-Verra,Landfill gas,2017,2181912,17281979,52.8
-Verra,Landfill gas,2018,611995,17281979,52.8
-Verra,Landfill gas,2019,1621331,17281979,52.8
-Verra,Landfill gas,2020,3251763,17281979,52.8
-Verra,Landfill gas,2021,5296668,17281979,52.8
-Verra,Landfill gas,2022,6744535,17281979,52.8
-Verra,Landfill gas,2023,2340773,17281979,52.8
-Verra,Landfill gas,2024,733795,17281979,52.8
-Verra,Landfill gas,2025,1502,17281979,52.8
-Verra,Mixed renewables,2001,126608,386604031,61.0
-Verra,Mixed renewables,2002,256106,386604031,61.0
-Verra,Mixed renewables,2003,262477,386604031,61.0
-Verra,Mixed renewables,2004,591270,386604031,61.0
-Verra,Mixed renewables,2005,874080,386604031,61.0
-Verra,Mixed renewables,2006,7240014,386604031,61.0
-Verra,Mixed renewables,2007,16378813,386604031,61.0
-Verra,Mixed renewables,2008,23365046,386604031,61.0
-Verra,Mixed renewables,2009,20902849,386604031,61.0
-Verra,Mixed renewables,2010,24184626,386604031,61.0
-Verra,Mixed renewables,2011,24012039,386604031,61.0
-Verra,Mixed renewables,2012,25338400,386604031,61.0
-Verra,Mixed renewables,2013,26083024,386604031,61.0
-Verra,Mixed renewables,2014,31361791,386604031,61.0
-Verra,Mixed renewables,2015,33397231,386604031,61.0
-Verra,Mixed renewables,2016,36672211,386604031,61.0
-Verra,Mixed renewables,2017,43539552,386604031,61.0
-Verra,Mixed renewables,2018,53178895,386604031,61.0
-Verra,Mixed renewables,2019,57659161,386604031,61.0
-Verra,Mixed renewables,2020,53177049,386604031,61.0
-Verra,Mixed renewables,2021,48526254,386604031,61.0
-Verra,Mixed renewables,2022,48627297,386604031,61.0
-Verra,Mixed renewables,2023,35415287,386604031,61.0
-Verra,Mixed renewables,2024,19111749,386604031,61.0
-Verra,Mixed renewables,2025,3224451,386604031,61.0
-Verra,Public transit,2012,936,21730,43.0
-Verra,Public transit,2013,12638,21730,43.0
-Verra,Public transit,2015,5208,21730,43.0
-Verra,Public transit,2016,8924,21730,43.0
-Verra,Public transit,2017,3983,21730,43.0
-Verra,Public transit,2018,9618,21730,43.0
-Verra,Public transit,2019,2122,21730,43.0
-Verra,Public transit,2020,116,21730,43.0
-Verra,Public transit,2021,4072,21730,43.0
-Verra,Public transit,2022,2933,21730,43.0
-Verra,Reforestation and ecosystem restoration,2015,8843,3336310,68.0
-Verra,Reforestation and ecosystem restoration,2016,17165,3336310,68.0
-Verra,Reforestation and ecosystem restoration,2017,116871,3336310,68.0
-Verra,Reforestation and ecosystem restoration,2018,242196,3336310,68.0
-Verra,Reforestation and ecosystem restoration,2019,350126,3336310,68.0
-Verra,Reforestation and ecosystem restoration,2020,924847,3336310,68.0
-Verra,Reforestation and ecosystem restoration,2021,1777510,3336310,68.0
-Verra,Reforestation and ecosystem restoration,2022,1260523,3336310,68.0
-Verra,Reforestation and ecosystem restoration,2023,206902,3336310,68.0
-Verra,Rewilding,2013,3210579,4483549,33.0
-Verra,Rewilding,2016,301364,4483549,33.0
-Verra,Rewilding,2017,4406537,4483549,33.0
-Verra,Rewilding,2018,1315364,4483549,33.0
-Verra,Rewilding,2019,1502212,4483549,33.0
-Verra,Rewilding,2020,1560057,4483549,33.0
-Verra,Rewilding,2021,1113185,4483549,33.0
-Verra,Rewilding,2022,179609,4483549,33.0
-Verra,Rice cultivation,2018,1260000,3353512,73.5
-Verra,Rice cultivation,2019,1200000,3353512,73.5
-Verra,Rice cultivation,2020,1320000,3353512,73.5
-Verra,Rice cultivation,2021,780000,3353512,73.5
-Verra,Soil & Livestock,2000,2189,123338637,62.6
-Verra,Soil & Livestock,2001,93534,123338637,62.6
-Verra,Soil & Livestock,2002,1057440,123338637,62.6
-Verra,Soil & Livestock,2003,789660,123338637,62.6
-Verra,Soil & Livestock,2004,444400,123338637,62.6
-Verra,Soil & Livestock,2005,699085,123338637,62.6
-Verra,Soil & Livestock,2006,1011249,123338637,62.6
-Verra,Soil & Livestock,2007,836742,123338637,62.6
-Verra,Soil & Livestock,2008,335556,123338637,62.6
-Verra,Soil & Livestock,2009,1435800,123338637,62.6
-Verra,Soil & Livestock,2010,3854774,123338637,62.6
-Verra,Soil & Livestock,2011,8131222,123338637,62.6
-Verra,Soil & Livestock,2012,10439318,123338637,62.6
-Verra,Soil & Livestock,2013,12134579,123338637,62.6
-Verra,Soil & Livestock,2014,11024198,123338637,62.6
-Verra,Soil & Livestock,2015,17020630,123338637,62.6
-Verra,Soil & Livestock,2016,17380555,123338637,62.6
-Verra,Soil & Livestock,2017,21660218,123338637,62.6
-Verra,Soil & Livestock,2018,21435105,123338637,62.6
-Verra,Soil & Livestock,2019,18694304,123338637,62.6
-Verra,Soil & Livestock,2020,17299019,123338637,62.6
-Verra,Soil & Livestock,2021,14105218,123338637,62.6
-Verra,Soil & Livestock,2022,11222562,123338637,62.6
-Verra,Soil & Livestock,2023,5430673,123338637,62.6
-Verra,Soil & Livestock,2024,484051,123338637,62.6
-Verra,Solar,2005,8208,2179124,72.1
-Verra,Solar,2006,186698,2179124,72.1
-Verra,Solar,2007,45062,2179124,72.1
-Verra,Solar,2008,90265,2179124,72.1
-Verra,Solar,2009,44642,2179124,72.1
-Verra,Solar,2010,99302,2179124,72.1
-Verra,Solar,2012,84825,2179124,72.1
-Verra,Solar,2013,79750,2179124,72.1
-Verra,Solar,2014,56903,2179124,72.1
-Verra,Solar,2015,186857,2179124,72.1
-Verra,Solar,2016,311085,2179124,72.1
-Verra,Solar,2017,339631,2179124,72.1
-Verra,Solar,2018,313929,2179124,72.1
-Verra,Solar,2019,47882,2179124,72.1
-Verra,Solar,2020,141604,2179124,72.1
-Verra,Solar,2021,344585,2179124,72.1
-Verra,Solar,2022,363738,2179124,72.1
-Verra,Solar,2023,170356,2179124,72.1
-Verra,Solar,2024,99490,2179124,72.1
-Verra,Solar,2025,6390,2179124,72.1
-Verra,Waste management,2008,323595,6966712,53.4
-Verra,Waste management,2009,339719,6966712,53.4
-Verra,Waste management,2010,457838,6966712,53.4
-Verra,Waste management,2011,458596,6966712,53.4
-Verra,Waste management,2012,457878,6966712,53.4
-Verra,Waste management,2013,436573,6966712,53.4
-Verra,Waste management,2014,564855,6966712,53.4
-Verra,Waste management,2015,482416,6966712,53.4
-Verra,Waste management,2016,1065221,6966712,53.4
-Verra,Waste management,2017,827924,6966712,53.4
-Verra,Waste management,2018,979584,6966712,53.4
-Verra,Waste management,2019,1389818,6966712,53.4
-Verra,Waste management,2020,1561215,6966712,53.4
-Verra,Waste management,2021,1482737,6966712,53.4
-Verra,Waste management,2022,954277,6966712,53.4
-Verra,Waste management,2023,652945,6966712,53.4
-Verra,Waste management,2024,617832,6966712,53.4
-Verra,Waste to energy,2004,53775,18943085,69.6
-Verra,Waste to energy,2005,309307,18943085,69.6
-Verra,Waste to energy,2006,279702,18943085,69.6
-Verra,Waste to energy,2007,543075,18943085,69.6
-Verra,Waste to energy,2008,467106,18943085,69.6
-Verra,Waste to energy,2009,336453,18943085,69.6
-Verra,Waste to energy,2010,894444,18943085,69.6
-Verra,Waste to energy,2011,2028491,18943085,69.6
-Verra,Waste to energy,2012,2295021,18943085,69.6
-Verra,Waste to energy,2013,2449474,18943085,69.6
-Verra,Waste to energy,2014,3209894,18943085,69.6
-Verra,Waste to energy,2015,3146675,18943085,69.6
-Verra,Waste to energy,2016,3030111,18943085,69.6
-Verra,Waste to energy,2017,3130142,18943085,69.6
-Verra,Waste to energy,2018,3275760,18943085,69.6
-Verra,Waste to energy,2019,238467,18943085,69.6
-Verra,Waste to energy,2020,694147,18943085,69.6
-Verra,Waste to energy,2021,266143,18943085,69.6
-Verra,Waste to energy,2022,368537,18943085,69.6
-Verra,Waste to energy,2023,164462,18943085,69.6
-Verra,Waste to energy,2024,51238,18943085,69.6
-Verra,Wastewater treatment,2006,88010,274489,75.9
-Verra,Wastewater treatment,2007,106208,274489,75.9
-Verra,Wastewater treatment,2008,49839,274489,75.9
-Verra,Wastewater treatment,2010,7442,274489,75.9
-Verra,Wastewater treatment,2011,22357,274489,75.9
-Verra,Wastewater treatment,2012,22091,274489,75.9
-Verra,Wastewater treatment,2013,18784,274489,75.9
-Verra,Wastewater treatment,2014,21448,274489,75.9
-Verra,Wastewater treatment,2015,20002,274489,75.9
-Verra,Wastewater treatment,2016,5291,274489,75.9
-Verra,Wind,2013,1601,255643,83.7
-Verra,Wind,2014,19299,255643,83.7
-Verra,Wind,2015,37852,255643,83.7
-Verra,Wind,2016,61411,255643,83.7
-Verra,Wind,2017,81648,255643,83.7
-Verra,Wind,2018,103596,255643,83.7
+Gold Standard,Hydropower,2007,87,87,100.0
+Gold Standard,Hydropower,2008,233,233,100.0
+Gold Standard,Hydropower,2009,314,314,100.0
+Gold Standard,Hydropower,2010,8793,8793,100.0
+Gold Standard,Hydropower,2011,26375,26051,98.8
+Gold Standard,Hydropower,2012,40690,40690,100.0
+Gold Standard,Hydropower,2013,28431,28431,100.0
+Gold Standard,Hydropower,2014,7232,7232,100.0
+Gold Standard,Hydropower,2015,17430,17430,100.0
+Gold Standard,Hydropower,2016,21121,21121,100.0
+Gold Standard,Hydropower,2017,18559,18559,100.0
+Gold Standard,Hydropower,2018,35143,30461,86.7
+Gold Standard,Hydropower,2019,60378,5048,8.4
+Gold Standard,Hydropower,2020,72951,12055,16.5
+Gold Standard,Hydropower,2021,56026,4325,7.7
+Gold Standard,Hydropower,2022,446,0,0.0
+Gold Standard,Hydropower,2023,16387,0,0.0
+Gold Standard,Hydropower,2024,21918,0,0.0
+Gold Standard,Hydropower,2025,5872,0,0.0
+Gold Standard,Industrial efficiency,2007,32009,31831,99.4
+Gold Standard,Industrial efficiency,2008,22938,22938,100.0
+Gold Standard,Industrial efficiency,2009,66610,66466,99.8
+Gold Standard,Industrial efficiency,2010,150748,150748,100.0
+Gold Standard,Industrial efficiency,2011,245176,244796,99.8
+Gold Standard,Industrial efficiency,2012,297368,296763,99.8
+Gold Standard,Industrial efficiency,2013,437859,409136,93.4
+Gold Standard,Industrial efficiency,2014,471334,421733,89.5
+Gold Standard,Industrial efficiency,2015,582999,485402,83.3
+Gold Standard,Industrial efficiency,2016,447842,313702,70.0
+Gold Standard,Industrial efficiency,2017,562760,330318,58.7
+Gold Standard,Industrial efficiency,2018,676134,386463,57.2
+Gold Standard,Industrial efficiency,2019,533734,220529,41.3
+Gold Standard,Industrial efficiency,2020,698285,311063,44.5
+Gold Standard,Industrial efficiency,2021,474475,239264,50.4
+Gold Standard,Industrial efficiency,2022,535648,438722,81.9
+Gold Standard,Industrial efficiency,2023,121480,121259,99.8
+Gold Standard,Industrial efficiency,2024,628,627,99.8
+Gold Standard,Landfill gas,2007,206996,205712,99.4
+Gold Standard,Landfill gas,2008,489334,477607,97.6
+Gold Standard,Landfill gas,2009,573147,544209,95.0
+Gold Standard,Landfill gas,2010,854339,814123,95.3
+Gold Standard,Landfill gas,2011,1139104,1055546,92.7
+Gold Standard,Landfill gas,2012,2383458,1583793,66.4
+Gold Standard,Landfill gas,2013,3931039,2744161,69.8
+Gold Standard,Landfill gas,2014,3457581,2360329,68.3
+Gold Standard,Landfill gas,2015,2278055,1637006,71.9
+Gold Standard,Landfill gas,2016,2487208,1900645,76.4
+Gold Standard,Landfill gas,2017,438907,312714,71.2
+Gold Standard,Landfill gas,2018,372156,233358,62.7
+Gold Standard,Landfill gas,2019,733690,278536,38.0
+Gold Standard,Landfill gas,2020,1510928,362624,24.0
+Gold Standard,Landfill gas,2021,1507201,477970,31.7
+Gold Standard,Landfill gas,2022,1437183,348011,24.2
+Gold Standard,Landfill gas,2023,987413,90223,9.1
+Gold Standard,Landfill gas,2024,259734,24000,9.2
+Gold Standard,Mixed renewables,2001,8560,0,0.0
+Gold Standard,Mixed renewables,2002,16362,0,0.0
+Gold Standard,Mixed renewables,2003,17606,0,0.0
+Gold Standard,Mixed renewables,2006,30517,0,0.0
+Gold Standard,Mixed renewables,2007,287339,186289,64.8
+Gold Standard,Mixed renewables,2008,1468587,948812,64.6
+Gold Standard,Mixed renewables,2009,1840754,1152443,62.6
+Gold Standard,Mixed renewables,2010,2153536,1421019,66.0
+Gold Standard,Mixed renewables,2011,2794785,2104312,75.3
+Gold Standard,Mixed renewables,2012,3070898,2176742,70.9
+Gold Standard,Mixed renewables,2013,4206388,2317999,55.1
+Gold Standard,Mixed renewables,2014,5550464,3074766,55.4
+Gold Standard,Mixed renewables,2015,6364444,3686341,57.9
+Gold Standard,Mixed renewables,2016,7177022,4514066,62.9
+Gold Standard,Mixed renewables,2017,8031423,4882702,60.8
+Gold Standard,Mixed renewables,2018,10342427,5205664,50.3
+Gold Standard,Mixed renewables,2019,14043965,7848904,55.9
+Gold Standard,Mixed renewables,2020,16846906,8331902,49.5
+Gold Standard,Mixed renewables,2021,15666564,4169117,26.6
+Gold Standard,Mixed renewables,2022,18269099,2788921,15.3
+Gold Standard,Mixed renewables,2023,12401899,1705528,13.8
+Gold Standard,Mixed renewables,2024,4001973,214193,5.4
+Gold Standard,Mixed renewables,2025,697568,16197,2.3
+Gold Standard,Soil & Livestock,2012,3588,3588,100.0
+Gold Standard,Soil & Livestock,2013,11089,11089,100.0
+Gold Standard,Soil & Livestock,2014,13772,13772,100.0
+Gold Standard,Soil & Livestock,2015,20768,20674,99.5
+Gold Standard,Soil & Livestock,2017,64379,64164,99.7
+Gold Standard,Soil & Livestock,2018,77448,77448,100.0
+Gold Standard,Soil & Livestock,2019,24143,23661,98.0
+Gold Standard,Soil & Livestock,2020,419169,250796,59.8
+Gold Standard,Soil & Livestock,2021,3364712,2224830,66.1
+Gold Standard,Soil & Livestock,2022,2901932,1955576,67.4
+Gold Standard,Soil & Livestock,2023,631494,216810,34.3
+Gold Standard,Solar,2010,1980,1980,100.0
+Gold Standard,Solar,2011,10365,10365,100.0
+Gold Standard,Solar,2012,25250,25121,99.5
+Gold Standard,Solar,2013,51304,29513,57.5
+Gold Standard,Solar,2014,65236,30436,46.7
+Gold Standard,Solar,2015,60885,19772,32.5
+Gold Standard,Solar,2016,75139,16987,22.6
+Gold Standard,Solar,2017,49046,21045,42.9
+Gold Standard,Solar,2018,128895,81178,63.0
+Gold Standard,Solar,2019,1168847,1079606,92.4
+Gold Standard,Solar,2020,2478321,2072163,83.6
+Gold Standard,Solar,2021,4682362,2175919,46.5
+Gold Standard,Solar,2022,4008514,1237054,30.9
+Gold Standard,Solar,2023,1998216,593989,29.7
+Gold Standard,Solar,2024,552311,33920,6.1
+Gold Standard,Solar,2025,16555,1666,10.1
+Gold Standard,Waste management,2019,281,281,100.0
+Gold Standard,Waste management,2020,447,447,100.0
+Gold Standard,Waste management,2021,208,50,24.0
+Gold Standard,Waste management,2022,44557,3141,7.0
+Gold Standard,Waste management,2023,57168,4300,7.5
+Gold Standard,Waste management,2024,7435,0,0.0
+Gold Standard,Waste to energy,2008,78680,78680,100.0
+Gold Standard,Waste to energy,2009,277992,277992,100.0
+Gold Standard,Waste to energy,2010,352046,347691,98.8
+Gold Standard,Waste to energy,2011,314681,310447,98.7
+Gold Standard,Waste to energy,2012,417064,396168,95.0
+Gold Standard,Waste to energy,2013,383235,287819,75.1
+Gold Standard,Waste to energy,2014,317570,151800,47.8
+Gold Standard,Waste to energy,2015,333242,182904,54.9
+Gold Standard,Waste to energy,2016,274955,140643,51.2
+Gold Standard,Waste to energy,2017,569730,367108,64.4
+Gold Standard,Waste to energy,2018,591253,369565,62.5
+Gold Standard,Waste to energy,2019,458085,182481,39.8
+Gold Standard,Waste to energy,2020,181823,71587,39.4
+Gold Standard,Waste to energy,2021,142305,349,0.2
+Gold Standard,Waste to energy,2022,177969,32624,18.3
+Gold Standard,Waste to energy,2023,79104,14932,18.9
+Gold Standard,Waste to energy,2024,21251,0,0.0
+Gold Standard,Wastewater treatment,2009,15272,0,0.0
+Gold Standard,Wastewater treatment,2010,30247,0,0.0
+Gold Standard,Wastewater treatment,2011,27698,0,0.0
+Gold Standard,Wastewater treatment,2014,1892,0,0.0
+Gold Standard,Wastewater treatment,2016,83770,83770,100.0
+Gold Standard,Wastewater treatment,2017,48306,9416,19.5
+Gold Standard,Wastewater treatment,2018,62980,1800,2.9
+Gold Standard,Wastewater treatment,2019,78200,19726,25.2
+Gold Standard,Wastewater treatment,2020,56069,0,0.0
+Gold Standard,Wastewater treatment,2021,33352,0,0.0
+Gold Standard,Water purification,2014,25516,2877,11.3
+Gold Standard,Water purification,2015,15981,10209,63.9
+Gold Standard,Water purification,2016,30751,30751,100.0
+Gold Standard,Water purification,2017,118372,118372,100.0
+Gold Standard,Water purification,2018,145147,135057,93.0
+Gold Standard,Water purification,2019,154312,110065,71.3
+Gold Standard,Water purification,2020,422803,219092,51.8
+Gold Standard,Water purification,2021,585277,181076,30.9
+Gold Standard,Water purification,2022,974812,174736,17.9
+Gold Standard,Water purification,2023,1556718,53163,3.4
+Gold Standard,Water purification,2024,549856,0,0.0
+Gold Standard,Water purification,2025,6257,0,0.0
+Gold Standard,Wind,2004,56399,56399,100.0
+Gold Standard,Wind,2005,183663,183663,100.0
+Gold Standard,Wind,2006,174375,174365,100.0
+Gold Standard,Wind,2007,191374,191027,99.8
+Gold Standard,Wind,2008,68435,68435,100.0
+Gold Standard,Wind,2009,220211,217398,98.7
+Gold Standard,Wind,2010,784473,782331,99.7
+Gold Standard,Wind,2011,1458134,1429913,98.1
+Gold Standard,Wind,2012,1733124,1591859,91.8
+Gold Standard,Wind,2013,1404452,1389565,98.9
+Gold Standard,Wind,2014,1367524,1147787,83.9
+Gold Standard,Wind,2015,2182232,1869728,85.7
+Gold Standard,Wind,2016,2818092,2415908,85.7
+Gold Standard,Wind,2017,2469299,2007403,81.3
+Gold Standard,Wind,2018,2855570,2311216,80.9
+Gold Standard,Wind,2019,3457238,2359868,68.3
+Gold Standard,Wind,2020,4484134,2339747,52.2
+Gold Standard,Wind,2021,6953111,2965700,42.7
+Gold Standard,Wind,2022,8384378,2040478,24.3
+Gold Standard,Wind,2023,6956934,599347,8.6
+Gold Standard,Wind,2024,3158666,239363,7.6
+Gold Standard,Wind,2025,801422,327,0.0
+Verra,Afforestation/Reforestation,1999,120406,115920,96.3
+Verra,Afforestation/Reforestation,2001,1223324,1004366,82.1
+Verra,Afforestation/Reforestation,2002,155144,155140,100.0
+Verra,Afforestation/Reforestation,2003,601059,577429,96.1
+Verra,Afforestation/Reforestation,2004,463340,451977,97.5
+Verra,Afforestation/Reforestation,2005,63917,51389,80.4
+Verra,Afforestation/Reforestation,2006,125658,107749,85.7
+Verra,Afforestation/Reforestation,2007,443174,376702,85.0
+Verra,Afforestation/Reforestation,2008,894299,313796,35.1
+Verra,Afforestation/Reforestation,2009,2659248,2255153,84.8
+Verra,Afforestation/Reforestation,2010,1387762,1184408,85.3
+Verra,Afforestation/Reforestation,2011,3706675,3333586,89.9
+Verra,Afforestation/Reforestation,2012,5216327,3927618,75.3
+Verra,Afforestation/Reforestation,2013,5418475,4176590,77.1
+Verra,Afforestation/Reforestation,2014,7749986,5787061,74.7
+Verra,Afforestation/Reforestation,2015,5107941,3964831,77.6
+Verra,Afforestation/Reforestation,2016,4545035,3510163,77.2
+Verra,Afforestation/Reforestation,2017,7307401,4011890,54.9
+Verra,Afforestation/Reforestation,2018,9347320,4973468,53.2
+Verra,Afforestation/Reforestation,2019,9276474,4822992,52.0
+Verra,Afforestation/Reforestation,2020,8448721,5101896,60.4
+Verra,Afforestation/Reforestation,2021,5696321,2679700,47.0
+Verra,Afforestation/Reforestation,2022,1527463,593830,38.9
+Verra,Afforestation/Reforestation,2023,721600,175658,24.3
+Verra,Afforestation/Reforestation,2024,177867,30163,17.0
+Verra,Biochar,2021,14070,13745,97.7
+Verra,Biochar,2022,14895,0,0.0
+Verra,Biochar,2023,39919,4337,10.9
+Verra,Biochar,2024,75194,0,0.0
+Verra,Bioenergy,2001,77699,115,0.1
+Verra,Bioenergy,2002,149727,26635,17.8
+Verra,Bioenergy,2003,165588,42710,25.8
+Verra,Bioenergy,2004,122354,22885,18.7
+Verra,Bioenergy,2005,192389,47012,24.4
+Verra,Bioenergy,2006,484971,297725,61.4
+Verra,Bioenergy,2007,824022,784047,95.1
+Verra,Bioenergy,2008,1013908,1007404,99.4
+Verra,Bioenergy,2009,1353891,1257671,92.9
+Verra,Bioenergy,2010,1101598,884595,80.3
+Verra,Bioenergy,2011,930607,710943,76.4
+Verra,Bioenergy,2012,766700,587296,76.6
+Verra,Bioenergy,2013,918121,622903,67.8
+Verra,Bioenergy,2014,1089941,713782,65.5
+Verra,Bioenergy,2015,1182862,858489,72.6
+Verra,Bioenergy,2016,1248869,681115,54.5
+Verra,Bioenergy,2017,1048071,374989,35.8
+Verra,Bioenergy,2018,584231,172006,29.4
+Verra,Bioenergy,2019,572795,127315,22.2
+Verra,Bioenergy,2020,730657,292016,40.0
+Verra,Bioenergy,2021,1185003,536040,45.2
+Verra,Bioenergy,2022,1052513,270518,25.7
+Verra,Bioenergy,2023,2427533,11447,0.5
+Verra,Bioenergy,2024,2954703,25,0.0
+Verra,Bioenergy,2025,452826,0,0.0
+Verra,Composting,2007,8269,8269,100.0
+Verra,Composting,2008,27674,25349,91.6
+Verra,Composting,2009,3406,3406,100.0
+Verra,Composting,2010,3160,3160,100.0
+Verra,Composting,2011,3424,3424,100.0
+Verra,Composting,2012,3014,3014,100.0
+Verra,Composting,2013,7872,7872,100.0
+Verra,Composting,2014,3878,3878,100.0
+Verra,Composting,2015,4439,4439,100.0
+Verra,Composting,2016,4975,4975,100.0
+Verra,Composting,2017,4700,4700,100.0
+Verra,Composting,2018,35819,35819,100.0
+Verra,Composting,2019,85013,85013,100.0
+Verra,Composting,2020,1199,182,15.2
+Verra,Composting,2021,53362,45725,85.7
+Verra,Composting,2022,82164,46790,56.9
+Verra,Composting,2023,61208,59264,96.8
+Verra,Composting,2024,46104,46104,100.0
+Verra,Efficient appliances,2003,21833,13333,61.1
+Verra,Efficient appliances,2004,50980,29221,57.3
+Verra,Efficient appliances,2005,95880,85019,88.7
+Verra,Efficient appliances,2006,30389,8716,28.7
+Verra,Efficient appliances,2007,146858,146858,100.0
+Verra,Efficient appliances,2008,241892,150000,62.0
+Verra,Efficient appliances,2009,333482,305181,91.5
+Verra,Efficient appliances,2010,779961,725468,93.0
+Verra,Efficient appliances,2011,467757,419083,89.6
+Verra,Efficient appliances,2012,780835,583190,74.7
+Verra,Efficient appliances,2013,598909,390985,65.3
+Verra,Efficient appliances,2014,394359,256731,65.1
+Verra,Efficient appliances,2015,1049191,732893,69.9
+Verra,Efficient appliances,2016,399949,224339,56.1
+Verra,Efficient appliances,2017,290224,221545,76.3
+Verra,Efficient appliances,2018,223609,186903,83.6
+Verra,Efficient appliances,2019,472248,350850,74.3
+Verra,Efficient appliances,2020,943309,254125,26.9
+Verra,Efficient appliances,2021,3297414,1093190,33.2
+Verra,Efficient appliances,2022,4610084,481162,10.4
+Verra,Efficient appliances,2023,2451686,84019,3.4
+Verra,Efficient appliances,2024,915501,9888,1.1
+Verra,Electric vehicles,2016,18,8,44.4
+Verra,Electric vehicles,2017,115,90,78.3
+Verra,Electric vehicles,2018,251,229,91.2
+Verra,Electric vehicles,2019,1829,1807,98.8
+Verra,Electric vehicles,2020,5606,5438,97.0
+Verra,Electric vehicles,2021,63413,2335,3.7
+Verra,Electric vehicles,2022,188264,3503,1.9
+Verra,Electric vehicles,2023,37090,0,0.0
+Verra,Electric vehicles,2024,2050,0,0.0
+Verra,Forest management,2002,1660260,804029,48.4
+Verra,Forest management,2003,550646,512403,93.1
+Verra,Forest management,2004,211840,194340,91.7
+Verra,Forest management,2005,983193,578082,58.8
+Verra,Forest management,2006,450748,353968,78.5
+Verra,Forest management,2007,8381190,2623282,31.3
+Verra,Forest management,2008,8747357,6778858,77.5
+Verra,Forest management,2009,8617291,8278131,96.1
+Verra,Forest management,2010,21230181,19352161,91.2
+Verra,Forest management,2011,3980588,2847891,71.5
+Verra,Forest management,2012,12716302,11013879,86.6
+Verra,Forest management,2013,23058356,20183327,87.5
+Verra,Forest management,2014,27618151,23770952,86.1
+Verra,Forest management,2015,26498467,18536325,70.0
+Verra,Forest management,2016,33954888,22694228,66.8
+Verra,Forest management,2017,31767410,19005626,59.8
+Verra,Forest management,2018,26343235,16678214,63.3
+Verra,Forest management,2019,33343923,15869884,47.6
+Verra,Forest management,2020,29072421,15189318,52.2
+Verra,Forest management,2021,11649418,6402431,55.0
+Verra,Forest management,2022,7962591,4336792,54.5
+Verra,Forest management,2023,4263710,1025890,24.1
+Verra,Forest management,2024,581681,0,0.0
+Verra,Fossil gas leaks,2000,10167,10167,100.0
+Verra,Fossil gas leaks,2001,105494,105484,100.0
+Verra,Fossil gas leaks,2002,1483155,1482004,99.9
+Verra,Fossil gas leaks,2003,609755,604755,99.2
+Verra,Fossil gas leaks,2004,125847,125623,99.8
+Verra,Fossil gas leaks,2005,107074,107074,100.0
+Verra,Fossil gas leaks,2006,462923,421527,91.1
+Verra,Fossil gas leaks,2007,1189141,1062360,89.3
+Verra,Fossil gas leaks,2008,484300,478897,98.9
+Verra,Fossil gas leaks,2009,181087,124886,69.0
+Verra,Fossil gas leaks,2010,413482,315693,76.3
+Verra,Fossil gas leaks,2011,337944,337942,100.0
+Verra,Fossil gas leaks,2012,323423,317927,98.3
+Verra,Fossil gas leaks,2013,445325,395270,88.8
+Verra,Fossil gas leaks,2014,504997,461939,91.5
+Verra,Fossil gas leaks,2015,358566,165615,46.2
+Verra,Fossil gas leaks,2016,650813,68575,10.5
+Verra,Fossil gas leaks,2017,2137119,866560,40.5
+Verra,Fossil gas leaks,2018,4330174,2691119,62.1
+Verra,Fossil gas leaks,2019,5880625,2872614,48.8
+Verra,Fossil gas leaks,2020,3583975,1287831,35.9
+Verra,Fossil gas leaks,2021,9472541,1746608,18.4
+Verra,Fossil gas leaks,2022,9799184,1180075,12.0
+Verra,Fossil gas leaks,2023,3831158,804532,21.0
+Verra,Fossil gas leaks,2024,5064914,1074173,21.2
+Verra,Fossil gas leaks,2025,118365,0,0.0
+Verra,Heat recovery,2006,17919,610,3.4
+Verra,Heat recovery,2007,23289,0,0.0
+Verra,Heat recovery,2008,24070,0,0.0
+Verra,Heat recovery,2009,15822,0,0.0
+Verra,Heat recovery,2010,54958,54958,100.0
+Verra,Heat recovery,2011,64808,63808,98.5
+Verra,Heat recovery,2012,63879,63879,100.0
+Verra,Heat recovery,2013,64294,64294,100.0
+Verra,Heat recovery,2014,50639,50639,100.0
+Verra,Hydropower,2004,138647,16999,12.3
+Verra,Hydropower,2005,111370,7786,7.0
+Verra,Hydropower,2006,724896,49481,6.8
+Verra,Hydropower,2007,1941192,910197,46.9
+Verra,Hydropower,2008,2147212,1902320,88.6
+Verra,Hydropower,2009,2562900,2261867,88.3
+Verra,Hydropower,2010,2873268,2506372,87.2
+Verra,Hydropower,2011,4104602,3741523,91.2
+Verra,Hydropower,2012,2801666,2472987,88.3
+Verra,Hydropower,2013,441614,282507,64.0
+Verra,Hydropower,2014,510341,261479,51.2
+Verra,Hydropower,2015,544235,307178,56.4
+Verra,Hydropower,2016,561612,326569,58.1
+Verra,Hydropower,2017,234116,56125,24.0
+Verra,Hydropower,2018,214970,57594,26.8
+Verra,Hydropower,2019,256870,3779,1.5
+Verra,Hydropower,2020,552305,136035,24.6
+Verra,Hydropower,2021,1135416,876939,77.2
+Verra,Hydropower,2022,979160,401874,41.0
+Verra,Hydropower,2023,50245,9602,19.1
+Verra,Industrial efficiency,2002,93294,93218,99.9
+Verra,Industrial efficiency,2003,582436,551898,94.8
+Verra,Industrial efficiency,2004,264610,143818,54.4
+Verra,Industrial efficiency,2005,113599,113599,100.0
+Verra,Industrial efficiency,2006,1447520,1345105,92.9
+Verra,Industrial efficiency,2007,2665682,2182037,81.9
+Verra,Industrial efficiency,2008,5801753,2638743,45.5
+Verra,Industrial efficiency,2009,1275981,1273757,99.8
+Verra,Industrial efficiency,2010,930113,927172,99.7
+Verra,Industrial efficiency,2011,993462,885161,89.1
+Verra,Industrial efficiency,2012,1127752,964363,85.5
+Verra,Industrial efficiency,2013,620811,514222,82.8
+Verra,Industrial efficiency,2014,1018124,893995,87.8
+Verra,Industrial efficiency,2015,694896,671577,96.6
+Verra,Industrial efficiency,2016,840873,829666,98.7
+Verra,Industrial efficiency,2017,533588,409970,76.8
+Verra,Industrial efficiency,2018,444020,370417,83.4
+Verra,Industrial efficiency,2019,596044,396274,66.5
+Verra,Industrial efficiency,2020,849411,618271,72.8
+Verra,Industrial efficiency,2021,961400,608955,63.3
+Verra,Industrial efficiency,2022,915967,372001,40.6
+Verra,Industrial efficiency,2023,500238,134147,26.8
+Verra,Industrial efficiency,2024,141066,37529,26.6
+Verra,Landfill gas,2001,1516054,976647,64.4
+Verra,Landfill gas,2005,3240,3240,100.0
+Verra,Landfill gas,2006,235360,235360,100.0
+Verra,Landfill gas,2007,594992,533439,89.7
+Verra,Landfill gas,2008,479742,328103,68.4
+Verra,Landfill gas,2009,953823,826273,86.6
+Verra,Landfill gas,2010,1279499,937605,73.3
+Verra,Landfill gas,2011,1251862,767587,61.3
+Verra,Landfill gas,2012,1002110,999331,99.7
+Verra,Landfill gas,2013,551878,550878,99.8
+Verra,Landfill gas,2014,674490,672814,99.8
+Verra,Landfill gas,2015,637699,626159,98.2
+Verra,Landfill gas,2016,791132,692916,87.6
+Verra,Landfill gas,2017,2181912,1355324,62.1
+Verra,Landfill gas,2018,611995,593916,97.0
+Verra,Landfill gas,2019,1621331,1073179,66.2
+Verra,Landfill gas,2020,3251763,1503978,46.3
+Verra,Landfill gas,2021,5296668,1845338,34.8
+Verra,Landfill gas,2022,6744535,1499511,22.2
+Verra,Landfill gas,2023,2340773,927822,39.6
+Verra,Landfill gas,2024,733795,331743,45.2
+Verra,Landfill gas,2025,1502,816,54.3
+Verra,Mixed renewables,2001,126608,126608,100.0
+Verra,Mixed renewables,2002,256106,136106,53.1
+Verra,Mixed renewables,2003,262477,77477,29.5
+Verra,Mixed renewables,2004,591270,436228,73.8
+Verra,Mixed renewables,2005,874080,579667,66.3
+Verra,Mixed renewables,2006,7240014,5273780,72.8
+Verra,Mixed renewables,2007,16378813,12490465,76.3
+Verra,Mixed renewables,2008,23365046,17732336,75.9
+Verra,Mixed renewables,2009,20902849,18471749,88.4
+Verra,Mixed renewables,2010,24184626,21507505,88.9
+Verra,Mixed renewables,2011,24012039,19581210,81.5
+Verra,Mixed renewables,2012,25338400,20585355,81.2
+Verra,Mixed renewables,2013,26083024,19439556,74.5
+Verra,Mixed renewables,2014,31361791,20956449,66.8
+Verra,Mixed renewables,2015,33397231,20405671,61.1
+Verra,Mixed renewables,2016,36672211,25525285,69.6
+Verra,Mixed renewables,2017,43539552,31752697,72.9
+Verra,Mixed renewables,2018,53178895,37881738,71.2
+Verra,Mixed renewables,2019,57659161,37025977,64.2
+Verra,Mixed renewables,2020,53177049,26555523,49.9
+Verra,Mixed renewables,2021,48526254,20237437,41.7
+Verra,Mixed renewables,2022,48627297,14574559,30.0
+Verra,Mixed renewables,2023,35415287,9072845,25.6
+Verra,Mixed renewables,2024,19111749,5819127,30.4
+Verra,Mixed renewables,2025,3224451,358681,11.1
+Verra,Public transit,2012,936,936,100.0
+Verra,Public transit,2013,12638,12638,100.0
+Verra,Public transit,2015,5208,5037,96.7
+Verra,Public transit,2016,8924,839,9.4
+Verra,Public transit,2017,3983,0,0.0
+Verra,Public transit,2018,9618,0,0.0
+Verra,Public transit,2019,2122,0,0.0
+Verra,Public transit,2020,116,0,0.0
+Verra,Public transit,2021,4072,0,0.0
+Verra,Public transit,2022,2933,2280,77.7
+Verra,Reforestation and ecosystem restoration,2015,8843,8843,100.0
+Verra,Reforestation and ecosystem restoration,2016,17165,15225,88.7
+Verra,Reforestation and ecosystem restoration,2017,116871,114365,97.9
+Verra,Reforestation and ecosystem restoration,2018,242196,90769,37.5
+Verra,Reforestation and ecosystem restoration,2019,350126,342291,97.8
+Verra,Reforestation and ecosystem restoration,2020,924847,856351,92.6
+Verra,Reforestation and ecosystem restoration,2021,1777510,1544275,86.9
+Verra,Reforestation and ecosystem restoration,2022,1260523,345402,27.4
+Verra,Reforestation and ecosystem restoration,2023,206902,18789,9.1
+Verra,Rewilding,2013,3210579,1789576,55.7
+Verra,Rewilding,2016,301364,130819,43.4
+Verra,Rewilding,2017,4406537,653469,14.8
+Verra,Rewilding,2018,1315364,583387,44.4
+Verra,Rewilding,2019,1502212,376217,25.0
+Verra,Rewilding,2020,1560057,718931,46.1
+Verra,Rewilding,2021,1113185,231082,20.8
+Verra,Rewilding,2022,179609,68,0.0
+Verra,Rice cultivation,2018,1260000,973253,77.2
+Verra,Rice cultivation,2019,1200000,917074,76.4
+Verra,Rice cultivation,2020,1320000,895486,67.8
+Verra,Rice cultivation,2021,780000,567699,72.8
+Verra,Soil & Livestock,2000,2189,2000,91.4
+Verra,Soil & Livestock,2001,93534,59034,63.1
+Verra,Soil & Livestock,2002,1057440,1028390,97.3
+Verra,Soil & Livestock,2003,789660,687852,87.1
+Verra,Soil & Livestock,2004,444400,394472,88.8
+Verra,Soil & Livestock,2005,699085,692797,99.1
+Verra,Soil & Livestock,2006,1011249,853671,84.4
+Verra,Soil & Livestock,2007,836742,772718,92.3
+Verra,Soil & Livestock,2008,335556,316461,94.3
+Verra,Soil & Livestock,2009,1435800,1427932,99.5
+Verra,Soil & Livestock,2010,3854774,3821301,99.1
+Verra,Soil & Livestock,2011,8131222,7368576,90.6
+Verra,Soil & Livestock,2012,10439318,8991033,86.1
+Verra,Soil & Livestock,2013,12134579,8703223,71.7
+Verra,Soil & Livestock,2014,11024198,10020933,90.9
+Verra,Soil & Livestock,2015,17020630,15629298,91.8
+Verra,Soil & Livestock,2016,17380555,10484626,60.3
+Verra,Soil & Livestock,2017,21660218,9892635,45.7
+Verra,Soil & Livestock,2018,21435105,11371663,53.1
+Verra,Soil & Livestock,2019,18694304,8666753,46.4
+Verra,Soil & Livestock,2020,17299019,6384211,36.9
+Verra,Soil & Livestock,2021,14105218,7854157,55.7
+Verra,Soil & Livestock,2022,11222562,4912092,43.8
+Verra,Soil & Livestock,2023,5430673,2802540,51.6
+Verra,Soil & Livestock,2024,484051,200269,41.4
+Verra,Solar,2005,8208,8208,100.0
+Verra,Solar,2006,186698,167274,89.6
+Verra,Solar,2007,45062,26237,58.2
+Verra,Solar,2008,90265,36475,40.4
+Verra,Solar,2009,44642,44642,100.0
+Verra,Solar,2010,99302,99302,100.0
+Verra,Solar,2012,84825,84825,100.0
+Verra,Solar,2013,79750,79750,100.0
+Verra,Solar,2014,56903,56903,100.0
+Verra,Solar,2015,186857,186857,100.0
+Verra,Solar,2016,311085,78256,25.2
+Verra,Solar,2017,339631,221637,65.3
+Verra,Solar,2018,313929,277577,88.4
+Verra,Solar,2019,47882,38453,80.3
+Verra,Solar,2020,141604,121375,85.7
+Verra,Solar,2021,344585,318739,92.5
+Verra,Solar,2022,363738,283432,77.9
+Verra,Solar,2023,170356,49182,28.9
+Verra,Solar,2024,99490,0,0.0
+Verra,Solar,2025,6390,0,0.0
+Verra,Waste management,2008,323595,323595,100.0
+Verra,Waste management,2009,339719,339719,100.0
+Verra,Waste management,2010,457838,453838,99.1
+Verra,Waste management,2011,458596,449096,97.9
+Verra,Waste management,2012,457878,442544,96.7
+Verra,Waste management,2013,436573,422707,96.8
+Verra,Waste management,2014,564855,558205,98.8
+Verra,Waste management,2015,482416,448046,92.9
+Verra,Waste management,2016,1065221,753126,70.7
+Verra,Waste management,2017,827924,415058,50.1
+Verra,Waste management,2018,979584,569694,58.2
+Verra,Waste management,2019,1389818,656309,47.2
+Verra,Waste management,2020,1561215,579691,37.1
+Verra,Waste management,2021,1482737,441218,29.8
+Verra,Waste management,2022,954277,107911,11.3
+Verra,Waste management,2023,652945,722,0.1
+Verra,Waste management,2024,617832,5233,0.8
+Verra,Waste to energy,2004,53775,53775,100.0
+Verra,Waste to energy,2005,309307,70936,22.9
+Verra,Waste to energy,2006,279702,277007,99.0
+Verra,Waste to energy,2007,543075,406110,74.8
+Verra,Waste to energy,2008,467106,408737,87.5
+Verra,Waste to energy,2009,336453,169269,50.3
+Verra,Waste to energy,2010,894444,893934,99.9
+Verra,Waste to energy,2011,2028491,2017969,99.5
+Verra,Waste to energy,2012,2295021,2282570,99.5
+Verra,Waste to energy,2013,2449474,2212524,90.3
+Verra,Waste to energy,2014,3209894,2772115,86.4
+Verra,Waste to energy,2015,3146675,2549486,81.0
+Verra,Waste to energy,2016,3030111,2886186,95.3
+Verra,Waste to energy,2017,3130142,1765591,56.4
+Verra,Waste to energy,2018,3275760,64854,2.0
+Verra,Waste to energy,2019,238467,58008,24.3
+Verra,Waste to energy,2020,694147,53902,7.8
+Verra,Waste to energy,2021,266143,112,0.0
+Verra,Waste to energy,2022,368537,0,0.0
+Verra,Waste to energy,2023,164462,0,0.0
+Verra,Waste to energy,2024,51238,0,0.0
+Verra,Wastewater treatment,2006,88010,20133,22.9
+Verra,Wastewater treatment,2007,106208,87102,82.0
+Verra,Wastewater treatment,2008,49839,49839,100.0
+Verra,Wastewater treatment,2010,7442,7442,100.0
+Verra,Wastewater treatment,2011,22357,22357,100.0
+Verra,Wastewater treatment,2012,22091,22091,100.0
+Verra,Wastewater treatment,2013,18784,18784,100.0
+Verra,Wastewater treatment,2014,21448,21448,100.0
+Verra,Wastewater treatment,2015,20002,20002,100.0
+Verra,Wastewater treatment,2016,5291,5291,100.0
+Verra,Wind,2013,1601,1601,100.0
+Verra,Wind,2014,19299,19299,100.0
+Verra,Wind,2015,37852,37852,100.0
+Verra,Wind,2016,61411,61411,100.0
+Verra,Wind,2017,81648,81648,100.0
+Verra,Wind,2018,103596,53832,52.0

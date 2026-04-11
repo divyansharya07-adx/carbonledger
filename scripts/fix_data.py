@@ -94,135 +94,6 @@ def _map_verra_project_type(pt):
     return None
 
 
-def build_vintage_retirement_lookup():
-    """Return dict keyed (registry, country, vintage_year) -> credits_retired int.
-
-    Reads the four retirement sheets from the raw Excel file and groups by
-    (registry label, normalised country, vintage year).  All existing country
-    lifetime columns in country_aggregated_data.csv are left untouched.
-    """
-    RETIREMENT_COUNTRY_MAP = {
-        'Viet Nam':                               'Vietnam',
-        'Congo, The Democratic Republic of The':  'DR Congo',
-        'Congo, Republic of':                     'Congo',
-        'Korea, Republic of':                     'South Korea',
-        'Tanzania, United Republic of':           'Tanzania',
-        "Lao People's Democratic Republic":       'Laos',
-        'Bolivia, Plurinational State of':        'Bolivia',
-        'Venezuela, Bolivarian Republic of':      'Venezuela',
-        'Iran, Islamic Republic of':              'Iran',
-        'Russian Federation':                     'Russia',
-        'Syrian Arab Republic':                   'Syria',
-        "Côte d'Ivoire":                          'Ivory Coast',
-        'Moldova, Republic of':                   'Moldova',
-        'US':                                     'United States',
-    }
-
-    def norm(c):
-        c = str(c).strip()
-        return RETIREMENT_COUNTRY_MAP.get(c, c)
-
-    lookup = {}
-
-    # --- Verra ---
-    verra = pd.read_excel(RAW_EXCEL, sheet_name='Verra VCUS',
-                          usecols=['Vintage Start', 'Country/Area',
-                                   'Quantity Issued', 'Retirement/Cancellation Date'])
-    verra = verra[verra['Retirement/Cancellation Date'].notna()].copy()
-    verra['vintage_year'] = pd.to_datetime(verra['Vintage Start']).dt.year
-    verra['country'] = verra['Country/Area'].apply(norm)
-    verra['qty'] = pd.to_numeric(verra['Quantity Issued'], errors='coerce').fillna(0)
-    for (yr, cty), grp in verra.groupby(['vintage_year', 'country']):
-        key = ('Verra', cty, int(yr))
-        lookup[key] = lookup.get(key, 0) + int(grp['qty'].sum())
-
-    # --- Gold Standard ---
-    gold = pd.read_excel(RAW_EXCEL, sheet_name='Gold Retirements',
-                         usecols=['Vintage', 'Country', 'Quantity'])
-    gold['country'] = gold['Country'].apply(norm)
-    gold['qty'] = pd.to_numeric(gold['Quantity'], errors='coerce').fillna(0)
-    for (yr, cty), grp in gold.groupby(['Vintage', 'country']):
-        key = ('Gold Standard', cty, int(yr))
-        lookup[key] = lookup.get(key, 0) + int(grp['qty'].sum())
-
-    # --- ACR ---
-    acr = pd.read_excel(RAW_EXCEL, sheet_name='ACR Retirements',
-                        usecols=['Vintage', 'Project Site Country', 'Quantity of Credits'])
-    acr['country'] = acr['Project Site Country'].apply(norm)
-    acr['qty'] = pd.to_numeric(acr['Quantity of Credits'], errors='coerce').fillna(0)
-    for (yr, cty), grp in acr.groupby(['Vintage', 'country']):
-        key = ('ACR', cty, int(yr))
-        lookup[key] = lookup.get(key, 0) + int(grp['qty'].sum())
-
-    # --- CAR ---
-    car = pd.read_excel(RAW_EXCEL, sheet_name='CAR Retirements',
-                        usecols=['Vintage', 'Project Site Country', 'Quantity of Offset Credits'])
-    car['country'] = car['Project Site Country'].apply(norm)
-    car['qty'] = pd.to_numeric(car['Quantity of Offset Credits'], errors='coerce').fillna(0)
-    for (yr, cty), grp in car.groupby(['Vintage', 'country']):
-        key = ('CAR', cty, int(yr))
-        lookup[key] = lookup.get(key, 0) + int(grp['qty'].sum())
-
-    print(f"  build_vintage_retirement_lookup: {len(lookup)} (registry, country, year) keys built")
-    return lookup
-
-
-def build_vintage_project_lookup():
-    RETIREMENT_COUNTRY_MAP = {
-        'Viet Nam': 'Vietnam',
-        'Congo, The Democratic Republic of The': 'DR Congo',
-        'Congo, Republic of': 'Congo',
-        'Korea, Republic of': 'South Korea',
-        'Tanzania, United Republic of': 'Tanzania',
-        "Lao People's Democratic Republic": 'Laos',
-        'Bolivia, Plurinational State of': 'Bolivia',
-        'Venezuela, Bolivarian Republic of': 'Venezuela',
-        'Iran, Islamic Republic of': 'Iran',
-        'Russian Federation': 'Russia',
-        'Syrian Arab Republic': 'Syria',
-        "Côte d'Ivoire": 'Ivory Coast',
-        'Moldova, Republic of': 'Moldova',
-        'US': 'United States',
-    }
-
-    def norm(c):
-        c = str(c).strip()
-        return RETIREMENT_COUNTRY_MAP.get(c, c)
-
-    lookup = {}
-
-    # --- Verra ---
-    verra = pd.read_excel(RAW_EXCEL, sheet_name='Verra VCUS',
-                          usecols=['ID', 'Country/Area', 'Vintage Start'])
-    verra['vintage_year'] = pd.to_datetime(verra['Vintage Start']).dt.year
-    verra['country'] = verra['Country/Area'].apply(norm)
-    for (yr, cty), grp in verra.groupby(['vintage_year', 'country']):
-        lookup[('Verra', cty, int(yr))] = grp['ID'].astype(str).unique().tolist()
-
-    # --- Gold Standard ---
-    gold = pd.read_excel(RAW_EXCEL, sheet_name='Gold Issuances',
-                         usecols=['GSID', 'Country', 'Vintage'])
-    gold['country'] = gold['Country'].apply(norm)
-    for (yr, cty), grp in gold.groupby(['Vintage', 'country']):
-        lookup[('Gold Standard', cty, int(yr))] = grp['GSID'].astype(str).unique().tolist()
-
-    # --- ACR ---
-    acr = pd.read_excel(RAW_EXCEL, sheet_name='ACR Issuances',
-                        usecols=['Project ID', 'Project Site Country', 'Vintage'])
-    acr['country'] = acr['Project Site Country'].apply(norm)
-    for (yr, cty), grp in acr.groupby(['Vintage', 'country']):
-        lookup[('ACR', cty, int(yr))] = grp['Project ID'].astype(str).unique().tolist()
-
-    # --- CAR ---
-    car = pd.read_excel(RAW_EXCEL, sheet_name='CAR Issuances',
-                        usecols=['Project ID', 'Project Site Country', 'Vintage'])
-    car['country'] = car['Project Site Country'].apply(norm)
-    for (yr, cty), grp in car.groupby(['Vintage', 'country']):
-        lookup[('CAR', cty, int(yr))] = grp['Project ID'].astype(str).unique().tolist()
-
-    print(f"  build_vintage_project_lookup: {len(lookup)} (registry, country, year) keys built")
-    return lookup
-
 
 def main():
     # -----------------------------------------------------------------------
@@ -246,8 +117,9 @@ def main():
     proj_src['category']        = proj_src['category'].str.strip()
     proj_src['country']         = proj_src['country'].fillna('').str.strip()
     proj_src['vintage_year']    = pd.to_numeric(proj_src['vintage_year'],    errors='coerce')
-    proj_src['credits_issued']  = pd.to_numeric(proj_src['credits_issued'],  errors='coerce').fillna(0)
-    proj_src['credits_retired'] = pd.to_numeric(proj_src['credits_retired'], errors='coerce').fillna(0)
+    proj_src['credits_issued']    = pd.to_numeric(proj_src['credits_issued'],    errors='coerce').fillna(0)
+    proj_src['credits_retired']   = pd.to_numeric(proj_src['credits_retired'],   errors='coerce').fillna(0)
+    proj_src['credits_remaining'] = pd.to_numeric(proj_src['credits_remaining'], errors='coerce').fillna(0)
 
     proj_src = proj_src[
         proj_src['vintage_year'].notna() &
@@ -440,7 +312,6 @@ def main():
     # -----------------------------------------------------------------------
     print("\n=== SECTION G: Retirement enrichment ===")
 
-    PROJECTS_CSV = "public/data/projects_data.csv"
     AGG_BACKUP   = "public/aggregated_data_backup.csv"
     CTRY_BACKUP  = "public/country_aggregated_data_backup.csv"
     PC_BACKUP    = "public/project_counts_backup.csv"
@@ -451,48 +322,26 @@ def main():
     shutil.copy(PROJECT_COUNTS_CSV, PC_BACKUP)
     print("  Backed up all 3 CSVs")
 
-    # Load projects_data.csv
-    proj = pd.read_csv(PROJECTS_CSV)
-    proj['credits_issued']    = pd.to_numeric(proj['credits_issued'],    errors='coerce').fillna(0)
-    proj['credits_retired']   = pd.to_numeric(proj['credits_retired'],   errors='coerce').fillna(0)
-    proj['credits_remaining'] = pd.to_numeric(proj['credits_remaining'], errors='coerce').fillna(0)
-    print(f"  Loaded projects_data.csv: {len(proj)} rows")
+    # All enrichment derives from proj_src (already loaded and filtered above).
+    # No additional data sources or raw Excel reads needed.
+    print(f"  Using proj_src: {len(proj_src)} filtered project-vintage rows")
 
     # ------------------------------------------------------------------
-    # ADDITION 1 — aggregated_data.csv: retirement per Registry+Category
+    # ADDITION 1 — aggregated_data.csv retirement stats
+    # Phase 1 groupby already computes per-vintage total_credits_retired
+    # and retirement_rate correctly. No action needed.
     # ------------------------------------------------------------------
-    ret_by_reg_cat = (
-        proj.groupby(['registry', 'category'])
-        .agg(
-            total_issued_proj=('credits_issued',  'sum'),
-            total_credits_retired=('credits_retired', 'sum'),
-        )
-        .reset_index()
-    )
-    ret_by_reg_cat['retirement_rate'] = (
-        ret_by_reg_cat['total_credits_retired']
-        / ret_by_reg_cat['total_issued_proj'].replace(0, float('nan'))
-        * 100
-    ).round(1).fillna(0)
-    ret_by_reg_cat = ret_by_reg_cat.rename(columns={
-        'registry': reg_col,
-        'category': agg_col,
-    })[[reg_col, agg_col, 'total_credits_retired', 'retirement_rate']]
-
-    for col in ['total_credits_retired', 'retirement_rate']:
-        if col in agg.columns:
-            agg = agg.drop(columns=[col])
-    agg = agg.merge(ret_by_reg_cat, on=[reg_col, agg_col], how='left')
-    agg['total_credits_retired'] = agg['total_credits_retired'].fillna(0).astype(int)
-    agg['retirement_rate']       = agg['retirement_rate'].fillna(0)
-    agg.to_csv(AGG_CSV, index=False)
-    print(f"  aggregated_data.csv: added total_credits_retired, retirement_rate ->{len(agg)} rows saved")
+    print("  Addition 1: per-vintage retirement already in agg from Phase 1 — skipped")
 
     # ------------------------------------------------------------------
-    # ADDITION 2 — country_aggregated_data.csv: per-country stats + registry_breakdown
+    # ADDITION 2 — country_aggregated_data.csv: per-country lifetime stats
+    #              and registry_breakdown JSON
     # ------------------------------------------------------------------
+    ctry_only = proj_src[
+        proj_src['country'].ne('') & proj_src['country'].ne('International')
+    ]
     country_stats = (
-        proj.groupby('country')
+        ctry_only.groupby('country')
         .agg(
             total_credits_issued=('credits_issued',    'sum'),
             total_credits_retired=('credits_retired',  'sum'),
@@ -507,9 +356,9 @@ def main():
     ).round(1).fillna(0)
     country_stats = country_stats.rename(columns={'country': cty_col})
 
-    # Build per-country registry breakdown as JSON string
+    # Build per-country registry breakdown as JSON (display-case registry names)
     reg_breakdown = {}
-    for (country, registry), grp in proj.groupby(['country', 'registry']):
+    for (country, registry), grp in ctry_only.groupby(['country', 'Registry']):
         if country not in reg_breakdown:
             reg_breakdown[country] = {}
         reg_breakdown[country][registry] = {
@@ -534,9 +383,21 @@ def main():
 
     # ------------------------------------------------------------------
     # ADDITION 2b — vintage_credits_retired + vintage_retirement_rate
+    # Derived from proj_src — inherits VER/CER filter from build_projects.py,
+    # so Gold Standard PER rows are automatically excluded.
     # ------------------------------------------------------------------
-    print("  Building vintage retirement lookup from raw Excel...")
-    vint_lookup = build_vintage_retirement_lookup()
+    print("  Building vintage retirement lookup from projects_data.csv...")
+    vint_df = (
+        ctry_only
+        .groupby(['Registry', 'country', 'vintage_year'])['credits_retired']
+        .sum()
+        .reset_index()
+    )
+    vint_lookup = {
+        (row['Registry'], row['country'], int(row['vintage_year'])): int(row['credits_retired'])
+        for _, row in vint_df.iterrows()
+    }
+    print(f"  vintage retirement lookup: {len(vint_lookup)} (registry, country, year) keys")
 
     ctry['vintage_credits_retired'] = ctry.apply(
         lambda r: vint_lookup.get(
@@ -554,29 +415,35 @@ def main():
     unmatched = (ctry['vintage_credits_retired'] == 0) & (ctry[cr_col] > 0)
     print(f"  Rows with issued credits but no vintage retirement match: {unmatched.sum()}")
 
-    # Note: vintage_credits_retired repeats across all category rows for the same
+    # vintage_credits_retired repeats across all category rows for the same
     # (Registry, Country, Year) — use .iloc[0] not .sum() to read the per-year value.
     iv15 = ctry[
         (ctry[reg_col] == 'Verra') &
         (ctry[cty_col] == 'India') &
         (ctry[yr_col] == 2015)
     ]
-    india_verra_2015 = int(iv15['vintage_credits_retired'].iloc[0]) if len(iv15) else 0
-    print(f"  SPOT CHECK India/Verra/2015 vintage_credits_retired: {india_verra_2015:,}  (expected ~8,996,504)")
+    india_verra_2015_ret = int(iv15['vintage_credits_retired'].iloc[0]) if len(iv15) else 0
+    print(f"  SPOT CHECK India/Verra/2015 vintage_credits_retired: {india_verra_2015_ret:,}  (expected ~9,000,250)")
 
     ig20 = ctry[
         (ctry[reg_col] == 'Gold Standard') &
         (ctry[cty_col] == 'India') &
         (ctry[yr_col] == 2020)
     ]
-    india_gs_2020 = int(ig20['vintage_credits_retired'].iloc[0]) if len(ig20) else 0
-    print(f"  SPOT CHECK India/GoldStandard/2020 vintage_credits_retired: {india_gs_2020:,}  (expected ~7,908,077)")
+    india_gs_2020_ret = int(ig20['vintage_credits_retired'].iloc[0]) if len(ig20) else 0
+    print(f"  SPOT CHECK India/GoldStandard/2020 vintage_credits_retired: {india_gs_2020_ret:,}  (proj_src-based; old raw-Excel value was ~7,908,077)")
 
     # ------------------------------------------------------------------
-    # ADDITION 2c — project_count
+    # ADDITION 2c — project_ids per (Registry, Country, Vintage Year)
+    # Derived from proj_src — no raw Excel reads
     # ------------------------------------------------------------------
-    print("  Building vintage project lookup...")
-    proj_lookup = build_vintage_project_lookup()
+    print("  Building vintage project lookup from projects_data.csv...")
+    proj_lookup = {}
+    for (reg, cty_val, yr), grp in ctry_only.groupby(['Registry', 'country', 'vintage_year']):
+        proj_lookup[(reg, cty_val, int(yr))] = sorted(
+            grp['project_id'].astype(str).unique().tolist()
+        )
+    print(f"  vintage project lookup: {len(proj_lookup)} (registry, country, year) keys")
 
     ctry['project_ids'] = ctry.apply(
         lambda r: json.dumps(
@@ -587,40 +454,59 @@ def main():
         axis=1,
     )
 
-    # Spot checks
-    india_verra_2015 = proj_lookup.get(('Verra', 'India', 2015), [])
-    print(f"  SPOT CHECK India/Verra/2015 project_ids count: {len(india_verra_2015)} (expected ~184)")
+    india_verra_2015_ids = proj_lookup.get(('Verra', 'India', 2015), [])
+    print(f"  SPOT CHECK India/Verra/2015 project_ids count: {len(india_verra_2015_ids)} (expected ~184)")
 
-    india_gs_2020 = proj_lookup.get(('Gold Standard', 'India', 2020), [])
-    print(f"  SPOT CHECK India/GS/2020 project_ids count: {len(india_gs_2020)} (expected ~175)")
+    india_gs_2020_ids = proj_lookup.get(('Gold Standard', 'India', 2020), [])
+    print(f"  SPOT CHECK India/GS/2020 project_ids count: {len(india_gs_2020_ids)} (expected ~175)")
 
     ctry.to_csv(CTRY_CSV, index=False)
-    print(f"  country_aggregated_data.csv: added 7 columns (incl. registry_breakdown JSON + vintage retirement) ->{len(ctry)} rows saved")
+    print(f"  country_aggregated_data.csv: added 7 columns -> {len(ctry)} rows saved")
 
     # ------------------------------------------------------------------
-    # ADDITION 3 — superseded: Section E now reads projects_data.csv
-    # directly and computes credits/retirement_rate inline. No merge needed.
+    # ADDITION 3 — superseded: Section E already writes project_counts.csv
     # ------------------------------------------------------------------
-    print("  Section G Addition 3: skipped (project_counts.csv already complete from Section E)")
+    print("  Addition 3: skipped (project_counts.csv already complete from Section E)")
 
     # ------------------------------------------------------------------
     # Verification prints
     # ------------------------------------------------------------------
     print("\n--- SECTION G VERIFICATION ---")
-    global_issued  = proj['credits_issued'].sum()
-    global_retired = proj['credits_retired'].sum()
+    global_issued  = proj_src['credits_issued'].sum()
+    global_retired = proj_src['credits_retired'].sum()
     global_rate    = (global_retired / global_issued * 100) if global_issued > 0 else 0
     print(f"1. Global retirement rate: {global_rate:.1f}%")
 
+    # Gold vintage_credits_retired total (should be lower than raw-Excel version — PER rows excluded)
+    gold_vint_ret_total = int(
+        ctry[ctry[reg_col] == 'Gold Standard']
+        .groupby([cty_col, yr_col])['vintage_credits_retired']
+        .first()
+        .sum()
+    )
+    print(f"2. Gold Standard vintage_credits_retired total (unique country-year): {gold_vint_ret_total:,}")
+
+    # All registries vintage_credits_retired (sum unique (reg, country, year) combos)
+    vint_total_by_reg = (
+        ctry.groupby([reg_col, cty_col, yr_col])['vintage_credits_retired']
+        .first()
+        .reset_index()
+        .groupby(reg_col)['vintage_credits_retired']
+        .sum()
+    )
+    print("3. vintage_credits_retired by registry (unique country-year combos):")
+    for reg, val in vint_total_by_reg.items():
+        print(f"   {reg}: {int(val):,}")
+
     top3 = (
-        proj.groupby('country')['credits_retired']
+        proj_src.groupby('country')['credits_retired']
         .sum().sort_values(ascending=False).head(3)
     )
-    print("2. Top 3 countries by credits_retired:")
+    print("4. Top 3 countries by credits_retired:")
     for country, val in top3.items():
         print(f"   {country}: {val:,.0f}")
 
-    print("3. CSV column verification:")
+    print("5. CSV column verification:")
     for csv_path in [AGG_CSV, CTRY_CSV, PROJECT_COUNTS_CSV]:
         cols = pd.read_csv(csv_path, nrows=0).columns.tolist()
         print(f"   {csv_path}: {cols}")
