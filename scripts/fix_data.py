@@ -1,12 +1,9 @@
 """
 fix_data.py — CarbonLedger data correction script
 
-Applies six surgical fixes to aggregated_data.csv and country_aggregated_data.csv:
-  A) AMS-III.AU: move credits from 'Mixed renewables' ->'Rice cultivation' (Verra)
-  B) AMS-III.AK: move credits from 'Cleaner cooking' ->'Public transit' (Verra)
-  C) Rename project type 'Agriculture' ->'Soil & Livestock' in both CSVs
-  D) Gold Standard unmapped rows: replace 'No Methodology Provided' with
-     categorized rows derived from the raw Excel project type labels
+Builds aggregated_data.csv and country_aggregated_data.csv directly from
+projects_data.csv (the authoritative output of build_projects.py), then
+enriches both CSVs with retirement statistics via Section G.
 
 Usage:
   python scripts/fix_data.py
@@ -229,314 +226,99 @@ def build_vintage_project_lookup():
 
 def main():
     # -----------------------------------------------------------------------
-    # Load CSVs
+    # Build aggregated_data.csv and country_aggregated_data.csv
+    # directly from projects_data.csv — no raw Excel reads needed here.
     # -----------------------------------------------------------------------
-    agg  = pd.read_csv(AGG_CSV)
-    ctry = pd.read_csv(CTRY_CSV)
+    PROJECTS_CSV_MAIN = "public/data/projects_data.csv"
 
-    print(f"Loaded aggregated_data.csv: {len(agg)} rows")
-    print(f"Loaded country_aggregated_data.csv: {len(ctry)} rows")
+    agg_col = "Project Type Category"
+    yr_col  = "Vintage Year"
+    cr_col  = "Total Credits Issued"
+    reg_col = "Registry"
+    cty_col = "Country"
 
-    agg_col  = "Project Type Category"
-    yr_col   = "Vintage Year"
-    cr_col   = "Total Credits Issued"
-    reg_col  = "Registry"
-    cty_col  = "Country"
+    EXCLUDED_CATS = {'Other', 'No Methodology Provided', 'Unmatched'}
+    REG_LABEL = {'verra': 'Verra', 'gold standard': 'Gold Standard', 'acr': 'ACR', 'car': 'CAR'}
 
-    # -----------------------------------------------------------------------
-    # SECTION 0 — Remove ARB (California compliance program, not a voluntary registry)
-    # -----------------------------------------------------------------------
-    print("\n--- SECTION 0: Remove ARB ---")
-    n_arb_agg  = (agg[reg_col]  == 'ARB').sum()
-    n_arb_ctry = (ctry[reg_col] == 'ARB').sum()
-    agg  = agg[agg[reg_col]   != 'ARB'].copy()
-    ctry = ctry[ctry[reg_col] != 'ARB'].copy()
-    print(f"  Removed {n_arb_agg} ARB rows from aggregated_data.csv")
-    print(f"  Removed {n_arb_ctry} ARB rows from country_aggregated_data.csv")
+    print("Loading projects_data.csv...")
+    proj_src = pd.read_csv(PROJECTS_CSV_MAIN, dtype=str)
+    proj_src['registry']        = proj_src['registry'].str.strip()
+    proj_src['category']        = proj_src['category'].str.strip()
+    proj_src['country']         = proj_src['country'].fillna('').str.strip()
+    proj_src['vintage_year']    = pd.to_numeric(proj_src['vintage_year'],    errors='coerce')
+    proj_src['credits_issued']  = pd.to_numeric(proj_src['credits_issued'],  errors='coerce').fillna(0)
+    proj_src['credits_retired'] = pd.to_numeric(proj_src['credits_retired'], errors='coerce').fillna(0)
 
-    # -----------------------------------------------------------------------
-    # Read Verra VCUS sheet once (used for A and B)
-    # -----------------------------------------------------------------------
-    print("\nReading Verra VCUS sheet…")
-    vcus = pd.read_excel(RAW_EXCEL, sheet_name="Verra VCUS", engine="openpyxl")
-    vcus["vintage_year"] = pd.to_datetime(vcus["Vintage Start"], errors="coerce").dt.year
-    vcus["qty"] = pd.to_numeric(vcus["Quantity Issued"], errors="coerce").fillna(0)
+    proj_src = proj_src[
+        proj_src['vintage_year'].notna() &
+        proj_src['category'].notna() &
+        ~proj_src['category'].isin(EXCLUDED_CATS)
+    ].copy()
+    proj_src['vintage_year'] = proj_src['vintage_year'].astype(int)
+    proj_src['Registry'] = proj_src['registry'].str.lower().map(REG_LABEL).fillna(proj_src['registry'])
+    print(f"  {len(proj_src)} project-vintage rows after filtering")
 
-    # Build project-type lookup for Verra blank-methodology fallback (ID -> Project Type)
-    verra_proj = pd.read_excel(RAW_EXCEL, sheet_name="Verra Projects",
-                               usecols=["ID", "Project Type"], engine="openpyxl")
-    verra_project_type = dict(zip(
-        verra_proj["ID"].astype(str).str.strip(),
-        verra_proj["Project Type"].astype(str).str.strip(),
-    ))
-
-    # -----------------------------------------------------------------------
-    # SECTION A — AMS-III.AU: Mixed renewables ->Rice cultivation (Verra)
-    # -----------------------------------------------------------------------
-    print("\n--- FIX A: AMS-III.AU ---")
-    mask_au = vcus["Methodology"].astype(str).str.contains("AMS-III.AU", regex=False, na=False)
-    au_rows = vcus[mask_au]
-    print(f"  Raw rows matching AMS-III.AU: {len(au_rows)}")
-
-    # Aggregate by vintage year (agg CSV)
-    au_by_year = au_rows.groupby("vintage_year")["qty"].sum().astype(int)
-    print(f"  Credits by year:\n{au_by_year.to_string()}")
-    print(f"  Total: {au_by_year.sum():,}")
-
-    for yr, credits in au_by_year.items():
-        mask = (agg[reg_col] == "Verra") & (agg[agg_col] == "Mixed renewables") & (agg[yr_col] == yr)
-        if mask.sum() == 0:
-            print(f"  WARNING: no Verra/Mixed renewables/{yr} row found — skipping subtract")
-            continue
-        agg.loc[mask, cr_col] = agg.loc[mask, cr_col].astype(int) - credits
-        # Add Rice cultivation row (or add to existing)
-        rice_mask = (agg[reg_col] == "Verra") & (agg[agg_col] == "Rice cultivation") & (agg[yr_col] == yr)
-        if rice_mask.sum() > 0:
-            agg.loc[rice_mask, cr_col] = agg.loc[rice_mask, cr_col].astype(int) + credits
-        else:
-            new_row = {reg_col: "Verra", agg_col: "Rice cultivation", yr_col: yr, cr_col: credits}
-            agg = pd.concat([agg, pd.DataFrame([new_row])], ignore_index=True)
-    print("  aggregated_data.csv updated.")
-
-    # Country CSV
-    au_by_ctry_yr = au_rows.groupby(["Country/Area", "vintage_year"])["qty"].sum().astype(int).reset_index()
-    au_by_ctry_yr.columns = [cty_col, yr_col, cr_col]
-    for _, row in au_by_ctry_yr.iterrows():
-        cty, yr, credits = row[cty_col], row[yr_col], row[cr_col]
-        mask = (ctry[reg_col] == "Verra") & (ctry[agg_col] == "Mixed renewables") & \
-               (ctry[yr_col] == yr) & (ctry[cty_col] == cty)
-        if mask.sum() == 0:
-            continue
-        ctry.loc[mask, cr_col] = ctry.loc[mask, cr_col].astype(int) - credits
-        rice_mask = (ctry[reg_col] == "Verra") & (ctry[agg_col] == "Rice cultivation") & \
-                    (ctry[yr_col] == yr) & (ctry[cty_col] == cty)
-        if rice_mask.sum() > 0:
-            ctry.loc[rice_mask, cr_col] = ctry.loc[rice_mask, cr_col].astype(int) + credits
-        else:
-            new_row = {reg_col: "Verra", cty_col: cty, agg_col: "Rice cultivation",
-                       yr_col: yr, cr_col: credits}
-            ctry = pd.concat([ctry, pd.DataFrame([new_row])], ignore_index=True)
-    print("  country_aggregated_data.csv updated.")
-
-    # -----------------------------------------------------------------------
-    # SECTION B — AMS-III.AK: Cleaner cooking ->Public transit (Verra)
-    # -----------------------------------------------------------------------
-    print("\n--- FIX B: AMS-III.AK ---")
-    mask_ak = vcus["Methodology"].astype(str).str.strip() == "AMS-III.AK"
-    ak_rows = vcus[mask_ak]
-    print(f"  Raw rows matching AMS-III.AK: {len(ak_rows)}")
-
-    ak_by_year = ak_rows.groupby("vintage_year")["qty"].sum().astype(int)
-    print(f"  Credits by year:\n{ak_by_year.to_string()}")
-    print(f"  Total: {ak_by_year.sum():,}")
-
-    for yr, credits in ak_by_year.items():
-        # Subtract from Cleaner cooking
-        mask = (agg[reg_col] == "Verra") & (agg[agg_col] == "Cleaner cooking") & (agg[yr_col] == yr)
-        if mask.sum() > 0:
-            agg.loc[mask, cr_col] = agg.loc[mask, cr_col].astype(int) - credits
-        else:
-            print(f"  WARNING: no Verra/Cleaner cooking/{yr} row — skipping subtract")
-        # Add Public transit
-        pt_mask = (agg[reg_col] == "Verra") & (agg[agg_col] == "Public transit") & (agg[yr_col] == yr)
-        if pt_mask.sum() > 0:
-            agg.loc[pt_mask, cr_col] = agg.loc[pt_mask, cr_col].astype(int) + credits
-        else:
-            new_row = {reg_col: "Verra", agg_col: "Public transit", yr_col: yr, cr_col: credits}
-            agg = pd.concat([agg, pd.DataFrame([new_row])], ignore_index=True)
-    print("  aggregated_data.csv updated.")
-
-    ak_by_ctry_yr = ak_rows.groupby(["Country/Area", "vintage_year"])["qty"].sum().astype(int).reset_index()
-    ak_by_ctry_yr.columns = [cty_col, yr_col, cr_col]
-    for _, row in ak_by_ctry_yr.iterrows():
-        cty, yr, credits = row[cty_col], row[yr_col], row[cr_col]
-        mask = (ctry[reg_col] == "Verra") & (ctry[agg_col] == "Cleaner cooking") & \
-               (ctry[yr_col] == yr) & (ctry[cty_col] == cty)
-        if mask.sum() > 0:
-            ctry.loc[mask, cr_col] = ctry.loc[mask, cr_col].astype(int) - credits
-        pt_mask = (ctry[reg_col] == "Verra") & (ctry[agg_col] == "Public transit") & \
-                  (ctry[yr_col] == yr) & (ctry[cty_col] == cty)
-        if pt_mask.sum() > 0:
-            ctry.loc[pt_mask, cr_col] = ctry.loc[pt_mask, cr_col].astype(int) + credits
-        else:
-            new_row = {reg_col: "Verra", cty_col: cty, agg_col: "Public transit",
-                       yr_col: yr, cr_col: credits}
-            ctry = pd.concat([ctry, pd.DataFrame([new_row])], ignore_index=True)
-    print("  country_aggregated_data.csv updated.")
-
-    # -----------------------------------------------------------------------
-    # SECTION C — Rename project type 'Agriculture' ->'Soil & Livestock'
-    # -----------------------------------------------------------------------
-    print("\n--- FIX C: Agriculture -> Soil & Livestock ---")
-    n_agg  = (agg[agg_col]  == "Agriculture").sum()
-    n_ctry = (ctry[agg_col] == "Agriculture").sum()
-    agg.loc[agg[agg_col]   == "Agriculture", agg_col] = "Soil & Livestock"
-    ctry.loc[ctry[agg_col] == "Agriculture", agg_col] = "Soil & Livestock"
-    print(f"  Renamed {n_agg} rows in aggregated_data.csv")
-    print(f"  Renamed {n_ctry} rows in country_aggregated_data.csv")
-
-    # -----------------------------------------------------------------------
-    # SECTION D — Gold Standard unmapped rows ->categorized by project type
-    # -----------------------------------------------------------------------
-    print("\n--- FIX D: Gold Standard 'No Methodology Provided' ---")
-    no_meth_count = (agg[agg_col] == "No Methodology Provided").sum()
-    if no_meth_count == 0:
-        print("  No 'No Methodology Provided' rows found -- already applied, skipping.")
-        gold = None  # sentinel so Section E can detect it was skipped
-    else:
-        print("Reading Gold Issuances sheet…")
-        gold = pd.read_excel(RAW_EXCEL, sheet_name="Gold Issuances", engine="openpyxl")
-        gold["vintage_year"] = pd.to_numeric(gold["Vintage"], errors="coerce")
-        gold["qty"] = pd.to_numeric(gold["Quantity"], errors="coerce").fillna(0)
-
-        # Filter blank / "Not provided" methodology rows
-        blank_mask = gold["Methodology"].isna() | (gold["Methodology"].astype(str).str.strip() == "Not provided")
-        gold_blank = gold[blank_mask].copy()
-        print(f"  Gold Standard unmapped rows: {len(gold_blank):,}")
-        print(f"  Total credits: {gold_blank['qty'].sum():,.0f}")
-
-        # Map project types
-        gold_blank["mapped_category"] = gold_blank["Project Type"].apply(map_gold_project_type)
-
-        # Show mapping summary
-        type_summary = gold_blank.groupby("mapped_category")["qty"].sum().sort_values(ascending=False)
-        print("  Mapping summary:")
-        for cat, tot in type_summary.items():
-            print(f"    {cat}: {tot:,.0f}")
-
-        # Remove existing 'No Methodology Provided' rows from both CSVs
-        n_removed_agg  = (agg[agg_col]  == "No Methodology Provided").sum()
-        n_removed_ctry = (ctry[agg_col] == "No Methodology Provided").sum()
-        agg  = agg[agg[agg_col]   != "No Methodology Provided"].copy()
-        ctry = ctry[ctry[agg_col] != "No Methodology Provided"].copy()
-        print(f"  Removed {n_removed_agg} rows from aggregated_data.csv")
-        print(f"  Removed {n_removed_ctry} rows from country_aggregated_data.csv")
-
-        # Build new aggregated rows (by mapped_category + vintage_year)
-        new_agg_rows = (
-            gold_blank[gold_blank["vintage_year"].notna()]
-            .groupby(["mapped_category", "vintage_year"])["qty"]
-            .sum()
-            .astype(int)
-            .reset_index()
-        )
-        new_agg_rows.columns = [agg_col, yr_col, cr_col]
-        new_agg_rows[reg_col] = "Gold Standard"
-        new_agg_rows = new_agg_rows[[reg_col, agg_col, yr_col, cr_col]]
-
-        print(f"  Adding {len(new_agg_rows)} new rows to aggregated_data.csv")
-        agg = pd.concat([agg, new_agg_rows], ignore_index=True)
-
-        # Build new country rows (by Country + mapped_category + vintage_year)
-        ctry_col_gold = "Country"  # Gold Issuances uses "Country"
-        new_ctry_rows = (
-            gold_blank[gold_blank["vintage_year"].notna() & gold_blank[ctry_col_gold].notna()]
-            .groupby([ctry_col_gold, "mapped_category", "vintage_year"])["qty"]
-            .sum()
-            .astype(int)
-            .reset_index()
-        )
-        new_ctry_rows.columns = [cty_col, agg_col, yr_col, cr_col]
-        new_ctry_rows[reg_col] = "Gold Standard"
-        new_ctry_rows = new_ctry_rows[[reg_col, cty_col, agg_col, yr_col, cr_col]]
-
-        print(f"  Adding {len(new_ctry_rows)} new rows to country_aggregated_data.csv")
-        ctry = pd.concat([ctry, new_ctry_rows], ignore_index=True)
-
-    # -----------------------------------------------------------------------
-    # SECTION F — Ingest CAR (Climate Action Reserve)
-    # NOTE: Verra processed total (~1,365.9M) is ~100.8M below the Berkeley
-    # VROD summary (~1,466.7M). The VROD file has only one Verra issuance
-    # sheet (Verra VCUS); no additional sheet bridges the gap. Known limitation.
-    # -----------------------------------------------------------------------
-    print("\n--- SECTION F: Ingest CAR ---")
-    car_raw = pd.read_excel(RAW_EXCEL, sheet_name='CAR Issuances', engine='openpyxl')
-    car_raw['vintage_year'] = pd.to_numeric(car_raw['Vintage'], errors='coerce')
-    car_raw['qty']          = pd.to_numeric(car_raw['Total Offset Credits Issued'], errors='coerce').fillna(0)
-    car_raw = car_raw[car_raw['qty'] > 0].copy()
-    print(f"  CAR Issuances rows (positive credits): {len(car_raw):,}")
-
-    # Build protocol ->category lookup from methodology_mapping.csv (Registry='CAR')
-    meth_map_f = pd.read_csv('public/methodology_mapping.csv', dtype=str).fillna('')
-    car_lookup = {}
-    for _, r in meth_map_f[meth_map_f['Registry'] == 'CAR'].iterrows():
-        code = r['Methodology Code'].strip()
-        name = r['Methodology Name'].strip()
-        cat  = r['Project Type Category'].strip()
-        if code:
-            car_lookup[code] = cat
-        if name:
-            car_lookup[name] = cat
-
-    def map_car_protocol(proto):
-        v = str(proto or '').strip()
-        if not v or v.lower() in ('nan', 'none', ''):
-            return 'No Methodology Provided'
-        if v in car_lookup:
-            return car_lookup[v]
-        # Substring match — protocol name may be embedded in version string
-        for key, cat in car_lookup.items():
-            if key and key in v:
-                return cat
-        return 'No Methodology Provided'
-
-    car_raw['cat'] = car_raw['Protocol and Version'].apply(map_car_protocol)
-
-    cat_summary_f = car_raw.groupby('cat')['qty'].sum().sort_values(ascending=False)
-    print("  CAR category mapping:")
-    for cat, tot in cat_summary_f.items():
-        print(f"    {cat}: {tot:,.0f}")
-
-    # Remove any existing CAR rows from agg (idempotency — matches ctry handling below)
-    n_old_car_agg = (agg[reg_col] == 'CAR').sum()
-    if n_old_car_agg > 0:
-        agg = agg[agg[reg_col] != 'CAR'].copy()
-        print(f"  Removed {n_old_car_agg} existing CAR rows from aggregated_data.csv")
-
-    # Aggregate-level rows (Registry, Project Type Category, Vintage Year, Total Credits Issued)
-    car_agg_rows = (
-        car_raw
-        .groupby(['cat', 'vintage_year'])['qty']
-        .sum().astype(int).reset_index()
+    # ------ Build aggregated_data.csv ------
+    print("\nBuilding aggregated_data.csv...")
+    agg_grp = (
+        proj_src
+        .groupby(['Registry', 'category', 'vintage_year'])
+        .agg(total_issued=('credits_issued', 'sum'), total_retired=('credits_retired', 'sum'))
+        .reset_index()
+        .rename(columns={
+            'category':      agg_col,
+            'vintage_year':  yr_col,
+            'total_issued':  cr_col,
+            'total_retired': 'total_credits_retired',
+        })
     )
-    car_agg_rows.columns = [agg_col, yr_col, cr_col]
-    car_agg_rows[reg_col] = 'CAR'
-    car_agg_rows = car_agg_rows[[reg_col, agg_col, yr_col, cr_col]]
-    print(f"  Adding {len(car_agg_rows)} rows to aggregated_data.csv")
-    print(f"  CAR total credits: {car_agg_rows[cr_col].sum():,}")
-    agg = pd.concat([agg, car_agg_rows], ignore_index=True)
+    agg_grp['retirement_rate'] = (
+        agg_grp['total_credits_retired']
+        / agg_grp[cr_col].replace(0, float('nan')) * 100
+    ).round(1).fillna(0)
+    agg_grp[cr_col]                  = agg_grp[cr_col].astype(int)
+    agg_grp['total_credits_retired'] = agg_grp['total_credits_retired'].astype(int)
+    agg = agg_grp[agg_grp[cr_col] > 0][[
+        reg_col, agg_col, yr_col, cr_col, 'total_credits_retired', 'retirement_rate'
+    ]].copy()
 
-    # Country-level rows — drop stale 194 rows, replace with freshly derived rows
-    n_old_car = (ctry[reg_col] == 'CAR').sum()
-    ctry = ctry[ctry[reg_col] != 'CAR'].copy()
-    print(f"  Replaced {n_old_car} existing CAR rows in country_aggregated_data.csv")
-    car_ctry_rows = (
-        car_raw[car_raw['Project Site Country'].notna()]
-        .groupby(['Project Site Country', 'cat', 'vintage_year'])['qty']
-        .sum().astype(int).reset_index()
+    verra_issued = int(agg.loc[agg[reg_col] == 'Verra',         cr_col].sum())
+    gs_issued    = int(agg.loc[agg[reg_col] == 'Gold Standard', cr_col].sum())
+    acr_issued   = int(agg.loc[agg[reg_col] == 'ACR',           cr_col].sum())
+    car_issued   = int(agg.loc[agg[reg_col] == 'CAR',           cr_col].sum())
+    print(f"  Verra:         {verra_issued:,}")
+    print(f"  Gold Standard: {gs_issued:,}")
+    print(f"  ACR:           {acr_issued:,}")
+    print(f"  CAR:           {car_issued:,}")
+    print(f"  Total rows:    {len(agg)}")
+    bad_cats = set(agg[agg_col].unique()) & EXCLUDED_CATS
+    print(f"  Excluded categories in agg: {bad_cats or 'none — OK'}")
+
+    # ------ Build country_aggregated_data.csv ------
+    print("\nBuilding country_aggregated_data.csv...")
+    ctry_src = proj_src[
+        proj_src['country'].ne('') & proj_src['country'].ne('International')
+    ]
+    ctry_grp = (
+        ctry_src
+        .groupby(['Registry', 'country', 'category', 'vintage_year'])
+        .agg(total_issued=('credits_issued', 'sum'))
+        .reset_index()
+        .rename(columns={
+            'country':      cty_col,
+            'category':     agg_col,
+            'vintage_year': yr_col,
+            'total_issued': cr_col,
+        })
     )
-    car_ctry_rows.columns = [cty_col, agg_col, yr_col, cr_col]
-    car_ctry_rows[reg_col] = 'CAR'
-    car_ctry_rows = car_ctry_rows[[reg_col, cty_col, agg_col, yr_col, cr_col]]
-    print(f"  Adding {len(car_ctry_rows)} country rows to country_aggregated_data.csv")
-    ctry = pd.concat([ctry, car_ctry_rows], ignore_index=True)
+    ctry_grp[cr_col] = ctry_grp[cr_col].astype(int)
+    ctry = ctry_grp[ctry_grp[cr_col] > 0][[
+        reg_col, cty_col, agg_col, yr_col, cr_col
+    ]].copy()
+    print(f"  Total rows: {len(ctry)}")
 
     # -----------------------------------------------------------------------
-    # Drop rows where credits went to 0 or negative (sanity clean-up)
-    # -----------------------------------------------------------------------
-    agg[cr_col]  = agg[cr_col].astype(int)
-    ctry[cr_col] = ctry[cr_col].astype(int)
-    n_zero_agg   = (agg[cr_col]  <= 0).sum()
-    n_zero_ctry  = (ctry[cr_col] <= 0).sum()
-    if n_zero_agg > 0:
-        print(f"\n  Removing {n_zero_agg} rows with zero/negative credits from aggregated_data.csv")
-        agg = agg[agg[cr_col] > 0]
-    if n_zero_ctry > 0:
-        print(f"  Removing {n_zero_ctry} rows with zero/negative credits from country_aggregated_data.csv")
-        ctry = ctry[ctry[cr_col] > 0]
-
-    # -----------------------------------------------------------------------
-    # Save
+    # Save intermediate state (Section G will enrich further)
     # -----------------------------------------------------------------------
     agg.to_csv(AGG_CSV, index=False)
     ctry.to_csv(CTRY_CSV, index=False)
@@ -740,7 +522,7 @@ def main():
     )
 
     for col in ['total_credits_issued', 'total_credits_retired', 'total_credits_remaining',
-                'retirement_rate', 'registry_breakdown']:
+               'retirement_rate', 'registry_breakdown']:
         if col in ctry.columns:
             ctry = ctry.drop(columns=[col])
     ctry = ctry.merge(country_stats, on=cty_col, how='left')
@@ -842,99 +624,6 @@ def main():
     for csv_path in [AGG_CSV, CTRY_CSV, PROJECT_COUNTS_CSV]:
         cols = pd.read_csv(csv_path, nrows=0).columns.tolist()
         print(f"   {csv_path}: {cols}")
-
-    # ------------------------------------------------------------------
-    # ADDITION 4 — Refresh Total Credits Issued in aggregated_data.csv
-    #              (per-vintage rebuild from raw Excel for Verra + GS)
-    # ------------------------------------------------------------------
-    print("\n=== ADDITION 4: Refresh Total Credits Issued in aggregated_data.csv ===")
-
-    before_verra = int(agg.loc[agg[reg_col] == 'Verra', cr_col].sum())
-    before_gs    = int(agg.loc[agg[reg_col] == 'Gold Standard', cr_col].sum())
-    print(f"  Before — Verra: {before_verra:,}  Gold Standard: {before_gs:,}")
-
-    vcus_a4 = vcus[['ID', 'vintage_year', 'Methodology', 'qty']].copy()
-    vcus_a4['ID'] = vcus_a4['ID'].astype(str).str.strip()
-    vcus_a4[agg_col] = vcus_a4.apply(
-        lambda r: (
-            code_to_cat.get(('Verra', str(r['Methodology'] or '').strip().split(';')[0].strip()))
-            or _map_verra_project_type(verra_project_type.get(r['ID'], ''))
-            or 'Other'
-        ),
-        axis=1,
-    )
-    verra_vyr = (
-        vcus_a4.groupby(['vintage_year', agg_col])['qty']
-        .sum().astype(int).reset_index()
-        .rename(columns={'vintage_year': yr_col, 'qty': cr_col})
-    )
-    verra_vyr[reg_col] = 'Verra'
-
-    gold_src = gold if gold is not None else pd.read_excel(
-        RAW_EXCEL, sheet_name='Gold Issuances', engine='openpyxl'
-    )
-    if 'vintage_year' not in gold_src.columns:
-        gold_src = gold_src.copy()
-        gold_src['vintage_year'] = pd.to_numeric(gold_src['Vintage'], errors='coerce')
-        gold_src['qty']          = pd.to_numeric(gold_src['Quantity'], errors='coerce').fillna(0)
-    gold_a4 = gold_src[['vintage_year', 'Project Type', 'Methodology', 'qty']].copy()
-    gold_a4['Methodology'] = gold_a4['Methodology'].fillna('').astype(str).str.strip()
-    gold_a4[agg_col] = gold_a4.apply(
-        lambda r: lookup_cat_e('Gold', r['Methodology']) or map_gold_project_type(r['Project Type']),
-        axis=1,
-    )
-    gs_vyr = (
-        gold_a4.groupby(['vintage_year', agg_col])['qty']
-        .sum().astype(int).reset_index()
-        .rename(columns={'vintage_year': yr_col, 'qty': cr_col})
-    )
-    gs_vyr[reg_col] = 'Gold Standard'
-
-    ret_cols = [c for c in ['total_credits_retired', 'retirement_rate'] if c in agg.columns]
-    new_vg = pd.concat([verra_vyr, gs_vyr], ignore_index=True)
-    if ret_cols:
-        ret_lookup = (
-            agg[agg[reg_col].isin(['Verra', 'Gold Standard'])]
-            [[reg_col, agg_col] + ret_cols]
-            .drop_duplicates([reg_col, agg_col])
-        )
-        new_vg = new_vg.merge(ret_lookup, on=[reg_col, agg_col], how='left')
-        if 'total_credits_retired' in new_vg.columns:
-            new_vg['total_credits_retired'] = new_vg['total_credits_retired'].fillna(0).astype(int)
-        if 'retirement_rate' in new_vg.columns:
-            new_vg['retirement_rate'] = new_vg['retirement_rate'].fillna(0)
-
-    agg = pd.concat(
-        [agg[~agg[reg_col].isin(['Verra', 'Gold Standard'])], new_vg],
-        ignore_index=True,
-    )
-    agg[cr_col] = agg[cr_col].fillna(0).astype(int)
-    agg.to_csv(AGG_CSV, index=False)
-
-    after_verra = int(agg.loc[agg[reg_col] == 'Verra', cr_col].sum())
-    after_gs    = int(agg.loc[agg[reg_col] == 'Gold Standard', cr_col].sum())
-    print(f"  After  — Verra: {after_verra:,}  Gold Standard: {after_gs:,}")
-    print(f"  aggregated_data.csv: refreshed {len(new_vg)} Verra/GS rows → {len(agg)} total rows saved")
-
-    # -----------------------------------------------------------------------
-    # ADDITION 4 VALIDATION
-    # -----------------------------------------------------------------------
-    print("\n=== ADDITION 4 VALIDATION ===")
-    for reg_name in ['Verra', 'Gold Standard']:
-        reg_rows = agg[agg[reg_col] == reg_name]
-        other_credits = int(reg_rows.loc[reg_rows[agg_col] == 'Other', cr_col].sum())
-        other_count   = int((reg_rows[agg_col] == 'Other').sum())
-        print(f"{reg_name} Other: {other_credits:,} credits ({other_count} rows)")
-    # Count GS issuance rows in ADDITION 4 that used project-type fallback
-    gs_meths = gold_a4['Methodology'].fillna('').astype(str).str.strip()
-    gs_with_meth = gs_meths[
-        gs_meths.str.len().gt(0) &
-        ~gs_meths.str.lower().isin(['nan', 'none', ''])
-    ]
-    fallback_n = int(
-        gs_with_meth.apply(lambda m: lookup_cat_e('Gold', m) is None).sum()
-    )
-    print(f"Codes resolved via Project Type fallback: {fallback_n}")
 
 
 if __name__ == "__main__":
