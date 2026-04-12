@@ -432,6 +432,21 @@ def build_gold():
     meta['registry'] = 'Gold Standard'
 
     df = vint.merge(meta, on='project_id', how='left')
+
+    # Apply GSID methodology overrides for projects with blank/null methodology
+    # (must happen before lookup_category() so fallback to _map_gold_project_type() is bypassed)
+    _ov_path = os.path.join(os.path.dirname(METHODOLOGY_MAP_CSV), 'gs_methodology_overrides.csv')
+    if os.path.exists(_ov_path):
+        _ov = pd.read_csv(_ov_path).set_index('GSID')['Methodology']
+        _blank = df['methodology'].isna() | df['methodology'].astype(str).str.strip().isin(['', 'nan', 'none'])
+        _mapped = df['project_id'].map(_ov)
+        _apply = _blank & _mapped.notna()
+        df.loc[_apply, 'methodology'] = _mapped[_apply]
+        n_rescued_proj = df.loc[_apply, 'project_id'].nunique()
+        n_rescued_rows = int(_apply.sum())
+        if n_rescued_proj:
+            print(f"  Methodology overrides applied: {n_rescued_proj} project(s), {n_rescued_rows} vintage row(s)")
+
     print(f"  Gold Standard vintage rows: {len(df)}  (unique projects: {df['project_id'].nunique()})")
     return df
 
@@ -545,6 +560,19 @@ def main():
         axis=1,
     )
     print(f"\nCategory coverage: {(all_df['category'] != 'Other').sum()} / {len(all_df)} vintage rows resolved")
+
+    # GS override rescue validation
+    _gs = all_df[all_df['registry'] == 'Gold Standard']
+    _gs_other_cred = _gs[_gs['category'] == 'Other']['credits_issued'].sum()
+    _gs_n_proj = _gs['project_id'].nunique()
+    print(f"\n=== GS RESCUE VALIDATION ===")
+    print(f"  GS unique projects : {_gs_n_proj}  (expect 2,099)")
+    print(f"  GS 'Other' credits : {_gs_other_cred:,.0f}  (was ~4,650,608; expect <500,000)")
+    _gs_by_cat = _gs.groupby('category')['credits_issued'].sum().sort_values(ascending=False)
+    print("  GS credits by category:")
+    for _cat, _cred in _gs_by_cat.items():
+        print(f"    {_cat}: {_cred:,.0f}")
+    print("=============================")
 
     # Lifetime totals (same value broadcast to every vintage row for a project)
     all_df['lifetime_credits_issued']  = all_df.groupby('project_id')['credits_issued'].transform('sum')

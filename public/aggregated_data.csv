@@ -437,14 +437,14 @@ Gold Standard,Cleaner cooking,2022,8237599,3465586,42.1
 Gold Standard,Cleaner cooking,2023,7663380,2412908,31.5
 Gold Standard,Cleaner cooking,2024,4588393,674760,14.7
 Gold Standard,Cleaner cooking,2025,456037,11777,2.6
-Gold Standard,Composting,2013,511,511,100.0
-Gold Standard,Composting,2014,1231,1231,100.0
-Gold Standard,Composting,2015,1565,1562,99.8
-Gold Standard,Composting,2016,1953,1953,100.0
-Gold Standard,Composting,2017,4655,4655,100.0
-Gold Standard,Composting,2018,5946,5678,95.5
-Gold Standard,Composting,2019,13162,12148,92.3
-Gold Standard,Composting,2020,14315,12906,90.2
+Gold Standard,Composting,2013,1604,1604,100.0
+Gold Standard,Composting,2014,2189,2189,100.0
+Gold Standard,Composting,2015,3348,3345,99.9
+Gold Standard,Composting,2016,2691,2691,100.0
+Gold Standard,Composting,2017,5084,5084,100.0
+Gold Standard,Composting,2018,7310,7042,96.3
+Gold Standard,Composting,2019,14589,13575,93.0
+Gold Standard,Composting,2020,14874,13465,90.5
 Gold Standard,Composting,2021,6153,5872,95.4
 Gold Standard,Composting,2022,5967,5967,100.0
 Gold Standard,Composting,2023,3920,3920,100.0
@@ -469,6 +469,9 @@ Gold Standard,Efficient appliances,2024,13416961,2118583,15.8
 Gold Standard,Efficient appliances,2025,862812,71711,8.3
 Gold Standard,Electric vehicles,2016,45967,0,0.0
 Gold Standard,Electric vehicles,2017,46838,0,0.0
+Gold Standard,Engineered Removals,2022,1,0,0.0
+Gold Standard,Engineered Removals,2023,512,512,100.0
+Gold Standard,Engineered Removals,2024,985,943,95.7
 Gold Standard,Geothermal,2020,170459,154637,90.7
 Gold Standard,Geothermal,2021,918338,572726,62.4
 Gold Standard,Geothermal,2022,926726,886912,95.7
@@ -516,9 +519,9 @@ Gold Standard,Landfill gas,2007,206996,205712,99.4
 Gold Standard,Landfill gas,2008,489334,477607,97.6
 Gold Standard,Landfill gas,2009,573147,544209,95.0
 Gold Standard,Landfill gas,2010,854339,814123,95.3
-Gold Standard,Landfill gas,2011,1139104,1055546,92.7
-Gold Standard,Landfill gas,2012,2383458,1583793,66.4
-Gold Standard,Landfill gas,2013,3931039,2744161,69.8
+Gold Standard,Landfill gas,2011,1443576,1359958,94.2
+Gold Standard,Landfill gas,2012,2725150,1919630,70.4
+Gold Standard,Landfill gas,2013,4382099,3087877,70.5
 Gold Standard,Landfill gas,2014,3457581,2360329,68.3
 Gold Standard,Landfill gas,2015,2278055,1637006,71.9
 Gold Standard,Landfill gas,2016,2487208,1900645,76.4
@@ -526,10 +529,11 @@ Gold Standard,Landfill gas,2017,438907,312714,71.2
 Gold Standard,Landfill gas,2018,372156,233358,62.7
 Gold Standard,Landfill gas,2019,733690,278536,38.0
 Gold Standard,Landfill gas,2020,1510928,362624,24.0
-Gold Standard,Landfill gas,2021,1507201,477970,31.7
-Gold Standard,Landfill gas,2022,1437183,348011,24.2
-Gold Standard,Landfill gas,2023,987413,90223,9.1
-Gold Standard,Landfill gas,2024,259734,24000,9.2
+Gold Standard,Landfill gas,2021,2106230,1076999,51.1
+Gold Standard,Landfill gas,2022,2227300,727386,32.7
+Gold Standard,Landfill gas,2023,1625823,658616,40.5
+Gold Standard,Landfill gas,2024,780094,119967,15.4
+Gold Standard,Landfill gas,2025,90185,0,0.0
 Gold Standard,Mixed renewables,2001,8560,0,0.0
 Gold Standard,Mixed renewables,2002,16362,0,0.0
 Gold Standard,Mixed renewables,2003,17606,0,0.0
@@ -544,15 +548,17 @@ Gold Standard,Mixed renewables,2013,4206388,2317999,55.1
 Gold Standard,Mixed renewables,2014,5550464,3074766,55.4
 Gold Standard,Mixed renewables,2015,6364444,3686341,57.9
 Gold Standard,Mixed renewables,2016,7177022,4514066,62.9
-Gold Standard,Mixed renewables,2017,8031423,4882702,60.8
-Gold Standard,Mixed renewables,2018,10342427,5205664,50.3
-Gold Standard,Mixed renewables,2019,14043965,7848904,55.9
-Gold Standard,Mixed renewables,2020,16846906,8331902,49.5
-Gold Standard,Mixed renewables,2021,15666564,4169117,26.6
-Gold Standard,Mixed renewables,2022,18269099,2788921,15.3
-Gold Standard,Mixed renewables,2023,12401899,1705528,13.8
-Gold Standard,Mixed renewables,2024,4001973,214193,5.4
+Gold Standard,Mixed renewables,2017,8046336,4882702,60.7
+Gold Standard,Mixed renewables,2018,10409943,5205664,50.0
+Gold Standard,Mixed renewables,2019,14112820,7848904,55.6
+Gold Standard,Mixed renewables,2020,16913372,8347992,49.4
+Gold Standard,Mixed renewables,2021,15732089,4211746,26.8
+Gold Standard,Mixed renewables,2022,18337229,2854593,15.6
+Gold Standard,Mixed renewables,2023,12524854,1705528,13.6
+Gold Standard,Mixed renewables,2024,4085467,214255,5.2
 Gold Standard,Mixed renewables,2025,697568,16197,2.3
+Gold Standard,Rice cultivation,2022,10867,0,0.0
+Gold Standard,Rice cultivation,2023,53900,2,0.0
 Gold Standard,Soil & Livestock,2012,3588,3588,100.0
 Gold Standard,Soil & Livestock,2013,11089,11089,100.0
 Gold Standard,Soil & Livestock,2014,13772,13772,100.0
@@ -580,11 +586,13 @@ Gold Standard,Solar,2022,4008514,1237054,30.9
 Gold Standard,Solar,2023,1998216,593989,29.7
 Gold Standard,Solar,2024,552311,33920,6.1
 Gold Standard,Solar,2025,16555,1666,10.1
-Gold Standard,Waste management,2019,281,281,100.0
-Gold Standard,Waste management,2020,447,447,100.0
-Gold Standard,Waste management,2021,208,50,24.0
-Gold Standard,Waste management,2022,44557,3141,7.0
-Gold Standard,Waste management,2023,57168,4300,7.5
+Gold Standard,Waste management,2017,58384,52855,90.5
+Gold Standard,Waste management,2018,4519,3827,84.7
+Gold Standard,Waste management,2019,60027,52163,86.9
+Gold Standard,Waste management,2020,53985,36680,67.9
+Gold Standard,Waste management,2021,51777,1052,2.0
+Gold Standard,Waste management,2022,76723,3141,4.1
+Gold Standard,Waste management,2023,80059,4300,5.4
 Gold Standard,Waste management,2024,7435,0,0.0
 Gold Standard,Waste to energy,2008,78680,78680,100.0
 Gold Standard,Waste to energy,2009,277992,277992,100.0
