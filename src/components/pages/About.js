@@ -143,7 +143,7 @@ const About = () => {
           <p className="about-text">
             Raw issuance records from each registry sheet were grouped by vintage year and project type
             category. Project types were resolved via <code>methodology_mapping.csv</code>, which maps
-            444 methodology mappings (283 Verra methodology codes, 81 Gold Standard protocols, 46 ACR
+            445 methodology mappings (283 Verra methodology codes, 82 Gold Standard protocols, 46 ACR
             protocols, 32 CAR protocols, and 2 ART protocols) to 31 project activity categories across
             all four registries. Match rate across all issuance rows is approximately 99.9%.
           </p>
@@ -155,9 +155,9 @@ const About = () => {
             IDs are excluded. Each project is assigned its most frequent methodology code and looked up
             in <code>methodology_mapping.csv</code> to determine its category. Projects whose methodology
             could not be resolved — either through methodology code or project type fallback — are
-            excluded from all pages. These represent 42 projects (&lt;1% of total): 19 Verra coal-mine-methane projects and 23 Gold Standard projects
-            with no usable metadata. Total across all four
-            registries: 5,834 projects (Verra 2,104 · Gold Standard 2,113 · CAR 858 · ACR 759).
+            excluded from all pages. One Gold Standard project (GSID 7511, a CER-to-VER conversion
+            record) cannot be matched to any category — it is described further in Known Limitations.
+            Total across all four registries: 5,820 projects (Verra 2,104 · Gold Standard 2,099 · CAR 858 · ACR 759).
           </p>
 
           <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Retirement Rate</p>
@@ -198,17 +198,34 @@ const About = () => {
 
           <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Data Pipeline</p>
           <p className="about-text">
-            Aggregation was performed using a Python/pandas script against the raw XLSX source. All
-            figures are derived exclusively from public registry records — no proprietary data,
+            Aggregation follows the methodology documented in Berkeley's VROD-Design-Calculations
+            (March 2026). The pipeline has two stages: <code>build_projects.py</code> reads the raw
+            XLSX source and produces <code>public/data/projects_data.csv</code> as the single source
+            of truth; <code>fix_data.py</code> then derives all aggregated and country-level CSVs
+            exclusively from <code>projects_data.csv</code> — no downstream script reads the raw
+            Excel directly.
+          </p>
+          <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 8 }}>Per-registry issuance methodology:</p>
+          <ul className="about-text" style={{ paddingLeft: '1.2em', marginTop: 0 }}>
+            <li><strong>Verra:</strong> Credits are deduplicated by unique (Project ID, Vintage Start, Vintage End, Total Vintage Quantity) tuple, following Berkeley's deduplication rule for the combined issuances-and-retirements file.</li>
+            <li><strong>Gold Standard:</strong> Only rows with Product Type = VER or CER are included. PER and ADALY product types are excluded.</li>
+            <li><strong>ACR:</strong> Credits Issued to Project column is used directly (excludes buffer pool deposits), per VROD-Design-Calculations Row 17.</li>
+            <li><strong>CAR:</strong> Total Offset Credits Issued minus the current reserve buffer pool balance minus credits intended for the compliance buffer pool.</li>
+          </ul>
+          <p className="about-text" style={{ marginTop: 8 }}>
+            All figures are derived exclusively from public registry records — no proprietary data,
             modelling, or estimates were used.
           </p>
 
           <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Known Limitations</p>
           <ul className="about-text" style={{ paddingLeft: '1.2em' }}>
             <li>
-              Some Gold Standard projects lack methodology codes in the source registry. These have been
-              categorised by project type name where possible (~158M credits). A small residual
-              (~7.5M credits, &lt;0.3% of total) could not be categorised and are excluded from all pages.
+              Some Gold Standard projects lack methodology codes in the source registry. 23 such projects
+              (4.6M credits) were manually verified against Gold Standard registry pages and project design
+              documents, and have been assigned categories based on project name and methodology descriptions.
+              One project (GSID 7511, a CER-to-VER conversion record) cannot be matched to any category
+              and is excluded from category breakdowns; it is counted in the Overview project total but
+              does not appear on the Projects page.
             </li>
             <li>
               Verra AFOLU projects are disaggregated using methodology codes; a small number of
@@ -266,7 +283,28 @@ const About = () => {
               unavailable" for that country.
             </li>
             <li>
-              <strong>Countries without VCM Contribution data.</strong> Of 112 countries in the dataset,
+              <strong>ACR and CAR retirement figures are incomplete.</strong> The VROD registry
+              files retirement sheets cover only a subset of Berkeley's full project universe: ACR
+              retirements cover 345 of 958 projects (53M vs 181M credits in Berkeley's published
+              database); CAR retirements cover 406 of 1,212 projects (81M vs 169M credits). The
+              missing retirement transactions are present in Berkeley's aggregated output but absent
+              from the registry export used as pipeline input. This is a source data limitation.
+            </li>
+            <li>
+              <strong>CAR issuance over-count vs Berkeley (~15.3M credits).</strong> Our CAR
+              issuance total exceeds Berkeley's published figure by approximately 15.3M credits
+              after buffer pool deduction. The primary driver is CAR1480 (Phlogiston Phase I Adipic
+              Acid, 21.2M credits), a chemical manufacturing project that Berkeley excludes. After
+              removing CAR1480, Berkeley's total exceeds ours by ~5.9M, suggesting Berkeley also
+              includes CAR vintages absent from the registry export.
+            </li>
+            <li>
+              <strong>ACR issuance over-count vs Berkeley (~1.1M credits, 0.3%).</strong> Our ACR
+              total exceeds Berkeley's published figure by approximately 1.1M credits. This is
+              attributable to extract-timing differences across 43 projects and is not actionable.
+            </li>
+            <li>
+              <strong>Countries without VCM Contribution data.</strong> Of 120 countries in the dataset,
               30 do not display a VCM Contribution to Decarbonisation figure. Six are excluded due to
               data constraints — three are territories without World Bank sovereign membership (Taiwan,
               Aruba, New Caledonia) and three have incomplete or discontinued World Bank emissions series
@@ -317,9 +355,10 @@ const About = () => {
               typology includes 'Carbon capture', which covers industrial point-source CCS (emissions
               prevention). Engineered Removals covers a distinct class — Carbon Dioxide Removal (CDR)
               as defined by IPCC AR6 — where projects actively remove CO₂ already in the atmosphere
-              through engineered or geological processes. Currently mapped to VM0049 (Biochar Utilization
-              with Geological Storage). Future subcategories may include DACCS, BECCS, and enhanced rock
-              weathering as these methodologies mature in the voluntary carbon market.
+              through engineered or geological processes. Mapped to VM0049 (Verra) and the Gold Standard
+              Carbon Sequestration Through Accelerated Carbonation Of Concrete Aggregate methodology.
+              Future subcategories may include DACCS, BECCS, and enhanced rock weathering as these
+              methodologies mature in the voluntary carbon market.
             </li>
           </ul>
         </div>
@@ -458,8 +497,8 @@ const About = () => {
                         <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that divert organic waste from landfill to aerobic composting, reducing methane emissions from anaerobic decomposition.</div>
                       </div>
                       <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
-                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Engineered Removals ◦</div>
-                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that actively remove CO₂ from the atmosphere through engineered or geological processes — including geological biochar storage. Represents the Carbon Dioxide Removal (CDR) category as defined by IPCC AR6, distinct from industrial point-source CCS. No credits in the current dataset; future methodologies include DACCS, BECCS, and enhanced rock weathering.</div>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Engineered Removals</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.6 }}>Projects that actively remove CO₂ from the atmosphere through engineered or geological processes. Represents the Carbon Dioxide Removal (CDR) category as defined by IPCC AR6, distinct from industrial point-source CCS. Current credits are from Gold Standard mineral carbonation projects (accelerated carbonation of concrete aggregate). Future subcategories may include DACCS, BECCS, and enhanced rock weathering.</div>
                       </div>
                       <div style={{ padding: '10px 16px', borderTop: '0.5px solid var(--border)' }}>
                         <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>Fossil gas leaks</div>
@@ -560,7 +599,7 @@ const About = () => {
                         </p>
                         <ul style={{ paddingLeft: '1.2em', margin: 0 }}>
                           <li>Somalia — 3,171,572 credits (large multi-year gaps)</li>
-                          <li>Eritrea — 2,481,615 credits (no post-2011 data)</li>
+                          <li>Eritrea — 2,552,354 credits (no post-2011 data)</li>
                           <li>Central African Republic — 1,294,618 credits (series ends 2015)</li>
                         </ul>
                       </div>
