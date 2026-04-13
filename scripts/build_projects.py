@@ -223,9 +223,15 @@ def build_acr():
     iss_pid = iss['Project ID'].astype(str).str.strip()
     iss_vyr = pd.to_numeric(iss['Vintage'], errors='coerce')
 
-    # Credits issued grouped by (project_id, vintage_year)
+    # Berkeley formula (VROD-Design-Calculations--2026-02.xlsx, Row 17):
+    #   Credits Issued = [Credits Issued to Project]
+    # Equals Total Credits Issued − Credits Issued to Buffer Pool only;
+    # "Credits Transferred to Buffer Pool" is NOT subtracted per Berkeley's actual formula.
+    # Expected: ~341,933,706 (1.1M over Berkeley — extract-timing difference, not actionable).
+    _acr_net = coerce_credits(iss['Credits Issued to Project'])
+    print(f"  ACR credits_issued (Credits Issued to Project): {_acr_net.sum():,.0f}  (Berkeley: 340,820,661)")
     issued = (
-        coerce_credits(iss['Total Credits Issued'])
+        _acr_net
         .groupby([iss_pid, iss_vyr])
         .sum()
         .rename('credits_issued')
@@ -295,8 +301,20 @@ def build_car():
     iss_pid = iss['Project ID'].astype(str).str.strip()
     iss_vyr = pd.to_numeric(iss['Vintage'], errors='coerce')
 
-    issued = (
+    # Berkeley formula (VROD-Calculations.pdf p.6): Total Offset Credits Issued
+    #   − net reserve buffer (= deposits − releases − cancellations − canceled_for_ARB)
+    #   − credits intended for compliance buffer pool
+    # "Offset Credits Currently in Reserve Buffer Pool" already equals the net reserve balance
+    # (verified: 7,881,592 − 5,002 − 256,610 − 1,934,035 = 5,685,945 = column sum)
+    _car_net = (
         coerce_credits(iss['Total Offset Credits Issued'])
+        - coerce_credits(iss['Offset Credits Currently in Reserve Buffer Pool'])
+        - coerce_credits(iss['Offset Credits Intended for Compliance Buffer Pool'])
+    )
+    print(f"  CAR before buffer deduction: {coerce_credits(iss['Total Offset Credits Issued']).sum():,.0f}")
+    print(f"  CAR after  buffer deduction: {_car_net.sum():,.0f}  (expect ~247,689,579)")
+    issued = (
+        _car_net
         .groupby([iss_pid, iss_vyr])
         .sum()
         .rename('credits_issued')

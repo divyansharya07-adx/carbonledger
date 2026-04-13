@@ -1,15 +1,15 @@
 Registry,Project Type Category,Vintage Year,Total Credits Issued,total_credits_retired,retirement_rate
 ACR,Afforestation/Reforestation,2009,1119,1004,89.7
 ACR,Afforestation/Reforestation,2010,42898,2343,5.5
-ACR,Afforestation/Reforestation,2011,3706128,5750,0.2
+ACR,Afforestation/Reforestation,2011,2602240,5750,0.2
 ACR,Afforestation/Reforestation,2012,369621,322088,87.1
 ACR,Afforestation/Reforestation,2013,477297,421273,88.3
 ACR,Afforestation/Reforestation,2014,182626,182626,100.0
 ACR,Afforestation/Reforestation,2015,1054928,947231,89.8
 ACR,Afforestation/Reforestation,2016,165976,67675,40.8
 ACR,Afforestation/Reforestation,2017,1107890,992889,89.6
-ACR,Afforestation/Reforestation,2018,308550,56802,18.4
-ACR,Afforestation/Reforestation,2019,1364185,794802,58.3
+ACR,Afforestation/Reforestation,2018,307508,56802,18.5
+ACR,Afforestation/Reforestation,2019,1362647,794802,58.3
 ACR,Afforestation/Reforestation,2020,1179164,451975,38.3
 ACR,Afforestation/Reforestation,2021,804970,23681,2.9
 ACR,Afforestation/Reforestation,2022,716959,77278,10.8
@@ -34,21 +34,21 @@ ACR,Electric vehicles,2016,5597,5597,100.0
 ACR,Electric vehicles,2017,3528,3528,100.0
 ACR,Electric vehicles,2018,2565,2565,100.0
 ACR,Electric vehicles,2019,1857,1857,100.0
-ACR,Forest management,2011,16032,16032,100.0
-ACR,Forest management,2012,4472885,21240,0.5
-ACR,Forest management,2013,1190083,69472,5.8
-ACR,Forest management,2014,2419251,87012,3.6
-ACR,Forest management,2015,16294597,297903,1.8
-ACR,Forest management,2016,31791840,0,0.0
-ACR,Forest management,2017,28178218,128033,0.5
-ACR,Forest management,2018,14841681,2167736,14.6
-ACR,Forest management,2019,19376347,1945589,10.0
-ACR,Forest management,2020,13295109,2914479,21.9
-ACR,Forest management,2021,15058131,2486155,16.5
-ACR,Forest management,2022,16479146,1442767,8.8
-ACR,Forest management,2023,18080703,990847,5.5
-ACR,Forest management,2024,13888595,338194,2.4
-ACR,Forest management,2025,760025,14932,2.0
+ACR,Forest management,2011,14429,16032,111.1
+ACR,Forest management,2012,3843968,21240,0.6
+ACR,Forest management,2013,995479,69472,7.0
+ACR,Forest management,2014,1968442,87012,4.4
+ACR,Forest management,2015,13615706,297903,2.2
+ACR,Forest management,2016,26844517,0,0.0
+ACR,Forest management,2017,23484793,128033,0.5
+ACR,Forest management,2018,12591281,2167736,17.2
+ACR,Forest management,2019,16602054,1945589,11.7
+ACR,Forest management,2020,11809810,2914479,24.7
+ACR,Forest management,2021,13610206,2486155,18.3
+ACR,Forest management,2022,15209625,1442767,9.5
+ACR,Forest management,2023,16109444,990847,6.2
+ACR,Forest management,2024,12655222,338194,2.7
+ACR,Forest management,2025,723077,14932,2.1
 ACR,Fossil gas leaks,2014,280667,0,0.0
 ACR,Fossil gas leaks,2015,490301,0,0.0
 ACR,Fossil gas leaks,2016,504479,0,0.0
@@ -141,18 +141,18 @@ ACR,Oil Field Gas Recovery,2013,84182,0,0.0
 ACR,Oil Field Gas Recovery,2023,2059142,326176,15.8
 ACR,Oil Field Gas Recovery,2024,2396824,662349,27.6
 ACR,Oil Field Gas Recovery,2025,442217,104060,23.5
-ACR,Reforestation and ecosystem restoration,2011,170,0,0.0
-ACR,Reforestation and ecosystem restoration,2012,683,0,0.0
-ACR,Reforestation and ecosystem restoration,2014,5316,0,0.0
-ACR,Reforestation and ecosystem restoration,2015,13713,0,0.0
-ACR,Reforestation and ecosystem restoration,2016,12171,0,0.0
-ACR,Reforestation and ecosystem restoration,2017,11233,0,0.0
-ACR,Reforestation and ecosystem restoration,2018,16266,0,0.0
-ACR,Rewilding,2010,13891,13292,95.7
-ACR,Rewilding,2011,15370,14144,92.0
-ACR,Rewilding,2012,20618,18161,88.1
-ACR,Rewilding,2013,14795,13414,90.7
-ACR,Rewilding,2014,17243,16119,93.5
+ACR,Reforestation and ecosystem restoration,2011,150,0,0.0
+ACR,Reforestation and ecosystem restoration,2012,601,0,0.0
+ACR,Reforestation and ecosystem restoration,2014,4678,0,0.0
+ACR,Reforestation and ecosystem restoration,2015,12067,0,0.0
+ACR,Reforestation and ecosystem restoration,2016,10710,0,0.0
+ACR,Reforestation and ecosystem restoration,2017,9885,0,0.0
+ACR,Reforestation and ecosystem restoration,2018,14314,0,0.0
+ACR,Rewilding,2010,13292,13292,100.0
+ACR,Rewilding,2011,14144,14144,100.0
+ACR,Rewilding,2012,19428,18161,93.5
+ACR,Rewilding,2013,13638,13414,98.4
+ACR,Rewilding,2014,16119,16119,100.0
 ACR,Rewilding,2015,17587,17587,100.0
 ACR,Rewilding,2016,17782,17732,99.7
 ACR,Rewilding,2017,16809,16809,100.0
@@ -213,30 +213,30 @@ CAR,Composting,2021,48192,48192,100.0
 CAR,Composting,2022,64392,64392,100.0
 CAR,Composting,2023,80087,47843,59.7
 CAR,Composting,2024,58745,1555,2.6
-CAR,Forest management,2002,7293,4569,62.6
-CAR,Forest management,2003,17942,14079,78.5
-CAR,Forest management,2004,67124,18466,27.5
-CAR,Forest management,2005,263908,70488,26.7
-CAR,Forest management,2006,384846,83586,21.7
-CAR,Forest management,2007,3164845,193638,6.1
-CAR,Forest management,2008,1591844,341722,21.5
-CAR,Forest management,2009,1323586,390503,29.5
-CAR,Forest management,2010,2285602,627907,27.5
-CAR,Forest management,2011,2366605,194344,8.2
-CAR,Forest management,2012,1820062,300807,16.5
-CAR,Forest management,2013,4577382,426365,9.3
-CAR,Forest management,2014,4818515,497844,10.3
-CAR,Forest management,2015,7614668,88456,1.2
-CAR,Forest management,2016,9734167,90490,0.9
-CAR,Forest management,2017,9500291,61616,0.6
-CAR,Forest management,2018,15089127,81418,0.5
-CAR,Forest management,2019,13406792,191475,1.4
-CAR,Forest management,2020,6110287,488894,8.0
-CAR,Forest management,2021,8604235,1118627,13.0
-CAR,Forest management,2022,9275485,2102898,22.7
-CAR,Forest management,2023,8919991,1375103,15.4
-CAR,Forest management,2024,7397705,501063,6.8
-CAR,Forest management,2025,2191011,0,0.0
+CAR,Forest management,2002,4569,4569,100.0
+CAR,Forest management,2003,14079,14079,100.0
+CAR,Forest management,2004,64325,18466,28.7
+CAR,Forest management,2005,262510,70488,26.9
+CAR,Forest management,2006,379919,83586,22.0
+CAR,Forest management,2007,3161251,193638,6.1
+CAR,Forest management,2008,1585808,341722,21.5
+CAR,Forest management,2009,1317657,390503,29.6
+CAR,Forest management,2010,2256472,627907,27.8
+CAR,Forest management,2011,2349198,194344,8.3
+CAR,Forest management,2012,1811576,300807,16.6
+CAR,Forest management,2013,4570491,426365,9.3
+CAR,Forest management,2014,4801229,497844,10.4
+CAR,Forest management,2015,7608272,88456,1.2
+CAR,Forest management,2016,9706912,90490,0.9
+CAR,Forest management,2017,9468928,61616,0.7
+CAR,Forest management,2018,14975601,81418,0.5
+CAR,Forest management,2019,13377353,191475,1.4
+CAR,Forest management,2020,6041201,488894,8.1
+CAR,Forest management,2021,8064815,1118627,13.9
+CAR,Forest management,2022,7789459,2102898,27.0
+CAR,Forest management,2023,6998889,1375103,19.6
+CAR,Forest management,2024,5907702,501063,8.5
+CAR,Forest management,2025,1693841,0,0.0
 CAR,Fossil gas leaks,2009,21902,0,0.0
 CAR,Fossil gas leaks,2010,82977,0,0.0
 CAR,Fossil gas leaks,2011,123555,0,0.0
@@ -312,30 +312,30 @@ CAR,Nitric acid,2022,1466181,1106379,75.5
 CAR,Nitric acid,2023,1713422,1028225,60.0
 CAR,Nitric acid,2024,1368394,618185,45.2
 CAR,Nitric acid,2025,826914,121603,14.7
-CAR,Rewilding,2002,5672,1219,21.5
-CAR,Rewilding,2003,10732,5507,51.3
-CAR,Rewilding,2004,43380,18177,41.9
+CAR,Rewilding,2002,1219,1219,100.0
+CAR,Rewilding,2003,5507,5507,100.0
+CAR,Rewilding,2004,18177,18177,100.0
 CAR,Rewilding,2005,58815,0,0.0
 CAR,Rewilding,2006,58815,0,0.0
 CAR,Rewilding,2007,59124,0,0.0
 CAR,Rewilding,2008,100016,3193,3.2
 CAR,Rewilding,2009,105184,0,0.0
 CAR,Rewilding,2010,219538,3108,1.4
-CAR,Rewilding,2011,312178,25842,8.3
-CAR,Rewilding,2012,289545,26036,9.0
-CAR,Rewilding,2013,166436,28304,17.0
-CAR,Rewilding,2014,52409,5236,10.0
-CAR,Rewilding,2015,129468,36281,28.0
-CAR,Rewilding,2016,107457,49174,45.8
-CAR,Rewilding,2017,127881,70494,55.1
-CAR,Rewilding,2018,131460,73300,55.8
-CAR,Rewilding,2019,89439,39266,43.9
-CAR,Rewilding,2020,89249,52756,59.1
-CAR,Rewilding,2021,92404,41834,45.3
-CAR,Rewilding,2022,125839,31574,25.1
-CAR,Rewilding,2023,92258,14644,15.9
-CAR,Rewilding,2024,35451,0,0.0
-CAR,Rewilding,2025,3079,0,0.0
+CAR,Rewilding,2011,312176,25842,8.3
+CAR,Rewilding,2012,289544,26036,9.0
+CAR,Rewilding,2013,165929,28304,17.1
+CAR,Rewilding,2014,51023,5236,10.3
+CAR,Rewilding,2015,119892,36281,30.3
+CAR,Rewilding,2016,97331,49174,50.5
+CAR,Rewilding,2017,117917,70494,59.8
+CAR,Rewilding,2018,122295,73300,59.9
+CAR,Rewilding,2019,80918,39266,48.5
+CAR,Rewilding,2020,82319,52756,64.1
+CAR,Rewilding,2021,85500,41834,48.9
+CAR,Rewilding,2022,114394,31574,27.6
+CAR,Rewilding,2023,85914,14644,17.0
+CAR,Rewilding,2024,32656,0,0.0
+CAR,Rewilding,2025,2723,0,0.0
 CAR,Soil & Livestock,2007,35807,18973,53.0
 CAR,Soil & Livestock,2008,35468,35461,100.0
 CAR,Soil & Livestock,2009,142645,104918,73.6
@@ -347,11 +347,11 @@ CAR,Soil & Livestock,2014,824136,178017,21.6
 CAR,Soil & Livestock,2015,783320,76300,9.7
 CAR,Soil & Livestock,2016,1027844,98038,9.5
 CAR,Soil & Livestock,2017,1010942,111010,11.0
-CAR,Soil & Livestock,2018,919142,164985,17.9
-CAR,Soil & Livestock,2019,904793,135300,15.0
-CAR,Soil & Livestock,2020,785248,113693,14.5
-CAR,Soil & Livestock,2021,759842,158264,20.8
-CAR,Soil & Livestock,2022,919132,225251,24.5
+CAR,Soil & Livestock,2018,912960,164985,18.1
+CAR,Soil & Livestock,2019,871096,135300,15.5
+CAR,Soil & Livestock,2020,715076,113693,15.9
+CAR,Soil & Livestock,2021,634528,158264,24.9
+CAR,Soil & Livestock,2022,860731,225251,26.2
 CAR,Soil & Livestock,2023,1075428,103455,9.6
 CAR,Soil & Livestock,2024,898768,21688,2.4
 CAR,Soil & Livestock,2025,118377,1,0.0
