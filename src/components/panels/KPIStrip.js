@@ -1,6 +1,12 @@
 import { useMemo } from 'react';
 import { formatCredits, formatPct, getGroup } from '../../utils/formatters';
 
+const formatTrend = (t) => {
+  if (!t) return null;
+  const sign = t.pct >= 0 ? '+' : '';
+  return `${sign}${t.pct}% since ${t.year}`;
+};
+
 const Sparkline = ({ values }) => {
   if (!values || values.length < 2) return null;
   const W = 200, H = 20, PAD = 4;
@@ -126,6 +132,55 @@ const KPIStrip = ({ data, selectedActivity, activeGroup }) => {
     return Object.entries(map).sort((a, b) => a[0] - b[0]).map(([, v]) => v);
   }, [filteredCountry, topCountryName]);
 
+  const creditsTrend = useMemo(() => {
+    const entries = Object.entries(
+      filteredAgg.reduce((m, d) => { m[d.year] = (m[d.year] || 0) + d.credits; return m; }, {})
+    ).sort((a, b) => Number(a[0]) - Number(b[0]));
+    if (entries.length < 2) return null;
+    const base = entries[0][1];
+    return base ? { pct: Math.round((entries[entries.length - 1][1] - base) / base * 100), year: Number(entries[0][0]) } : null;
+  }, [filteredAgg]);
+
+  const countriesTrend = useMemo(() => {
+    const entries = Object.entries(
+      filteredCountry.reduce((m, d) => {
+        if (!m[d.year]) m[d.year] = new Set();
+        m[d.year].add(d.country);
+        return m;
+      }, {})
+    ).sort((a, b) => Number(a[0]) - Number(b[0]));
+    if (entries.length < 2) return null;
+    const base = entries[0][1].size;
+    return base ? { pct: Math.round((entries[entries.length - 1][1].size - base) / base * 100), year: Number(entries[0][0]) } : null;
+  }, [filteredCountry]);
+
+  const topRegShareTrend = useMemo(() => {
+    if (!topRegName) return null;
+    const totalMap = {}, regMap = {};
+    filteredAgg.forEach(d => {
+      totalMap[d.year] = (totalMap[d.year] || 0) + d.credits;
+      if (d.registry === topRegName) regMap[d.year] = (regMap[d.year] || 0) + d.credits;
+    });
+    const yrs = Object.keys(totalMap).sort((a, b) => Number(a) - Number(b));
+    if (yrs.length < 2) return null;
+    const baseShare = totalMap[yrs[0]] > 0 ? (regMap[yrs[0]] || 0) / totalMap[yrs[0]] * 100 : 0;
+    const lastShare = totalMap[yrs[yrs.length - 1]] > 0 ? (regMap[yrs[yrs.length - 1]] || 0) / totalMap[yrs[yrs.length - 1]] * 100 : 0;
+    return baseShare ? { pct: Math.round((lastShare - baseShare) / baseShare * 100), year: Number(yrs[0]) } : null;
+  }, [filteredAgg, topRegName]);
+
+  const topCountryTrend = useMemo(() => {
+    if (!topCountryName) return null;
+    const entries = Object.entries(
+      filteredCountry.reduce((m, d) => {
+        if (d.country === topCountryName) m[d.year] = (m[d.year] || 0) + d.credits;
+        return m;
+      }, {})
+    ).sort((a, b) => Number(a[0]) - Number(b[0]));
+    if (entries.length < 2) return null;
+    const base = entries[0][1];
+    return base ? { pct: Math.round((entries[entries.length - 1][1] - base) / base * 100), year: Number(entries[0][0]) } : null;
+  }, [filteredCountry, topCountryName]);
+
   // Early exit after all hooks
   if (!data) return null;
 
@@ -176,24 +231,28 @@ const KPIStrip = ({ data, selectedActivity, activeGroup }) => {
         {activityLabel && <div className="kpi-sub orange">{activityLabel}</div>}
         {!activeGroup && !activityLabel && <div className="kpi-sub muted">across all registries</div>}
         <Sparkline values={creditsByYearSeries} />
+        {formatTrend(creditsTrend) && <div className="kpi-trend">{formatTrend(creditsTrend)}</div>}
       </div>
       <div className="kpi-item">
         <div className="kpi-label">COUNTRIES ACTIVE</div>
         <div className="kpi-value">{displayCountryCount}</div>
         <div className="kpi-sub muted">with issued credits</div>
         <Sparkline values={countriesByYearSeries} />
+        {formatTrend(countriesTrend) && <div className="kpi-trend">{formatTrend(countriesTrend)}</div>}
       </div>
       <div className="kpi-item">
         <div className="kpi-label">TOP REGISTRY</div>
         <div className="kpi-value">{topRegistry?.name || '—'}</div>
         <div className="kpi-sub blue">{formatPct(topRegPct)} share</div>
         <Sparkline values={topRegShareByYearSeries} />
+        {formatTrend(topRegShareTrend) && <div className="kpi-trend">{formatTrend(topRegShareTrend)}</div>}
       </div>
       <div className="kpi-item">
         <div className="kpi-label">LEADING COUNTRY</div>
         <div className="kpi-value">{topCountry?.name || '—'}</div>
         <div className="kpi-sub green">{formatCredits(topCountry?.credits || 0)}</div>
         <Sparkline values={topCountryByYearSeries} />
+        {formatTrend(topCountryTrend) && <div className="kpi-trend">{formatTrend(topCountryTrend)}</div>}
       </div>
       <div className="kpi-item">
         <div className="kpi-label">PROJECT ACTIVITIES</div>

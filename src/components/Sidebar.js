@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LayoutGrid, Hexagon, Globe, Diamond, TrendingUp, Download, Info, Sun, Moon, ChevronLeft, ChevronRight, Menu, LayoutList } from 'lucide-react';
+import { LayoutGrid, Hexagon, Globe, Diamond, Download, Info, Sun, Moon, ChevronLeft, ChevronRight, Menu, LayoutList } from 'lucide-react';
 
 const NAV_ITEMS = [
   { id: 'overview', icon: LayoutGrid, label: 'Overview' },
@@ -43,18 +43,6 @@ const Sidebar = ({ activePage, setActivePage, darkMode, setDarkMode, onExport, s
         ))}
 
         <div className="sidebar-divider" />
-
-        <button
-          className="sidebar-btn disabled"
-          onMouseEnter={() => setHovered('trends')}
-          onMouseLeave={() => setHovered(null)}
-        >
-          <TrendingUp size={16} />
-          <span>Trends</span>
-          {hovered === 'trends' && (
-            <div className="sidebar-tooltip">Coming soon</div>
-          )}
-        </button>
 
         <button
           className="sidebar-btn"

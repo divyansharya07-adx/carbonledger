@@ -18,7 +18,6 @@
   --lime: #CCDF84;
   --cream: #f5f0e7;
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --section-box-bg: rgba(255,255,255,0.04);
 }
 
 [data-theme="light"] {
@@ -30,7 +29,6 @@
   --text-primary: #333232;
   --text-secondary: #6b6969;
   --text-muted: #999990;
-  --section-box-bg: rgba(0,0,0,0.03);
 }
 
 [data-theme="dark"] {
@@ -563,6 +561,14 @@ body {
 
 .kpi-sparkline svg {
   display: block;
+}
+
+.kpi-trend {
+  font-size: 9px;
+  color: var(--text-muted);
+  text-align: right;
+  padding: 0 12px 4px 0;
+  letter-spacing: 0.02em;
 }
 
 /* ═══════════════════════════════════════════

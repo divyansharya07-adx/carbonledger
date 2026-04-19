@@ -120,7 +120,7 @@ const RegistryIntelligence = ({ data }) => {
         <div className="registry-card-credits">{formatCredits(reg.credits)}</div>
         <div className="registry-card-pct">{formatPct(reg.pct)} of global market</div>
 
-        <div style={{ background: 'var(--section-box-bg)', borderRadius: 8, padding: '6px 10px', borderLeft: '2px solid #e85724', marginBottom: 6 }}>
+        <div style={{ borderRadius: 8, padding: '6px 10px', borderLeft: '2px solid #e85724', marginBottom: 6 }}>
           <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-primary)', marginBottom: 5 }}>
             Top Activities
           </div>
@@ -132,7 +132,7 @@ const RegistryIntelligence = ({ data }) => {
           ))}
         </div>
 
-        <div style={{ background: 'var(--section-box-bg)', borderRadius: 8, padding: '6px 10px', borderLeft: '2px solid #e85724', marginBottom: 6 }}>
+        <div style={{ borderRadius: 8, padding: '6px 10px', borderLeft: '2px solid #e85724', marginBottom: 6 }}>
           <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-primary)', marginBottom: 5 }}>
             Top Countries
           </div>
@@ -145,7 +145,7 @@ const RegistryIntelligence = ({ data }) => {
         </div>
 
         {reg.stats && (
-          <div style={{ background: 'var(--section-box-bg)', borderRadius: 8, padding: '6px 10px', borderLeft: '2px solid #e85724', marginBottom: 0 }}>
+          <div style={{ borderRadius: 8, padding: '6px 10px', borderLeft: '2px solid #e85724', marginBottom: 0 }}>
             <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-primary)', marginBottom: 5 }}>
               Market Stats
             </div>
