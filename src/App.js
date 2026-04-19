@@ -111,6 +111,7 @@ function App() {
         return (
           <Overview
             data={data}
+            selectedRegistry={selectedRegistry}
             selectedActivity={selectedActivity}
             setSelectedActivity={setSelectedActivity}
             setActivePage={setActivePage}

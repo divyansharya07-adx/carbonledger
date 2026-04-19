@@ -1596,6 +1596,8 @@ body {
 }
 [data-theme="light"] .registry-card {
   background: var(--bg-card);
+  border-width: 1px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
 .registry-card:hover {

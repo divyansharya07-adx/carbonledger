@@ -18,6 +18,20 @@ const ChartTooltip = ({ active, payload }) => {
   );
 };
 
+const StackedBarTooltip = ({ active, payload }) => {
+  if (!active || !payload || !payload.length) return null;
+  return (
+    <div className="chart-tooltip">
+      <div className="ct-name">{payload[0].payload.name || ''}</div>
+      {payload.map((p, i) => (
+        <div key={i} className="ct-value" style={{ color: p.color }}>
+          {p.name}: {p.value}m
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const SPECIALTIES = {
   'Verra': 'Nature-based leader',
   'Gold Standard': 'Clean energy specialist',
@@ -192,7 +206,7 @@ const RegistryIntelligence = ({ data }) => {
               <BarChart data={stackedBarData}>
                 <XAxis dataKey="name" tick={{ fontSize: 8 }} />
                 <YAxis tickFormatter={v => v + 'm'} tick={{ fontSize: 8 }} />
-                <Tooltip formatter={(v, n) => [v + 'm', n]} />
+                <Tooltip content={<StackedBarTooltip />} />
                 <Bar dataKey="retired" stackId="s" name="Retired" radius={[0, 0, 0, 0]}>
                   {creditsByRegistry.map((reg, i) => (
                     <Cell key={i} fill={reg.color} />

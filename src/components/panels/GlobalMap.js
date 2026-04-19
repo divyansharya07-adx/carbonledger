@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import * as d3 from 'd3';
 import { feature } from 'topojson-client';
-import { formatCredits } from '../../utils/formatters';
+import { formatCredits, REGISTRY_COLORS } from '../../utils/formatters';
 
 const WORLD_TOPO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
@@ -40,7 +40,7 @@ const COUNTRY_COORDS = {
   'Angola': [17, -12],
 };
 
-const GlobalMap = ({ data, selectedActivity, onCountryClick }) => {
+const GlobalMap = ({ data, selectedRegistry, selectedActivity, onCountryClick }) => {
   const svgRef = useRef(null);
   const containerRef = useRef(null);
   const [tooltip, setTooltip] = useState(null);
@@ -76,6 +76,9 @@ const GlobalMap = ({ data, selectedActivity, onCountryClick }) => {
     });
     return map;
   }, [data, selectedActivity]);
+
+  const REGISTRY_ID_MAP = { verra: 'Verra', gold: 'Gold Standard', acr: 'ACR', car: 'CAR' };
+  const bubbleColor = REGISTRY_COLORS[REGISTRY_ID_MAP[selectedRegistry]] || '#e85724';
 
   const maxCredits = useMemo(() => {
     const vals = Object.values(countryCreditMap);
@@ -134,9 +137,9 @@ const GlobalMap = ({ data, selectedActivity, onCountryClick }) => {
           .attr('cx', x)
           .attr('cy', y)
           .attr('r', radius)
-          .attr('fill', '#e85724')
+          .attr('fill', bubbleColor)
           .attr('fill-opacity', opacity)
-          .attr('stroke', '#e85724')
+          .attr('stroke', bubbleColor)
           .attr('stroke-width', 0.5)
           .attr('stroke-opacity', 0.3)
           .style('cursor', 'pointer')
@@ -158,7 +161,7 @@ const GlobalMap = ({ data, selectedActivity, onCountryClick }) => {
           });
       });
     }
-  }, [worldData, data, selectedActivity, maxCredits, countryCreditMap, onCountryClick, containerSize]);
+  }, [worldData, data, selectedRegistry, selectedActivity, maxCredits, countryCreditMap, onCountryClick, containerSize, bubbleColor]);
 
   return (
     <div className="map-panel overview-map">
