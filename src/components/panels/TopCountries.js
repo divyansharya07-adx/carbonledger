@@ -16,7 +16,7 @@ const TopCountries = ({ data, selectedActivity, onNavigateCountry }) => {
     <div className="top-countries-panel overview-top-countries">
       <div className="top-countries-header">
         <div className="top-countries-title">
-          ◎ Top Countries
+          <span aria-hidden="true" title="Top Countries: highest credit-producing nations">◎</span> Top Countries
           <span className="context-badge">{contextLabel}</span>
         </div>
         <span className="explorer-link" onClick={onNavigateCountry}>

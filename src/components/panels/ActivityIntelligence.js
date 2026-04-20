@@ -19,7 +19,7 @@ const ActivityIntelligence = ({ data, selectedActivity, setSelectedActivity, act
   return (
     <div className="activity-panel overview-activity">
       <div className="panel-header">
-        <div className="panel-title">⬡ Project Activity Intelligence</div>
+        <div className="panel-title"><span aria-hidden="true" title="Project Activity: credit distribution by activity type and registry">⬡</span> Project Activity Intelligence</div>
         <div className="group-chips">
           {GROUPS.map(g => {
             const isActive = (g === 'All' && !activeGroup) || (g !== 'All' && activeGroup === g);

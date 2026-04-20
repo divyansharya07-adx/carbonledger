@@ -139,7 +139,7 @@ const InsightCards = ({ data, selectedActivity }) => {
   return (
     <div className="insights-panel overview-insights">
       <div className="panel-header">
-        <div className="panel-title">◈ Market Intelligence</div>
+        <div className="panel-title"><span aria-hidden="true" title="Market Intelligence: key metrics and market insights">◈</span> Market Intelligence</div>
       </div>
       <div className="insights-grid">
         {insights.map((insight, i) => (

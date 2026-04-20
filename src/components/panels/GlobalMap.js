@@ -167,7 +167,7 @@ const GlobalMap = ({ data, selectedRegistry, selectedActivity, onCountryClick })
     <div className="map-panel overview-map">
       <div className="map-header">
         <div className="panel-title">
-          ◎ Global Distribution
+          <span aria-hidden="true" title="Global Distribution: credits mapped by country">◎</span> Global Distribution
           {selectedActivity && <span className="map-badge">{selectedActivity}</span>}
         </div>
         {!selectedActivity && <div className="map-hint">Click a country to explore</div>}
