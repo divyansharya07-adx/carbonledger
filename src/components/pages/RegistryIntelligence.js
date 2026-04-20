@@ -131,8 +131,10 @@ const RegistryIntelligence = ({ data }) => {
             {SPECIALTIES[reg.name]}
           </span>
         </div>
-        <div className="registry-card-credits">{formatCredits(reg.credits)}</div>
-        <div className="registry-card-pct">{formatPct(reg.pct)} of global market</div>
+        <div className="registry-hero-row">
+          <div className="registry-card-credits">{formatCredits(reg.credits)}</div>
+          <div className="registry-card-pct">{formatPct(reg.pct)} of global market</div>
+        </div>
 
         <div style={{ borderRadius: 8, padding: '6px 10px', borderLeft: '2px solid #e85724', marginBottom: 6 }}>
           <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-primary)', marginBottom: 5 }}>
