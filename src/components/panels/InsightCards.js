@@ -30,7 +30,6 @@ const InsightCards = ({ data, selectedActivity }) => {
 
     const retirementCard = {
       accentColor: '#CCDF84',
-      tagColor: '#0C0B0B',
       tag: 'RETIREMENT RATE',
       heroStat: `${retirementRate.toFixed(1)}%`,
       description: (
@@ -148,7 +147,7 @@ const InsightCards = ({ data, selectedActivity }) => {
             <div className="insight-content">
               <span
                 className="insight-tag"
-                style={{ background: `${insight.accentColor}26`, color: insight.tagColor || insight.accentColor }}
+                style={{ background: `${insight.accentColor}40`, color: insight.tagColor || insight.accentColor }}
               >
                 {insight.tag}
               </span>

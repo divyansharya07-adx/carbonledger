@@ -46,8 +46,10 @@ const VINTAGE_YEARS = {
   'CAR': '~2017',
 };
 
-const RegistryIntelligence = ({ data }) => {
+const RegistryIntelligence = ({ data, isDarkMode }) => {
   const { creditsByRegistry, creditsByActivity, totalCredits, registryStats } = data;
+
+  const remainingFill = isDarkMode ? '#2a2a3a' : '#e8e2d8';
 
   const registryDetails = useMemo(() => {
     return creditsByRegistry.map(reg => {
@@ -142,7 +144,7 @@ const RegistryIntelligence = ({ data }) => {
           </div>
           {reg.topActivities.map(a => (
             <div key={a.name} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 3 }}>
-              <span style={{ fontSize: 10, letterSpacing: '0.06em', textTransform: 'uppercase', color: getGroupColor(a.name) || '#777777' }}>{a.name}</span>
+              <span style={{ fontSize: 10, letterSpacing: '0.06em', textTransform: 'uppercase', color: getGroupColor(a.name) || 'var(--text-secondary)' }}>{a.name}</span>
               <span style={{ fontSize: 12, fontWeight: 500, color: 'var(--text-primary)' }}>{formatCredits(a.credits)}</span>
             </div>
           ))}
@@ -154,7 +156,7 @@ const RegistryIntelligence = ({ data }) => {
           </div>
           {reg.topCountries.map(c => (
             <div key={c.name} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 3 }}>
-              <span style={{ fontSize: 10, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#777777' }}>{c.name}</span>
+              <span style={{ fontSize: 10, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>{c.name}</span>
               <span style={{ fontSize: 12, fontWeight: 500, color: 'var(--text-primary)' }}>{formatCredits(c.credits)}</span>
             </div>
           ))}
@@ -173,7 +175,7 @@ const RegistryIntelligence = ({ data }) => {
               ...(reg.vintageYear ? [{ label: 'AVG VINTAGE', value: reg.vintageYear, color: 'var(--text-primary)' }] : []),
             ].map(({ label, value, color }) => (
               <div key={label} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 3 }}>
-                <span style={{ fontSize: 10, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#777777' }}>{label}</span>
+                <span style={{ fontSize: 10, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>{label}</span>
                 <span style={{ fontSize: 12, fontWeight: 500, color }}>{value}</span>
               </div>
             ))}
@@ -199,7 +201,7 @@ const RegistryIntelligence = ({ data }) => {
               </div>
             ))}
             <div className="registry-chart-legend-item">
-              <div className="registry-chart-legend-sq" style={{ background: 'var(--border)', border: '0.5px solid var(--border)' }} />
+              <div className="registry-chart-legend-sq" style={{ background: remainingFill, border: '0.5px solid var(--border-hover)' }} />
               Remaining
             </div>
           </div>
@@ -214,7 +216,7 @@ const RegistryIntelligence = ({ data }) => {
                     <Cell key={i} fill={reg.color} />
                   ))}
                 </Bar>
-                <Bar dataKey="remaining" stackId="s" name="Remaining" fill="#e8e2d8" radius={[3, 3, 0, 0]} />
+                <Bar dataKey="remaining" stackId="s" name="Remaining" fill={remainingFill} radius={[3, 3, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>

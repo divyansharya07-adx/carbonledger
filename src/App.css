@@ -32,7 +32,8 @@
 }
 
 [data-theme="dark"] {
-  --text-muted: #9999aa;
+  --text-secondary: #aaaabc;
+  --text-muted: #888899;
 }
 
 /* ═══════════════════════════════════════════
@@ -463,6 +464,10 @@ body {
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0,0,0,0.3);
   border: 0.5px solid var(--border);
+}
+
+[data-theme="dark"] .overview-grid > * {
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 2px 12px rgba(0,0,0,0.6);
 }
 
 .overview-kpi-strip {
@@ -1300,6 +1305,10 @@ body {
   margin-bottom: 12px;
 }
 
+[data-theme="dark"] .chart-card {
+  background: var(--bg-card);
+}
+
 .chart-card-title {
   font-size: 13px;
   font-weight: 600;
@@ -1331,7 +1340,7 @@ body {
   right: 0;
   width: 35%;
   height: 100%;
-  background: rgba(13, 17, 24, 0.95);
+  background: var(--bg-card);
   border-left: 2px solid #e85724;
   color: #ffffff;
   transform: translateX(100%);
@@ -1359,7 +1368,7 @@ body {
   bottom: 32px;
   left: 16px;
   z-index: 10;
-  background: rgba(13, 17, 24, 0.9);
+  background: var(--bg-card);
   border: 1px solid #e85724;
   color: #e85724;
   font-family: var(--font);
@@ -1593,7 +1602,7 @@ body {
 }
 
 .registry-card {
-  background: rgba(13,17,24,0.95);
+  background: var(--bg-card);
   border-radius: 8px;
   border: 0.5px solid var(--border);
   padding: 10px;
@@ -1719,7 +1728,7 @@ body {
 }
 
 .registry-chart-panel {
-  background: rgba(13,17,24,0.95);
+  background: var(--bg-card);
   border-radius: 8px;
   border: 0.5px solid var(--border);
   border-top: 3px solid var(--border);

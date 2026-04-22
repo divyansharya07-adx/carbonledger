@@ -104,7 +104,7 @@ function App() {
       case 'country':
         return <CountryExplorer data={data} isDarkMode={darkMode} initialCountry={initialCountry} />;
       case 'registry':
-        return <RegistryIntelligence data={data} />;
+        return <RegistryIntelligence data={data} isDarkMode={darkMode} />;
       case 'about':
         return <About />;
       default:
