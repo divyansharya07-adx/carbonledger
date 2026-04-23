@@ -1836,6 +1836,10 @@ body {
   100% { left: 100%; }
 }
 
+[data-theme="dark"] .skeleton-bar::after {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent);
+}
+
 /* ═══════════════════════════════════════════
    RECHARTS OVERRIDES
    ═══════════════════════════════════════════ */
@@ -1890,6 +1894,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
   background: var(--border-hover);
 }
 
