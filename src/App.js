@@ -9,6 +9,7 @@ import CountryExplorer from './components/pages/CountryExplorer';
 import RegistryIntelligence from './components/pages/RegistryIntelligence';
 import About from './components/pages/About';
 import useData from './hooks/useData';
+import { Analytics } from '@vercel/analytics/react';
 
 const LoadingSkeleton = () => (
   <div className="loading-shell">
@@ -152,6 +153,7 @@ function App() {
           {renderPage()}
         </div>
       </div>
+      <Analytics />
     </div>
   );
 }
