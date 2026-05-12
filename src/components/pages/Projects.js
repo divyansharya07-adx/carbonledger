@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback, useEffect } from 'react';
 import { Search } from 'lucide-react';
-import { formatCredits, getGroup, GROUP_COLORS, EXCLUDED_CATEGORIES } from '../../utils/formatters';
+import { formatCredits, getGroup, EXCLUDED_CATEGORIES } from '../../utils/formatters';
 import ProjectsTable from '../panels/ProjectsTable';
 import ProjectDetailPanel from '../panels/ProjectDetailPanel';
 import useProjectsData from '../../hooks/useProjectsData';
