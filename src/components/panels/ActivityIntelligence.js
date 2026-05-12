@@ -1,42 +1,19 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { formatCredits, GROUP_COLORS, REGISTRY_COLORS } from '../../utils/formatters';
 
-const GROUPS = ['All', 'Forest & Nature', 'Energy', 'Agriculture', 'Waste & Industrial'];
-
-const ActivityIntelligence = ({ data, selectedActivity, setSelectedActivity, activeGroup, setActiveGroup, onReset }) => {
+const ActivityIntelligence = ({ data, selectedActivity, setSelectedActivity }) => {
   const [showAll, setShowAll] = useState(false);
 
   const { creditsByActivity } = data;
 
-  const filteredActivities = useMemo(() => {
-    if (!activeGroup) return creditsByActivity;
-    return creditsByActivity.filter(a => a.group === activeGroup);
-  }, [creditsByActivity, activeGroup]);
-
-  const filteredTotal = filteredActivities.reduce((s, a) => s + a.credits, 0);
-  const displayedActivities = showAll ? filteredActivities : filteredActivities.slice(0, 8);
+  const displayedActivities = showAll ? creditsByActivity : creditsByActivity.slice(0, 8);
+  const filteredTotal = creditsByActivity.reduce((s, a) => s + a.credits, 0);
 
   return (
     <div className="activity-panel overview-activity">
-      <div className="panel-header">
+      <div className="panel-header" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div className="panel-title"><span aria-hidden="true" title="Project Activity: credit distribution by activity type and registry">⬡</span> Project Activity Intelligence</div>
-        <div className="group-chips">
-          {GROUPS.map(g => {
-            const isActive = (g === 'All' && !activeGroup) || (g !== 'All' && activeGroup === g);
-            return (
-              <button
-                key={g}
-                className={`group-chip ${isActive ? 'active' : ''}`}
-                style={isActive && g !== 'All' ? { background: GROUP_COLORS[g], color: '#0d0d12' } : {}}
-                onClick={() => setActiveGroup(g === 'All' ? null : g)}
-              >
-                {g}
-              </button>
-            );
-          })}
-        </div>
-        <button className="reset-btn" onClick={onReset}>↺ Reset</button>
-        <div className="registry-legend">
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           {Object.entries(REGISTRY_COLORS).slice(0, 4).map(([name, color]) => (
             <div key={name} className="legend-dot">
               <span style={{ background: color }} />
@@ -47,7 +24,7 @@ const ActivityIntelligence = ({ data, selectedActivity, setSelectedActivity, act
       </div>
 
       <div className="activity-list" style={{ paddingRight: 16 }}>
-        {displayedActivities.map((activity, i) => {
+        {displayedActivities.map((activity) => {
           const rank = creditsByActivity.indexOf(activity) + 1;
           const totalActivityCredits = activity.credits;
           const sharePct = filteredTotal > 0
@@ -96,9 +73,9 @@ const ActivityIntelligence = ({ data, selectedActivity, setSelectedActivity, act
           );
         })}
 
-        {!showAll && filteredActivities.length > 8 && (
+        {!showAll && creditsByActivity.length > 8 && (
           <div className="show-all-link" onClick={() => setShowAll(true)}>
-            Show all {filteredActivities.length} →
+            Show all {creditsByActivity.length} →
           </div>
         )}
         {showAll && (

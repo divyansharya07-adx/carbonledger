@@ -1,0 +1,14 @@
+============================================================================================================================================
+GOLD STANDARD ISSUANCES (Product Type: VER or CER)
+============================================================================================================================================
+  GSID | Project Name                                       | Project Type                   |     Quantity
+--------------------------------------------------------------------------------------------------------------------------------------------
+   675 | Sincan Landfill Gas Collection and Energy Utiliza  | Other                          |       412116
+   715 | Adana Landfill Waste Management Project Turkey     | Other                          |       731868
+  1147 | Composting of municipal organic waste in Lome      | Other                          |         8351
+Traceback (most recent call last):
+  File "<stdin>", line 24, in <module>
+  File "C:\Users\Divyansh Arya\AppData\Local\Python\pythoncore-3.14-64\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u221a' in position 45: character maps to <undefined>

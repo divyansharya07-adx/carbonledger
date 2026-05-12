@@ -3,8 +3,6 @@ import { Search } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { formatCredits, formatPct, GROUP_COLORS } from '../../utils/formatters';
 
-const GROUPS = ['All', 'Forest & Nature', 'Energy', 'Agriculture', 'Waste & Industrial'];
-
 const ChartTooltip = ({ active, payload }) => {
   if (!active || !payload || !payload.length) return null;
   return (
@@ -17,21 +15,14 @@ const ChartTooltip = ({ active, payload }) => {
 
 const ProjectActivity = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [groupFilter, setGroupFilter] = useState('All');
   const [selectedActivity, setSelectedActivity] = useState(null);
 
   const { creditsByActivity, totalCredits } = data;
 
   const filteredActivities = useMemo(() => {
-    let list = creditsByActivity;
-    if (groupFilter !== 'All') {
-      list = list.filter(a => a.group === groupFilter);
-    }
-    if (searchTerm) {
-      list = list.filter(a => a.name.toLowerCase().includes(searchTerm.toLowerCase()));
-    }
-    return list;
-  }, [creditsByActivity, groupFilter, searchTerm]);
+    if (!searchTerm) return creditsByActivity;
+    return creditsByActivity.filter(a => a.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  }, [creditsByActivity, searchTerm]);
 
   const selectedData = useMemo(() => {
     if (!selectedActivity) return null;
@@ -62,18 +53,6 @@ const ProjectActivity = ({ data }) => {
           />
         </div>
 
-        <div className="group-chips" style={{ marginBottom: 10 }}>
-          {GROUPS.map(g => (
-            <button
-              key={g}
-              className={`group-chip ${groupFilter === g ? 'active' : ''}`}
-              style={groupFilter === g && g !== 'All' ? { background: GROUP_COLORS[g], color: '#0d0d12' } : {}}
-              onClick={() => setGroupFilter(g)}
-            >
-              {g}
-            </button>
-          ))}
-        </div>
 
         <div className="activity-list">
           {filteredActivities.map((activity, i) => {

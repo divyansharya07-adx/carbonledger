@@ -4,20 +4,17 @@ import GlobalMap from '../panels/GlobalMap';
 import InsightCards from '../panels/InsightCards';
 import TopCountries from '../panels/TopCountries';
 
-const Overview = ({ data, selectedRegistry, selectedActivity, setSelectedActivity, setActivePage, activeGroup, setActiveGroup, onReset, onCountryClick }) => {
+const Overview = ({ data, selectedRegistry, selectedActivity, setSelectedActivity, setActivePage, selectedGroup, onReset, onCountryClick }) => {
   return (
     <div className="overview-grid">
-      <KPIStrip data={data} selectedActivity={selectedActivity} activeGroup={activeGroup} />
+      <KPIStrip data={data} selectedActivity={selectedActivity} selectedGroup={selectedGroup} />
       <ActivityIntelligence
         data={data}
         selectedActivity={selectedActivity}
         setSelectedActivity={setSelectedActivity}
-        activeGroup={activeGroup}
-        setActiveGroup={setActiveGroup}
-        onReset={onReset}
       />
       <GlobalMap data={data} selectedRegistry={selectedRegistry} selectedActivity={selectedActivity} onCountryClick={onCountryClick} />
-      <InsightCards data={data} selectedActivity={selectedActivity} activeGroup={activeGroup} />
+      <InsightCards data={data} selectedActivity={selectedActivity} selectedGroup={selectedGroup} />
       <TopCountries
         data={data}
         selectedActivity={selectedActivity}

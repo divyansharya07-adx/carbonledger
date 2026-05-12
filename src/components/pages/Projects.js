@@ -44,7 +44,6 @@ export const COUNTRY_FLAGS = {
   'Yemen': '🇾🇪', 'Zambia': '🇿🇲', 'Zimbabwe': '🇿🇼',
 };
 
-const GROUPS = ['Forest & Nature', 'Energy', 'Agriculture', 'Waste & Industrial'];
 const GLOBAL_TO_REGISTRY = { all: 'all', verra: 'Verra', gold: 'Gold Standard', acr: 'ACR', car: 'CAR' };
 
 const SORT_NUMERIC = new Set(['credits_issued','credits_retired','credits_remaining','retirement_rate','lifetime_credits_issued']);
@@ -52,11 +51,10 @@ const PAGE_SIZE = 50;
 
 const retRateColor = (pct) => pct > 60 ? '#8cb73f' : pct > 30 ? '#e8a124' : '#e85724';
 
-const Projects = ({ data, selectedRegistry = 'all', selectedYearRange }) => {
+const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedGroup = 'all' }) => {
   const { projectsData, projectsLoading } = useProjectsData();
 
   const [search, setSearch] = useState('');
-  const [groupFilter, setGroupFilter] = useState(null);
   const [corsiaFilter, setCorsiaFilter] = useState(false);
   const [sdgFilter, setSdgFilter] = useState(false);
   const [sortCol, setSortCol] = useState('credits_issued');
@@ -65,7 +63,7 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange }) => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [selectedIds, setSelectedIds] = useState(new Set());
 
-  useEffect(() => { setPage(1); }, [selectedRegistry]);
+  useEffect(() => { setPage(1); }, [selectedRegistry, selectedGroup]);
 
   const { dataMinYear, releaseYear } = data;
   const isFullRange = !selectedYearRange ||
@@ -94,13 +92,13 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange }) => {
         if (!haystack.includes(q)) return false;
       }
       if (effectiveRegistry !== 'all' && p.registry !== effectiveRegistry) return false;
-      if (groupFilter && getGroup(p.category || '') !== groupFilter) return false;
+      if (selectedGroup && selectedGroup !== 'all' && getGroup(p.category || '') !== selectedGroup) return false;
       if (corsiaFilter && !p.corsia_eligible) return false;
       if (sdgFilter && !p.sdg_eligible) return false;
       if (EXCLUDED_CATEGORIES.includes(p.category)) return false;
       return true;
     });
-  }, [projectsData, search, selectedRegistry, groupFilter, corsiaFilter, sdgFilter]);
+  }, [projectsData, search, selectedRegistry, selectedGroup, corsiaFilter, sdgFilter]);
 
   const periodProjects = useMemo(() => {
     if (!filteredProjects.length) return [];
@@ -249,19 +247,6 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange }) => {
             value={search}
             onChange={e => { setSearch(e.target.value); setPage(1); }}
           />
-        </div>
-
-        <div style={{ display: 'flex', gap: 4 }}>
-          {GROUPS.map(g => (
-            <button
-              key={g}
-              className={`group-chip ${groupFilter === g ? 'active' : ''}`}
-              style={groupFilter === g ? { background: GROUP_COLORS[g], color: '#0d0d12' } : {}}
-              onClick={() => handleFilter(setGroupFilter)(groupFilter === g ? null : g)}
-            >
-              {g}
-            </button>
-          ))}
         </div>
 
         <button

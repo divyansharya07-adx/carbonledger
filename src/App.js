@@ -35,7 +35,7 @@ function App() {
   const [selectedRegistry, setSelectedRegistry] = useState('all');
   const [yearRange, setYearRange] = useState([1996, 2025]);
   const [selectedActivity, setSelectedActivity] = useState(null);
-  const [activeGroup, setActiveGroup] = useState(null);
+  const [selectedGroup, setSelectedGroup] = useState('all');
   const [sidebarExpanded, setSidebarExpanded] = useState(true);
   const [initialCountry, setInitialCountry] = useState(null);
 
@@ -48,7 +48,7 @@ function App() {
     if (activePage !== 'country') setInitialCountry(null);
   }, [activePage]);
 
-  const data = useData(selectedRegistry, yearRange, selectedActivity);
+  const data = useData(selectedRegistry, yearRange, selectedActivity, selectedGroup);
 
   const yearRangeInitialized = useRef(false);
   useEffect(() => {
@@ -63,7 +63,7 @@ function App() {
     setSelectedActivity(null);
     setSelectedRegistry('all');
     setYearRange([data.dataMinYear || 1996, data.releaseYear || 2025]);
-    setActiveGroup(null);
+    setSelectedGroup('all');
   }, [data.dataMinYear, data.releaseYear]);
 
   useEffect(() => {
@@ -99,7 +99,7 @@ function App() {
   const renderPage = () => {
     switch (activePage) {
       case 'projects':
-        return <Projects data={data} selectedRegistry={selectedRegistry} selectedYearRange={yearRange} />;
+        return <Projects data={data} selectedRegistry={selectedRegistry} selectedYearRange={yearRange} selectedGroup={selectedGroup} />;
       case 'activity':
         return <ProjectActivity data={data} />;
       case 'country':
@@ -116,8 +116,7 @@ function App() {
             selectedActivity={selectedActivity}
             setSelectedActivity={setSelectedActivity}
             setActivePage={setActivePage}
-            activeGroup={activeGroup}
-            setActiveGroup={setActiveGroup}
+            selectedGroup={selectedGroup}
             onReset={handleReset}
             onCountryClick={handleNavigateToCountry}
           />
@@ -148,6 +147,8 @@ function App() {
           onExport={handleExport}
           onReset={handleReset}
           isDarkMode={darkMode}
+          selectedGroup={selectedGroup}
+          setSelectedGroup={setSelectedGroup}
         />
         <div className="app-page">
           {renderPage()}

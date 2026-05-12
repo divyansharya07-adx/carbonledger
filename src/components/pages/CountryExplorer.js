@@ -250,7 +250,7 @@ const CountryPanel = ({ data: pd, onClose, isDarkMode }) => {
             <span style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.titleColor }}>
               Retirement Stats
             </span>
-            <span style={{ fontSize: 8, color: t.labelColor, fontStyle: 'italic' }}>all-time totals</span>
+            <span style={{ fontSize: 8, color: t.labelColor, fontStyle: 'italic' }}>filtered totals</span>
           </div>
           {[
             { label: 'RETIRED',   value: formatCredits(pd.creditsRetired),   color: '#e85724'      },
@@ -597,21 +597,15 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     const { records } = data.getCountryData(selectedCountry.dataName);
     const totalCred = records.reduce((s, r) => s + r.credits, 0);
     const registryMap = {};
-    const seenVintage = new Set();
     const perYearAbated = {};
+    let filteredRetired = 0;
     records.forEach(r => {
       const reg = r.registry;
       if (!registryMap[reg]) registryMap[reg] = { issued: 0, retired: 0, projectIds: new Set() };
-      registryMap[reg].issued += r.credits || 0;
-      // vintage_credits_retired repeats across all category rows for same (reg, year)
-      // — de-duplicate by (registry, year) before summing
-      const vintageKey = `${reg}|${r.year}`;
-      if (!seenVintage.has(vintageKey)) {
-        seenVintage.add(vintageKey);
-        registryMap[reg].retired += r.vintageCreditsRetired || 0;
-        perYearAbated[Math.floor(r.year)] = (perYearAbated[Math.floor(r.year)] || 0) + (r.vintageCreditsRetired || 0);
-      }
-      // projectIds: Set union — idempotent, handles category-row repetition automatically
+      registryMap[reg].issued  += r.credits || 0;
+      registryMap[reg].retired += r.vintageCreditsRetired || 0;
+      filteredRetired += r.vintageCreditsRetired || 0;
+      perYearAbated[Math.floor(r.year)] = (perYearAbated[Math.floor(r.year)] || 0) + (r.vintageCreditsRetired || 0);
       (r.projectIds || []).forEach(id => registryMap[reg].projectIds.add(id));
     });
     const co2HasMapping = !!COUNTRY_ISO2_MAP[selectedCountry.dataName];
@@ -679,10 +673,9 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     const yearlyTrend = Object.entries(yearMap)
       .map(([y, c]) => ({ year: parseInt(y), credits: c }))
       .sort((a, b) => a.year - b.year);
-    // Per-country lifetime totals — take from first record (values are identical across all rows)
-    const creditsRetired    = records[0]?.creditsRetired   ?? 0;
-    const creditsRemaining  = records[0]?.creditsRemaining ?? 0;
-    const retirementRate    = records[0]?.retirementRate   ?? 0;
+    const creditsRetired   = filteredRetired;
+    const creditsRemaining = Math.max(0, totalCred - filteredRetired);
+    const retirementRate   = totalCred > 0 ? (filteredRetired / totalCred) * 100 : 0;
     return { name: selectedCountry.dataName, totalCred, globalPct, topActivity, minYear, actBreakdown, registries, insights, yearlyTrend, creditsRetired, creditsRemaining, retirementRate, dynamicRegistryBreakdown, co2HasMapping, co2Loading, co2Contribution };
   }, [selectedCountry, data, co2Data, co2Loading]);
 

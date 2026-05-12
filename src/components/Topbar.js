@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useMemo } from 'react';
+import { GROUP_COLORS } from '../utils/formatters';
 
 const PAGE_NAMES = {
   overview: 'Overview',
@@ -19,6 +20,21 @@ const REGISTRIES = [
   { id: 'car', label: 'CAR' },
 ];
 
+const GROUPS = [
+  { value: 'all',                label: 'All sectors' },
+  { value: 'Forest & Nature',    label: 'Forest & Nature' },
+  { value: 'Energy',             label: 'Energy' },
+  { value: 'Agriculture',        label: 'Agriculture' },
+  { value: 'Waste & Industrial', label: 'Waste & Industrial' },
+];
+
+const hexToRgba = (hex, alpha) => {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
+
 
 const Topbar = ({
   activePage,
@@ -29,6 +45,8 @@ const Topbar = ({
   onExport,
   onReset,
   isDarkMode,
+  selectedGroup = 'all',
+  setSelectedGroup,
   dataMinYear = 1996,
   dataMaxYear = 2025,
 }) => {
@@ -38,6 +56,8 @@ const Topbar = ({
   const [customFrom, setCustomFrom] = useState(yearRange[0]);
   const [customTo, setCustomTo] = useState(yearRange[1]);
   const yearRef = useRef(null);
+  const [groupDropdownOpen, setGroupDropdownOpen] = useState(false);
+  const groupRef = useRef(null);
 
   const yearPresets = useMemo(() => [
     { label: 'All time',  range: [dataMinYear, dataMaxYear] },
@@ -51,6 +71,16 @@ const Topbar = ({
     const handler = (e) => {
       if (yearRef.current && !yearRef.current.contains(e.target)) {
         setYearDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
+
+  useEffect(() => {
+    const handler = (e) => {
+      if (groupRef.current && !groupRef.current.contains(e.target)) {
+        setGroupDropdownOpen(false);
       }
     };
     document.addEventListener('mousedown', handler);
@@ -101,7 +131,127 @@ const Topbar = ({
           ))}
         </div>
 
+        <div style={{ width: 1, height: 24, background: 'var(--border)', marginLeft: 10, marginRight: 0, flexShrink: 0, alignSelf: 'center' }} />
+
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div ref={groupRef} style={{ position: 'relative' }}>
+            <button
+              className="year-range-btn"
+              onClick={() => setGroupDropdownOpen(!groupDropdownOpen)}
+              style={{
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 5,
+                minWidth: 170,
+                ...(selectedGroup !== 'all' ? {
+                  border: `1px solid ${hexToRgba(GROUP_COLORS[selectedGroup], 0.3)}`,
+                  background: hexToRgba(GROUP_COLORS[selectedGroup], 0.08),
+                  color: GROUP_COLORS[selectedGroup],
+                  fontWeight: 500,
+                } : {
+                  border: '0.5px solid var(--border)',
+                  background: 'transparent',
+                  color: 'var(--text-secondary)',
+                }),
+              }}
+            >
+              {selectedGroup !== 'all' && (
+                <span style={{ width: 8, height: 8, borderRadius: '50%', background: GROUP_COLORS[selectedGroup], flexShrink: 0, display: 'inline-block' }} />
+              )}
+              <span>
+                {selectedGroup === 'all' ? 'All sectors' : selectedGroup}
+              </span>
+              {' '}▾
+            </button>
+            {groupDropdownOpen && (
+              <div style={{
+                position: 'absolute',
+                top: 'calc(100% + 6px)',
+                left: 0,
+                right: 0,
+                background: 'var(--bg-card)',
+                border: '0.5px solid var(--border)',
+                borderRadius: 12,
+                padding: 6,
+                zIndex: 50,
+                boxShadow: isDarkMode ? '0 4px 16px rgba(0,0,0,0.24)' : '0 4px 16px rgba(0,0,0,0.08)',
+              }}>
+                {GROUPS.map(g => {
+                  const isSelected = selectedGroup === g.value;
+                  const color = g.value !== 'all' ? GROUP_COLORS[g.value] : null;
+                  return (
+                    <div
+                      key={g.value}
+                      onClick={() => { setSelectedGroup(g.value); setGroupDropdownOpen(false); }}
+                      style={{
+                        padding: '8px 12px',
+                        borderRadius: 8,
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 10,
+                        fontSize: 13,
+                        fontWeight: isSelected ? 500 : 400,
+                        background: isSelected ? (color ? hexToRgba(color, 0.15) : 'var(--bg-elevated)') : 'transparent',
+                        color: isSelected ? (color || 'var(--text-primary)') : 'var(--text-primary)',
+                        whiteSpace: 'nowrap',
+                        transition: 'background 0.15s ease',
+                      }}
+                      onMouseEnter={e => {
+                        if (!isSelected) {
+                          e.currentTarget.style.background = color ? hexToRgba(color, 0.12) : 'var(--bg-elevated)';
+                          e.currentTarget.style.color = color || 'var(--text-primary)';
+                        }
+                      }}
+                      onMouseLeave={e => {
+                        if (!isSelected) {
+                          e.currentTarget.style.background = 'transparent';
+                          e.currentTarget.style.color = 'var(--text-primary)';
+                        }
+                      }}
+                    >
+                      {g.value !== 'all' && (
+                        <span style={{ width: 8, height: 8, borderRadius: '50%', background: GROUP_COLORS[g.value], display: 'inline-block', flexShrink: 0 }} />
+                      )}
+                      {g.label}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
+          <button
+            onClick={() => setSelectedGroup('all')}
+            style={{
+              visibility: selectedGroup !== 'all' ? 'visible' : 'hidden',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: 'var(--text-muted)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 18,
+              height: 18,
+              fontSize: 12,
+              padding: 0,
+              marginLeft: 4,
+              flexShrink: 0,
+            }}
+            onMouseEnter={e => { e.currentTarget.style.color = 'var(--text-secondary)'; }}
+            onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-muted)'; }}
+          >
+            ✕
+          </button>
+        </div>
+
+        <div style={{ width: 1, height: 24, background: 'var(--border)', marginLeft: 0, marginRight: 10, flexShrink: 0, alignSelf: 'center' }} />
+
         <div ref={yearRef} style={{ position: 'relative' }}>
+
           {customMode ? (
             <div className="year-custom-inputs">
               <span>From</span>

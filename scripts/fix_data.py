@@ -334,14 +334,16 @@ def main():
     print("  Addition 1: per-vintage retirement already in agg from Phase 1 — skipped")
 
     # ------------------------------------------------------------------
-    # ADDITION 2 — country_aggregated_data.csv: per-country lifetime stats
-    #              and registry_breakdown JSON
+    # ADDITION 2 — country_aggregated_data.csv: per-(Registry, Country, Category)
+    #              lifetime stats and per-country registry_breakdown JSON
     # ------------------------------------------------------------------
     ctry_only = proj_src[
         proj_src['country'].ne('') & proj_src['country'].ne('International')
     ]
-    country_stats = (
-        ctry_only.groupby('country')
+
+    # Per-(Registry, Country, Category) lifetime retirement stats
+    cat_stats = (
+        ctry_only.groupby(['Registry', 'country', 'category'])
         .agg(
             total_credits_issued=('credits_issued',    'sum'),
             total_credits_retired=('credits_retired',  'sum'),
@@ -349,14 +351,14 @@ def main():
         )
         .reset_index()
     )
-    country_stats['retirement_rate'] = (
-        country_stats['total_credits_retired']
-        / country_stats['total_credits_issued'].replace(0, float('nan'))
+    cat_stats['retirement_rate'] = (
+        cat_stats['total_credits_retired']
+        / cat_stats['total_credits_issued'].replace(0, float('nan'))
         * 100
     ).round(1).fillna(0)
-    country_stats = country_stats.rename(columns={'country': cty_col})
+    cat_stats = cat_stats.rename(columns={'country': cty_col, 'category': agg_col})
 
-    # Build per-country registry breakdown as JSON (display-case registry names)
+    # registry_breakdown stays per-country (summary blob, correct at country scope)
     reg_breakdown = {}
     for (country, registry), grp in ctry_only.groupby(['country', 'Registry']):
         if country not in reg_breakdown:
@@ -366,15 +368,17 @@ def main():
             'retired':  int(grp['credits_retired'].sum()),
             'projects': int(len(grp)),
         }
-    country_stats['registry_breakdown'] = country_stats[cty_col].map(
-        lambda c: json.dumps(reg_breakdown.get(c, {}))
-    )
+    rb_df = pd.DataFrame({
+        cty_col: list(reg_breakdown.keys()),
+        'registry_breakdown': [json.dumps(v) for v in reg_breakdown.values()],
+    })
 
     for col in ['total_credits_issued', 'total_credits_retired', 'total_credits_remaining',
                'retirement_rate', 'registry_breakdown']:
         if col in ctry.columns:
             ctry = ctry.drop(columns=[col])
-    ctry = ctry.merge(country_stats, on=cty_col, how='left')
+    ctry = ctry.merge(cat_stats, on=[cty_col, reg_col, agg_col], how='left')
+    ctry = ctry.merge(rb_df, on=cty_col, how='left')
     ctry['total_credits_issued']    = ctry['total_credits_issued'].fillna(0).astype(int)
     ctry['total_credits_retired']   = ctry['total_credits_retired'].fillna(0).astype(int)
     ctry['total_credits_remaining'] = ctry['total_credits_remaining'].fillna(0).astype(int)
@@ -389,19 +393,19 @@ def main():
     print("  Building vintage retirement lookup from projects_data.csv...")
     vint_df = (
         ctry_only
-        .groupby(['Registry', 'country', 'vintage_year'])['credits_retired']
+        .groupby(['Registry', 'country', 'category', 'vintage_year'])['credits_retired']
         .sum()
         .reset_index()
     )
     vint_lookup = {
-        (row['Registry'], row['country'], int(row['vintage_year'])): int(row['credits_retired'])
+        (row['Registry'], row['country'], row['category'], int(row['vintage_year'])): int(row['credits_retired'])
         for _, row in vint_df.iterrows()
     }
-    print(f"  vintage retirement lookup: {len(vint_lookup)} (registry, country, year) keys")
+    print(f"  vintage retirement lookup: {len(vint_lookup)} (registry, country, category, year) keys")
 
     ctry['vintage_credits_retired'] = ctry.apply(
         lambda r: vint_lookup.get(
-            (r[reg_col], r[cty_col], int(r[yr_col])), 0
+            (r[reg_col], r[cty_col], r[agg_col], int(r[yr_col])), 0
         ),
         axis=1,
     ).astype(int)
@@ -415,23 +419,24 @@ def main():
     unmatched = (ctry['vintage_credits_retired'] == 0) & (ctry[cr_col] > 0)
     print(f"  Rows with issued credits but no vintage retirement match: {unmatched.sum()}")
 
-    # vintage_credits_retired repeats across all category rows for the same
-    # (Registry, Country, Year) — use .iloc[0] not .sum() to read the per-year value.
+    # vintage_credits_retired is now per-(Registry, Country, Category, Year) — each row has its own value
     iv15 = ctry[
         (ctry[reg_col] == 'Verra') &
         (ctry[cty_col] == 'India') &
-        (ctry[yr_col] == 2015)
+        (ctry[yr_col] == 2015) &
+        (ctry[agg_col] == 'Mixed renewables')
     ]
     india_verra_2015_ret = int(iv15['vintage_credits_retired'].iloc[0]) if len(iv15) else 0
-    print(f"  SPOT CHECK India/Verra/2015 vintage_credits_retired: {india_verra_2015_ret:,}  (expected ~9,000,250)")
+    print(f"  SPOT CHECK India/Verra/2015/Mixed renewables vintage_credits_retired: {india_verra_2015_ret:,}")
 
     ig20 = ctry[
         (ctry[reg_col] == 'Gold Standard') &
         (ctry[cty_col] == 'India') &
-        (ctry[yr_col] == 2020)
+        (ctry[yr_col] == 2020) &
+        (ctry[agg_col] == 'Mixed renewables')
     ]
     india_gs_2020_ret = int(ig20['vintage_credits_retired'].iloc[0]) if len(ig20) else 0
-    print(f"  SPOT CHECK India/GoldStandard/2020 vintage_credits_retired: {india_gs_2020_ret:,}  (proj_src-based; old raw-Excel value was ~7,908,077)")
+    print(f"  SPOT CHECK India/GoldStandard/2020/Mixed renewables vintage_credits_retired: {india_gs_2020_ret:,}")
 
     # ------------------------------------------------------------------
     # ADDITION 2c — project_ids per (Registry, Country, Vintage Year)
