@@ -130,9 +130,12 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity, selected
       if (selectedGroup && selectedGroup !== 'all') {
         if (getGroup(d.category) !== selectedGroup) return false;
       }
+      if (selectedActivity && selectedActivity !== 'all') {
+        if (d.category !== selectedActivity) return false;
+      }
       return true;
     });
-  }, [rawAgg, selectedRegistry, selectedYearRange, releaseYear, selectedGroup]);
+  }, [rawAgg, selectedRegistry, selectedYearRange, releaseYear, selectedGroup, selectedActivity]);
 
   const filteredCountry = useMemo(() => {
     if (!rawCountry) return [];
@@ -153,9 +156,12 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity, selected
       if (selectedGroup && selectedGroup !== 'all') {
         if (getGroup(d.category) !== selectedGroup) return false;
       }
+      if (selectedActivity && selectedActivity !== 'all') {
+        if (d.category !== selectedActivity) return false;
+      }
       return true;
     });
-  }, [rawCountry, selectedRegistry, selectedYearRange, releaseYear, selectedGroup]);
+  }, [rawCountry, selectedRegistry, selectedYearRange, releaseYear, selectedGroup, selectedActivity]);
 
   // Computed values
   const totalCredits = useMemo(() => filteredAgg.reduce((s, d) => s + d.credits, 0), [filteredAgg]);
@@ -261,6 +267,9 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity, selected
       if (selectedGroup && selectedGroup !== 'all') {
         if (getGroup(cat) !== selectedGroup) return;
       }
+      if (selectedActivity && selectedActivity !== 'all') {
+        if (cat !== selectedActivity) return;
+      }
       if (!map[cat]) map[cat] = new Set();
       try {
         JSON.parse(row['project_ids'] || '[]').forEach(id => map[cat].add(id));
@@ -271,7 +280,7 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity, selected
     const result = {};
     Object.entries(map).forEach(([cat, idSet]) => { result[cat] = idSet.size; });
     return result;
-  }, [rawProjCounts, selectedRegistry, selectedYearRange, selectedGroup]);
+  }, [rawProjCounts, selectedRegistry, selectedYearRange, selectedGroup, selectedActivity]);
 
   const totalProjectCount = useMemo(
     () => Object.values(projectCountByCategory).reduce((s, v) => s + v, 0),
@@ -297,6 +306,9 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity, selected
       if (selectedGroup && selectedGroup !== 'all') {
         if (getGroup(gCat) !== selectedGroup) return;
       }
+      if (selectedActivity && selectedActivity !== 'all') {
+        if (gCat !== selectedActivity) return;
+      }
       totalIssued  += parseInt(row['total_credits_issued'],  10) || 0;
       totalRetired += parseInt(row['total_credits_retired'], 10) || 0;
     });
@@ -304,7 +316,7 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity, selected
       ? Math.round(totalRetired / totalIssued * 1000) / 10
       : 0;
     return { globalRetirementRate, globalCreditsRetired: totalRetired };
-  }, [rawProjCounts, selectedRegistry, selectedYearRange, selectedGroup]);
+  }, [rawProjCounts, selectedRegistry, selectedYearRange, selectedGroup, selectedActivity]);
 
   const registryStats = useMemo(() => {
     if (!rawProjCounts) return {};
@@ -317,6 +329,9 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity, selected
       const rCat = (row['Project Type Category'] || '').trim();
       if (selectedGroup && selectedGroup !== 'all') {
         if (getGroup(rCat) !== selectedGroup) return;
+      }
+      if (selectedActivity && selectedActivity !== 'all') {
+        if (rCat !== selectedActivity) return;
       }
       if (!accum[reg]) accum[reg] = { issued: 0, retired: 0, remaining: 0, idSet: new Set() };
       accum[reg].issued    += parseInt(row['total_credits_issued'],    10) || 0;
@@ -335,7 +350,7 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity, selected
       };
     });
     return map;
-  }, [rawProjCounts, selectedYearRange, selectedGroup]);
+  }, [rawProjCounts, selectedYearRange, selectedGroup, selectedActivity]);
 
   // Country-specific data for country explorer
   const getCountryData = (countryName) => {

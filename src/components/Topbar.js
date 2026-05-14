@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useMemo } from 'react';
-import { GROUP_COLORS } from '../utils/formatters';
+import { GROUP_COLORS, GROUP_MAP, getGroup } from '../utils/formatters';
 
 const PAGE_NAMES = {
   overview: 'Overview',
@@ -49,6 +49,10 @@ const Topbar = ({
   setSelectedGroup,
   dataMinYear = 1996,
   dataMaxYear = 2025,
+  selectedActivity = 'all',
+  setSelectedActivity,
+  sectorSetBy = 'manual',
+  setSectorSetBy,
 }) => {
   const [yearDropdownOpen, setYearDropdownOpen] = useState(false);
   const [brandHovered, setBrandHovered] = useState(false);
@@ -58,6 +62,8 @@ const Topbar = ({
   const yearRef = useRef(null);
   const [groupDropdownOpen, setGroupDropdownOpen] = useState(false);
   const groupRef = useRef(null);
+  const [activityDropdownOpen, setActivityDropdownOpen] = useState(false);
+  const activityRef = useRef(null);
 
   const yearPresets = useMemo(() => [
     { label: 'All time',  range: [dataMinYear, dataMaxYear] },
@@ -87,6 +93,23 @@ const Topbar = ({
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
+  useEffect(() => {
+    const handler = (e) => {
+      if (activityRef.current && !activityRef.current.contains(e.target)) {
+        setActivityDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
+
+  // Groups shown in activity dropdown — filtered to selected sector if one is active
+  const activityGroups = useMemo(() => {
+    const entries = Object.entries(GROUP_MAP);
+    if (selectedGroup === 'all') return entries;
+    return entries.filter(([group]) => group === selectedGroup);
+  }, [selectedGroup]);
+
   const applyCustomRange = () => {
     const from = Number(customFrom);
     const to = Number(customTo);
@@ -95,12 +118,68 @@ const Topbar = ({
     }
   };
 
-  const pageName = PAGE_NAMES[activePage] || 'Overview';
+  // ── Sector handlers ──────────────────────────────────────────────────────
+  const handleSelectGroup = (value) => {
+    setSelectedGroup(value);
+    setSectorSetBy('manual');
+    setSelectedActivity('all');
+    setGroupDropdownOpen(false);
+  };
 
+  const handleClearGroup = () => {
+    setSelectedGroup('all');
+    setSelectedActivity('all');
+    setSectorSetBy('manual');
+  };
+
+  // ── Activity handlers ────────────────────────────────────────────────────
+  const handleSelectActivity = (activityName) => {
+    setSelectedActivity(activityName);
+    setSelectedGroup(getGroup(activityName));
+    setSectorSetBy('auto');
+    setActivityDropdownOpen(false);
+  };
+
+  const handleClearActivity = () => {
+    setSelectedActivity('all');
+    if (sectorSetBy === 'auto') {
+      setSelectedGroup('all');
+      setSectorSetBy('manual');
+    }
+  };
+
+  const handleSelectAllActivities = () => {
+    setSelectedActivity('all');
+    if (sectorSetBy === 'auto') {
+      setSelectedGroup('all');
+      setSectorSetBy('manual');
+    }
+    setActivityDropdownOpen(false);
+  };
+
+  const pageName = PAGE_NAMES[activePage] || 'Overview';
   const isMatchingPreset = yearPresets.some(p => p.range[0] === yearRange[0] && p.range[1] === yearRange[1]);
   const yearLabel = isMatchingPreset
     ? `${yearRange[0]} – ${yearRange[1]}`
     : `${yearRange[0]} – ${yearRange[1]} ✎`;
+
+  const activityColor = selectedActivity !== 'all' ? GROUP_COLORS[getGroup(selectedActivity)] : null;
+
+  const clearBtnStyle = {
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    color: 'var(--text-muted)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 18,
+    height: 18,
+    fontSize: 12,
+    padding: 0,
+    marginLeft: 4,
+    flexShrink: 0,
+  };
 
   return (
     <div className="topbar">
@@ -118,6 +197,7 @@ const Topbar = ({
       </div>
 
       <div className="topbar-right">
+        {/* Registry pills */}
         <div className="pill-group">
           {REGISTRIES.map((reg) => (
             <button
@@ -131,13 +211,18 @@ const Topbar = ({
           ))}
         </div>
 
+        {/* Divider: pills → sector */}
         <div style={{ width: 1, height: 24, background: 'var(--border)', marginLeft: 10, marginRight: 0, flexShrink: 0, alignSelf: 'center' }} />
 
+        {/* ── Sector dropdown ── */}
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <div ref={groupRef} style={{ position: 'relative' }}>
             <button
               className="year-range-btn"
-              onClick={() => setGroupDropdownOpen(!groupDropdownOpen)}
+              onClick={() => {
+                setGroupDropdownOpen(o => !o);
+                setActivityDropdownOpen(false);
+              }}
               style={{
                 cursor: 'pointer',
                 display: 'flex',
@@ -184,7 +269,7 @@ const Topbar = ({
                   return (
                     <div
                       key={g.value}
-                      onClick={() => { setSelectedGroup(g.value); setGroupDropdownOpen(false); }}
+                      onClick={() => handleSelectGroup(g.value)}
                       style={{
                         padding: '8px 12px',
                         borderRadius: 8,
@@ -224,22 +309,10 @@ const Topbar = ({
           </div>
 
           <button
-            onClick={() => setSelectedGroup('all')}
+            onClick={handleClearGroup}
             style={{
+              ...clearBtnStyle,
               visibility: selectedGroup !== 'all' ? 'visible' : 'hidden',
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              color: 'var(--text-muted)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: 18,
-              height: 18,
-              fontSize: 12,
-              padding: 0,
-              marginLeft: 4,
-              flexShrink: 0,
             }}
             onMouseEnter={e => { e.currentTarget.style.color = 'var(--text-secondary)'; }}
             onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-muted)'; }}
@@ -248,8 +321,162 @@ const Topbar = ({
           </button>
         </div>
 
+        {/* Divider: sector → activity */}
+        <div style={{ width: 1, height: 24, background: 'var(--border)', flexShrink: 0, alignSelf: 'center', marginLeft: 4, marginRight: 4 }} />
+
+        {/* ── Activity dropdown ── */}
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div ref={activityRef} style={{ position: 'relative' }}>
+            <button
+              className="year-range-btn"
+              onClick={() => {
+                setActivityDropdownOpen(o => !o);
+                setGroupDropdownOpen(false);
+              }}
+              style={{
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 5,
+                minWidth: 170,
+                ...(selectedActivity !== 'all' ? {
+                  border: `1px solid ${hexToRgba(activityColor, 0.3)}`,
+                  background: hexToRgba(activityColor, 0.08),
+                  color: activityColor,
+                  fontWeight: 500,
+                } : {
+                  border: '0.5px solid var(--border)',
+                  background: 'transparent',
+                  color: 'var(--text-secondary)',
+                }),
+              }}
+            >
+              {selectedActivity !== 'all' && (
+                <span style={{ width: 8, height: 8, borderRadius: '50%', background: activityColor, flexShrink: 0, display: 'inline-block' }} />
+              )}
+              <span style={{ maxWidth: 140, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                {selectedActivity === 'all' ? 'All activities' : selectedActivity}
+              </span>
+              {' '}▾
+            </button>
+
+            {activityDropdownOpen && (
+              <div style={{
+                position: 'absolute',
+                top: 'calc(100% + 6px)',
+                right: 0,
+                minWidth: 220,
+                maxHeight: 360,
+                overflowY: 'auto',
+                background: 'var(--bg-card)',
+                border: '0.5px solid var(--border)',
+                borderRadius: 12,
+                padding: 6,
+                zIndex: 50,
+                boxShadow: isDarkMode ? '0 4px 16px rgba(0,0,0,0.24)' : '0 4px 16px rgba(0,0,0,0.08)',
+              }}>
+                {/* All activities row */}
+                <div
+                  onClick={handleSelectAllActivities}
+                  style={{
+                    padding: '8px 12px',
+                    borderRadius: 8,
+                    cursor: 'pointer',
+                    fontSize: 13,
+                    fontWeight: selectedActivity === 'all' ? 500 : 400,
+                    background: selectedActivity === 'all' ? 'var(--bg-elevated)' : 'transparent',
+                    color: 'var(--text-primary)',
+                    whiteSpace: 'nowrap',
+                    transition: 'background 0.15s ease',
+                  }}
+                  onMouseEnter={e => { if (selectedActivity !== 'all') e.currentTarget.style.background = 'var(--bg-elevated)'; }}
+                  onMouseLeave={e => { if (selectedActivity !== 'all') e.currentTarget.style.background = 'transparent'; }}
+                >
+                  All activities
+                </div>
+
+                {/* Grouped activity rows */}
+                {activityGroups.map(([group, categories], gIdx) => {
+                  const groupColor = GROUP_COLORS[group];
+                  return (
+                    <div key={group}>
+                      {/* Section header */}
+                      <div style={{
+                        fontSize: 10,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        color: 'var(--text-muted)',
+                        fontWeight: 500,
+                        padding: '8px 12px 4px',
+                        marginTop: gIdx > 0 ? 4 : 0,
+                      }}>
+                        {group}
+                      </div>
+
+                      {/* Activity rows */}
+                      {categories.map(cat => {
+                        const isSelected = selectedActivity === cat;
+                        return (
+                          <div
+                            key={cat}
+                            onClick={() => handleSelectActivity(cat)}
+                            style={{
+                              padding: '7px 12px',
+                              borderRadius: 8,
+                              cursor: 'pointer',
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: 8,
+                              fontSize: 12,
+                              fontWeight: isSelected ? 500 : 400,
+                              background: isSelected ? hexToRgba(groupColor, 0.15) : 'transparent',
+                              color: isSelected ? groupColor : 'var(--text-primary)',
+                              whiteSpace: 'nowrap',
+                              transition: 'background 0.15s ease',
+                            }}
+                            onMouseEnter={e => {
+                              if (!isSelected) {
+                                e.currentTarget.style.background = hexToRgba(groupColor, 0.12);
+                                e.currentTarget.style.color = groupColor;
+                              }
+                            }}
+                            onMouseLeave={e => {
+                              if (!isSelected) {
+                                e.currentTarget.style.background = 'transparent';
+                                e.currentTarget.style.color = 'var(--text-primary)';
+                              }
+                            }}
+                          >
+                            <span style={{ width: 7, height: 7, borderRadius: '50%', background: groupColor, display: 'inline-block', flexShrink: 0 }} />
+                            {cat}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
+          <button
+            onClick={handleClearActivity}
+            style={{
+              ...clearBtnStyle,
+              visibility: selectedActivity !== 'all' ? 'visible' : 'hidden',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.color = 'var(--text-secondary)'; }}
+            onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-muted)'; }}
+          >
+            ✕
+          </button>
+        </div>
+
+        {/* Divider: activity → year */}
         <div style={{ width: 1, height: 24, background: 'var(--border)', marginLeft: 0, marginRight: 10, flexShrink: 0, alignSelf: 'center' }} />
 
+        {/* ── Year range ── */}
         <div ref={yearRef} style={{ position: 'relative' }}>
 
           {customMode ? (

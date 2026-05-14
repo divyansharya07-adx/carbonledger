@@ -51,7 +51,7 @@ const PAGE_SIZE = 50;
 
 const retRateColor = (pct) => pct > 60 ? '#8cb73f' : pct > 30 ? '#e8a124' : '#e85724';
 
-const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedGroup = 'all' }) => {
+const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedGroup = 'all', selectedActivity = 'all' }) => {
   const { projectsData, projectsLoading } = useProjectsData();
 
   const [search, setSearch] = useState('');
@@ -63,7 +63,7 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
   const [selectedProject, setSelectedProject] = useState(null);
   const [selectedIds, setSelectedIds] = useState(new Set());
 
-  useEffect(() => { setPage(1); }, [selectedRegistry, selectedGroup]);
+  useEffect(() => { setPage(1); }, [selectedRegistry, selectedGroup, selectedActivity]);
 
   const { dataMinYear, releaseYear } = data;
   const isFullRange = !selectedYearRange ||
@@ -93,12 +93,13 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
       }
       if (effectiveRegistry !== 'all' && p.registry !== effectiveRegistry) return false;
       if (selectedGroup && selectedGroup !== 'all' && getGroup(p.category || '') !== selectedGroup) return false;
+      if (selectedActivity && selectedActivity !== 'all' && p.category !== selectedActivity) return false;
       if (corsiaFilter && !p.corsia_eligible) return false;
       if (sdgFilter && !p.sdg_eligible) return false;
       if (EXCLUDED_CATEGORIES.includes(p.category)) return false;
       return true;
     });
-  }, [projectsData, search, selectedRegistry, selectedGroup, corsiaFilter, sdgFilter]);
+  }, [projectsData, search, selectedRegistry, selectedGroup, selectedActivity, corsiaFilter, sdgFilter]);
 
   const periodProjects = useMemo(() => {
     if (!filteredProjects.length) return [];

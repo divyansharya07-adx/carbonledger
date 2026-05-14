@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { formatCredits, GROUP_COLORS, REGISTRY_COLORS } from '../../utils/formatters';
 
-const ActivityIntelligence = ({ data, selectedActivity, setSelectedActivity }) => {
+const ActivityIntelligence = ({ data }) => {
   const [showAll, setShowAll] = useState(false);
 
   const { creditsByActivity } = data;
@@ -31,13 +31,11 @@ const ActivityIntelligence = ({ data, selectedActivity, setSelectedActivity }) =
             ? ((totalActivityCredits / filteredTotal) * 100).toFixed(1)
             : '0';
           const groupColor = GROUP_COLORS[activity.group] || '#e85724';
-          const isSelected = selectedActivity === activity.name;
 
           return (
             <div
               key={activity.name}
-              className={`activity-row ${isSelected ? 'selected' : ''}`}
-              onClick={() => setSelectedActivity(isSelected ? null : activity.name)}
+              className="activity-row"
               style={{ paddingRight: 24 }}
             >
               <div className="activity-rank">{rank}</div>

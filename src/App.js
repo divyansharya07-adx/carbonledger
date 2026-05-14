@@ -34,8 +34,9 @@ function App() {
   const [activePage, setActivePage] = useState('overview');
   const [selectedRegistry, setSelectedRegistry] = useState('all');
   const [yearRange, setYearRange] = useState([1996, 2025]);
-  const [selectedActivity, setSelectedActivity] = useState(null);
+  const [selectedActivity, setSelectedActivity] = useState('all');
   const [selectedGroup, setSelectedGroup] = useState('all');
+  const [sectorSetBy, setSectorSetBy] = useState('manual');
   const [sidebarExpanded, setSidebarExpanded] = useState(true);
   const [initialCountry, setInitialCountry] = useState(null);
 
@@ -60,10 +61,11 @@ function App() {
 
   const handleReset = useCallback(() => {
     setActivePage('overview');
-    setSelectedActivity(null);
+    setSelectedActivity('all');
     setSelectedRegistry('all');
     setYearRange([data.dataMinYear || 1996, data.releaseYear || 2025]);
     setSelectedGroup('all');
+    setSectorSetBy('manual');
   }, [data.dataMinYear, data.releaseYear]);
 
   useEffect(() => {
@@ -99,7 +101,7 @@ function App() {
   const renderPage = () => {
     switch (activePage) {
       case 'projects':
-        return <Projects data={data} selectedRegistry={selectedRegistry} selectedYearRange={yearRange} selectedGroup={selectedGroup} />;
+        return <Projects data={data} selectedRegistry={selectedRegistry} selectedYearRange={yearRange} selectedGroup={selectedGroup} selectedActivity={selectedActivity} />;
       case 'activity':
         return <ProjectActivity data={data} />;
       case 'country':
@@ -113,8 +115,6 @@ function App() {
           <Overview
             data={data}
             selectedRegistry={selectedRegistry}
-            selectedActivity={selectedActivity}
-            setSelectedActivity={setSelectedActivity}
             setActivePage={setActivePage}
             selectedGroup={selectedGroup}
             onReset={handleReset}
@@ -149,6 +149,10 @@ function App() {
           isDarkMode={darkMode}
           selectedGroup={selectedGroup}
           setSelectedGroup={setSelectedGroup}
+          selectedActivity={selectedActivity}
+          setSelectedActivity={setSelectedActivity}
+          sectorSetBy={sectorSetBy}
+          setSectorSetBy={setSectorSetBy}
         />
         <div className="app-page">
           {renderPage()}
