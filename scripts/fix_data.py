@@ -444,26 +444,26 @@ def main():
     # ------------------------------------------------------------------
     print("  Building vintage project lookup from projects_data.csv...")
     proj_lookup = {}
-    for (reg, cty_val, yr), grp in ctry_only.groupby(['Registry', 'country', 'vintage_year']):
-        proj_lookup[(reg, cty_val, int(yr))] = sorted(
+    for (reg, cty_val, cat, yr), grp in ctry_only.groupby(['Registry', 'country', 'category', 'vintage_year']):
+        proj_lookup[(reg, cty_val, cat, int(yr))] = sorted(
             grp['project_id'].astype(str).unique().tolist()
         )
-    print(f"  vintage project lookup: {len(proj_lookup)} (registry, country, year) keys")
+    print(f"  vintage project lookup: {len(proj_lookup)} (registry, country, category, year) keys")
 
     ctry['project_ids'] = ctry.apply(
         lambda r: json.dumps(
             proj_lookup.get(
-                (r[reg_col], r[cty_col], int(r[yr_col])), []
+                (r[reg_col], r[cty_col], r[agg_col], int(r[yr_col])), []
             )
         ),
         axis=1,
     )
 
-    india_verra_2015_ids = proj_lookup.get(('Verra', 'India', 2015), [])
-    print(f"  SPOT CHECK India/Verra/2015 project_ids count: {len(india_verra_2015_ids)} (expected ~184)")
+    india_verra_2015_ids = proj_lookup.get(('Verra', 'India', 'Mixed renewables', 2015), [])
+    print(f"  SPOT CHECK India/Verra/2015/Mixed renewables project_ids count: {len(india_verra_2015_ids)}")
 
-    india_gs_2020_ids = proj_lookup.get(('Gold Standard', 'India', 2020), [])
-    print(f"  SPOT CHECK India/GS/2020 project_ids count: {len(india_gs_2020_ids)} (expected ~175)")
+    india_gs_2020_ids = proj_lookup.get(('Gold Standard', 'India', 'Mixed renewables', 2020), [])
+    print(f"  SPOT CHECK India/GS/2020/Mixed renewables project_ids count: {len(india_gs_2020_ids)}")
 
     ctry.to_csv(CTRY_CSV, index=False)
     print(f"  country_aggregated_data.csv: added 7 columns -> {len(ctry)} rows saved")

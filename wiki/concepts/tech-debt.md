@@ -3,7 +3,7 @@ title: Tech Debt & Known Issues
 type: concept
 tags: [tech-debt, bugs, hardcoded, known-issues]
 sources: [../sources/architecture-md.md]
-updated: 2026-04-18
+updated: 2026-05-19
 ---
 
 # Tech Debt & Known Issues
@@ -52,6 +52,12 @@ The taxonomy accordion in About.js is **data-driven** (built from `methodology_m
 | `About.js:283` | "five cases" | Only 3 `<li>` elements exist — two are missing |
 
 Last fixed: Step 22d (commit `ec730a9`). May drift again on future taxonomy changes.
+
+---
+
+## ~~CountryExplorer project_ids not scoped to category~~ — FIXED 2026-05-19
+
+`project_ids` in `country_aggregated_data.csv` was grouped by `(Registry, country, vintage_year)` without `category`. This caused the "BY REGISTRY" panel in CountryExplorer to show inflated project counts (e.g., 112 GS India projects instead of 1) whenever an activity filter was active. Fixed in `scripts/fix_data.py` ADDITION 2c: groupby and lookup key now include `category` as a 4-tuple `(Registry, country, category, vintage_year)`.
 
 ---
 
