@@ -1,15 +1,16 @@
 import { useMemo } from 'react';
-import { formatCredits, formatPct, getGroup } from '../../utils/formatters';
+import { formatCredits, formatPct, getGroup, GROUP_COLORS, REGISTRY_COLORS } from '../../utils/formatters';
+import countryISO from '../../utils/countryISO';
 
 const formatTrend = (t) => {
   if (!t) return null;
   const sign = t.pct >= 0 ? '+' : '';
-  return `${sign}${t.pct}% since ${t.year}`;
+  return `${sign}${t.pct}%`;
 };
 
-const Sparkline = ({ values }) => {
+const Sparkline = ({ values, width = 48, height = 16 }) => {
   if (!values || values.length < 2) return null;
-  const W = 200, H = 20, PAD = 4;
+  const W = 200, H = height, PAD = 4;
   const min = Math.min(...values);
   const max = Math.max(...values);
   const range = max - min || 1;
@@ -24,25 +25,86 @@ const Sparkline = ({ values }) => {
     [pts[0][0], H],
   ].map(([x, y]) => `${x},${y}`).join(' ');
   return (
-    <div className="kpi-sparkline">
-      <svg width="100%" height="20" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none">
-        <polygon points={fillPoints} fill="var(--orange)" fillOpacity="0.15" />
-        <polyline
-          points={linePoints}
-          fill="none"
-          stroke="var(--orange)"
-          strokeOpacity="0.6"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-          strokeLinecap="round"
-        />
-      </svg>
-    </div>
+    <svg width={width} height={height} viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none">
+      <polygon points={fillPoints} fill="var(--orange)" fillOpacity="0.15" />
+      <polyline
+        points={linePoints}
+        fill="none"
+        stroke="var(--orange)"
+        strokeOpacity="0.6"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      />
+    </svg>
   );
 };
 
+const DonutRing = ({ pct, color = '#029bd6' }) => {
+  const r = 11;
+  const circ = 2 * Math.PI * r;
+  const dash = (Math.min(pct || 0, 100) / 100) * circ;
+  return (
+    <svg width="26" height="26" viewBox="0 0 26 26">
+      <circle cx="13" cy="13" r={r} fill="none" stroke="var(--border)" strokeWidth="4" />
+      <circle
+        cx="13" cy="13" r={r} fill="none"
+        stroke={color || '#029bd6'} strokeWidth="4"
+        strokeDasharray={`${dash} ${circ}`}
+        strokeLinecap="round"
+        transform="rotate(-90 13 13)"
+      />
+    </svg>
+  );
+};
+
+const SECTOR_ORDER = ['Forest & Nature', 'Energy', 'Agriculture', 'Waste & Industrial'];
+
+const SectorBars = ({ sectors }) => {
+  const max = Math.max(...sectors.map(s => s.credits), 1);
+  const BAR_W = 6, GAP = 2, H = 22;
+  const totalW = SECTOR_ORDER.length * (BAR_W + GAP) - GAP;
+  return (
+    <svg width={totalW} height={H}>
+      {sectors.map((s, i) => {
+        const bh = Math.max(2, (s.credits / max) * H);
+        return (
+          <rect
+            key={s.name}
+            x={i * (BAR_W + GAP)} y={H - bh}
+            width={BAR_W} height={bh}
+            fill={GROUP_COLORS[s.name] || '#888'} fillOpacity="0.85" rx="1"
+          />
+        );
+      })}
+    </svg>
+  );
+};
+
+const RegistryBar = ({ segments, width = 48, height = 5 }) => {
+  const total = segments.reduce((s, r) => s + r.projectCount, 0) || 1;
+  let x = 0;
+  return (
+    <svg width={width} height={height} style={{ borderRadius: 2, overflow: 'hidden', display: 'block' }}>
+      {segments.map(seg => {
+        const w = (seg.projectCount / total) * width;
+        const rect = (
+          <rect
+            key={seg.name}
+            x={x} y="0" width={Math.max(w, 0)} height={height}
+            fill={REGISTRY_COLORS[seg.name] || '#888'}
+          />
+        );
+        x += w;
+        return rect;
+      })}
+    </svg>
+  );
+};
+
+const REGISTRY_SHORT = { 'Verra': 'VCS', 'Gold Standard': 'GS', 'ACR': 'ACR', 'CAR': 'CAR' };
+
 const KPIStrip = ({ data, selectedActivity, activeGroup }) => {
-  // Destructure with safe fallbacks so hooks below always run unconditionally
   const {
     totalCredits = 0,
     creditsByRegistry,
@@ -54,6 +116,7 @@ const KPIStrip = ({ data, selectedActivity, activeGroup }) => {
     filteredAgg = [],
     projectCountByCategory = {},
     totalProjectCount = 0,
+    registryStats = {},
   } = data || {};
 
   let topRegistry, topCountry, topRegPct;
@@ -150,8 +213,9 @@ const KPIStrip = ({ data, selectedActivity, activeGroup }) => {
       }, {})
     ).sort((a, b) => Number(a[0]) - Number(b[0]));
     if (entries.length < 2) return null;
-    const base = entries[0][1].size;
-    return base ? { pct: Math.round((entries[entries.length - 1][1].size - base) / base * 100), year: Number(entries[0][0]) } : null;
+    const firstCount = entries[0][1].size;
+    const lastCount = entries[entries.length - 1][1].size;
+    return firstCount ? { pct: Math.round((lastCount - firstCount) / firstCount * 100), count: lastCount - firstCount, year: Number(entries[0][0]) } : null;
   }, [filteredCountry]);
 
   const topRegShareTrend = useMemo(() => {
@@ -180,6 +244,18 @@ const KPIStrip = ({ data, selectedActivity, activeGroup }) => {
     const base = entries[0][1];
     return base ? { pct: Math.round((entries[entries.length - 1][1] - base) / base * 100), year: Number(entries[0][0]) } : null;
   }, [filteredCountry, topCountryName]);
+
+  const sectorCredits = useMemo(() => {
+    const map = {};
+    creditsByActivity.forEach(a => { if (a.group) map[a.group] = (map[a.group] || 0) + a.credits; });
+    return SECTOR_ORDER.map(g => ({ name: g, credits: map[g] || 0 }));
+  }, [creditsByActivity]);
+
+  const registryProjectShare = useMemo(() => {
+    return Object.entries(registryStats)
+      .map(([name, stats]) => ({ name, projectCount: stats.projectCount || 0 }))
+      .sort((a, b) => b.projectCount - a.projectCount);
+  }, [registryStats]);
 
   // Early exit after all hooks
   if (!data) return null;
@@ -218,57 +294,96 @@ const KPIStrip = ({ data, selectedActivity, activeGroup }) => {
           .reduce((s, [, c]) => s + c, 0)
       : totalProjectCount;
 
-  const activityLabel = !activeGroup && selectedActivity && selectedActivity !== 'all'
-    ? selectedActivity
-    : null;
+  const topSector = sectorCredits.reduce(
+    (b, s) => s.credits > b.credits ? s : b,
+    { name: '', credits: 0 }
+  );
+  const topProjectReg = registryProjectShare[0];
 
   return (
     <div className="kpi-strip overview-kpi-strip">
       <div className="kpi-item">
-        <div className="kpi-label">TOTAL CREDITS</div>
-        <div className="kpi-value">{formatCredits(displayCredits)}</div>
-        {activeGroup && <div className="kpi-sub orange">{activeGroup}</div>}
-        {activityLabel && <div className="kpi-sub orange">{activityLabel}</div>}
-        {!activeGroup && !activityLabel && <div className="kpi-sub muted">across all registries</div>}
-        <Sparkline values={creditsByYearSeries} />
-        {formatTrend(creditsTrend) && <div className="kpi-trend">{formatTrend(creditsTrend)}</div>}
-      </div>
-      <div className="kpi-item">
-        <div className="kpi-label">COUNTRIES ACTIVE</div>
-        <div className="kpi-value">{displayCountryCount}</div>
-        <div className="kpi-sub muted">with issued credits</div>
-        <Sparkline values={countriesByYearSeries} />
-        {formatTrend(countriesTrend) && <div className="kpi-trend">{formatTrend(countriesTrend)}</div>}
-      </div>
-      <div className="kpi-item">
-        <div className="kpi-label">TOP REGISTRY</div>
-        <div className="kpi-value">{topRegistry?.name || '—'}</div>
-        <div className="kpi-sub blue">{formatPct(topRegPct)} share</div>
-        <Sparkline values={topRegShareByYearSeries} />
-        {formatTrend(topRegShareTrend) && <div className="kpi-trend">{formatTrend(topRegShareTrend)}</div>}
-      </div>
-      <div className="kpi-item">
-        <div className="kpi-label">LEADING COUNTRY</div>
-        <div className="kpi-value">{topCountry?.name || '—'}</div>
-        <div className="kpi-sub green">{formatCredits(topCountry?.credits || 0)}</div>
-        <Sparkline values={topCountryByYearSeries} />
-        {formatTrend(topCountryTrend) && <div className="kpi-trend">{formatTrend(topCountryTrend)}</div>}
-      </div>
-      <div className="kpi-item">
-        <div className="kpi-label">PROJECT ACTIVITIES</div>
-        <div className="kpi-value">{displayActivityCount}</div>
-        <div className={activeGroup ? 'kpi-sub orange' : 'kpi-sub muted'}>
-          {activeGroup && totalCredits > 0
-            ? `${((creditsByGroup[activeGroup] / totalCredits) * 100).toFixed(1)}% of total market`
-            : 'unique categories'}
+        <div className="kpi-label">Total credits</div>
+        <div className="kpi-value-row">
+          <div className="kpi-value">{formatCredits(displayCredits)}</div>
+          <Sparkline values={creditsByYearSeries} width={60} height={22} />
+        </div>
+        <div className="kpi-bottom">
+          <span className={`kpi-context ${(creditsTrend?.pct ?? 0) >= 0 ? 'pos' : 'neg'}`}>
+            {creditsTrend ? `${creditsTrend.pct >= 0 ? '↗ +' : '↘ '}${Math.abs(creditsTrend.pct)}%` : '—'}
+          </span>
         </div>
       </div>
+
       <div className="kpi-item">
-        <div className="kpi-label">PROJECT COUNT</div>
-        <div className="kpi-value">
-          {displayProjectCount > 0 ? displayProjectCount.toLocaleString() : '—'}
+        <div className="kpi-label">Countries</div>
+        <div className="kpi-value-row">
+          <div className="kpi-value">{displayCountryCount}</div>
+          <Sparkline values={countriesByYearSeries} width={60} height={22} />
         </div>
-        <div className="kpi-sub muted">verified projects</div>
+        <div className="kpi-bottom">
+          <span className={`kpi-context ${(countriesTrend?.count ?? 0) >= 0 ? 'pos' : 'neg'}`}>
+            {countriesTrend ? `${countriesTrend.count >= 0 ? '↗ +' : '↘ '}${Math.abs(countriesTrend.count)}` : '—'}
+          </span>
+        </div>
+      </div>
+
+      <div className="kpi-item">
+        <div className="kpi-label">Top registry</div>
+        <div className="kpi-value-row">
+          <div className="kpi-value">{topRegistry?.name || '—'}</div>
+          <DonutRing pct={topRegPct} color={REGISTRY_COLORS[topRegistry?.name]} />
+        </div>
+        <div className="kpi-bottom">
+          <span className="kpi-context muted">{formatPct(topRegPct)} share</span>
+        </div>
+      </div>
+
+      <div className="kpi-item">
+        <div className="kpi-label">Leading country</div>
+        <div className="kpi-value-row">
+          <div className="kpi-value" title={topCountry?.name || ''}>
+            {topCountry ? (countryISO[topCountry.name] ?? topCountry.name.slice(0, 3).toUpperCase()) : '—'}
+          </div>
+          <Sparkline values={topCountryByYearSeries} width={60} height={22} />
+        </div>
+        <div className="kpi-bottom">
+          <span className={`kpi-context ${(topCountryTrend?.pct ?? 0) >= 0 ? 'pos' : 'neg'}`}>
+            {topCountryTrend ? `${topCountryTrend.pct >= 0 ? '↗ +' : '↘ '}${Math.abs(topCountryTrend.pct)}%` : '—'}
+          </span>
+        </div>
+      </div>
+
+      <div className="kpi-item">
+        <div className="kpi-label">Activities</div>
+        <div className="kpi-value-row">
+          <div className="kpi-value">{displayActivityCount}</div>
+          <SectorBars sectors={sectorCredits} />
+        </div>
+        <div className="kpi-bottom">
+          <span className="kpi-context muted">
+            {topSector.credits > 0
+              ? `${topSector.name.split(' ')[0]} ${formatPct(topSector.credits / (totalCredits || 1) * 100)}`
+              : '—'}
+          </span>
+        </div>
+      </div>
+
+      <div className="kpi-item">
+        <div className="kpi-label">Projects</div>
+        <div className="kpi-value-row">
+          <div className="kpi-value">
+            {displayProjectCount > 0 ? displayProjectCount.toLocaleString() : '—'}
+          </div>
+          <RegistryBar segments={registryProjectShare} width={60} height={7} />
+        </div>
+        <div className="kpi-bottom">
+          <span className="kpi-context muted">
+            {topProjectReg
+              ? `${REGISTRY_SHORT[topProjectReg.name] ?? topProjectReg.name} ${formatPct(topProjectReg.projectCount / (totalProjectCount || 1) * 100)}`
+              : '—'}
+          </span>
+        </div>
       </div>
     </div>
   );

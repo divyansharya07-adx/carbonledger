@@ -325,6 +325,12 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity, selected
       const reg = (row['Registry'] || '').trim();
       const yr  = parseInt(row['Vintage Year'], 10) || 0;
       if (!reg) return;
+      if (selectedRegistry && selectedRegistry !== 'all') {
+        const regLower = selectedRegistry.toLowerCase();
+        if (regLower === 'gold') { if (reg !== 'Gold Standard') return; }
+        else if (regLower === 'car') { if (reg !== 'CAR') return; }
+        else { if (reg.toLowerCase() !== regLower) return; }
+      }
       if (selectedYearRange && (yr < selectedYearRange[0] || yr > selectedYearRange[1])) return;
       const rCat = (row['Project Type Category'] || '').trim();
       if (selectedGroup && selectedGroup !== 'all') {
@@ -350,7 +356,7 @@ const useData = (selectedRegistry, selectedYearRange, selectedActivity, selected
       };
     });
     return map;
-  }, [rawProjCounts, selectedYearRange, selectedGroup, selectedActivity]);
+  }, [rawProjCounts, selectedRegistry, selectedYearRange, selectedGroup, selectedActivity]);
 
   // Country-specific data for country explorer
   const getCountryData = (countryName) => {
