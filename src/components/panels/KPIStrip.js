@@ -2,12 +2,6 @@ import { useMemo } from 'react';
 import { formatCredits, formatPct, getGroup, GROUP_COLORS, REGISTRY_COLORS } from '../../utils/formatters';
 import countryISO from '../../utils/countryISO';
 
-const formatTrend = (t) => {
-  if (!t) return null;
-  const sign = t.pct >= 0 ? '+' : '';
-  return `${sign}${t.pct}%`;
-};
-
 const Sparkline = ({ values, width = 48, height = 16 }) => {
   if (!values || values.length < 2) return null;
   const W = 200, H = height, PAD = 4;
@@ -156,7 +150,6 @@ const KPIStrip = ({ data, selectedActivity, activeGroup }) => {
     topRegPct = topRegistry && totalCredits > 0 ? (topRegistry.credits / totalCredits) * 100 : 0;
   }
 
-  const topRegName = topRegistry?.name;
   const topCountryName = topCountry?.name;
 
   // Sparkline series — all hooks called unconditionally before any return
@@ -174,17 +167,6 @@ const KPIStrip = ({ data, selectedActivity, activeGroup }) => {
     });
     return Object.entries(map).sort((a, b) => a[0] - b[0]).map(([, s]) => s.size);
   }, [filteredCountry]);
-
-  const topRegShareByYearSeries = useMemo(() => {
-    const totalMap = {};
-    const regMap = {};
-    filteredAgg.forEach(d => {
-      totalMap[d.year] = (totalMap[d.year] || 0) + d.credits;
-      if (d.registry === topRegName) regMap[d.year] = (regMap[d.year] || 0) + d.credits;
-    });
-    return Object.keys(totalMap).sort((a, b) => a - b)
-      .map(yr => totalMap[yr] > 0 ? (regMap[yr] || 0) / totalMap[yr] * 100 : 0);
-  }, [filteredAgg, topRegName]);
 
   const topCountryByYearSeries = useMemo(() => {
     if (!topCountryName) return [];
@@ -217,20 +199,6 @@ const KPIStrip = ({ data, selectedActivity, activeGroup }) => {
     const lastCount = entries[entries.length - 1][1].size;
     return firstCount ? { pct: Math.round((lastCount - firstCount) / firstCount * 100), count: lastCount - firstCount, year: Number(entries[0][0]) } : null;
   }, [filteredCountry]);
-
-  const topRegShareTrend = useMemo(() => {
-    if (!topRegName) return null;
-    const totalMap = {}, regMap = {};
-    filteredAgg.forEach(d => {
-      totalMap[d.year] = (totalMap[d.year] || 0) + d.credits;
-      if (d.registry === topRegName) regMap[d.year] = (regMap[d.year] || 0) + d.credits;
-    });
-    const yrs = Object.keys(totalMap).sort((a, b) => Number(a) - Number(b));
-    if (yrs.length < 2) return null;
-    const baseShare = totalMap[yrs[0]] > 0 ? (regMap[yrs[0]] || 0) / totalMap[yrs[0]] * 100 : 0;
-    const lastShare = totalMap[yrs[yrs.length - 1]] > 0 ? (regMap[yrs[yrs.length - 1]] || 0) / totalMap[yrs[yrs.length - 1]] * 100 : 0;
-    return baseShare ? { pct: Math.round((lastShare - baseShare) / baseShare * 100), year: Number(yrs[0]) } : null;
-  }, [filteredAgg, topRegName]);
 
   const topCountryTrend = useMemo(() => {
     if (!topCountryName) return null;
