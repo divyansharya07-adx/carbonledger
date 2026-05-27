@@ -14,7 +14,7 @@ import { Analytics } from '@vercel/analytics/react';
 const LoadingSkeleton = () => (
   <div className="loading-shell">
     <div className="loading-sidebar" />
-    <div className="loading-main" style={{ height: 'calc(100vh - 58px)', padding: '0', overflow: 'hidden' }}>
+    <div className="loading-main" style={{ height: 'calc(100vh - var(--topbar-height))', padding: '0', overflow: 'hidden' }}>
       <div className="skeleton-bar" style={{ height: 44, marginBottom: 1 }} />
       <div className="skeleton-bar" style={{ height: 68, marginBottom: 1 }} />
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, flex: 1 }}>
