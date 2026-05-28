@@ -37,7 +37,7 @@ function App() {
   const [selectedActivity, setSelectedActivity] = useState('all');
   const [selectedGroup, setSelectedGroup] = useState('all');
   const [sectorSetBy, setSectorSetBy] = useState('manual');
-  const [sidebarExpanded, setSidebarExpanded] = useState(true);
+  const [sidebarExpanded, setSidebarExpanded] = useState(false);
   const [initialCountry, setInitialCountry] = useState(null);
 
   const handleNavigateToCountry = useCallback((countryName) => {
@@ -153,6 +153,7 @@ function App() {
           setSelectedActivity={setSelectedActivity}
           sectorSetBy={sectorSetBy}
           setSectorSetBy={setSectorSetBy}
+          setSidebarExpanded={setSidebarExpanded}
         />
         <div className="app-page">
           {renderPage()}

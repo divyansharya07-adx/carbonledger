@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect, useMemo } from 'react';
+import { Menu, Download, Calendar } from 'lucide-react';
 import { GROUP_COLORS, GROUP_MAP, getGroup } from '../utils/formatters';
+import YearPickerWheel from './YearPickerWheel';
 
 const PAGE_NAMES = {
   overview: 'Overview',
@@ -53,25 +55,15 @@ const Topbar = ({
   setSelectedActivity,
   sectorSetBy = 'manual',
   setSectorSetBy,
+  setSidebarExpanded,
 }) => {
   const [yearDropdownOpen, setYearDropdownOpen] = useState(false);
   const [brandHovered, setBrandHovered] = useState(false);
-  const [customMode, setCustomMode] = useState(false);
-  const [customFrom, setCustomFrom] = useState(yearRange[0]);
-  const [customTo, setCustomTo] = useState(yearRange[1]);
   const yearRef = useRef(null);
   const [groupDropdownOpen, setGroupDropdownOpen] = useState(false);
   const groupRef = useRef(null);
   const [activityDropdownOpen, setActivityDropdownOpen] = useState(false);
   const activityRef = useRef(null);
-
-  const yearPresets = useMemo(() => [
-    { label: 'All time',  range: [dataMinYear, dataMaxYear] },
-    { label: 'Last 5Y',   range: [dataMaxYear - 4, dataMaxYear] },
-    { label: '2020–2025', range: [2020, 2025] },
-    { label: '2015–2020', range: [2015, 2020] },
-    { label: '2010–2015', range: [2010, 2015] },
-  ], [dataMinYear, dataMaxYear]);
 
   useEffect(() => {
     const handler = (e) => {
@@ -103,20 +95,11 @@ const Topbar = ({
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
-  // Groups shown in activity dropdown — filtered to selected sector if one is active
   const activityGroups = useMemo(() => {
     const entries = Object.entries(GROUP_MAP);
     if (selectedGroup === 'all') return entries;
     return entries.filter(([group]) => group === selectedGroup);
   }, [selectedGroup]);
-
-  const applyCustomRange = () => {
-    const from = Number(customFrom);
-    const to = Number(customTo);
-    if (from >= dataMinYear && to <= dataMaxYear && from < to) {
-      setYearRange([from, to]);
-    }
-  };
 
   // ── Sector handlers ──────────────────────────────────────────────────────
   const handleSelectGroup = (value) => {
@@ -158,11 +141,6 @@ const Topbar = ({
   };
 
   const pageName = PAGE_NAMES[activePage] || 'Overview';
-  const isMatchingPreset = yearPresets.some(p => p.range[0] === yearRange[0] && p.range[1] === yearRange[1]);
-  const yearLabel = isMatchingPreset
-    ? `${yearRange[0]} – ${yearRange[1]}`
-    : `${yearRange[0]} – ${yearRange[1]} ✎`;
-
   const activityColor = selectedActivity !== 'all' ? GROUP_COLORS[getGroup(selectedActivity)] : null;
 
   const clearBtnStyle = {
@@ -181,22 +159,59 @@ const Topbar = ({
     flexShrink: 0,
   };
 
+  const divider = { width: 1, height: 24, background: 'var(--border)', flexShrink: 0, alignSelf: 'center' };
+
   return (
     <div className="topbar">
-      <div className="topbar-breadcrumb" style={{ cursor: 'default' }}>
-        <span
-          onClick={onReset}
-          onMouseEnter={() => setBrandHovered(true)}
-          onMouseLeave={() => setBrandHovered(false)}
-          style={{ cursor: 'pointer', opacity: brandHovered ? 0.7 : 1, transition: 'opacity 0.15s' }}
+
+      {/* ── Row 1: identity + navigation ─────────────────────────────── */}
+      <div className="topbar-row1">
+        <button
+          className="topbar-hamburger"
+          onClick={() => setSidebarExpanded(prev => !prev)}
+          title="Toggle sidebar"
         >
-          <span className="brand-carbon">Carbon</span><span className="brand-ledger">Ledger</span>
-        </span>
-        <span className="topbar-sep">›</span>
-        <span className="crumb-name">{pageName}</span>
+          <Menu size={18} />
+        </button>
+
+        <div className="topbar-breadcrumb" style={{ cursor: 'default' }}>
+          <span
+            onClick={onReset}
+            onMouseEnter={() => setBrandHovered(true)}
+            onMouseLeave={() => setBrandHovered(false)}
+            style={{ cursor: 'pointer', opacity: brandHovered ? 0.7 : 1, transition: 'opacity 0.15s' }}
+          >
+            <span className="brand-carbon">Carbon</span><span className="brand-ledger">Ledger</span>
+          </span>
+          <span className="topbar-sep">›</span>
+          <span className="crumb-name">{pageName}</span>
+        </div>
+
+        <div style={{
+          marginLeft: 'auto',
+          display: 'flex',
+          alignItems: 'center',
+          flexShrink: 0,
+          ...(isDarkMode ? { background: '#ffffff', borderRadius: 6, padding: '4px 8px' } : {}),
+        }}>
+          <a
+            href="https://www.ceew.in/publications?field_focus_area_tid=247&field_pub_type_tid=All&field_authors_target_id_selective=All&title="
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ lineHeight: 0, textDecoration: 'none' }}
+          >
+            <img
+              src={process.env.PUBLIC_URL + '/ceew_logo.webp'}
+              alt="CEEW"
+              style={{ height: 34, width: 'auto', display: 'block' }}
+            />
+          </a>
+        </div>
       </div>
 
-      <div className="topbar-right">
+      {/* ── Row 2: filters ───────────────────────────────────────────── */}
+      <div className="topbar-row2">
+
         {/* Registry pills */}
         <div className="pill-group">
           {REGISTRIES.map((reg) => (
@@ -212,7 +227,7 @@ const Topbar = ({
         </div>
 
         {/* Divider: pills → sector */}
-        <div style={{ width: 1, height: 24, background: 'var(--border)', marginLeft: 10, marginRight: 0, flexShrink: 0, alignSelf: 'center' }} />
+        <div style={divider} />
 
         {/* ── Sector dropdown ── */}
         <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -322,7 +337,7 @@ const Topbar = ({
         </div>
 
         {/* Divider: sector → activity */}
-        <div style={{ width: 1, height: 24, background: 'var(--border)', flexShrink: 0, alignSelf: 'center', marginLeft: 4, marginRight: 4 }} />
+        <div style={divider} />
 
         {/* ── Activity dropdown ── */}
         <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -376,7 +391,6 @@ const Topbar = ({
                 zIndex: 50,
                 boxShadow: isDarkMode ? '0 4px 16px rgba(0,0,0,0.24)' : '0 4px 16px rgba(0,0,0,0.08)',
               }}>
-                {/* All activities row */}
                 <div
                   onClick={handleSelectAllActivities}
                   style={{
@@ -396,12 +410,10 @@ const Topbar = ({
                   All activities
                 </div>
 
-                {/* Grouped activity rows */}
                 {activityGroups.map(([group, categories], gIdx) => {
                   const groupColor = GROUP_COLORS[group];
                   return (
                     <div key={group}>
-                      {/* Section header */}
                       <div style={{
                         fontSize: 10,
                         textTransform: 'uppercase',
@@ -414,7 +426,6 @@ const Topbar = ({
                         {group}
                       </div>
 
-                      {/* Activity rows */}
                       {categories.map(cat => {
                         const isSelected = selectedActivity === cat;
                         return (
@@ -474,103 +485,37 @@ const Topbar = ({
         </div>
 
         {/* Divider: activity → year */}
-        <div style={{ width: 1, height: 24, background: 'var(--border)', marginLeft: 0, marginRight: 10, flexShrink: 0, alignSelf: 'center' }} />
+        <div style={divider} />
 
-        {/* ── Year range ── */}
+        {/* ── Year picker ── */}
         <div ref={yearRef} style={{ position: 'relative' }}>
-
-          {customMode ? (
-            <div className="year-custom-inputs">
-              <span>From</span>
-              <input
-                className="year-custom-input"
-                type="number"
-                min={dataMinYear}
-                max={dataMaxYear}
-                value={customFrom}
-                onChange={e => setCustomFrom(e.target.value)}
-                onBlur={applyCustomRange}
-                onKeyDown={e => { if (e.key === 'Enter') e.target.blur(); }}
-              />
-              <span>–</span>
-              <input
-                className="year-custom-input"
-                type="number"
-                min={dataMinYear}
-                max={dataMaxYear}
-                value={customTo}
-                onChange={e => setCustomTo(e.target.value)}
-                onBlur={applyCustomRange}
-                onKeyDown={e => { if (e.key === 'Enter') e.target.blur(); }}
-              />
-              <span
-                style={{ cursor: 'pointer', color: 'var(--text-muted)', fontSize: 9, paddingLeft: 2 }}
-                onClick={() => setCustomMode(false)}
-              >✕</span>
-            </div>
-          ) : (
-            <button
-              className="year-range-btn"
-              onClick={() => setYearDropdownOpen(!yearDropdownOpen)}
-            >
-              {yearLabel} ▼
-            </button>
-          )}
-          {yearDropdownOpen && !customMode && (
-            <div className="year-dropdown">
-              {yearPresets.map((preset) => (
-                <div
-                  key={preset.label}
-                  className={`year-dropdown-item ${yearPresets.some(p => p.label === preset.label) && preset.range[0] === yearRange[0] && preset.range[1] === yearRange[1] ? 'active' : ''}`}
-                  onClick={() => {
-                    setYearRange(preset.range);
-                    setYearDropdownOpen(false);
-                  }}
-                >
-                  {preset.label}
-                </div>
-              ))}
-              <div
-                className="year-dropdown-item"
-                style={{ borderTop: '0.5px solid var(--border)', marginTop: 2, paddingTop: 6, color: 'var(--text-muted)', fontStyle: 'italic' }}
-                onClick={() => {
-                  setCustomFrom(yearRange[0]);
-                  setCustomTo(yearRange[1]);
-                  setCustomMode(true);
-                  setYearDropdownOpen(false);
-                }}
-              >
-                Custom range...
-              </div>
-            </div>
+          <button
+            className="year-picker-btn"
+            onClick={() => setYearDropdownOpen(o => !o)}
+          >
+            <Calendar size={14} style={{ flexShrink: 0 }} />
+            <span className="year-picker-label">{yearRange[0]}–{yearRange[1]}</span>
+          </button>
+          {yearDropdownOpen && (
+            <YearPickerWheel
+              yearRange={yearRange}
+              setYearRange={setYearRange}
+              dataMinYear={dataMinYear}
+              dataMaxYear={dataMaxYear}
+              isDarkMode={isDarkMode}
+              onClose={() => setYearDropdownOpen(false)}
+            />
           )}
         </div>
 
-        <button className="export-btn" onClick={onExport}>
-          ↓ Export
+        {/* Flex spacer */}
+        <div style={{ flex: 1 }} />
+
+        {/* Export — icon only */}
+        <button className="export-btn" onClick={onExport} title="Export to CSV">
+          <Download size={16} />
         </button>
 
-        <div style={{ width: 1, height: 24, background: 'var(--border)', marginLeft: 12, marginRight: 12, flexShrink: 0, alignSelf: 'center' }} />
-
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          flexShrink: 0,
-          ...(isDarkMode ? { background: '#ffffff', borderRadius: 6, padding: '4px 8px' } : {}),
-        }}>
-          <a
-            href="https://www.ceew.in/publications?field_focus_area_tid=247&field_pub_type_tid=All&field_authors_target_id_selective=All&title="
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ lineHeight: 0, textDecoration: 'none' }}
-          >
-            <img
-              src={process.env.PUBLIC_URL + '/ceew_logo.webp'}
-              alt="CEEW"
-              style={{ height: 34, width: 'auto', display: 'block' }}
-            />
-          </a>
-        </div>
       </div>
     </div>
   );
