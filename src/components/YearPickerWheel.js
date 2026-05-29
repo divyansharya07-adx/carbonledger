@@ -13,17 +13,11 @@ const WheelColumn = ({ years, selectedYear, onYearChange }) => {
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const commit = () => {
-      const idx = Math.round(el.scrollTop / ITEM_H);
-      const clamped = Math.max(0, Math.min(idx, years.length - 1));
-      onYearChange(years[clamped]);
-    };
-    el.addEventListener('scrollend', commit);
-    return () => el.removeEventListener('scrollend', commit);
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const handleScroll = (e) => {
+    const idx = Math.round(e.target.scrollTop / ITEM_H);
+    const clamped = Math.max(0, Math.min(idx, years.length - 1));
+    onYearChange(years[clamped]);
+  };
 
   return (
     <div style={{ position: 'relative', width: 90 }}>
@@ -42,6 +36,7 @@ const WheelColumn = ({ years, selectedYear, onYearChange }) => {
       <div
         ref={ref}
         className="year-picker-wheel-col"
+        onScroll={handleScroll}
         style={{
           height: 112,
           overflowY: 'scroll',
