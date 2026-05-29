@@ -5,11 +5,14 @@ const PAD_H = 44; // (112 - 24) / 2 — centers first/last year at scroll extrem
 
 const WheelColumn = ({ years, selectedYear, onYearChange }) => {
   const ref = useRef(null);
+  const animationRef = useRef(null);
+  const targetIdxRef = useRef(null);
 
   useEffect(() => {
     if (ref.current) {
       const idx = years.indexOf(selectedYear);
       ref.current.scrollTop = idx * ITEM_H;
+      targetIdxRef.current = idx;
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -18,6 +21,55 @@ const WheelColumn = ({ years, selectedYear, onYearChange }) => {
     const clamped = Math.max(0, Math.min(idx, years.length - 1));
     onYearChange(years[clamped]);
   };
+
+  // Wheel interception: mouse wheel → preventDefault + 120ms slide to next year.
+  // Trackpad (delta < 40 in pixel mode) falls through to native scroll.
+  // Perf note: handleScroll fires every frame during JS animation. If parent
+  // re-render cost becomes an issue, gate the commit to t >= 1 in step().
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+    const animateTo = (targetScrollTop) => {
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+      const startScrollTop = el.scrollTop;
+      const distance = targetScrollTop - startScrollTop;
+      const duration = 120;
+      const startTime = performance.now();
+
+      const step = (now) => {
+        const t = Math.min((now - startTime) / duration, 1);
+        el.scrollTop = startScrollTop + distance * easeOutCubic(t);
+        if (t < 1) {
+          animationRef.current = requestAnimationFrame(step);
+        } else {
+          animationRef.current = null;
+        }
+      };
+      animationRef.current = requestAnimationFrame(step);
+    };
+
+    const onWheel = (e) => {
+      if (e.deltaMode === 0 && Math.abs(e.deltaY) < 40) return;
+
+      e.preventDefault();
+      const direction = e.deltaY > 0 ? 1 : -1;
+      const currentTarget = targetIdxRef.current ?? Math.round(el.scrollTop / ITEM_H);
+      const nextIdx = Math.max(0, Math.min(currentTarget + direction, years.length - 1));
+      if (nextIdx === currentTarget) return;
+
+      targetIdxRef.current = nextIdx;
+      animateTo(nextIdx * ITEM_H);
+    };
+
+    el.addEventListener('wheel', onWheel, { passive: false });
+    return () => {
+      el.removeEventListener('wheel', onWheel);
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+    };
+  }, [years.length]);
 
   return (
     <div style={{ position: 'relative', width: 90 }}>
@@ -56,6 +108,7 @@ const WheelColumn = ({ years, selectedYear, onYearChange }) => {
               onClick={() => {
                 const idx = years.indexOf(y);
                 ref.current.scrollTop = idx * ITEM_H;
+                targetIdxRef.current = idx;
                 onYearChange(y);
               }}
               style={{
