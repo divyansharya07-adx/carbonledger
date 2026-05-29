@@ -113,11 +113,6 @@ body {
   padding: 0;
 }
 
-.sidebar.collapsed .sidebar-logo {
-  justify-content: center;
-  gap: 0;
-  padding: 0;
-}
 
 .sidebar-btn > span {
   overflow: hidden;
@@ -131,29 +126,6 @@ body {
   max-width: 0;
 }
 
-.sidebar-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0 4px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.sidebar-logo-mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-}
-
-.sidebar-logo-mark span {
-  color: #fff;
-  font-weight: 800;
-  font-size: 10px;
-  letter-spacing: -0.5px;
-}
 
 
 .sidebar-nav {
@@ -162,6 +134,7 @@ body {
   align-items: center;
   gap: 2px;
   width: 100%;
+  padding-top: 44px;
 }
 
 .sidebar-btn {
@@ -217,32 +190,6 @@ body {
   gap: 2px;
 }
 
-.sidebar-collapse-btn {
-  margin-left: auto;
-  min-width: 20px;
-  width: 20px;
-  height: 20px;
-  border: none;
-  background: transparent;
-  color: var(--text-muted);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  padding: 0;
-  flex-shrink: 0;
-  transition: color 0.15s ease, background 0.15s ease;
-}
-
-.sidebar-collapse-btn:hover {
-  color: var(--text-secondary);
-  background: var(--bg-elevated);
-}
-
-.sidebar.collapsed .sidebar-collapse-btn {
-  margin-left: 0;
-}
 
 .sidebar-tooltip {
   position: absolute;

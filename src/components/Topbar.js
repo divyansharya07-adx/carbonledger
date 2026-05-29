@@ -192,7 +192,7 @@ const Topbar = ({
           display: 'flex',
           alignItems: 'center',
           flexShrink: 0,
-          ...(isDarkMode ? { background: '#ffffff', borderRadius: 6, padding: '4px 8px' } : {}),
+          ...(isDarkMode ? { background: '#ffffff', borderRadius: 6, padding: '2px 8px' } : {}),
         }}>
           <a
             href="https://www.ceew.in/publications?field_focus_area_tid=247&field_pub_type_tid=All&field_authors_target_id_selective=All&title="

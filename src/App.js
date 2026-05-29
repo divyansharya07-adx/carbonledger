@@ -132,7 +132,6 @@ function App() {
         darkMode={darkMode}
         setDarkMode={setDarkMode}
         sidebarExpanded={sidebarExpanded}
-        setSidebarExpanded={setSidebarExpanded}
       />
       <div className="app-main">
         <Topbar

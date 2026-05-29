@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LayoutGrid, Hexagon, Globe, Diamond, Info, Sun, Moon, ChevronLeft, ChevronRight, Menu, LayoutList } from 'lucide-react';
+import { LayoutGrid, Hexagon, Globe, Diamond, Info, Sun, Moon, LayoutList } from 'lucide-react';
 
 const NAV_ITEMS = [
   { id: 'overview', icon: LayoutGrid, label: 'Overview' },
@@ -9,21 +9,11 @@ const NAV_ITEMS = [
   { id: 'registry', icon: Diamond, label: 'Registry Intelligence' },
 ];
 
-const Sidebar = ({ activePage, setActivePage, darkMode, setDarkMode, sidebarExpanded, setSidebarExpanded }) => {
+const Sidebar = ({ activePage, setActivePage, darkMode, setDarkMode, sidebarExpanded }) => {
   const [hovered, setHovered] = useState(null);
 
   return (
     <div className={`sidebar${!sidebarExpanded ? ' collapsed' : ''}`}>
-      <div className="sidebar-logo" onClick={() => setActivePage('overview')}>
-        <div className="sidebar-logo-mark"><Menu size={20} /></div>
-        <button
-          className="sidebar-collapse-btn"
-          onClick={(e) => { e.stopPropagation(); setSidebarExpanded(!sidebarExpanded); }}
-          title={sidebarExpanded ? 'Collapse' : 'Expand'}
-        >
-          {sidebarExpanded ? <ChevronLeft size={14} /> : <ChevronRight size={14} />}
-        </button>
-      </div>
 
       <div className="sidebar-nav">
         {NAV_ITEMS.map((item) => (
