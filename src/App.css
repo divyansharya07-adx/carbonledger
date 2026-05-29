@@ -281,6 +281,8 @@ body {
   display: flex;
   flex-direction: column;
   background: var(--bg-base);
+  position: relative;
+  z-index: 20;
 }
 
 .topbar-row1 {
@@ -300,7 +302,7 @@ body {
   padding: 0 16px;
   gap: 8px;
   flex-shrink: 0;
-  overflow: hidden;
+  justify-content: flex-end;
 }
 
 .topbar-hamburger {
@@ -396,10 +398,10 @@ body {
 
 .year-picker-btn {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 2px;
-  padding: 4px 10px;
+  gap: 5px;
+  padding: 6px 10px;
   border: 0.5px solid var(--border);
   border-radius: 6px;
   background: transparent;
@@ -411,7 +413,7 @@ body {
 .year-picker-btn:hover { border-color: var(--border-hover); }
 
 .year-picker-label {
-  font-size: 9px;
+  font-size: 11px;
   color: var(--text-muted);
   line-height: 1;
   white-space: nowrap;
@@ -423,7 +425,7 @@ body {
 .export-btn {
   font-size: 12px;
   font-weight: 600;
-  padding: 7px 8px;
+  padding: 6px 16px;
   border-radius: 6px;
   border: none;
   background: var(--orange);

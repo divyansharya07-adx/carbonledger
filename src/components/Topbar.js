@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useMemo } from 'react';
-import { Menu, Download, Calendar } from 'lucide-react';
+import { Menu, Calendar } from 'lucide-react';
 import { GROUP_COLORS, GROUP_MAP, getGroup } from '../utils/formatters';
 import YearPickerWheel from './YearPickerWheel';
 
@@ -354,7 +354,7 @@ const Topbar = ({
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 5,
-                minWidth: 170,
+                minWidth: 220,
                 ...(selectedActivity !== 'all' ? {
                   border: `1px solid ${hexToRgba(activityColor, 0.3)}`,
                   background: hexToRgba(activityColor, 0.08),
@@ -380,8 +380,8 @@ const Topbar = ({
               <div style={{
                 position: 'absolute',
                 top: 'calc(100% + 6px)',
+                left: 0,
                 right: 0,
-                minWidth: 220,
                 maxHeight: 360,
                 overflowY: 'auto',
                 background: 'var(--bg-card)',
@@ -488,12 +488,12 @@ const Topbar = ({
         <div style={divider} />
 
         {/* ── Year picker ── */}
-        <div ref={yearRef} style={{ position: 'relative' }}>
+        <div ref={yearRef} style={{ position: 'relative', marginRight: 24 }}>
           <button
             className="year-picker-btn"
             onClick={() => setYearDropdownOpen(o => !o)}
           >
-            <Calendar size={14} style={{ flexShrink: 0 }} />
+            <Calendar size={16} style={{ flexShrink: 0 }} />
             <span className="year-picker-label">{yearRange[0]}–{yearRange[1]}</span>
           </button>
           {yearDropdownOpen && (
@@ -508,12 +508,9 @@ const Topbar = ({
           )}
         </div>
 
-        {/* Flex spacer */}
-        <div style={{ flex: 1 }} />
-
-        {/* Export — icon only */}
+        {/* Export */}
         <button className="export-btn" onClick={onExport} title="Export to CSV">
-          <Download size={16} />
+          ↓ Export
         </button>
 
       </div>
