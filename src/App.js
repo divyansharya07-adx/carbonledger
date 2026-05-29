@@ -131,7 +131,6 @@ function App() {
         setActivePage={setActivePage}
         darkMode={darkMode}
         setDarkMode={setDarkMode}
-        onExport={handleExport}
         sidebarExpanded={sidebarExpanded}
         setSidebarExpanded={setSidebarExpanded}
       />

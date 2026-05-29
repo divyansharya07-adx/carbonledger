@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LayoutGrid, Hexagon, Globe, Diamond, Download, Info, Sun, Moon, ChevronLeft, ChevronRight, Menu, LayoutList } from 'lucide-react';
+import { LayoutGrid, Hexagon, Globe, Diamond, Info, Sun, Moon, ChevronLeft, ChevronRight, Menu, LayoutList } from 'lucide-react';
 
 const NAV_ITEMS = [
   { id: 'overview', icon: LayoutGrid, label: 'Overview' },
@@ -9,7 +9,7 @@ const NAV_ITEMS = [
   { id: 'registry', icon: Diamond, label: 'Registry Intelligence' },
 ];
 
-const Sidebar = ({ activePage, setActivePage, darkMode, setDarkMode, onExport, sidebarExpanded, setSidebarExpanded }) => {
+const Sidebar = ({ activePage, setActivePage, darkMode, setDarkMode, sidebarExpanded, setSidebarExpanded }) => {
   const [hovered, setHovered] = useState(null);
 
   return (
@@ -42,20 +42,6 @@ const Sidebar = ({ activePage, setActivePage, darkMode, setDarkMode, onExport, s
           </button>
         ))}
 
-        <div className="sidebar-divider" />
-
-        <button
-          className="sidebar-btn"
-          onClick={onExport}
-          onMouseEnter={() => setHovered('export')}
-          onMouseLeave={() => setHovered(null)}
-        >
-          <Download size={16} />
-          <span>Export</span>
-          {hovered === 'export' && (
-            <div className="sidebar-tooltip">Export CSV</div>
-          )}
-        </button>
       </div>
 
       <div className="sidebar-bottom">
