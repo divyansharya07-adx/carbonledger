@@ -430,6 +430,11 @@ def build_gold():
         .groupby('GS' + iss_gsid).any().rename('corsia_eligible')
     )
     proj['_id'] = 'GS' + proj['GSID'].astype(str).str.strip()
+    sdg_map = (
+        proj['Sustainable Development Goals'].notna() &
+        (proj['Sustainable Development Goals'].astype(str).str.strip().str.lower() != 'nan') &
+        (proj['Sustainable Development Goals'].astype(str).str.strip() != '')
+    )
     meta = pd.DataFrame({
         'project_id':   proj['_id'].values,
         'project_name': proj['Project Name'].values,
@@ -439,7 +444,7 @@ def build_gold():
         'proponent':    proj['Project Developer Name'].values,
         'status':       proj['Status'].values,
         'registration_date':     None,
-        'sdg_eligible':          True,
+        'sdg_eligible':          sdg_map.values,
         'crediting_period_start': None,
         'crediting_period_end':   None,
         'verification_body':     None,

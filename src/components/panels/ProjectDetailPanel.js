@@ -1,12 +1,6 @@
 import { formatCredits, formatDateOnly } from '../../utils/formatters';
+import { getRegistryProjectUrl } from '../../utils/registryUrls';
 import { COUNTRY_FLAGS } from '../pages/Projects';
-
-const REGISTRY_URLS = {
-  'Verra': 'https://registry.verra.org',
-  'Gold Standard': 'https://registry.goldstandard.org',
-  'ACR': 'https://acr2.apx.com',
-  'CAR': 'https://thereserve2.apx.com',
-};
 
 const REGISTRY_BADGE_CLASS = {
   'Verra': 'verra',
@@ -123,16 +117,9 @@ const ProjectDetailPanel = ({ project, onClose }) => {
 
             {/* Footer links */}
             <div className="pdp-footer">
-              {project.documents_url ? (
-                <a href={project.documents_url} className="pdp-link" target="_blank" rel="noopener noreferrer">
-                  ↗ View on registry
-                </a>
-              ) : (
-                <span className="pdp-link unavailable">Documents not available</span>
-              )}
-              {REGISTRY_URLS[project.registry] && (
-                <a href={REGISTRY_URLS[project.registry]} className="pdp-link" target="_blank" rel="noopener noreferrer">
-                  ↗ View registry page
+              {getRegistryProjectUrl(project.registry, project.project_id) && (
+                <a href={getRegistryProjectUrl(project.registry, project.project_id)} className="pdp-link" target="_blank" rel="noopener noreferrer">
+                  ↗ View project page
                 </a>
               )}
             </div>
