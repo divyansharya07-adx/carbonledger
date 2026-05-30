@@ -5,6 +5,10 @@
 
 ---
 
+## [2026-05-30] tooling | build:ci script
+
+Added `npm run build:ci` script using `cross-env` to run the CRA build with `CI=true` cross-platform. Removes the `$env:CI = "true"; npm run build` PowerShell ceremony from local pre-push verification. Future CEEW engineer can run `npm run build:ci` on Windows, macOS, or Linux identically. Files: `package.json`, `package-lock.json` (cross-env install).
+
 ## [2026-05-30] update | Step 23b-3 — real registry URLs + fix hard-coded GS SDG + audit documents_url
 
 Three fixes in one commit. (1) Replaced generic registry homepage links in `ProjectDetailPanel.js` with per-project URLs computed from `project_id` via new `src/utils/registryUrls.js` utility. Templates: Verra `/app/projectDetail/VCS/{id}`, GS `?q={id}`, CAR/ACR APX `prjView.asp?id1={id}`. (2) Fixed `build_projects.py` line 442: Gold Standard `sdg_eligible` was hard-coded `True` for all 4027 projects; now reads the real `Sustainable Development Goals` column (comma-separated SDG numbers). The 3 null-SDG projects have no issuances so the CSV output is identical — fix is correct but observable only via future GS projects added to the registry. (3) Removed the broken `documents_url`-based "View on registry" link: ACR/CAR `documents_url` = `"View"` (openpyxl reads hyperlink display text, not URL) → `href="View"` was a silent broken link. Verra/GS had `null`. Footer now shows only the computed per-project link. Files modified: `scripts/build_projects.py`, `src/components/panels/ProjectDetailPanel.js`, `src/utils/registryUrls.js` (new).
