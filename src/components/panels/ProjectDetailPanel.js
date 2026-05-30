@@ -1,4 +1,4 @@
-import { formatCredits } from '../../utils/formatters';
+import { formatCredits, formatDateOnly } from '../../utils/formatters';
 import { COUNTRY_FLAGS } from '../pages/Projects';
 
 const REGISTRY_URLS = {
@@ -94,13 +94,13 @@ const ProjectDetailPanel = ({ project, onClose }) => {
             <div className="detail-section-title" style={{ marginTop: 0 }}>Details</div>
             <DetailRow label="Proponent" value={project.proponent} />
             <DetailRow label="Status" value={project.status} />
-            <DetailRow label="Registration date" value={project.registration_date} />
+            <DetailRow label="Registration date" value={formatDateOnly(project.registration_date)} />
             <DetailRow
               label="Crediting period"
               value={
                 project.crediting_period_start && project.crediting_period_end
-                  ? `${project.crediting_period_start} – ${project.crediting_period_end}`
-                  : project.crediting_period_start || project.crediting_period_end || null
+                  ? `${formatDateOnly(project.crediting_period_start)} – ${formatDateOnly(project.crediting_period_end)}`
+                  : '—'
               }
             />
             <DetailRow label="Verification body" value={project.verification_body} />

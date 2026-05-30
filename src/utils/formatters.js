@@ -84,6 +84,15 @@ export const getGroupColor = (category) => {
   return GROUP_COLORS[getGroup(category)] || '#e85724';
 };
 
+export const formatDateOnly = (value) => {
+  if (value == null || value === '') return '—';
+  const s = String(value).trim();
+  if (!s || s.toLowerCase() === 'null' || s.toLowerCase() === 'nan') return '—';
+  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
+  const datePart = s.split(/[ T]/)[0];
+  return datePart || '—';
+};
+
 export const generatePulseSentence = ({ totalCredits, activityCount, countryCount, selectedActivity, selectedRegistry, creditsByRegistry, creditsByActivity }) => {
   if (selectedActivity && selectedActivity !== 'all') {
     const actData = creditsByActivity?.find(a => a.name === selectedActivity);
