@@ -17,8 +17,8 @@ Raw documents ingested into the wiki. These are read-only references.
 
 Concrete project artifacts: files, scripts, hooks, components, APIs.
 
-- [Data Pipeline](entities/data-pipeline.md) — build_projects.py + fix_data.py: inputs, outputs, lookup logic, known weaknesses (updated: 2026-04-18)
-- [CSV Schemas](entities/csv-schemas.md) — all five CSV files: columns, row counts, producers, consumers (updated: 2026-04-18)
+- [Data Pipeline](entities/data-pipeline.md) — build_projects.py → fix_data.py → enrich_projects.py: inputs, outputs, lookup logic, 23b-4 File 2 join (updated: 2026-05-31)
+- [CSV Schemas](entities/csv-schemas.md) — all CSV files: columns, row counts, producers, consumers; projects_data.csv now 33 cols (updated: 2026-05-31)
 - [React Data Layer](entities/react-data-layer.md) — useData.js, useProjectsData.js, global filter state, World Bank API (updated: 2026-04-18)
 - [Pages Overview](entities/pages-overview.md) — per-page data connections for all 5 pages + supporting panels (updated: 2026-04-18)
 - [Deployment](entities/deployment.md) — Vercel config, GitHub Actions workflow, data refresh flow (updated: 2026-04-18)

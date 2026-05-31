@@ -28,22 +28,29 @@ jobs:
       - name: Install dependencies
         run: pip install pandas openpyxl xlrd
 
-      - name: Find Excel file
+      - name: Find Excel files
         id: find_excel
         run: |
-          filename=$(ls data/*.xlsx | head -1 | xargs basename)
-          echo "filename=$filename" >> $GITHUB_OUTPUT
-          echo "Found: $filename"
+          f1=$(ls data/VROD-registry-files*.xlsx | head -1 | xargs basename)
+          f2=$(ls data/Voluntary-Registry-Offsets*.xlsx | head -1 | xargs basename)
+          echo "f1=$f1" >> $GITHUB_OUTPUT
+          echo "f2=$f2" >> $GITHUB_OUTPUT
+          echo "File 1: $f1 | File 2: $f2"
 
       - name: Run build_projects.py
         env:
-          VROD_EXCEL_PATH: ${{ github.workspace }}/data/${{ steps.find_excel.outputs.filename }}
+          VROD_EXCEL_PATH: ${{ github.workspace }}/data/${{ steps.find_excel.outputs.f1 }}
         run: python scripts/build_projects.py
 
       - name: Run fix_data.py
         env:
-          VROD_EXCEL_PATH: ${{ github.workspace }}/data/${{ steps.find_excel.outputs.filename }}
+          VROD_EXCEL_PATH: ${{ github.workspace }}/data/${{ steps.find_excel.outputs.f1 }}
         run: python scripts/fix_data.py
+
+      - name: Run enrich_projects.py
+        env:
+          VROD_DB_EXCEL_PATH: ${{ github.workspace }}/data/${{ steps.find_excel.outputs.f2 }}
+        run: python scripts/enrich_projects.py
 
       - name: Commit updated CSVs
         run: |

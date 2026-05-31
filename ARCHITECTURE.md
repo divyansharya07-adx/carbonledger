@@ -31,6 +31,8 @@ The VROD Excel workbook contains ~10 sheets. The pipeline uses:
 | CAR | `build_projects.py` | Climate Action Reserve projects |
 | GS Projects | `build_projects.py` | Gold Standard project metadata (project name, country) |
 
+**Secondary Excel File (Step 23b-4):** `Voluntary-Registry-Offsets-Database--{YYYY-MM}.xlsx` (Berkeley's published unified database; ~15 MB, committed to `data/` via Git LFS). Its `PROJECTS` sheet (header row 4; one curated row per project) is read by `enrich_projects.py` via `VROD_DB_EXCEL_PATH` to add project-level metadata. **Not** used for credit math — File 1 remains the source of truth there.
+
 ### 2b. Methodology Mapping
 
 **File:** `public/methodology_mapping.csv`
@@ -56,11 +58,11 @@ The VROD Excel workbook contains ~10 sheets. The pipeline uses:
 
 ## 3. Python Pipeline
 
-Two scripts run sequentially. **`build_projects.py` must complete before `fix_data.py` runs** — `fix_data.py` reads `projects_data.csv` in Section G.
+Three scripts run sequentially: **`build_projects.py` → `fix_data.py` → `enrich_projects.py`**. `fix_data.py` reads `projects_data.csv` (Section G), so `build_projects.py` must complete first. `enrich_projects.py` (Step 23b-4) runs last — it left-joins File 2 project metadata onto `projects_data.csv` additively. `fix_data.py` does **not** consume the enrichment columns, so it does not need to re-run after enrich.
 
 ### 3a. `scripts/build_projects.py`
 
-**Output:** `public/data/projects_data.csv` (one row per project, 20 columns)
+**Output:** `public/data/projects_data.csv` (vintage-level: one row per project × vintage year — 26,359 rows / 5,821 projects. **24 columns** as of Step 23b-4, which appends `first_issuance_date`; `enrich_projects.py` then appends 9 more → 33 total)
 
 **Key function — `lookup_category(registry, methodology, verra_by_code, name_lookup, project_type)`:**
 
@@ -115,17 +117,27 @@ Maps Gold Standard `Project Type` strings to dashboard categories:
 
 > **Note:** `fix_data.py` does **not** re-categorise from scratch — it applies surgical corrections to existing aggregated CSVs. Addition 4 is the only section that fully rebuilds Verra/GS rows.
 
+### 3c. `scripts/enrich_projects.py` (Step 23b-4)
+
+**Input:** `public/data/projects_data.csv` + File 2 `PROJECTS` sheet (`VROD_DB_EXCEL_PATH`).
+**Output:** `public/data/projects_data.csv` (overwritten — original columns unchanged, 9 metadata columns appended).
+
+Left-joins File 2 project metadata by `project_id` (File 2 `Project ID`, already prefixed — 100% match against pipeline pids; 1 tolerated straggler, `GS7511`). Appends 8 File-2 columns (`reduction_removal`, `total_buffer_pool_deposits`, `buffer_credits_released`, `reversals_covered_buffer`, `reversals_not_covered`, `registry_documents_url`, `estimated_annual_reductions`, `first_vintage_year_f2`) and 1 derived column (`operational_lag_years` = first issuance − registration in years, **Verra/CAR only**, null where negative).
+
+**Additive only.** Self-enforced invariant gates abort the pipeline (`sys.exit(1)`) on any violation: row count, unique `project_id`, all original columns byte-identical, and the 4 per-registry `credits_issued` sums must be unchanged. Article 6 Authorization / Corresponding Adjustment / `is_article_6_eligible` are deferred to a follow-up (File 1 issuance-level, not a File 2 join).
+
 ---
 
 ## 4. CSV File Inventory
 
 ### `public/data/projects_data.csv`
 
-- **Source:** `build_projects.py` output
-- **Rows:** ~9,600 (one per project)
-- **Key columns:** `registry, project_id, project_name, methodology, project_type_category, country, credits_issued, credits_retired, retirement_rate, vintage_year`
+- **Source:** `build_projects.py` (24 cols) → `enrich_projects.py` (+9 cols = **33 total**)
+- **Rows:** 26,359 vintage-level rows (5,821 unique projects; one row per project × vintage year, project metadata broadcast across a project's rows)
+- **Key columns:** `registry, project_id, project_name, methodology, category, country, credits_issued, credits_retired, retirement_rate, vintage_year, first_issuance_date`
+- **23b-4 metadata columns:** `reduction_removal, total_buffer_pool_deposits, buffer_credits_released, reversals_covered_buffer, reversals_not_covered, registry_documents_url, estimated_annual_reductions, first_vintage_year_f2, operational_lag_years`
 - **Used by:** `src/hooks/useProjectsData.js` → `Projects.js` page only
-- **Note:** Includes 'Other' rows; Projects page applies its own EXCLUDED_CATEGORIES filter
+- **Note:** Includes 'Other' rows; Projects page applies its own EXCLUDED_CATEGORIES filter. The legacy `documents_url` column retains the placeholder `"View"` and is superseded by `registry_documents_url` (real registry URLs).
 
 ### `public/aggregated_data.csv`
 
@@ -332,17 +344,21 @@ export const getGroupColor = (category) => GROUP_COLORS[getGroup(category)] || '
 **Steps:**
 
 ```
-1. Checkout (with Git LFS enabled — lfs: true)
+1. Checkout (with Git LFS enabled — lfs: true; fetches BOTH xlsx files)
 2. Set up Python 3.11
-3. pip install -r requirements.txt
-4. Detect Excel file: filename=$(ls data/*.xlsx | head -1 | xargs basename)
-5. python scripts/build_projects.py --file "data/$filename"
-6. python scripts/fix_data.py --file "data/$filename"
-7. git config user.name / user.email
-8. git add public/*.csv public/data/*.csv
-9. git commit -m "chore: update data pipeline outputs [skip ci]"
+3. pip install pandas openpyxl xlrd
+4. Detect both Excel files:
+     f1=$(ls data/VROD-registry-files*.xlsx | head -1 | xargs basename)         # File 1
+     f2=$(ls data/Voluntary-Registry-Offsets*.xlsx | head -1 | xargs basename)  # File 2 (23b-4)
+5. VROD_EXCEL_PATH=…/$f1 python scripts/build_projects.py
+6. VROD_EXCEL_PATH=…/$f1 python scripts/fix_data.py
+7. VROD_DB_EXCEL_PATH=…/$f2 python scripts/enrich_projects.py    # Step 23b-4
+8. git add public/
+9. git commit -m "chore: update data pipeline outputs [skip ci]" (only if staged changes)
 10. git push
 ```
+
+> **Note:** scripts read the Excel path from environment variables (`VROD_EXCEL_PATH` for File 1, `VROD_DB_EXCEL_PATH` for File 2), not `--file` CLI args. Both source xlsx live in `data/` and are tracked via Git LFS.
 
 **[skip ci] tag:** Prevents the commit from triggering another GitHub Actions pipeline run.
 
