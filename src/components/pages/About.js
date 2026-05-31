@@ -170,6 +170,24 @@ const About = () => {
             source registry data, irrespective of when the underlying credit was originally issued.
           </p>
 
+          <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Operational Lag</p>
+          <p className="about-text">
+            Operational lag is the time between a project's registration date and its first
+            credit issuance date, expressed in years. It is shown only for Verra and CAR
+            projects — the two registries that publish a comparable registration date; ACR and
+            Gold Standard do not expose one, so the field reads "—" for those registries.
+          </p>
+          <p className="about-text">
+            Where the recorded first issuance precedes the recorded registration date, the lag is
+            treated as not computable and displayed as "—". This affects primarily Verra projects
+            whose registration date reflects the registry's April 2020 platform migration (about
+            40% of Verra projects with a dated registration in our dataset carry 2020-04-06)
+            rather than the project's original registration. Both dates are taken verbatim from
+            the registry export — we neither adjust nor impute them. The metric reflects two dates
+            the registry publishes and is best read as one signal among several rather than an
+            authoritative measure of project speed-to-market.
+          </p>
+
           <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>VCM Contribution to Decarbonisation</p>
           <p className="about-text">
             This metric estimates the share of a country's national CO₂ emissions that has been

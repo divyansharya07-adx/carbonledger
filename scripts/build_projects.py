@@ -69,6 +69,7 @@ OUTPUT_COLS = [
     'crediting_period_start', 'crediting_period_end',
     'verification_body', 'documents_url',
     'vintage_year', 'lifetime_credits_issued', 'lifetime_credits_retired',
+    'first_issuance_date',
 ]
 
 
@@ -284,6 +285,11 @@ def build_acr():
     meta['registration_date'] = None
     meta['registry'] = 'ACR'
 
+    # First issuance date — min real issuance datetime per project (broadcast).
+    first_iss = (pd.to_datetime(iss['Date Issued (GMT)'], errors='coerce')
+                 .groupby(iss_pid).min().rename('first_issuance_date'))
+    meta = meta.join(first_iss, on='project_id')
+
     df = vint.merge(meta, on='project_id', how='left')
     print(f"  ACR vintage rows: {len(df)}  (unique projects: {df['project_id'].nunique()})")
     return df
@@ -373,6 +379,11 @@ def build_car():
     meta = meta.join(proto_mode.rename('methodology'), on='project_id')
     meta['registry'] = 'CAR'
 
+    # First issuance date — min real issuance datetime per project (broadcast).
+    first_iss = (pd.to_datetime(iss['Date Issued'], errors='coerce')
+                 .groupby(iss_pid).min().rename('first_issuance_date'))
+    meta = meta.join(first_iss, on='project_id')
+
     df = vint.merge(meta, on='project_id', how='left')
     print(f"  CAR vintage rows: {len(df)}  (unique projects: {df['project_id'].nunique()})")
     return df
@@ -453,6 +464,10 @@ def build_gold():
     meta = meta.join(corsia_map.rename('corsia_eligible'), on='project_id')
     meta['corsia_eligible'] = meta['corsia_eligible'].fillna(False)
     meta['registry'] = 'Gold Standard'
+
+    # Gold Issuance Date is a scrape timestamp, not a real issuance date — leave
+    # first_issuance_date null; main() fills it from the project's min vintage year.
+    meta['first_issuance_date'] = pd.NaT
 
     df = vint.merge(meta, on='project_id', how='left')
 
@@ -550,6 +565,11 @@ def build_verra():
     meta['sdg_eligible']    = meta['sdg_eligible'].fillna(False)
     meta['registry'] = 'Verra'
 
+    # First issuance date — min real issuance datetime per project (broadcast).
+    first_iss = (pd.to_datetime(vcus['Issuance Date'], errors='coerce')
+                 .groupby(vcus_pid).min().rename('first_issuance_date'))
+    meta = meta.join(first_iss, on='project_id')
+
     df = vint.merge(meta, on='project_id', how='left')
     print(f"  Verra vintage rows: {len(df)}  (unique projects: {df['project_id'].nunique()})")
     return df
@@ -600,6 +620,16 @@ def main():
     # Lifetime totals (same value broadcast to every vintage row for a project)
     all_df['lifetime_credits_issued']  = all_df.groupby('project_id')['credits_issued'].transform('sum')
     all_df['lifetime_credits_retired'] = all_df.groupby('project_id')['credits_retired'].transform('sum')
+
+    # first_issuance_date: format date-only; fill GS (+ rare stragglers, i.e. any
+    # project whose real issuance date is missing) with {min vintage_year}-01-01.
+    _fid = pd.to_datetime(all_df['first_issuance_date'], errors='coerce')
+    _min_vyr = (pd.to_numeric(all_df['vintage_year'], errors='coerce')
+                .groupby(all_df['project_id']).transform('min'))
+    _fallback = pd.to_datetime(
+        _min_vyr.map(lambda y: f"{int(y)}-01-01" if pd.notna(y) else None),
+        errors='coerce')
+    all_df['first_issuance_date'] = _fid.fillna(_fallback).dt.strftime('%Y-%m-%d')
 
     all_df = all_df.reindex(columns=OUTPUT_COLS)
     all_df.to_csv(OUTPUT_CSV, index=False)

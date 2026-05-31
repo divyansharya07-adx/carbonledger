@@ -3,7 +3,7 @@ title: CSV File Schemas
 type: entity
 tags: [csv, schema, data, pipeline]
 sources: [../sources/architecture-md.md]
-updated: 2026-04-18
+updated: 2026-05-31
 ---
 
 # CSV File Schemas
@@ -14,23 +14,34 @@ All CSVs in `public/` are static assets served directly by Vercel. The React app
 
 ## public/data/projects_data.csv
 
-**Producer:** `build_projects.py`
+**Producer:** `build_projects.py` (24 cols) → `enrich_projects.py` (Step 23b-4; +9 cols = **33 total**)
 **Consumer:** `useProjectsData.js` → Projects page only (independent of global filters)
-**Rows:** ~9,600 (one per project)
+**Rows:** 26,359 vintage-level rows (5,821 unique projects; one row per project × vintage year, project metadata broadcast across a project's rows)
 
-Key columns:
+Core columns:
 | Column | Notes |
 |--------|-------|
 | `registry` | Verra \| Gold Standard \| ACR \| CAR |
-| `project_id` | Registry-assigned ID |
+| `project_id` | Registry-assigned ID (prefixed: VCS…/GS…/ACR…/CAR…) |
 | `project_name` | Human-readable name |
 | `methodology` | Raw methodology string (may be semicolon-delimited for Verra) |
-| `project_type_category` | Derived category (31 possible values + 'Other') |
+| `category` | Derived category (31 possible values + 'Other') |
 | `country` | Project host country |
-| `credits_issued` | Total credits ever issued |
-| `credits_retired` | Total credits retired |
+| `credits_issued` | Credits issued (vintage-row level) |
+| `credits_retired` | Credits retired (vintage-row level) |
 | `retirement_rate` | `credits_retired / credits_issued` |
 | `vintage_year` | Year of vintage |
+| `first_issuance_date` | Min real issuance date per project (23b-4; GS falls back to `{min vintage}-01-01`) |
+
+23b-4 metadata columns (File 2 left-join):
+| Column | Notes |
+|--------|-------|
+| `reduction_removal` | Berkeley 4-class: Reduction / Mixed / Impermanent Removal / Long-Duration Removal |
+| `total_buffer_pool_deposits`, `buffer_credits_released`, `reversals_covered_buffer`, `reversals_not_covered` | Buffer-pool integrity fields (credit counts; mostly 0 outside forestry) |
+| `registry_documents_url` | Real registry project-page URL (100% coverage; supersedes legacy `documents_url` = "View") |
+| `estimated_annual_reductions` | Verra + GS only |
+| `first_vintage_year_f2` | Berkeley's first-vintage-year claim |
+| `operational_lag_years` | First issuance − registration, in years. **Verra/CAR only**; null where negative (mainly Verra 2020 migration reg dates) |
 
 Includes 'Other' rows; Projects page applies its own `EXCLUDED_CATEGORIES` filter internally.
 
