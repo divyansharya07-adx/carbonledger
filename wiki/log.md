@@ -5,6 +5,10 @@
 
 ---
 
+## [2026-05-30] query | Step 23b-1b — openpyxl hyperlink-display-text audit
+
+Read-only diagnostic across both VROD Excel files (36 sheets total). Method: `cell.hyperlink` scan + `data_only=False` formula detection + ZIP/XML rels-file inspection. Key findings: (1) Zero hyperlink-reading bugs in any pipeline-relevant column. (2) File 1 `Documents` column (ACR/CAR Projects) = plain text `"View"` — not a hyperlink at all; the original 23b-3 diagnosis of "openpyxl reads hyperlink display text" was incorrect in mechanism, but the fix (removing `href="View"`) was correct in effect. (3) File 1 `ARB Issuances & Retirements` → `Project Documentation`: real relationship hyperlinks at 97.4% (APX URLs), not used by pipeline; incidentally validates the ACR URL template in `registryUrls.js`. (4) File 2 PROJECTS: 2 isolated Verra relationship hyperlinks (~0.02% coverage), zero HYPERLINK formulas — standard `pd.read_excel` works for all 23b-4 target columns. (5) `Registry Documents` column header confirmed present in File 2 PROJECTS shared strings; value format (URL string vs. placeholder) needs verification before 23b-4. Net new silent bugs: 0. Report: `.claude/plans/step-23b-1-pipeline-temporal-charm.md`.
+
 ## [2026-05-30] tooling | build:ci script
 
 Added `npm run build:ci` script using `cross-env` to run the CRA build with `CI=true` cross-platform. Removes the `$env:CI = "true"; npm run build` PowerShell ceremony from local pre-push verification. Future CEEW engineer can run `npm run build:ci` on Windows, macOS, or Linux identically. Files: `package.json`, `package-lock.json` (cross-env install).
