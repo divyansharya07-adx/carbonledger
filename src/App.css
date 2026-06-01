@@ -2097,6 +2097,28 @@ body {
 .pdp-tab.active { color:var(--text-primary); border-bottom-color:var(--orange); }
 .pdp-tabpanel { padding:14px; flex:1; overflow-y:auto; }
 .pdp-tabpanel-empty { font-size:11px; color:var(--text-muted); padding:10px 0; line-height:1.5; }
+/* 23b-5 Overview hero + credit-type */
+.pdp-hero { margin-bottom:14px; }
+.pdp-hero-cap { font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted); margin-bottom:3px; }
+.pdp-hero-num { font-size:30px; font-weight:700; line-height:1.05; letter-spacing:-0.01em; color:var(--text-primary); }
+.pdp-hero-stats { display:flex; gap:20px; margin-top:12px; }
+.pdp-stat-cap { font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); margin-bottom:2px; }
+.pdp-stat-val { font-size:15px; font-weight:600; color:var(--text-primary); }
+.pdp-section-label { font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); margin:14px 0 5px; }
+.pdp-rr-class { font-size:13px; font-weight:600; color:var(--text-primary); }
+.pdp-rr-legend { font-size:10px; color:var(--text-muted); line-height:1.5; margin-top:3px; }
+/* 23b-5 Overview section rhythm — uniform 20px gaps + subtle hairline dividers,
+   scoped to the side-pane tab body only (no card backgrounds; does not affect
+   Country Explorer or any other component). Hero + progress bar read as one unit. */
+.pdp-tabpanel .pdp-section-label,
+.pdp-tabpanel .detail-section-title,
+.pdp-tabpanel .pdp-badges,
+.pdp-tabpanel .pdp-footer {
+  border-top: 0.5px solid var(--border);
+  margin-top: 20px;
+  padding-top: 20px;
+}
+.pdp-tabpanel .pdp-details-row:last-of-type { border-bottom: none; }
 .pdp-header { display:flex; align-items:center; justify-content:space-between; padding:12px 14px 8px; border-bottom:0.5px solid var(--border); flex-shrink:0; gap:8px; }
 .pdp-close { background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:18px; line-height:1; padding:0; flex-shrink:0; }
 .pdp-close:hover { color:var(--text-primary); }

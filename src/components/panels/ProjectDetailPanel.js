@@ -12,6 +12,14 @@ const REGISTRY_BADGE_CLASS = {
 
 const retColor = (pct) => pct > 60 ? '#8cb73f' : pct > 30 ? '#e8a124' : '#e85724';
 
+// Berkeley reduction/removal taxonomy — one-line legend per class.
+const RR_LEGEND = {
+  'Reduction': 'Avoids or reduces emissions at the source.',
+  'Mixed': 'Combines emission reductions and carbon removals.',
+  'Impermanent Removal': 'Removes CO₂ but carries reversal risk (e.g. forestry).',
+  'Long-Duration Removal': 'Durable CO₂ removal (e.g. geological or mineral storage).',
+};
+
 const DetailRow = ({ label, value }) => {
   if (!value) return null;
   return (
@@ -76,33 +84,29 @@ const ProjectDetailPanel = ({ project, onClose }) => {
                   {project.methodology && ` · ${project.methodology}`}
                 </div>
 
-                {/* Mini KPI grid */}
-                <div className="detail-kpi-grid">
-                  <div className="detail-kpi">
-                    <div className="dk-label">CREDITS ISSUED</div>
-                    <div className="dk-value">{formatCredits(project.credits_issued)}</div>
-                  </div>
-                  <div className="detail-kpi">
-                    <div className="dk-label">CREDITS RETIRED</div>
-                    <div className="dk-value">{formatCredits(project.credits_retired)}</div>
-                  </div>
-                  <div className="detail-kpi">
-                    <div className="dk-label">REMAINING</div>
-                    <div className="dk-value">{formatCredits(project.credits_remaining)}</div>
-                  </div>
-                  <div className="detail-kpi">
-                    <div className="dk-label">RETIREMENT RATE</div>
-                    <div className="dk-value" style={{ color: retColor(project.retirement_rate) }}>
-                      {project.retirement_rate.toFixed(1)}%
+                {/* Hero credit numbers — lean editorial */}
+                <div className="pdp-hero">
+                  <div className="pdp-hero-cap">Credits issued</div>
+                  <div className="pdp-hero-num">{formatCredits(project.credits_issued)}</div>
+                  <div className="pdp-hero-stats">
+                    <div>
+                      <div className="pdp-stat-cap">Retired</div>
+                      <div className="pdp-stat-val">{formatCredits(project.credits_retired)}</div>
+                    </div>
+                    <div>
+                      <div className="pdp-stat-cap">Remaining</div>
+                      <div className="pdp-stat-val">{formatCredits(project.credits_remaining)}</div>
+                    </div>
+                    <div>
+                      <div className="pdp-stat-cap">Retirement</div>
+                      <div className="pdp-stat-val" style={{ color: retColor(project.retirement_rate) }}>
+                        {project.retirement_rate.toFixed(1)}%
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Retirement progress bar */}
-                <div className="pdp-progress-label">
-                  <span>Retirement progress</span>
-                  <span style={{ color: retColor(project.retirement_rate) }}>{project.retirement_rate.toFixed(1)}% retired</span>
-                </div>
                 <div className="pdp-progress-bar">
                   <div style={{
                     width: `${Math.min(project.retirement_rate, 100)}%`,
@@ -111,6 +115,17 @@ const ProjectDetailPanel = ({ project, onClose }) => {
                     borderRadius: 3,
                   }} />
                 </div>
+
+                {/* Credit type — reduction / removal class + legend */}
+                {project.reduction_removal && (
+                  <>
+                    <div className="pdp-section-label">Credit type</div>
+                    <div className="pdp-rr-class">{project.reduction_removal}</div>
+                    {RR_LEGEND[project.reduction_removal] && (
+                      <div className="pdp-rr-legend">{RR_LEGEND[project.reduction_removal]}</div>
+                    )}
+                  </>
+                )}
 
                 {/* Details list */}
                 <div className="detail-section-title" style={{ marginTop: 0 }}>Details</div>
