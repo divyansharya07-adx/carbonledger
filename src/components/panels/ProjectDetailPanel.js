@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { ResponsiveContainer, BarChart, Bar, XAxis, Tooltip } from 'recharts';
 import { formatCredits, formatDateOnly } from '../../utils/formatters';
 import { getRegistryProjectUrl } from '../../utils/registryUrls';
 import { COUNTRY_FLAGS } from '../pages/Projects';
@@ -20,6 +21,26 @@ const RR_LEGEND = {
   'Long-Duration Removal': 'Durable CO₂ removal (e.g. geological or mineral storage).',
 };
 
+const REGISTRY_CHART_COLOR = {
+  'Verra': '#029bd6',
+  'Gold Standard': '#8cb73f',
+  'ACR': '#e85724',
+  'CAR': '#b9c95e', // deepened lime — badge #CCDF84 is too light to fill
+};
+
+const VintageTooltip = ({ active, payload }) => {
+  if (!active || !payload || !payload.length) return null;
+  const d = payload[0].payload;
+  return (
+    <div className="pdp-tooltip">
+      <div className="pdp-tooltip-year">Vintage {d.year}</div>
+      <div>Issued: {formatCredits(d.issued)}</div>
+      <div>Retired: {formatCredits(d.retired)}</div>
+      <div>Remaining: {formatCredits(d.remaining)}</div>
+    </div>
+  );
+};
+
 const DetailRow = ({ label, value }) => {
   if (!value) return null;
   return (
@@ -36,12 +57,34 @@ const TABS = [
   { id: 'registry', label: 'Registry & Docs' },
 ];
 
-const ProjectDetailPanel = ({ project, onClose }) => {
+const ProjectDetailPanel = ({ project, onClose, allRows, setActivePage }) => {
   const isOpen = !!project;
   const [activeTab, setActiveTab] = useState('overview');
 
   // Reset to the first tab whenever a different project is opened.
   useEffect(() => { setActiveTab('overview'); }, [project?.project_id]);
+
+  // Per-vintage issued/retired for this project (defensive aggregate by year).
+  const vintages = useMemo(() => {
+    const m = new Map();
+    (allRows || []).forEach((r) => {
+      if (r.project_id !== project?.project_id) return;
+      const y = r.vintage_year;
+      if (!y) return;
+      const e = m.get(y) || { year: y, issued: 0, retired: 0 };
+      e.issued += r.credits_issued;
+      e.retired += r.credits_retired;
+      m.set(y, e);
+    });
+    return [...m.values()]
+      .map((e) => ({ ...e, remaining: Math.max(e.issued - e.retired, 0) }))
+      .sort((a, b) => a.year - b.year);
+  }, [allRows, project?.project_id]);
+
+  const openLagHelp = () => {
+    if (typeof window !== 'undefined') window.location.hash = 'operational-lag';
+    if (setActivePage) setActivePage('about');
+  };
 
   return (
     <div className={`project-detail-panel${isOpen ? ' open' : ''}`}>
@@ -169,9 +212,40 @@ const ProjectDetailPanel = ({ project, onClose }) => {
               </>
             )}
 
-            {/* ---- Credits (Pass 2b) ---- */}
+            {/* ---- Credits (Pass 2b Tier 1) ---- */}
             {activeTab === 'credits' && (
-              <div className="pdp-tabpanel-empty">Credits detail arrives in the next pass.</div>
+              <>
+                <div className="pdp-section-label">Issuance by vintage</div>
+                {vintages.length > 0 ? (
+                  <>
+                    <div className="pdp-chart">
+                      <ResponsiveContainer width="100%" height={170}>
+                        <BarChart data={vintages} margin={{ top: 4, right: 4, bottom: 0, left: 4 }} barCategoryGap="20%">
+                          <XAxis dataKey="year" tick={{ fontSize: 9, fill: 'var(--text-muted)' }} tickLine={false} axisLine={{ stroke: 'var(--border)' }} minTickGap={8} />
+                          <Tooltip cursor={{ fill: 'var(--border)', opacity: 0.3 }} content={<VintageTooltip />} />
+                          <Bar dataKey="retired" stackId="v" fill={REGISTRY_CHART_COLOR[project.registry] || '#8a8a8a'} />
+                          <Bar dataKey="remaining" stackId="v" fill={REGISTRY_CHART_COLOR[project.registry] || '#8a8a8a'} fillOpacity={0.22} radius={[2, 2, 0, 0]} />
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </div>
+                    <div className="pdp-chart-caption">Retired (solid) vs remaining by vintage year</div>
+                  </>
+                ) : (
+                  <div className="pdp-tabpanel-empty">Vintage data unavailable.</div>
+                )}
+
+                <div className="pdp-section-label">Timeline</div>
+                <DetailRow label="First issuance" value={formatDateOnly(project.first_issuance_date)} />
+                <div className="pdp-details-row">
+                  <span className="pdp-details-label">
+                    Operational lag
+                    <button type="button" className="pdp-info" onClick={openLagHelp} aria-label="About operational lag">ⓘ</button>
+                  </span>
+                  <span className="pdp-details-value">
+                    {project.operational_lag_years != null ? `${project.operational_lag_years.toFixed(1)} yrs` : '—'}
+                  </span>
+                </div>
+              </>
             )}
 
             {/* ---- Registry & Docs (Pass 2c) ---- */}

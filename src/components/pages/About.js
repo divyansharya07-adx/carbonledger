@@ -58,6 +58,17 @@ const About = () => {
     });
   }, []);
 
+  // Deep-link from the Projects side-pane "Operational lag" affordance.
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash === '#operational-lag') {
+      const el = document.getElementById('operational-lag');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    }
+  }, []);
+
   const toggleGroup = (g) => setOpenGroups(p => { const n = new Set(p); n.has(g) ? n.delete(g) : n.add(g); return n; });
   const toggleSub = (key) => setOpenSubs(p => { const n = new Set(p); n.has(key) ? n.delete(key) : n.add(key); return n; });
   const toggleExclusionGroup = (g) => setOpenExclusionGroups(p => { const n = new Set(p); n.has(g) ? n.delete(g) : n.add(g); return n; });
@@ -170,7 +181,7 @@ const About = () => {
             source registry data, irrespective of when the underlying credit was originally issued.
           </p>
 
-          <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Operational Lag</p>
+          <p id="operational-lag" className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Operational Lag</p>
           <p className="about-text">
             Operational lag is the time between a project's registration date and its first
             credit issuance date, expressed in years. It is shown only for Verra and CAR

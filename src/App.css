@@ -2119,6 +2119,15 @@ body {
   padding-top: 20px;
 }
 .pdp-tabpanel .pdp-details-row:last-of-type { border-bottom: none; }
+/* 23b-5 Credits tab — chart, tooltip, info affordance; first-section divider reset */
+.pdp-tabpanel .pdp-section-label:first-child,
+.pdp-tabpanel .detail-section-title:first-child { border-top:none; margin-top:0; padding-top:0; }
+.pdp-chart { margin-top:4px; width:100%; }
+.pdp-chart-caption { font-size:9px; color:var(--text-muted); margin-top:4px; text-align:center; }
+.pdp-tooltip { background:var(--bg-card); border:0.5px solid var(--border); border-radius:4px; padding:6px 8px; font-size:10px; color:var(--text-primary); line-height:1.5; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+.pdp-tooltip-year { font-weight:700; margin-bottom:2px; }
+.pdp-info { appearance:none; background:none; border:none; cursor:pointer; color:var(--text-muted); font-size:11px; padding:0 0 0 5px; line-height:1; vertical-align:baseline; }
+.pdp-info:hover { color:var(--orange); }
 .pdp-header { display:flex; align-items:center; justify-content:space-between; padding:12px 14px 8px; border-bottom:0.5px solid var(--border); flex-shrink:0; gap:8px; }
 .pdp-close { background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:18px; line-height:1; padding:0; flex-shrink:0; }
 .pdp-close:hover { color:var(--text-primary); }
