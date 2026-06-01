@@ -245,6 +245,29 @@ const ProjectDetailPanel = ({ project, onClose, allRows, setActivePage }) => {
                     {project.operational_lag_years != null ? `${project.operational_lag_years.toFixed(1)} yrs` : '—'}
                   </span>
                 </div>
+
+                {/* Estimated annual reductions — Verra/GS only (ACR/CAR 0% by design) */}
+                {(project.registry === 'Verra' || project.registry === 'Gold Standard') && (
+                  <>
+                    <div className="pdp-section-label">Estimated annual reductions</div>
+                    <div className="pdp-stat-val">
+                      {project.estimated_annual_reductions != null
+                        ? `${formatCredits(project.estimated_annual_reductions)} tCO₂e/yr`
+                        : '—'}
+                    </div>
+                  </>
+                )}
+
+                {/* Buffer pool — whole block omitted when there is no buffer activity */}
+                {[project.total_buffer_pool_deposits, project.buffer_credits_released, project.reversals_covered_buffer, project.reversals_not_covered].some((v) => v != null && v > 0) && (
+                  <>
+                    <div className="pdp-section-label">Buffer pool</div>
+                    <DetailRow label="Buffer pool deposits" value={project.total_buffer_pool_deposits != null ? formatCredits(project.total_buffer_pool_deposits) : '—'} />
+                    <DetailRow label="Credits released" value={project.buffer_credits_released != null ? formatCredits(project.buffer_credits_released) : '—'} />
+                    <DetailRow label="Reversals covered" value={project.reversals_covered_buffer != null ? formatCredits(project.reversals_covered_buffer) : '—'} />
+                    <DetailRow label="Reversals not covered" value={project.reversals_not_covered != null ? formatCredits(project.reversals_not_covered) : '—'} />
+                  </>
+                )}
               </>
             )}
 
