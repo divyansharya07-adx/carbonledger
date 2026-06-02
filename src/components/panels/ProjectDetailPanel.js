@@ -131,7 +131,7 @@ const ProjectDetailPanel = ({ project, onClose, allRows, setActivePage }) => {
                   {project.project_type && ` · ${project.project_type}`}
                   {project.methodology && ` · ${project.methodology}`}
                 </div>
-                {project.status && <div className="pdp-status">{project.status}</div>}
+                {project.status && <div className="pdp-status" title={project.status}>{project.status}</div>}
 
                 {/* Hero credit numbers — lean editorial */}
                 <div className="pdp-hero">

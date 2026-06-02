@@ -2128,7 +2128,9 @@ body {
 .pdp-tooltip-year { font-weight:700; margin-bottom:2px; }
 .pdp-info { appearance:none; background:none; border:none; cursor:pointer; color:var(--text-muted); font-size:11px; padding:0 0 0 5px; line-height:1; vertical-align:baseline; }
 .pdp-info:hover { color:var(--orange); }
-.pdp-status { display:inline-block; font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-secondary); border:0.5px solid var(--border); border-radius:3px; padding:2px 7px; margin-bottom:12px; }
+.pdp-status { display:inline-block; max-width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-secondary); border:0.5px solid var(--border); border-radius:3px; padding:2px 7px; margin-bottom:12px; }
+/* 23b-5 Pass 3 #1 — let detail values use the wider 450px panel (was capped at 170px) */
+.pdp-tabpanel .pdp-details-value { max-width:none; flex:1; min-width:0; }
 .pdp-header { display:flex; align-items:center; justify-content:space-between; padding:12px 14px 8px; border-bottom:0.5px solid var(--border); flex-shrink:0; gap:8px; }
 .pdp-close { background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:18px; line-height:1; padding:0; flex-shrink:0; }
 .pdp-close:hover { color:var(--text-primary); }
