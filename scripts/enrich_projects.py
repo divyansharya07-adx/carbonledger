@@ -149,6 +149,11 @@ def main():
     # --- Left join (broadcasts File 2's one-row-per-project values onto vintage rows) ---
     out = proj.join(f2_sel, on="project_id")
 
+    # ACR per-project deep links (acr2.apx.com/mymodule/reg/prjView.asp) now 301-redirect
+    # to a dead greentrace.ice.com/acr/mymodule path (404) — ICE deprecated ACR per-project
+    # URLs. Point ACR at the working projects listing instead. Verra/CAR/GS resolve fine.
+    out.loc[out["registry"] == "ACR", "registry_documents_url"] = "https://greentrace.ice.com/acr/projects"
+
     # --- Derived: operational_lag_years (Verra/CAR only) ---
     reg = out["registry"]
     reg_date = pd.to_datetime(out["registration_date"], errors="coerce")

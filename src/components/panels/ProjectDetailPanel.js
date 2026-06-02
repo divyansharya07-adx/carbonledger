@@ -86,6 +86,11 @@ const ProjectDetailPanel = ({ project, onClose, allRows, setActivePage }) => {
     if (setActivePage) setActivePage('about');
   };
 
+  // Real registry project-page URL (File 2); fall back to the computed template.
+  const docUrl = project
+    ? (project.registry_documents_url || getRegistryProjectUrl(project.registry, project.project_id))
+    : null;
+
   return (
     <div className={`project-detail-panel${isOpen ? ' open' : ''}`}>
       {project && (
@@ -126,6 +131,7 @@ const ProjectDetailPanel = ({ project, onClose, allRows, setActivePage }) => {
                   {project.project_type && ` · ${project.project_type}`}
                   {project.methodology && ` · ${project.methodology}`}
                 </div>
+                {project.status && <div className="pdp-status">{project.status}</div>}
 
                 {/* Hero credit numbers — lean editorial */}
                 <div className="pdp-hero">
@@ -170,21 +176,6 @@ const ProjectDetailPanel = ({ project, onClose, allRows, setActivePage }) => {
                   </>
                 )}
 
-                {/* Details list */}
-                <div className="detail-section-title" style={{ marginTop: 0 }}>Details</div>
-                <DetailRow label="Proponent" value={project.proponent} />
-                <DetailRow label="Status" value={project.status} />
-                <DetailRow label="Registration date" value={formatDateOnly(project.registration_date)} />
-                <DetailRow
-                  label="Crediting period"
-                  value={
-                    project.crediting_period_start && project.crediting_period_end
-                      ? `${formatDateOnly(project.crediting_period_start)} – ${formatDateOnly(project.crediting_period_end)}`
-                      : '—'
-                  }
-                />
-                <DetailRow label="Verification body" value={project.verification_body} />
-
                 {/* Badges */}
                 {(project.corsia_eligible || project.sdg_eligible) && (
                   <div className="pdp-badges">
@@ -201,14 +192,6 @@ const ProjectDetailPanel = ({ project, onClose, allRows, setActivePage }) => {
                   </div>
                 )}
 
-                {/* Footer links */}
-                <div className="pdp-footer">
-                  {getRegistryProjectUrl(project.registry, project.project_id) && (
-                    <a href={getRegistryProjectUrl(project.registry, project.project_id)} className="pdp-link" target="_blank" rel="noopener noreferrer">
-                      ↗ View project page
-                    </a>
-                  )}
-                </div>
               </>
             )}
 
@@ -273,7 +256,32 @@ const ProjectDetailPanel = ({ project, onClose, allRows, setActivePage }) => {
 
             {/* ---- Registry & Docs (Pass 2c) ---- */}
             {activeTab === 'registry' && (
-              <div className="pdp-tabpanel-empty">Registry &amp; documentation detail arrives in the next pass.</div>
+              <>
+                <div className="pdp-section-label">Registry</div>
+                <DetailRow label="Proponent" value={project.proponent || '—'} />
+                <DetailRow label="Status" value={project.status || '—'} />
+                <DetailRow label="Registration date" value={formatDateOnly(project.registration_date)} />
+                <DetailRow
+                  label="Crediting period"
+                  value={
+                    project.crediting_period_start && project.crediting_period_end
+                      ? `${formatDateOnly(project.crediting_period_start)} – ${formatDateOnly(project.crediting_period_end)}`
+                      : '—'
+                  }
+                />
+                <DetailRow label="Methodology" value={project.methodology || '—'} />
+                <DetailRow label="Category" value={project.category || '—'} />
+                <DetailRow label="Verification body" value={project.verification_body || '—'} />
+
+                <div className="pdp-section-label">Documentation</div>
+                {docUrl ? (
+                  <a href={docUrl} className="pdp-link" target="_blank" rel="noopener noreferrer">
+                    ↗ Registry project page
+                  </a>
+                ) : (
+                  <div className="pdp-tabpanel-empty">No registry document link available.</div>
+                )}
+              </>
             )}
           </div>
         </>
