@@ -19,7 +19,7 @@ Inputs:
   File 2 PROJECTS sheet             (right side; via VROD_DB_EXCEL_PATH)
 
 Output:
-  public/data/projects_data.csv     (overwritten: 24 original cols + 9 new)
+  public/data/projects_data.csv     (overwritten: 25 original cols + 9 new)
 
 Usage:
   python scripts/enrich_projects.py

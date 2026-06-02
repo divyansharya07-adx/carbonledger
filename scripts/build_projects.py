@@ -69,7 +69,7 @@ OUTPUT_COLS = [
     'crediting_period_start', 'crediting_period_end',
     'verification_body', 'documents_url',
     'vintage_year', 'lifetime_credits_issued', 'lifetime_credits_retired',
-    'first_issuance_date',
+    'first_issuance_date', 'article_six_authorized',
 ]
 
 
@@ -440,6 +440,16 @@ def build_gold():
         iss['Label'].astype(str).str.contains('CORSIA', na=False)
         .groupby('GS' + iss_gsid).any().rename('corsia_eligible')
     )
+    # Article 6 (Paris Agreement) authorization — host-country authorization for CORSIA or
+    # NDC compliance. The field is multi-label free text; match the exact status tokens with
+    # regex=False (the parens in '(Any NDC)' are regex metacharacters, so regex=True would
+    # silently match 0 rows). 'Other Purpose (General)'-only / 'Withdrawn'-only -> False.
+    _a6 = iss['Article Six Authorization'].astype(str)
+    a6_map = (
+        (_a6.str.contains('Authorized for CORSIA', regex=False, na=False) |
+         _a6.str.contains('Compliance (Any NDC)',  regex=False, na=False))
+        .groupby('GS' + iss_gsid).any().rename('article_six_authorized')
+    )
     proj['_id'] = 'GS' + proj['GSID'].astype(str).str.strip()
     sdg_map = (
         proj['Sustainable Development Goals'].notna() &
@@ -463,6 +473,8 @@ def build_gold():
     })
     meta = meta.join(corsia_map.rename('corsia_eligible'), on='project_id')
     meta['corsia_eligible'] = meta['corsia_eligible'].fillna(False)
+    meta = meta.join(a6_map, on='project_id')
+    meta['article_six_authorized'] = meta['article_six_authorized'].fillna(False)
     meta['registry'] = 'Gold Standard'
 
     # Gold Issuance Date is a scrape timestamp, not a real issuance date — leave
@@ -585,6 +597,9 @@ def main():
     verra_df = build_verra()
 
     all_df = pd.concat([acr_df, car_df, gold_df, verra_df], ignore_index=True)
+
+    # Article 6 authorization is GS-only; absent from the ACR/CAR/Verra frames -> default False.
+    all_df['article_six_authorized'] = all_df['article_six_authorized'].fillna(False).astype(bool)
 
     # Derived credit fields
     all_df['credits_remaining'] = all_df['credits_issued'] - all_df['credits_retired']
