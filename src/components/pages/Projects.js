@@ -51,7 +51,7 @@ const PAGE_SIZE = 50;
 
 const retRateColor = (pct) => pct > 60 ? '#8cb73f' : pct > 30 ? '#e8a124' : '#e85724';
 
-const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedGroup = 'all', selectedActivity = 'all' }) => {
+const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedGroup = 'all', selectedActivity = 'all', setActivePage }) => {
   const { projectsData, projectsLoading } = useProjectsData();
 
   const [search, setSearch] = useState('');
@@ -301,6 +301,8 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
         <ProjectDetailPanel
           project={selectedProject}
           onClose={() => setSelectedProject(null)}
+          allRows={filteredProjects}
+          setActivePage={setActivePage}
         />
       </div>
     </div>

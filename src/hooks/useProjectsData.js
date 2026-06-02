@@ -1,6 +1,15 @@
 import { useState, useEffect } from 'react';
 import Papa from 'papaparse';
 
+// Nullable numeric parse: preserves null (empty cell) instead of coercing to 0,
+// so fields like operational_lag_years distinguish "0.0 years" from "N/A".
+const numOrNull = (v) => {
+  const s = (v ?? '').toString().trim();
+  if (s === '' || s.toLowerCase() === 'nan') return null;
+  const n = Number(s);
+  return Number.isNaN(n) ? null : n;
+};
+
 const useProjectsData = () => {
   const [projectsData, setProjectsData] = useState([]);
   const [projectsLoading, setProjectsLoading] = useState(true);
@@ -36,6 +45,17 @@ const useProjectsData = () => {
           vintage_year: parseInt(row['vintage_year'], 10) || 0,
           lifetime_credits_issued: parseFloat(row['lifetime_credits_issued']) || 0,
           lifetime_credits_retired: parseFloat(row['lifetime_credits_retired']) || 0,
+          // 23b-4 enrichment columns (project-level; broadcast across a project's vintage rows)
+          first_issuance_date: (row['first_issuance_date'] || '').trim() || null,
+          reduction_removal: (row['reduction_removal'] || '').trim() || null,
+          total_buffer_pool_deposits: numOrNull(row['total_buffer_pool_deposits']),
+          buffer_credits_released: numOrNull(row['buffer_credits_released']),
+          reversals_covered_buffer: numOrNull(row['reversals_covered_buffer']),
+          reversals_not_covered: numOrNull(row['reversals_not_covered']),
+          registry_documents_url: (row['registry_documents_url'] || '').trim() || null,
+          estimated_annual_reductions: numOrNull(row['estimated_annual_reductions']),
+          first_vintage_year_f2: numOrNull(row['first_vintage_year_f2']),
+          operational_lag_years: numOrNull(row['operational_lag_years']),
         }));
         setProjectsData(parsed);
         setProjectsLoading(false);
