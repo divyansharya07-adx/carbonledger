@@ -38,6 +38,7 @@ const useProjectsData = () => {
           retirement_rate: parseFloat(row['retirement_rate']) || 0,
           corsia_eligible: row['corsia_eligible'] === 'True' || row['corsia_eligible'] === 'true' || row['corsia_eligible'] === '1',
           sdg_eligible: row['sdg_eligible'] === 'True' || row['sdg_eligible'] === 'true' || row['sdg_eligible'] === '1',
+          article_six_authorized: row['article_six_authorized'] === 'True' || row['article_six_authorized'] === 'true' || row['article_six_authorized'] === '1',
           crediting_period_start: (row['crediting_period_start'] || '').trim() || null,
           crediting_period_end: (row['crediting_period_end'] || '').trim() || null,
           verification_body: (row['verification_body'] || '').trim() || null,

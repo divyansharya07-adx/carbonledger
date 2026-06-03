@@ -55,8 +55,11 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
   const { projectsData, projectsLoading } = useProjectsData();
 
   const [search, setSearch] = useState('');
-  const [corsiaFilter, setCorsiaFilter] = useState(false);
-  const [sdgFilter, setSdgFilter] = useState(false);
+  const [advancedFilters, setAdvancedFilters] = useState({
+    corsia: false, sdg: false, article6: false,
+    registry: [], country: [], creditsIssuedMin: null, creditsIssuedMax: null,
+  });
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const [sortCol, setSortCol] = useState('credits_issued');
   const [sortDir, setSortDir] = useState('desc');
   const [page, setPage] = useState(1);
@@ -78,8 +81,28 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
     setPage(1);
   }, []);
 
-  const handleFilter = useCallback((setter) => (val) => {
-    setter(val);
+  const toggleAdvFlag = useCallback((key) => {
+    setAdvancedFilters(f => ({ ...f, [key]: !f[key] }));
+    setPage(1);
+  }, []);
+
+  const toggleAdvArray = useCallback((key, val) => {
+    setAdvancedFilters(f => {
+      const arr = f[key];
+      return { ...f, [key]: arr.includes(val) ? arr.filter(x => x !== val) : [...arr, val] };
+    });
+    setPage(1);
+  }, []);
+
+  const setAdvNum = useCallback((key, raw) => {
+    const t = String(raw).trim();
+    const v = t === '' ? null : Number(t);
+    setAdvancedFilters(f => ({ ...f, [key]: (v === null || Number.isNaN(v)) ? null : v }));
+    setPage(1);
+  }, []);
+
+  const clearAdvanced = useCallback(() => {
+    setAdvancedFilters({ corsia: false, sdg: false, article6: false, registry: [], country: [], creditsIssuedMin: null, creditsIssuedMax: null });
     setPage(1);
   }, []);
 
@@ -94,12 +117,18 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
       if (effectiveRegistry !== 'all' && p.registry !== effectiveRegistry) return false;
       if (selectedGroup && selectedGroup !== 'all' && getGroup(p.category || '') !== selectedGroup) return false;
       if (selectedActivity && selectedActivity !== 'all' && p.category !== selectedActivity) return false;
-      if (corsiaFilter && !p.corsia_eligible) return false;
-      if (sdgFilter && !p.sdg_eligible) return false;
+      const af = advancedFilters;
+      if (af.corsia && !p.corsia_eligible) return false;
+      if (af.sdg && !p.sdg_eligible) return false;
+      if (af.article6 && !p.article_six_authorized) return false;
+      if (af.registry.length && !af.registry.includes(p.registry)) return false;
+      if (af.country.length && !af.country.includes(p.country)) return false;
+      if (af.creditsIssuedMin != null && p.lifetime_credits_issued < af.creditsIssuedMin) return false;
+      if (af.creditsIssuedMax != null && p.lifetime_credits_issued > af.creditsIssuedMax) return false;
       if (EXCLUDED_CATEGORIES.includes(p.category)) return false;
       return true;
     });
-  }, [projectsData, search, selectedRegistry, selectedGroup, selectedActivity, corsiaFilter, sdgFilter]);
+  }, [projectsData, search, selectedRegistry, selectedGroup, selectedActivity, advancedFilters]);
 
   const periodProjects = useMemo(() => {
     if (!filteredProjects.length) return [];
@@ -188,6 +217,15 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
   const selectionActive = selectedIds.size > 0;
   const retRateC = retRateColor(kpi.retRate);
 
+  const countryOptions = useMemo(
+    () => [...new Set(projectsData.map(p => p.country).filter(Boolean))].sort(),
+    [projectsData]
+  );
+  const activePanelCount =
+    (advancedFilters.registry.length ? 1 : 0) +
+    (advancedFilters.country.length ? 1 : 0) +
+    ((advancedFilters.creditsIssuedMin != null || advancedFilters.creditsIssuedMax != null) ? 1 : 0);
+
   if (projectsLoading) {
     return <div className="projects-loading">Loading projects...</div>;
   }
@@ -250,20 +288,92 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
           />
         </div>
 
+        <div className="filters-wrap">
+          <button
+            className={`group-chip ${activePanelCount ? 'active' : ''}`}
+            onClick={() => setFiltersOpen(o => !o)}
+          >
+            ⚙ Filters{activePanelCount ? ` (${activePanelCount})` : ''}
+          </button>
+          {filtersOpen && (
+            <div className="filters-popover">
+              <div className="filters-popover-section">
+                <div className="filters-popover-label">Registry</div>
+                {['Verra', 'Gold Standard', 'ACR', 'CAR'].map(r => (
+                  <label key={r} className="filters-check">
+                    <input
+                      type="checkbox"
+                      checked={advancedFilters.registry.includes(r)}
+                      onChange={() => toggleAdvArray('registry', r)}
+                    />
+                    {r}
+                  </label>
+                ))}
+              </div>
+              <div className="filters-popover-section">
+                <div className="filters-popover-label">Country</div>
+                <select
+                  className="filters-multiselect"
+                  multiple
+                  size={6}
+                  value={advancedFilters.country}
+                  onChange={e => {
+                    const vals = Array.from(e.target.selectedOptions, o => o.value);
+                    setAdvancedFilters(f => ({ ...f, country: vals }));
+                    setPage(1);
+                  }}
+                >
+                  {countryOptions.map(c => <option key={c} value={c}>{c}</option>)}
+                </select>
+              </div>
+              <div className="filters-popover-section">
+                <div className="filters-popover-label">Credits issued (lifetime)</div>
+                <div className="filters-range">
+                  <input
+                    type="number"
+                    placeholder="Min"
+                    value={advancedFilters.creditsIssuedMin ?? ''}
+                    onChange={e => setAdvNum('creditsIssuedMin', e.target.value)}
+                  />
+                  <span>–</span>
+                  <input
+                    type="number"
+                    placeholder="Max"
+                    value={advancedFilters.creditsIssuedMax ?? ''}
+                    onChange={e => setAdvNum('creditsIssuedMax', e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="filters-popover-footer">
+                <button className="filters-clear" onClick={clearAdvanced}>Clear</button>
+                <button className="filters-done" onClick={() => setFiltersOpen(false)}>Done</button>
+              </div>
+            </div>
+          )}
+        </div>
+
         <button
-          className={`group-chip ${corsiaFilter ? 'active' : ''}`}
-          style={corsiaFilter ? { background: '#029bd6', color: '#fff' } : {}}
-          onClick={() => handleFilter(setCorsiaFilter)(!corsiaFilter)}
+          className={`group-chip ${advancedFilters.corsia ? 'active' : ''}`}
+          style={advancedFilters.corsia ? { background: '#029bd6', color: '#fff' } : {}}
+          onClick={() => toggleAdvFlag('corsia')}
         >
           CORSIA
         </button>
 
         <button
-          className={`group-chip ${sdgFilter ? 'active' : ''}`}
-          style={sdgFilter ? { background: '#8cb73f', color: '#0d0d12' } : {}}
-          onClick={() => handleFilter(setSdgFilter)(!sdgFilter)}
+          className={`group-chip ${advancedFilters.sdg ? 'active' : ''}`}
+          style={advancedFilters.sdg ? { background: '#8cb73f', color: '#0d0d12' } : {}}
+          onClick={() => toggleAdvFlag('sdg')}
         >
           SDG
+        </button>
+
+        <button
+          className={`group-chip ${advancedFilters.article6 ? 'active' : ''}`}
+          style={advancedFilters.article6 ? { background: '#e85724', color: '#fff' } : {}}
+          onClick={() => toggleAdvFlag('article6')}
+        >
+          Article 6
         </button>
 
         <span style={{ fontSize: 11, color: 'var(--text-muted)', whiteSpace: 'nowrap', marginLeft: 'auto' }}>
