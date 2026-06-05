@@ -1,8 +1,9 @@
 # Mapbox Migration Plan — Standard + IN Worldview
 
-**Date:** 2026-06-05 · **Status:** APPROVED for implementation (decisions locked 2026-06-05) · **Owner doc for CEEW handoff**
+**Date:** 2026-06-05 (rev. 2026-06-06) · **Status:** APPROVED; in implementation on `feat/mapbox-in-worldview-countryexplorer` · **Owner doc for CEEW handoff**
 **Predecessor:** [.claude/plans/mapbox-worldview-diagnostic.md](../../.claude/plans/mapbox-worldview-diagnostic.md)
 **This PR scope:** CountryExplorer ONLY — authoritative spec in the **LOCKED** section below. GlobalMap is handled separately via a data-file swap (Part B is superseded).
+**Decision change (2026-06-06):** CountryExplorer projection **mercator → globe** — rationale in the LOCKED section's Decision-change note.
 
 ---
 
@@ -17,7 +18,7 @@ so disputed territories render per the Survey of India position from one boundar
 **Three driving constraints:**
 1. **Lawful** — IN worldview, non-negotiable.
 2. **Durable** — no runtime classic-style filter patches, no hand-edited GeoJSON. Worldview correct at first paint (no momentary non-compliant frame).
-3. **Visual continuity** — CountryExplorer stays as close as possible to the current flat editorial light/dark look. (GlobalMap is no longer a Mapbox rewrite — see Part B supersession.)
+3. **Visual continuity** — CountryExplorer preserves the **current production look: a globe with atmosphere**, in the flat editorial monochrome palette, light/dark. (GlobalMap is no longer a Mapbox rewrite — see Part B supersession.)
 
 ---
 
@@ -26,11 +27,17 @@ so disputed territories render per the Survey of India position from one boundar
 Decisions locked 2026-06-05. **This is the authoritative spec for the active PR**; the per-map detail in
 Part A (below) is retained as background. **Scope: CountryExplorer only.**
 
-**Locked decisions:** theme `monochrome` · place labels ON, all other layers OFF (roads, transit, POI, 3D, pedestrian) · live `setConfigProperty` theme toggle (drop the `key`-remount) · disputed-fill contingency pre-authorized (validated first — see below).
+**Locked decisions:** theme `monochrome` · place labels ON, all other layers OFF (roads, transit, POI, 3D, pedestrian) · live `setConfigProperty` theme toggle (drop the `key`-remount) · disputed-fill contingency pre-authorized (validated first — see below) · **`projection: 'globe'`** (see Visual continuity sub-decision).
+
+**Visual continuity (sub-decision, rev. 2026-06-06):** CountryExplorer renders as a **globe**, with **atmosphere preserved as Standard renders it** (no explicit fog/atmosphere config — Standard draws atmosphere by default, tied to `lightPreset`), and **initial zoom unchanged at 1.5** to match current production framing.
+
+> **Decision change — why (2026-06-06):** the original locked spec pinned `projection="mercator"` on a misread of the reference state ("preserve current visual" was taken to mean flat). The **current production CountryExplorer is already a globe** (sphere + atmosphere) at carbonledger.tools.ceew.in — its `<Map>` carries **no `projection` prop**, so it inherits the mapbox-gl v3 / Standard default (globe). The implementation faithfully executed the (wrong) plan; the plan is corrected here. Fix = flip one prop: `projection="mercator"` → `projection="globe"` (no other code change; `mapStyle.js` untouched).
 
 **Clause A — no sub-national lines.** Standard's `showAdminBoundaries` is a single **all-or-nothing Boolean** (no admin-0/1/2 granularity — verified against the Standard API reference). Therefore:
 - `showAdminBoundaries: false` → removes ALL Standard political linework (kills admin-1/admin-2; also drops the basemap admin-0).
 - National (admin-0) borders are drawn by CarbonLedger's **existing** `country-outline` layer on `country-boundaries-v1`, filtered to IN. That tileset holds **only admin-0** data → it structurally cannot render admin-1/admin-2. Legal border compliance rests on this verified worldview-filter mechanism, not a Standard config flag.
+
+**Label visibility — NO config change needed (verified 2026-06-06).** `showAdminBoundaries` toggles boundary **lines only**; place **labels** are governed independently by **`showPlaceLabels`** — which we leave default **ON**, and which covers **cities, towns, and state/province (admin-1) names**. Standard exposes **no** separate sub-national-label key (no `showAdminLabels` / `showSettlementSubdivisionLabels` etc.) — `showPlaceLabels` is the only lever. So the current config already produces the production-like result: **state + city labels visible, sub-national boundary *lines* hidden** (Clause A intact). Under **`worldview: 'IN'`** those labels are attributed per India (J&K / Ladakh as Indian states; Srinagar / Leh under Indian administration). **Residual preview check:** Standard's label density/zoom thresholds differ from classic v11 — confirm Indian state labels actually surface across CountryExplorer's zoom range (globe → ~z4 on country click). If any are missing, that's a density/zoom matter, **not** a missing config key.
 
 **File 1 (NEW) `src/utils/mapStyle.js`** — exports `STANDARD_STYLE` (Standard import, IN worldview + config below, baked in for a flash-free first frame) and `worldviewFilter(extra)`:
 ```js
@@ -40,7 +47,7 @@ export const STANDARD_STYLE = {
     worldview: 'IN', theme: 'monochrome', lightPreset: 'day',   // lightPreset overridden at runtime
     showAdminBoundaries: false,                                 // Clause A
     show3dObjects: false, showPedestrianRoads: false, showTransitLabels: false,
-    showPointOfInterestLabels: false, showRoadLabels: false,    // showPlaceLabels stays default ON
+    showPointOfInterestLabels: false, showRoadLabels: false,    // showPlaceLabels default ON → state/province + city labels
   }}],
   sources: {}, layers: [],
 };
@@ -56,7 +63,7 @@ export const worldviewFilter = (extra) => {
 - Import `{ STANDARD_STYLE, worldviewFilter }`.
 - Mount-time style clone so dark-mode users get the right initial preset (no day→night flash):
   `const darkAtMount = useRef(isDarkMode); const mapStyleObj = useMemo(() => { const s = JSON.parse(JSON.stringify(STANDARD_STYLE)); s.imports[0].config.lightPreset = darkAtMount.current ? 'night':'day'; return s; }, []);`
-- `<Map>`: `mapStyle={mapStyleObj}`, add `projection="mercator"`, **remove** `key={isDarkMode?…}`.
+- `<Map>`: `mapStyle={mapStyleObj}`, add `projection="globe"` (current-production look; also the Standard default — no fog/atmosphere config needed; `initialViewState` zoom stays 1.5), **remove** `key={isDarkMode?…}`.
 - Live theme toggle (replaces remount): `useEffect(() => { const m = mapRef.current?.getMap?.(); if (mapLoaded && m) m.setConfigProperty('basemap','lightPreset', isDarkMode ? 'night':'day'); }, [isDarkMode, mapLoaded]);`
 - **All four layers already exist today** (`country-fill`, `country-fill-hover`, `country-fill-selected`, `country-outline` — [CountryExplorer.js:556-592](../../src/components/pages/CountryExplorer.js#L556)). **Edits only — no new layer added:**
   - add `slot: 'middle'` to each;
@@ -73,7 +80,7 @@ This expression is **untested**. Before applying it to production code, **valida
 **Verification (before push):**
 1. `npm run build:ci` → exit 0.
 2. Show diff + new file; **do not push** — await review.
-3. Vercel-preview checklist: India incl. POK/Gilgit-Baltistan/Aksai Chin/Arunachal · click-India = single contiguous orange fill · Pakistan excl. POK/GB · China excl. Aksai Chin/Arunachal · Srinagar/Leh labels under Indian admin · disputed borders solid (not dashed) · light+dark acceptable vs v11 · **emissive-strength reads right (tune from 1.0 if too hot)** · hover/tooltip/CO₂ all work · mobile ~380px OK · **no admin-1/admin-2 lines anywhere**.
+3. Vercel-preview checklist: **renders as a globe with atmosphere (not flat)** · globe at zoom 1.5 frames comfortably (not too much space) · India incl. POK/Gilgit-Baltistan/Aksai Chin/Arunachal · click-India = single contiguous orange fill · Pakistan excl. POK/GB · China excl. Aksai Chin/Arunachal · Srinagar/Leh labels under Indian admin · **Indian state labels (J&K, Himachal Pradesh, …) visible & under Indian administration; major cities (New Delhi, Mumbai, …) visible** · disputed borders solid (not dashed) · light+dark acceptable vs v11 · **emissive-strength reads right (tune from 1.0 if too hot)** · hover/tooltip/CO₂ all work · mobile ~380px OK · **no admin-1/admin-2 lines anywhere**.
 
 ---
 
@@ -92,7 +99,7 @@ This expression is **untested**. Before applying it to production code, **valida
 - **`showAdminBoundaries` is all-or-nothing** (single Boolean; no admin-0/1/2 granularity, verified against the Standard API reference). This is why Clause A sets it `false` and routes national borders through the `country-boundaries-v1` outline (an admin-0-only tileset) instead.
 - **Custom layers under Standard need two things:** (1) a **slot** (`bottom|middle|top`) to position them in the basemap stack; (2) an **`*-emissive-strength`** paint property (e.g. `fill-emissive-strength: 1`) so the 3D lighting doesn't dim them — required for the flat editorial fill to read correctly.
 - **A separately-added vector source (`mapbox.country-boundaries-v1`) is NOT auto-filtered by the basemap `worldview` config.** It needs its **own** worldview filter expression on each layer (below).
-- **`projection` prop** (react-map-gl): `'globe'` and `'mercator'` are valid. Standard auto-switches to globe at very low zoom unless `projection` is pinned — relevant to keep CountryExplorer flat.
+- **`projection` prop** (react-map-gl): `'globe'` and `'mercator'` are valid. **mapbox-gl v3 / the Standard style default to globe**; classic styles with no `projection` set default to mercator. Current production (classic v11, **no `projection` prop**) renders globe via this default → CountryExplorer sets `projection="globe"` **explicitly** to lock that intent on Standard.
 
 ---
 

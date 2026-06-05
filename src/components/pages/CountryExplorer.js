@@ -814,7 +814,7 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
         mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
         initialViewState={{ longitude: 0, latitude: 20, zoom: 1.5 }}
         style={{ width: '100%', height: '100%' }}
-        projection="mercator"
+        projection="globe"
         mapStyle={mapStyleObj}
         cursor={cursor}
         interactiveLayerIds={mapLoaded ? ['country-fill'] : []}
