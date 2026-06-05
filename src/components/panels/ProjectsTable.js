@@ -150,6 +150,7 @@ const ProjectsTable = ({
                     <input
                       type="checkbox"
                       checked={isChecked}
+                      disabled={!isChecked && selectedIds.size >= 50}
                       onChange={e => handleRowCheck(e, p.project_id)}
                       style={{ cursor: 'pointer' }}
                     />

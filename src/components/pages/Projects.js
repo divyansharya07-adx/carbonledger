@@ -49,6 +49,33 @@ const GLOBAL_TO_REGISTRY = { all: 'all', verra: 'Verra', gold: 'Gold Standard', 
 const SORT_NUMERIC = new Set(['credits_issued','credits_retired','credits_remaining','retirement_rate','lifetime_credits_issued']);
 const PAGE_SIZE = 50;
 
+// Advanced-filter tabs (master-detail rail). Drives both the left rail and the right pane.
+const FILTER_TABS = [
+  { zone: 'Project attributes', tabs: [
+    { id: 'registry',         label: 'Registry',             type: 'multi', key: 'registry',         search: false },
+    { id: 'country',          label: 'Country',              type: 'multi', key: 'country',          search: true  },
+    { id: 'status',           label: 'Status',               type: 'multi', key: 'status',           search: true  },
+    { id: 'reductionRemoval', label: 'Reduction / removal',  type: 'multi', key: 'reductionRemoval', search: false },
+    { id: 'verificationBody', label: 'Verification body',    type: 'multi', key: 'verificationBody', search: true  },
+    { id: 'methodology',      label: 'Methodology',          type: 'multi', key: 'methodology',      search: true  },
+    { id: 'proponent',        label: 'Proponent',            type: 'text',  key: 'proponent' },
+    { id: 'hasBuffer',        label: 'Has buffer pool',      type: 'bool',  key: 'hasBuffer' },
+  ] },
+  { zone: 'Credit volumes', tabs: [
+    { id: 'creditsIssued',  label: 'Credits issued',  type: 'range', minKey: 'creditsIssuedMin',  maxKey: 'creditsIssuedMax' },
+    { id: 'creditsRetired', label: 'Credits retired', type: 'range', minKey: 'creditsRetiredMin', maxKey: 'creditsRetiredMax' },
+  ] },
+  { zone: 'Project lifecycle', tabs: [
+    { id: 'regDate',   label: 'Registration date',    type: 'date',  startKey: 'regDateStart', endKey: 'regDateEnd', hint: 'Verra · CAR' },
+    { id: 'opLag',     label: 'Operational lag, yrs', type: 'range', minKey: 'opLagMin',  maxKey: 'opLagMax',  hint: 'Verra · CAR' },
+    { id: 'annualRed', label: 'Annual reductions',    type: 'range', minKey: 'annualRedMin', maxKey: 'annualRedMax', hint: 'Verra · GS' },
+  ] },
+];
+const OPTIONS_BY_TAB = {
+  registry: ['Verra', 'Gold Standard', 'ACR', 'CAR'],
+  reductionRemoval: ['Reduction', 'Mixed', 'Impermanent Removal', 'Long-Duration Removal'],
+};
+
 const retRateColor = (pct) => pct > 60 ? '#8cb73f' : pct > 30 ? '#e8a124' : '#e85724';
 
 const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedGroup = 'all', selectedActivity = 'all', setActivePage }) => {
@@ -57,9 +84,16 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
   const [search, setSearch] = useState('');
   const [advancedFilters, setAdvancedFilters] = useState({
     corsia: false, sdg: false, article6: false,
-    registry: [], country: [], creditsIssuedMin: null, creditsIssuedMax: null,
+    registry: [], country: [], status: [], reductionRemoval: [],
+    verificationBody: [], methodology: [], proponent: '', hasBuffer: false,
+    creditsIssuedMin: null, creditsIssuedMax: null,
+    creditsRetiredMin: null, creditsRetiredMax: null,
+    regDateStart: '', regDateEnd: '',
+    opLagMin: null, opLagMax: null, annualRedMin: null, annualRedMax: null,
   });
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('registry');
+  const [tabSearchTerms, setTabSearchTerms] = useState({ status: '', country: '', verificationBody: '', methodology: '' });
   const [sortCol, setSortCol] = useState('credits_issued');
   const [sortDir, setSortDir] = useState('desc');
   const [page, setPage] = useState(1);
@@ -101,8 +135,21 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
     setPage(1);
   }, []);
 
+  const setAdvField = useCallback((key, val) => {
+    setAdvancedFilters(f => ({ ...f, [key]: val }));
+    setPage(1);
+  }, []);
+
   const clearAdvanced = useCallback(() => {
-    setAdvancedFilters({ corsia: false, sdg: false, article6: false, registry: [], country: [], creditsIssuedMin: null, creditsIssuedMax: null });
+    setAdvancedFilters({
+      corsia: false, sdg: false, article6: false,
+      registry: [], country: [], status: [], reductionRemoval: [],
+      verificationBody: [], methodology: [], proponent: '', hasBuffer: false,
+      creditsIssuedMin: null, creditsIssuedMax: null,
+      creditsRetiredMin: null, creditsRetiredMax: null,
+      regDateStart: '', regDateEnd: '',
+      opLagMin: null, opLagMax: null, annualRedMin: null, annualRedMax: null,
+    });
     setPage(1);
   }, []);
 
@@ -125,6 +172,20 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
       if (af.country.length && !af.country.includes(p.country)) return false;
       if (af.creditsIssuedMin != null && p.lifetime_credits_issued < af.creditsIssuedMin) return false;
       if (af.creditsIssuedMax != null && p.lifetime_credits_issued > af.creditsIssuedMax) return false;
+      if (af.status.length && !af.status.includes(p.status)) return false;
+      if (af.reductionRemoval.length && !af.reductionRemoval.includes(p.reduction_removal)) return false;
+      if (af.verificationBody.length && !af.verificationBody.includes(p.verification_body)) return false;
+      if (af.methodology.length && !af.methodology.includes(p.methodology)) return false;
+      if (af.proponent && !(p.proponent || '').toLowerCase().includes(af.proponent.toLowerCase())) return false;
+      if (af.hasBuffer && !(p.total_buffer_pool_deposits > 0)) return false;
+      if (af.creditsRetiredMin != null && p.lifetime_credits_retired < af.creditsRetiredMin) return false;
+      if (af.creditsRetiredMax != null && p.lifetime_credits_retired > af.creditsRetiredMax) return false;
+      if (af.regDateStart) { if (!p.registration_date) return false; if (p.registration_date.slice(0, 10) < af.regDateStart) return false; }
+      if (af.regDateEnd) { if (!p.registration_date) return false; if (p.registration_date.slice(0, 10) > af.regDateEnd) return false; }
+      if (af.opLagMin != null) { if (p.operational_lag_years == null) return false; if (p.operational_lag_years < af.opLagMin) return false; }
+      if (af.opLagMax != null) { if (p.operational_lag_years == null) return false; if (p.operational_lag_years > af.opLagMax) return false; }
+      if (af.annualRedMin != null) { if (p.estimated_annual_reductions == null) return false; if (p.estimated_annual_reductions < af.annualRedMin) return false; }
+      if (af.annualRedMax != null) { if (p.estimated_annual_reductions == null) return false; if (p.estimated_annual_reductions > af.annualRedMax) return false; }
       if (EXCLUDED_CATEGORIES.includes(p.category)) return false;
       return true;
     });
@@ -196,9 +257,7 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
   }, [kpiSource]);
 
   const handleExport = () => {
-    const rows = selectedIds.size > 0
-      ? periodProjects.filter(p => selectedIds.has(p.project_id))
-      : sortedProjects;
+    const rows = periodProjects.filter(p => selectedIds.has(p.project_id));
     if (!rows.length) return;
     const headers = Object.keys(rows[0]);
     const csvRows = [
@@ -221,10 +280,48 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
     () => [...new Set(projectsData.map(p => p.country).filter(Boolean))].sort(),
     [projectsData]
   );
+  const statusOptions = useMemo(
+    () => [...new Set(projectsData.map(p => p.status).filter(Boolean))].sort(),
+    [projectsData]
+  );
+  const verificationBodyOptions = useMemo(
+    () => [...new Set(projectsData.map(p => p.verification_body).filter(Boolean))].sort(),
+    [projectsData]
+  );
+  const methodologyOptions = useMemo(
+    () => [...new Set(projectsData.map(p => p.methodology).filter(Boolean))].sort(),
+    [projectsData]
+  );
   const activePanelCount =
     (advancedFilters.registry.length ? 1 : 0) +
     (advancedFilters.country.length ? 1 : 0) +
-    ((advancedFilters.creditsIssuedMin != null || advancedFilters.creditsIssuedMax != null) ? 1 : 0);
+    (advancedFilters.status.length ? 1 : 0) +
+    (advancedFilters.reductionRemoval.length ? 1 : 0) +
+    (advancedFilters.verificationBody.length ? 1 : 0) +
+    (advancedFilters.methodology.length ? 1 : 0) +
+    (advancedFilters.proponent ? 1 : 0) +
+    (advancedFilters.hasBuffer ? 1 : 0) +
+    ((advancedFilters.creditsIssuedMin != null || advancedFilters.creditsIssuedMax != null) ? 1 : 0) +
+    ((advancedFilters.creditsRetiredMin != null || advancedFilters.creditsRetiredMax != null) ? 1 : 0) +
+    ((advancedFilters.regDateStart || advancedFilters.regDateEnd) ? 1 : 0) +
+    ((advancedFilters.opLagMin != null || advancedFilters.opLagMax != null) ? 1 : 0) +
+    ((advancedFilters.annualRedMin != null || advancedFilters.annualRedMax != null) ? 1 : 0);
+
+  const tabIndicator = (tab) => {
+    const af = advancedFilters;
+    if (tab.type === 'multi') return af[tab.key].length > 0 ? { count: af[tab.key].length } : null;
+    if (tab.type === 'bool' || tab.type === 'text') return af[tab.key] ? { dot: true } : null;
+    if (tab.type === 'range') return (af[tab.minKey] != null || af[tab.maxKey] != null) ? { dot: true } : null;
+    if (tab.type === 'date') return (af[tab.startKey] || af[tab.endKey]) ? { dot: true } : null;
+    return null;
+  };
+  const optionsForTab = (id) => (
+    id === 'country' ? countryOptions :
+    id === 'status' ? statusOptions :
+    id === 'verificationBody' ? verificationBodyOptions :
+    id === 'methodology' ? methodologyOptions :
+    (OPTIONS_BY_TAB[id] || [])
+  );
 
   if (projectsLoading) {
     return <div className="projects-loading">Loading projects...</div>;
@@ -297,51 +394,105 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
           </button>
           {filtersOpen && (
             <div className="filters-popover">
-              <div className="filters-popover-section">
-                <div className="filters-popover-label">Registry</div>
-                {['Verra', 'Gold Standard', 'ACR', 'CAR'].map(r => (
-                  <label key={r} className="filters-check">
-                    <input
-                      type="checkbox"
-                      checked={advancedFilters.registry.includes(r)}
-                      onChange={() => toggleAdvArray('registry', r)}
-                    />
-                    {r}
-                  </label>
-                ))}
+              <div className="filters-popover-header">
+                <span style={{ fontWeight: 600 }}>Filters</span>
+                {activePanelCount > 0 && <span className="filters-hint">{activePanelCount} active</span>}
               </div>
-              <div className="filters-popover-section">
-                <div className="filters-popover-label">Country</div>
-                <select
-                  className="filters-multiselect"
-                  multiple
-                  size={6}
-                  value={advancedFilters.country}
-                  onChange={e => {
-                    const vals = Array.from(e.target.selectedOptions, o => o.value);
-                    setAdvancedFilters(f => ({ ...f, country: vals }));
-                    setPage(1);
-                  }}
-                >
-                  {countryOptions.map(c => <option key={c} value={c}>{c}</option>)}
-                </select>
-              </div>
-              <div className="filters-popover-section">
-                <div className="filters-popover-label">Credits issued (lifetime)</div>
-                <div className="filters-range">
-                  <input
-                    type="number"
-                    placeholder="Min"
-                    value={advancedFilters.creditsIssuedMin ?? ''}
-                    onChange={e => setAdvNum('creditsIssuedMin', e.target.value)}
-                  />
-                  <span>–</span>
-                  <input
-                    type="number"
-                    placeholder="Max"
-                    value={advancedFilters.creditsIssuedMax ?? ''}
-                    onChange={e => setAdvNum('creditsIssuedMax', e.target.value)}
-                  />
+              <div className="filters-master-detail">
+                <div className="filters-rail">
+                  {FILTER_TABS.map(zone => (
+                    <div key={zone.zone} className="filters-rail-zone">
+                      <div className="filters-rail-zone-label">{zone.zone}</div>
+                      {zone.tabs.map(tab => {
+                        const ind = tabIndicator(tab);
+                        return (
+                          <div
+                            key={tab.id}
+                            className={`filters-rail-tab${activeTab === tab.id ? ' active' : ''}`}
+                            onClick={() => setActiveTab(tab.id)}
+                          >
+                            <span>{tab.label}</span>
+                            {ind?.count != null && <span className="filters-rail-tab-indicator">({ind.count})</span>}
+                            {ind?.dot && <span className="filters-rail-tab-dot" />}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ))}
+                </div>
+                <div className="filters-pane">
+                  {(() => {
+                    const tab = FILTER_TABS.flatMap(z => z.tabs).find(t => t.id === activeTab);
+                    if (!tab) return null;
+                    if (tab.type === 'multi') {
+                      const opts = optionsForTab(tab.id);
+                      const term = (tabSearchTerms[tab.id] || '').toLowerCase();
+                      const visible = tab.search && term ? opts.filter(o => o.toLowerCase().includes(term)) : opts;
+                      return (
+                        <>
+                          {tab.search && (
+                            <input
+                              className="filters-pane-search"
+                              type="text"
+                              placeholder={`Search ${tab.label.toLowerCase()}…`}
+                              value={tabSearchTerms[tab.id] || ''}
+                              onChange={e => setTabSearchTerms(s => ({ ...s, [tab.id]: e.target.value }))}
+                            />
+                          )}
+                          <div className="filters-pane-list">
+                            {visible.map(o => (
+                              <label key={o} className="filters-check">
+                                <input type="checkbox" checked={advancedFilters[tab.key].includes(o)} onChange={() => toggleAdvArray(tab.key, o)} />
+                                {o}
+                              </label>
+                            ))}
+                            {visible.length === 0 && <div className="filters-hint">No matches.</div>}
+                          </div>
+                        </>
+                      );
+                    }
+                    if (tab.type === 'text') {
+                      return (
+                        <>
+                          <div className="filters-popover-label">Proponent contains</div>
+                          <input className="filters-text" type="text" placeholder="e.g. Rimba Makmur" value={advancedFilters[tab.key]} onChange={e => setAdvField(tab.key, e.target.value)} />
+                        </>
+                      );
+                    }
+                    if (tab.type === 'bool') {
+                      return (
+                        <label className="filters-check">
+                          <input type="checkbox" checked={advancedFilters[tab.key]} onChange={() => toggleAdvFlag(tab.key)} />
+                          Has buffer pool
+                        </label>
+                      );
+                    }
+                    if (tab.type === 'range') {
+                      return (
+                        <>
+                          <div className="filters-popover-label">{tab.label}{tab.hint && <span className="filters-hint"> · {tab.hint}</span>}</div>
+                          <div className="filters-range">
+                            <input type="number" placeholder="Min" value={advancedFilters[tab.minKey] ?? ''} onChange={e => setAdvNum(tab.minKey, e.target.value)} />
+                            <span>–</span>
+                            <input type="number" placeholder="Max" value={advancedFilters[tab.maxKey] ?? ''} onChange={e => setAdvNum(tab.maxKey, e.target.value)} />
+                          </div>
+                        </>
+                      );
+                    }
+                    if (tab.type === 'date') {
+                      return (
+                        <>
+                          <div className="filters-popover-label">{tab.label}{tab.hint && <span className="filters-hint"> · {tab.hint}</span>}</div>
+                          <div className="filters-date-range">
+                            <input type="date" value={advancedFilters[tab.startKey]} onChange={e => setAdvField(tab.startKey, e.target.value)} />
+                            <span>–</span>
+                            <input type="date" value={advancedFilters[tab.endKey]} onChange={e => setAdvField(tab.endKey, e.target.value)} />
+                          </div>
+                        </>
+                      );
+                    }
+                    return null;
+                  })()}
                 </div>
               </div>
               <div className="filters-popover-footer">
@@ -383,8 +534,8 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
           }
         </span>
 
-        <button className="export-btn" onClick={handleExport} style={{ fontSize: 11, padding: '5px 14px' }}>
-          ↓ Export {selectionActive ? `selected (${selectedIds.size})` : `(${sortedProjects.length.toLocaleString()})`}
+        <button className="export-btn" onClick={handleExport} disabled={selectedIds.size === 0} style={{ fontSize: 11, padding: '5px 14px' }}>
+          ↓ Export ({selectedIds.size})
         </button>
       </div>
 
@@ -404,7 +555,7 @@ const Projects = ({ data, selectedRegistry = 'all', selectedYearRange, selectedG
             page={safePage}
             totalPages={totalPages}
             totalCount={sortedProjects.length}
-            onPage={setPage}
+            onPage={(p) => { setPage(p); setSelectedIds(new Set()); }}
           />
         </div>
 
