@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import Map, { Source, Layer, Marker, NavigationControl } from 'react-map-gl/mapbox';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { formatCredits, REGISTRY_COLORS } from '../../utils/formatters';
+import { STANDARD_STYLE, worldviewFilter } from '../../utils/mapStyle';
 
 /* ─── Name translation: data → Mapbox name_en ─── */
 const DATA_TO_MAPBOX = {
@@ -522,6 +523,7 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
   const mapRef = useRef(null);
   const hasLoggedRef = useRef(false);
   const initialCountryRef = useRef(initialCountry);
+  const darkAtMount = useRef(isDarkMode);
   const [hoveredCountry,  setHoveredCountry]  = useState(null);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [panelOpen,       setPanelOpen]       = useState(false);
@@ -529,6 +531,32 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
   const [mapLoaded,       setMapLoaded]       = useState(false);
   const [co2Data,         setCo2Data]         = useState({});
   const [co2Loading,      setCo2Loading]      = useState(false);
+
+  /* ─── Mapbox Standard basemap (IN worldview) ─── */
+  // Clone the shared style once at mount and set the initial light preset from the current theme,
+  // so dark-mode users don't get a day→night flash. Later theme changes are applied live via
+  // setConfigProperty (no style reload, no map remount).
+  const mapStyleObj = useMemo(() => {
+    const s = JSON.parse(JSON.stringify(STANDARD_STYLE));
+    s.imports[0].config.lightPreset = darkAtMount.current ? 'night' : 'day';
+    return s;
+  }, []);
+
+  useEffect(() => {
+    const m = mapRef.current?.getMap?.();
+    if (!mapLoaded || !m) return;
+    m.setConfigProperty('basemap', 'lightPreset', isDarkMode ? 'night' : 'day');
+    // Soften Standard's default globe atmosphere ~50-60% for editorial crispness. Re-applied on
+    // each theme change (lightPreset can reset atmosphere). Spread the current fog so space-color /
+    // high-color / color (the day vs night atmosphere) stay unchanged; only intensity is reduced.
+    const fog = m.getFog?.() || {};
+    m.setFog({
+      ...fog,
+      'horizon-blend': 0.08,   // atmosphere edge — default ~0.2 at low zoom → sharper
+      'star-intensity': 0.15,  // starfield — default 0.35 at low zoom → dimmer
+      'range': [0.8, 8],       // haze band — default [0.5, 10] → slightly tighter
+    });
+  }, [isDarkMode, mapLoaded]);
 
   /* ─── Choropleth opacity match expression ─── */
   const fillOpacityExpression = useMemo(() => {
@@ -558,10 +586,12 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     type: 'fill',
     source: 'country-boundaries',
     'source-layer': 'country_boundaries',
-    filter: ['==', ['get', 'disputed'], 'false'],
+    slot: 'middle',
+    filter: worldviewFilter(),
     paint: {
       'fill-color': '#e85724',
       'fill-opacity': fillOpacityExpression,
+      'fill-emissive-strength': 1,
     },
   }), [fillOpacityExpression]);
 
@@ -569,25 +599,35 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     id: 'country-fill-hover',
     type: 'fill',
     'source-layer': 'country_boundaries',
-    filter: ['==', ['get', 'name_en'], hoveredCountry ?? ''],
-    paint: { 'fill-color': '#ff7a4d', 'fill-opacity': 0.70 },
+    slot: 'middle',
+    filter: worldviewFilter(['==', ['get', 'name_en'], hoveredCountry ?? '']),
+    paint: { 'fill-color': '#ff7a4d', 'fill-opacity': 0.70, 'fill-emissive-strength': 1 },
   };
 
   const selectedLayer = {
     id: 'country-fill-selected',
     type: 'fill',
     'source-layer': 'country_boundaries',
-    filter: ['==', ['get', 'name_en'], selectedMapboxName],
-    paint: { 'fill-color': '#e85724', 'fill-opacity': 0.9 },
+    slot: 'middle',
+    filter: worldviewFilter(['==', ['get', 'name_en'], selectedMapboxName]),
+    paint: { 'fill-color': '#e85724', 'fill-opacity': 0.9, 'fill-emissive-strength': 1 },
   };
 
   const outlineLayer = {
     id: 'country-outline',
     type: 'line',
     'source-layer': 'country_boundaries',
+    slot: 'middle',
+    filter: worldviewFilter(),
     paint: {
-      'line-color': isDarkMode ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.1)',
-      'line-width': 0.4,
+      // Sole national border (Standard's own admin lines are off — Clause A). Tuned to match
+      // classic light-v11's admin-0-boundary readability (≈ hsl(220,0%,70%) solid + soft halo)
+      // against Standard Monochrome — a soft but clearly visible neutral gray. Slightly heavier
+      // than v11's bare line to stand in for v11's separate blurred halo layer.
+      'line-color': isDarkMode ? '#aaaaaa' : '#999999',
+      'line-width': isDarkMode ? 0.7 : 0.8,
+      'line-opacity': isDarkMode ? 0.65 : 0.7,
+      'line-emissive-strength': 1,
     },
   };
 
@@ -784,13 +824,11 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     <div className="country-explorer-map-page">
       <Map
         ref={mapRef}
-        key={isDarkMode ? 'dark' : 'light'}
         mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
         initialViewState={{ longitude: 0, latitude: 20, zoom: 1.5 }}
         style={{ width: '100%', height: '100%' }}
-        mapStyle={isDarkMode
-          ? 'mapbox://styles/mapbox/dark-v11'
-          : 'mapbox://styles/mapbox/light-v11'}
+        projection="globe"
+        mapStyle={mapStyleObj}
         cursor={cursor}
         interactiveLayerIds={mapLoaded ? ['country-fill'] : []}
         onMouseMove={handleMouseMove}
