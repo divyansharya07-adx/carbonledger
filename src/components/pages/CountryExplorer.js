@@ -610,10 +610,13 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     slot: 'middle',
     filter: worldviewFilter(),
     paint: {
-      // Sole national border (Standard's own admin lines are off — Clause A), so a touch more
-      // present than the previous hairline, but still editorial-subtle. Tunable on preview.
-      'line-color': isDarkMode ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.22)',
-      'line-width': 0.6,
+      // Sole national border (Standard's own admin lines are off — Clause A). Tuned to match
+      // classic light-v11's admin-0-boundary readability (≈ hsl(220,0%,70%) solid + soft halo)
+      // against Standard Monochrome — a soft but clearly visible neutral gray. Slightly heavier
+      // than v11's bare line to stand in for v11's separate blurred halo layer.
+      'line-color': isDarkMode ? '#aaaaaa' : '#999999',
+      'line-width': isDarkMode ? 0.7 : 0.8,
+      'line-opacity': isDarkMode ? 0.65 : 0.7,
       'line-emissive-strength': 1,
     },
   };
