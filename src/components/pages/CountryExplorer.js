@@ -546,6 +546,16 @@ const CountryExplorer = ({ data, isDarkMode, initialCountry }) => {
     const m = mapRef.current?.getMap?.();
     if (!mapLoaded || !m) return;
     m.setConfigProperty('basemap', 'lightPreset', isDarkMode ? 'night' : 'day');
+    // Soften Standard's default globe atmosphere ~50-60% for editorial crispness. Re-applied on
+    // each theme change (lightPreset can reset atmosphere). Spread the current fog so space-color /
+    // high-color / color (the day vs night atmosphere) stay unchanged; only intensity is reduced.
+    const fog = m.getFog?.() || {};
+    m.setFog({
+      ...fog,
+      'horizon-blend': 0.08,   // atmosphere edge — default ~0.2 at low zoom → sharper
+      'star-intensity': 0.15,  // starfield — default 0.35 at low zoom → dimmer
+      'range': [0.8, 8],       // haze band — default [0.5, 10] → slightly tighter
+    });
   }, [isDarkMode, mapLoaded]);
 
   /* ─── Choropleth opacity match expression ─── */
