@@ -3,7 +3,7 @@ title: Tech Debt & Known Issues
 type: concept
 tags: [tech-debt, bugs, hardcoded, known-issues]
 sources: [../sources/architecture-md.md]
-updated: 2026-05-19
+updated: 2026-06-07
 ---
 
 # Tech Debt & Known Issues
@@ -70,6 +70,18 @@ Last fixed: Step 22d (commit `ec730a9`). May drift again on future taxonomy chan
 ## No Pipeline Validation
 
 Neither `build_projects.py` nor `fix_data.py` warns when a methodology code appears in the VROD Excel but has no entry in `methodology_mapping.csv`. These silently fall through to 'Other'. A warning step would surface future unmapped methodologies before they reach production.
+
+---
+
+## build_projects.py — Left-Join Drops Retirements from Zero-Issuance Vintages {#leftjoin-retirement-drop}
+
+Low severity (informational, pre-existing; surfaced 2026-06-07 during the Pass 3.5 diagnostic). All four registry builders in `scripts/build_projects.py` join retirements onto issuances with `issued.merge(retired, on=['project_id', 'vintage_year'], how='left')` (lines **255, 342, 434, 545**). Because the join is `how='left'` on *issued*, any retirement in a `(project_id, vintage_year)` with zero issuance is silently dropped.
+
+Empirically this affects 9 of the 10 retirement-anomaly projects at **0 credits**, and one — **GS3007** (Sodo Ethiopia) — at **8,141 credits**: a 5.21% under-report of its retired total (displayed 127.3% vs Berkeley's published 134.3%). The direction is conservative — we under-report retirement, not over — so the artifact slightly *masks* the retirement-over-100% anomaly rather than causing it.
+
+**Fix direction (if revisited):** change the merge to `how='outer'` and handle null `issued` explicitly. This would raise GS3007's displayed rate from 127.3% to Berkeley's 134.3% — more faithful, but a less attractive surface number. **Status: deferred**, documented for future maintainers.
+
+See [Retirement Rate > 100% Anomaly](../syntheses/retirement-over-100pct.md) for the full diagnostic; Master Plan v34 — Pass 3.5.
 
 ---
 

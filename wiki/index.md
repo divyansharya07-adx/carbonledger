@@ -30,7 +30,7 @@ Concrete project artifacts: files, scripts, hooks, components, APIs.
 Abstract ideas, algorithms, design decisions, patterns.
 
 - [Methodology Categorisation](concepts/methodology-categorization.md) — how projects get their category: pipeline lookup, GROUP_MAP, dead categories, exclusions (updated: 2026-04-18)
-- [Tech Debt & Known Issues](concepts/tech-debt.md) — hardcoded year values, filter bugs, About page drift, pipeline gaps (updated: 2026-04-18)
+- [Tech Debt & Known Issues](concepts/tech-debt.md) — hardcoded year values, filter bugs, About page drift, pipeline gaps (updated: 2026-06-07)
 
 ---
 
@@ -38,7 +38,7 @@ Abstract ideas, algorithms, design decisions, patterns.
 
 Filed answers to queries, comparisons, analyses.
 
-*(none yet — filed syntheses will appear here)*
+- [Retirement Rate > 100% Anomaly](syntheses/retirement-over-100pct.md) — why 10 projects show retired > issued: 9 faithful to Berkeley (GS assigned credits, ACR buffer-net, Verra TVQ-dedup), 1 a left-join artifact (updated: 2026-06-07)
 
 ---
 

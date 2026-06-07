@@ -199,6 +199,43 @@ const About = () => {
             authoritative measure of project speed-to-market.
           </p>
 
+          <p id="retirement-over-100" className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>Retirement Rates Exceeding 100%</p>
+          <p className="about-text">
+            For a small number of projects (10 in the February 2026 dataset), the displayed retirement
+            rate exceeds 100% — meaning more credits appear to have been retired against the project than
+            were issued to it. These figures are faithfully reproduced from Berkeley's published Voluntary
+            Registry Offsets Database and reflect three distinct methodological characteristics of how the
+            source registries record their data. None is a calculation error in CarbonLedger.
+          </p>
+          <ul className="about-text" style={{ paddingLeft: '1.2em', marginTop: 0 }}>
+            <li>
+              <strong>Gold Standard afforestation/reforestation</strong> (e.g., BaumInvest Reforestation
+              Project, ArBolivia- Phase II) — issuance counts only realized VER/CER credits, while
+              retirement also includes "assigned" ex-ante PER credits that represent pre-sold future
+              sequestration. The rate can exceed 100% when assigned retirements outpace realized issuance.
+            </li>
+            <li>
+              <strong>ACR Improved Forest Management</strong> (e.g., UPM Blandin Native American Hardwoods
+              Conservation &amp; Carbon Sequestration Project, Bear Creek Watershed Forest Carbon Project) —
+              issuance is net of buffer pool deposits, while retirement is gross of buffer pool retirements.
+              The displayed rate is therefore retired-gross divided by issued-net.
+            </li>
+            <li>
+              <strong>Verra multi-period crediting</strong> (e.g., Capacity Upgrade of Gunung Salak
+              Geothermal Power Plant Project, Indonesia; Ratchaburi Farms Biogas Project at SPM Farm) —
+              issuance is deduplicated by (project ID, vintage start, vintage end, total vintage quantity)
+              per Berkeley's methodology, while retirement sums individual retired issuance batches.
+              Projects with multiple reporting periods sharing a vintage window can show retirement
+              exceeding deduplicated issuance.
+            </li>
+          </ul>
+          <p className="about-text">
+            These rates are correct as published by Berkeley. CarbonLedger displays them without adjustment
+            to preserve methodological transparency. See the Voluntary Registry Offsets Database
+            documentation by Haya et al., Berkeley Carbon Trading Project, University of California,
+            Berkeley, for full methodology.
+          </p>
+
           <p className="about-text" style={{ fontWeight: 500, marginBottom: 4, marginTop: 12 }}>VCM Contribution to Decarbonisation</p>
           <p className="about-text">
             This metric estimates the share of a country's national CO₂ emissions that has been
