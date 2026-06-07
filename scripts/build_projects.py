@@ -59,6 +59,18 @@ COUNTRY_NAME_MAP = {
     'FR': 'France',
     'NI': 'Nicaragua',
     'SV': 'El Salvador',
+    # Pass 3.6: ACR/CAR exports use ISO-2 codes; normalize the eight not already mapped
+    # above, plus two registry name-variants. Targets match src/utils/countryISO.js keys.
+    'BO': 'Bolivia',
+    'BR': 'Brazil',
+    'CA': 'Canada',
+    'TH': 'Thailand',
+    'IL': 'Israel',
+    'ZA': 'South Africa',
+    'AR': 'Argentina',
+    'CN': 'China',
+    'Congo the Democratic Republic of the': 'DR Congo',
+    "Cote D'Ivoire": 'Ivory Coast',
 }
 
 OUTPUT_COLS = [
