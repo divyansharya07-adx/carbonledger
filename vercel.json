@@ -1,9 +1,12 @@
 {
-  "redirects": [
+  "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "https://ceew.in/carbonledger",
-      "permanent": true
+      "source": "/carbonledger",
+      "destination": "https://carbonledger.tools.ceew.in/"
+    },
+    {
+      "source": "/carbonledger/:path*",
+      "destination": "https://carbonledger.tools.ceew.in/:path*"
     }
   ]
 }
