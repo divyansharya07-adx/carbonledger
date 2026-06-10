@@ -1,36 +1,36 @@
 Registry,Country,Project Type Category,Vintage Year,Total Credits Issued
-ACR,BO,Bioenergy,2005,316
-ACR,BO,Bioenergy,2006,352
-ACR,BO,Bioenergy,2007,342
-ACR,BO,Bioenergy,2008,128
-ACR,BR,Afforestation/Reforestation,2011,2572210
-ACR,BR,Mixed renewables,2009,24245
-ACR,BR,Mixed renewables,2010,132737
-ACR,BR,Mixed renewables,2011,91970
-ACR,BR,Mixed renewables,2012,102825
-ACR,BR,Mixed renewables,2013,434180
-ACR,BR,Mixed renewables,2014,141643
-ACR,BR,Mixed renewables,2015,155810
-ACR,BR,Mixed renewables,2016,258088
-ACR,BR,Mixed renewables,2017,133306
-ACR,BR,Mixed renewables,2018,195071
-ACR,BR,Mixed renewables,2019,189339
-ACR,BR,Mixed renewables,2020,84960
-ACR,BR,Mixed renewables,2021,61672
-ACR,CA,Forest management,2020,99766
-ACR,CA,Forest management,2021,193101
-ACR,CA,Forest management,2022,176676
-ACR,CA,Forest management,2023,353059
-ACR,CA,Industrial efficiency,2016,25094
-ACR,CA,Industrial efficiency,2017,22304
-ACR,CA,Industrial efficiency,2018,26208
-ACR,CA,Industrial efficiency,2019,157083
-ACR,CA,Industrial efficiency,2020,146590
-ACR,CA,Industrial efficiency,2021,255417
-ACR,CA,Industrial efficiency,2022,275561
-ACR,CA,Industrial efficiency,2023,131409
-ACR,CA,Oil Field Gas Recovery,2024,85145
-ACR,CA,Oil Field Gas Recovery,2025,77942
+ACR,Bolivia,Bioenergy,2005,316
+ACR,Bolivia,Bioenergy,2006,352
+ACR,Bolivia,Bioenergy,2007,342
+ACR,Bolivia,Bioenergy,2008,128
+ACR,Brazil,Afforestation/Reforestation,2011,2572210
+ACR,Brazil,Mixed renewables,2009,24245
+ACR,Brazil,Mixed renewables,2010,132737
+ACR,Brazil,Mixed renewables,2011,91970
+ACR,Brazil,Mixed renewables,2012,102825
+ACR,Brazil,Mixed renewables,2013,434180
+ACR,Brazil,Mixed renewables,2014,141643
+ACR,Brazil,Mixed renewables,2015,155810
+ACR,Brazil,Mixed renewables,2016,258088
+ACR,Brazil,Mixed renewables,2017,133306
+ACR,Brazil,Mixed renewables,2018,195071
+ACR,Brazil,Mixed renewables,2019,189339
+ACR,Brazil,Mixed renewables,2020,84960
+ACR,Brazil,Mixed renewables,2021,61672
+ACR,Canada,Forest management,2020,99766
+ACR,Canada,Forest management,2021,193101
+ACR,Canada,Forest management,2022,176676
+ACR,Canada,Forest management,2023,353059
+ACR,Canada,Industrial efficiency,2016,25094
+ACR,Canada,Industrial efficiency,2017,22304
+ACR,Canada,Industrial efficiency,2018,26208
+ACR,Canada,Industrial efficiency,2019,157083
+ACR,Canada,Industrial efficiency,2020,146590
+ACR,Canada,Industrial efficiency,2021,255417
+ACR,Canada,Industrial efficiency,2022,275561
+ACR,Canada,Industrial efficiency,2023,131409
+ACR,Canada,Oil Field Gas Recovery,2024,85145
+ACR,Canada,Oil Field Gas Recovery,2025,77942
 ACR,El Salvador,Mixed renewables,2004,5
 ACR,El Salvador,Mixed renewables,2005,18
 ACR,El Salvador,Mixed renewables,2006,52
@@ -47,10 +47,10 @@ ACR,Mexico,Industrial efficiency,2023,2658452
 ACR,Nicaragua,Mixed renewables,2005,473
 ACR,Nicaragua,Mixed renewables,2006,1586
 ACR,Nicaragua,Mixed renewables,2007,1854
-ACR,TH,Industrial efficiency,2022,78271
-ACR,TH,Industrial efficiency,2023,1037744
-ACR,TH,Industrial efficiency,2024,52353
-ACR,TH,Industrial efficiency,2025,131622
+ACR,Thailand,Industrial efficiency,2022,78271
+ACR,Thailand,Industrial efficiency,2023,1037744
+ACR,Thailand,Industrial efficiency,2024,52353
+ACR,Thailand,Industrial efficiency,2025,131622
 ACR,United States,Afforestation/Reforestation,2009,1119
 ACR,United States,Afforestation/Reforestation,2010,42898
 ACR,United States,Afforestation/Reforestation,2011,30030
@@ -840,29 +840,6 @@ Gold Standard,Colombia,Hydropower,2021,56026
 Gold Standard,Congo,Cleaner cooking,2014,3095
 Gold Standard,Congo,Cleaner cooking,2015,6125
 Gold Standard,Congo,Cleaner cooking,2016,4339
-Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2011,104
-Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2012,15283
-Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2013,26414
-Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2014,34145
-Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2015,55148
-Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2016,92924
-Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2017,68899
-Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2018,78608
-Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2019,80264
-Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2020,80264
-Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2021,80265
-Gold Standard,Congo the Democratic Republic of the,Afforestation/Reforestation,2022,51004
-Gold Standard,Congo the Democratic Republic of the,Cleaner cooking,2017,758
-Gold Standard,Congo the Democratic Republic of the,Cleaner cooking,2018,13301
-Gold Standard,Congo the Democratic Republic of the,Cleaner cooking,2019,19391
-Gold Standard,Congo the Democratic Republic of the,Cleaner cooking,2020,28670
-Gold Standard,Congo the Democratic Republic of the,Cleaner cooking,2021,129647
-Gold Standard,Congo the Democratic Republic of the,Cleaner cooking,2022,208341
-Gold Standard,Congo the Democratic Republic of the,Cleaner cooking,2023,210453
-Gold Standard,Congo the Democratic Republic of the,Cleaner cooking,2024,76264
-Gold Standard,Congo the Democratic Republic of the,Solar,2023,29155
-Gold Standard,Congo the Democratic Republic of the,Solar,2024,30271
-Gold Standard,Congo the Democratic Republic of the,Solar,2025,16555
 Gold Standard,Costa Rica,Afforestation/Reforestation,2008,42
 Gold Standard,Costa Rica,Afforestation/Reforestation,2009,102
 Gold Standard,Costa Rica,Afforestation/Reforestation,2010,1257
@@ -887,6 +864,29 @@ Gold Standard,Costa Rica,Mixed renewables,2021,9433
 Gold Standard,Costa Rica,Mixed renewables,2022,7860
 Gold Standard,Costa Rica,Mixed renewables,2023,8837
 Gold Standard,Costa Rica,Mixed renewables,2024,4150
+Gold Standard,DR Congo,Afforestation/Reforestation,2011,104
+Gold Standard,DR Congo,Afforestation/Reforestation,2012,15283
+Gold Standard,DR Congo,Afforestation/Reforestation,2013,26414
+Gold Standard,DR Congo,Afforestation/Reforestation,2014,34145
+Gold Standard,DR Congo,Afforestation/Reforestation,2015,55148
+Gold Standard,DR Congo,Afforestation/Reforestation,2016,92924
+Gold Standard,DR Congo,Afforestation/Reforestation,2017,68899
+Gold Standard,DR Congo,Afforestation/Reforestation,2018,78608
+Gold Standard,DR Congo,Afforestation/Reforestation,2019,80264
+Gold Standard,DR Congo,Afforestation/Reforestation,2020,80264
+Gold Standard,DR Congo,Afforestation/Reforestation,2021,80265
+Gold Standard,DR Congo,Afforestation/Reforestation,2022,51004
+Gold Standard,DR Congo,Cleaner cooking,2017,758
+Gold Standard,DR Congo,Cleaner cooking,2018,13301
+Gold Standard,DR Congo,Cleaner cooking,2019,19391
+Gold Standard,DR Congo,Cleaner cooking,2020,28670
+Gold Standard,DR Congo,Cleaner cooking,2021,129647
+Gold Standard,DR Congo,Cleaner cooking,2022,208341
+Gold Standard,DR Congo,Cleaner cooking,2023,210453
+Gold Standard,DR Congo,Cleaner cooking,2024,76264
+Gold Standard,DR Congo,Solar,2023,29155
+Gold Standard,DR Congo,Solar,2024,30271
+Gold Standard,DR Congo,Solar,2025,16555
 Gold Standard,Dominican Republic,Mixed renewables,2016,14905
 Gold Standard,Dominican Republic,Mixed renewables,2017,29442
 Gold Standard,Dominican Republic,Mixed renewables,2018,31793
@@ -2937,13 +2937,6 @@ Verra,Congo,Forest management,2018,95829
 Verra,Congo,Forest management,2019,101519
 Verra,Costa Rica,Mixed renewables,2018,106947
 Verra,Costa Rica,Mixed renewables,2019,255697
-Verra,Cote D'Ivoire,Mixed renewables,2017,376967
-Verra,Cote D'Ivoire,Mixed renewables,2018,787269
-Verra,Cote D'Ivoire,Mixed renewables,2019,959446
-Verra,Cote D'Ivoire,Mixed renewables,2020,884101
-Verra,Cote D'Ivoire,Mixed renewables,2021,691737
-Verra,Cote D'Ivoire,Mixed renewables,2022,839009
-Verra,Cote D'Ivoire,Mixed renewables,2023,491357
 Verra,Cyprus,Soil & Livestock,2008,15171
 Verra,DR Congo,Afforestation/Reforestation,2009,90398
 Verra,DR Congo,Afforestation/Reforestation,2010,308993
@@ -3357,6 +3350,13 @@ Verra,Indonesia,Waste to energy,2008,107324
 Verra,Indonesia,Waste to energy,2009,71757
 Verra,Israel,Mixed renewables,2006,8031
 Verra,Israel,Mixed renewables,2007,8543
+Verra,Ivory Coast,Mixed renewables,2017,376967
+Verra,Ivory Coast,Mixed renewables,2018,787269
+Verra,Ivory Coast,Mixed renewables,2019,959446
+Verra,Ivory Coast,Mixed renewables,2020,884101
+Verra,Ivory Coast,Mixed renewables,2021,691737
+Verra,Ivory Coast,Mixed renewables,2022,839009
+Verra,Ivory Coast,Mixed renewables,2023,491357
 Verra,Kazakhstan,Mixed renewables,2020,95215
 Verra,Kazakhstan,Mixed renewables,2021,182781
 Verra,Kazakhstan,Mixed renewables,2022,220573
