@@ -1,12 +1,1 @@
-{
-  "rewrites": [
-    {
-      "source": "/carbonledger",
-      "destination": "https://carbonledger.tools.ceew.in/"
-    },
-    {
-      "source": "/carbonledger/:path*",
-      "destination": "https://www.ceew.in/carbonledger"
-    }
-  ]
-}
+{}
