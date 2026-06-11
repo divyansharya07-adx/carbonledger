@@ -1,1 +1,6 @@
-{}
+{
+  "rewrites": [
+    { "source": "/carbonledger", "destination": "/" },
+    { "source": "/carbonledger/:path*", "destination": "/:path*" }
+  ]
+}
