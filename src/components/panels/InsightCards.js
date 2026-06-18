@@ -5,28 +5,22 @@ const InsightCards = ({ data, selectedActivity }) => {
   const insights = useMemo(() => {
     if (!data) return [];
 
-    const { creditsByActivity, creditsByCountry, totalCredits, creditsByGroup, filteredAgg = [] } = data;
+    const { creditsByActivity, creditsByCountry, totalCredits, creditsByGroup } = data;
 
     // Retirement rate — authoritative from project_counts.csv (per-registry lifetime totals)
     const retirementRate = data.globalRetirementRate ?? 0;
     const totalRetired   = data.globalCreditsRetired ?? 0;
 
-    // Top registry by retirement rate — computed from filteredAgg
-    const regRetired = {};
-    const retSeen = new Set();
-    filteredAgg.forEach(d => {
-      const key = `${d.registry}|${d.category}`;
-      if (!retSeen.has(key)) {
-        retSeen.add(key);
-        regRetired[d.registry] = (regRetired[d.registry] || 0) + d.creditsRetired;
-      }
-    });
-    const regIssued = {};
-    filteredAgg.forEach(d => { regIssued[d.registry] = (regIssued[d.registry] || 0) + d.credits; });
-
-    const topRetReg = Object.entries(regRetired)
-      .map(([reg, ret]) => ({ reg, rate: regIssued[reg] > 0 ? ret / regIssued[reg] * 100 : 0 }))
-      .sort((a, b) => b.rate - a.rate)[0];
+    // Top registry by retirement rate — reuse authoritative per-registry stats.
+    // data.registryStats is filter-aware (registry + year + group + activity,
+    // from project_counts.csv — same series as the hero rate). Only compare
+    // when more than one registry is present.
+    const regEntries = Object.entries(data.registryStats || {});
+    const topRetReg = regEntries.length > 1
+      ? regEntries
+          .map(([reg, s]) => ({ reg, rate: s.retirementRate }))
+          .sort((a, b) => b.rate - a.rate)[0]
+      : null;
 
     const retirementCard = {
       accentColor: '#CCDF84',
