@@ -717,6 +717,39 @@ body {
   font-weight: 500;
 }
 
+/* Project Activity Intelligence — bar hover tooltip (state-driven; theme-adaptive like .map-tooltip) */
+.pai-tooltip {
+  position: absolute;
+  z-index: 100;
+  pointer-events: none;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 0.5px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 9px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  min-width: 152px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transform: translate(-50%, calc(-100% - 10px));
+  transition: opacity 0.12s ease;
+}
+.pai-tooltip.below { transform: translate(-50%, 14px); }
+.pai-tt-head { font-weight: 700; margin-bottom: 5px; white-space: nowrap; }
+.pai-tt-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.pai-tt-row.active { font-weight: 700; background: rgba(255, 255, 255, 0.12); }
+[data-theme="light"] .pai-tt-row.active { background: rgba(0, 0, 0, 0.06); }
+.pai-tt-dot { width: 8px; height: 8px; border-radius: 2px; flex: 0 0 auto; }
+.pai-tt-name { flex: 1 1 auto; padding-right: 10px; }
+.pai-tt-val { color: var(--text-secondary); }
+
 .reset-btn {
   font-size: 10px;
   font-weight: 500;
